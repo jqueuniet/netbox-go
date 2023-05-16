@@ -16,17 +16,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
+	"time"
 )
-
 
 // WirelessAPIService WirelessAPI service
 type WirelessAPIService service
 
 type ApiWirelessWirelessLanGroupsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                     context.Context
+	ApiService              *WirelessAPIService
 	wirelessLANGroupRequest *[]WirelessLANGroupRequest
 }
 
@@ -44,22 +44,22 @@ WirelessWirelessLanGroupsBulkDestroy Method for WirelessWirelessLanGroupsBulkDes
 
 Delete a list of Wireless LAN Group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLanGroupsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLanGroupsBulkDestroyRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkDestroy(ctx context.Context) ApiWirelessWirelessLanGroupsBulkDestroyRequest {
 	return ApiWirelessWirelessLanGroupsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkDestroyExecute(r ApiWirelessWirelessLanGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsBulkDestroy")
@@ -138,8 +138,8 @@ func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkDestroyExecute(r ApiWi
 }
 
 type ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                     context.Context
+	ApiService              *WirelessAPIService
 	wirelessLANGroupRequest *[]WirelessLANGroupRequest
 }
 
@@ -157,24 +157,25 @@ WirelessWirelessLanGroupsBulkPartialUpdate Method for WirelessWirelessLanGroupsB
 
 Patch a list of Wireless LAN Group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkPartialUpdate(ctx context.Context) ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest {
 	return ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []WirelessLANGroup
+//
+//	@return []WirelessLANGroup
 func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkPartialUpdateExecute(r ApiWirelessWirelessLanGroupsBulkPartialUpdateRequest) ([]WirelessLANGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []WirelessLANGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []WirelessLANGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsBulkPartialUpdate")
@@ -262,8 +263,8 @@ func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkPartialUpdateExecute(r
 }
 
 type ApiWirelessWirelessLanGroupsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                     context.Context
+	ApiService              *WirelessAPIService
 	wirelessLANGroupRequest *[]WirelessLANGroupRequest
 }
 
@@ -281,24 +282,25 @@ WirelessWirelessLanGroupsBulkUpdate Method for WirelessWirelessLanGroupsBulkUpda
 
 Put a list of Wireless LAN Group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLanGroupsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLanGroupsBulkUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkUpdate(ctx context.Context) ApiWirelessWirelessLanGroupsBulkUpdateRequest {
 	return ApiWirelessWirelessLanGroupsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []WirelessLANGroup
+//
+//	@return []WirelessLANGroup
 func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkUpdateExecute(r ApiWirelessWirelessLanGroupsBulkUpdateRequest) ([]WirelessLANGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []WirelessLANGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []WirelessLANGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsBulkUpdate")
@@ -386,8 +388,8 @@ func (a *WirelessAPIService) WirelessWirelessLanGroupsBulkUpdateExecute(r ApiWir
 }
 
 type ApiWirelessWirelessLanGroupsCreateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                             context.Context
+	ApiService                      *WirelessAPIService
 	writableWirelessLANGroupRequest *WritableWirelessLANGroupRequest
 }
 
@@ -405,24 +407,25 @@ WirelessWirelessLanGroupsCreate Method for WirelessWirelessLanGroupsCreate
 
 Post a list of Wireless LAN Group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLanGroupsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLanGroupsCreateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLanGroupsCreate(ctx context.Context) ApiWirelessWirelessLanGroupsCreateRequest {
 	return ApiWirelessWirelessLanGroupsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLANGroup
+//
+//	@return WirelessLANGroup
 func (a *WirelessAPIService) WirelessWirelessLanGroupsCreateExecute(r ApiWirelessWirelessLanGroupsCreateRequest) (*WirelessLANGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLANGroup
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLANGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsCreate")
@@ -510,9 +513,9 @@ func (a *WirelessAPIService) WirelessWirelessLanGroupsCreateExecute(r ApiWireles
 }
 
 type ApiWirelessWirelessLanGroupsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WirelessAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiWirelessWirelessLanGroupsDestroyRequest) Execute() (*http.Response, error) {
@@ -524,24 +527,24 @@ WirelessWirelessLanGroupsDestroy Method for WirelessWirelessLanGroupsDestroy
 
 Delete a Wireless LAN Group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Wireless LAN Group.
- @return ApiWirelessWirelessLanGroupsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Wireless LAN Group.
+	@return ApiWirelessWirelessLanGroupsDestroyRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLanGroupsDestroy(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsDestroyRequest {
 	return ApiWirelessWirelessLanGroupsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *WirelessAPIService) WirelessWirelessLanGroupsDestroyExecute(r ApiWirelessWirelessLanGroupsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsDestroy")
@@ -616,70 +619,70 @@ func (a *WirelessAPIService) WirelessWirelessLanGroupsDestroyExecute(r ApiWirele
 }
 
 type ApiWirelessWirelessLanGroupsListRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *WirelessAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	parent *[]string
-	parentN *[]string
-	parentId *[]*int32
-	parentIdN *[]*int32
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	parent           *[]string
+	parentN          *[]string
+	parentId         *[]*int32
+	parentIdN        *[]*int32
+	q                *string
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -1011,24 +1014,25 @@ WirelessWirelessLanGroupsList Method for WirelessWirelessLanGroupsList
 
 Get a list of Wireless LAN Group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLanGroupsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLanGroupsListRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLanGroupsList(ctx context.Context) ApiWirelessWirelessLanGroupsListRequest {
 	return ApiWirelessWirelessLanGroupsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedWirelessLANGroupList
+//
+//	@return PaginatedWirelessLANGroupList
 func (a *WirelessAPIService) WirelessWirelessLanGroupsListExecute(r ApiWirelessWirelessLanGroupsListRequest) (*PaginatedWirelessLANGroupList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedWirelessLANGroupList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedWirelessLANGroupList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsList")
@@ -1756,9 +1760,9 @@ func (a *WirelessAPIService) WirelessWirelessLanGroupsListExecute(r ApiWirelessW
 }
 
 type ApiWirelessWirelessLanGroupsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
-	id int32
+	ctx                                    context.Context
+	ApiService                             *WirelessAPIService
+	id                                     int32
 	patchedWritableWirelessLANGroupRequest *PatchedWritableWirelessLANGroupRequest
 }
 
@@ -1776,26 +1780,27 @@ WirelessWirelessLanGroupsPartialUpdate Method for WirelessWirelessLanGroupsParti
 
 Patch a Wireless LAN Group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Wireless LAN Group.
- @return ApiWirelessWirelessLanGroupsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Wireless LAN Group.
+	@return ApiWirelessWirelessLanGroupsPartialUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLanGroupsPartialUpdate(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsPartialUpdateRequest {
 	return ApiWirelessWirelessLanGroupsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLANGroup
+//
+//	@return WirelessLANGroup
 func (a *WirelessAPIService) WirelessWirelessLanGroupsPartialUpdateExecute(r ApiWirelessWirelessLanGroupsPartialUpdateRequest) (*WirelessLANGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLANGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLANGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsPartialUpdate")
@@ -1881,9 +1886,9 @@ func (a *WirelessAPIService) WirelessWirelessLanGroupsPartialUpdateExecute(r Api
 }
 
 type ApiWirelessWirelessLanGroupsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WirelessAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiWirelessWirelessLanGroupsRetrieveRequest) Execute() (*WirelessLANGroup, *http.Response, error) {
@@ -1895,26 +1900,27 @@ WirelessWirelessLanGroupsRetrieve Method for WirelessWirelessLanGroupsRetrieve
 
 Get a Wireless LAN Group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Wireless LAN Group.
- @return ApiWirelessWirelessLanGroupsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Wireless LAN Group.
+	@return ApiWirelessWirelessLanGroupsRetrieveRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLanGroupsRetrieve(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsRetrieveRequest {
 	return ApiWirelessWirelessLanGroupsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLANGroup
+//
+//	@return WirelessLANGroup
 func (a *WirelessAPIService) WirelessWirelessLanGroupsRetrieveExecute(r ApiWirelessWirelessLanGroupsRetrieveRequest) (*WirelessLANGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLANGroup
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLANGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsRetrieve")
@@ -1998,9 +2004,9 @@ func (a *WirelessAPIService) WirelessWirelessLanGroupsRetrieveExecute(r ApiWirel
 }
 
 type ApiWirelessWirelessLanGroupsUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *WirelessAPIService
+	id                              int32
 	writableWirelessLANGroupRequest *WritableWirelessLANGroupRequest
 }
 
@@ -2018,26 +2024,27 @@ WirelessWirelessLanGroupsUpdate Method for WirelessWirelessLanGroupsUpdate
 
 Put a Wireless LAN Group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Wireless LAN Group.
- @return ApiWirelessWirelessLanGroupsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Wireless LAN Group.
+	@return ApiWirelessWirelessLanGroupsUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLanGroupsUpdate(ctx context.Context, id int32) ApiWirelessWirelessLanGroupsUpdateRequest {
 	return ApiWirelessWirelessLanGroupsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLANGroup
+//
+//	@return WirelessLANGroup
 func (a *WirelessAPIService) WirelessWirelessLanGroupsUpdateExecute(r ApiWirelessWirelessLanGroupsUpdateRequest) (*WirelessLANGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLANGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLANGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLanGroupsUpdate")
@@ -2126,8 +2133,8 @@ func (a *WirelessAPIService) WirelessWirelessLanGroupsUpdateExecute(r ApiWireles
 }
 
 type ApiWirelessWirelessLansBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                context.Context
+	ApiService         *WirelessAPIService
 	wirelessLANRequest *[]WirelessLANRequest
 }
 
@@ -2145,22 +2152,22 @@ WirelessWirelessLansBulkDestroy Method for WirelessWirelessLansBulkDestroy
 
 Delete a list of Wireless LAN objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLansBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLansBulkDestroyRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLansBulkDestroy(ctx context.Context) ApiWirelessWirelessLansBulkDestroyRequest {
 	return ApiWirelessWirelessLansBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *WirelessAPIService) WirelessWirelessLansBulkDestroyExecute(r ApiWirelessWirelessLansBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansBulkDestroy")
@@ -2239,8 +2246,8 @@ func (a *WirelessAPIService) WirelessWirelessLansBulkDestroyExecute(r ApiWireles
 }
 
 type ApiWirelessWirelessLansBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                context.Context
+	ApiService         *WirelessAPIService
 	wirelessLANRequest *[]WirelessLANRequest
 }
 
@@ -2258,24 +2265,25 @@ WirelessWirelessLansBulkPartialUpdate Method for WirelessWirelessLansBulkPartial
 
 Patch a list of Wireless LAN objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLansBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLansBulkPartialUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLansBulkPartialUpdate(ctx context.Context) ApiWirelessWirelessLansBulkPartialUpdateRequest {
 	return ApiWirelessWirelessLansBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []WirelessLAN
+//
+//	@return []WirelessLAN
 func (a *WirelessAPIService) WirelessWirelessLansBulkPartialUpdateExecute(r ApiWirelessWirelessLansBulkPartialUpdateRequest) ([]WirelessLAN, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []WirelessLAN
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []WirelessLAN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansBulkPartialUpdate")
@@ -2363,8 +2371,8 @@ func (a *WirelessAPIService) WirelessWirelessLansBulkPartialUpdateExecute(r ApiW
 }
 
 type ApiWirelessWirelessLansBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                context.Context
+	ApiService         *WirelessAPIService
 	wirelessLANRequest *[]WirelessLANRequest
 }
 
@@ -2382,24 +2390,25 @@ WirelessWirelessLansBulkUpdate Method for WirelessWirelessLansBulkUpdate
 
 Put a list of Wireless LAN objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLansBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLansBulkUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLansBulkUpdate(ctx context.Context) ApiWirelessWirelessLansBulkUpdateRequest {
 	return ApiWirelessWirelessLansBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []WirelessLAN
+//
+//	@return []WirelessLAN
 func (a *WirelessAPIService) WirelessWirelessLansBulkUpdateExecute(r ApiWirelessWirelessLansBulkUpdateRequest) ([]WirelessLAN, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []WirelessLAN
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []WirelessLAN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansBulkUpdate")
@@ -2487,8 +2496,8 @@ func (a *WirelessAPIService) WirelessWirelessLansBulkUpdateExecute(r ApiWireless
 }
 
 type ApiWirelessWirelessLansCreateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                        context.Context
+	ApiService                 *WirelessAPIService
 	writableWirelessLANRequest *WritableWirelessLANRequest
 }
 
@@ -2506,24 +2515,25 @@ WirelessWirelessLansCreate Method for WirelessWirelessLansCreate
 
 Post a list of Wireless LAN objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLansCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLansCreateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLansCreate(ctx context.Context) ApiWirelessWirelessLansCreateRequest {
 	return ApiWirelessWirelessLansCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLAN
+//
+//	@return WirelessLAN
 func (a *WirelessAPIService) WirelessWirelessLansCreateExecute(r ApiWirelessWirelessLansCreateRequest) (*WirelessLAN, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLAN
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLAN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansCreate")
@@ -2611,9 +2621,9 @@ func (a *WirelessAPIService) WirelessWirelessLansCreateExecute(r ApiWirelessWire
 }
 
 type ApiWirelessWirelessLansDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WirelessAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiWirelessWirelessLansDestroyRequest) Execute() (*http.Response, error) {
@@ -2625,24 +2635,24 @@ WirelessWirelessLansDestroy Method for WirelessWirelessLansDestroy
 
 Delete a Wireless LAN object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Wireless LAN.
- @return ApiWirelessWirelessLansDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Wireless LAN.
+	@return ApiWirelessWirelessLansDestroyRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLansDestroy(ctx context.Context, id int32) ApiWirelessWirelessLansDestroyRequest {
 	return ApiWirelessWirelessLansDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *WirelessAPIService) WirelessWirelessLansDestroyExecute(r ApiWirelessWirelessLansDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansDestroy")
@@ -2717,87 +2727,87 @@ func (a *WirelessAPIService) WirelessWirelessLansDestroyExecute(r ApiWirelessWir
 }
 
 type ApiWirelessWirelessLansListRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
-	authCipher *[]string
-	authCipherN *[]string
-	authPsk *[]string
-	authPskEmpty *[]string
-	authPskIc *[]string
-	authPskIe *[]string
-	authPskIew *[]string
-	authPskIsw *[]string
-	authPskN *[]string
-	authPskNic *[]string
-	authPskNie *[]string
-	authPskNiew *[]string
-	authPskNisw *[]string
-	authType *[]string
-	authTypeN *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *WirelessAPIService
+	authCipher       *[]string
+	authCipherN      *[]string
+	authPsk          *[]string
+	authPskEmpty     *[]string
+	authPskIc        *[]string
+	authPskIe        *[]string
+	authPskIew       *[]string
+	authPskIsw       *[]string
+	authPskN         *[]string
+	authPskNic       *[]string
+	authPskNie       *[]string
+	authPskNiew      *[]string
+	authPskNisw      *[]string
+	authType         *[]string
+	authTypeN        *[]string
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	group *[]int32
-	groupN *[]int32
-	groupId *[]int32
-	groupIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	offset *int32
-	ordering *string
-	q *string
-	ssid *[]string
-	ssidEmpty *[]string
-	ssidIc *[]string
-	ssidIe *[]string
-	ssidIew *[]string
-	ssidIsw *[]string
-	ssidN *[]string
-	ssidNic *[]string
-	ssidNie *[]string
-	ssidNiew *[]string
-	ssidNisw *[]string
-	status *[]string
-	statusN *[]string
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]int32
-	tenantGroupN *[]int32
-	tenantGroupId *[]int32
-	tenantGroupIdN *[]int32
-	tenantId *[]*int32
-	tenantIdN *[]*int32
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	group            *[]int32
+	groupN           *[]int32
+	groupId          *[]int32
+	groupIdN         *[]int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	offset           *int32
+	ordering         *string
+	q                *string
+	ssid             *[]string
+	ssidEmpty        *[]string
+	ssidIc           *[]string
+	ssidIe           *[]string
+	ssidIew          *[]string
+	ssidIsw          *[]string
+	ssidN            *[]string
+	ssidNic          *[]string
+	ssidNie          *[]string
+	ssidNiew         *[]string
+	ssidNisw         *[]string
+	status           *[]string
+	statusN          *[]string
+	tag              *[]string
+	tagN             *[]string
+	tenant           *[]string
+	tenantN          *[]string
+	tenantGroup      *[]int32
+	tenantGroupN     *[]int32
+	tenantGroupId    *[]int32
+	tenantGroupIdN   *[]int32
+	tenantId         *[]*int32
+	tenantIdN        *[]*int32
 	updatedByRequest *string
-	vlanId *[]*int32
-	vlanIdN *[]*int32
+	vlanId           *[]*int32
+	vlanIdN          *[]*int32
 }
 
 // * &#x60;auto&#x60; - Auto * &#x60;tkip&#x60; - TKIP * &#x60;aes&#x60; - AES
@@ -3222,24 +3232,25 @@ WirelessWirelessLansList Method for WirelessWirelessLansList
 
 Get a list of Wireless LAN objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLansListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLansListRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLansList(ctx context.Context) ApiWirelessWirelessLansListRequest {
 	return ApiWirelessWirelessLansListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedWirelessLANList
+//
+//	@return PaginatedWirelessLANList
 func (a *WirelessAPIService) WirelessWirelessLansListExecute(r ApiWirelessWirelessLansListRequest) (*PaginatedWirelessLANList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedWirelessLANList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedWirelessLANList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansList")
@@ -4143,9 +4154,9 @@ func (a *WirelessAPIService) WirelessWirelessLansListExecute(r ApiWirelessWirele
 }
 
 type ApiWirelessWirelessLansPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
-	id int32
+	ctx                               context.Context
+	ApiService                        *WirelessAPIService
+	id                                int32
 	patchedWritableWirelessLANRequest *PatchedWritableWirelessLANRequest
 }
 
@@ -4163,26 +4174,27 @@ WirelessWirelessLansPartialUpdate Method for WirelessWirelessLansPartialUpdate
 
 Patch a Wireless LAN object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Wireless LAN.
- @return ApiWirelessWirelessLansPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Wireless LAN.
+	@return ApiWirelessWirelessLansPartialUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLansPartialUpdate(ctx context.Context, id int32) ApiWirelessWirelessLansPartialUpdateRequest {
 	return ApiWirelessWirelessLansPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLAN
+//
+//	@return WirelessLAN
 func (a *WirelessAPIService) WirelessWirelessLansPartialUpdateExecute(r ApiWirelessWirelessLansPartialUpdateRequest) (*WirelessLAN, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLAN
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLAN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansPartialUpdate")
@@ -4268,9 +4280,9 @@ func (a *WirelessAPIService) WirelessWirelessLansPartialUpdateExecute(r ApiWirel
 }
 
 type ApiWirelessWirelessLansRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WirelessAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiWirelessWirelessLansRetrieveRequest) Execute() (*WirelessLAN, *http.Response, error) {
@@ -4282,26 +4294,27 @@ WirelessWirelessLansRetrieve Method for WirelessWirelessLansRetrieve
 
 Get a Wireless LAN object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Wireless LAN.
- @return ApiWirelessWirelessLansRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Wireless LAN.
+	@return ApiWirelessWirelessLansRetrieveRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLansRetrieve(ctx context.Context, id int32) ApiWirelessWirelessLansRetrieveRequest {
 	return ApiWirelessWirelessLansRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLAN
+//
+//	@return WirelessLAN
 func (a *WirelessAPIService) WirelessWirelessLansRetrieveExecute(r ApiWirelessWirelessLansRetrieveRequest) (*WirelessLAN, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLAN
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLAN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansRetrieve")
@@ -4385,9 +4398,9 @@ func (a *WirelessAPIService) WirelessWirelessLansRetrieveExecute(r ApiWirelessWi
 }
 
 type ApiWirelessWirelessLansUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *WirelessAPIService
+	id                         int32
 	writableWirelessLANRequest *WritableWirelessLANRequest
 }
 
@@ -4405,26 +4418,27 @@ WirelessWirelessLansUpdate Method for WirelessWirelessLansUpdate
 
 Put a Wireless LAN object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this Wireless LAN.
- @return ApiWirelessWirelessLansUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this Wireless LAN.
+	@return ApiWirelessWirelessLansUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLansUpdate(ctx context.Context, id int32) ApiWirelessWirelessLansUpdateRequest {
 	return ApiWirelessWirelessLansUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLAN
+//
+//	@return WirelessLAN
 func (a *WirelessAPIService) WirelessWirelessLansUpdateExecute(r ApiWirelessWirelessLansUpdateRequest) (*WirelessLAN, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLAN
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLAN
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLansUpdate")
@@ -4513,8 +4527,8 @@ func (a *WirelessAPIService) WirelessWirelessLansUpdateExecute(r ApiWirelessWire
 }
 
 type ApiWirelessWirelessLinksBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                 context.Context
+	ApiService          *WirelessAPIService
 	wirelessLinkRequest *[]WirelessLinkRequest
 }
 
@@ -4532,22 +4546,22 @@ WirelessWirelessLinksBulkDestroy Method for WirelessWirelessLinksBulkDestroy
 
 Delete a list of wireless link objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLinksBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLinksBulkDestroyRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLinksBulkDestroy(ctx context.Context) ApiWirelessWirelessLinksBulkDestroyRequest {
 	return ApiWirelessWirelessLinksBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *WirelessAPIService) WirelessWirelessLinksBulkDestroyExecute(r ApiWirelessWirelessLinksBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksBulkDestroy")
@@ -4626,8 +4640,8 @@ func (a *WirelessAPIService) WirelessWirelessLinksBulkDestroyExecute(r ApiWirele
 }
 
 type ApiWirelessWirelessLinksBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                 context.Context
+	ApiService          *WirelessAPIService
 	wirelessLinkRequest *[]WirelessLinkRequest
 }
 
@@ -4645,24 +4659,25 @@ WirelessWirelessLinksBulkPartialUpdate Method for WirelessWirelessLinksBulkParti
 
 Patch a list of wireless link objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLinksBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLinksBulkPartialUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLinksBulkPartialUpdate(ctx context.Context) ApiWirelessWirelessLinksBulkPartialUpdateRequest {
 	return ApiWirelessWirelessLinksBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []WirelessLink
+//
+//	@return []WirelessLink
 func (a *WirelessAPIService) WirelessWirelessLinksBulkPartialUpdateExecute(r ApiWirelessWirelessLinksBulkPartialUpdateRequest) ([]WirelessLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []WirelessLink
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []WirelessLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksBulkPartialUpdate")
@@ -4750,8 +4765,8 @@ func (a *WirelessAPIService) WirelessWirelessLinksBulkPartialUpdateExecute(r Api
 }
 
 type ApiWirelessWirelessLinksBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                 context.Context
+	ApiService          *WirelessAPIService
 	wirelessLinkRequest *[]WirelessLinkRequest
 }
 
@@ -4769,24 +4784,25 @@ WirelessWirelessLinksBulkUpdate Method for WirelessWirelessLinksBulkUpdate
 
 Put a list of wireless link objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLinksBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLinksBulkUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLinksBulkUpdate(ctx context.Context) ApiWirelessWirelessLinksBulkUpdateRequest {
 	return ApiWirelessWirelessLinksBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []WirelessLink
+//
+//	@return []WirelessLink
 func (a *WirelessAPIService) WirelessWirelessLinksBulkUpdateExecute(r ApiWirelessWirelessLinksBulkUpdateRequest) ([]WirelessLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []WirelessLink
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []WirelessLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksBulkUpdate")
@@ -4874,8 +4890,8 @@ func (a *WirelessAPIService) WirelessWirelessLinksBulkUpdateExecute(r ApiWireles
 }
 
 type ApiWirelessWirelessLinksCreateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
+	ctx                         context.Context
+	ApiService                  *WirelessAPIService
 	writableWirelessLinkRequest *WritableWirelessLinkRequest
 }
 
@@ -4893,24 +4909,25 @@ WirelessWirelessLinksCreate Method for WirelessWirelessLinksCreate
 
 Post a list of wireless link objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLinksCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLinksCreateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLinksCreate(ctx context.Context) ApiWirelessWirelessLinksCreateRequest {
 	return ApiWirelessWirelessLinksCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLink
+//
+//	@return WirelessLink
 func (a *WirelessAPIService) WirelessWirelessLinksCreateExecute(r ApiWirelessWirelessLinksCreateRequest) (*WirelessLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLink
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksCreate")
@@ -4998,9 +5015,9 @@ func (a *WirelessAPIService) WirelessWirelessLinksCreateExecute(r ApiWirelessWir
 }
 
 type ApiWirelessWirelessLinksDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WirelessAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiWirelessWirelessLinksDestroyRequest) Execute() (*http.Response, error) {
@@ -5012,24 +5029,24 @@ WirelessWirelessLinksDestroy Method for WirelessWirelessLinksDestroy
 
 Delete a wireless link object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this wireless link.
- @return ApiWirelessWirelessLinksDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this wireless link.
+	@return ApiWirelessWirelessLinksDestroyRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLinksDestroy(ctx context.Context, id int32) ApiWirelessWirelessLinksDestroyRequest {
 	return ApiWirelessWirelessLinksDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *WirelessAPIService) WirelessWirelessLinksDestroyExecute(r ApiWirelessWirelessLinksDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksDestroy")
@@ -5104,92 +5121,92 @@ func (a *WirelessAPIService) WirelessWirelessLinksDestroyExecute(r ApiWirelessWi
 }
 
 type ApiWirelessWirelessLinksListRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
-	authCipher *[]string
-	authCipherN *[]string
-	authPsk *[]string
-	authPskEmpty *[]string
-	authPskIc *[]string
-	authPskIe *[]string
-	authPskIew *[]string
-	authPskIsw *[]string
-	authPskN *[]string
-	authPskNic *[]string
-	authPskNie *[]string
-	authPskNiew *[]string
-	authPskNisw *[]string
-	authType *[]string
-	authTypeN *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *WirelessAPIService
+	authCipher       *[]string
+	authCipherN      *[]string
+	authPsk          *[]string
+	authPskEmpty     *[]string
+	authPskIc        *[]string
+	authPskIe        *[]string
+	authPskIew       *[]string
+	authPskIsw       *[]string
+	authPskN         *[]string
+	authPskNic       *[]string
+	authPskNie       *[]string
+	authPskNiew      *[]string
+	authPskNisw      *[]string
+	authType         *[]string
+	authTypeN        *[]string
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	interfaceAId *[]int32
-	interfaceAIdGt *[]int32
-	interfaceAIdGte *[]int32
-	interfaceAIdLt *[]int32
-	interfaceAIdLte *[]int32
-	interfaceAIdN *[]int32
-	interfaceBId *[]int32
-	interfaceBIdGt *[]int32
-	interfaceBIdGte *[]int32
-	interfaceBIdLt *[]int32
-	interfaceBIdLte *[]int32
-	interfaceBIdN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	offset *int32
-	ordering *string
-	q *string
-	ssid *[]string
-	ssidEmpty *[]string
-	ssidIc *[]string
-	ssidIe *[]string
-	ssidIew *[]string
-	ssidIsw *[]string
-	ssidN *[]string
-	ssidNic *[]string
-	ssidNie *[]string
-	ssidNiew *[]string
-	ssidNisw *[]string
-	status *[]string
-	statusN *[]string
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]int32
-	tenantGroupN *[]int32
-	tenantGroupId *[]int32
-	tenantGroupIdN *[]int32
-	tenantId *[]*int32
-	tenantIdN *[]*int32
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	interfaceAId     *[]int32
+	interfaceAIdGt   *[]int32
+	interfaceAIdGte  *[]int32
+	interfaceAIdLt   *[]int32
+	interfaceAIdLte  *[]int32
+	interfaceAIdN    *[]int32
+	interfaceBId     *[]int32
+	interfaceBIdGt   *[]int32
+	interfaceBIdGte  *[]int32
+	interfaceBIdLt   *[]int32
+	interfaceBIdLte  *[]int32
+	interfaceBIdN    *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	offset           *int32
+	ordering         *string
+	q                *string
+	ssid             *[]string
+	ssidEmpty        *[]string
+	ssidIc           *[]string
+	ssidIe           *[]string
+	ssidIew          *[]string
+	ssidIsw          *[]string
+	ssidN            *[]string
+	ssidNic          *[]string
+	ssidNie          *[]string
+	ssidNiew         *[]string
+	ssidNisw         *[]string
+	status           *[]string
+	statusN          *[]string
+	tag              *[]string
+	tagN             *[]string
+	tenant           *[]string
+	tenantN          *[]string
+	tenantGroup      *[]int32
+	tenantGroupN     *[]int32
+	tenantGroupId    *[]int32
+	tenantGroupIdN   *[]int32
+	tenantId         *[]*int32
+	tenantIdN        *[]*int32
 	updatedByRequest *string
 }
 
@@ -5645,24 +5662,25 @@ WirelessWirelessLinksList Method for WirelessWirelessLinksList
 
 Get a list of wireless link objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiWirelessWirelessLinksListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiWirelessWirelessLinksListRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLinksList(ctx context.Context) ApiWirelessWirelessLinksListRequest {
 	return ApiWirelessWirelessLinksListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedWirelessLinkList
+//
+//	@return PaginatedWirelessLinkList
 func (a *WirelessAPIService) WirelessWirelessLinksListExecute(r ApiWirelessWirelessLinksListRequest) (*PaginatedWirelessLinkList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedWirelessLinkList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedWirelessLinkList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksList")
@@ -6632,9 +6650,9 @@ func (a *WirelessAPIService) WirelessWirelessLinksListExecute(r ApiWirelessWirel
 }
 
 type ApiWirelessWirelessLinksPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
-	id int32
+	ctx                                context.Context
+	ApiService                         *WirelessAPIService
+	id                                 int32
 	patchedWritableWirelessLinkRequest *PatchedWritableWirelessLinkRequest
 }
 
@@ -6652,26 +6670,27 @@ WirelessWirelessLinksPartialUpdate Method for WirelessWirelessLinksPartialUpdate
 
 Patch a wireless link object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this wireless link.
- @return ApiWirelessWirelessLinksPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this wireless link.
+	@return ApiWirelessWirelessLinksPartialUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLinksPartialUpdate(ctx context.Context, id int32) ApiWirelessWirelessLinksPartialUpdateRequest {
 	return ApiWirelessWirelessLinksPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLink
+//
+//	@return WirelessLink
 func (a *WirelessAPIService) WirelessWirelessLinksPartialUpdateExecute(r ApiWirelessWirelessLinksPartialUpdateRequest) (*WirelessLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLink
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksPartialUpdate")
@@ -6757,9 +6776,9 @@ func (a *WirelessAPIService) WirelessWirelessLinksPartialUpdateExecute(r ApiWire
 }
 
 type ApiWirelessWirelessLinksRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WirelessAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiWirelessWirelessLinksRetrieveRequest) Execute() (*WirelessLink, *http.Response, error) {
@@ -6771,26 +6790,27 @@ WirelessWirelessLinksRetrieve Method for WirelessWirelessLinksRetrieve
 
 Get a wireless link object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this wireless link.
- @return ApiWirelessWirelessLinksRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this wireless link.
+	@return ApiWirelessWirelessLinksRetrieveRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLinksRetrieve(ctx context.Context, id int32) ApiWirelessWirelessLinksRetrieveRequest {
 	return ApiWirelessWirelessLinksRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLink
+//
+//	@return WirelessLink
 func (a *WirelessAPIService) WirelessWirelessLinksRetrieveExecute(r ApiWirelessWirelessLinksRetrieveRequest) (*WirelessLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLink
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksRetrieve")
@@ -6874,9 +6894,9 @@ func (a *WirelessAPIService) WirelessWirelessLinksRetrieveExecute(r ApiWirelessW
 }
 
 type ApiWirelessWirelessLinksUpdateRequest struct {
-	ctx context.Context
-	ApiService *WirelessAPIService
-	id int32
+	ctx                         context.Context
+	ApiService                  *WirelessAPIService
+	id                          int32
 	writableWirelessLinkRequest *WritableWirelessLinkRequest
 }
 
@@ -6894,26 +6914,27 @@ WirelessWirelessLinksUpdate Method for WirelessWirelessLinksUpdate
 
 Put a wireless link object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this wireless link.
- @return ApiWirelessWirelessLinksUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this wireless link.
+	@return ApiWirelessWirelessLinksUpdateRequest
 */
 func (a *WirelessAPIService) WirelessWirelessLinksUpdate(ctx context.Context, id int32) ApiWirelessWirelessLinksUpdateRequest {
 	return ApiWirelessWirelessLinksUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return WirelessLink
+//
+//	@return WirelessLink
 func (a *WirelessAPIService) WirelessWirelessLinksUpdateExecute(r ApiWirelessWirelessLinksUpdateRequest) (*WirelessLink, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *WirelessLink
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *WirelessLink
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WirelessAPIService.WirelessWirelessLinksUpdate")

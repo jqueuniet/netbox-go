@@ -16,17 +16,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
+	"time"
 )
-
 
 // DcimAPIService DcimAPI service
 type DcimAPIService service
 
 type ApiDcimCableTerminationsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                     context.Context
+	ApiService              *DcimAPIService
 	cableTerminationRequest *[]CableTerminationRequest
 }
 
@@ -44,22 +44,22 @@ DcimCableTerminationsBulkDestroy Method for DcimCableTerminationsBulkDestroy
 
 Delete a list of cable termination objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimCableTerminationsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimCableTerminationsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimCableTerminationsBulkDestroy(ctx context.Context) ApiDcimCableTerminationsBulkDestroyRequest {
 	return ApiDcimCableTerminationsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimCableTerminationsBulkDestroyExecute(r ApiDcimCableTerminationsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCableTerminationsBulkDestroy")
@@ -138,8 +138,8 @@ func (a *DcimAPIService) DcimCableTerminationsBulkDestroyExecute(r ApiDcimCableT
 }
 
 type ApiDcimCableTerminationsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                     context.Context
+	ApiService              *DcimAPIService
 	cableTerminationRequest *[]CableTerminationRequest
 }
 
@@ -157,24 +157,25 @@ DcimCableTerminationsBulkPartialUpdate Method for DcimCableTerminationsBulkParti
 
 Patch a list of cable termination objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimCableTerminationsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimCableTerminationsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimCableTerminationsBulkPartialUpdate(ctx context.Context) ApiDcimCableTerminationsBulkPartialUpdateRequest {
 	return ApiDcimCableTerminationsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CableTermination
+//
+//	@return []CableTermination
 func (a *DcimAPIService) DcimCableTerminationsBulkPartialUpdateExecute(r ApiDcimCableTerminationsBulkPartialUpdateRequest) ([]CableTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CableTermination
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CableTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCableTerminationsBulkPartialUpdate")
@@ -262,8 +263,8 @@ func (a *DcimAPIService) DcimCableTerminationsBulkPartialUpdateExecute(r ApiDcim
 }
 
 type ApiDcimCableTerminationsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                     context.Context
+	ApiService              *DcimAPIService
 	cableTerminationRequest *[]CableTerminationRequest
 }
 
@@ -281,24 +282,25 @@ DcimCableTerminationsBulkUpdate Method for DcimCableTerminationsBulkUpdate
 
 Put a list of cable termination objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimCableTerminationsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimCableTerminationsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimCableTerminationsBulkUpdate(ctx context.Context) ApiDcimCableTerminationsBulkUpdateRequest {
 	return ApiDcimCableTerminationsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []CableTermination
+//
+//	@return []CableTermination
 func (a *DcimAPIService) DcimCableTerminationsBulkUpdateExecute(r ApiDcimCableTerminationsBulkUpdateRequest) ([]CableTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []CableTermination
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []CableTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCableTerminationsBulkUpdate")
@@ -386,8 +388,8 @@ func (a *DcimAPIService) DcimCableTerminationsBulkUpdateExecute(r ApiDcimCableTe
 }
 
 type ApiDcimCableTerminationsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                     context.Context
+	ApiService              *DcimAPIService
 	cableTerminationRequest *CableTerminationRequest
 }
 
@@ -405,24 +407,25 @@ DcimCableTerminationsCreate Method for DcimCableTerminationsCreate
 
 Post a list of cable termination objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimCableTerminationsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimCableTerminationsCreateRequest
 */
 func (a *DcimAPIService) DcimCableTerminationsCreate(ctx context.Context) ApiDcimCableTerminationsCreateRequest {
 	return ApiDcimCableTerminationsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return CableTermination
+//
+//	@return CableTermination
 func (a *DcimAPIService) DcimCableTerminationsCreateExecute(r ApiDcimCableTerminationsCreateRequest) (*CableTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CableTermination
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CableTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCableTerminationsCreate")
@@ -510,9 +513,9 @@ func (a *DcimAPIService) DcimCableTerminationsCreateExecute(r ApiDcimCableTermin
 }
 
 type ApiDcimCableTerminationsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimCableTerminationsDestroyRequest) Execute() (*http.Response, error) {
@@ -524,24 +527,24 @@ DcimCableTerminationsDestroy Method for DcimCableTerminationsDestroy
 
 Delete a cable termination object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this cable termination.
- @return ApiDcimCableTerminationsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this cable termination.
+	@return ApiDcimCableTerminationsDestroyRequest
 */
 func (a *DcimAPIService) DcimCableTerminationsDestroy(ctx context.Context, id int32) ApiDcimCableTerminationsDestroyRequest {
 	return ApiDcimCableTerminationsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimCableTerminationsDestroyExecute(r ApiDcimCableTerminationsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCableTerminationsDestroy")
@@ -616,28 +619,28 @@ func (a *DcimAPIService) DcimCableTerminationsDestroyExecute(r ApiDcimCableTermi
 }
 
 type ApiDcimCableTerminationsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	cable *int32
-	cableN *int32
-	cableEnd *string
-	cableEndN *string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	limit *int32
-	offset *int32
-	ordering *string
-	terminationId *[]int32
-	terminationIdGt *[]int32
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	cable            *int32
+	cableN           *int32
+	cableEnd         *string
+	cableEndN        *string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	limit            *int32
+	offset           *int32
+	ordering         *string
+	terminationId    *[]int32
+	terminationIdGt  *[]int32
 	terminationIdGte *[]int32
-	terminationIdLt *[]int32
+	terminationIdLt  *[]int32
 	terminationIdLte *[]int32
-	terminationIdN *[]int32
-	terminationType *string
+	terminationIdN   *[]int32
+	terminationType  *string
 	terminationTypeN *string
 }
 
@@ -760,24 +763,25 @@ DcimCableTerminationsList Method for DcimCableTerminationsList
 
 Get a list of cable termination objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimCableTerminationsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimCableTerminationsListRequest
 */
 func (a *DcimAPIService) DcimCableTerminationsList(ctx context.Context) ApiDcimCableTerminationsListRequest {
 	return ApiDcimCableTerminationsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedCableTerminationList
+//
+//	@return PaginatedCableTerminationList
 func (a *DcimAPIService) DcimCableTerminationsListExecute(r ApiDcimCableTerminationsListRequest) (*PaginatedCableTerminationList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedCableTerminationList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedCableTerminationList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCableTerminationsList")
@@ -1019,9 +1023,9 @@ func (a *DcimAPIService) DcimCableTerminationsListExecute(r ApiDcimCableTerminat
 }
 
 type ApiDcimCableTerminationsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                            context.Context
+	ApiService                     *DcimAPIService
+	id                             int32
 	patchedCableTerminationRequest *PatchedCableTerminationRequest
 }
 
@@ -1039,26 +1043,27 @@ DcimCableTerminationsPartialUpdate Method for DcimCableTerminationsPartialUpdate
 
 Patch a cable termination object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this cable termination.
- @return ApiDcimCableTerminationsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this cable termination.
+	@return ApiDcimCableTerminationsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimCableTerminationsPartialUpdate(ctx context.Context, id int32) ApiDcimCableTerminationsPartialUpdateRequest {
 	return ApiDcimCableTerminationsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CableTermination
+//
+//	@return CableTermination
 func (a *DcimAPIService) DcimCableTerminationsPartialUpdateExecute(r ApiDcimCableTerminationsPartialUpdateRequest) (*CableTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CableTermination
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CableTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCableTerminationsPartialUpdate")
@@ -1144,9 +1149,9 @@ func (a *DcimAPIService) DcimCableTerminationsPartialUpdateExecute(r ApiDcimCabl
 }
 
 type ApiDcimCableTerminationsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimCableTerminationsRetrieveRequest) Execute() (*CableTermination, *http.Response, error) {
@@ -1158,26 +1163,27 @@ DcimCableTerminationsRetrieve Method for DcimCableTerminationsRetrieve
 
 Get a cable termination object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this cable termination.
- @return ApiDcimCableTerminationsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this cable termination.
+	@return ApiDcimCableTerminationsRetrieveRequest
 */
 func (a *DcimAPIService) DcimCableTerminationsRetrieve(ctx context.Context, id int32) ApiDcimCableTerminationsRetrieveRequest {
 	return ApiDcimCableTerminationsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CableTermination
+//
+//	@return CableTermination
 func (a *DcimAPIService) DcimCableTerminationsRetrieveExecute(r ApiDcimCableTerminationsRetrieveRequest) (*CableTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CableTermination
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CableTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCableTerminationsRetrieve")
@@ -1261,9 +1267,9 @@ func (a *DcimAPIService) DcimCableTerminationsRetrieveExecute(r ApiDcimCableTerm
 }
 
 type ApiDcimCableTerminationsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                     context.Context
+	ApiService              *DcimAPIService
+	id                      int32
 	cableTerminationRequest *CableTerminationRequest
 }
 
@@ -1281,26 +1287,27 @@ DcimCableTerminationsUpdate Method for DcimCableTerminationsUpdate
 
 Put a cable termination object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this cable termination.
- @return ApiDcimCableTerminationsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this cable termination.
+	@return ApiDcimCableTerminationsUpdateRequest
 */
 func (a *DcimAPIService) DcimCableTerminationsUpdate(ctx context.Context, id int32) ApiDcimCableTerminationsUpdateRequest {
 	return ApiDcimCableTerminationsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return CableTermination
+//
+//	@return CableTermination
 func (a *DcimAPIService) DcimCableTerminationsUpdateExecute(r ApiDcimCableTerminationsUpdateRequest) (*CableTermination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *CableTermination
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *CableTermination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCableTerminationsUpdate")
@@ -1389,8 +1396,8 @@ func (a *DcimAPIService) DcimCableTerminationsUpdateExecute(r ApiDcimCableTermin
 }
 
 type ApiDcimCablesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx          context.Context
+	ApiService   *DcimAPIService
 	cableRequest *[]CableRequest
 }
 
@@ -1408,22 +1415,22 @@ DcimCablesBulkDestroy Method for DcimCablesBulkDestroy
 
 Delete a list of cable objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimCablesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimCablesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimCablesBulkDestroy(ctx context.Context) ApiDcimCablesBulkDestroyRequest {
 	return ApiDcimCablesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimCablesBulkDestroyExecute(r ApiDcimCablesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCablesBulkDestroy")
@@ -1502,8 +1509,8 @@ func (a *DcimAPIService) DcimCablesBulkDestroyExecute(r ApiDcimCablesBulkDestroy
 }
 
 type ApiDcimCablesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx          context.Context
+	ApiService   *DcimAPIService
 	cableRequest *[]CableRequest
 }
 
@@ -1521,24 +1528,25 @@ DcimCablesBulkPartialUpdate Method for DcimCablesBulkPartialUpdate
 
 Patch a list of cable objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimCablesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimCablesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimCablesBulkPartialUpdate(ctx context.Context) ApiDcimCablesBulkPartialUpdateRequest {
 	return ApiDcimCablesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Cable
+//
+//	@return []Cable
 func (a *DcimAPIService) DcimCablesBulkPartialUpdateExecute(r ApiDcimCablesBulkPartialUpdateRequest) ([]Cable, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Cable
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Cable
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCablesBulkPartialUpdate")
@@ -1626,8 +1634,8 @@ func (a *DcimAPIService) DcimCablesBulkPartialUpdateExecute(r ApiDcimCablesBulkP
 }
 
 type ApiDcimCablesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx          context.Context
+	ApiService   *DcimAPIService
 	cableRequest *[]CableRequest
 }
 
@@ -1645,24 +1653,25 @@ DcimCablesBulkUpdate Method for DcimCablesBulkUpdate
 
 Put a list of cable objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimCablesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimCablesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimCablesBulkUpdate(ctx context.Context) ApiDcimCablesBulkUpdateRequest {
 	return ApiDcimCablesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Cable
+//
+//	@return []Cable
 func (a *DcimAPIService) DcimCablesBulkUpdateExecute(r ApiDcimCablesBulkUpdateRequest) ([]Cable, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Cable
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Cable
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCablesBulkUpdate")
@@ -1750,8 +1759,8 @@ func (a *DcimAPIService) DcimCablesBulkUpdateExecute(r ApiDcimCablesBulkUpdateRe
 }
 
 type ApiDcimCablesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                  context.Context
+	ApiService           *DcimAPIService
 	writableCableRequest *WritableCableRequest
 }
 
@@ -1769,24 +1778,25 @@ DcimCablesCreate Method for DcimCablesCreate
 
 Post a list of cable objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimCablesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimCablesCreateRequest
 */
 func (a *DcimAPIService) DcimCablesCreate(ctx context.Context) ApiDcimCablesCreateRequest {
 	return ApiDcimCablesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Cable
+//
+//	@return Cable
 func (a *DcimAPIService) DcimCablesCreateExecute(r ApiDcimCablesCreateRequest) (*Cable, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Cable
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Cable
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCablesCreate")
@@ -1871,9 +1881,9 @@ func (a *DcimAPIService) DcimCablesCreateExecute(r ApiDcimCablesCreateRequest) (
 }
 
 type ApiDcimCablesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimCablesDestroyRequest) Execute() (*http.Response, error) {
@@ -1885,24 +1895,24 @@ DcimCablesDestroy Method for DcimCablesDestroy
 
 Delete a cable object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this cable.
- @return ApiDcimCablesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this cable.
+	@return ApiDcimCablesDestroyRequest
 */
 func (a *DcimAPIService) DcimCablesDestroy(ctx context.Context, id int32) ApiDcimCablesDestroyRequest {
 	return ApiDcimCablesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimCablesDestroyExecute(r ApiDcimCablesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCablesDestroy")
@@ -1977,81 +1987,81 @@ func (a *DcimAPIService) DcimCablesDestroyExecute(r ApiDcimCablesDestroyRequest)
 }
 
 type ApiDcimCablesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	color *[]string
-	colorN *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	device *[]string
-	deviceId *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	length *[]float64
-	lengthGt *[]float64
-	lengthGte *[]float64
-	lengthLt *[]float64
-	lengthLte *[]float64
-	lengthN *[]float64
-	lengthUnit *string
-	lengthUnitN *string
-	limit *int32
-	location *[]string
-	locationId *[]int32
-	offset *int32
-	ordering *string
-	q *string
-	rack *[]string
-	rackId *[]int32
-	site *[]string
-	siteId *[]int32
-	status *[]string
-	statusN *[]string
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]int32
-	tenantGroupN *[]int32
-	tenantGroupId *[]int32
-	tenantGroupIdN *[]int32
-	tenantId *[]*int32
-	tenantIdN *[]*int32
-	terminationAId *[]int32
-	terminationAType *string
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	color             *[]string
+	colorN            *[]string
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	device            *[]string
+	deviceId          *[]int32
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	label             *[]string
+	labelEmpty        *[]string
+	labelIc           *[]string
+	labelIe           *[]string
+	labelIew          *[]string
+	labelIsw          *[]string
+	labelN            *[]string
+	labelNic          *[]string
+	labelNie          *[]string
+	labelNiew         *[]string
+	labelNisw         *[]string
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	length            *[]float64
+	lengthGt          *[]float64
+	lengthGte         *[]float64
+	lengthLt          *[]float64
+	lengthLte         *[]float64
+	lengthN           *[]float64
+	lengthUnit        *string
+	lengthUnitN       *string
+	limit             *int32
+	location          *[]string
+	locationId        *[]int32
+	offset            *int32
+	ordering          *string
+	q                 *string
+	rack              *[]string
+	rackId            *[]int32
+	site              *[]string
+	siteId            *[]int32
+	status            *[]string
+	statusN           *[]string
+	tag               *[]string
+	tagN              *[]string
+	tenant            *[]string
+	tenantN           *[]string
+	tenantGroup       *[]int32
+	tenantGroupN      *[]int32
+	tenantGroupId     *[]int32
+	tenantGroupIdN    *[]int32
+	tenantId          *[]*int32
+	tenantIdN         *[]*int32
+	terminationAId    *[]int32
+	terminationAType  *string
 	terminationATypeN *string
-	terminationBId *[]int32
-	terminationBType *string
+	terminationBId    *[]int32
+	terminationBType  *string
 	terminationBTypeN *string
-	type_ *[]string
-	typeN *[]string
-	updatedByRequest *string
+	type_             *[]string
+	typeN             *[]string
+	updatedByRequest  *string
 }
 
 func (r ApiDcimCablesListRequest) Color(color []string) ApiDcimCablesListRequest {
@@ -2446,24 +2456,25 @@ DcimCablesList Method for DcimCablesList
 
 Get a list of cable objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimCablesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimCablesListRequest
 */
 func (a *DcimAPIService) DcimCablesList(ctx context.Context) ApiDcimCablesListRequest {
 	return ApiDcimCablesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedCableList
+//
+//	@return PaginatedCableList
 func (a *DcimAPIService) DcimCablesListExecute(r ApiDcimCablesListRequest) (*PaginatedCableList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedCableList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedCableList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCablesList")
@@ -3253,9 +3264,9 @@ func (a *DcimAPIService) DcimCablesListExecute(r ApiDcimCablesListRequest) (*Pag
 }
 
 type ApiDcimCablesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                         context.Context
+	ApiService                  *DcimAPIService
+	id                          int32
 	patchedWritableCableRequest *PatchedWritableCableRequest
 }
 
@@ -3273,26 +3284,27 @@ DcimCablesPartialUpdate Method for DcimCablesPartialUpdate
 
 Patch a cable object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this cable.
- @return ApiDcimCablesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this cable.
+	@return ApiDcimCablesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimCablesPartialUpdate(ctx context.Context, id int32) ApiDcimCablesPartialUpdateRequest {
 	return ApiDcimCablesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Cable
+//
+//	@return Cable
 func (a *DcimAPIService) DcimCablesPartialUpdateExecute(r ApiDcimCablesPartialUpdateRequest) (*Cable, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Cable
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Cable
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCablesPartialUpdate")
@@ -3378,9 +3390,9 @@ func (a *DcimAPIService) DcimCablesPartialUpdateExecute(r ApiDcimCablesPartialUp
 }
 
 type ApiDcimCablesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimCablesRetrieveRequest) Execute() (*Cable, *http.Response, error) {
@@ -3392,26 +3404,27 @@ DcimCablesRetrieve Method for DcimCablesRetrieve
 
 Get a cable object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this cable.
- @return ApiDcimCablesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this cable.
+	@return ApiDcimCablesRetrieveRequest
 */
 func (a *DcimAPIService) DcimCablesRetrieve(ctx context.Context, id int32) ApiDcimCablesRetrieveRequest {
 	return ApiDcimCablesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Cable
+//
+//	@return Cable
 func (a *DcimAPIService) DcimCablesRetrieveExecute(r ApiDcimCablesRetrieveRequest) (*Cable, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Cable
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Cable
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCablesRetrieve")
@@ -3495,9 +3508,9 @@ func (a *DcimAPIService) DcimCablesRetrieveExecute(r ApiDcimCablesRetrieveReques
 }
 
 type ApiDcimCablesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                  context.Context
+	ApiService           *DcimAPIService
+	id                   int32
 	writableCableRequest *WritableCableRequest
 }
 
@@ -3515,26 +3528,27 @@ DcimCablesUpdate Method for DcimCablesUpdate
 
 Put a cable object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this cable.
- @return ApiDcimCablesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this cable.
+	@return ApiDcimCablesUpdateRequest
 */
 func (a *DcimAPIService) DcimCablesUpdate(ctx context.Context, id int32) ApiDcimCablesUpdateRequest {
 	return ApiDcimCablesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Cable
+//
+//	@return Cable
 func (a *DcimAPIService) DcimCablesUpdateExecute(r ApiDcimCablesUpdateRequest) (*Cable, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Cable
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Cable
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimCablesUpdate")
@@ -3620,7 +3634,7 @@ func (a *DcimAPIService) DcimCablesUpdateExecute(r ApiDcimCablesUpdateRequest) (
 }
 
 type ApiDcimConnectedDeviceRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
 }
 
@@ -3638,24 +3652,25 @@ via a protocol such as LLDP. Two query parameters must be included in the reques
 * `peer_device`: The name of the peer device
 * `peer_interface`: The name of the peer interface
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConnectedDeviceRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConnectedDeviceRetrieveRequest
 */
 func (a *DcimAPIService) DcimConnectedDeviceRetrieve(ctx context.Context) ApiDcimConnectedDeviceRetrieveRequest {
 	return ApiDcimConnectedDeviceRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
+//
+//	@return map[string]interface{}
 func (a *DcimAPIService) DcimConnectedDeviceRetrieveExecute(r ApiDcimConnectedDeviceRetrieveRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConnectedDeviceRetrieve")
@@ -3738,8 +3753,8 @@ func (a *DcimAPIService) DcimConnectedDeviceRetrieveExecute(r ApiDcimConnectedDe
 }
 
 type ApiDcimConsolePortTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
 	consolePortTemplateRequest *[]ConsolePortTemplateRequest
 }
 
@@ -3757,22 +3772,22 @@ DcimConsolePortTemplatesBulkDestroy Method for DcimConsolePortTemplatesBulkDestr
 
 Delete a list of console port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsolePortTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsolePortTemplatesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimConsolePortTemplatesBulkDestroy(ctx context.Context) ApiDcimConsolePortTemplatesBulkDestroyRequest {
 	return ApiDcimConsolePortTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimConsolePortTemplatesBulkDestroyExecute(r ApiDcimConsolePortTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortTemplatesBulkDestroy")
@@ -3851,8 +3866,8 @@ func (a *DcimAPIService) DcimConsolePortTemplatesBulkDestroyExecute(r ApiDcimCon
 }
 
 type ApiDcimConsolePortTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
 	consolePortTemplateRequest *[]ConsolePortTemplateRequest
 }
 
@@ -3870,24 +3885,25 @@ DcimConsolePortTemplatesBulkPartialUpdate Method for DcimConsolePortTemplatesBul
 
 Patch a list of console port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsolePortTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsolePortTemplatesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimConsolePortTemplatesBulkPartialUpdate(ctx context.Context) ApiDcimConsolePortTemplatesBulkPartialUpdateRequest {
 	return ApiDcimConsolePortTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConsolePortTemplate
+//
+//	@return []ConsolePortTemplate
 func (a *DcimAPIService) DcimConsolePortTemplatesBulkPartialUpdateExecute(r ApiDcimConsolePortTemplatesBulkPartialUpdateRequest) ([]ConsolePortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConsolePortTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConsolePortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortTemplatesBulkPartialUpdate")
@@ -3975,8 +3991,8 @@ func (a *DcimAPIService) DcimConsolePortTemplatesBulkPartialUpdateExecute(r ApiD
 }
 
 type ApiDcimConsolePortTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
 	consolePortTemplateRequest *[]ConsolePortTemplateRequest
 }
 
@@ -3994,24 +4010,25 @@ DcimConsolePortTemplatesBulkUpdate Method for DcimConsolePortTemplatesBulkUpdate
 
 Put a list of console port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsolePortTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsolePortTemplatesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimConsolePortTemplatesBulkUpdate(ctx context.Context) ApiDcimConsolePortTemplatesBulkUpdateRequest {
 	return ApiDcimConsolePortTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConsolePortTemplate
+//
+//	@return []ConsolePortTemplate
 func (a *DcimAPIService) DcimConsolePortTemplatesBulkUpdateExecute(r ApiDcimConsolePortTemplatesBulkUpdateRequest) ([]ConsolePortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConsolePortTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConsolePortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortTemplatesBulkUpdate")
@@ -4099,8 +4116,8 @@ func (a *DcimAPIService) DcimConsolePortTemplatesBulkUpdateExecute(r ApiDcimCons
 }
 
 type ApiDcimConsolePortTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                                context.Context
+	ApiService                         *DcimAPIService
 	writableConsolePortTemplateRequest *WritableConsolePortTemplateRequest
 }
 
@@ -4118,24 +4135,25 @@ DcimConsolePortTemplatesCreate Method for DcimConsolePortTemplatesCreate
 
 Post a list of console port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsolePortTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsolePortTemplatesCreateRequest
 */
 func (a *DcimAPIService) DcimConsolePortTemplatesCreate(ctx context.Context) ApiDcimConsolePortTemplatesCreateRequest {
 	return ApiDcimConsolePortTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConsolePortTemplate
+//
+//	@return ConsolePortTemplate
 func (a *DcimAPIService) DcimConsolePortTemplatesCreateExecute(r ApiDcimConsolePortTemplatesCreateRequest) (*ConsolePortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsolePortTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsolePortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortTemplatesCreate")
@@ -4223,9 +4241,9 @@ func (a *DcimAPIService) DcimConsolePortTemplatesCreateExecute(r ApiDcimConsoleP
 }
 
 type ApiDcimConsolePortTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimConsolePortTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -4237,24 +4255,24 @@ DcimConsolePortTemplatesDestroy Method for DcimConsolePortTemplatesDestroy
 
 Delete a console port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console port template.
- @return ApiDcimConsolePortTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console port template.
+	@return ApiDcimConsolePortTemplatesDestroyRequest
 */
 func (a *DcimAPIService) DcimConsolePortTemplatesDestroy(ctx context.Context, id int32) ApiDcimConsolePortTemplatesDestroyRequest {
 	return ApiDcimConsolePortTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimConsolePortTemplatesDestroyExecute(r ApiDcimConsolePortTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortTemplatesDestroy")
@@ -4329,48 +4347,48 @@ func (a *DcimAPIService) DcimConsolePortTemplatesDestroyExecute(r ApiDcimConsole
 }
 
 type ApiDcimConsolePortTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	devicetypeId *[]*int32
-	devicetypeIdN *[]*int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	moduletypeId *[]*int32
-	moduletypeIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	type_ *string
-	typeN *string
+	devicetypeId     *[]*int32
+	devicetypeIdN    *[]*int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	moduletypeId     *[]*int32
+	moduletypeIdN    *[]*int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	type_            *string
+	typeN            *string
 	updatedByRequest *string
 }
 
@@ -4598,24 +4616,25 @@ DcimConsolePortTemplatesList Method for DcimConsolePortTemplatesList
 
 Get a list of console port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsolePortTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsolePortTemplatesListRequest
 */
 func (a *DcimAPIService) DcimConsolePortTemplatesList(ctx context.Context) ApiDcimConsolePortTemplatesListRequest {
 	return ApiDcimConsolePortTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedConsolePortTemplateList
+//
+//	@return PaginatedConsolePortTemplateList
 func (a *DcimAPIService) DcimConsolePortTemplatesListExecute(r ApiDcimConsolePortTemplatesListRequest) (*PaginatedConsolePortTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedConsolePortTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedConsolePortTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortTemplatesList")
@@ -5085,9 +5104,9 @@ func (a *DcimAPIService) DcimConsolePortTemplatesListExecute(r ApiDcimConsolePor
 }
 
 type ApiDcimConsolePortTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                       context.Context
+	ApiService                                *DcimAPIService
+	id                                        int32
 	patchedWritableConsolePortTemplateRequest *PatchedWritableConsolePortTemplateRequest
 }
 
@@ -5105,26 +5124,27 @@ DcimConsolePortTemplatesPartialUpdate Method for DcimConsolePortTemplatesPartial
 
 Patch a console port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console port template.
- @return ApiDcimConsolePortTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console port template.
+	@return ApiDcimConsolePortTemplatesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimConsolePortTemplatesPartialUpdate(ctx context.Context, id int32) ApiDcimConsolePortTemplatesPartialUpdateRequest {
 	return ApiDcimConsolePortTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsolePortTemplate
+//
+//	@return ConsolePortTemplate
 func (a *DcimAPIService) DcimConsolePortTemplatesPartialUpdateExecute(r ApiDcimConsolePortTemplatesPartialUpdateRequest) (*ConsolePortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsolePortTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsolePortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortTemplatesPartialUpdate")
@@ -5210,9 +5230,9 @@ func (a *DcimAPIService) DcimConsolePortTemplatesPartialUpdateExecute(r ApiDcimC
 }
 
 type ApiDcimConsolePortTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimConsolePortTemplatesRetrieveRequest) Execute() (*ConsolePortTemplate, *http.Response, error) {
@@ -5224,26 +5244,27 @@ DcimConsolePortTemplatesRetrieve Method for DcimConsolePortTemplatesRetrieve
 
 Get a console port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console port template.
- @return ApiDcimConsolePortTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console port template.
+	@return ApiDcimConsolePortTemplatesRetrieveRequest
 */
 func (a *DcimAPIService) DcimConsolePortTemplatesRetrieve(ctx context.Context, id int32) ApiDcimConsolePortTemplatesRetrieveRequest {
 	return ApiDcimConsolePortTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsolePortTemplate
+//
+//	@return ConsolePortTemplate
 func (a *DcimAPIService) DcimConsolePortTemplatesRetrieveExecute(r ApiDcimConsolePortTemplatesRetrieveRequest) (*ConsolePortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsolePortTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsolePortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortTemplatesRetrieve")
@@ -5327,9 +5348,9 @@ func (a *DcimAPIService) DcimConsolePortTemplatesRetrieveExecute(r ApiDcimConsol
 }
 
 type ApiDcimConsolePortTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                context.Context
+	ApiService                         *DcimAPIService
+	id                                 int32
 	writableConsolePortTemplateRequest *WritableConsolePortTemplateRequest
 }
 
@@ -5347,26 +5368,27 @@ DcimConsolePortTemplatesUpdate Method for DcimConsolePortTemplatesUpdate
 
 Put a console port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console port template.
- @return ApiDcimConsolePortTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console port template.
+	@return ApiDcimConsolePortTemplatesUpdateRequest
 */
 func (a *DcimAPIService) DcimConsolePortTemplatesUpdate(ctx context.Context, id int32) ApiDcimConsolePortTemplatesUpdateRequest {
 	return ApiDcimConsolePortTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsolePortTemplate
+//
+//	@return ConsolePortTemplate
 func (a *DcimAPIService) DcimConsolePortTemplatesUpdateExecute(r ApiDcimConsolePortTemplatesUpdateRequest) (*ConsolePortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsolePortTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsolePortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortTemplatesUpdate")
@@ -5455,8 +5477,8 @@ func (a *DcimAPIService) DcimConsolePortTemplatesUpdateExecute(r ApiDcimConsoleP
 }
 
 type ApiDcimConsolePortsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                context.Context
+	ApiService         *DcimAPIService
 	consolePortRequest *[]ConsolePortRequest
 }
 
@@ -5474,22 +5496,22 @@ DcimConsolePortsBulkDestroy Method for DcimConsolePortsBulkDestroy
 
 Delete a list of console port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsolePortsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsolePortsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimConsolePortsBulkDestroy(ctx context.Context) ApiDcimConsolePortsBulkDestroyRequest {
 	return ApiDcimConsolePortsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimConsolePortsBulkDestroyExecute(r ApiDcimConsolePortsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortsBulkDestroy")
@@ -5568,8 +5590,8 @@ func (a *DcimAPIService) DcimConsolePortsBulkDestroyExecute(r ApiDcimConsolePort
 }
 
 type ApiDcimConsolePortsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                context.Context
+	ApiService         *DcimAPIService
 	consolePortRequest *[]ConsolePortRequest
 }
 
@@ -5587,24 +5609,25 @@ DcimConsolePortsBulkPartialUpdate Method for DcimConsolePortsBulkPartialUpdate
 
 Patch a list of console port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsolePortsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsolePortsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimConsolePortsBulkPartialUpdate(ctx context.Context) ApiDcimConsolePortsBulkPartialUpdateRequest {
 	return ApiDcimConsolePortsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConsolePort
+//
+//	@return []ConsolePort
 func (a *DcimAPIService) DcimConsolePortsBulkPartialUpdateExecute(r ApiDcimConsolePortsBulkPartialUpdateRequest) ([]ConsolePort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConsolePort
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConsolePort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortsBulkPartialUpdate")
@@ -5692,8 +5715,8 @@ func (a *DcimAPIService) DcimConsolePortsBulkPartialUpdateExecute(r ApiDcimConso
 }
 
 type ApiDcimConsolePortsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                context.Context
+	ApiService         *DcimAPIService
 	consolePortRequest *[]ConsolePortRequest
 }
 
@@ -5711,24 +5734,25 @@ DcimConsolePortsBulkUpdate Method for DcimConsolePortsBulkUpdate
 
 Put a list of console port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsolePortsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsolePortsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimConsolePortsBulkUpdate(ctx context.Context) ApiDcimConsolePortsBulkUpdateRequest {
 	return ApiDcimConsolePortsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConsolePort
+//
+//	@return []ConsolePort
 func (a *DcimAPIService) DcimConsolePortsBulkUpdateExecute(r ApiDcimConsolePortsBulkUpdateRequest) ([]ConsolePort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConsolePort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConsolePort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortsBulkUpdate")
@@ -5816,8 +5840,8 @@ func (a *DcimAPIService) DcimConsolePortsBulkUpdateExecute(r ApiDcimConsolePorts
 }
 
 type ApiDcimConsolePortsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
 	writableConsolePortRequest *WritableConsolePortRequest
 }
 
@@ -5835,24 +5859,25 @@ DcimConsolePortsCreate Method for DcimConsolePortsCreate
 
 Post a list of console port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsolePortsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsolePortsCreateRequest
 */
 func (a *DcimAPIService) DcimConsolePortsCreate(ctx context.Context) ApiDcimConsolePortsCreateRequest {
 	return ApiDcimConsolePortsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConsolePort
+//
+//	@return ConsolePort
 func (a *DcimAPIService) DcimConsolePortsCreateExecute(r ApiDcimConsolePortsCreateRequest) (*ConsolePort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsolePort
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsolePort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortsCreate")
@@ -5940,9 +5965,9 @@ func (a *DcimAPIService) DcimConsolePortsCreateExecute(r ApiDcimConsolePortsCrea
 }
 
 type ApiDcimConsolePortsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimConsolePortsDestroyRequest) Execute() (*http.Response, error) {
@@ -5954,24 +5979,24 @@ DcimConsolePortsDestroy Method for DcimConsolePortsDestroy
 
 Delete a console port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console port.
- @return ApiDcimConsolePortsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console port.
+	@return ApiDcimConsolePortsDestroyRequest
 */
 func (a *DcimAPIService) DcimConsolePortsDestroy(ctx context.Context, id int32) ApiDcimConsolePortsDestroyRequest {
 	return ApiDcimConsolePortsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimConsolePortsDestroyExecute(r ApiDcimConsolePortsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortsDestroy")
@@ -6046,103 +6071,103 @@ func (a *DcimAPIService) DcimConsolePortsDestroyExecute(r ApiDcimConsolePortsDes
 }
 
 type ApiDcimConsolePortsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	cableEnd *string
-	cableEndN *string
-	cabled *bool
-	connected *bool
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	device *[]*string
-	deviceN *[]*string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
-	moduleId *[]*int32
-	moduleIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	occupied *bool
-	offset *int32
-	ordering *string
-	q *string
-	rack *[]string
-	rackN *[]string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	type_ *[]string
-	typeN *[]string
-	updatedByRequest *string
-	virtualChassis *[]string
-	virtualChassisN *[]string
-	virtualChassisId *[]int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	cableEnd          *string
+	cableEndN         *string
+	cabled            *bool
+	connected         *bool
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *[]string
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	device            *[]*string
+	deviceN           *[]*string
+	deviceId          *[]int32
+	deviceIdN         *[]int32
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	label             *[]string
+	labelEmpty        *[]string
+	labelIc           *[]string
+	labelIe           *[]string
+	labelIew          *[]string
+	labelIsw          *[]string
+	labelN            *[]string
+	labelNic          *[]string
+	labelNie          *[]string
+	labelNiew         *[]string
+	labelNisw         *[]string
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	location          *[]string
+	locationN         *[]string
+	locationId        *[]int32
+	locationIdN       *[]int32
+	moduleId          *[]*int32
+	moduleIdN         *[]*int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	occupied          *bool
+	offset            *int32
+	ordering          *string
+	q                 *string
+	rack              *[]string
+	rackN             *[]string
+	rackId            *[]int32
+	rackIdN           *[]int32
+	region            *[]int32
+	regionN           *[]int32
+	regionId          *[]int32
+	regionIdN         *[]int32
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]int32
+	siteGroupN        *[]int32
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	tag               *[]string
+	tagN              *[]string
+	type_             *[]string
+	typeN             *[]string
+	updatedByRequest  *string
+	virtualChassis    *[]string
+	virtualChassisN   *[]string
+	virtualChassisId  *[]int32
 	virtualChassisIdN *[]int32
 }
 
@@ -6673,24 +6698,25 @@ DcimConsolePortsList Method for DcimConsolePortsList
 
 Get a list of console port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsolePortsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsolePortsListRequest
 */
 func (a *DcimAPIService) DcimConsolePortsList(ctx context.Context) ApiDcimConsolePortsListRequest {
 	return ApiDcimConsolePortsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedConsolePortList
+//
+//	@return PaginatedConsolePortList
 func (a *DcimAPIService) DcimConsolePortsListExecute(r ApiDcimConsolePortsListRequest) (*PaginatedConsolePortList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedConsolePortList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedConsolePortList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortsList")
@@ -7741,9 +7767,9 @@ func (a *DcimAPIService) DcimConsolePortsListExecute(r ApiDcimConsolePortsListRe
 }
 
 type ApiDcimConsolePortsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                               context.Context
+	ApiService                        *DcimAPIService
+	id                                int32
 	patchedWritableConsolePortRequest *PatchedWritableConsolePortRequest
 }
 
@@ -7761,26 +7787,27 @@ DcimConsolePortsPartialUpdate Method for DcimConsolePortsPartialUpdate
 
 Patch a console port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console port.
- @return ApiDcimConsolePortsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console port.
+	@return ApiDcimConsolePortsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimConsolePortsPartialUpdate(ctx context.Context, id int32) ApiDcimConsolePortsPartialUpdateRequest {
 	return ApiDcimConsolePortsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsolePort
+//
+//	@return ConsolePort
 func (a *DcimAPIService) DcimConsolePortsPartialUpdateExecute(r ApiDcimConsolePortsPartialUpdateRequest) (*ConsolePort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsolePort
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsolePort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortsPartialUpdate")
@@ -7866,9 +7893,9 @@ func (a *DcimAPIService) DcimConsolePortsPartialUpdateExecute(r ApiDcimConsolePo
 }
 
 type ApiDcimConsolePortsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimConsolePortsRetrieveRequest) Execute() (*ConsolePort, *http.Response, error) {
@@ -7880,26 +7907,27 @@ DcimConsolePortsRetrieve Method for DcimConsolePortsRetrieve
 
 Get a console port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console port.
- @return ApiDcimConsolePortsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console port.
+	@return ApiDcimConsolePortsRetrieveRequest
 */
 func (a *DcimAPIService) DcimConsolePortsRetrieve(ctx context.Context, id int32) ApiDcimConsolePortsRetrieveRequest {
 	return ApiDcimConsolePortsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsolePort
+//
+//	@return ConsolePort
 func (a *DcimAPIService) DcimConsolePortsRetrieveExecute(r ApiDcimConsolePortsRetrieveRequest) (*ConsolePort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsolePort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsolePort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortsRetrieve")
@@ -7983,9 +8011,9 @@ func (a *DcimAPIService) DcimConsolePortsRetrieveExecute(r ApiDcimConsolePortsRe
 }
 
 type ApiDcimConsolePortsTraceRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimConsolePortsTraceRetrieveRequest) Execute() (*ConsolePort, *http.Response, error) {
@@ -7997,26 +8025,27 @@ DcimConsolePortsTraceRetrieve Method for DcimConsolePortsTraceRetrieve
 
 Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console port.
- @return ApiDcimConsolePortsTraceRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console port.
+	@return ApiDcimConsolePortsTraceRetrieveRequest
 */
 func (a *DcimAPIService) DcimConsolePortsTraceRetrieve(ctx context.Context, id int32) ApiDcimConsolePortsTraceRetrieveRequest {
 	return ApiDcimConsolePortsTraceRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsolePort
+//
+//	@return ConsolePort
 func (a *DcimAPIService) DcimConsolePortsTraceRetrieveExecute(r ApiDcimConsolePortsTraceRetrieveRequest) (*ConsolePort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsolePort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsolePort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortsTraceRetrieve")
@@ -8100,9 +8129,9 @@ func (a *DcimAPIService) DcimConsolePortsTraceRetrieveExecute(r ApiDcimConsolePo
 }
 
 type ApiDcimConsolePortsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
+	id                         int32
 	writableConsolePortRequest *WritableConsolePortRequest
 }
 
@@ -8120,26 +8149,27 @@ DcimConsolePortsUpdate Method for DcimConsolePortsUpdate
 
 Put a console port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console port.
- @return ApiDcimConsolePortsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console port.
+	@return ApiDcimConsolePortsUpdateRequest
 */
 func (a *DcimAPIService) DcimConsolePortsUpdate(ctx context.Context, id int32) ApiDcimConsolePortsUpdateRequest {
 	return ApiDcimConsolePortsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsolePort
+//
+//	@return ConsolePort
 func (a *DcimAPIService) DcimConsolePortsUpdateExecute(r ApiDcimConsolePortsUpdateRequest) (*ConsolePort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsolePort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsolePort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsolePortsUpdate")
@@ -8228,8 +8258,8 @@ func (a *DcimAPIService) DcimConsolePortsUpdateExecute(r ApiDcimConsolePortsUpda
 }
 
 type ApiDcimConsoleServerPortTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
 	consoleServerPortTemplateRequest *[]ConsoleServerPortTemplateRequest
 }
 
@@ -8247,22 +8277,22 @@ DcimConsoleServerPortTemplatesBulkDestroy Method for DcimConsoleServerPortTempla
 
 Delete a list of console server port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsoleServerPortTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsoleServerPortTemplatesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesBulkDestroy(ctx context.Context) ApiDcimConsoleServerPortTemplatesBulkDestroyRequest {
 	return ApiDcimConsoleServerPortTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesBulkDestroyExecute(r ApiDcimConsoleServerPortTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortTemplatesBulkDestroy")
@@ -8341,8 +8371,8 @@ func (a *DcimAPIService) DcimConsoleServerPortTemplatesBulkDestroyExecute(r ApiD
 }
 
 type ApiDcimConsoleServerPortTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
 	consoleServerPortTemplateRequest *[]ConsoleServerPortTemplateRequest
 }
 
@@ -8360,24 +8390,25 @@ DcimConsoleServerPortTemplatesBulkPartialUpdate Method for DcimConsoleServerPort
 
 Patch a list of console server port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsoleServerPortTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsoleServerPortTemplatesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesBulkPartialUpdate(ctx context.Context) ApiDcimConsoleServerPortTemplatesBulkPartialUpdateRequest {
 	return ApiDcimConsoleServerPortTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConsoleServerPortTemplate
+//
+//	@return []ConsoleServerPortTemplate
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesBulkPartialUpdateExecute(r ApiDcimConsoleServerPortTemplatesBulkPartialUpdateRequest) ([]ConsoleServerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConsoleServerPortTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConsoleServerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortTemplatesBulkPartialUpdate")
@@ -8465,8 +8496,8 @@ func (a *DcimAPIService) DcimConsoleServerPortTemplatesBulkPartialUpdateExecute(
 }
 
 type ApiDcimConsoleServerPortTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
 	consoleServerPortTemplateRequest *[]ConsoleServerPortTemplateRequest
 }
 
@@ -8484,24 +8515,25 @@ DcimConsoleServerPortTemplatesBulkUpdate Method for DcimConsoleServerPortTemplat
 
 Put a list of console server port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsoleServerPortTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsoleServerPortTemplatesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesBulkUpdate(ctx context.Context) ApiDcimConsoleServerPortTemplatesBulkUpdateRequest {
 	return ApiDcimConsoleServerPortTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConsoleServerPortTemplate
+//
+//	@return []ConsoleServerPortTemplate
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesBulkUpdateExecute(r ApiDcimConsoleServerPortTemplatesBulkUpdateRequest) ([]ConsoleServerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConsoleServerPortTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConsoleServerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortTemplatesBulkUpdate")
@@ -8589,8 +8621,8 @@ func (a *DcimAPIService) DcimConsoleServerPortTemplatesBulkUpdateExecute(r ApiDc
 }
 
 type ApiDcimConsoleServerPortTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                                      context.Context
+	ApiService                               *DcimAPIService
 	writableConsoleServerPortTemplateRequest *WritableConsoleServerPortTemplateRequest
 }
 
@@ -8608,24 +8640,25 @@ DcimConsoleServerPortTemplatesCreate Method for DcimConsoleServerPortTemplatesCr
 
 Post a list of console server port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsoleServerPortTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsoleServerPortTemplatesCreateRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesCreate(ctx context.Context) ApiDcimConsoleServerPortTemplatesCreateRequest {
 	return ApiDcimConsoleServerPortTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleServerPortTemplate
+//
+//	@return ConsoleServerPortTemplate
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesCreateExecute(r ApiDcimConsoleServerPortTemplatesCreateRequest) (*ConsoleServerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleServerPortTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleServerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortTemplatesCreate")
@@ -8713,9 +8746,9 @@ func (a *DcimAPIService) DcimConsoleServerPortTemplatesCreateExecute(r ApiDcimCo
 }
 
 type ApiDcimConsoleServerPortTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimConsoleServerPortTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -8727,24 +8760,24 @@ DcimConsoleServerPortTemplatesDestroy Method for DcimConsoleServerPortTemplatesD
 
 Delete a console server port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console server port template.
- @return ApiDcimConsoleServerPortTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console server port template.
+	@return ApiDcimConsoleServerPortTemplatesDestroyRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesDestroy(ctx context.Context, id int32) ApiDcimConsoleServerPortTemplatesDestroyRequest {
 	return ApiDcimConsoleServerPortTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesDestroyExecute(r ApiDcimConsoleServerPortTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortTemplatesDestroy")
@@ -8819,48 +8852,48 @@ func (a *DcimAPIService) DcimConsoleServerPortTemplatesDestroyExecute(r ApiDcimC
 }
 
 type ApiDcimConsoleServerPortTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	devicetypeId *[]*int32
-	devicetypeIdN *[]*int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	moduletypeId *[]*int32
-	moduletypeIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	type_ *string
-	typeN *string
+	devicetypeId     *[]*int32
+	devicetypeIdN    *[]*int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	moduletypeId     *[]*int32
+	moduletypeIdN    *[]*int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	type_            *string
+	typeN            *string
 	updatedByRequest *string
 }
 
@@ -9088,24 +9121,25 @@ DcimConsoleServerPortTemplatesList Method for DcimConsoleServerPortTemplatesList
 
 Get a list of console server port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsoleServerPortTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsoleServerPortTemplatesListRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesList(ctx context.Context) ApiDcimConsoleServerPortTemplatesListRequest {
 	return ApiDcimConsoleServerPortTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedConsoleServerPortTemplateList
+//
+//	@return PaginatedConsoleServerPortTemplateList
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesListExecute(r ApiDcimConsoleServerPortTemplatesListRequest) (*PaginatedConsoleServerPortTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedConsoleServerPortTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedConsoleServerPortTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortTemplatesList")
@@ -9575,9 +9609,9 @@ func (a *DcimAPIService) DcimConsoleServerPortTemplatesListExecute(r ApiDcimCons
 }
 
 type ApiDcimConsoleServerPortTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                             context.Context
+	ApiService                                      *DcimAPIService
+	id                                              int32
 	patchedWritableConsoleServerPortTemplateRequest *PatchedWritableConsoleServerPortTemplateRequest
 }
 
@@ -9595,26 +9629,27 @@ DcimConsoleServerPortTemplatesPartialUpdate Method for DcimConsoleServerPortTemp
 
 Patch a console server port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console server port template.
- @return ApiDcimConsoleServerPortTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console server port template.
+	@return ApiDcimConsoleServerPortTemplatesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesPartialUpdate(ctx context.Context, id int32) ApiDcimConsoleServerPortTemplatesPartialUpdateRequest {
 	return ApiDcimConsoleServerPortTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleServerPortTemplate
+//
+//	@return ConsoleServerPortTemplate
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesPartialUpdateExecute(r ApiDcimConsoleServerPortTemplatesPartialUpdateRequest) (*ConsoleServerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleServerPortTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleServerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortTemplatesPartialUpdate")
@@ -9700,9 +9735,9 @@ func (a *DcimAPIService) DcimConsoleServerPortTemplatesPartialUpdateExecute(r Ap
 }
 
 type ApiDcimConsoleServerPortTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimConsoleServerPortTemplatesRetrieveRequest) Execute() (*ConsoleServerPortTemplate, *http.Response, error) {
@@ -9714,26 +9749,27 @@ DcimConsoleServerPortTemplatesRetrieve Method for DcimConsoleServerPortTemplates
 
 Get a console server port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console server port template.
- @return ApiDcimConsoleServerPortTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console server port template.
+	@return ApiDcimConsoleServerPortTemplatesRetrieveRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesRetrieve(ctx context.Context, id int32) ApiDcimConsoleServerPortTemplatesRetrieveRequest {
 	return ApiDcimConsoleServerPortTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleServerPortTemplate
+//
+//	@return ConsoleServerPortTemplate
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesRetrieveExecute(r ApiDcimConsoleServerPortTemplatesRetrieveRequest) (*ConsoleServerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleServerPortTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleServerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortTemplatesRetrieve")
@@ -9817,9 +9853,9 @@ func (a *DcimAPIService) DcimConsoleServerPortTemplatesRetrieveExecute(r ApiDcim
 }
 
 type ApiDcimConsoleServerPortTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                      context.Context
+	ApiService                               *DcimAPIService
+	id                                       int32
 	writableConsoleServerPortTemplateRequest *WritableConsoleServerPortTemplateRequest
 }
 
@@ -9837,26 +9873,27 @@ DcimConsoleServerPortTemplatesUpdate Method for DcimConsoleServerPortTemplatesUp
 
 Put a console server port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console server port template.
- @return ApiDcimConsoleServerPortTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console server port template.
+	@return ApiDcimConsoleServerPortTemplatesUpdateRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesUpdate(ctx context.Context, id int32) ApiDcimConsoleServerPortTemplatesUpdateRequest {
 	return ApiDcimConsoleServerPortTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleServerPortTemplate
+//
+//	@return ConsoleServerPortTemplate
 func (a *DcimAPIService) DcimConsoleServerPortTemplatesUpdateExecute(r ApiDcimConsoleServerPortTemplatesUpdateRequest) (*ConsoleServerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleServerPortTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleServerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortTemplatesUpdate")
@@ -9945,8 +9982,8 @@ func (a *DcimAPIService) DcimConsoleServerPortTemplatesUpdateExecute(r ApiDcimCo
 }
 
 type ApiDcimConsoleServerPortsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	consoleServerPortRequest *[]ConsoleServerPortRequest
 }
 
@@ -9964,22 +10001,22 @@ DcimConsoleServerPortsBulkDestroy Method for DcimConsoleServerPortsBulkDestroy
 
 Delete a list of console server port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsoleServerPortsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsoleServerPortsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortsBulkDestroy(ctx context.Context) ApiDcimConsoleServerPortsBulkDestroyRequest {
 	return ApiDcimConsoleServerPortsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimConsoleServerPortsBulkDestroyExecute(r ApiDcimConsoleServerPortsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortsBulkDestroy")
@@ -10058,8 +10095,8 @@ func (a *DcimAPIService) DcimConsoleServerPortsBulkDestroyExecute(r ApiDcimConso
 }
 
 type ApiDcimConsoleServerPortsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	consoleServerPortRequest *[]ConsoleServerPortRequest
 }
 
@@ -10077,24 +10114,25 @@ DcimConsoleServerPortsBulkPartialUpdate Method for DcimConsoleServerPortsBulkPar
 
 Patch a list of console server port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsoleServerPortsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsoleServerPortsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortsBulkPartialUpdate(ctx context.Context) ApiDcimConsoleServerPortsBulkPartialUpdateRequest {
 	return ApiDcimConsoleServerPortsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConsoleServerPort
+//
+//	@return []ConsoleServerPort
 func (a *DcimAPIService) DcimConsoleServerPortsBulkPartialUpdateExecute(r ApiDcimConsoleServerPortsBulkPartialUpdateRequest) ([]ConsoleServerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConsoleServerPort
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConsoleServerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortsBulkPartialUpdate")
@@ -10182,8 +10220,8 @@ func (a *DcimAPIService) DcimConsoleServerPortsBulkPartialUpdateExecute(r ApiDci
 }
 
 type ApiDcimConsoleServerPortsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	consoleServerPortRequest *[]ConsoleServerPortRequest
 }
 
@@ -10201,24 +10239,25 @@ DcimConsoleServerPortsBulkUpdate Method for DcimConsoleServerPortsBulkUpdate
 
 Put a list of console server port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsoleServerPortsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsoleServerPortsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortsBulkUpdate(ctx context.Context) ApiDcimConsoleServerPortsBulkUpdateRequest {
 	return ApiDcimConsoleServerPortsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ConsoleServerPort
+//
+//	@return []ConsoleServerPort
 func (a *DcimAPIService) DcimConsoleServerPortsBulkUpdateExecute(r ApiDcimConsoleServerPortsBulkUpdateRequest) ([]ConsoleServerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ConsoleServerPort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ConsoleServerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortsBulkUpdate")
@@ -10306,8 +10345,8 @@ func (a *DcimAPIService) DcimConsoleServerPortsBulkUpdateExecute(r ApiDcimConsol
 }
 
 type ApiDcimConsoleServerPortsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
 	writableConsoleServerPortRequest *WritableConsoleServerPortRequest
 }
 
@@ -10325,24 +10364,25 @@ DcimConsoleServerPortsCreate Method for DcimConsoleServerPortsCreate
 
 Post a list of console server port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsoleServerPortsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsoleServerPortsCreateRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortsCreate(ctx context.Context) ApiDcimConsoleServerPortsCreateRequest {
 	return ApiDcimConsoleServerPortsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleServerPort
+//
+//	@return ConsoleServerPort
 func (a *DcimAPIService) DcimConsoleServerPortsCreateExecute(r ApiDcimConsoleServerPortsCreateRequest) (*ConsoleServerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleServerPort
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleServerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortsCreate")
@@ -10430,9 +10470,9 @@ func (a *DcimAPIService) DcimConsoleServerPortsCreateExecute(r ApiDcimConsoleSer
 }
 
 type ApiDcimConsoleServerPortsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimConsoleServerPortsDestroyRequest) Execute() (*http.Response, error) {
@@ -10444,24 +10484,24 @@ DcimConsoleServerPortsDestroy Method for DcimConsoleServerPortsDestroy
 
 Delete a console server port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console server port.
- @return ApiDcimConsoleServerPortsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console server port.
+	@return ApiDcimConsoleServerPortsDestroyRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortsDestroy(ctx context.Context, id int32) ApiDcimConsoleServerPortsDestroyRequest {
 	return ApiDcimConsoleServerPortsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimConsoleServerPortsDestroyExecute(r ApiDcimConsoleServerPortsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortsDestroy")
@@ -10536,103 +10576,103 @@ func (a *DcimAPIService) DcimConsoleServerPortsDestroyExecute(r ApiDcimConsoleSe
 }
 
 type ApiDcimConsoleServerPortsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	cableEnd *string
-	cableEndN *string
-	cabled *bool
-	connected *bool
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	device *[]*string
-	deviceN *[]*string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
-	moduleId *[]*int32
-	moduleIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	occupied *bool
-	offset *int32
-	ordering *string
-	q *string
-	rack *[]string
-	rackN *[]string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	type_ *[]string
-	typeN *[]string
-	updatedByRequest *string
-	virtualChassis *[]string
-	virtualChassisN *[]string
-	virtualChassisId *[]int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	cableEnd          *string
+	cableEndN         *string
+	cabled            *bool
+	connected         *bool
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *[]string
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	device            *[]*string
+	deviceN           *[]*string
+	deviceId          *[]int32
+	deviceIdN         *[]int32
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	label             *[]string
+	labelEmpty        *[]string
+	labelIc           *[]string
+	labelIe           *[]string
+	labelIew          *[]string
+	labelIsw          *[]string
+	labelN            *[]string
+	labelNic          *[]string
+	labelNie          *[]string
+	labelNiew         *[]string
+	labelNisw         *[]string
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	location          *[]string
+	locationN         *[]string
+	locationId        *[]int32
+	locationIdN       *[]int32
+	moduleId          *[]*int32
+	moduleIdN         *[]*int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	occupied          *bool
+	offset            *int32
+	ordering          *string
+	q                 *string
+	rack              *[]string
+	rackN             *[]string
+	rackId            *[]int32
+	rackIdN           *[]int32
+	region            *[]int32
+	regionN           *[]int32
+	regionId          *[]int32
+	regionIdN         *[]int32
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]int32
+	siteGroupN        *[]int32
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	tag               *[]string
+	tagN              *[]string
+	type_             *[]string
+	typeN             *[]string
+	updatedByRequest  *string
+	virtualChassis    *[]string
+	virtualChassisN   *[]string
+	virtualChassisId  *[]int32
 	virtualChassisIdN *[]int32
 }
 
@@ -11163,24 +11203,25 @@ DcimConsoleServerPortsList Method for DcimConsoleServerPortsList
 
 Get a list of console server port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimConsoleServerPortsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimConsoleServerPortsListRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortsList(ctx context.Context) ApiDcimConsoleServerPortsListRequest {
 	return ApiDcimConsoleServerPortsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedConsoleServerPortList
+//
+//	@return PaginatedConsoleServerPortList
 func (a *DcimAPIService) DcimConsoleServerPortsListExecute(r ApiDcimConsoleServerPortsListRequest) (*PaginatedConsoleServerPortList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedConsoleServerPortList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedConsoleServerPortList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortsList")
@@ -12231,9 +12272,9 @@ func (a *DcimAPIService) DcimConsoleServerPortsListExecute(r ApiDcimConsoleServe
 }
 
 type ApiDcimConsoleServerPortsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                     context.Context
+	ApiService                              *DcimAPIService
+	id                                      int32
 	patchedWritableConsoleServerPortRequest *PatchedWritableConsoleServerPortRequest
 }
 
@@ -12251,26 +12292,27 @@ DcimConsoleServerPortsPartialUpdate Method for DcimConsoleServerPortsPartialUpda
 
 Patch a console server port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console server port.
- @return ApiDcimConsoleServerPortsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console server port.
+	@return ApiDcimConsoleServerPortsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortsPartialUpdate(ctx context.Context, id int32) ApiDcimConsoleServerPortsPartialUpdateRequest {
 	return ApiDcimConsoleServerPortsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleServerPort
+//
+//	@return ConsoleServerPort
 func (a *DcimAPIService) DcimConsoleServerPortsPartialUpdateExecute(r ApiDcimConsoleServerPortsPartialUpdateRequest) (*ConsoleServerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleServerPort
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleServerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortsPartialUpdate")
@@ -12356,9 +12398,9 @@ func (a *DcimAPIService) DcimConsoleServerPortsPartialUpdateExecute(r ApiDcimCon
 }
 
 type ApiDcimConsoleServerPortsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimConsoleServerPortsRetrieveRequest) Execute() (*ConsoleServerPort, *http.Response, error) {
@@ -12370,26 +12412,27 @@ DcimConsoleServerPortsRetrieve Method for DcimConsoleServerPortsRetrieve
 
 Get a console server port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console server port.
- @return ApiDcimConsoleServerPortsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console server port.
+	@return ApiDcimConsoleServerPortsRetrieveRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortsRetrieve(ctx context.Context, id int32) ApiDcimConsoleServerPortsRetrieveRequest {
 	return ApiDcimConsoleServerPortsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleServerPort
+//
+//	@return ConsoleServerPort
 func (a *DcimAPIService) DcimConsoleServerPortsRetrieveExecute(r ApiDcimConsoleServerPortsRetrieveRequest) (*ConsoleServerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleServerPort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleServerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortsRetrieve")
@@ -12473,9 +12516,9 @@ func (a *DcimAPIService) DcimConsoleServerPortsRetrieveExecute(r ApiDcimConsoleS
 }
 
 type ApiDcimConsoleServerPortsTraceRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimConsoleServerPortsTraceRetrieveRequest) Execute() (*ConsoleServerPort, *http.Response, error) {
@@ -12487,26 +12530,27 @@ DcimConsoleServerPortsTraceRetrieve Method for DcimConsoleServerPortsTraceRetrie
 
 Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console server port.
- @return ApiDcimConsoleServerPortsTraceRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console server port.
+	@return ApiDcimConsoleServerPortsTraceRetrieveRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortsTraceRetrieve(ctx context.Context, id int32) ApiDcimConsoleServerPortsTraceRetrieveRequest {
 	return ApiDcimConsoleServerPortsTraceRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleServerPort
+//
+//	@return ConsoleServerPort
 func (a *DcimAPIService) DcimConsoleServerPortsTraceRetrieveExecute(r ApiDcimConsoleServerPortsTraceRetrieveRequest) (*ConsoleServerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleServerPort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleServerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortsTraceRetrieve")
@@ -12590,9 +12634,9 @@ func (a *DcimAPIService) DcimConsoleServerPortsTraceRetrieveExecute(r ApiDcimCon
 }
 
 type ApiDcimConsoleServerPortsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
+	id                               int32
 	writableConsoleServerPortRequest *WritableConsoleServerPortRequest
 }
 
@@ -12610,26 +12654,27 @@ DcimConsoleServerPortsUpdate Method for DcimConsoleServerPortsUpdate
 
 Put a console server port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this console server port.
- @return ApiDcimConsoleServerPortsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this console server port.
+	@return ApiDcimConsoleServerPortsUpdateRequest
 */
 func (a *DcimAPIService) DcimConsoleServerPortsUpdate(ctx context.Context, id int32) ApiDcimConsoleServerPortsUpdateRequest {
 	return ApiDcimConsoleServerPortsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ConsoleServerPort
+//
+//	@return ConsoleServerPort
 func (a *DcimAPIService) DcimConsoleServerPortsUpdateExecute(r ApiDcimConsoleServerPortsUpdateRequest) (*ConsoleServerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ConsoleServerPort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ConsoleServerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimConsoleServerPortsUpdate")
@@ -12718,8 +12763,8 @@ func (a *DcimAPIService) DcimConsoleServerPortsUpdateExecute(r ApiDcimConsoleSer
 }
 
 type ApiDcimDeviceBayTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	deviceBayTemplateRequest *[]DeviceBayTemplateRequest
 }
 
@@ -12737,22 +12782,22 @@ DcimDeviceBayTemplatesBulkDestroy Method for DcimDeviceBayTemplatesBulkDestroy
 
 Delete a list of device bay template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceBayTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceBayTemplatesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimDeviceBayTemplatesBulkDestroy(ctx context.Context) ApiDcimDeviceBayTemplatesBulkDestroyRequest {
 	return ApiDcimDeviceBayTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimDeviceBayTemplatesBulkDestroyExecute(r ApiDcimDeviceBayTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBayTemplatesBulkDestroy")
@@ -12831,8 +12876,8 @@ func (a *DcimAPIService) DcimDeviceBayTemplatesBulkDestroyExecute(r ApiDcimDevic
 }
 
 type ApiDcimDeviceBayTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	deviceBayTemplateRequest *[]DeviceBayTemplateRequest
 }
 
@@ -12850,24 +12895,25 @@ DcimDeviceBayTemplatesBulkPartialUpdate Method for DcimDeviceBayTemplatesBulkPar
 
 Patch a list of device bay template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceBayTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceBayTemplatesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceBayTemplatesBulkPartialUpdate(ctx context.Context) ApiDcimDeviceBayTemplatesBulkPartialUpdateRequest {
 	return ApiDcimDeviceBayTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceBayTemplate
+//
+//	@return []DeviceBayTemplate
 func (a *DcimAPIService) DcimDeviceBayTemplatesBulkPartialUpdateExecute(r ApiDcimDeviceBayTemplatesBulkPartialUpdateRequest) ([]DeviceBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceBayTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBayTemplatesBulkPartialUpdate")
@@ -12955,8 +13001,8 @@ func (a *DcimAPIService) DcimDeviceBayTemplatesBulkPartialUpdateExecute(r ApiDci
 }
 
 type ApiDcimDeviceBayTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	deviceBayTemplateRequest *[]DeviceBayTemplateRequest
 }
 
@@ -12974,24 +13020,25 @@ DcimDeviceBayTemplatesBulkUpdate Method for DcimDeviceBayTemplatesBulkUpdate
 
 Put a list of device bay template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceBayTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceBayTemplatesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceBayTemplatesBulkUpdate(ctx context.Context) ApiDcimDeviceBayTemplatesBulkUpdateRequest {
 	return ApiDcimDeviceBayTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceBayTemplate
+//
+//	@return []DeviceBayTemplate
 func (a *DcimAPIService) DcimDeviceBayTemplatesBulkUpdateExecute(r ApiDcimDeviceBayTemplatesBulkUpdateRequest) ([]DeviceBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceBayTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBayTemplatesBulkUpdate")
@@ -13079,8 +13126,8 @@ func (a *DcimAPIService) DcimDeviceBayTemplatesBulkUpdateExecute(r ApiDcimDevice
 }
 
 type ApiDcimDeviceBayTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
 	writableDeviceBayTemplateRequest *WritableDeviceBayTemplateRequest
 }
 
@@ -13098,24 +13145,25 @@ DcimDeviceBayTemplatesCreate Method for DcimDeviceBayTemplatesCreate
 
 Post a list of device bay template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceBayTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceBayTemplatesCreateRequest
 */
 func (a *DcimAPIService) DcimDeviceBayTemplatesCreate(ctx context.Context) ApiDcimDeviceBayTemplatesCreateRequest {
 	return ApiDcimDeviceBayTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceBayTemplate
+//
+//	@return DeviceBayTemplate
 func (a *DcimAPIService) DcimDeviceBayTemplatesCreateExecute(r ApiDcimDeviceBayTemplatesCreateRequest) (*DeviceBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceBayTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBayTemplatesCreate")
@@ -13203,9 +13251,9 @@ func (a *DcimAPIService) DcimDeviceBayTemplatesCreateExecute(r ApiDcimDeviceBayT
 }
 
 type ApiDcimDeviceBayTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimDeviceBayTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -13217,24 +13265,24 @@ DcimDeviceBayTemplatesDestroy Method for DcimDeviceBayTemplatesDestroy
 
 Delete a device bay template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device bay template.
- @return ApiDcimDeviceBayTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device bay template.
+	@return ApiDcimDeviceBayTemplatesDestroyRequest
 */
 func (a *DcimAPIService) DcimDeviceBayTemplatesDestroy(ctx context.Context, id int32) ApiDcimDeviceBayTemplatesDestroyRequest {
 	return ApiDcimDeviceBayTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimDeviceBayTemplatesDestroyExecute(r ApiDcimDeviceBayTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBayTemplatesDestroy")
@@ -13309,44 +13357,44 @@ func (a *DcimAPIService) DcimDeviceBayTemplatesDestroyExecute(r ApiDcimDeviceBay
 }
 
 type ApiDcimDeviceBayTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	devicetypeId *[]int32
-	devicetypeIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
+	devicetypeId     *[]int32
+	devicetypeIdN    *[]int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
 	updatedByRequest *string
 }
 
@@ -13550,24 +13598,25 @@ DcimDeviceBayTemplatesList Method for DcimDeviceBayTemplatesList
 
 Get a list of device bay template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceBayTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceBayTemplatesListRequest
 */
 func (a *DcimAPIService) DcimDeviceBayTemplatesList(ctx context.Context) ApiDcimDeviceBayTemplatesListRequest {
 	return ApiDcimDeviceBayTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedDeviceBayTemplateList
+//
+//	@return PaginatedDeviceBayTemplateList
 func (a *DcimAPIService) DcimDeviceBayTemplatesListExecute(r ApiDcimDeviceBayTemplatesListRequest) (*PaginatedDeviceBayTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedDeviceBayTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedDeviceBayTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBayTemplatesList")
@@ -14009,9 +14058,9 @@ func (a *DcimAPIService) DcimDeviceBayTemplatesListExecute(r ApiDcimDeviceBayTem
 }
 
 type ApiDcimDeviceBayTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                     context.Context
+	ApiService                              *DcimAPIService
+	id                                      int32
 	patchedWritableDeviceBayTemplateRequest *PatchedWritableDeviceBayTemplateRequest
 }
 
@@ -14029,26 +14078,27 @@ DcimDeviceBayTemplatesPartialUpdate Method for DcimDeviceBayTemplatesPartialUpda
 
 Patch a device bay template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device bay template.
- @return ApiDcimDeviceBayTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device bay template.
+	@return ApiDcimDeviceBayTemplatesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceBayTemplatesPartialUpdate(ctx context.Context, id int32) ApiDcimDeviceBayTemplatesPartialUpdateRequest {
 	return ApiDcimDeviceBayTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceBayTemplate
+//
+//	@return DeviceBayTemplate
 func (a *DcimAPIService) DcimDeviceBayTemplatesPartialUpdateExecute(r ApiDcimDeviceBayTemplatesPartialUpdateRequest) (*DeviceBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceBayTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBayTemplatesPartialUpdate")
@@ -14134,9 +14184,9 @@ func (a *DcimAPIService) DcimDeviceBayTemplatesPartialUpdateExecute(r ApiDcimDev
 }
 
 type ApiDcimDeviceBayTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimDeviceBayTemplatesRetrieveRequest) Execute() (*DeviceBayTemplate, *http.Response, error) {
@@ -14148,26 +14198,27 @@ DcimDeviceBayTemplatesRetrieve Method for DcimDeviceBayTemplatesRetrieve
 
 Get a device bay template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device bay template.
- @return ApiDcimDeviceBayTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device bay template.
+	@return ApiDcimDeviceBayTemplatesRetrieveRequest
 */
 func (a *DcimAPIService) DcimDeviceBayTemplatesRetrieve(ctx context.Context, id int32) ApiDcimDeviceBayTemplatesRetrieveRequest {
 	return ApiDcimDeviceBayTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceBayTemplate
+//
+//	@return DeviceBayTemplate
 func (a *DcimAPIService) DcimDeviceBayTemplatesRetrieveExecute(r ApiDcimDeviceBayTemplatesRetrieveRequest) (*DeviceBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceBayTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBayTemplatesRetrieve")
@@ -14251,9 +14302,9 @@ func (a *DcimAPIService) DcimDeviceBayTemplatesRetrieveExecute(r ApiDcimDeviceBa
 }
 
 type ApiDcimDeviceBayTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
+	id                               int32
 	writableDeviceBayTemplateRequest *WritableDeviceBayTemplateRequest
 }
 
@@ -14271,26 +14322,27 @@ DcimDeviceBayTemplatesUpdate Method for DcimDeviceBayTemplatesUpdate
 
 Put a device bay template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device bay template.
- @return ApiDcimDeviceBayTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device bay template.
+	@return ApiDcimDeviceBayTemplatesUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceBayTemplatesUpdate(ctx context.Context, id int32) ApiDcimDeviceBayTemplatesUpdateRequest {
 	return ApiDcimDeviceBayTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceBayTemplate
+//
+//	@return DeviceBayTemplate
 func (a *DcimAPIService) DcimDeviceBayTemplatesUpdateExecute(r ApiDcimDeviceBayTemplatesUpdateRequest) (*DeviceBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceBayTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBayTemplatesUpdate")
@@ -14379,8 +14431,8 @@ func (a *DcimAPIService) DcimDeviceBayTemplatesUpdateExecute(r ApiDcimDeviceBayT
 }
 
 type ApiDcimDeviceBaysBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	deviceBayRequest *[]DeviceBayRequest
 }
 
@@ -14398,22 +14450,22 @@ DcimDeviceBaysBulkDestroy Method for DcimDeviceBaysBulkDestroy
 
 Delete a list of device bay objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceBaysBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceBaysBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimDeviceBaysBulkDestroy(ctx context.Context) ApiDcimDeviceBaysBulkDestroyRequest {
 	return ApiDcimDeviceBaysBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimDeviceBaysBulkDestroyExecute(r ApiDcimDeviceBaysBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBaysBulkDestroy")
@@ -14492,8 +14544,8 @@ func (a *DcimAPIService) DcimDeviceBaysBulkDestroyExecute(r ApiDcimDeviceBaysBul
 }
 
 type ApiDcimDeviceBaysBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	deviceBayRequest *[]DeviceBayRequest
 }
 
@@ -14511,24 +14563,25 @@ DcimDeviceBaysBulkPartialUpdate Method for DcimDeviceBaysBulkPartialUpdate
 
 Patch a list of device bay objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceBaysBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceBaysBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceBaysBulkPartialUpdate(ctx context.Context) ApiDcimDeviceBaysBulkPartialUpdateRequest {
 	return ApiDcimDeviceBaysBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceBay
+//
+//	@return []DeviceBay
 func (a *DcimAPIService) DcimDeviceBaysBulkPartialUpdateExecute(r ApiDcimDeviceBaysBulkPartialUpdateRequest) ([]DeviceBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceBay
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBaysBulkPartialUpdate")
@@ -14616,8 +14669,8 @@ func (a *DcimAPIService) DcimDeviceBaysBulkPartialUpdateExecute(r ApiDcimDeviceB
 }
 
 type ApiDcimDeviceBaysBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	deviceBayRequest *[]DeviceBayRequest
 }
 
@@ -14635,24 +14688,25 @@ DcimDeviceBaysBulkUpdate Method for DcimDeviceBaysBulkUpdate
 
 Put a list of device bay objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceBaysBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceBaysBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceBaysBulkUpdate(ctx context.Context) ApiDcimDeviceBaysBulkUpdateRequest {
 	return ApiDcimDeviceBaysBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceBay
+//
+//	@return []DeviceBay
 func (a *DcimAPIService) DcimDeviceBaysBulkUpdateExecute(r ApiDcimDeviceBaysBulkUpdateRequest) ([]DeviceBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceBay
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBaysBulkUpdate")
@@ -14740,8 +14794,8 @@ func (a *DcimAPIService) DcimDeviceBaysBulkUpdateExecute(r ApiDcimDeviceBaysBulk
 }
 
 type ApiDcimDeviceBaysCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	writableDeviceBayRequest *WritableDeviceBayRequest
 }
 
@@ -14759,24 +14813,25 @@ DcimDeviceBaysCreate Method for DcimDeviceBaysCreate
 
 Post a list of device bay objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceBaysCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceBaysCreateRequest
 */
 func (a *DcimAPIService) DcimDeviceBaysCreate(ctx context.Context) ApiDcimDeviceBaysCreateRequest {
 	return ApiDcimDeviceBaysCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceBay
+//
+//	@return DeviceBay
 func (a *DcimAPIService) DcimDeviceBaysCreateExecute(r ApiDcimDeviceBaysCreateRequest) (*DeviceBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceBay
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBaysCreate")
@@ -14864,9 +14919,9 @@ func (a *DcimAPIService) DcimDeviceBaysCreateExecute(r ApiDcimDeviceBaysCreateRe
 }
 
 type ApiDcimDeviceBaysDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimDeviceBaysDestroyRequest) Execute() (*http.Response, error) {
@@ -14878,24 +14933,24 @@ DcimDeviceBaysDestroy Method for DcimDeviceBaysDestroy
 
 Delete a device bay object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device bay.
- @return ApiDcimDeviceBaysDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device bay.
+	@return ApiDcimDeviceBaysDestroyRequest
 */
 func (a *DcimAPIService) DcimDeviceBaysDestroy(ctx context.Context, id int32) ApiDcimDeviceBaysDestroyRequest {
 	return ApiDcimDeviceBaysDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimDeviceBaysDestroyExecute(r ApiDcimDeviceBaysDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBaysDestroy")
@@ -14970,94 +15025,94 @@ func (a *DcimAPIService) DcimDeviceBaysDestroyExecute(r ApiDcimDeviceBaysDestroy
 }
 
 type ApiDcimDeviceBaysListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	device *[]*string
-	deviceN *[]*string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	rack *[]string
-	rackN *[]string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
-	virtualChassis *[]string
-	virtualChassisN *[]string
-	virtualChassisId *[]int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *[]string
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	device            *[]*string
+	deviceN           *[]*string
+	deviceId          *[]int32
+	deviceIdN         *[]int32
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	label             *[]string
+	labelEmpty        *[]string
+	labelIc           *[]string
+	labelIe           *[]string
+	labelIew          *[]string
+	labelIsw          *[]string
+	labelN            *[]string
+	labelNic          *[]string
+	labelNie          *[]string
+	labelNiew         *[]string
+	labelNisw         *[]string
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	location          *[]string
+	locationN         *[]string
+	locationId        *[]int32
+	locationIdN       *[]int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	q                 *string
+	rack              *[]string
+	rackN             *[]string
+	rackId            *[]int32
+	rackIdN           *[]int32
+	region            *[]int32
+	regionN           *[]int32
+	regionId          *[]int32
+	regionIdN         *[]int32
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]int32
+	siteGroupN        *[]int32
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
+	virtualChassis    *[]string
+	virtualChassisN   *[]string
+	virtualChassisId  *[]int32
 	virtualChassisIdN *[]int32
 }
 
@@ -15537,24 +15592,25 @@ DcimDeviceBaysList Method for DcimDeviceBaysList
 
 Get a list of device bay objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceBaysListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceBaysListRequest
 */
 func (a *DcimAPIService) DcimDeviceBaysList(ctx context.Context) ApiDcimDeviceBaysListRequest {
 	return ApiDcimDeviceBaysListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedDeviceBayList
+//
+//	@return PaginatedDeviceBayList
 func (a *DcimAPIService) DcimDeviceBaysListExecute(r ApiDcimDeviceBaysListRequest) (*PaginatedDeviceBayList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedDeviceBayList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedDeviceBayList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBaysList")
@@ -16546,9 +16602,9 @@ func (a *DcimAPIService) DcimDeviceBaysListExecute(r ApiDcimDeviceBaysListReques
 }
 
 type ApiDcimDeviceBaysPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *DcimAPIService
+	id                              int32
 	patchedWritableDeviceBayRequest *PatchedWritableDeviceBayRequest
 }
 
@@ -16566,26 +16622,27 @@ DcimDeviceBaysPartialUpdate Method for DcimDeviceBaysPartialUpdate
 
 Patch a device bay object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device bay.
- @return ApiDcimDeviceBaysPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device bay.
+	@return ApiDcimDeviceBaysPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceBaysPartialUpdate(ctx context.Context, id int32) ApiDcimDeviceBaysPartialUpdateRequest {
 	return ApiDcimDeviceBaysPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceBay
+//
+//	@return DeviceBay
 func (a *DcimAPIService) DcimDeviceBaysPartialUpdateExecute(r ApiDcimDeviceBaysPartialUpdateRequest) (*DeviceBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceBay
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBaysPartialUpdate")
@@ -16671,9 +16728,9 @@ func (a *DcimAPIService) DcimDeviceBaysPartialUpdateExecute(r ApiDcimDeviceBaysP
 }
 
 type ApiDcimDeviceBaysRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimDeviceBaysRetrieveRequest) Execute() (*DeviceBay, *http.Response, error) {
@@ -16685,26 +16742,27 @@ DcimDeviceBaysRetrieve Method for DcimDeviceBaysRetrieve
 
 Get a device bay object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device bay.
- @return ApiDcimDeviceBaysRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device bay.
+	@return ApiDcimDeviceBaysRetrieveRequest
 */
 func (a *DcimAPIService) DcimDeviceBaysRetrieve(ctx context.Context, id int32) ApiDcimDeviceBaysRetrieveRequest {
 	return ApiDcimDeviceBaysRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceBay
+//
+//	@return DeviceBay
 func (a *DcimAPIService) DcimDeviceBaysRetrieveExecute(r ApiDcimDeviceBaysRetrieveRequest) (*DeviceBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceBay
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBaysRetrieve")
@@ -16788,9 +16846,9 @@ func (a *DcimAPIService) DcimDeviceBaysRetrieveExecute(r ApiDcimDeviceBaysRetrie
 }
 
 type ApiDcimDeviceBaysUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *DcimAPIService
+	id                       int32
 	writableDeviceBayRequest *WritableDeviceBayRequest
 }
 
@@ -16808,26 +16866,27 @@ DcimDeviceBaysUpdate Method for DcimDeviceBaysUpdate
 
 Put a device bay object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device bay.
- @return ApiDcimDeviceBaysUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device bay.
+	@return ApiDcimDeviceBaysUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceBaysUpdate(ctx context.Context, id int32) ApiDcimDeviceBaysUpdateRequest {
 	return ApiDcimDeviceBaysUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceBay
+//
+//	@return DeviceBay
 func (a *DcimAPIService) DcimDeviceBaysUpdateExecute(r ApiDcimDeviceBaysUpdateRequest) (*DeviceBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceBay
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceBaysUpdate")
@@ -16916,8 +16975,8 @@ func (a *DcimAPIService) DcimDeviceBaysUpdateExecute(r ApiDcimDeviceBaysUpdateRe
 }
 
 type ApiDcimDeviceRolesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	deviceRoleRequest *[]DeviceRoleRequest
 }
 
@@ -16935,22 +16994,22 @@ DcimDeviceRolesBulkDestroy Method for DcimDeviceRolesBulkDestroy
 
 Delete a list of device role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceRolesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceRolesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimDeviceRolesBulkDestroy(ctx context.Context) ApiDcimDeviceRolesBulkDestroyRequest {
 	return ApiDcimDeviceRolesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimDeviceRolesBulkDestroyExecute(r ApiDcimDeviceRolesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceRolesBulkDestroy")
@@ -17029,8 +17088,8 @@ func (a *DcimAPIService) DcimDeviceRolesBulkDestroyExecute(r ApiDcimDeviceRolesB
 }
 
 type ApiDcimDeviceRolesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	deviceRoleRequest *[]DeviceRoleRequest
 }
 
@@ -17048,24 +17107,25 @@ DcimDeviceRolesBulkPartialUpdate Method for DcimDeviceRolesBulkPartialUpdate
 
 Patch a list of device role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceRolesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceRolesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceRolesBulkPartialUpdate(ctx context.Context) ApiDcimDeviceRolesBulkPartialUpdateRequest {
 	return ApiDcimDeviceRolesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceRole
+//
+//	@return []DeviceRole
 func (a *DcimAPIService) DcimDeviceRolesBulkPartialUpdateExecute(r ApiDcimDeviceRolesBulkPartialUpdateRequest) ([]DeviceRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceRole
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceRolesBulkPartialUpdate")
@@ -17153,8 +17213,8 @@ func (a *DcimAPIService) DcimDeviceRolesBulkPartialUpdateExecute(r ApiDcimDevice
 }
 
 type ApiDcimDeviceRolesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	deviceRoleRequest *[]DeviceRoleRequest
 }
 
@@ -17172,24 +17232,25 @@ DcimDeviceRolesBulkUpdate Method for DcimDeviceRolesBulkUpdate
 
 Put a list of device role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceRolesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceRolesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceRolesBulkUpdate(ctx context.Context) ApiDcimDeviceRolesBulkUpdateRequest {
 	return ApiDcimDeviceRolesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceRole
+//
+//	@return []DeviceRole
 func (a *DcimAPIService) DcimDeviceRolesBulkUpdateExecute(r ApiDcimDeviceRolesBulkUpdateRequest) ([]DeviceRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceRole
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceRolesBulkUpdate")
@@ -17277,8 +17338,8 @@ func (a *DcimAPIService) DcimDeviceRolesBulkUpdateExecute(r ApiDcimDeviceRolesBu
 }
 
 type ApiDcimDeviceRolesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                       context.Context
+	ApiService                *DcimAPIService
 	writableDeviceRoleRequest *WritableDeviceRoleRequest
 }
 
@@ -17296,24 +17357,25 @@ DcimDeviceRolesCreate Method for DcimDeviceRolesCreate
 
 Post a list of device role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceRolesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceRolesCreateRequest
 */
 func (a *DcimAPIService) DcimDeviceRolesCreate(ctx context.Context) ApiDcimDeviceRolesCreateRequest {
 	return ApiDcimDeviceRolesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceRole
+//
+//	@return DeviceRole
 func (a *DcimAPIService) DcimDeviceRolesCreateExecute(r ApiDcimDeviceRolesCreateRequest) (*DeviceRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceRole
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceRolesCreate")
@@ -17401,9 +17463,9 @@ func (a *DcimAPIService) DcimDeviceRolesCreateExecute(r ApiDcimDeviceRolesCreate
 }
 
 type ApiDcimDeviceRolesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimDeviceRolesDestroyRequest) Execute() (*http.Response, error) {
@@ -17415,24 +17477,24 @@ DcimDeviceRolesDestroy Method for DcimDeviceRolesDestroy
 
 Delete a device role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device role.
- @return ApiDcimDeviceRolesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device role.
+	@return ApiDcimDeviceRolesDestroyRequest
 */
 func (a *DcimAPIService) DcimDeviceRolesDestroy(ctx context.Context, id int32) ApiDcimDeviceRolesDestroyRequest {
 	return ApiDcimDeviceRolesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimDeviceRolesDestroyExecute(r ApiDcimDeviceRolesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceRolesDestroy")
@@ -17507,81 +17569,81 @@ func (a *DcimAPIService) DcimDeviceRolesDestroyExecute(r ApiDcimDeviceRolesDestr
 }
 
 type ApiDcimDeviceRolesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	color *[]string
-	colorEmpty *[]string
-	colorIc *[]string
-	colorIe *[]string
-	colorIew *[]string
-	colorIsw *[]string
-	colorN *[]string
-	colorNic *[]string
-	colorNie *[]string
-	colorNiew *[]string
-	colorNisw *[]string
-	configTemplateId *[]*int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	color             *[]string
+	colorEmpty        *[]string
+	colorIc           *[]string
+	colorIe           *[]string
+	colorIew          *[]string
+	colorIsw          *[]string
+	colorN            *[]string
+	colorNic          *[]string
+	colorNie          *[]string
+	colorNiew         *[]string
+	colorNisw         *[]string
+	configTemplateId  *[]*int32
 	configTemplateIdN *[]*int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
-	vmRole *bool
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *[]string
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	q                 *string
+	slug              *[]string
+	slugEmpty         *[]string
+	slugIc            *[]string
+	slugIe            *[]string
+	slugIew           *[]string
+	slugIsw           *[]string
+	slugN             *[]string
+	slugNic           *[]string
+	slugNie           *[]string
+	slugNiew          *[]string
+	slugNisw          *[]string
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
+	vmRole            *bool
 }
 
 func (r ApiDcimDeviceRolesListRequest) Color(color []string) ApiDcimDeviceRolesListRequest {
@@ -17964,24 +18026,25 @@ DcimDeviceRolesList Method for DcimDeviceRolesList
 
 Get a list of device role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceRolesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceRolesListRequest
 */
 func (a *DcimAPIService) DcimDeviceRolesList(ctx context.Context) ApiDcimDeviceRolesListRequest {
 	return ApiDcimDeviceRolesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedDeviceRoleList
+//
+//	@return PaginatedDeviceRoleList
 func (a *DcimAPIService) DcimDeviceRolesListExecute(r ApiDcimDeviceRolesListRequest) (*PaginatedDeviceRoleList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedDeviceRoleList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedDeviceRoleList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceRolesList")
@@ -18811,9 +18874,9 @@ func (a *DcimAPIService) DcimDeviceRolesListExecute(r ApiDcimDeviceRolesListRequ
 }
 
 type ApiDcimDeviceRolesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
+	id                               int32
 	patchedWritableDeviceRoleRequest *PatchedWritableDeviceRoleRequest
 }
 
@@ -18831,26 +18894,27 @@ DcimDeviceRolesPartialUpdate Method for DcimDeviceRolesPartialUpdate
 
 Patch a device role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device role.
- @return ApiDcimDeviceRolesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device role.
+	@return ApiDcimDeviceRolesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceRolesPartialUpdate(ctx context.Context, id int32) ApiDcimDeviceRolesPartialUpdateRequest {
 	return ApiDcimDeviceRolesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceRole
+//
+//	@return DeviceRole
 func (a *DcimAPIService) DcimDeviceRolesPartialUpdateExecute(r ApiDcimDeviceRolesPartialUpdateRequest) (*DeviceRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceRole
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceRolesPartialUpdate")
@@ -18936,9 +19000,9 @@ func (a *DcimAPIService) DcimDeviceRolesPartialUpdateExecute(r ApiDcimDeviceRole
 }
 
 type ApiDcimDeviceRolesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimDeviceRolesRetrieveRequest) Execute() (*DeviceRole, *http.Response, error) {
@@ -18950,26 +19014,27 @@ DcimDeviceRolesRetrieve Method for DcimDeviceRolesRetrieve
 
 Get a device role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device role.
- @return ApiDcimDeviceRolesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device role.
+	@return ApiDcimDeviceRolesRetrieveRequest
 */
 func (a *DcimAPIService) DcimDeviceRolesRetrieve(ctx context.Context, id int32) ApiDcimDeviceRolesRetrieveRequest {
 	return ApiDcimDeviceRolesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceRole
+//
+//	@return DeviceRole
 func (a *DcimAPIService) DcimDeviceRolesRetrieveExecute(r ApiDcimDeviceRolesRetrieveRequest) (*DeviceRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceRole
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceRolesRetrieve")
@@ -19053,9 +19118,9 @@ func (a *DcimAPIService) DcimDeviceRolesRetrieveExecute(r ApiDcimDeviceRolesRetr
 }
 
 type ApiDcimDeviceRolesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                       context.Context
+	ApiService                *DcimAPIService
+	id                        int32
 	writableDeviceRoleRequest *WritableDeviceRoleRequest
 }
 
@@ -19073,26 +19138,27 @@ DcimDeviceRolesUpdate Method for DcimDeviceRolesUpdate
 
 Put a device role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device role.
- @return ApiDcimDeviceRolesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device role.
+	@return ApiDcimDeviceRolesUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceRolesUpdate(ctx context.Context, id int32) ApiDcimDeviceRolesUpdateRequest {
 	return ApiDcimDeviceRolesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceRole
+//
+//	@return DeviceRole
 func (a *DcimAPIService) DcimDeviceRolesUpdateExecute(r ApiDcimDeviceRolesUpdateRequest) (*DeviceRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceRole
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceRolesUpdate")
@@ -19181,8 +19247,8 @@ func (a *DcimAPIService) DcimDeviceRolesUpdateExecute(r ApiDcimDeviceRolesUpdate
 }
 
 type ApiDcimDeviceTypesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	deviceTypeRequest *[]DeviceTypeRequest
 }
 
@@ -19200,22 +19266,22 @@ DcimDeviceTypesBulkDestroy Method for DcimDeviceTypesBulkDestroy
 
 Delete a list of device type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceTypesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceTypesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimDeviceTypesBulkDestroy(ctx context.Context) ApiDcimDeviceTypesBulkDestroyRequest {
 	return ApiDcimDeviceTypesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimDeviceTypesBulkDestroyExecute(r ApiDcimDeviceTypesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceTypesBulkDestroy")
@@ -19294,8 +19360,8 @@ func (a *DcimAPIService) DcimDeviceTypesBulkDestroyExecute(r ApiDcimDeviceTypesB
 }
 
 type ApiDcimDeviceTypesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	deviceTypeRequest *[]DeviceTypeRequest
 }
 
@@ -19313,24 +19379,25 @@ DcimDeviceTypesBulkPartialUpdate Method for DcimDeviceTypesBulkPartialUpdate
 
 Patch a list of device type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceTypesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceTypesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceTypesBulkPartialUpdate(ctx context.Context) ApiDcimDeviceTypesBulkPartialUpdateRequest {
 	return ApiDcimDeviceTypesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceType
+//
+//	@return []DeviceType
 func (a *DcimAPIService) DcimDeviceTypesBulkPartialUpdateExecute(r ApiDcimDeviceTypesBulkPartialUpdateRequest) ([]DeviceType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceType
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceTypesBulkPartialUpdate")
@@ -19418,8 +19485,8 @@ func (a *DcimAPIService) DcimDeviceTypesBulkPartialUpdateExecute(r ApiDcimDevice
 }
 
 type ApiDcimDeviceTypesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	deviceTypeRequest *[]DeviceTypeRequest
 }
 
@@ -19437,24 +19504,25 @@ DcimDeviceTypesBulkUpdate Method for DcimDeviceTypesBulkUpdate
 
 Put a list of device type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceTypesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceTypesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceTypesBulkUpdate(ctx context.Context) ApiDcimDeviceTypesBulkUpdateRequest {
 	return ApiDcimDeviceTypesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceType
+//
+//	@return []DeviceType
 func (a *DcimAPIService) DcimDeviceTypesBulkUpdateExecute(r ApiDcimDeviceTypesBulkUpdateRequest) ([]DeviceType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceType
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceTypesBulkUpdate")
@@ -19542,8 +19610,8 @@ func (a *DcimAPIService) DcimDeviceTypesBulkUpdateExecute(r ApiDcimDeviceTypesBu
 }
 
 type ApiDcimDeviceTypesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                       context.Context
+	ApiService                *DcimAPIService
 	writableDeviceTypeRequest *WritableDeviceTypeRequest
 }
 
@@ -19561,24 +19629,25 @@ DcimDeviceTypesCreate Method for DcimDeviceTypesCreate
 
 Post a list of device type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceTypesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceTypesCreateRequest
 */
 func (a *DcimAPIService) DcimDeviceTypesCreate(ctx context.Context) ApiDcimDeviceTypesCreateRequest {
 	return ApiDcimDeviceTypesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceType
+//
+//	@return DeviceType
 func (a *DcimAPIService) DcimDeviceTypesCreateExecute(r ApiDcimDeviceTypesCreateRequest) (*DeviceType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceType
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceTypesCreate")
@@ -19666,9 +19735,9 @@ func (a *DcimAPIService) DcimDeviceTypesCreateExecute(r ApiDcimDeviceTypesCreate
 }
 
 type ApiDcimDeviceTypesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimDeviceTypesDestroyRequest) Execute() (*http.Response, error) {
@@ -19680,24 +19749,24 @@ DcimDeviceTypesDestroy Method for DcimDeviceTypesDestroy
 
 Delete a device type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device type.
- @return ApiDcimDeviceTypesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device type.
+	@return ApiDcimDeviceTypesDestroyRequest
 */
 func (a *DcimAPIService) DcimDeviceTypesDestroy(ctx context.Context, id int32) ApiDcimDeviceTypesDestroyRequest {
 	return ApiDcimDeviceTypesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimDeviceTypesDestroyExecute(r ApiDcimDeviceTypesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceTypesDestroy")
@@ -19772,105 +19841,105 @@ func (a *DcimAPIService) DcimDeviceTypesDestroyExecute(r ApiDcimDeviceTypesDestr
 }
 
 type ApiDcimDeviceTypesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	airflow *string
-	airflowN *string
-	consolePorts *bool
+	ctx                context.Context
+	ApiService         *DcimAPIService
+	airflow            *string
+	airflowN           *string
+	consolePorts       *bool
 	consoleServerPorts *bool
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	defaultPlatform *[]string
-	defaultPlatformN *[]string
-	defaultPlatformId *[]*int32
+	created            *[]time.Time
+	createdGt          *[]time.Time
+	createdGte         *[]time.Time
+	createdLt          *[]time.Time
+	createdLte         *[]time.Time
+	createdN           *[]time.Time
+	createdByRequest   *string
+	defaultPlatform    *[]string
+	defaultPlatformN   *[]string
+	defaultPlatformId  *[]*int32
 	defaultPlatformIdN *[]*int32
-	deviceBays *bool
-	hasFrontImage *bool
-	hasRearImage *bool
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	interfaces *bool
-	inventoryItems *bool
-	isFullDepth *bool
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	manufacturer *[]string
-	manufacturerN *[]string
-	manufacturerId *[]int32
-	manufacturerIdN *[]int32
-	model *[]string
-	modelEmpty *[]string
-	modelIc *[]string
-	modelIe *[]string
-	modelIew *[]string
-	modelIsw *[]string
-	modelN *[]string
-	modelNic *[]string
-	modelNie *[]string
-	modelNiew *[]string
-	modelNisw *[]string
-	moduleBays *bool
-	offset *int32
-	ordering *string
-	partNumber *[]string
-	partNumberEmpty *[]string
-	partNumberIc *[]string
-	partNumberIe *[]string
-	partNumberIew *[]string
-	partNumberIsw *[]string
-	partNumberN *[]string
-	partNumberNic *[]string
-	partNumberNie *[]string
-	partNumberNiew *[]string
-	partNumberNisw *[]string
-	passThroughPorts *bool
-	powerOutlets *bool
-	powerPorts *bool
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	subdeviceRole *string
-	subdeviceRoleN *string
-	tag *[]string
-	tagN *[]string
-	uHeight *[]float64
-	uHeightGt *[]float64
-	uHeightGte *[]float64
-	uHeightLt *[]float64
-	uHeightLte *[]float64
-	uHeightN *[]float64
-	updatedByRequest *string
-	weight *[]float64
-	weightGt *[]float64
-	weightGte *[]float64
-	weightLt *[]float64
-	weightLte *[]float64
-	weightN *[]float64
-	weightUnit *string
-	weightUnitN *string
+	deviceBays         *bool
+	hasFrontImage      *bool
+	hasRearImage       *bool
+	id                 *[]int32
+	idGt               *[]int32
+	idGte              *[]int32
+	idLt               *[]int32
+	idLte              *[]int32
+	idN                *[]int32
+	interfaces         *bool
+	inventoryItems     *bool
+	isFullDepth        *bool
+	lastUpdated        *[]time.Time
+	lastUpdatedGt      *[]time.Time
+	lastUpdatedGte     *[]time.Time
+	lastUpdatedLt      *[]time.Time
+	lastUpdatedLte     *[]time.Time
+	lastUpdatedN       *[]time.Time
+	limit              *int32
+	manufacturer       *[]string
+	manufacturerN      *[]string
+	manufacturerId     *[]int32
+	manufacturerIdN    *[]int32
+	model              *[]string
+	modelEmpty         *[]string
+	modelIc            *[]string
+	modelIe            *[]string
+	modelIew           *[]string
+	modelIsw           *[]string
+	modelN             *[]string
+	modelNic           *[]string
+	modelNie           *[]string
+	modelNiew          *[]string
+	modelNisw          *[]string
+	moduleBays         *bool
+	offset             *int32
+	ordering           *string
+	partNumber         *[]string
+	partNumberEmpty    *[]string
+	partNumberIc       *[]string
+	partNumberIe       *[]string
+	partNumberIew      *[]string
+	partNumberIsw      *[]string
+	partNumberN        *[]string
+	partNumberNic      *[]string
+	partNumberNie      *[]string
+	partNumberNiew     *[]string
+	partNumberNisw     *[]string
+	passThroughPorts   *bool
+	powerOutlets       *bool
+	powerPorts         *bool
+	q                  *string
+	slug               *[]string
+	slugEmpty          *[]string
+	slugIc             *[]string
+	slugIe             *[]string
+	slugIew            *[]string
+	slugIsw            *[]string
+	slugN              *[]string
+	slugNic            *[]string
+	slugNie            *[]string
+	slugNiew           *[]string
+	slugNisw           *[]string
+	subdeviceRole      *string
+	subdeviceRoleN     *string
+	tag                *[]string
+	tagN               *[]string
+	uHeight            *[]float64
+	uHeightGt          *[]float64
+	uHeightGte         *[]float64
+	uHeightLt          *[]float64
+	uHeightLte         *[]float64
+	uHeightN           *[]float64
+	updatedByRequest   *string
+	weight             *[]float64
+	weightGt           *[]float64
+	weightGte          *[]float64
+	weightLt           *[]float64
+	weightLte          *[]float64
+	weightN            *[]float64
+	weightUnit         *string
+	weightUnitN        *string
 }
 
 // * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed
@@ -20396,24 +20465,25 @@ DcimDeviceTypesList Method for DcimDeviceTypesList
 
 Get a list of device type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDeviceTypesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDeviceTypesListRequest
 */
 func (a *DcimAPIService) DcimDeviceTypesList(ctx context.Context) ApiDcimDeviceTypesListRequest {
 	return ApiDcimDeviceTypesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedDeviceTypeList
+//
+//	@return PaginatedDeviceTypeList
 func (a *DcimAPIService) DcimDeviceTypesListExecute(r ApiDcimDeviceTypesListRequest) (*PaginatedDeviceTypeList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedDeviceTypeList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedDeviceTypeList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceTypesList")
@@ -21371,9 +21441,9 @@ func (a *DcimAPIService) DcimDeviceTypesListExecute(r ApiDcimDeviceTypesListRequ
 }
 
 type ApiDcimDeviceTypesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
+	id                               int32
 	patchedWritableDeviceTypeRequest *PatchedWritableDeviceTypeRequest
 }
 
@@ -21391,26 +21461,27 @@ DcimDeviceTypesPartialUpdate Method for DcimDeviceTypesPartialUpdate
 
 Patch a device type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device type.
- @return ApiDcimDeviceTypesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device type.
+	@return ApiDcimDeviceTypesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceTypesPartialUpdate(ctx context.Context, id int32) ApiDcimDeviceTypesPartialUpdateRequest {
 	return ApiDcimDeviceTypesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceType
+//
+//	@return DeviceType
 func (a *DcimAPIService) DcimDeviceTypesPartialUpdateExecute(r ApiDcimDeviceTypesPartialUpdateRequest) (*DeviceType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceType
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceTypesPartialUpdate")
@@ -21496,9 +21567,9 @@ func (a *DcimAPIService) DcimDeviceTypesPartialUpdateExecute(r ApiDcimDeviceType
 }
 
 type ApiDcimDeviceTypesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimDeviceTypesRetrieveRequest) Execute() (*DeviceType, *http.Response, error) {
@@ -21510,26 +21581,27 @@ DcimDeviceTypesRetrieve Method for DcimDeviceTypesRetrieve
 
 Get a device type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device type.
- @return ApiDcimDeviceTypesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device type.
+	@return ApiDcimDeviceTypesRetrieveRequest
 */
 func (a *DcimAPIService) DcimDeviceTypesRetrieve(ctx context.Context, id int32) ApiDcimDeviceTypesRetrieveRequest {
 	return ApiDcimDeviceTypesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceType
+//
+//	@return DeviceType
 func (a *DcimAPIService) DcimDeviceTypesRetrieveExecute(r ApiDcimDeviceTypesRetrieveRequest) (*DeviceType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceTypesRetrieve")
@@ -21613,9 +21685,9 @@ func (a *DcimAPIService) DcimDeviceTypesRetrieveExecute(r ApiDcimDeviceTypesRetr
 }
 
 type ApiDcimDeviceTypesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                       context.Context
+	ApiService                *DcimAPIService
+	id                        int32
 	writableDeviceTypeRequest *WritableDeviceTypeRequest
 }
 
@@ -21633,26 +21705,27 @@ DcimDeviceTypesUpdate Method for DcimDeviceTypesUpdate
 
 Put a device type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device type.
- @return ApiDcimDeviceTypesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device type.
+	@return ApiDcimDeviceTypesUpdateRequest
 */
 func (a *DcimAPIService) DcimDeviceTypesUpdate(ctx context.Context, id int32) ApiDcimDeviceTypesUpdateRequest {
 	return ApiDcimDeviceTypesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceType
+//
+//	@return DeviceType
 func (a *DcimAPIService) DcimDeviceTypesUpdateExecute(r ApiDcimDeviceTypesUpdateRequest) (*DeviceType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceType
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDeviceTypesUpdate")
@@ -21741,8 +21814,8 @@ func (a *DcimAPIService) DcimDeviceTypesUpdateExecute(r ApiDcimDeviceTypesUpdate
 }
 
 type ApiDcimDevicesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                            context.Context
+	ApiService                     *DcimAPIService
 	deviceWithConfigContextRequest *[]DeviceWithConfigContextRequest
 }
 
@@ -21760,22 +21833,22 @@ DcimDevicesBulkDestroy Method for DcimDevicesBulkDestroy
 
 Delete a list of device objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDevicesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDevicesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimDevicesBulkDestroy(ctx context.Context) ApiDcimDevicesBulkDestroyRequest {
 	return ApiDcimDevicesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimDevicesBulkDestroyExecute(r ApiDcimDevicesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDevicesBulkDestroy")
@@ -21854,8 +21927,8 @@ func (a *DcimAPIService) DcimDevicesBulkDestroyExecute(r ApiDcimDevicesBulkDestr
 }
 
 type ApiDcimDevicesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                            context.Context
+	ApiService                     *DcimAPIService
 	deviceWithConfigContextRequest *[]DeviceWithConfigContextRequest
 }
 
@@ -21873,24 +21946,25 @@ DcimDevicesBulkPartialUpdate Method for DcimDevicesBulkPartialUpdate
 
 Patch a list of device objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDevicesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDevicesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimDevicesBulkPartialUpdate(ctx context.Context) ApiDcimDevicesBulkPartialUpdateRequest {
 	return ApiDcimDevicesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceWithConfigContext
+//
+//	@return []DeviceWithConfigContext
 func (a *DcimAPIService) DcimDevicesBulkPartialUpdateExecute(r ApiDcimDevicesBulkPartialUpdateRequest) ([]DeviceWithConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceWithConfigContext
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceWithConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDevicesBulkPartialUpdate")
@@ -21978,8 +22052,8 @@ func (a *DcimAPIService) DcimDevicesBulkPartialUpdateExecute(r ApiDcimDevicesBul
 }
 
 type ApiDcimDevicesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                            context.Context
+	ApiService                     *DcimAPIService
 	deviceWithConfigContextRequest *[]DeviceWithConfigContextRequest
 }
 
@@ -21997,24 +22071,25 @@ DcimDevicesBulkUpdate Method for DcimDevicesBulkUpdate
 
 Put a list of device objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDevicesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDevicesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimDevicesBulkUpdate(ctx context.Context) ApiDcimDevicesBulkUpdateRequest {
 	return ApiDcimDevicesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []DeviceWithConfigContext
+//
+//	@return []DeviceWithConfigContext
 func (a *DcimAPIService) DcimDevicesBulkUpdateExecute(r ApiDcimDevicesBulkUpdateRequest) ([]DeviceWithConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []DeviceWithConfigContext
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []DeviceWithConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDevicesBulkUpdate")
@@ -22102,8 +22177,8 @@ func (a *DcimAPIService) DcimDevicesBulkUpdateExecute(r ApiDcimDevicesBulkUpdate
 }
 
 type ApiDcimDevicesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                                    context.Context
+	ApiService                             *DcimAPIService
 	writableDeviceWithConfigContextRequest *WritableDeviceWithConfigContextRequest
 }
 
@@ -22121,24 +22196,25 @@ DcimDevicesCreate Method for DcimDevicesCreate
 
 Post a list of device objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDevicesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDevicesCreateRequest
 */
 func (a *DcimAPIService) DcimDevicesCreate(ctx context.Context) ApiDcimDevicesCreateRequest {
 	return ApiDcimDevicesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceWithConfigContext
+//
+//	@return DeviceWithConfigContext
 func (a *DcimAPIService) DcimDevicesCreateExecute(r ApiDcimDevicesCreateRequest) (*DeviceWithConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceWithConfigContext
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceWithConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDevicesCreate")
@@ -22226,9 +22302,9 @@ func (a *DcimAPIService) DcimDevicesCreateExecute(r ApiDcimDevicesCreateRequest)
 }
 
 type ApiDcimDevicesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimDevicesDestroyRequest) Execute() (*http.Response, error) {
@@ -22240,24 +22316,24 @@ DcimDevicesDestroy Method for DcimDevicesDestroy
 
 Delete a device object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device.
- @return ApiDcimDevicesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device.
+	@return ApiDcimDevicesDestroyRequest
 */
 func (a *DcimAPIService) DcimDevicesDestroy(ctx context.Context, id int32) ApiDcimDevicesDestroyRequest {
 	return ApiDcimDevicesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimDevicesDestroyExecute(r ApiDcimDevicesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDevicesDestroy")
@@ -22332,172 +22408,172 @@ func (a *DcimAPIService) DcimDevicesDestroyExecute(r ApiDcimDevicesDestroyReques
 }
 
 type ApiDcimDevicesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	airflow *string
-	airflowN *string
-	assetTag *[]string
-	assetTagEmpty *[]string
-	assetTagIc *[]string
-	assetTagIe *[]string
-	assetTagIew *[]string
-	assetTagIsw *[]string
-	assetTagN *[]string
-	assetTagNic *[]string
-	assetTagNie *[]string
-	assetTagNiew *[]string
-	assetTagNisw *[]string
-	clusterId *[]*int32
-	clusterIdN *[]*int32
-	configTemplateId *[]*int32
-	configTemplateIdN *[]*int32
-	consolePorts *bool
-	consoleServerPorts *bool
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]int32
-	contactGroupN *[]int32
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	deviceBays *bool
-	deviceType *[]string
-	deviceTypeN *[]string
-	deviceTypeId *[]int32
-	deviceTypeIdN *[]int32
-	face *string
-	faceN *string
-	hasPrimaryIp *bool
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	interfaces *bool
-	isFullDepth *bool
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	localContextData *bool
-	locationId *[]int32
-	locationIdN *[]int32
-	macAddress *[]string
-	macAddressIc *[]string
-	macAddressIe *[]string
-	macAddressIew *[]string
-	macAddressIsw *[]string
-	macAddressN *[]string
-	macAddressNic *[]string
-	macAddressNie *[]string
-	macAddressNiew *[]string
-	macAddressNisw *[]string
-	manufacturer *[]string
-	manufacturerN *[]string
-	manufacturerId *[]int32
-	manufacturerIdN *[]int32
-	model *[]string
-	modelN *[]string
-	moduleBays *bool
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	parentDeviceId *[]int32
-	parentDeviceIdN *[]int32
-	passThroughPorts *bool
-	platform *[]string
-	platformN *[]string
-	platformId *[]*int32
-	platformIdN *[]*int32
-	position *[]float64
-	positionGt *[]float64
-	positionGte *[]float64
-	positionLt *[]float64
-	positionLte *[]float64
-	positionN *[]float64
-	powerOutlets *bool
-	powerPorts *bool
-	primaryIp4Id *[]int32
-	primaryIp4IdN *[]int32
-	primaryIp6Id *[]int32
-	primaryIp6IdN *[]int32
-	q *string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	role *[]string
-	roleN *[]string
-	roleId *[]int32
-	roleIdN *[]int32
-	serial *[]string
-	serialEmpty *[]string
-	serialIc *[]string
-	serialIe *[]string
-	serialIew *[]string
-	serialIsw *[]string
-	serialN *[]string
-	serialNic *[]string
-	serialNie *[]string
-	serialNiew *[]string
-	serialNisw *[]string
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	status *[]string
-	statusN *[]string
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]int32
-	tenantGroupN *[]int32
-	tenantGroupId *[]int32
-	tenantGroupIdN *[]int32
-	tenantId *[]*int32
-	tenantIdN *[]*int32
-	updatedByRequest *string
-	vcPosition *[]int32
-	vcPositionGt *[]int32
-	vcPositionGte *[]int32
-	vcPositionLt *[]int32
-	vcPositionLte *[]int32
-	vcPositionN *[]int32
-	vcPriority *[]int32
-	vcPriorityGt *[]int32
-	vcPriorityGte *[]int32
-	vcPriorityLt *[]int32
-	vcPriorityLte *[]int32
-	vcPriorityN *[]int32
-	virtualChassisId *[]int32
-	virtualChassisIdN *[]int32
+	ctx                  context.Context
+	ApiService           *DcimAPIService
+	airflow              *string
+	airflowN             *string
+	assetTag             *[]string
+	assetTagEmpty        *[]string
+	assetTagIc           *[]string
+	assetTagIe           *[]string
+	assetTagIew          *[]string
+	assetTagIsw          *[]string
+	assetTagN            *[]string
+	assetTagNic          *[]string
+	assetTagNie          *[]string
+	assetTagNiew         *[]string
+	assetTagNisw         *[]string
+	clusterId            *[]*int32
+	clusterIdN           *[]*int32
+	configTemplateId     *[]*int32
+	configTemplateIdN    *[]*int32
+	consolePorts         *bool
+	consoleServerPorts   *bool
+	contact              *[]int32
+	contactN             *[]int32
+	contactGroup         *[]int32
+	contactGroupN        *[]int32
+	contactRole          *[]int32
+	contactRoleN         *[]int32
+	created              *[]time.Time
+	createdGt            *[]time.Time
+	createdGte           *[]time.Time
+	createdLt            *[]time.Time
+	createdLte           *[]time.Time
+	createdN             *[]time.Time
+	createdByRequest     *string
+	deviceBays           *bool
+	deviceType           *[]string
+	deviceTypeN          *[]string
+	deviceTypeId         *[]int32
+	deviceTypeIdN        *[]int32
+	face                 *string
+	faceN                *string
+	hasPrimaryIp         *bool
+	id                   *[]int32
+	idGt                 *[]int32
+	idGte                *[]int32
+	idLt                 *[]int32
+	idLte                *[]int32
+	idN                  *[]int32
+	interfaces           *bool
+	isFullDepth          *bool
+	lastUpdated          *[]time.Time
+	lastUpdatedGt        *[]time.Time
+	lastUpdatedGte       *[]time.Time
+	lastUpdatedLt        *[]time.Time
+	lastUpdatedLte       *[]time.Time
+	lastUpdatedN         *[]time.Time
+	limit                *int32
+	localContextData     *bool
+	locationId           *[]int32
+	locationIdN          *[]int32
+	macAddress           *[]string
+	macAddressIc         *[]string
+	macAddressIe         *[]string
+	macAddressIew        *[]string
+	macAddressIsw        *[]string
+	macAddressN          *[]string
+	macAddressNic        *[]string
+	macAddressNie        *[]string
+	macAddressNiew       *[]string
+	macAddressNisw       *[]string
+	manufacturer         *[]string
+	manufacturerN        *[]string
+	manufacturerId       *[]int32
+	manufacturerIdN      *[]int32
+	model                *[]string
+	modelN               *[]string
+	moduleBays           *bool
+	name                 *[]string
+	nameEmpty            *[]string
+	nameIc               *[]string
+	nameIe               *[]string
+	nameIew              *[]string
+	nameIsw              *[]string
+	nameN                *[]string
+	nameNic              *[]string
+	nameNie              *[]string
+	nameNiew             *[]string
+	nameNisw             *[]string
+	offset               *int32
+	ordering             *string
+	parentDeviceId       *[]int32
+	parentDeviceIdN      *[]int32
+	passThroughPorts     *bool
+	platform             *[]string
+	platformN            *[]string
+	platformId           *[]*int32
+	platformIdN          *[]*int32
+	position             *[]float64
+	positionGt           *[]float64
+	positionGte          *[]float64
+	positionLt           *[]float64
+	positionLte          *[]float64
+	positionN            *[]float64
+	powerOutlets         *bool
+	powerPorts           *bool
+	primaryIp4Id         *[]int32
+	primaryIp4IdN        *[]int32
+	primaryIp6Id         *[]int32
+	primaryIp6IdN        *[]int32
+	q                    *string
+	rackId               *[]int32
+	rackIdN              *[]int32
+	region               *[]int32
+	regionN              *[]int32
+	regionId             *[]int32
+	regionIdN            *[]int32
+	role                 *[]string
+	roleN                *[]string
+	roleId               *[]int32
+	roleIdN              *[]int32
+	serial               *[]string
+	serialEmpty          *[]string
+	serialIc             *[]string
+	serialIe             *[]string
+	serialIew            *[]string
+	serialIsw            *[]string
+	serialN              *[]string
+	serialNic            *[]string
+	serialNie            *[]string
+	serialNiew           *[]string
+	serialNisw           *[]string
+	site                 *[]string
+	siteN                *[]string
+	siteGroup            *[]int32
+	siteGroupN           *[]int32
+	siteGroupId          *[]int32
+	siteGroupIdN         *[]int32
+	siteId               *[]int32
+	siteIdN              *[]int32
+	status               *[]string
+	statusN              *[]string
+	tag                  *[]string
+	tagN                 *[]string
+	tenant               *[]string
+	tenantN              *[]string
+	tenantGroup          *[]int32
+	tenantGroupN         *[]int32
+	tenantGroupId        *[]int32
+	tenantGroupIdN       *[]int32
+	tenantId             *[]*int32
+	tenantIdN            *[]*int32
+	updatedByRequest     *string
+	vcPosition           *[]int32
+	vcPositionGt         *[]int32
+	vcPositionGte        *[]int32
+	vcPositionLt         *[]int32
+	vcPositionLte        *[]int32
+	vcPositionN          *[]int32
+	vcPriority           *[]int32
+	vcPriorityGt         *[]int32
+	vcPriorityGte        *[]int32
+	vcPriorityLt         *[]int32
+	vcPriorityLte        *[]int32
+	vcPriorityN          *[]int32
+	virtualChassisId     *[]int32
+	virtualChassisIdN    *[]int32
 	virtualChassisMember *bool
 }
 
@@ -23417,24 +23493,25 @@ DcimDevicesList Method for DcimDevicesList
 
 Get a list of device objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimDevicesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimDevicesListRequest
 */
 func (a *DcimAPIService) DcimDevicesList(ctx context.Context) ApiDcimDevicesListRequest {
 	return ApiDcimDevicesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedDeviceWithConfigContextList
+//
+//	@return PaginatedDeviceWithConfigContextList
 func (a *DcimAPIService) DcimDevicesListExecute(r ApiDcimDevicesListRequest) (*PaginatedDeviceWithConfigContextList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedDeviceWithConfigContextList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedDeviceWithConfigContextList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDevicesList")
@@ -25156,9 +25233,9 @@ func (a *DcimAPIService) DcimDevicesListExecute(r ApiDcimDevicesListRequest) (*P
 }
 
 type ApiDcimDevicesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                           context.Context
+	ApiService                                    *DcimAPIService
+	id                                            int32
 	patchedWritableDeviceWithConfigContextRequest *PatchedWritableDeviceWithConfigContextRequest
 }
 
@@ -25176,26 +25253,27 @@ DcimDevicesPartialUpdate Method for DcimDevicesPartialUpdate
 
 Patch a device object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device.
- @return ApiDcimDevicesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device.
+	@return ApiDcimDevicesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimDevicesPartialUpdate(ctx context.Context, id int32) ApiDcimDevicesPartialUpdateRequest {
 	return ApiDcimDevicesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceWithConfigContext
+//
+//	@return DeviceWithConfigContext
 func (a *DcimAPIService) DcimDevicesPartialUpdateExecute(r ApiDcimDevicesPartialUpdateRequest) (*DeviceWithConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceWithConfigContext
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceWithConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDevicesPartialUpdate")
@@ -25281,11 +25359,11 @@ func (a *DcimAPIService) DcimDevicesPartialUpdateExecute(r ApiDcimDevicesPartial
 }
 
 type ApiDcimDevicesRenderConfigCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                    context.Context
+	ApiService                             *DcimAPIService
+	id                                     int32
 	writableDeviceWithConfigContextRequest *WritableDeviceWithConfigContextRequest
-	format *string
+	format                                 *string
 }
 
 func (r ApiDcimDevicesRenderConfigCreateRequest) WritableDeviceWithConfigContextRequest(writableDeviceWithConfigContextRequest WritableDeviceWithConfigContextRequest) ApiDcimDevicesRenderConfigCreateRequest {
@@ -25307,26 +25385,27 @@ DcimDevicesRenderConfigCreate Method for DcimDevicesRenderConfigCreate
 
 Resolve and render the preferred ConfigTemplate for this Device.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device.
- @return ApiDcimDevicesRenderConfigCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device.
+	@return ApiDcimDevicesRenderConfigCreateRequest
 */
 func (a *DcimAPIService) DcimDevicesRenderConfigCreate(ctx context.Context, id int32) ApiDcimDevicesRenderConfigCreateRequest {
 	return ApiDcimDevicesRenderConfigCreateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceWithConfigContext
+//
+//	@return DeviceWithConfigContext
 func (a *DcimAPIService) DcimDevicesRenderConfigCreateExecute(r ApiDcimDevicesRenderConfigCreateRequest) (*DeviceWithConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceWithConfigContext
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceWithConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDevicesRenderConfigCreate")
@@ -25418,9 +25497,9 @@ func (a *DcimAPIService) DcimDevicesRenderConfigCreateExecute(r ApiDcimDevicesRe
 }
 
 type ApiDcimDevicesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimDevicesRetrieveRequest) Execute() (*DeviceWithConfigContext, *http.Response, error) {
@@ -25432,26 +25511,27 @@ DcimDevicesRetrieve Method for DcimDevicesRetrieve
 
 Get a device object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device.
- @return ApiDcimDevicesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device.
+	@return ApiDcimDevicesRetrieveRequest
 */
 func (a *DcimAPIService) DcimDevicesRetrieve(ctx context.Context, id int32) ApiDcimDevicesRetrieveRequest {
 	return ApiDcimDevicesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceWithConfigContext
+//
+//	@return DeviceWithConfigContext
 func (a *DcimAPIService) DcimDevicesRetrieveExecute(r ApiDcimDevicesRetrieveRequest) (*DeviceWithConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceWithConfigContext
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceWithConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDevicesRetrieve")
@@ -25535,9 +25615,9 @@ func (a *DcimAPIService) DcimDevicesRetrieveExecute(r ApiDcimDevicesRetrieveRequ
 }
 
 type ApiDcimDevicesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                    context.Context
+	ApiService                             *DcimAPIService
+	id                                     int32
 	writableDeviceWithConfigContextRequest *WritableDeviceWithConfigContextRequest
 }
 
@@ -25555,26 +25635,27 @@ DcimDevicesUpdate Method for DcimDevicesUpdate
 
 Put a device object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this device.
- @return ApiDcimDevicesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this device.
+	@return ApiDcimDevicesUpdateRequest
 */
 func (a *DcimAPIService) DcimDevicesUpdate(ctx context.Context, id int32) ApiDcimDevicesUpdateRequest {
 	return ApiDcimDevicesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return DeviceWithConfigContext
+//
+//	@return DeviceWithConfigContext
 func (a *DcimAPIService) DcimDevicesUpdateExecute(r ApiDcimDevicesUpdateRequest) (*DeviceWithConfigContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *DeviceWithConfigContext
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *DeviceWithConfigContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimDevicesUpdate")
@@ -25663,8 +25744,8 @@ func (a *DcimAPIService) DcimDevicesUpdateExecute(r ApiDcimDevicesUpdateRequest)
 }
 
 type ApiDcimFrontPortTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	frontPortTemplateRequest *[]FrontPortTemplateRequest
 }
 
@@ -25682,22 +25763,22 @@ DcimFrontPortTemplatesBulkDestroy Method for DcimFrontPortTemplatesBulkDestroy
 
 Delete a list of front port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimFrontPortTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimFrontPortTemplatesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimFrontPortTemplatesBulkDestroy(ctx context.Context) ApiDcimFrontPortTemplatesBulkDestroyRequest {
 	return ApiDcimFrontPortTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimFrontPortTemplatesBulkDestroyExecute(r ApiDcimFrontPortTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortTemplatesBulkDestroy")
@@ -25776,8 +25857,8 @@ func (a *DcimAPIService) DcimFrontPortTemplatesBulkDestroyExecute(r ApiDcimFront
 }
 
 type ApiDcimFrontPortTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	frontPortTemplateRequest *[]FrontPortTemplateRequest
 }
 
@@ -25795,24 +25876,25 @@ DcimFrontPortTemplatesBulkPartialUpdate Method for DcimFrontPortTemplatesBulkPar
 
 Patch a list of front port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimFrontPortTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimFrontPortTemplatesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimFrontPortTemplatesBulkPartialUpdate(ctx context.Context) ApiDcimFrontPortTemplatesBulkPartialUpdateRequest {
 	return ApiDcimFrontPortTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []FrontPortTemplate
+//
+//	@return []FrontPortTemplate
 func (a *DcimAPIService) DcimFrontPortTemplatesBulkPartialUpdateExecute(r ApiDcimFrontPortTemplatesBulkPartialUpdateRequest) ([]FrontPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []FrontPortTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []FrontPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortTemplatesBulkPartialUpdate")
@@ -25900,8 +25982,8 @@ func (a *DcimAPIService) DcimFrontPortTemplatesBulkPartialUpdateExecute(r ApiDci
 }
 
 type ApiDcimFrontPortTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	frontPortTemplateRequest *[]FrontPortTemplateRequest
 }
 
@@ -25919,24 +26001,25 @@ DcimFrontPortTemplatesBulkUpdate Method for DcimFrontPortTemplatesBulkUpdate
 
 Put a list of front port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimFrontPortTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimFrontPortTemplatesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimFrontPortTemplatesBulkUpdate(ctx context.Context) ApiDcimFrontPortTemplatesBulkUpdateRequest {
 	return ApiDcimFrontPortTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []FrontPortTemplate
+//
+//	@return []FrontPortTemplate
 func (a *DcimAPIService) DcimFrontPortTemplatesBulkUpdateExecute(r ApiDcimFrontPortTemplatesBulkUpdateRequest) ([]FrontPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []FrontPortTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []FrontPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortTemplatesBulkUpdate")
@@ -26024,8 +26107,8 @@ func (a *DcimAPIService) DcimFrontPortTemplatesBulkUpdateExecute(r ApiDcimFrontP
 }
 
 type ApiDcimFrontPortTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
 	writableFrontPortTemplateRequest *WritableFrontPortTemplateRequest
 }
 
@@ -26043,24 +26126,25 @@ DcimFrontPortTemplatesCreate Method for DcimFrontPortTemplatesCreate
 
 Post a list of front port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimFrontPortTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimFrontPortTemplatesCreateRequest
 */
 func (a *DcimAPIService) DcimFrontPortTemplatesCreate(ctx context.Context) ApiDcimFrontPortTemplatesCreateRequest {
 	return ApiDcimFrontPortTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return FrontPortTemplate
+//
+//	@return FrontPortTemplate
 func (a *DcimAPIService) DcimFrontPortTemplatesCreateExecute(r ApiDcimFrontPortTemplatesCreateRequest) (*FrontPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FrontPortTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FrontPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortTemplatesCreate")
@@ -26148,9 +26232,9 @@ func (a *DcimAPIService) DcimFrontPortTemplatesCreateExecute(r ApiDcimFrontPortT
 }
 
 type ApiDcimFrontPortTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimFrontPortTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -26162,24 +26246,24 @@ DcimFrontPortTemplatesDestroy Method for DcimFrontPortTemplatesDestroy
 
 Delete a front port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this front port template.
- @return ApiDcimFrontPortTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this front port template.
+	@return ApiDcimFrontPortTemplatesDestroyRequest
 */
 func (a *DcimAPIService) DcimFrontPortTemplatesDestroy(ctx context.Context, id int32) ApiDcimFrontPortTemplatesDestroyRequest {
 	return ApiDcimFrontPortTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimFrontPortTemplatesDestroyExecute(r ApiDcimFrontPortTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortTemplatesDestroy")
@@ -26254,59 +26338,59 @@ func (a *DcimAPIService) DcimFrontPortTemplatesDestroyExecute(r ApiDcimFrontPort
 }
 
 type ApiDcimFrontPortTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	color *[]string
-	colorEmpty *[]string
-	colorIc *[]string
-	colorIe *[]string
-	colorIew *[]string
-	colorIsw *[]string
-	colorN *[]string
-	colorNic *[]string
-	colorNie *[]string
-	colorNiew *[]string
-	colorNisw *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	color            *[]string
+	colorEmpty       *[]string
+	colorIc          *[]string
+	colorIe          *[]string
+	colorIew         *[]string
+	colorIsw         *[]string
+	colorN           *[]string
+	colorNic         *[]string
+	colorNie         *[]string
+	colorNiew        *[]string
+	colorNisw        *[]string
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	devicetypeId *[]*int32
-	devicetypeIdN *[]*int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	moduletypeId *[]*int32
-	moduletypeIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	type_ *[]string
-	typeN *[]string
+	devicetypeId     *[]*int32
+	devicetypeIdN    *[]*int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	moduletypeId     *[]*int32
+	moduletypeIdN    *[]*int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	type_            *[]string
+	typeN            *[]string
 	updatedByRequest *string
 }
 
@@ -26589,24 +26673,25 @@ DcimFrontPortTemplatesList Method for DcimFrontPortTemplatesList
 
 Get a list of front port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimFrontPortTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimFrontPortTemplatesListRequest
 */
 func (a *DcimAPIService) DcimFrontPortTemplatesList(ctx context.Context) ApiDcimFrontPortTemplatesListRequest {
 	return ApiDcimFrontPortTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedFrontPortTemplateList
+//
+//	@return PaginatedFrontPortTemplateList
 func (a *DcimAPIService) DcimFrontPortTemplatesListExecute(r ApiDcimFrontPortTemplatesListRequest) (*PaginatedFrontPortTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedFrontPortTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedFrontPortTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortTemplatesList")
@@ -27213,9 +27298,9 @@ func (a *DcimAPIService) DcimFrontPortTemplatesListExecute(r ApiDcimFrontPortTem
 }
 
 type ApiDcimFrontPortTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                     context.Context
+	ApiService                              *DcimAPIService
+	id                                      int32
 	patchedWritableFrontPortTemplateRequest *PatchedWritableFrontPortTemplateRequest
 }
 
@@ -27233,26 +27318,27 @@ DcimFrontPortTemplatesPartialUpdate Method for DcimFrontPortTemplatesPartialUpda
 
 Patch a front port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this front port template.
- @return ApiDcimFrontPortTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this front port template.
+	@return ApiDcimFrontPortTemplatesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimFrontPortTemplatesPartialUpdate(ctx context.Context, id int32) ApiDcimFrontPortTemplatesPartialUpdateRequest {
 	return ApiDcimFrontPortTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return FrontPortTemplate
+//
+//	@return FrontPortTemplate
 func (a *DcimAPIService) DcimFrontPortTemplatesPartialUpdateExecute(r ApiDcimFrontPortTemplatesPartialUpdateRequest) (*FrontPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FrontPortTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FrontPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortTemplatesPartialUpdate")
@@ -27338,9 +27424,9 @@ func (a *DcimAPIService) DcimFrontPortTemplatesPartialUpdateExecute(r ApiDcimFro
 }
 
 type ApiDcimFrontPortTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimFrontPortTemplatesRetrieveRequest) Execute() (*FrontPortTemplate, *http.Response, error) {
@@ -27352,26 +27438,27 @@ DcimFrontPortTemplatesRetrieve Method for DcimFrontPortTemplatesRetrieve
 
 Get a front port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this front port template.
- @return ApiDcimFrontPortTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this front port template.
+	@return ApiDcimFrontPortTemplatesRetrieveRequest
 */
 func (a *DcimAPIService) DcimFrontPortTemplatesRetrieve(ctx context.Context, id int32) ApiDcimFrontPortTemplatesRetrieveRequest {
 	return ApiDcimFrontPortTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return FrontPortTemplate
+//
+//	@return FrontPortTemplate
 func (a *DcimAPIService) DcimFrontPortTemplatesRetrieveExecute(r ApiDcimFrontPortTemplatesRetrieveRequest) (*FrontPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FrontPortTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FrontPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortTemplatesRetrieve")
@@ -27455,9 +27542,9 @@ func (a *DcimAPIService) DcimFrontPortTemplatesRetrieveExecute(r ApiDcimFrontPor
 }
 
 type ApiDcimFrontPortTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
+	id                               int32
 	writableFrontPortTemplateRequest *WritableFrontPortTemplateRequest
 }
 
@@ -27475,26 +27562,27 @@ DcimFrontPortTemplatesUpdate Method for DcimFrontPortTemplatesUpdate
 
 Put a front port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this front port template.
- @return ApiDcimFrontPortTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this front port template.
+	@return ApiDcimFrontPortTemplatesUpdateRequest
 */
 func (a *DcimAPIService) DcimFrontPortTemplatesUpdate(ctx context.Context, id int32) ApiDcimFrontPortTemplatesUpdateRequest {
 	return ApiDcimFrontPortTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return FrontPortTemplate
+//
+//	@return FrontPortTemplate
 func (a *DcimAPIService) DcimFrontPortTemplatesUpdateExecute(r ApiDcimFrontPortTemplatesUpdateRequest) (*FrontPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FrontPortTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FrontPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortTemplatesUpdate")
@@ -27583,8 +27671,8 @@ func (a *DcimAPIService) DcimFrontPortTemplatesUpdateExecute(r ApiDcimFrontPortT
 }
 
 type ApiDcimFrontPortsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	frontPortRequest *[]FrontPortRequest
 }
 
@@ -27602,22 +27690,22 @@ DcimFrontPortsBulkDestroy Method for DcimFrontPortsBulkDestroy
 
 Delete a list of front port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimFrontPortsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimFrontPortsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimFrontPortsBulkDestroy(ctx context.Context) ApiDcimFrontPortsBulkDestroyRequest {
 	return ApiDcimFrontPortsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimFrontPortsBulkDestroyExecute(r ApiDcimFrontPortsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortsBulkDestroy")
@@ -27696,8 +27784,8 @@ func (a *DcimAPIService) DcimFrontPortsBulkDestroyExecute(r ApiDcimFrontPortsBul
 }
 
 type ApiDcimFrontPortsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	frontPortRequest *[]FrontPortRequest
 }
 
@@ -27715,24 +27803,25 @@ DcimFrontPortsBulkPartialUpdate Method for DcimFrontPortsBulkPartialUpdate
 
 Patch a list of front port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimFrontPortsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimFrontPortsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimFrontPortsBulkPartialUpdate(ctx context.Context) ApiDcimFrontPortsBulkPartialUpdateRequest {
 	return ApiDcimFrontPortsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []FrontPort
+//
+//	@return []FrontPort
 func (a *DcimAPIService) DcimFrontPortsBulkPartialUpdateExecute(r ApiDcimFrontPortsBulkPartialUpdateRequest) ([]FrontPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []FrontPort
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []FrontPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortsBulkPartialUpdate")
@@ -27820,8 +27909,8 @@ func (a *DcimAPIService) DcimFrontPortsBulkPartialUpdateExecute(r ApiDcimFrontPo
 }
 
 type ApiDcimFrontPortsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	frontPortRequest *[]FrontPortRequest
 }
 
@@ -27839,24 +27928,25 @@ DcimFrontPortsBulkUpdate Method for DcimFrontPortsBulkUpdate
 
 Put a list of front port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimFrontPortsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimFrontPortsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimFrontPortsBulkUpdate(ctx context.Context) ApiDcimFrontPortsBulkUpdateRequest {
 	return ApiDcimFrontPortsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []FrontPort
+//
+//	@return []FrontPort
 func (a *DcimAPIService) DcimFrontPortsBulkUpdateExecute(r ApiDcimFrontPortsBulkUpdateRequest) ([]FrontPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []FrontPort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []FrontPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortsBulkUpdate")
@@ -27944,8 +28034,8 @@ func (a *DcimAPIService) DcimFrontPortsBulkUpdateExecute(r ApiDcimFrontPortsBulk
 }
 
 type ApiDcimFrontPortsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	writableFrontPortRequest *WritableFrontPortRequest
 }
 
@@ -27963,24 +28053,25 @@ DcimFrontPortsCreate Method for DcimFrontPortsCreate
 
 Post a list of front port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimFrontPortsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimFrontPortsCreateRequest
 */
 func (a *DcimAPIService) DcimFrontPortsCreate(ctx context.Context) ApiDcimFrontPortsCreateRequest {
 	return ApiDcimFrontPortsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return FrontPort
+//
+//	@return FrontPort
 func (a *DcimAPIService) DcimFrontPortsCreateExecute(r ApiDcimFrontPortsCreateRequest) (*FrontPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FrontPort
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FrontPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortsCreate")
@@ -28068,9 +28159,9 @@ func (a *DcimAPIService) DcimFrontPortsCreateExecute(r ApiDcimFrontPortsCreateRe
 }
 
 type ApiDcimFrontPortsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimFrontPortsDestroyRequest) Execute() (*http.Response, error) {
@@ -28082,24 +28173,24 @@ DcimFrontPortsDestroy Method for DcimFrontPortsDestroy
 
 Delete a front port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this front port.
- @return ApiDcimFrontPortsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this front port.
+	@return ApiDcimFrontPortsDestroyRequest
 */
 func (a *DcimAPIService) DcimFrontPortsDestroy(ctx context.Context, id int32) ApiDcimFrontPortsDestroyRequest {
 	return ApiDcimFrontPortsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimFrontPortsDestroyExecute(r ApiDcimFrontPortsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortsDestroy")
@@ -28174,113 +28265,113 @@ func (a *DcimAPIService) DcimFrontPortsDestroyExecute(r ApiDcimFrontPortsDestroy
 }
 
 type ApiDcimFrontPortsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	cableEnd *string
-	cableEndN *string
-	cabled *bool
-	color *[]string
-	colorEmpty *[]string
-	colorIc *[]string
-	colorIe *[]string
-	colorIew *[]string
-	colorIsw *[]string
-	colorN *[]string
-	colorNic *[]string
-	colorNie *[]string
-	colorNiew *[]string
-	colorNisw *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	device *[]*string
-	deviceN *[]*string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
-	moduleId *[]*int32
-	moduleIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	occupied *bool
-	offset *int32
-	ordering *string
-	q *string
-	rack *[]string
-	rackN *[]string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	type_ *[]string
-	typeN *[]string
-	updatedByRequest *string
-	virtualChassis *[]string
-	virtualChassisN *[]string
-	virtualChassisId *[]int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	cableEnd          *string
+	cableEndN         *string
+	cabled            *bool
+	color             *[]string
+	colorEmpty        *[]string
+	colorIc           *[]string
+	colorIe           *[]string
+	colorIew          *[]string
+	colorIsw          *[]string
+	colorN            *[]string
+	colorNic          *[]string
+	colorNie          *[]string
+	colorNiew         *[]string
+	colorNisw         *[]string
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *[]string
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	device            *[]*string
+	deviceN           *[]*string
+	deviceId          *[]int32
+	deviceIdN         *[]int32
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	label             *[]string
+	labelEmpty        *[]string
+	labelIc           *[]string
+	labelIe           *[]string
+	labelIew          *[]string
+	labelIsw          *[]string
+	labelN            *[]string
+	labelNic          *[]string
+	labelNie          *[]string
+	labelNiew         *[]string
+	labelNisw         *[]string
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	location          *[]string
+	locationN         *[]string
+	locationId        *[]int32
+	locationIdN       *[]int32
+	moduleId          *[]*int32
+	moduleIdN         *[]*int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	occupied          *bool
+	offset            *int32
+	ordering          *string
+	q                 *string
+	rack              *[]string
+	rackN             *[]string
+	rackId            *[]int32
+	rackIdN           *[]int32
+	region            *[]int32
+	regionN           *[]int32
+	regionId          *[]int32
+	regionIdN         *[]int32
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]int32
+	siteGroupN        *[]int32
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	tag               *[]string
+	tagN              *[]string
+	type_             *[]string
+	typeN             *[]string
+	updatedByRequest  *string
+	virtualChassis    *[]string
+	virtualChassisN   *[]string
+	virtualChassisId  *[]int32
 	virtualChassisIdN *[]int32
 }
 
@@ -28861,24 +28952,25 @@ DcimFrontPortsList Method for DcimFrontPortsList
 
 Get a list of front port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimFrontPortsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimFrontPortsListRequest
 */
 func (a *DcimAPIService) DcimFrontPortsList(ctx context.Context) ApiDcimFrontPortsListRequest {
 	return ApiDcimFrontPortsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedFrontPortList
+//
+//	@return PaginatedFrontPortList
 func (a *DcimAPIService) DcimFrontPortsListExecute(r ApiDcimFrontPortsListRequest) (*PaginatedFrontPortList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedFrontPortList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedFrontPortList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortsList")
@@ -30047,9 +30139,9 @@ func (a *DcimAPIService) DcimFrontPortsListExecute(r ApiDcimFrontPortsListReques
 }
 
 type ApiDcimFrontPortsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *DcimAPIService
+	id                              int32
 	patchedWritableFrontPortRequest *PatchedWritableFrontPortRequest
 }
 
@@ -30067,26 +30159,27 @@ DcimFrontPortsPartialUpdate Method for DcimFrontPortsPartialUpdate
 
 Patch a front port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this front port.
- @return ApiDcimFrontPortsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this front port.
+	@return ApiDcimFrontPortsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimFrontPortsPartialUpdate(ctx context.Context, id int32) ApiDcimFrontPortsPartialUpdateRequest {
 	return ApiDcimFrontPortsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return FrontPort
+//
+//	@return FrontPort
 func (a *DcimAPIService) DcimFrontPortsPartialUpdateExecute(r ApiDcimFrontPortsPartialUpdateRequest) (*FrontPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FrontPort
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FrontPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortsPartialUpdate")
@@ -30172,9 +30265,9 @@ func (a *DcimAPIService) DcimFrontPortsPartialUpdateExecute(r ApiDcimFrontPortsP
 }
 
 type ApiDcimFrontPortsPathsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimFrontPortsPathsRetrieveRequest) Execute() (*FrontPort, *http.Response, error) {
@@ -30186,26 +30279,27 @@ DcimFrontPortsPathsRetrieve Method for DcimFrontPortsPathsRetrieve
 
 Return all CablePaths which traverse a given pass-through port.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this front port.
- @return ApiDcimFrontPortsPathsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this front port.
+	@return ApiDcimFrontPortsPathsRetrieveRequest
 */
 func (a *DcimAPIService) DcimFrontPortsPathsRetrieve(ctx context.Context, id int32) ApiDcimFrontPortsPathsRetrieveRequest {
 	return ApiDcimFrontPortsPathsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return FrontPort
+//
+//	@return FrontPort
 func (a *DcimAPIService) DcimFrontPortsPathsRetrieveExecute(r ApiDcimFrontPortsPathsRetrieveRequest) (*FrontPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FrontPort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FrontPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortsPathsRetrieve")
@@ -30289,9 +30383,9 @@ func (a *DcimAPIService) DcimFrontPortsPathsRetrieveExecute(r ApiDcimFrontPortsP
 }
 
 type ApiDcimFrontPortsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimFrontPortsRetrieveRequest) Execute() (*FrontPort, *http.Response, error) {
@@ -30303,26 +30397,27 @@ DcimFrontPortsRetrieve Method for DcimFrontPortsRetrieve
 
 Get a front port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this front port.
- @return ApiDcimFrontPortsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this front port.
+	@return ApiDcimFrontPortsRetrieveRequest
 */
 func (a *DcimAPIService) DcimFrontPortsRetrieve(ctx context.Context, id int32) ApiDcimFrontPortsRetrieveRequest {
 	return ApiDcimFrontPortsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return FrontPort
+//
+//	@return FrontPort
 func (a *DcimAPIService) DcimFrontPortsRetrieveExecute(r ApiDcimFrontPortsRetrieveRequest) (*FrontPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FrontPort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FrontPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortsRetrieve")
@@ -30406,9 +30501,9 @@ func (a *DcimAPIService) DcimFrontPortsRetrieveExecute(r ApiDcimFrontPortsRetrie
 }
 
 type ApiDcimFrontPortsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *DcimAPIService
+	id                       int32
 	writableFrontPortRequest *WritableFrontPortRequest
 }
 
@@ -30426,26 +30521,27 @@ DcimFrontPortsUpdate Method for DcimFrontPortsUpdate
 
 Put a front port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this front port.
- @return ApiDcimFrontPortsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this front port.
+	@return ApiDcimFrontPortsUpdateRequest
 */
 func (a *DcimAPIService) DcimFrontPortsUpdate(ctx context.Context, id int32) ApiDcimFrontPortsUpdateRequest {
 	return ApiDcimFrontPortsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return FrontPort
+//
+//	@return FrontPort
 func (a *DcimAPIService) DcimFrontPortsUpdateExecute(r ApiDcimFrontPortsUpdateRequest) (*FrontPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *FrontPort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *FrontPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimFrontPortsUpdate")
@@ -30534,8 +30630,8 @@ func (a *DcimAPIService) DcimFrontPortsUpdateExecute(r ApiDcimFrontPortsUpdateRe
 }
 
 type ApiDcimInterfaceTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	interfaceTemplateRequest *[]InterfaceTemplateRequest
 }
 
@@ -30553,22 +30649,22 @@ DcimInterfaceTemplatesBulkDestroy Method for DcimInterfaceTemplatesBulkDestroy
 
 Delete a list of interface template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInterfaceTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInterfaceTemplatesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimInterfaceTemplatesBulkDestroy(ctx context.Context) ApiDcimInterfaceTemplatesBulkDestroyRequest {
 	return ApiDcimInterfaceTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimInterfaceTemplatesBulkDestroyExecute(r ApiDcimInterfaceTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfaceTemplatesBulkDestroy")
@@ -30647,8 +30743,8 @@ func (a *DcimAPIService) DcimInterfaceTemplatesBulkDestroyExecute(r ApiDcimInter
 }
 
 type ApiDcimInterfaceTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	interfaceTemplateRequest *[]InterfaceTemplateRequest
 }
 
@@ -30666,24 +30762,25 @@ DcimInterfaceTemplatesBulkPartialUpdate Method for DcimInterfaceTemplatesBulkPar
 
 Patch a list of interface template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInterfaceTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInterfaceTemplatesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimInterfaceTemplatesBulkPartialUpdate(ctx context.Context) ApiDcimInterfaceTemplatesBulkPartialUpdateRequest {
 	return ApiDcimInterfaceTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []InterfaceTemplate
+//
+//	@return []InterfaceTemplate
 func (a *DcimAPIService) DcimInterfaceTemplatesBulkPartialUpdateExecute(r ApiDcimInterfaceTemplatesBulkPartialUpdateRequest) ([]InterfaceTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []InterfaceTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []InterfaceTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfaceTemplatesBulkPartialUpdate")
@@ -30771,8 +30868,8 @@ func (a *DcimAPIService) DcimInterfaceTemplatesBulkPartialUpdateExecute(r ApiDci
 }
 
 type ApiDcimInterfaceTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	interfaceTemplateRequest *[]InterfaceTemplateRequest
 }
 
@@ -30790,24 +30887,25 @@ DcimInterfaceTemplatesBulkUpdate Method for DcimInterfaceTemplatesBulkUpdate
 
 Put a list of interface template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInterfaceTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInterfaceTemplatesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimInterfaceTemplatesBulkUpdate(ctx context.Context) ApiDcimInterfaceTemplatesBulkUpdateRequest {
 	return ApiDcimInterfaceTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []InterfaceTemplate
+//
+//	@return []InterfaceTemplate
 func (a *DcimAPIService) DcimInterfaceTemplatesBulkUpdateExecute(r ApiDcimInterfaceTemplatesBulkUpdateRequest) ([]InterfaceTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []InterfaceTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []InterfaceTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfaceTemplatesBulkUpdate")
@@ -30895,8 +30993,8 @@ func (a *DcimAPIService) DcimInterfaceTemplatesBulkUpdateExecute(r ApiDcimInterf
 }
 
 type ApiDcimInterfaceTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
 	writableInterfaceTemplateRequest *WritableInterfaceTemplateRequest
 }
 
@@ -30914,24 +31012,25 @@ DcimInterfaceTemplatesCreate Method for DcimInterfaceTemplatesCreate
 
 Post a list of interface template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInterfaceTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInterfaceTemplatesCreateRequest
 */
 func (a *DcimAPIService) DcimInterfaceTemplatesCreate(ctx context.Context) ApiDcimInterfaceTemplatesCreateRequest {
 	return ApiDcimInterfaceTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return InterfaceTemplate
+//
+//	@return InterfaceTemplate
 func (a *DcimAPIService) DcimInterfaceTemplatesCreateExecute(r ApiDcimInterfaceTemplatesCreateRequest) (*InterfaceTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InterfaceTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InterfaceTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfaceTemplatesCreate")
@@ -31019,9 +31118,9 @@ func (a *DcimAPIService) DcimInterfaceTemplatesCreateExecute(r ApiDcimInterfaceT
 }
 
 type ApiDcimInterfaceTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInterfaceTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -31033,24 +31132,24 @@ DcimInterfaceTemplatesDestroy Method for DcimInterfaceTemplatesDestroy
 
 Delete a interface template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this interface template.
- @return ApiDcimInterfaceTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this interface template.
+	@return ApiDcimInterfaceTemplatesDestroyRequest
 */
 func (a *DcimAPIService) DcimInterfaceTemplatesDestroy(ctx context.Context, id int32) ApiDcimInterfaceTemplatesDestroyRequest {
 	return ApiDcimInterfaceTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimInterfaceTemplatesDestroyExecute(r ApiDcimInterfaceTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfaceTemplatesDestroy")
@@ -31125,56 +31224,56 @@ func (a *DcimAPIService) DcimInterfaceTemplatesDestroyExecute(r ApiDcimInterface
 }
 
 type ApiDcimInterfaceTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	bridgeId *[]int32
-	bridgeIdN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	bridgeId         *[]int32
+	bridgeIdN        *[]int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	devicetypeId *[]*int32
-	devicetypeIdN *[]*int32
-	enabled *bool
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	mgmtOnly *bool
-	moduletypeId *[]*int32
-	moduletypeIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	poeMode *[]string
-	poeModeN *[]string
-	poeType *[]string
-	poeTypeN *[]string
-	q *string
-	type_ *[]string
-	typeN *[]string
+	devicetypeId     *[]*int32
+	devicetypeIdN    *[]*int32
+	enabled          *bool
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	mgmtOnly         *bool
+	moduletypeId     *[]*int32
+	moduletypeIdN    *[]*int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	poeMode          *[]string
+	poeModeN         *[]string
+	poeType          *[]string
+	poeTypeN         *[]string
+	q                *string
+	type_            *[]string
+	typeN            *[]string
 	updatedByRequest *string
 }
 
@@ -31446,24 +31545,25 @@ DcimInterfaceTemplatesList Method for DcimInterfaceTemplatesList
 
 Get a list of interface template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInterfaceTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInterfaceTemplatesListRequest
 */
 func (a *DcimAPIService) DcimInterfaceTemplatesList(ctx context.Context) ApiDcimInterfaceTemplatesListRequest {
 	return ApiDcimInterfaceTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedInterfaceTemplateList
+//
+//	@return PaginatedInterfaceTemplateList
 func (a *DcimAPIService) DcimInterfaceTemplatesListExecute(r ApiDcimInterfaceTemplatesListRequest) (*PaginatedInterfaceTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedInterfaceTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedInterfaceTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfaceTemplatesList")
@@ -32021,9 +32121,9 @@ func (a *DcimAPIService) DcimInterfaceTemplatesListExecute(r ApiDcimInterfaceTem
 }
 
 type ApiDcimInterfaceTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                     context.Context
+	ApiService                              *DcimAPIService
+	id                                      int32
 	patchedWritableInterfaceTemplateRequest *PatchedWritableInterfaceTemplateRequest
 }
 
@@ -32041,26 +32141,27 @@ DcimInterfaceTemplatesPartialUpdate Method for DcimInterfaceTemplatesPartialUpda
 
 Patch a interface template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this interface template.
- @return ApiDcimInterfaceTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this interface template.
+	@return ApiDcimInterfaceTemplatesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimInterfaceTemplatesPartialUpdate(ctx context.Context, id int32) ApiDcimInterfaceTemplatesPartialUpdateRequest {
 	return ApiDcimInterfaceTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InterfaceTemplate
+//
+//	@return InterfaceTemplate
 func (a *DcimAPIService) DcimInterfaceTemplatesPartialUpdateExecute(r ApiDcimInterfaceTemplatesPartialUpdateRequest) (*InterfaceTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InterfaceTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InterfaceTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfaceTemplatesPartialUpdate")
@@ -32146,9 +32247,9 @@ func (a *DcimAPIService) DcimInterfaceTemplatesPartialUpdateExecute(r ApiDcimInt
 }
 
 type ApiDcimInterfaceTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInterfaceTemplatesRetrieveRequest) Execute() (*InterfaceTemplate, *http.Response, error) {
@@ -32160,26 +32261,27 @@ DcimInterfaceTemplatesRetrieve Method for DcimInterfaceTemplatesRetrieve
 
 Get a interface template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this interface template.
- @return ApiDcimInterfaceTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this interface template.
+	@return ApiDcimInterfaceTemplatesRetrieveRequest
 */
 func (a *DcimAPIService) DcimInterfaceTemplatesRetrieve(ctx context.Context, id int32) ApiDcimInterfaceTemplatesRetrieveRequest {
 	return ApiDcimInterfaceTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InterfaceTemplate
+//
+//	@return InterfaceTemplate
 func (a *DcimAPIService) DcimInterfaceTemplatesRetrieveExecute(r ApiDcimInterfaceTemplatesRetrieveRequest) (*InterfaceTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InterfaceTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InterfaceTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfaceTemplatesRetrieve")
@@ -32263,9 +32365,9 @@ func (a *DcimAPIService) DcimInterfaceTemplatesRetrieveExecute(r ApiDcimInterfac
 }
 
 type ApiDcimInterfaceTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
+	id                               int32
 	writableInterfaceTemplateRequest *WritableInterfaceTemplateRequest
 }
 
@@ -32283,26 +32385,27 @@ DcimInterfaceTemplatesUpdate Method for DcimInterfaceTemplatesUpdate
 
 Put a interface template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this interface template.
- @return ApiDcimInterfaceTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this interface template.
+	@return ApiDcimInterfaceTemplatesUpdateRequest
 */
 func (a *DcimAPIService) DcimInterfaceTemplatesUpdate(ctx context.Context, id int32) ApiDcimInterfaceTemplatesUpdateRequest {
 	return ApiDcimInterfaceTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InterfaceTemplate
+//
+//	@return InterfaceTemplate
 func (a *DcimAPIService) DcimInterfaceTemplatesUpdateExecute(r ApiDcimInterfaceTemplatesUpdateRequest) (*InterfaceTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InterfaceTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InterfaceTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfaceTemplatesUpdate")
@@ -32391,8 +32494,8 @@ func (a *DcimAPIService) DcimInterfaceTemplatesUpdateExecute(r ApiDcimInterfaceT
 }
 
 type ApiDcimInterfacesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	interfaceRequest *[]InterfaceRequest
 }
 
@@ -32410,22 +32513,22 @@ DcimInterfacesBulkDestroy Method for DcimInterfacesBulkDestroy
 
 Delete a list of interface objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInterfacesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInterfacesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimInterfacesBulkDestroy(ctx context.Context) ApiDcimInterfacesBulkDestroyRequest {
 	return ApiDcimInterfacesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimInterfacesBulkDestroyExecute(r ApiDcimInterfacesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfacesBulkDestroy")
@@ -32504,8 +32607,8 @@ func (a *DcimAPIService) DcimInterfacesBulkDestroyExecute(r ApiDcimInterfacesBul
 }
 
 type ApiDcimInterfacesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	interfaceRequest *[]InterfaceRequest
 }
 
@@ -32523,24 +32626,25 @@ DcimInterfacesBulkPartialUpdate Method for DcimInterfacesBulkPartialUpdate
 
 Patch a list of interface objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInterfacesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInterfacesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimInterfacesBulkPartialUpdate(ctx context.Context) ApiDcimInterfacesBulkPartialUpdateRequest {
 	return ApiDcimInterfacesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Interface
+//
+//	@return []Interface
 func (a *DcimAPIService) DcimInterfacesBulkPartialUpdateExecute(r ApiDcimInterfacesBulkPartialUpdateRequest) ([]Interface, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Interface
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Interface
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfacesBulkPartialUpdate")
@@ -32628,8 +32732,8 @@ func (a *DcimAPIService) DcimInterfacesBulkPartialUpdateExecute(r ApiDcimInterfa
 }
 
 type ApiDcimInterfacesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	interfaceRequest *[]InterfaceRequest
 }
 
@@ -32647,24 +32751,25 @@ DcimInterfacesBulkUpdate Method for DcimInterfacesBulkUpdate
 
 Put a list of interface objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInterfacesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInterfacesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimInterfacesBulkUpdate(ctx context.Context) ApiDcimInterfacesBulkUpdateRequest {
 	return ApiDcimInterfacesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Interface
+//
+//	@return []Interface
 func (a *DcimAPIService) DcimInterfacesBulkUpdateExecute(r ApiDcimInterfacesBulkUpdateRequest) ([]Interface, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Interface
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Interface
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfacesBulkUpdate")
@@ -32752,8 +32857,8 @@ func (a *DcimAPIService) DcimInterfacesBulkUpdateExecute(r ApiDcimInterfacesBulk
 }
 
 type ApiDcimInterfacesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	writableInterfaceRequest *WritableInterfaceRequest
 }
 
@@ -32771,24 +32876,25 @@ DcimInterfacesCreate Method for DcimInterfacesCreate
 
 Post a list of interface objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInterfacesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInterfacesCreateRequest
 */
 func (a *DcimAPIService) DcimInterfacesCreate(ctx context.Context) ApiDcimInterfacesCreateRequest {
 	return ApiDcimInterfacesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Interface
+//
+//	@return Interface
 func (a *DcimAPIService) DcimInterfacesCreateExecute(r ApiDcimInterfacesCreateRequest) (*Interface, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Interface
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Interface
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfacesCreate")
@@ -32876,9 +32982,9 @@ func (a *DcimAPIService) DcimInterfacesCreateExecute(r ApiDcimInterfacesCreateRe
 }
 
 type ApiDcimInterfacesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInterfacesDestroyRequest) Execute() (*http.Response, error) {
@@ -32890,24 +32996,24 @@ DcimInterfacesDestroy Method for DcimInterfacesDestroy
 
 Delete a interface object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this interface.
- @return ApiDcimInterfacesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this interface.
+	@return ApiDcimInterfacesDestroyRequest
 */
 func (a *DcimAPIService) DcimInterfacesDestroy(ctx context.Context, id int32) ApiDcimInterfacesDestroyRequest {
 	return ApiDcimInterfacesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimInterfacesDestroyExecute(r ApiDcimInterfacesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfacesDestroy")
@@ -32982,189 +33088,189 @@ func (a *DcimAPIService) DcimInterfacesDestroyExecute(r ApiDcimInterfacesDestroy
 }
 
 type ApiDcimInterfacesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	bridgeId *[]int32
-	bridgeIdN *[]int32
-	cableEnd *string
-	cableEndN *string
-	cabled *bool
-	connected *bool
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	device *[]string
-	deviceId *[]int32
-	duplex *[]*string
-	duplexN *[]*string
-	enabled *bool
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	kind *string
-	l2vpn *[]*int64
-	l2vpnN *[]*int64
-	l2vpnId *[]int32
-	l2vpnIdN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lagId *[]int32
-	lagIdN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
-	macAddress *[]string
-	macAddressIc *[]string
-	macAddressIe *[]string
-	macAddressIew *[]string
-	macAddressIsw *[]string
-	macAddressN *[]string
-	macAddressNic *[]string
-	macAddressNie *[]string
-	macAddressNiew *[]string
-	macAddressNisw *[]string
-	mgmtOnly *bool
-	mode *string
-	modeN *string
-	moduleId *[]*int32
-	moduleIdN *[]*int32
-	mtu *[]int32
-	mtuGt *[]int32
-	mtuGte *[]int32
-	mtuLt *[]int32
-	mtuLte *[]int32
-	mtuN *[]int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	occupied *bool
-	offset *int32
-	ordering *string
-	parentId *[]int32
-	parentIdN *[]int32
-	poeMode *[]string
-	poeModeN *[]string
-	poeType *[]string
-	poeTypeN *[]string
-	q *string
-	rack *[]string
-	rackN *[]string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	rfChannel *[]string
-	rfChannelN *[]string
-	rfChannelFrequency *[]float64
-	rfChannelFrequencyGt *[]float64
+	ctx                   context.Context
+	ApiService            *DcimAPIService
+	bridgeId              *[]int32
+	bridgeIdN             *[]int32
+	cableEnd              *string
+	cableEndN             *string
+	cabled                *bool
+	connected             *bool
+	created               *[]time.Time
+	createdGt             *[]time.Time
+	createdGte            *[]time.Time
+	createdLt             *[]time.Time
+	createdLte            *[]time.Time
+	createdN              *[]time.Time
+	createdByRequest      *string
+	description           *[]string
+	descriptionEmpty      *[]string
+	descriptionIc         *[]string
+	descriptionIe         *[]string
+	descriptionIew        *[]string
+	descriptionIsw        *[]string
+	descriptionN          *[]string
+	descriptionNic        *[]string
+	descriptionNie        *[]string
+	descriptionNiew       *[]string
+	descriptionNisw       *[]string
+	device                *[]string
+	deviceId              *[]int32
+	duplex                *[]*string
+	duplexN               *[]*string
+	enabled               *bool
+	id                    *[]int32
+	idGt                  *[]int32
+	idGte                 *[]int32
+	idLt                  *[]int32
+	idLte                 *[]int32
+	idN                   *[]int32
+	kind                  *string
+	l2vpn                 *[]*int64
+	l2vpnN                *[]*int64
+	l2vpnId               *[]int32
+	l2vpnIdN              *[]int32
+	label                 *[]string
+	labelEmpty            *[]string
+	labelIc               *[]string
+	labelIe               *[]string
+	labelIew              *[]string
+	labelIsw              *[]string
+	labelN                *[]string
+	labelNic              *[]string
+	labelNie              *[]string
+	labelNiew             *[]string
+	labelNisw             *[]string
+	lagId                 *[]int32
+	lagIdN                *[]int32
+	lastUpdated           *[]time.Time
+	lastUpdatedGt         *[]time.Time
+	lastUpdatedGte        *[]time.Time
+	lastUpdatedLt         *[]time.Time
+	lastUpdatedLte        *[]time.Time
+	lastUpdatedN          *[]time.Time
+	limit                 *int32
+	location              *[]string
+	locationN             *[]string
+	locationId            *[]int32
+	locationIdN           *[]int32
+	macAddress            *[]string
+	macAddressIc          *[]string
+	macAddressIe          *[]string
+	macAddressIew         *[]string
+	macAddressIsw         *[]string
+	macAddressN           *[]string
+	macAddressNic         *[]string
+	macAddressNie         *[]string
+	macAddressNiew        *[]string
+	macAddressNisw        *[]string
+	mgmtOnly              *bool
+	mode                  *string
+	modeN                 *string
+	moduleId              *[]*int32
+	moduleIdN             *[]*int32
+	mtu                   *[]int32
+	mtuGt                 *[]int32
+	mtuGte                *[]int32
+	mtuLt                 *[]int32
+	mtuLte                *[]int32
+	mtuN                  *[]int32
+	name                  *[]string
+	nameEmpty             *[]string
+	nameIc                *[]string
+	nameIe                *[]string
+	nameIew               *[]string
+	nameIsw               *[]string
+	nameN                 *[]string
+	nameNic               *[]string
+	nameNie               *[]string
+	nameNiew              *[]string
+	nameNisw              *[]string
+	occupied              *bool
+	offset                *int32
+	ordering              *string
+	parentId              *[]int32
+	parentIdN             *[]int32
+	poeMode               *[]string
+	poeModeN              *[]string
+	poeType               *[]string
+	poeTypeN              *[]string
+	q                     *string
+	rack                  *[]string
+	rackN                 *[]string
+	rackId                *[]int32
+	rackIdN               *[]int32
+	region                *[]int32
+	regionN               *[]int32
+	regionId              *[]int32
+	regionIdN             *[]int32
+	rfChannel             *[]string
+	rfChannelN            *[]string
+	rfChannelFrequency    *[]float64
+	rfChannelFrequencyGt  *[]float64
 	rfChannelFrequencyGte *[]float64
-	rfChannelFrequencyLt *[]float64
+	rfChannelFrequencyLt  *[]float64
 	rfChannelFrequencyLte *[]float64
-	rfChannelFrequencyN *[]float64
-	rfChannelWidth *[]float64
-	rfChannelWidthGt *[]float64
-	rfChannelWidthGte *[]float64
-	rfChannelWidthLt *[]float64
-	rfChannelWidthLte *[]float64
-	rfChannelWidthN *[]float64
-	rfRole *[]string
-	rfRoleN *[]string
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	speed *[]int32
-	speedGt *[]int32
-	speedGte *[]int32
-	speedLt *[]int32
-	speedLte *[]int32
-	speedN *[]int32
-	tag *[]string
-	tagN *[]string
-	txPower *[]int32
-	txPowerGt *[]int32
-	txPowerGte *[]int32
-	txPowerLt *[]int32
-	txPowerLte *[]int32
-	txPowerN *[]int32
-	type_ *[]string
-	typeN *[]string
-	updatedByRequest *string
-	vdc *[]string
-	vdcN *[]string
-	vdcId *[]int32
-	vdcIdN *[]int32
-	vdcIdentifier *[]*int32
-	vdcIdentifierN *[]*int32
-	virtualChassis *[]string
-	virtualChassisN *[]string
-	virtualChassisId *[]int32
-	virtualChassisIdN *[]int32
-	vlan *string
-	vlanId *string
-	vrf *[]*string
-	vrfN *[]*string
-	vrfId *[]int32
-	vrfIdN *[]int32
-	wwn *[]string
-	wwnIc *[]string
-	wwnIe *[]string
-	wwnIew *[]string
-	wwnIsw *[]string
-	wwnN *[]string
-	wwnNic *[]string
-	wwnNie *[]string
-	wwnNiew *[]string
-	wwnNisw *[]string
+	rfChannelFrequencyN   *[]float64
+	rfChannelWidth        *[]float64
+	rfChannelWidthGt      *[]float64
+	rfChannelWidthGte     *[]float64
+	rfChannelWidthLt      *[]float64
+	rfChannelWidthLte     *[]float64
+	rfChannelWidthN       *[]float64
+	rfRole                *[]string
+	rfRoleN               *[]string
+	site                  *[]string
+	siteN                 *[]string
+	siteGroup             *[]int32
+	siteGroupN            *[]int32
+	siteGroupId           *[]int32
+	siteGroupIdN          *[]int32
+	siteId                *[]int32
+	siteIdN               *[]int32
+	speed                 *[]int32
+	speedGt               *[]int32
+	speedGte              *[]int32
+	speedLt               *[]int32
+	speedLte              *[]int32
+	speedN                *[]int32
+	tag                   *[]string
+	tagN                  *[]string
+	txPower               *[]int32
+	txPowerGt             *[]int32
+	txPowerGte            *[]int32
+	txPowerLt             *[]int32
+	txPowerLte            *[]int32
+	txPowerN              *[]int32
+	type_                 *[]string
+	typeN                 *[]string
+	updatedByRequest      *string
+	vdc                   *[]string
+	vdcN                  *[]string
+	vdcId                 *[]int32
+	vdcIdN                *[]int32
+	vdcIdentifier         *[]*int32
+	vdcIdentifierN        *[]*int32
+	virtualChassis        *[]string
+	virtualChassisN       *[]string
+	virtualChassisId      *[]int32
+	virtualChassisIdN     *[]int32
+	vlan                  *string
+	vlanId                *string
+	vrf                   *[]*string
+	vrfN                  *[]*string
+	vrfId                 *[]int32
+	vrfIdN                *[]int32
+	wwn                   *[]string
+	wwnIc                 *[]string
+	wwnIe                 *[]string
+	wwnIew                *[]string
+	wwnIsw                *[]string
+	wwnN                  *[]string
+	wwnNic                *[]string
+	wwnNie                *[]string
+	wwnNiew               *[]string
+	wwnNisw               *[]string
 }
 
 // Bridged interface (ID)
@@ -34150,24 +34256,25 @@ DcimInterfacesList Method for DcimInterfacesList
 
 Get a list of interface objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInterfacesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInterfacesListRequest
 */
 func (a *DcimAPIService) DcimInterfacesList(ctx context.Context) ApiDcimInterfacesListRequest {
 	return ApiDcimInterfacesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedInterfaceList
+//
+//	@return PaginatedInterfaceList
 func (a *DcimAPIService) DcimInterfacesListExecute(r ApiDcimInterfacesListRequest) (*PaginatedInterfaceList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedInterfaceList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedInterfaceList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfacesList")
@@ -36097,9 +36204,9 @@ func (a *DcimAPIService) DcimInterfacesListExecute(r ApiDcimInterfacesListReques
 }
 
 type ApiDcimInterfacesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *DcimAPIService
+	id                              int32
 	patchedWritableInterfaceRequest *PatchedWritableInterfaceRequest
 }
 
@@ -36117,26 +36224,27 @@ DcimInterfacesPartialUpdate Method for DcimInterfacesPartialUpdate
 
 Patch a interface object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this interface.
- @return ApiDcimInterfacesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this interface.
+	@return ApiDcimInterfacesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimInterfacesPartialUpdate(ctx context.Context, id int32) ApiDcimInterfacesPartialUpdateRequest {
 	return ApiDcimInterfacesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Interface
+//
+//	@return Interface
 func (a *DcimAPIService) DcimInterfacesPartialUpdateExecute(r ApiDcimInterfacesPartialUpdateRequest) (*Interface, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Interface
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Interface
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfacesPartialUpdate")
@@ -36222,9 +36330,9 @@ func (a *DcimAPIService) DcimInterfacesPartialUpdateExecute(r ApiDcimInterfacesP
 }
 
 type ApiDcimInterfacesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInterfacesRetrieveRequest) Execute() (*Interface, *http.Response, error) {
@@ -36236,26 +36344,27 @@ DcimInterfacesRetrieve Method for DcimInterfacesRetrieve
 
 Get a interface object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this interface.
- @return ApiDcimInterfacesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this interface.
+	@return ApiDcimInterfacesRetrieveRequest
 */
 func (a *DcimAPIService) DcimInterfacesRetrieve(ctx context.Context, id int32) ApiDcimInterfacesRetrieveRequest {
 	return ApiDcimInterfacesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Interface
+//
+//	@return Interface
 func (a *DcimAPIService) DcimInterfacesRetrieveExecute(r ApiDcimInterfacesRetrieveRequest) (*Interface, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Interface
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Interface
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfacesRetrieve")
@@ -36339,9 +36448,9 @@ func (a *DcimAPIService) DcimInterfacesRetrieveExecute(r ApiDcimInterfacesRetrie
 }
 
 type ApiDcimInterfacesTraceRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInterfacesTraceRetrieveRequest) Execute() (*Interface, *http.Response, error) {
@@ -36353,26 +36462,27 @@ DcimInterfacesTraceRetrieve Method for DcimInterfacesTraceRetrieve
 
 Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this interface.
- @return ApiDcimInterfacesTraceRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this interface.
+	@return ApiDcimInterfacesTraceRetrieveRequest
 */
 func (a *DcimAPIService) DcimInterfacesTraceRetrieve(ctx context.Context, id int32) ApiDcimInterfacesTraceRetrieveRequest {
 	return ApiDcimInterfacesTraceRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Interface
+//
+//	@return Interface
 func (a *DcimAPIService) DcimInterfacesTraceRetrieveExecute(r ApiDcimInterfacesTraceRetrieveRequest) (*Interface, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Interface
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Interface
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfacesTraceRetrieve")
@@ -36456,9 +36566,9 @@ func (a *DcimAPIService) DcimInterfacesTraceRetrieveExecute(r ApiDcimInterfacesT
 }
 
 type ApiDcimInterfacesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *DcimAPIService
+	id                       int32
 	writableInterfaceRequest *WritableInterfaceRequest
 }
 
@@ -36476,26 +36586,27 @@ DcimInterfacesUpdate Method for DcimInterfacesUpdate
 
 Put a interface object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this interface.
- @return ApiDcimInterfacesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this interface.
+	@return ApiDcimInterfacesUpdateRequest
 */
 func (a *DcimAPIService) DcimInterfacesUpdate(ctx context.Context, id int32) ApiDcimInterfacesUpdateRequest {
 	return ApiDcimInterfacesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Interface
+//
+//	@return Interface
 func (a *DcimAPIService) DcimInterfacesUpdateExecute(r ApiDcimInterfacesUpdateRequest) (*Interface, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Interface
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Interface
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInterfacesUpdate")
@@ -36584,8 +36695,8 @@ func (a *DcimAPIService) DcimInterfacesUpdateExecute(r ApiDcimInterfacesUpdateRe
 }
 
 type ApiDcimInventoryItemRolesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	inventoryItemRoleRequest *[]InventoryItemRoleRequest
 }
 
@@ -36603,22 +36714,22 @@ DcimInventoryItemRolesBulkDestroy Method for DcimInventoryItemRolesBulkDestroy
 
 Delete a list of inventory item role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemRolesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemRolesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimInventoryItemRolesBulkDestroy(ctx context.Context) ApiDcimInventoryItemRolesBulkDestroyRequest {
 	return ApiDcimInventoryItemRolesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimInventoryItemRolesBulkDestroyExecute(r ApiDcimInventoryItemRolesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemRolesBulkDestroy")
@@ -36697,8 +36808,8 @@ func (a *DcimAPIService) DcimInventoryItemRolesBulkDestroyExecute(r ApiDcimInven
 }
 
 type ApiDcimInventoryItemRolesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	inventoryItemRoleRequest *[]InventoryItemRoleRequest
 }
 
@@ -36716,24 +36827,25 @@ DcimInventoryItemRolesBulkPartialUpdate Method for DcimInventoryItemRolesBulkPar
 
 Patch a list of inventory item role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemRolesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemRolesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemRolesBulkPartialUpdate(ctx context.Context) ApiDcimInventoryItemRolesBulkPartialUpdateRequest {
 	return ApiDcimInventoryItemRolesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []InventoryItemRole
+//
+//	@return []InventoryItemRole
 func (a *DcimAPIService) DcimInventoryItemRolesBulkPartialUpdateExecute(r ApiDcimInventoryItemRolesBulkPartialUpdateRequest) ([]InventoryItemRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []InventoryItemRole
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []InventoryItemRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemRolesBulkPartialUpdate")
@@ -36821,8 +36933,8 @@ func (a *DcimAPIService) DcimInventoryItemRolesBulkPartialUpdateExecute(r ApiDci
 }
 
 type ApiDcimInventoryItemRolesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	inventoryItemRoleRequest *[]InventoryItemRoleRequest
 }
 
@@ -36840,24 +36952,25 @@ DcimInventoryItemRolesBulkUpdate Method for DcimInventoryItemRolesBulkUpdate
 
 Put a list of inventory item role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemRolesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemRolesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemRolesBulkUpdate(ctx context.Context) ApiDcimInventoryItemRolesBulkUpdateRequest {
 	return ApiDcimInventoryItemRolesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []InventoryItemRole
+//
+//	@return []InventoryItemRole
 func (a *DcimAPIService) DcimInventoryItemRolesBulkUpdateExecute(r ApiDcimInventoryItemRolesBulkUpdateRequest) ([]InventoryItemRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []InventoryItemRole
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []InventoryItemRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemRolesBulkUpdate")
@@ -36945,8 +37058,8 @@ func (a *DcimAPIService) DcimInventoryItemRolesBulkUpdateExecute(r ApiDcimInvent
 }
 
 type ApiDcimInventoryItemRolesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	inventoryItemRoleRequest *InventoryItemRoleRequest
 }
 
@@ -36964,24 +37077,25 @@ DcimInventoryItemRolesCreate Method for DcimInventoryItemRolesCreate
 
 Post a list of inventory item role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemRolesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemRolesCreateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemRolesCreate(ctx context.Context) ApiDcimInventoryItemRolesCreateRequest {
 	return ApiDcimInventoryItemRolesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItemRole
+//
+//	@return InventoryItemRole
 func (a *DcimAPIService) DcimInventoryItemRolesCreateExecute(r ApiDcimInventoryItemRolesCreateRequest) (*InventoryItemRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItemRole
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItemRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemRolesCreate")
@@ -37069,9 +37183,9 @@ func (a *DcimAPIService) DcimInventoryItemRolesCreateExecute(r ApiDcimInventoryI
 }
 
 type ApiDcimInventoryItemRolesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInventoryItemRolesDestroyRequest) Execute() (*http.Response, error) {
@@ -37083,24 +37197,24 @@ DcimInventoryItemRolesDestroy Method for DcimInventoryItemRolesDestroy
 
 Delete a inventory item role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item role.
- @return ApiDcimInventoryItemRolesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item role.
+	@return ApiDcimInventoryItemRolesDestroyRequest
 */
 func (a *DcimAPIService) DcimInventoryItemRolesDestroy(ctx context.Context, id int32) ApiDcimInventoryItemRolesDestroyRequest {
 	return ApiDcimInventoryItemRolesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimInventoryItemRolesDestroyExecute(r ApiDcimInventoryItemRolesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemRolesDestroy")
@@ -37175,66 +37289,66 @@ func (a *DcimAPIService) DcimInventoryItemRolesDestroyExecute(r ApiDcimInventory
 }
 
 type ApiDcimInventoryItemRolesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	color *[]string
-	colorEmpty *[]string
-	colorIc *[]string
-	colorIe *[]string
-	colorIew *[]string
-	colorIsw *[]string
-	colorN *[]string
-	colorNic *[]string
-	colorNie *[]string
-	colorNiew *[]string
-	colorNisw *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	color            *[]string
+	colorEmpty       *[]string
+	colorIc          *[]string
+	colorIe          *[]string
+	colorIew         *[]string
+	colorIsw         *[]string
+	colorN           *[]string
+	colorNic         *[]string
+	colorNie         *[]string
+	colorNiew        *[]string
+	colorNisw        *[]string
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -37546,24 +37660,25 @@ DcimInventoryItemRolesList Method for DcimInventoryItemRolesList
 
 Get a list of inventory item role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemRolesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemRolesListRequest
 */
 func (a *DcimAPIService) DcimInventoryItemRolesList(ctx context.Context) ApiDcimInventoryItemRolesListRequest {
 	return ApiDcimInventoryItemRolesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedInventoryItemRoleList
+//
+//	@return PaginatedInventoryItemRoleList
 func (a *DcimAPIService) DcimInventoryItemRolesListExecute(r ApiDcimInventoryItemRolesListRequest) (*PaginatedInventoryItemRoleList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedInventoryItemRoleList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedInventoryItemRoleList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemRolesList")
@@ -38247,9 +38362,9 @@ func (a *DcimAPIService) DcimInventoryItemRolesListExecute(r ApiDcimInventoryIte
 }
 
 type ApiDcimInventoryItemRolesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *DcimAPIService
+	id                              int32
 	patchedInventoryItemRoleRequest *PatchedInventoryItemRoleRequest
 }
 
@@ -38267,26 +38382,27 @@ DcimInventoryItemRolesPartialUpdate Method for DcimInventoryItemRolesPartialUpda
 
 Patch a inventory item role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item role.
- @return ApiDcimInventoryItemRolesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item role.
+	@return ApiDcimInventoryItemRolesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemRolesPartialUpdate(ctx context.Context, id int32) ApiDcimInventoryItemRolesPartialUpdateRequest {
 	return ApiDcimInventoryItemRolesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItemRole
+//
+//	@return InventoryItemRole
 func (a *DcimAPIService) DcimInventoryItemRolesPartialUpdateExecute(r ApiDcimInventoryItemRolesPartialUpdateRequest) (*InventoryItemRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItemRole
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItemRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemRolesPartialUpdate")
@@ -38372,9 +38488,9 @@ func (a *DcimAPIService) DcimInventoryItemRolesPartialUpdateExecute(r ApiDcimInv
 }
 
 type ApiDcimInventoryItemRolesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInventoryItemRolesRetrieveRequest) Execute() (*InventoryItemRole, *http.Response, error) {
@@ -38386,26 +38502,27 @@ DcimInventoryItemRolesRetrieve Method for DcimInventoryItemRolesRetrieve
 
 Get a inventory item role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item role.
- @return ApiDcimInventoryItemRolesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item role.
+	@return ApiDcimInventoryItemRolesRetrieveRequest
 */
 func (a *DcimAPIService) DcimInventoryItemRolesRetrieve(ctx context.Context, id int32) ApiDcimInventoryItemRolesRetrieveRequest {
 	return ApiDcimInventoryItemRolesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItemRole
+//
+//	@return InventoryItemRole
 func (a *DcimAPIService) DcimInventoryItemRolesRetrieveExecute(r ApiDcimInventoryItemRolesRetrieveRequest) (*InventoryItemRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItemRole
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItemRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemRolesRetrieve")
@@ -38489,9 +38606,9 @@ func (a *DcimAPIService) DcimInventoryItemRolesRetrieveExecute(r ApiDcimInventor
 }
 
 type ApiDcimInventoryItemRolesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *DcimAPIService
+	id                       int32
 	inventoryItemRoleRequest *InventoryItemRoleRequest
 }
 
@@ -38509,26 +38626,27 @@ DcimInventoryItemRolesUpdate Method for DcimInventoryItemRolesUpdate
 
 Put a inventory item role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item role.
- @return ApiDcimInventoryItemRolesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item role.
+	@return ApiDcimInventoryItemRolesUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemRolesUpdate(ctx context.Context, id int32) ApiDcimInventoryItemRolesUpdateRequest {
 	return ApiDcimInventoryItemRolesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItemRole
+//
+//	@return InventoryItemRole
 func (a *DcimAPIService) DcimInventoryItemRolesUpdateExecute(r ApiDcimInventoryItemRolesUpdateRequest) (*InventoryItemRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItemRole
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItemRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemRolesUpdate")
@@ -38617,8 +38735,8 @@ func (a *DcimAPIService) DcimInventoryItemRolesUpdateExecute(r ApiDcimInventoryI
 }
 
 type ApiDcimInventoryItemTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                          context.Context
+	ApiService                   *DcimAPIService
 	inventoryItemTemplateRequest *[]InventoryItemTemplateRequest
 }
 
@@ -38636,22 +38754,22 @@ DcimInventoryItemTemplatesBulkDestroy Method for DcimInventoryItemTemplatesBulkD
 
 Delete a list of inventory item template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemTemplatesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimInventoryItemTemplatesBulkDestroy(ctx context.Context) ApiDcimInventoryItemTemplatesBulkDestroyRequest {
 	return ApiDcimInventoryItemTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimInventoryItemTemplatesBulkDestroyExecute(r ApiDcimInventoryItemTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemTemplatesBulkDestroy")
@@ -38730,8 +38848,8 @@ func (a *DcimAPIService) DcimInventoryItemTemplatesBulkDestroyExecute(r ApiDcimI
 }
 
 type ApiDcimInventoryItemTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                          context.Context
+	ApiService                   *DcimAPIService
 	inventoryItemTemplateRequest *[]InventoryItemTemplateRequest
 }
 
@@ -38749,24 +38867,25 @@ DcimInventoryItemTemplatesBulkPartialUpdate Method for DcimInventoryItemTemplate
 
 Patch a list of inventory item template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemTemplatesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemTemplatesBulkPartialUpdate(ctx context.Context) ApiDcimInventoryItemTemplatesBulkPartialUpdateRequest {
 	return ApiDcimInventoryItemTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []InventoryItemTemplate
+//
+//	@return []InventoryItemTemplate
 func (a *DcimAPIService) DcimInventoryItemTemplatesBulkPartialUpdateExecute(r ApiDcimInventoryItemTemplatesBulkPartialUpdateRequest) ([]InventoryItemTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []InventoryItemTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []InventoryItemTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemTemplatesBulkPartialUpdate")
@@ -38854,8 +38973,8 @@ func (a *DcimAPIService) DcimInventoryItemTemplatesBulkPartialUpdateExecute(r Ap
 }
 
 type ApiDcimInventoryItemTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                          context.Context
+	ApiService                   *DcimAPIService
 	inventoryItemTemplateRequest *[]InventoryItemTemplateRequest
 }
 
@@ -38873,24 +38992,25 @@ DcimInventoryItemTemplatesBulkUpdate Method for DcimInventoryItemTemplatesBulkUp
 
 Put a list of inventory item template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemTemplatesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemTemplatesBulkUpdate(ctx context.Context) ApiDcimInventoryItemTemplatesBulkUpdateRequest {
 	return ApiDcimInventoryItemTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []InventoryItemTemplate
+//
+//	@return []InventoryItemTemplate
 func (a *DcimAPIService) DcimInventoryItemTemplatesBulkUpdateExecute(r ApiDcimInventoryItemTemplatesBulkUpdateRequest) ([]InventoryItemTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []InventoryItemTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []InventoryItemTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemTemplatesBulkUpdate")
@@ -38978,8 +39098,8 @@ func (a *DcimAPIService) DcimInventoryItemTemplatesBulkUpdateExecute(r ApiDcimIn
 }
 
 type ApiDcimInventoryItemTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                                  context.Context
+	ApiService                           *DcimAPIService
 	writableInventoryItemTemplateRequest *WritableInventoryItemTemplateRequest
 }
 
@@ -38997,24 +39117,25 @@ DcimInventoryItemTemplatesCreate Method for DcimInventoryItemTemplatesCreate
 
 Post a list of inventory item template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemTemplatesCreateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemTemplatesCreate(ctx context.Context) ApiDcimInventoryItemTemplatesCreateRequest {
 	return ApiDcimInventoryItemTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItemTemplate
+//
+//	@return InventoryItemTemplate
 func (a *DcimAPIService) DcimInventoryItemTemplatesCreateExecute(r ApiDcimInventoryItemTemplatesCreateRequest) (*InventoryItemTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItemTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItemTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemTemplatesCreate")
@@ -39102,9 +39223,9 @@ func (a *DcimAPIService) DcimInventoryItemTemplatesCreateExecute(r ApiDcimInvent
 }
 
 type ApiDcimInventoryItemTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInventoryItemTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -39116,24 +39237,24 @@ DcimInventoryItemTemplatesDestroy Method for DcimInventoryItemTemplatesDestroy
 
 Delete a inventory item template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item template.
- @return ApiDcimInventoryItemTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item template.
+	@return ApiDcimInventoryItemTemplatesDestroyRequest
 */
 func (a *DcimAPIService) DcimInventoryItemTemplatesDestroy(ctx context.Context, id int32) ApiDcimInventoryItemTemplatesDestroyRequest {
 	return ApiDcimInventoryItemTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimInventoryItemTemplatesDestroyExecute(r ApiDcimInventoryItemTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemTemplatesDestroy")
@@ -39208,84 +39329,84 @@ func (a *DcimAPIService) DcimInventoryItemTemplatesDestroyExecute(r ApiDcimInven
 }
 
 type ApiDcimInventoryItemTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	componentId *[]int32
-	componentIdGt *[]int32
-	componentIdGte *[]int32
-	componentIdLt *[]int32
-	componentIdLte *[]int32
-	componentIdN *[]int32
-	componentType *string
-	componentTypeN *string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	componentId      *[]int32
+	componentIdGt    *[]int32
+	componentIdGte   *[]int32
+	componentIdLt    *[]int32
+	componentIdLte   *[]int32
+	componentIdN     *[]int32
+	componentType    *string
+	componentTypeN   *string
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	devicetypeId *[]int32
-	devicetypeIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	manufacturer *[]string
-	manufacturerN *[]string
-	manufacturerId *[]*int32
-	manufacturerIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	parentId *[]*int32
-	parentIdN *[]*int32
-	partId *[]string
-	partIdEmpty *[]string
-	partIdIc *[]string
-	partIdIe *[]string
-	partIdIew *[]string
-	partIdIsw *[]string
-	partIdN *[]string
-	partIdNic *[]string
-	partIdNie *[]string
-	partIdNiew *[]string
-	partIdNisw *[]string
-	q *string
-	role *[]string
-	roleN *[]string
-	roleId *[]*int32
-	roleIdN *[]*int32
+	devicetypeId     *[]int32
+	devicetypeIdN    *[]int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	label            *[]string
+	labelEmpty       *[]string
+	labelIc          *[]string
+	labelIe          *[]string
+	labelIew         *[]string
+	labelIsw         *[]string
+	labelN           *[]string
+	labelNic         *[]string
+	labelNie         *[]string
+	labelNiew        *[]string
+	labelNisw        *[]string
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	manufacturer     *[]string
+	manufacturerN    *[]string
+	manufacturerId   *[]*int32
+	manufacturerIdN  *[]*int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	parentId         *[]*int32
+	parentIdN        *[]*int32
+	partId           *[]string
+	partIdEmpty      *[]string
+	partIdIc         *[]string
+	partIdIe         *[]string
+	partIdIew        *[]string
+	partIdIsw        *[]string
+	partIdN          *[]string
+	partIdNic        *[]string
+	partIdNie        *[]string
+	partIdNiew       *[]string
+	partIdNisw       *[]string
+	q                *string
+	role             *[]string
+	roleN            *[]string
+	roleId           *[]*int32
+	roleIdN          *[]*int32
 	updatedByRequest *string
 }
 
@@ -39699,24 +39820,25 @@ DcimInventoryItemTemplatesList Method for DcimInventoryItemTemplatesList
 
 Get a list of inventory item template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemTemplatesListRequest
 */
 func (a *DcimAPIService) DcimInventoryItemTemplatesList(ctx context.Context) ApiDcimInventoryItemTemplatesListRequest {
 	return ApiDcimInventoryItemTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedInventoryItemTemplateList
+//
+//	@return PaginatedInventoryItemTemplateList
 func (a *DcimAPIService) DcimInventoryItemTemplatesListExecute(r ApiDcimInventoryItemTemplatesListRequest) (*PaginatedInventoryItemTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedInventoryItemTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedInventoryItemTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemTemplatesList")
@@ -40582,9 +40704,9 @@ func (a *DcimAPIService) DcimInventoryItemTemplatesListExecute(r ApiDcimInventor
 }
 
 type ApiDcimInventoryItemTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                         context.Context
+	ApiService                                  *DcimAPIService
+	id                                          int32
 	patchedWritableInventoryItemTemplateRequest *PatchedWritableInventoryItemTemplateRequest
 }
 
@@ -40602,26 +40724,27 @@ DcimInventoryItemTemplatesPartialUpdate Method for DcimInventoryItemTemplatesPar
 
 Patch a inventory item template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item template.
- @return ApiDcimInventoryItemTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item template.
+	@return ApiDcimInventoryItemTemplatesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemTemplatesPartialUpdate(ctx context.Context, id int32) ApiDcimInventoryItemTemplatesPartialUpdateRequest {
 	return ApiDcimInventoryItemTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItemTemplate
+//
+//	@return InventoryItemTemplate
 func (a *DcimAPIService) DcimInventoryItemTemplatesPartialUpdateExecute(r ApiDcimInventoryItemTemplatesPartialUpdateRequest) (*InventoryItemTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItemTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItemTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemTemplatesPartialUpdate")
@@ -40707,9 +40830,9 @@ func (a *DcimAPIService) DcimInventoryItemTemplatesPartialUpdateExecute(r ApiDci
 }
 
 type ApiDcimInventoryItemTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInventoryItemTemplatesRetrieveRequest) Execute() (*InventoryItemTemplate, *http.Response, error) {
@@ -40721,26 +40844,27 @@ DcimInventoryItemTemplatesRetrieve Method for DcimInventoryItemTemplatesRetrieve
 
 Get a inventory item template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item template.
- @return ApiDcimInventoryItemTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item template.
+	@return ApiDcimInventoryItemTemplatesRetrieveRequest
 */
 func (a *DcimAPIService) DcimInventoryItemTemplatesRetrieve(ctx context.Context, id int32) ApiDcimInventoryItemTemplatesRetrieveRequest {
 	return ApiDcimInventoryItemTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItemTemplate
+//
+//	@return InventoryItemTemplate
 func (a *DcimAPIService) DcimInventoryItemTemplatesRetrieveExecute(r ApiDcimInventoryItemTemplatesRetrieveRequest) (*InventoryItemTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItemTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItemTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemTemplatesRetrieve")
@@ -40824,9 +40948,9 @@ func (a *DcimAPIService) DcimInventoryItemTemplatesRetrieveExecute(r ApiDcimInve
 }
 
 type ApiDcimInventoryItemTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                  context.Context
+	ApiService                           *DcimAPIService
+	id                                   int32
 	writableInventoryItemTemplateRequest *WritableInventoryItemTemplateRequest
 }
 
@@ -40844,26 +40968,27 @@ DcimInventoryItemTemplatesUpdate Method for DcimInventoryItemTemplatesUpdate
 
 Put a inventory item template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item template.
- @return ApiDcimInventoryItemTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item template.
+	@return ApiDcimInventoryItemTemplatesUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemTemplatesUpdate(ctx context.Context, id int32) ApiDcimInventoryItemTemplatesUpdateRequest {
 	return ApiDcimInventoryItemTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItemTemplate
+//
+//	@return InventoryItemTemplate
 func (a *DcimAPIService) DcimInventoryItemTemplatesUpdateExecute(r ApiDcimInventoryItemTemplatesUpdateRequest) (*InventoryItemTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItemTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItemTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemTemplatesUpdate")
@@ -40952,8 +41077,8 @@ func (a *DcimAPIService) DcimInventoryItemTemplatesUpdateExecute(r ApiDcimInvent
 }
 
 type ApiDcimInventoryItemsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                  context.Context
+	ApiService           *DcimAPIService
 	inventoryItemRequest *[]InventoryItemRequest
 }
 
@@ -40971,22 +41096,22 @@ DcimInventoryItemsBulkDestroy Method for DcimInventoryItemsBulkDestroy
 
 Delete a list of inventory item objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimInventoryItemsBulkDestroy(ctx context.Context) ApiDcimInventoryItemsBulkDestroyRequest {
 	return ApiDcimInventoryItemsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimInventoryItemsBulkDestroyExecute(r ApiDcimInventoryItemsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemsBulkDestroy")
@@ -41065,8 +41190,8 @@ func (a *DcimAPIService) DcimInventoryItemsBulkDestroyExecute(r ApiDcimInventory
 }
 
 type ApiDcimInventoryItemsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                  context.Context
+	ApiService           *DcimAPIService
 	inventoryItemRequest *[]InventoryItemRequest
 }
 
@@ -41084,24 +41209,25 @@ DcimInventoryItemsBulkPartialUpdate Method for DcimInventoryItemsBulkPartialUpda
 
 Patch a list of inventory item objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemsBulkPartialUpdate(ctx context.Context) ApiDcimInventoryItemsBulkPartialUpdateRequest {
 	return ApiDcimInventoryItemsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []InventoryItem
+//
+//	@return []InventoryItem
 func (a *DcimAPIService) DcimInventoryItemsBulkPartialUpdateExecute(r ApiDcimInventoryItemsBulkPartialUpdateRequest) ([]InventoryItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []InventoryItem
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []InventoryItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemsBulkPartialUpdate")
@@ -41189,8 +41315,8 @@ func (a *DcimAPIService) DcimInventoryItemsBulkPartialUpdateExecute(r ApiDcimInv
 }
 
 type ApiDcimInventoryItemsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                  context.Context
+	ApiService           *DcimAPIService
 	inventoryItemRequest *[]InventoryItemRequest
 }
 
@@ -41208,24 +41334,25 @@ DcimInventoryItemsBulkUpdate Method for DcimInventoryItemsBulkUpdate
 
 Put a list of inventory item objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemsBulkUpdate(ctx context.Context) ApiDcimInventoryItemsBulkUpdateRequest {
 	return ApiDcimInventoryItemsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []InventoryItem
+//
+//	@return []InventoryItem
 func (a *DcimAPIService) DcimInventoryItemsBulkUpdateExecute(r ApiDcimInventoryItemsBulkUpdateRequest) ([]InventoryItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []InventoryItem
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []InventoryItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemsBulkUpdate")
@@ -41313,8 +41440,8 @@ func (a *DcimAPIService) DcimInventoryItemsBulkUpdateExecute(r ApiDcimInventoryI
 }
 
 type ApiDcimInventoryItemsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                          context.Context
+	ApiService                   *DcimAPIService
 	writableInventoryItemRequest *WritableInventoryItemRequest
 }
 
@@ -41332,24 +41459,25 @@ DcimInventoryItemsCreate Method for DcimInventoryItemsCreate
 
 Post a list of inventory item objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemsCreateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemsCreate(ctx context.Context) ApiDcimInventoryItemsCreateRequest {
 	return ApiDcimInventoryItemsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItem
+//
+//	@return InventoryItem
 func (a *DcimAPIService) DcimInventoryItemsCreateExecute(r ApiDcimInventoryItemsCreateRequest) (*InventoryItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItem
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemsCreate")
@@ -41437,9 +41565,9 @@ func (a *DcimAPIService) DcimInventoryItemsCreateExecute(r ApiDcimInventoryItems
 }
 
 type ApiDcimInventoryItemsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInventoryItemsDestroyRequest) Execute() (*http.Response, error) {
@@ -41451,24 +41579,24 @@ DcimInventoryItemsDestroy Method for DcimInventoryItemsDestroy
 
 Delete a inventory item object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item.
- @return ApiDcimInventoryItemsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item.
+	@return ApiDcimInventoryItemsDestroyRequest
 */
 func (a *DcimAPIService) DcimInventoryItemsDestroy(ctx context.Context, id int32) ApiDcimInventoryItemsDestroyRequest {
 	return ApiDcimInventoryItemsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimInventoryItemsDestroyExecute(r ApiDcimInventoryItemsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemsDestroy")
@@ -41543,135 +41671,135 @@ func (a *DcimAPIService) DcimInventoryItemsDestroyExecute(r ApiDcimInventoryItem
 }
 
 type ApiDcimInventoryItemsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	assetTag *[]string
-	assetTagEmpty *[]string
-	assetTagIc *[]string
-	assetTagIe *[]string
-	assetTagIew *[]string
-	assetTagIsw *[]string
-	assetTagN *[]string
-	assetTagNic *[]string
-	assetTagNie *[]string
-	assetTagNiew *[]string
-	assetTagNisw *[]string
-	componentId *[]int32
-	componentIdGt *[]int32
-	componentIdGte *[]int32
-	componentIdLt *[]int32
-	componentIdLte *[]int32
-	componentIdN *[]int32
-	componentType *string
-	componentTypeN *string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	device *[]*string
-	deviceN *[]*string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	discovered *bool
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
-	manufacturer *[]string
-	manufacturerN *[]string
-	manufacturerId *[]*int32
-	manufacturerIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	parentId *[]*int32
-	parentIdN *[]*int32
-	partId *[]string
-	partIdEmpty *[]string
-	partIdIc *[]string
-	partIdIe *[]string
-	partIdIew *[]string
-	partIdIsw *[]string
-	partIdN *[]string
-	partIdNic *[]string
-	partIdNie *[]string
-	partIdNiew *[]string
-	partIdNisw *[]string
-	q *string
-	rack *[]string
-	rackN *[]string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	role *[]string
-	roleN *[]string
-	roleId *[]*int32
-	roleIdN *[]*int32
-	serial *[]string
-	serialEmpty *[]string
-	serialIc *[]string
-	serialIe *[]string
-	serialIew *[]string
-	serialIsw *[]string
-	serialN *[]string
-	serialNic *[]string
-	serialNie *[]string
-	serialNiew *[]string
-	serialNisw *[]string
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
-	virtualChassis *[]string
-	virtualChassisN *[]string
-	virtualChassisId *[]int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	assetTag          *[]string
+	assetTagEmpty     *[]string
+	assetTagIc        *[]string
+	assetTagIe        *[]string
+	assetTagIew       *[]string
+	assetTagIsw       *[]string
+	assetTagN         *[]string
+	assetTagNic       *[]string
+	assetTagNie       *[]string
+	assetTagNiew      *[]string
+	assetTagNisw      *[]string
+	componentId       *[]int32
+	componentIdGt     *[]int32
+	componentIdGte    *[]int32
+	componentIdLt     *[]int32
+	componentIdLte    *[]int32
+	componentIdN      *[]int32
+	componentType     *string
+	componentTypeN    *string
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	device            *[]*string
+	deviceN           *[]*string
+	deviceId          *[]int32
+	deviceIdN         *[]int32
+	discovered        *bool
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	label             *[]string
+	labelEmpty        *[]string
+	labelIc           *[]string
+	labelIe           *[]string
+	labelIew          *[]string
+	labelIsw          *[]string
+	labelN            *[]string
+	labelNic          *[]string
+	labelNie          *[]string
+	labelNiew         *[]string
+	labelNisw         *[]string
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	location          *[]string
+	locationN         *[]string
+	locationId        *[]int32
+	locationIdN       *[]int32
+	manufacturer      *[]string
+	manufacturerN     *[]string
+	manufacturerId    *[]*int32
+	manufacturerIdN   *[]*int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	parentId          *[]*int32
+	parentIdN         *[]*int32
+	partId            *[]string
+	partIdEmpty       *[]string
+	partIdIc          *[]string
+	partIdIe          *[]string
+	partIdIew         *[]string
+	partIdIsw         *[]string
+	partIdN           *[]string
+	partIdNic         *[]string
+	partIdNie         *[]string
+	partIdNiew        *[]string
+	partIdNisw        *[]string
+	q                 *string
+	rack              *[]string
+	rackN             *[]string
+	rackId            *[]int32
+	rackIdN           *[]int32
+	region            *[]int32
+	regionN           *[]int32
+	regionId          *[]int32
+	regionIdN         *[]int32
+	role              *[]string
+	roleN             *[]string
+	roleId            *[]*int32
+	roleIdN           *[]*int32
+	serial            *[]string
+	serialEmpty       *[]string
+	serialIc          *[]string
+	serialIe          *[]string
+	serialIew         *[]string
+	serialIsw         *[]string
+	serialN           *[]string
+	serialNic         *[]string
+	serialNie         *[]string
+	serialNiew        *[]string
+	serialNisw        *[]string
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]int32
+	siteGroupN        *[]int32
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
+	virtualChassis    *[]string
+	virtualChassisN   *[]string
+	virtualChassisId  *[]int32
 	virtualChassisIdN *[]int32
 }
 
@@ -42366,24 +42494,25 @@ DcimInventoryItemsList Method for DcimInventoryItemsList
 
 Get a list of inventory item objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimInventoryItemsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimInventoryItemsListRequest
 */
 func (a *DcimAPIService) DcimInventoryItemsList(ctx context.Context) ApiDcimInventoryItemsListRequest {
 	return ApiDcimInventoryItemsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedInventoryItemList
+//
+//	@return PaginatedInventoryItemList
 func (a *DcimAPIService) DcimInventoryItemsListExecute(r ApiDcimInventoryItemsListRequest) (*PaginatedInventoryItemList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedInventoryItemList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedInventoryItemList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemsList")
@@ -43802,9 +43931,9 @@ func (a *DcimAPIService) DcimInventoryItemsListExecute(r ApiDcimInventoryItemsLi
 }
 
 type ApiDcimInventoryItemsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                 context.Context
+	ApiService                          *DcimAPIService
+	id                                  int32
 	patchedWritableInventoryItemRequest *PatchedWritableInventoryItemRequest
 }
 
@@ -43822,26 +43951,27 @@ DcimInventoryItemsPartialUpdate Method for DcimInventoryItemsPartialUpdate
 
 Patch a inventory item object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item.
- @return ApiDcimInventoryItemsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item.
+	@return ApiDcimInventoryItemsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemsPartialUpdate(ctx context.Context, id int32) ApiDcimInventoryItemsPartialUpdateRequest {
 	return ApiDcimInventoryItemsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItem
+//
+//	@return InventoryItem
 func (a *DcimAPIService) DcimInventoryItemsPartialUpdateExecute(r ApiDcimInventoryItemsPartialUpdateRequest) (*InventoryItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItem
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemsPartialUpdate")
@@ -43927,9 +44057,9 @@ func (a *DcimAPIService) DcimInventoryItemsPartialUpdateExecute(r ApiDcimInvento
 }
 
 type ApiDcimInventoryItemsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimInventoryItemsRetrieveRequest) Execute() (*InventoryItem, *http.Response, error) {
@@ -43941,26 +44071,27 @@ DcimInventoryItemsRetrieve Method for DcimInventoryItemsRetrieve
 
 Get a inventory item object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item.
- @return ApiDcimInventoryItemsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item.
+	@return ApiDcimInventoryItemsRetrieveRequest
 */
 func (a *DcimAPIService) DcimInventoryItemsRetrieve(ctx context.Context, id int32) ApiDcimInventoryItemsRetrieveRequest {
 	return ApiDcimInventoryItemsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItem
+//
+//	@return InventoryItem
 func (a *DcimAPIService) DcimInventoryItemsRetrieveExecute(r ApiDcimInventoryItemsRetrieveRequest) (*InventoryItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItem
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemsRetrieve")
@@ -44044,9 +44175,9 @@ func (a *DcimAPIService) DcimInventoryItemsRetrieveExecute(r ApiDcimInventoryIte
 }
 
 type ApiDcimInventoryItemsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                          context.Context
+	ApiService                   *DcimAPIService
+	id                           int32
 	writableInventoryItemRequest *WritableInventoryItemRequest
 }
 
@@ -44064,26 +44195,27 @@ DcimInventoryItemsUpdate Method for DcimInventoryItemsUpdate
 
 Put a inventory item object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this inventory item.
- @return ApiDcimInventoryItemsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this inventory item.
+	@return ApiDcimInventoryItemsUpdateRequest
 */
 func (a *DcimAPIService) DcimInventoryItemsUpdate(ctx context.Context, id int32) ApiDcimInventoryItemsUpdateRequest {
 	return ApiDcimInventoryItemsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return InventoryItem
+//
+//	@return InventoryItem
 func (a *DcimAPIService) DcimInventoryItemsUpdateExecute(r ApiDcimInventoryItemsUpdateRequest) (*InventoryItem, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *InventoryItem
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *InventoryItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimInventoryItemsUpdate")
@@ -44172,8 +44304,8 @@ func (a *DcimAPIService) DcimInventoryItemsUpdateExecute(r ApiDcimInventoryItems
 }
 
 type ApiDcimLocationsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	locationRequest *[]LocationRequest
 }
 
@@ -44191,22 +44323,22 @@ DcimLocationsBulkDestroy Method for DcimLocationsBulkDestroy
 
 Delete a list of location objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimLocationsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimLocationsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimLocationsBulkDestroy(ctx context.Context) ApiDcimLocationsBulkDestroyRequest {
 	return ApiDcimLocationsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimLocationsBulkDestroyExecute(r ApiDcimLocationsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimLocationsBulkDestroy")
@@ -44285,8 +44417,8 @@ func (a *DcimAPIService) DcimLocationsBulkDestroyExecute(r ApiDcimLocationsBulkD
 }
 
 type ApiDcimLocationsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	locationRequest *[]LocationRequest
 }
 
@@ -44304,24 +44436,25 @@ DcimLocationsBulkPartialUpdate Method for DcimLocationsBulkPartialUpdate
 
 Patch a list of location objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimLocationsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimLocationsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimLocationsBulkPartialUpdate(ctx context.Context) ApiDcimLocationsBulkPartialUpdateRequest {
 	return ApiDcimLocationsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Location
+//
+//	@return []Location
 func (a *DcimAPIService) DcimLocationsBulkPartialUpdateExecute(r ApiDcimLocationsBulkPartialUpdateRequest) ([]Location, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Location
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Location
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimLocationsBulkPartialUpdate")
@@ -44409,8 +44542,8 @@ func (a *DcimAPIService) DcimLocationsBulkPartialUpdateExecute(r ApiDcimLocation
 }
 
 type ApiDcimLocationsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	locationRequest *[]LocationRequest
 }
 
@@ -44428,24 +44561,25 @@ DcimLocationsBulkUpdate Method for DcimLocationsBulkUpdate
 
 Put a list of location objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimLocationsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimLocationsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimLocationsBulkUpdate(ctx context.Context) ApiDcimLocationsBulkUpdateRequest {
 	return ApiDcimLocationsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Location
+//
+//	@return []Location
 func (a *DcimAPIService) DcimLocationsBulkUpdateExecute(r ApiDcimLocationsBulkUpdateRequest) ([]Location, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Location
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Location
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimLocationsBulkUpdate")
@@ -44533,8 +44667,8 @@ func (a *DcimAPIService) DcimLocationsBulkUpdateExecute(r ApiDcimLocationsBulkUp
 }
 
 type ApiDcimLocationsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                     context.Context
+	ApiService              *DcimAPIService
 	writableLocationRequest *WritableLocationRequest
 }
 
@@ -44552,24 +44686,25 @@ DcimLocationsCreate Method for DcimLocationsCreate
 
 Post a list of location objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimLocationsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimLocationsCreateRequest
 */
 func (a *DcimAPIService) DcimLocationsCreate(ctx context.Context) ApiDcimLocationsCreateRequest {
 	return ApiDcimLocationsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Location
+//
+//	@return Location
 func (a *DcimAPIService) DcimLocationsCreateExecute(r ApiDcimLocationsCreateRequest) (*Location, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Location
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Location
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimLocationsCreate")
@@ -44657,9 +44792,9 @@ func (a *DcimAPIService) DcimLocationsCreateExecute(r ApiDcimLocationsCreateRequ
 }
 
 type ApiDcimLocationsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimLocationsDestroyRequest) Execute() (*http.Response, error) {
@@ -44671,24 +44806,24 @@ DcimLocationsDestroy Method for DcimLocationsDestroy
 
 Delete a location object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this location.
- @return ApiDcimLocationsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this location.
+	@return ApiDcimLocationsDestroyRequest
 */
 func (a *DcimAPIService) DcimLocationsDestroy(ctx context.Context, id int32) ApiDcimLocationsDestroyRequest {
 	return ApiDcimLocationsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimLocationsDestroyExecute(r ApiDcimLocationsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimLocationsDestroy")
@@ -44763,98 +44898,98 @@ func (a *DcimAPIService) DcimLocationsDestroyExecute(r ApiDcimLocationsDestroyRe
 }
 
 type ApiDcimLocationsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]int32
-	contactGroupN *[]int32
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	contact          *[]int32
+	contactN         *[]int32
+	contactGroup     *[]int32
+	contactGroupN    *[]int32
+	contactRole      *[]int32
+	contactRoleN     *[]int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	parent *[]int32
-	parentN *[]int32
-	parentId *[]int32
-	parentIdN *[]int32
-	q *string
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	status *[]string
-	statusN *[]string
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]int32
-	tenantGroupN *[]int32
-	tenantGroupId *[]int32
-	tenantGroupIdN *[]int32
-	tenantId *[]*int32
-	tenantIdN *[]*int32
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	parent           *[]int32
+	parentN          *[]int32
+	parentId         *[]int32
+	parentIdN        *[]int32
+	q                *string
+	region           *[]int32
+	regionN          *[]int32
+	regionId         *[]int32
+	regionIdN        *[]int32
+	site             *[]string
+	siteN            *[]string
+	siteGroup        *[]int32
+	siteGroupN       *[]int32
+	siteGroupId      *[]int32
+	siteGroupIdN     *[]int32
+	siteId           *[]int32
+	siteIdN          *[]int32
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	status           *[]string
+	statusN          *[]string
+	tag              *[]string
+	tagN             *[]string
+	tenant           *[]string
+	tenantN          *[]string
+	tenantGroup      *[]int32
+	tenantGroupN     *[]int32
+	tenantGroupId    *[]int32
+	tenantGroupIdN   *[]int32
+	tenantId         *[]*int32
+	tenantIdN        *[]*int32
 	updatedByRequest *string
 }
 
@@ -45358,24 +45493,25 @@ DcimLocationsList Method for DcimLocationsList
 
 Get a list of location objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimLocationsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimLocationsListRequest
 */
 func (a *DcimAPIService) DcimLocationsList(ctx context.Context) ApiDcimLocationsListRequest {
 	return ApiDcimLocationsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedLocationList
+//
+//	@return PaginatedLocationList
 func (a *DcimAPIService) DcimLocationsListExecute(r ApiDcimLocationsListRequest) (*PaginatedLocationList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedLocationList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedLocationList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimLocationsList")
@@ -46411,9 +46547,9 @@ func (a *DcimAPIService) DcimLocationsListExecute(r ApiDcimLocationsListRequest)
 }
 
 type ApiDcimLocationsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                            context.Context
+	ApiService                     *DcimAPIService
+	id                             int32
 	patchedWritableLocationRequest *PatchedWritableLocationRequest
 }
 
@@ -46431,26 +46567,27 @@ DcimLocationsPartialUpdate Method for DcimLocationsPartialUpdate
 
 Patch a location object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this location.
- @return ApiDcimLocationsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this location.
+	@return ApiDcimLocationsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimLocationsPartialUpdate(ctx context.Context, id int32) ApiDcimLocationsPartialUpdateRequest {
 	return ApiDcimLocationsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Location
+//
+//	@return Location
 func (a *DcimAPIService) DcimLocationsPartialUpdateExecute(r ApiDcimLocationsPartialUpdateRequest) (*Location, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Location
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Location
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimLocationsPartialUpdate")
@@ -46536,9 +46673,9 @@ func (a *DcimAPIService) DcimLocationsPartialUpdateExecute(r ApiDcimLocationsPar
 }
 
 type ApiDcimLocationsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimLocationsRetrieveRequest) Execute() (*Location, *http.Response, error) {
@@ -46550,26 +46687,27 @@ DcimLocationsRetrieve Method for DcimLocationsRetrieve
 
 Get a location object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this location.
- @return ApiDcimLocationsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this location.
+	@return ApiDcimLocationsRetrieveRequest
 */
 func (a *DcimAPIService) DcimLocationsRetrieve(ctx context.Context, id int32) ApiDcimLocationsRetrieveRequest {
 	return ApiDcimLocationsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Location
+//
+//	@return Location
 func (a *DcimAPIService) DcimLocationsRetrieveExecute(r ApiDcimLocationsRetrieveRequest) (*Location, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Location
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Location
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimLocationsRetrieve")
@@ -46653,9 +46791,9 @@ func (a *DcimAPIService) DcimLocationsRetrieveExecute(r ApiDcimLocationsRetrieve
 }
 
 type ApiDcimLocationsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                     context.Context
+	ApiService              *DcimAPIService
+	id                      int32
 	writableLocationRequest *WritableLocationRequest
 }
 
@@ -46673,26 +46811,27 @@ DcimLocationsUpdate Method for DcimLocationsUpdate
 
 Put a location object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this location.
- @return ApiDcimLocationsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this location.
+	@return ApiDcimLocationsUpdateRequest
 */
 func (a *DcimAPIService) DcimLocationsUpdate(ctx context.Context, id int32) ApiDcimLocationsUpdateRequest {
 	return ApiDcimLocationsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Location
+//
+//	@return Location
 func (a *DcimAPIService) DcimLocationsUpdateExecute(r ApiDcimLocationsUpdateRequest) (*Location, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Location
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Location
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimLocationsUpdate")
@@ -46781,8 +46920,8 @@ func (a *DcimAPIService) DcimLocationsUpdateExecute(r ApiDcimLocationsUpdateRequ
 }
 
 type ApiDcimManufacturersBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                 context.Context
+	ApiService          *DcimAPIService
 	manufacturerRequest *[]ManufacturerRequest
 }
 
@@ -46800,22 +46939,22 @@ DcimManufacturersBulkDestroy Method for DcimManufacturersBulkDestroy
 
 Delete a list of manufacturer objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimManufacturersBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimManufacturersBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimManufacturersBulkDestroy(ctx context.Context) ApiDcimManufacturersBulkDestroyRequest {
 	return ApiDcimManufacturersBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimManufacturersBulkDestroyExecute(r ApiDcimManufacturersBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimManufacturersBulkDestroy")
@@ -46894,8 +47033,8 @@ func (a *DcimAPIService) DcimManufacturersBulkDestroyExecute(r ApiDcimManufactur
 }
 
 type ApiDcimManufacturersBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                 context.Context
+	ApiService          *DcimAPIService
 	manufacturerRequest *[]ManufacturerRequest
 }
 
@@ -46913,24 +47052,25 @@ DcimManufacturersBulkPartialUpdate Method for DcimManufacturersBulkPartialUpdate
 
 Patch a list of manufacturer objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimManufacturersBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimManufacturersBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimManufacturersBulkPartialUpdate(ctx context.Context) ApiDcimManufacturersBulkPartialUpdateRequest {
 	return ApiDcimManufacturersBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Manufacturer
+//
+//	@return []Manufacturer
 func (a *DcimAPIService) DcimManufacturersBulkPartialUpdateExecute(r ApiDcimManufacturersBulkPartialUpdateRequest) ([]Manufacturer, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Manufacturer
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Manufacturer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimManufacturersBulkPartialUpdate")
@@ -47018,8 +47158,8 @@ func (a *DcimAPIService) DcimManufacturersBulkPartialUpdateExecute(r ApiDcimManu
 }
 
 type ApiDcimManufacturersBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                 context.Context
+	ApiService          *DcimAPIService
 	manufacturerRequest *[]ManufacturerRequest
 }
 
@@ -47037,24 +47177,25 @@ DcimManufacturersBulkUpdate Method for DcimManufacturersBulkUpdate
 
 Put a list of manufacturer objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimManufacturersBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimManufacturersBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimManufacturersBulkUpdate(ctx context.Context) ApiDcimManufacturersBulkUpdateRequest {
 	return ApiDcimManufacturersBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Manufacturer
+//
+//	@return []Manufacturer
 func (a *DcimAPIService) DcimManufacturersBulkUpdateExecute(r ApiDcimManufacturersBulkUpdateRequest) ([]Manufacturer, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Manufacturer
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Manufacturer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimManufacturersBulkUpdate")
@@ -47142,8 +47283,8 @@ func (a *DcimAPIService) DcimManufacturersBulkUpdateExecute(r ApiDcimManufacture
 }
 
 type ApiDcimManufacturersCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                 context.Context
+	ApiService          *DcimAPIService
 	manufacturerRequest *ManufacturerRequest
 }
 
@@ -47161,24 +47302,25 @@ DcimManufacturersCreate Method for DcimManufacturersCreate
 
 Post a list of manufacturer objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimManufacturersCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimManufacturersCreateRequest
 */
 func (a *DcimAPIService) DcimManufacturersCreate(ctx context.Context) ApiDcimManufacturersCreateRequest {
 	return ApiDcimManufacturersCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Manufacturer
+//
+//	@return Manufacturer
 func (a *DcimAPIService) DcimManufacturersCreateExecute(r ApiDcimManufacturersCreateRequest) (*Manufacturer, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Manufacturer
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Manufacturer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimManufacturersCreate")
@@ -47266,9 +47408,9 @@ func (a *DcimAPIService) DcimManufacturersCreateExecute(r ApiDcimManufacturersCr
 }
 
 type ApiDcimManufacturersDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimManufacturersDestroyRequest) Execute() (*http.Response, error) {
@@ -47280,24 +47422,24 @@ DcimManufacturersDestroy Method for DcimManufacturersDestroy
 
 Delete a manufacturer object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this manufacturer.
- @return ApiDcimManufacturersDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this manufacturer.
+	@return ApiDcimManufacturersDestroyRequest
 */
 func (a *DcimAPIService) DcimManufacturersDestroy(ctx context.Context, id int32) ApiDcimManufacturersDestroyRequest {
 	return ApiDcimManufacturersDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimManufacturersDestroyExecute(r ApiDcimManufacturersDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimManufacturersDestroy")
@@ -47372,72 +47514,72 @@ func (a *DcimAPIService) DcimManufacturersDestroyExecute(r ApiDcimManufacturersD
 }
 
 type ApiDcimManufacturersListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]int32
-	contactGroupN *[]int32
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	contact          *[]int32
+	contactN         *[]int32
+	contactGroup     *[]int32
+	contactGroupN    *[]int32
+	contactRole      *[]int32
+	contactRoleN     *[]int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -47785,24 +47927,25 @@ DcimManufacturersList Method for DcimManufacturersList
 
 Get a list of manufacturer objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimManufacturersListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimManufacturersListRequest
 */
 func (a *DcimAPIService) DcimManufacturersList(ctx context.Context) ApiDcimManufacturersListRequest {
 	return ApiDcimManufacturersListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedManufacturerList
+//
+//	@return PaginatedManufacturerList
 func (a *DcimAPIService) DcimManufacturersListExecute(r ApiDcimManufacturersListRequest) (*PaginatedManufacturerList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedManufacturerList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedManufacturerList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimManufacturersList")
@@ -48552,9 +48695,9 @@ func (a *DcimAPIService) DcimManufacturersListExecute(r ApiDcimManufacturersList
 }
 
 type ApiDcimManufacturersPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
+	id                         int32
 	patchedManufacturerRequest *PatchedManufacturerRequest
 }
 
@@ -48572,26 +48715,27 @@ DcimManufacturersPartialUpdate Method for DcimManufacturersPartialUpdate
 
 Patch a manufacturer object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this manufacturer.
- @return ApiDcimManufacturersPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this manufacturer.
+	@return ApiDcimManufacturersPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimManufacturersPartialUpdate(ctx context.Context, id int32) ApiDcimManufacturersPartialUpdateRequest {
 	return ApiDcimManufacturersPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Manufacturer
+//
+//	@return Manufacturer
 func (a *DcimAPIService) DcimManufacturersPartialUpdateExecute(r ApiDcimManufacturersPartialUpdateRequest) (*Manufacturer, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Manufacturer
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Manufacturer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimManufacturersPartialUpdate")
@@ -48677,9 +48821,9 @@ func (a *DcimAPIService) DcimManufacturersPartialUpdateExecute(r ApiDcimManufact
 }
 
 type ApiDcimManufacturersRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimManufacturersRetrieveRequest) Execute() (*Manufacturer, *http.Response, error) {
@@ -48691,26 +48835,27 @@ DcimManufacturersRetrieve Method for DcimManufacturersRetrieve
 
 Get a manufacturer object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this manufacturer.
- @return ApiDcimManufacturersRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this manufacturer.
+	@return ApiDcimManufacturersRetrieveRequest
 */
 func (a *DcimAPIService) DcimManufacturersRetrieve(ctx context.Context, id int32) ApiDcimManufacturersRetrieveRequest {
 	return ApiDcimManufacturersRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Manufacturer
+//
+//	@return Manufacturer
 func (a *DcimAPIService) DcimManufacturersRetrieveExecute(r ApiDcimManufacturersRetrieveRequest) (*Manufacturer, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Manufacturer
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Manufacturer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimManufacturersRetrieve")
@@ -48794,9 +48939,9 @@ func (a *DcimAPIService) DcimManufacturersRetrieveExecute(r ApiDcimManufacturers
 }
 
 type ApiDcimManufacturersUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                 context.Context
+	ApiService          *DcimAPIService
+	id                  int32
 	manufacturerRequest *ManufacturerRequest
 }
 
@@ -48814,26 +48959,27 @@ DcimManufacturersUpdate Method for DcimManufacturersUpdate
 
 Put a manufacturer object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this manufacturer.
- @return ApiDcimManufacturersUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this manufacturer.
+	@return ApiDcimManufacturersUpdateRequest
 */
 func (a *DcimAPIService) DcimManufacturersUpdate(ctx context.Context, id int32) ApiDcimManufacturersUpdateRequest {
 	return ApiDcimManufacturersUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Manufacturer
+//
+//	@return Manufacturer
 func (a *DcimAPIService) DcimManufacturersUpdateExecute(r ApiDcimManufacturersUpdateRequest) (*Manufacturer, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Manufacturer
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Manufacturer
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimManufacturersUpdate")
@@ -48922,8 +49068,8 @@ func (a *DcimAPIService) DcimManufacturersUpdateExecute(r ApiDcimManufacturersUp
 }
 
 type ApiDcimModuleBayTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	moduleBayTemplateRequest *[]ModuleBayTemplateRequest
 }
 
@@ -48941,22 +49087,22 @@ DcimModuleBayTemplatesBulkDestroy Method for DcimModuleBayTemplatesBulkDestroy
 
 Delete a list of module bay template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleBayTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleBayTemplatesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimModuleBayTemplatesBulkDestroy(ctx context.Context) ApiDcimModuleBayTemplatesBulkDestroyRequest {
 	return ApiDcimModuleBayTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimModuleBayTemplatesBulkDestroyExecute(r ApiDcimModuleBayTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBayTemplatesBulkDestroy")
@@ -49035,8 +49181,8 @@ func (a *DcimAPIService) DcimModuleBayTemplatesBulkDestroyExecute(r ApiDcimModul
 }
 
 type ApiDcimModuleBayTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	moduleBayTemplateRequest *[]ModuleBayTemplateRequest
 }
 
@@ -49054,24 +49200,25 @@ DcimModuleBayTemplatesBulkPartialUpdate Method for DcimModuleBayTemplatesBulkPar
 
 Patch a list of module bay template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleBayTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleBayTemplatesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleBayTemplatesBulkPartialUpdate(ctx context.Context) ApiDcimModuleBayTemplatesBulkPartialUpdateRequest {
 	return ApiDcimModuleBayTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ModuleBayTemplate
+//
+//	@return []ModuleBayTemplate
 func (a *DcimAPIService) DcimModuleBayTemplatesBulkPartialUpdateExecute(r ApiDcimModuleBayTemplatesBulkPartialUpdateRequest) ([]ModuleBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModuleBayTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModuleBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBayTemplatesBulkPartialUpdate")
@@ -49159,8 +49306,8 @@ func (a *DcimAPIService) DcimModuleBayTemplatesBulkPartialUpdateExecute(r ApiDci
 }
 
 type ApiDcimModuleBayTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	moduleBayTemplateRequest *[]ModuleBayTemplateRequest
 }
 
@@ -49178,24 +49325,25 @@ DcimModuleBayTemplatesBulkUpdate Method for DcimModuleBayTemplatesBulkUpdate
 
 Put a list of module bay template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleBayTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleBayTemplatesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleBayTemplatesBulkUpdate(ctx context.Context) ApiDcimModuleBayTemplatesBulkUpdateRequest {
 	return ApiDcimModuleBayTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ModuleBayTemplate
+//
+//	@return []ModuleBayTemplate
 func (a *DcimAPIService) DcimModuleBayTemplatesBulkUpdateExecute(r ApiDcimModuleBayTemplatesBulkUpdateRequest) ([]ModuleBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModuleBayTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModuleBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBayTemplatesBulkUpdate")
@@ -49283,8 +49431,8 @@ func (a *DcimAPIService) DcimModuleBayTemplatesBulkUpdateExecute(r ApiDcimModule
 }
 
 type ApiDcimModuleBayTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
 	writableModuleBayTemplateRequest *WritableModuleBayTemplateRequest
 }
 
@@ -49302,24 +49450,25 @@ DcimModuleBayTemplatesCreate Method for DcimModuleBayTemplatesCreate
 
 Post a list of module bay template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleBayTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleBayTemplatesCreateRequest
 */
 func (a *DcimAPIService) DcimModuleBayTemplatesCreate(ctx context.Context) ApiDcimModuleBayTemplatesCreateRequest {
 	return ApiDcimModuleBayTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleBayTemplate
+//
+//	@return ModuleBayTemplate
 func (a *DcimAPIService) DcimModuleBayTemplatesCreateExecute(r ApiDcimModuleBayTemplatesCreateRequest) (*ModuleBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleBayTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBayTemplatesCreate")
@@ -49407,9 +49556,9 @@ func (a *DcimAPIService) DcimModuleBayTemplatesCreateExecute(r ApiDcimModuleBayT
 }
 
 type ApiDcimModuleBayTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimModuleBayTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -49421,24 +49570,24 @@ DcimModuleBayTemplatesDestroy Method for DcimModuleBayTemplatesDestroy
 
 Delete a module bay template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module bay template.
- @return ApiDcimModuleBayTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module bay template.
+	@return ApiDcimModuleBayTemplatesDestroyRequest
 */
 func (a *DcimAPIService) DcimModuleBayTemplatesDestroy(ctx context.Context, id int32) ApiDcimModuleBayTemplatesDestroyRequest {
 	return ApiDcimModuleBayTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimModuleBayTemplatesDestroyExecute(r ApiDcimModuleBayTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBayTemplatesDestroy")
@@ -49513,44 +49662,44 @@ func (a *DcimAPIService) DcimModuleBayTemplatesDestroyExecute(r ApiDcimModuleBay
 }
 
 type ApiDcimModuleBayTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	devicetypeId *[]int32
-	devicetypeIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
+	devicetypeId     *[]int32
+	devicetypeIdN    *[]int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
 	updatedByRequest *string
 }
 
@@ -49754,24 +49903,25 @@ DcimModuleBayTemplatesList Method for DcimModuleBayTemplatesList
 
 Get a list of module bay template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleBayTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleBayTemplatesListRequest
 */
 func (a *DcimAPIService) DcimModuleBayTemplatesList(ctx context.Context) ApiDcimModuleBayTemplatesListRequest {
 	return ApiDcimModuleBayTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedModuleBayTemplateList
+//
+//	@return PaginatedModuleBayTemplateList
 func (a *DcimAPIService) DcimModuleBayTemplatesListExecute(r ApiDcimModuleBayTemplatesListRequest) (*PaginatedModuleBayTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedModuleBayTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedModuleBayTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBayTemplatesList")
@@ -50213,9 +50363,9 @@ func (a *DcimAPIService) DcimModuleBayTemplatesListExecute(r ApiDcimModuleBayTem
 }
 
 type ApiDcimModuleBayTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                     context.Context
+	ApiService                              *DcimAPIService
+	id                                      int32
 	patchedWritableModuleBayTemplateRequest *PatchedWritableModuleBayTemplateRequest
 }
 
@@ -50233,26 +50383,27 @@ DcimModuleBayTemplatesPartialUpdate Method for DcimModuleBayTemplatesPartialUpda
 
 Patch a module bay template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module bay template.
- @return ApiDcimModuleBayTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module bay template.
+	@return ApiDcimModuleBayTemplatesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleBayTemplatesPartialUpdate(ctx context.Context, id int32) ApiDcimModuleBayTemplatesPartialUpdateRequest {
 	return ApiDcimModuleBayTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleBayTemplate
+//
+//	@return ModuleBayTemplate
 func (a *DcimAPIService) DcimModuleBayTemplatesPartialUpdateExecute(r ApiDcimModuleBayTemplatesPartialUpdateRequest) (*ModuleBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleBayTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBayTemplatesPartialUpdate")
@@ -50338,9 +50489,9 @@ func (a *DcimAPIService) DcimModuleBayTemplatesPartialUpdateExecute(r ApiDcimMod
 }
 
 type ApiDcimModuleBayTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimModuleBayTemplatesRetrieveRequest) Execute() (*ModuleBayTemplate, *http.Response, error) {
@@ -50352,26 +50503,27 @@ DcimModuleBayTemplatesRetrieve Method for DcimModuleBayTemplatesRetrieve
 
 Get a module bay template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module bay template.
- @return ApiDcimModuleBayTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module bay template.
+	@return ApiDcimModuleBayTemplatesRetrieveRequest
 */
 func (a *DcimAPIService) DcimModuleBayTemplatesRetrieve(ctx context.Context, id int32) ApiDcimModuleBayTemplatesRetrieveRequest {
 	return ApiDcimModuleBayTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleBayTemplate
+//
+//	@return ModuleBayTemplate
 func (a *DcimAPIService) DcimModuleBayTemplatesRetrieveExecute(r ApiDcimModuleBayTemplatesRetrieveRequest) (*ModuleBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleBayTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBayTemplatesRetrieve")
@@ -50455,9 +50607,9 @@ func (a *DcimAPIService) DcimModuleBayTemplatesRetrieveExecute(r ApiDcimModuleBa
 }
 
 type ApiDcimModuleBayTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
+	id                               int32
 	writableModuleBayTemplateRequest *WritableModuleBayTemplateRequest
 }
 
@@ -50475,26 +50627,27 @@ DcimModuleBayTemplatesUpdate Method for DcimModuleBayTemplatesUpdate
 
 Put a module bay template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module bay template.
- @return ApiDcimModuleBayTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module bay template.
+	@return ApiDcimModuleBayTemplatesUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleBayTemplatesUpdate(ctx context.Context, id int32) ApiDcimModuleBayTemplatesUpdateRequest {
 	return ApiDcimModuleBayTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleBayTemplate
+//
+//	@return ModuleBayTemplate
 func (a *DcimAPIService) DcimModuleBayTemplatesUpdateExecute(r ApiDcimModuleBayTemplatesUpdateRequest) (*ModuleBayTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleBayTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleBayTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBayTemplatesUpdate")
@@ -50583,8 +50736,8 @@ func (a *DcimAPIService) DcimModuleBayTemplatesUpdateExecute(r ApiDcimModuleBayT
 }
 
 type ApiDcimModuleBaysBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	moduleBayRequest *[]ModuleBayRequest
 }
 
@@ -50602,22 +50755,22 @@ DcimModuleBaysBulkDestroy Method for DcimModuleBaysBulkDestroy
 
 Delete a list of module bay objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleBaysBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleBaysBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimModuleBaysBulkDestroy(ctx context.Context) ApiDcimModuleBaysBulkDestroyRequest {
 	return ApiDcimModuleBaysBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimModuleBaysBulkDestroyExecute(r ApiDcimModuleBaysBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBaysBulkDestroy")
@@ -50696,8 +50849,8 @@ func (a *DcimAPIService) DcimModuleBaysBulkDestroyExecute(r ApiDcimModuleBaysBul
 }
 
 type ApiDcimModuleBaysBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	moduleBayRequest *[]ModuleBayRequest
 }
 
@@ -50715,24 +50868,25 @@ DcimModuleBaysBulkPartialUpdate Method for DcimModuleBaysBulkPartialUpdate
 
 Patch a list of module bay objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleBaysBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleBaysBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleBaysBulkPartialUpdate(ctx context.Context) ApiDcimModuleBaysBulkPartialUpdateRequest {
 	return ApiDcimModuleBaysBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ModuleBay
+//
+//	@return []ModuleBay
 func (a *DcimAPIService) DcimModuleBaysBulkPartialUpdateExecute(r ApiDcimModuleBaysBulkPartialUpdateRequest) ([]ModuleBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModuleBay
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModuleBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBaysBulkPartialUpdate")
@@ -50820,8 +50974,8 @@ func (a *DcimAPIService) DcimModuleBaysBulkPartialUpdateExecute(r ApiDcimModuleB
 }
 
 type ApiDcimModuleBaysBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	moduleBayRequest *[]ModuleBayRequest
 }
 
@@ -50839,24 +50993,25 @@ DcimModuleBaysBulkUpdate Method for DcimModuleBaysBulkUpdate
 
 Put a list of module bay objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleBaysBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleBaysBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleBaysBulkUpdate(ctx context.Context) ApiDcimModuleBaysBulkUpdateRequest {
 	return ApiDcimModuleBaysBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ModuleBay
+//
+//	@return []ModuleBay
 func (a *DcimAPIService) DcimModuleBaysBulkUpdateExecute(r ApiDcimModuleBaysBulkUpdateRequest) ([]ModuleBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModuleBay
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModuleBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBaysBulkUpdate")
@@ -50944,8 +51099,8 @@ func (a *DcimAPIService) DcimModuleBaysBulkUpdateExecute(r ApiDcimModuleBaysBulk
 }
 
 type ApiDcimModuleBaysCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	writableModuleBayRequest *WritableModuleBayRequest
 }
 
@@ -50963,24 +51118,25 @@ DcimModuleBaysCreate Method for DcimModuleBaysCreate
 
 Post a list of module bay objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleBaysCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleBaysCreateRequest
 */
 func (a *DcimAPIService) DcimModuleBaysCreate(ctx context.Context) ApiDcimModuleBaysCreateRequest {
 	return ApiDcimModuleBaysCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleBay
+//
+//	@return ModuleBay
 func (a *DcimAPIService) DcimModuleBaysCreateExecute(r ApiDcimModuleBaysCreateRequest) (*ModuleBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleBay
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBaysCreate")
@@ -51068,9 +51224,9 @@ func (a *DcimAPIService) DcimModuleBaysCreateExecute(r ApiDcimModuleBaysCreateRe
 }
 
 type ApiDcimModuleBaysDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimModuleBaysDestroyRequest) Execute() (*http.Response, error) {
@@ -51082,24 +51238,24 @@ DcimModuleBaysDestroy Method for DcimModuleBaysDestroy
 
 Delete a module bay object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module bay.
- @return ApiDcimModuleBaysDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module bay.
+	@return ApiDcimModuleBaysDestroyRequest
 */
 func (a *DcimAPIService) DcimModuleBaysDestroy(ctx context.Context, id int32) ApiDcimModuleBaysDestroyRequest {
 	return ApiDcimModuleBaysDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimModuleBaysDestroyExecute(r ApiDcimModuleBaysDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBaysDestroy")
@@ -51174,94 +51330,94 @@ func (a *DcimAPIService) DcimModuleBaysDestroyExecute(r ApiDcimModuleBaysDestroy
 }
 
 type ApiDcimModuleBaysListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	device *[]*string
-	deviceN *[]*string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	rack *[]string
-	rackN *[]string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
-	virtualChassis *[]string
-	virtualChassisN *[]string
-	virtualChassisId *[]int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *[]string
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	device            *[]*string
+	deviceN           *[]*string
+	deviceId          *[]int32
+	deviceIdN         *[]int32
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	label             *[]string
+	labelEmpty        *[]string
+	labelIc           *[]string
+	labelIe           *[]string
+	labelIew          *[]string
+	labelIsw          *[]string
+	labelN            *[]string
+	labelNic          *[]string
+	labelNie          *[]string
+	labelNiew         *[]string
+	labelNisw         *[]string
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	location          *[]string
+	locationN         *[]string
+	locationId        *[]int32
+	locationIdN       *[]int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	offset            *int32
+	ordering          *string
+	q                 *string
+	rack              *[]string
+	rackN             *[]string
+	rackId            *[]int32
+	rackIdN           *[]int32
+	region            *[]int32
+	regionN           *[]int32
+	regionId          *[]int32
+	regionIdN         *[]int32
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]int32
+	siteGroupN        *[]int32
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
+	virtualChassis    *[]string
+	virtualChassisN   *[]string
+	virtualChassisId  *[]int32
 	virtualChassisIdN *[]int32
 }
 
@@ -51741,24 +51897,25 @@ DcimModuleBaysList Method for DcimModuleBaysList
 
 Get a list of module bay objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleBaysListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleBaysListRequest
 */
 func (a *DcimAPIService) DcimModuleBaysList(ctx context.Context) ApiDcimModuleBaysListRequest {
 	return ApiDcimModuleBaysListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedModuleBayList
+//
+//	@return PaginatedModuleBayList
 func (a *DcimAPIService) DcimModuleBaysListExecute(r ApiDcimModuleBaysListRequest) (*PaginatedModuleBayList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedModuleBayList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedModuleBayList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBaysList")
@@ -52750,9 +52907,9 @@ func (a *DcimAPIService) DcimModuleBaysListExecute(r ApiDcimModuleBaysListReques
 }
 
 type ApiDcimModuleBaysPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *DcimAPIService
+	id                              int32
 	patchedWritableModuleBayRequest *PatchedWritableModuleBayRequest
 }
 
@@ -52770,26 +52927,27 @@ DcimModuleBaysPartialUpdate Method for DcimModuleBaysPartialUpdate
 
 Patch a module bay object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module bay.
- @return ApiDcimModuleBaysPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module bay.
+	@return ApiDcimModuleBaysPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleBaysPartialUpdate(ctx context.Context, id int32) ApiDcimModuleBaysPartialUpdateRequest {
 	return ApiDcimModuleBaysPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleBay
+//
+//	@return ModuleBay
 func (a *DcimAPIService) DcimModuleBaysPartialUpdateExecute(r ApiDcimModuleBaysPartialUpdateRequest) (*ModuleBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleBay
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBaysPartialUpdate")
@@ -52875,9 +53033,9 @@ func (a *DcimAPIService) DcimModuleBaysPartialUpdateExecute(r ApiDcimModuleBaysP
 }
 
 type ApiDcimModuleBaysRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimModuleBaysRetrieveRequest) Execute() (*ModuleBay, *http.Response, error) {
@@ -52889,26 +53047,27 @@ DcimModuleBaysRetrieve Method for DcimModuleBaysRetrieve
 
 Get a module bay object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module bay.
- @return ApiDcimModuleBaysRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module bay.
+	@return ApiDcimModuleBaysRetrieveRequest
 */
 func (a *DcimAPIService) DcimModuleBaysRetrieve(ctx context.Context, id int32) ApiDcimModuleBaysRetrieveRequest {
 	return ApiDcimModuleBaysRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleBay
+//
+//	@return ModuleBay
 func (a *DcimAPIService) DcimModuleBaysRetrieveExecute(r ApiDcimModuleBaysRetrieveRequest) (*ModuleBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleBay
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBaysRetrieve")
@@ -52992,9 +53151,9 @@ func (a *DcimAPIService) DcimModuleBaysRetrieveExecute(r ApiDcimModuleBaysRetrie
 }
 
 type ApiDcimModuleBaysUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *DcimAPIService
+	id                       int32
 	writableModuleBayRequest *WritableModuleBayRequest
 }
 
@@ -53012,26 +53171,27 @@ DcimModuleBaysUpdate Method for DcimModuleBaysUpdate
 
 Put a module bay object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module bay.
- @return ApiDcimModuleBaysUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module bay.
+	@return ApiDcimModuleBaysUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleBaysUpdate(ctx context.Context, id int32) ApiDcimModuleBaysUpdateRequest {
 	return ApiDcimModuleBaysUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleBay
+//
+//	@return ModuleBay
 func (a *DcimAPIService) DcimModuleBaysUpdateExecute(r ApiDcimModuleBaysUpdateRequest) (*ModuleBay, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleBay
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleBay
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleBaysUpdate")
@@ -53120,8 +53280,8 @@ func (a *DcimAPIService) DcimModuleBaysUpdateExecute(r ApiDcimModuleBaysUpdateRe
 }
 
 type ApiDcimModuleTypesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	moduleTypeRequest *[]ModuleTypeRequest
 }
 
@@ -53139,22 +53299,22 @@ DcimModuleTypesBulkDestroy Method for DcimModuleTypesBulkDestroy
 
 Delete a list of module type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleTypesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleTypesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimModuleTypesBulkDestroy(ctx context.Context) ApiDcimModuleTypesBulkDestroyRequest {
 	return ApiDcimModuleTypesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimModuleTypesBulkDestroyExecute(r ApiDcimModuleTypesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleTypesBulkDestroy")
@@ -53233,8 +53393,8 @@ func (a *DcimAPIService) DcimModuleTypesBulkDestroyExecute(r ApiDcimModuleTypesB
 }
 
 type ApiDcimModuleTypesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	moduleTypeRequest *[]ModuleTypeRequest
 }
 
@@ -53252,24 +53412,25 @@ DcimModuleTypesBulkPartialUpdate Method for DcimModuleTypesBulkPartialUpdate
 
 Patch a list of module type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleTypesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleTypesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleTypesBulkPartialUpdate(ctx context.Context) ApiDcimModuleTypesBulkPartialUpdateRequest {
 	return ApiDcimModuleTypesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ModuleType
+//
+//	@return []ModuleType
 func (a *DcimAPIService) DcimModuleTypesBulkPartialUpdateExecute(r ApiDcimModuleTypesBulkPartialUpdateRequest) ([]ModuleType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModuleType
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModuleType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleTypesBulkPartialUpdate")
@@ -53357,8 +53518,8 @@ func (a *DcimAPIService) DcimModuleTypesBulkPartialUpdateExecute(r ApiDcimModule
 }
 
 type ApiDcimModuleTypesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	moduleTypeRequest *[]ModuleTypeRequest
 }
 
@@ -53376,24 +53537,25 @@ DcimModuleTypesBulkUpdate Method for DcimModuleTypesBulkUpdate
 
 Put a list of module type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleTypesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleTypesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleTypesBulkUpdate(ctx context.Context) ApiDcimModuleTypesBulkUpdateRequest {
 	return ApiDcimModuleTypesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ModuleType
+//
+//	@return []ModuleType
 func (a *DcimAPIService) DcimModuleTypesBulkUpdateExecute(r ApiDcimModuleTypesBulkUpdateRequest) ([]ModuleType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ModuleType
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ModuleType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleTypesBulkUpdate")
@@ -53481,8 +53643,8 @@ func (a *DcimAPIService) DcimModuleTypesBulkUpdateExecute(r ApiDcimModuleTypesBu
 }
 
 type ApiDcimModuleTypesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                       context.Context
+	ApiService                *DcimAPIService
 	writableModuleTypeRequest *WritableModuleTypeRequest
 }
 
@@ -53500,24 +53662,25 @@ DcimModuleTypesCreate Method for DcimModuleTypesCreate
 
 Post a list of module type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleTypesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleTypesCreateRequest
 */
 func (a *DcimAPIService) DcimModuleTypesCreate(ctx context.Context) ApiDcimModuleTypesCreateRequest {
 	return ApiDcimModuleTypesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleType
+//
+//	@return ModuleType
 func (a *DcimAPIService) DcimModuleTypesCreateExecute(r ApiDcimModuleTypesCreateRequest) (*ModuleType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleType
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleTypesCreate")
@@ -53605,9 +53768,9 @@ func (a *DcimAPIService) DcimModuleTypesCreateExecute(r ApiDcimModuleTypesCreate
 }
 
 type ApiDcimModuleTypesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimModuleTypesDestroyRequest) Execute() (*http.Response, error) {
@@ -53619,24 +53782,24 @@ DcimModuleTypesDestroy Method for DcimModuleTypesDestroy
 
 Delete a module type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module type.
- @return ApiDcimModuleTypesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module type.
+	@return ApiDcimModuleTypesDestroyRequest
 */
 func (a *DcimAPIService) DcimModuleTypesDestroy(ctx context.Context, id int32) ApiDcimModuleTypesDestroyRequest {
 	return ApiDcimModuleTypesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimModuleTypesDestroyExecute(r ApiDcimModuleTypesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleTypesDestroy")
@@ -53711,74 +53874,74 @@ func (a *DcimAPIService) DcimModuleTypesDestroyExecute(r ApiDcimModuleTypesDestr
 }
 
 type ApiDcimModuleTypesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	consolePorts *bool
+	ctx                context.Context
+	ApiService         *DcimAPIService
+	consolePorts       *bool
 	consoleServerPorts *bool
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	interfaces *bool
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	manufacturer *[]string
-	manufacturerN *[]string
-	manufacturerId *[]int32
-	manufacturerIdN *[]int32
-	model *[]string
-	modelEmpty *[]string
-	modelIc *[]string
-	modelIe *[]string
-	modelIew *[]string
-	modelIsw *[]string
-	modelN *[]string
-	modelNic *[]string
-	modelNie *[]string
-	modelNiew *[]string
-	modelNisw *[]string
-	offset *int32
-	ordering *string
-	partNumber *[]string
-	partNumberEmpty *[]string
-	partNumberIc *[]string
-	partNumberIe *[]string
-	partNumberIew *[]string
-	partNumberIsw *[]string
-	partNumberN *[]string
-	partNumberNic *[]string
-	partNumberNie *[]string
-	partNumberNiew *[]string
-	partNumberNisw *[]string
-	passThroughPorts *bool
-	powerOutlets *bool
-	powerPorts *bool
-	q *string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
-	weight *[]float64
-	weightGt *[]float64
-	weightGte *[]float64
-	weightLt *[]float64
-	weightLte *[]float64
-	weightN *[]float64
-	weightUnit *string
-	weightUnitN *string
+	created            *[]time.Time
+	createdGt          *[]time.Time
+	createdGte         *[]time.Time
+	createdLt          *[]time.Time
+	createdLte         *[]time.Time
+	createdN           *[]time.Time
+	createdByRequest   *string
+	id                 *[]int32
+	idGt               *[]int32
+	idGte              *[]int32
+	idLt               *[]int32
+	idLte              *[]int32
+	idN                *[]int32
+	interfaces         *bool
+	lastUpdated        *[]time.Time
+	lastUpdatedGt      *[]time.Time
+	lastUpdatedGte     *[]time.Time
+	lastUpdatedLt      *[]time.Time
+	lastUpdatedLte     *[]time.Time
+	lastUpdatedN       *[]time.Time
+	limit              *int32
+	manufacturer       *[]string
+	manufacturerN      *[]string
+	manufacturerId     *[]int32
+	manufacturerIdN    *[]int32
+	model              *[]string
+	modelEmpty         *[]string
+	modelIc            *[]string
+	modelIe            *[]string
+	modelIew           *[]string
+	modelIsw           *[]string
+	modelN             *[]string
+	modelNic           *[]string
+	modelNie           *[]string
+	modelNiew          *[]string
+	modelNisw          *[]string
+	offset             *int32
+	ordering           *string
+	partNumber         *[]string
+	partNumberEmpty    *[]string
+	partNumberIc       *[]string
+	partNumberIe       *[]string
+	partNumberIew      *[]string
+	partNumberIsw      *[]string
+	partNumberN        *[]string
+	partNumberNic      *[]string
+	partNumberNie      *[]string
+	partNumberNiew     *[]string
+	partNumberNisw     *[]string
+	passThroughPorts   *bool
+	powerOutlets       *bool
+	powerPorts         *bool
+	q                  *string
+	tag                *[]string
+	tagN               *[]string
+	updatedByRequest   *string
+	weight             *[]float64
+	weightGt           *[]float64
+	weightGte          *[]float64
+	weightLt           *[]float64
+	weightLte          *[]float64
+	weightN            *[]float64
+	weightUnit         *string
+	weightUnitN        *string
 }
 
 // Has console ports
@@ -54136,24 +54299,25 @@ DcimModuleTypesList Method for DcimModuleTypesList
 
 Get a list of module type objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModuleTypesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModuleTypesListRequest
 */
 func (a *DcimAPIService) DcimModuleTypesList(ctx context.Context) ApiDcimModuleTypesListRequest {
 	return ApiDcimModuleTypesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedModuleTypeList
+//
+//	@return PaginatedModuleTypeList
 func (a *DcimAPIService) DcimModuleTypesListExecute(r ApiDcimModuleTypesListRequest) (*PaginatedModuleTypeList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedModuleTypeList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedModuleTypeList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleTypesList")
@@ -54850,9 +55014,9 @@ func (a *DcimAPIService) DcimModuleTypesListExecute(r ApiDcimModuleTypesListRequ
 }
 
 type ApiDcimModuleTypesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
+	id                               int32
 	patchedWritableModuleTypeRequest *PatchedWritableModuleTypeRequest
 }
 
@@ -54870,26 +55034,27 @@ DcimModuleTypesPartialUpdate Method for DcimModuleTypesPartialUpdate
 
 Patch a module type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module type.
- @return ApiDcimModuleTypesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module type.
+	@return ApiDcimModuleTypesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleTypesPartialUpdate(ctx context.Context, id int32) ApiDcimModuleTypesPartialUpdateRequest {
 	return ApiDcimModuleTypesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleType
+//
+//	@return ModuleType
 func (a *DcimAPIService) DcimModuleTypesPartialUpdateExecute(r ApiDcimModuleTypesPartialUpdateRequest) (*ModuleType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleType
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleTypesPartialUpdate")
@@ -54975,9 +55140,9 @@ func (a *DcimAPIService) DcimModuleTypesPartialUpdateExecute(r ApiDcimModuleType
 }
 
 type ApiDcimModuleTypesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimModuleTypesRetrieveRequest) Execute() (*ModuleType, *http.Response, error) {
@@ -54989,26 +55154,27 @@ DcimModuleTypesRetrieve Method for DcimModuleTypesRetrieve
 
 Get a module type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module type.
- @return ApiDcimModuleTypesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module type.
+	@return ApiDcimModuleTypesRetrieveRequest
 */
 func (a *DcimAPIService) DcimModuleTypesRetrieve(ctx context.Context, id int32) ApiDcimModuleTypesRetrieveRequest {
 	return ApiDcimModuleTypesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleType
+//
+//	@return ModuleType
 func (a *DcimAPIService) DcimModuleTypesRetrieveExecute(r ApiDcimModuleTypesRetrieveRequest) (*ModuleType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleType
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleTypesRetrieve")
@@ -55092,9 +55258,9 @@ func (a *DcimAPIService) DcimModuleTypesRetrieveExecute(r ApiDcimModuleTypesRetr
 }
 
 type ApiDcimModuleTypesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                       context.Context
+	ApiService                *DcimAPIService
+	id                        int32
 	writableModuleTypeRequest *WritableModuleTypeRequest
 }
 
@@ -55112,26 +55278,27 @@ DcimModuleTypesUpdate Method for DcimModuleTypesUpdate
 
 Put a module type object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module type.
- @return ApiDcimModuleTypesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module type.
+	@return ApiDcimModuleTypesUpdateRequest
 */
 func (a *DcimAPIService) DcimModuleTypesUpdate(ctx context.Context, id int32) ApiDcimModuleTypesUpdateRequest {
 	return ApiDcimModuleTypesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ModuleType
+//
+//	@return ModuleType
 func (a *DcimAPIService) DcimModuleTypesUpdateExecute(r ApiDcimModuleTypesUpdateRequest) (*ModuleType, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ModuleType
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ModuleType
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModuleTypesUpdate")
@@ -55220,8 +55387,8 @@ func (a *DcimAPIService) DcimModuleTypesUpdateExecute(r ApiDcimModuleTypesUpdate
 }
 
 type ApiDcimModulesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx           context.Context
+	ApiService    *DcimAPIService
 	moduleRequest *[]ModuleRequest
 }
 
@@ -55239,22 +55406,22 @@ DcimModulesBulkDestroy Method for DcimModulesBulkDestroy
 
 Delete a list of module objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModulesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModulesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimModulesBulkDestroy(ctx context.Context) ApiDcimModulesBulkDestroyRequest {
 	return ApiDcimModulesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimModulesBulkDestroyExecute(r ApiDcimModulesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModulesBulkDestroy")
@@ -55333,8 +55500,8 @@ func (a *DcimAPIService) DcimModulesBulkDestroyExecute(r ApiDcimModulesBulkDestr
 }
 
 type ApiDcimModulesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx           context.Context
+	ApiService    *DcimAPIService
 	moduleRequest *[]ModuleRequest
 }
 
@@ -55352,24 +55519,25 @@ DcimModulesBulkPartialUpdate Method for DcimModulesBulkPartialUpdate
 
 Patch a list of module objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModulesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModulesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimModulesBulkPartialUpdate(ctx context.Context) ApiDcimModulesBulkPartialUpdateRequest {
 	return ApiDcimModulesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Module
+//
+//	@return []Module
 func (a *DcimAPIService) DcimModulesBulkPartialUpdateExecute(r ApiDcimModulesBulkPartialUpdateRequest) ([]Module, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Module
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Module
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModulesBulkPartialUpdate")
@@ -55457,8 +55625,8 @@ func (a *DcimAPIService) DcimModulesBulkPartialUpdateExecute(r ApiDcimModulesBul
 }
 
 type ApiDcimModulesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx           context.Context
+	ApiService    *DcimAPIService
 	moduleRequest *[]ModuleRequest
 }
 
@@ -55476,24 +55644,25 @@ DcimModulesBulkUpdate Method for DcimModulesBulkUpdate
 
 Put a list of module objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModulesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModulesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimModulesBulkUpdate(ctx context.Context) ApiDcimModulesBulkUpdateRequest {
 	return ApiDcimModulesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Module
+//
+//	@return []Module
 func (a *DcimAPIService) DcimModulesBulkUpdateExecute(r ApiDcimModulesBulkUpdateRequest) ([]Module, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Module
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Module
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModulesBulkUpdate")
@@ -55581,8 +55750,8 @@ func (a *DcimAPIService) DcimModulesBulkUpdateExecute(r ApiDcimModulesBulkUpdate
 }
 
 type ApiDcimModulesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                   context.Context
+	ApiService            *DcimAPIService
 	writableModuleRequest *WritableModuleRequest
 }
 
@@ -55600,24 +55769,25 @@ DcimModulesCreate Method for DcimModulesCreate
 
 Post a list of module objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModulesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModulesCreateRequest
 */
 func (a *DcimAPIService) DcimModulesCreate(ctx context.Context) ApiDcimModulesCreateRequest {
 	return ApiDcimModulesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Module
+//
+//	@return Module
 func (a *DcimAPIService) DcimModulesCreateExecute(r ApiDcimModulesCreateRequest) (*Module, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Module
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Module
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModulesCreate")
@@ -55705,9 +55875,9 @@ func (a *DcimAPIService) DcimModulesCreateExecute(r ApiDcimModulesCreateRequest)
 }
 
 type ApiDcimModulesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimModulesDestroyRequest) Execute() (*http.Response, error) {
@@ -55719,24 +55889,24 @@ DcimModulesDestroy Method for DcimModulesDestroy
 
 Delete a module object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module.
- @return ApiDcimModulesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module.
+	@return ApiDcimModulesDestroyRequest
 */
 func (a *DcimAPIService) DcimModulesDestroy(ctx context.Context, id int32) ApiDcimModulesDestroyRequest {
 	return ApiDcimModulesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimModulesDestroyExecute(r ApiDcimModulesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModulesDestroy")
@@ -55811,69 +55981,69 @@ func (a *DcimAPIService) DcimModulesDestroyExecute(r ApiDcimModulesDestroyReques
 }
 
 type ApiDcimModulesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	assetTag *[]string
-	assetTagEmpty *[]string
-	assetTagIc *[]string
-	assetTagIe *[]string
-	assetTagIew *[]string
-	assetTagIsw *[]string
-	assetTagN *[]string
-	assetTagNic *[]string
-	assetTagNie *[]string
-	assetTagNiew *[]string
-	assetTagNisw *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	assetTag         *[]string
+	assetTagEmpty    *[]string
+	assetTagIc       *[]string
+	assetTagIe       *[]string
+	assetTagIew      *[]string
+	assetTagIsw      *[]string
+	assetTagN        *[]string
+	assetTagNic      *[]string
+	assetTagNie      *[]string
+	assetTagNiew     *[]string
+	assetTagNisw     *[]string
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	manufacturer *[]string
-	manufacturerN *[]string
-	manufacturerId *[]int32
-	manufacturerIdN *[]int32
-	moduleBayId *[]int32
-	moduleBayIdN *[]int32
-	moduleType *[]string
-	moduleTypeN *[]string
-	moduleTypeId *[]int32
-	moduleTypeIdN *[]int32
-	offset *int32
-	ordering *string
-	q *string
-	serial *[]string
-	serialEmpty *[]string
-	serialIc *[]string
-	serialIe *[]string
-	serialIew *[]string
-	serialIsw *[]string
-	serialN *[]string
-	serialNic *[]string
-	serialNie *[]string
-	serialNiew *[]string
-	serialNisw *[]string
-	status *[]string
-	statusN *[]string
-	tag *[]string
-	tagN *[]string
+	deviceId         *[]int32
+	deviceIdN        *[]int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	manufacturer     *[]string
+	manufacturerN    *[]string
+	manufacturerId   *[]int32
+	manufacturerIdN  *[]int32
+	moduleBayId      *[]int32
+	moduleBayIdN     *[]int32
+	moduleType       *[]string
+	moduleTypeN      *[]string
+	moduleTypeId     *[]int32
+	moduleTypeIdN    *[]int32
+	offset           *int32
+	ordering         *string
+	q                *string
+	serial           *[]string
+	serialEmpty      *[]string
+	serialIc         *[]string
+	serialIe         *[]string
+	serialIew        *[]string
+	serialIsw        *[]string
+	serialN          *[]string
+	serialNic        *[]string
+	serialNie        *[]string
+	serialNiew       *[]string
+	serialNisw       *[]string
+	status           *[]string
+	statusN          *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -56214,24 +56384,25 @@ DcimModulesList Method for DcimModulesList
 
 Get a list of module objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimModulesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimModulesListRequest
 */
 func (a *DcimAPIService) DcimModulesList(ctx context.Context) ApiDcimModulesListRequest {
 	return ApiDcimModulesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedModuleList
+//
+//	@return PaginatedModuleList
 func (a *DcimAPIService) DcimModulesListExecute(r ApiDcimModulesListRequest) (*PaginatedModuleList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedModuleList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedModuleList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModulesList")
@@ -56948,9 +57119,9 @@ func (a *DcimAPIService) DcimModulesListExecute(r ApiDcimModulesListRequest) (*P
 }
 
 type ApiDcimModulesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                          context.Context
+	ApiService                   *DcimAPIService
+	id                           int32
 	patchedWritableModuleRequest *PatchedWritableModuleRequest
 }
 
@@ -56968,26 +57139,27 @@ DcimModulesPartialUpdate Method for DcimModulesPartialUpdate
 
 Patch a module object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module.
- @return ApiDcimModulesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module.
+	@return ApiDcimModulesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimModulesPartialUpdate(ctx context.Context, id int32) ApiDcimModulesPartialUpdateRequest {
 	return ApiDcimModulesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Module
+//
+//	@return Module
 func (a *DcimAPIService) DcimModulesPartialUpdateExecute(r ApiDcimModulesPartialUpdateRequest) (*Module, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Module
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Module
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModulesPartialUpdate")
@@ -57073,9 +57245,9 @@ func (a *DcimAPIService) DcimModulesPartialUpdateExecute(r ApiDcimModulesPartial
 }
 
 type ApiDcimModulesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimModulesRetrieveRequest) Execute() (*Module, *http.Response, error) {
@@ -57087,26 +57259,27 @@ DcimModulesRetrieve Method for DcimModulesRetrieve
 
 Get a module object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module.
- @return ApiDcimModulesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module.
+	@return ApiDcimModulesRetrieveRequest
 */
 func (a *DcimAPIService) DcimModulesRetrieve(ctx context.Context, id int32) ApiDcimModulesRetrieveRequest {
 	return ApiDcimModulesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Module
+//
+//	@return Module
 func (a *DcimAPIService) DcimModulesRetrieveExecute(r ApiDcimModulesRetrieveRequest) (*Module, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Module
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Module
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModulesRetrieve")
@@ -57190,9 +57363,9 @@ func (a *DcimAPIService) DcimModulesRetrieveExecute(r ApiDcimModulesRetrieveRequ
 }
 
 type ApiDcimModulesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                   context.Context
+	ApiService            *DcimAPIService
+	id                    int32
 	writableModuleRequest *WritableModuleRequest
 }
 
@@ -57210,26 +57383,27 @@ DcimModulesUpdate Method for DcimModulesUpdate
 
 Put a module object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this module.
- @return ApiDcimModulesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this module.
+	@return ApiDcimModulesUpdateRequest
 */
 func (a *DcimAPIService) DcimModulesUpdate(ctx context.Context, id int32) ApiDcimModulesUpdateRequest {
 	return ApiDcimModulesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Module
+//
+//	@return Module
 func (a *DcimAPIService) DcimModulesUpdateExecute(r ApiDcimModulesUpdateRequest) (*Module, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Module
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Module
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimModulesUpdate")
@@ -57318,8 +57492,8 @@ func (a *DcimAPIService) DcimModulesUpdateExecute(r ApiDcimModulesUpdateRequest)
 }
 
 type ApiDcimPlatformsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	platformRequest *[]PlatformRequest
 }
 
@@ -57337,22 +57511,22 @@ DcimPlatformsBulkDestroy Method for DcimPlatformsBulkDestroy
 
 Delete a list of platform objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPlatformsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPlatformsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimPlatformsBulkDestroy(ctx context.Context) ApiDcimPlatformsBulkDestroyRequest {
 	return ApiDcimPlatformsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPlatformsBulkDestroyExecute(r ApiDcimPlatformsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPlatformsBulkDestroy")
@@ -57431,8 +57605,8 @@ func (a *DcimAPIService) DcimPlatformsBulkDestroyExecute(r ApiDcimPlatformsBulkD
 }
 
 type ApiDcimPlatformsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	platformRequest *[]PlatformRequest
 }
 
@@ -57450,24 +57624,25 @@ DcimPlatformsBulkPartialUpdate Method for DcimPlatformsBulkPartialUpdate
 
 Patch a list of platform objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPlatformsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPlatformsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPlatformsBulkPartialUpdate(ctx context.Context) ApiDcimPlatformsBulkPartialUpdateRequest {
 	return ApiDcimPlatformsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Platform
+//
+//	@return []Platform
 func (a *DcimAPIService) DcimPlatformsBulkPartialUpdateExecute(r ApiDcimPlatformsBulkPartialUpdateRequest) ([]Platform, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Platform
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Platform
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPlatformsBulkPartialUpdate")
@@ -57555,8 +57730,8 @@ func (a *DcimAPIService) DcimPlatformsBulkPartialUpdateExecute(r ApiDcimPlatform
 }
 
 type ApiDcimPlatformsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	platformRequest *[]PlatformRequest
 }
 
@@ -57574,24 +57749,25 @@ DcimPlatformsBulkUpdate Method for DcimPlatformsBulkUpdate
 
 Put a list of platform objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPlatformsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPlatformsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimPlatformsBulkUpdate(ctx context.Context) ApiDcimPlatformsBulkUpdateRequest {
 	return ApiDcimPlatformsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Platform
+//
+//	@return []Platform
 func (a *DcimAPIService) DcimPlatformsBulkUpdateExecute(r ApiDcimPlatformsBulkUpdateRequest) ([]Platform, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Platform
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Platform
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPlatformsBulkUpdate")
@@ -57679,8 +57855,8 @@ func (a *DcimAPIService) DcimPlatformsBulkUpdateExecute(r ApiDcimPlatformsBulkUp
 }
 
 type ApiDcimPlatformsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                     context.Context
+	ApiService              *DcimAPIService
 	writablePlatformRequest *WritablePlatformRequest
 }
 
@@ -57698,24 +57874,25 @@ DcimPlatformsCreate Method for DcimPlatformsCreate
 
 Post a list of platform objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPlatformsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPlatformsCreateRequest
 */
 func (a *DcimAPIService) DcimPlatformsCreate(ctx context.Context) ApiDcimPlatformsCreateRequest {
 	return ApiDcimPlatformsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Platform
+//
+//	@return Platform
 func (a *DcimAPIService) DcimPlatformsCreateExecute(r ApiDcimPlatformsCreateRequest) (*Platform, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Platform
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Platform
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPlatformsCreate")
@@ -57803,9 +57980,9 @@ func (a *DcimAPIService) DcimPlatformsCreateExecute(r ApiDcimPlatformsCreateRequ
 }
 
 type ApiDcimPlatformsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPlatformsDestroyRequest) Execute() (*http.Response, error) {
@@ -57817,24 +57994,24 @@ DcimPlatformsDestroy Method for DcimPlatformsDestroy
 
 Delete a platform object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this platform.
- @return ApiDcimPlatformsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this platform.
+	@return ApiDcimPlatformsDestroyRequest
 */
 func (a *DcimAPIService) DcimPlatformsDestroy(ctx context.Context, id int32) ApiDcimPlatformsDestroyRequest {
 	return ApiDcimPlatformsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPlatformsDestroyExecute(r ApiDcimPlatformsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPlatformsDestroy")
@@ -57909,84 +58086,84 @@ func (a *DcimAPIService) DcimPlatformsDestroyExecute(r ApiDcimPlatformsDestroyRe
 }
 
 type ApiDcimPlatformsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	configTemplateId *[]*int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	configTemplateId  *[]*int32
 	configTemplateIdN *[]*int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	manufacturer *[]string
-	manufacturerN *[]string
-	manufacturerId *[]int32
-	manufacturerIdN *[]int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	napalmDriver *[]string
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *[]string
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	manufacturer      *[]string
+	manufacturerN     *[]string
+	manufacturerId    *[]int32
+	manufacturerIdN   *[]int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	napalmDriver      *[]string
 	napalmDriverEmpty *[]string
-	napalmDriverIc *[]string
-	napalmDriverIe *[]string
-	napalmDriverIew *[]string
-	napalmDriverIsw *[]string
-	napalmDriverN *[]string
-	napalmDriverNic *[]string
-	napalmDriverNie *[]string
-	napalmDriverNiew *[]string
-	napalmDriverNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
-	updatedByRequest *string
+	napalmDriverIc    *[]string
+	napalmDriverIe    *[]string
+	napalmDriverIew   *[]string
+	napalmDriverIsw   *[]string
+	napalmDriverN     *[]string
+	napalmDriverNic   *[]string
+	napalmDriverNie   *[]string
+	napalmDriverNiew  *[]string
+	napalmDriverNisw  *[]string
+	offset            *int32
+	ordering          *string
+	q                 *string
+	slug              *[]string
+	slugEmpty         *[]string
+	slugIc            *[]string
+	slugIe            *[]string
+	slugIew           *[]string
+	slugIsw           *[]string
+	slugN             *[]string
+	slugNic           *[]string
+	slugNie           *[]string
+	slugNiew          *[]string
+	slugNisw          *[]string
+	tag               *[]string
+	tagN              *[]string
+	updatedByRequest  *string
 }
 
 // Config template (ID)
@@ -58388,24 +58565,25 @@ DcimPlatformsList Method for DcimPlatformsList
 
 Get a list of platform objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPlatformsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPlatformsListRequest
 */
 func (a *DcimAPIService) DcimPlatformsList(ctx context.Context) ApiDcimPlatformsListRequest {
 	return ApiDcimPlatformsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedPlatformList
+//
+//	@return PaginatedPlatformList
 func (a *DcimAPIService) DcimPlatformsListExecute(r ApiDcimPlatformsListRequest) (*PaginatedPlatformList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedPlatformList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedPlatformList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPlatformsList")
@@ -59276,9 +59454,9 @@ func (a *DcimAPIService) DcimPlatformsListExecute(r ApiDcimPlatformsListRequest)
 }
 
 type ApiDcimPlatformsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                            context.Context
+	ApiService                     *DcimAPIService
+	id                             int32
 	patchedWritablePlatformRequest *PatchedWritablePlatformRequest
 }
 
@@ -59296,26 +59474,27 @@ DcimPlatformsPartialUpdate Method for DcimPlatformsPartialUpdate
 
 Patch a platform object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this platform.
- @return ApiDcimPlatformsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this platform.
+	@return ApiDcimPlatformsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPlatformsPartialUpdate(ctx context.Context, id int32) ApiDcimPlatformsPartialUpdateRequest {
 	return ApiDcimPlatformsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Platform
+//
+//	@return Platform
 func (a *DcimAPIService) DcimPlatformsPartialUpdateExecute(r ApiDcimPlatformsPartialUpdateRequest) (*Platform, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Platform
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Platform
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPlatformsPartialUpdate")
@@ -59401,9 +59580,9 @@ func (a *DcimAPIService) DcimPlatformsPartialUpdateExecute(r ApiDcimPlatformsPar
 }
 
 type ApiDcimPlatformsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPlatformsRetrieveRequest) Execute() (*Platform, *http.Response, error) {
@@ -59415,26 +59594,27 @@ DcimPlatformsRetrieve Method for DcimPlatformsRetrieve
 
 Get a platform object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this platform.
- @return ApiDcimPlatformsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this platform.
+	@return ApiDcimPlatformsRetrieveRequest
 */
 func (a *DcimAPIService) DcimPlatformsRetrieve(ctx context.Context, id int32) ApiDcimPlatformsRetrieveRequest {
 	return ApiDcimPlatformsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Platform
+//
+//	@return Platform
 func (a *DcimAPIService) DcimPlatformsRetrieveExecute(r ApiDcimPlatformsRetrieveRequest) (*Platform, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Platform
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Platform
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPlatformsRetrieve")
@@ -59518,9 +59698,9 @@ func (a *DcimAPIService) DcimPlatformsRetrieveExecute(r ApiDcimPlatformsRetrieve
 }
 
 type ApiDcimPlatformsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                     context.Context
+	ApiService              *DcimAPIService
+	id                      int32
 	writablePlatformRequest *WritablePlatformRequest
 }
 
@@ -59538,26 +59718,27 @@ DcimPlatformsUpdate Method for DcimPlatformsUpdate
 
 Put a platform object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this platform.
- @return ApiDcimPlatformsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this platform.
+	@return ApiDcimPlatformsUpdateRequest
 */
 func (a *DcimAPIService) DcimPlatformsUpdate(ctx context.Context, id int32) ApiDcimPlatformsUpdateRequest {
 	return ApiDcimPlatformsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Platform
+//
+//	@return Platform
 func (a *DcimAPIService) DcimPlatformsUpdateExecute(r ApiDcimPlatformsUpdateRequest) (*Platform, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Platform
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Platform
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPlatformsUpdate")
@@ -59646,8 +59827,8 @@ func (a *DcimAPIService) DcimPlatformsUpdateExecute(r ApiDcimPlatformsUpdateRequ
 }
 
 type ApiDcimPowerFeedsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	powerFeedRequest *[]PowerFeedRequest
 }
 
@@ -59665,22 +59846,22 @@ DcimPowerFeedsBulkDestroy Method for DcimPowerFeedsBulkDestroy
 
 Delete a list of power feed objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerFeedsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerFeedsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerFeedsBulkDestroy(ctx context.Context) ApiDcimPowerFeedsBulkDestroyRequest {
 	return ApiDcimPowerFeedsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerFeedsBulkDestroyExecute(r ApiDcimPowerFeedsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerFeedsBulkDestroy")
@@ -59759,8 +59940,8 @@ func (a *DcimAPIService) DcimPowerFeedsBulkDestroyExecute(r ApiDcimPowerFeedsBul
 }
 
 type ApiDcimPowerFeedsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	powerFeedRequest *[]PowerFeedRequest
 }
 
@@ -59778,24 +59959,25 @@ DcimPowerFeedsBulkPartialUpdate Method for DcimPowerFeedsBulkPartialUpdate
 
 Patch a list of power feed objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerFeedsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerFeedsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerFeedsBulkPartialUpdate(ctx context.Context) ApiDcimPowerFeedsBulkPartialUpdateRequest {
 	return ApiDcimPowerFeedsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerFeed
+//
+//	@return []PowerFeed
 func (a *DcimAPIService) DcimPowerFeedsBulkPartialUpdateExecute(r ApiDcimPowerFeedsBulkPartialUpdateRequest) ([]PowerFeed, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerFeed
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerFeed
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerFeedsBulkPartialUpdate")
@@ -59883,8 +60065,8 @@ func (a *DcimAPIService) DcimPowerFeedsBulkPartialUpdateExecute(r ApiDcimPowerFe
 }
 
 type ApiDcimPowerFeedsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	powerFeedRequest *[]PowerFeedRequest
 }
 
@@ -59902,24 +60084,25 @@ DcimPowerFeedsBulkUpdate Method for DcimPowerFeedsBulkUpdate
 
 Put a list of power feed objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerFeedsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerFeedsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerFeedsBulkUpdate(ctx context.Context) ApiDcimPowerFeedsBulkUpdateRequest {
 	return ApiDcimPowerFeedsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerFeed
+//
+//	@return []PowerFeed
 func (a *DcimAPIService) DcimPowerFeedsBulkUpdateExecute(r ApiDcimPowerFeedsBulkUpdateRequest) ([]PowerFeed, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerFeed
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerFeed
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerFeedsBulkUpdate")
@@ -60007,8 +60190,8 @@ func (a *DcimAPIService) DcimPowerFeedsBulkUpdateExecute(r ApiDcimPowerFeedsBulk
 }
 
 type ApiDcimPowerFeedsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	writablePowerFeedRequest *WritablePowerFeedRequest
 }
 
@@ -60026,24 +60209,25 @@ DcimPowerFeedsCreate Method for DcimPowerFeedsCreate
 
 Post a list of power feed objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerFeedsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerFeedsCreateRequest
 */
 func (a *DcimAPIService) DcimPowerFeedsCreate(ctx context.Context) ApiDcimPowerFeedsCreateRequest {
 	return ApiDcimPowerFeedsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PowerFeed
+//
+//	@return PowerFeed
 func (a *DcimAPIService) DcimPowerFeedsCreateExecute(r ApiDcimPowerFeedsCreateRequest) (*PowerFeed, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerFeed
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerFeed
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerFeedsCreate")
@@ -60131,9 +60315,9 @@ func (a *DcimAPIService) DcimPowerFeedsCreateExecute(r ApiDcimPowerFeedsCreateRe
 }
 
 type ApiDcimPowerFeedsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerFeedsDestroyRequest) Execute() (*http.Response, error) {
@@ -60145,24 +60329,24 @@ DcimPowerFeedsDestroy Method for DcimPowerFeedsDestroy
 
 Delete a power feed object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power feed.
- @return ApiDcimPowerFeedsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power feed.
+	@return ApiDcimPowerFeedsDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerFeedsDestroy(ctx context.Context, id int32) ApiDcimPowerFeedsDestroyRequest {
 	return ApiDcimPowerFeedsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerFeedsDestroyExecute(r ApiDcimPowerFeedsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerFeedsDestroy")
@@ -60237,92 +60421,92 @@ func (a *DcimAPIService) DcimPowerFeedsDestroyExecute(r ApiDcimPowerFeedsDestroy
 }
 
 type ApiDcimPowerFeedsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	amperage *[]int32
-	amperageGt *[]int32
-	amperageGte *[]int32
-	amperageLt *[]int32
-	amperageLte *[]int32
-	amperageN *[]int32
-	cableEnd *string
-	cableEndN *string
-	cabled *bool
-	connected *bool
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	maxUtilization *[]int32
-	maxUtilizationGt *[]int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	amperage          *[]int32
+	amperageGt        *[]int32
+	amperageGte       *[]int32
+	amperageLt        *[]int32
+	amperageLte       *[]int32
+	amperageN         *[]int32
+	cableEnd          *string
+	cableEndN         *string
+	cabled            *bool
+	connected         *bool
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	maxUtilization    *[]int32
+	maxUtilizationGt  *[]int32
 	maxUtilizationGte *[]int32
-	maxUtilizationLt *[]int32
+	maxUtilizationLt  *[]int32
 	maxUtilizationLte *[]int32
-	maxUtilizationN *[]int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	occupied *bool
-	offset *int32
-	ordering *string
-	phase *string
-	phaseN *string
-	powerPanelId *[]int32
-	powerPanelIdN *[]int32
-	q *string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	status *[]string
-	statusN *[]string
-	supply *string
-	supplyN *string
-	tag *[]string
-	tagN *[]string
-	type_ *string
-	typeN *string
-	updatedByRequest *string
-	voltage *[]int32
-	voltageGt *[]int32
-	voltageGte *[]int32
-	voltageLt *[]int32
-	voltageLte *[]int32
-	voltageN *[]int32
+	maxUtilizationN   *[]int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	occupied          *bool
+	offset            *int32
+	ordering          *string
+	phase             *string
+	phaseN            *string
+	powerPanelId      *[]int32
+	powerPanelIdN     *[]int32
+	q                 *string
+	rackId            *[]int32
+	rackIdN           *[]int32
+	region            *[]int32
+	regionN           *[]int32
+	regionId          *[]int32
+	regionIdN         *[]int32
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]int32
+	siteGroupN        *[]int32
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	status            *[]string
+	statusN           *[]string
+	supply            *string
+	supplyN           *string
+	tag               *[]string
+	tagN              *[]string
+	type_             *string
+	typeN             *string
+	updatedByRequest  *string
+	voltage           *[]int32
+	voltageGt         *[]int32
+	voltageGte        *[]int32
+	voltageLt         *[]int32
+	voltageLte        *[]int32
+	voltageN          *[]int32
 }
 
 func (r ApiDcimPowerFeedsListRequest) Amperage(amperage []int32) ApiDcimPowerFeedsListRequest {
@@ -60784,24 +60968,25 @@ DcimPowerFeedsList Method for DcimPowerFeedsList
 
 Get a list of power feed objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerFeedsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerFeedsListRequest
 */
 func (a *DcimAPIService) DcimPowerFeedsList(ctx context.Context) ApiDcimPowerFeedsListRequest {
 	return ApiDcimPowerFeedsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedPowerFeedList
+//
+//	@return PaginatedPowerFeedList
 func (a *DcimAPIService) DcimPowerFeedsListExecute(r ApiDcimPowerFeedsListRequest) (*PaginatedPowerFeedList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedPowerFeedList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedPowerFeedList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerFeedsList")
@@ -61672,9 +61857,9 @@ func (a *DcimAPIService) DcimPowerFeedsListExecute(r ApiDcimPowerFeedsListReques
 }
 
 type ApiDcimPowerFeedsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *DcimAPIService
+	id                              int32
 	patchedWritablePowerFeedRequest *PatchedWritablePowerFeedRequest
 }
 
@@ -61692,26 +61877,27 @@ DcimPowerFeedsPartialUpdate Method for DcimPowerFeedsPartialUpdate
 
 Patch a power feed object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power feed.
- @return ApiDcimPowerFeedsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power feed.
+	@return ApiDcimPowerFeedsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerFeedsPartialUpdate(ctx context.Context, id int32) ApiDcimPowerFeedsPartialUpdateRequest {
 	return ApiDcimPowerFeedsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerFeed
+//
+//	@return PowerFeed
 func (a *DcimAPIService) DcimPowerFeedsPartialUpdateExecute(r ApiDcimPowerFeedsPartialUpdateRequest) (*PowerFeed, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerFeed
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerFeed
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerFeedsPartialUpdate")
@@ -61797,9 +61983,9 @@ func (a *DcimAPIService) DcimPowerFeedsPartialUpdateExecute(r ApiDcimPowerFeedsP
 }
 
 type ApiDcimPowerFeedsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerFeedsRetrieveRequest) Execute() (*PowerFeed, *http.Response, error) {
@@ -61811,26 +61997,27 @@ DcimPowerFeedsRetrieve Method for DcimPowerFeedsRetrieve
 
 Get a power feed object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power feed.
- @return ApiDcimPowerFeedsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power feed.
+	@return ApiDcimPowerFeedsRetrieveRequest
 */
 func (a *DcimAPIService) DcimPowerFeedsRetrieve(ctx context.Context, id int32) ApiDcimPowerFeedsRetrieveRequest {
 	return ApiDcimPowerFeedsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerFeed
+//
+//	@return PowerFeed
 func (a *DcimAPIService) DcimPowerFeedsRetrieveExecute(r ApiDcimPowerFeedsRetrieveRequest) (*PowerFeed, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerFeed
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerFeed
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerFeedsRetrieve")
@@ -61914,9 +62101,9 @@ func (a *DcimAPIService) DcimPowerFeedsRetrieveExecute(r ApiDcimPowerFeedsRetrie
 }
 
 type ApiDcimPowerFeedsTraceRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerFeedsTraceRetrieveRequest) Execute() (*PowerFeed, *http.Response, error) {
@@ -61928,26 +62115,27 @@ DcimPowerFeedsTraceRetrieve Method for DcimPowerFeedsTraceRetrieve
 
 Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power feed.
- @return ApiDcimPowerFeedsTraceRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power feed.
+	@return ApiDcimPowerFeedsTraceRetrieveRequest
 */
 func (a *DcimAPIService) DcimPowerFeedsTraceRetrieve(ctx context.Context, id int32) ApiDcimPowerFeedsTraceRetrieveRequest {
 	return ApiDcimPowerFeedsTraceRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerFeed
+//
+//	@return PowerFeed
 func (a *DcimAPIService) DcimPowerFeedsTraceRetrieveExecute(r ApiDcimPowerFeedsTraceRetrieveRequest) (*PowerFeed, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerFeed
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerFeed
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerFeedsTraceRetrieve")
@@ -62031,9 +62219,9 @@ func (a *DcimAPIService) DcimPowerFeedsTraceRetrieveExecute(r ApiDcimPowerFeedsT
 }
 
 type ApiDcimPowerFeedsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *DcimAPIService
+	id                       int32
 	writablePowerFeedRequest *WritablePowerFeedRequest
 }
 
@@ -62051,26 +62239,27 @@ DcimPowerFeedsUpdate Method for DcimPowerFeedsUpdate
 
 Put a power feed object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power feed.
- @return ApiDcimPowerFeedsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power feed.
+	@return ApiDcimPowerFeedsUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerFeedsUpdate(ctx context.Context, id int32) ApiDcimPowerFeedsUpdateRequest {
 	return ApiDcimPowerFeedsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerFeed
+//
+//	@return PowerFeed
 func (a *DcimAPIService) DcimPowerFeedsUpdateExecute(r ApiDcimPowerFeedsUpdateRequest) (*PowerFeed, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerFeed
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerFeed
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerFeedsUpdate")
@@ -62159,8 +62348,8 @@ func (a *DcimAPIService) DcimPowerFeedsUpdateExecute(r ApiDcimPowerFeedsUpdateRe
 }
 
 type ApiDcimPowerOutletTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
 	powerOutletTemplateRequest *[]PowerOutletTemplateRequest
 }
 
@@ -62178,22 +62367,22 @@ DcimPowerOutletTemplatesBulkDestroy Method for DcimPowerOutletTemplatesBulkDestr
 
 Delete a list of power outlet template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerOutletTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerOutletTemplatesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerOutletTemplatesBulkDestroy(ctx context.Context) ApiDcimPowerOutletTemplatesBulkDestroyRequest {
 	return ApiDcimPowerOutletTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerOutletTemplatesBulkDestroyExecute(r ApiDcimPowerOutletTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletTemplatesBulkDestroy")
@@ -62272,8 +62461,8 @@ func (a *DcimAPIService) DcimPowerOutletTemplatesBulkDestroyExecute(r ApiDcimPow
 }
 
 type ApiDcimPowerOutletTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
 	powerOutletTemplateRequest *[]PowerOutletTemplateRequest
 }
 
@@ -62291,24 +62480,25 @@ DcimPowerOutletTemplatesBulkPartialUpdate Method for DcimPowerOutletTemplatesBul
 
 Patch a list of power outlet template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerOutletTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerOutletTemplatesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerOutletTemplatesBulkPartialUpdate(ctx context.Context) ApiDcimPowerOutletTemplatesBulkPartialUpdateRequest {
 	return ApiDcimPowerOutletTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerOutletTemplate
+//
+//	@return []PowerOutletTemplate
 func (a *DcimAPIService) DcimPowerOutletTemplatesBulkPartialUpdateExecute(r ApiDcimPowerOutletTemplatesBulkPartialUpdateRequest) ([]PowerOutletTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerOutletTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerOutletTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletTemplatesBulkPartialUpdate")
@@ -62396,8 +62586,8 @@ func (a *DcimAPIService) DcimPowerOutletTemplatesBulkPartialUpdateExecute(r ApiD
 }
 
 type ApiDcimPowerOutletTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
 	powerOutletTemplateRequest *[]PowerOutletTemplateRequest
 }
 
@@ -62415,24 +62605,25 @@ DcimPowerOutletTemplatesBulkUpdate Method for DcimPowerOutletTemplatesBulkUpdate
 
 Put a list of power outlet template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerOutletTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerOutletTemplatesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerOutletTemplatesBulkUpdate(ctx context.Context) ApiDcimPowerOutletTemplatesBulkUpdateRequest {
 	return ApiDcimPowerOutletTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerOutletTemplate
+//
+//	@return []PowerOutletTemplate
 func (a *DcimAPIService) DcimPowerOutletTemplatesBulkUpdateExecute(r ApiDcimPowerOutletTemplatesBulkUpdateRequest) ([]PowerOutletTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerOutletTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerOutletTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletTemplatesBulkUpdate")
@@ -62520,8 +62711,8 @@ func (a *DcimAPIService) DcimPowerOutletTemplatesBulkUpdateExecute(r ApiDcimPowe
 }
 
 type ApiDcimPowerOutletTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                                context.Context
+	ApiService                         *DcimAPIService
 	writablePowerOutletTemplateRequest *WritablePowerOutletTemplateRequest
 }
 
@@ -62539,24 +62730,25 @@ DcimPowerOutletTemplatesCreate Method for DcimPowerOutletTemplatesCreate
 
 Post a list of power outlet template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerOutletTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerOutletTemplatesCreateRequest
 */
 func (a *DcimAPIService) DcimPowerOutletTemplatesCreate(ctx context.Context) ApiDcimPowerOutletTemplatesCreateRequest {
 	return ApiDcimPowerOutletTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PowerOutletTemplate
+//
+//	@return PowerOutletTemplate
 func (a *DcimAPIService) DcimPowerOutletTemplatesCreateExecute(r ApiDcimPowerOutletTemplatesCreateRequest) (*PowerOutletTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerOutletTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerOutletTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletTemplatesCreate")
@@ -62644,9 +62836,9 @@ func (a *DcimAPIService) DcimPowerOutletTemplatesCreateExecute(r ApiDcimPowerOut
 }
 
 type ApiDcimPowerOutletTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerOutletTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -62658,24 +62850,24 @@ DcimPowerOutletTemplatesDestroy Method for DcimPowerOutletTemplatesDestroy
 
 Delete a power outlet template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power outlet template.
- @return ApiDcimPowerOutletTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power outlet template.
+	@return ApiDcimPowerOutletTemplatesDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerOutletTemplatesDestroy(ctx context.Context, id int32) ApiDcimPowerOutletTemplatesDestroyRequest {
 	return ApiDcimPowerOutletTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerOutletTemplatesDestroyExecute(r ApiDcimPowerOutletTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletTemplatesDestroy")
@@ -62750,50 +62942,50 @@ func (a *DcimAPIService) DcimPowerOutletTemplatesDestroyExecute(r ApiDcimPowerOu
 }
 
 type ApiDcimPowerOutletTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	devicetypeId *[]*int32
-	devicetypeIdN *[]*int32
-	feedLeg *[]string
-	feedLegN *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	moduletypeId *[]*int32
-	moduletypeIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	type_ *string
-	typeN *string
+	devicetypeId     *[]*int32
+	devicetypeIdN    *[]*int32
+	feedLeg          *[]string
+	feedLegN         *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	moduletypeId     *[]*int32
+	moduletypeIdN    *[]*int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	type_            *string
+	typeN            *string
 	updatedByRequest *string
 }
 
@@ -63033,24 +63225,25 @@ DcimPowerOutletTemplatesList Method for DcimPowerOutletTemplatesList
 
 Get a list of power outlet template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerOutletTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerOutletTemplatesListRequest
 */
 func (a *DcimAPIService) DcimPowerOutletTemplatesList(ctx context.Context) ApiDcimPowerOutletTemplatesListRequest {
 	return ApiDcimPowerOutletTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedPowerOutletTemplateList
+//
+//	@return PaginatedPowerOutletTemplateList
 func (a *DcimAPIService) DcimPowerOutletTemplatesListExecute(r ApiDcimPowerOutletTemplatesListRequest) (*PaginatedPowerOutletTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedPowerOutletTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedPowerOutletTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletTemplatesList")
@@ -63542,9 +63735,9 @@ func (a *DcimAPIService) DcimPowerOutletTemplatesListExecute(r ApiDcimPowerOutle
 }
 
 type ApiDcimPowerOutletTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                       context.Context
+	ApiService                                *DcimAPIService
+	id                                        int32
 	patchedWritablePowerOutletTemplateRequest *PatchedWritablePowerOutletTemplateRequest
 }
 
@@ -63562,26 +63755,27 @@ DcimPowerOutletTemplatesPartialUpdate Method for DcimPowerOutletTemplatesPartial
 
 Patch a power outlet template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power outlet template.
- @return ApiDcimPowerOutletTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power outlet template.
+	@return ApiDcimPowerOutletTemplatesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerOutletTemplatesPartialUpdate(ctx context.Context, id int32) ApiDcimPowerOutletTemplatesPartialUpdateRequest {
 	return ApiDcimPowerOutletTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerOutletTemplate
+//
+//	@return PowerOutletTemplate
 func (a *DcimAPIService) DcimPowerOutletTemplatesPartialUpdateExecute(r ApiDcimPowerOutletTemplatesPartialUpdateRequest) (*PowerOutletTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerOutletTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerOutletTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletTemplatesPartialUpdate")
@@ -63667,9 +63861,9 @@ func (a *DcimAPIService) DcimPowerOutletTemplatesPartialUpdateExecute(r ApiDcimP
 }
 
 type ApiDcimPowerOutletTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerOutletTemplatesRetrieveRequest) Execute() (*PowerOutletTemplate, *http.Response, error) {
@@ -63681,26 +63875,27 @@ DcimPowerOutletTemplatesRetrieve Method for DcimPowerOutletTemplatesRetrieve
 
 Get a power outlet template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power outlet template.
- @return ApiDcimPowerOutletTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power outlet template.
+	@return ApiDcimPowerOutletTemplatesRetrieveRequest
 */
 func (a *DcimAPIService) DcimPowerOutletTemplatesRetrieve(ctx context.Context, id int32) ApiDcimPowerOutletTemplatesRetrieveRequest {
 	return ApiDcimPowerOutletTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerOutletTemplate
+//
+//	@return PowerOutletTemplate
 func (a *DcimAPIService) DcimPowerOutletTemplatesRetrieveExecute(r ApiDcimPowerOutletTemplatesRetrieveRequest) (*PowerOutletTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerOutletTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerOutletTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletTemplatesRetrieve")
@@ -63784,9 +63979,9 @@ func (a *DcimAPIService) DcimPowerOutletTemplatesRetrieveExecute(r ApiDcimPowerO
 }
 
 type ApiDcimPowerOutletTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                context.Context
+	ApiService                         *DcimAPIService
+	id                                 int32
 	writablePowerOutletTemplateRequest *WritablePowerOutletTemplateRequest
 }
 
@@ -63804,26 +63999,27 @@ DcimPowerOutletTemplatesUpdate Method for DcimPowerOutletTemplatesUpdate
 
 Put a power outlet template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power outlet template.
- @return ApiDcimPowerOutletTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power outlet template.
+	@return ApiDcimPowerOutletTemplatesUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerOutletTemplatesUpdate(ctx context.Context, id int32) ApiDcimPowerOutletTemplatesUpdateRequest {
 	return ApiDcimPowerOutletTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerOutletTemplate
+//
+//	@return PowerOutletTemplate
 func (a *DcimAPIService) DcimPowerOutletTemplatesUpdateExecute(r ApiDcimPowerOutletTemplatesUpdateRequest) (*PowerOutletTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerOutletTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerOutletTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletTemplatesUpdate")
@@ -63912,8 +64108,8 @@ func (a *DcimAPIService) DcimPowerOutletTemplatesUpdateExecute(r ApiDcimPowerOut
 }
 
 type ApiDcimPowerOutletsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                context.Context
+	ApiService         *DcimAPIService
 	powerOutletRequest *[]PowerOutletRequest
 }
 
@@ -63931,22 +64127,22 @@ DcimPowerOutletsBulkDestroy Method for DcimPowerOutletsBulkDestroy
 
 Delete a list of power outlet objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerOutletsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerOutletsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerOutletsBulkDestroy(ctx context.Context) ApiDcimPowerOutletsBulkDestroyRequest {
 	return ApiDcimPowerOutletsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerOutletsBulkDestroyExecute(r ApiDcimPowerOutletsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletsBulkDestroy")
@@ -64025,8 +64221,8 @@ func (a *DcimAPIService) DcimPowerOutletsBulkDestroyExecute(r ApiDcimPowerOutlet
 }
 
 type ApiDcimPowerOutletsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                context.Context
+	ApiService         *DcimAPIService
 	powerOutletRequest *[]PowerOutletRequest
 }
 
@@ -64044,24 +64240,25 @@ DcimPowerOutletsBulkPartialUpdate Method for DcimPowerOutletsBulkPartialUpdate
 
 Patch a list of power outlet objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerOutletsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerOutletsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerOutletsBulkPartialUpdate(ctx context.Context) ApiDcimPowerOutletsBulkPartialUpdateRequest {
 	return ApiDcimPowerOutletsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerOutlet
+//
+//	@return []PowerOutlet
 func (a *DcimAPIService) DcimPowerOutletsBulkPartialUpdateExecute(r ApiDcimPowerOutletsBulkPartialUpdateRequest) ([]PowerOutlet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerOutlet
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerOutlet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletsBulkPartialUpdate")
@@ -64149,8 +64346,8 @@ func (a *DcimAPIService) DcimPowerOutletsBulkPartialUpdateExecute(r ApiDcimPower
 }
 
 type ApiDcimPowerOutletsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                context.Context
+	ApiService         *DcimAPIService
 	powerOutletRequest *[]PowerOutletRequest
 }
 
@@ -64168,24 +64365,25 @@ DcimPowerOutletsBulkUpdate Method for DcimPowerOutletsBulkUpdate
 
 Put a list of power outlet objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerOutletsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerOutletsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerOutletsBulkUpdate(ctx context.Context) ApiDcimPowerOutletsBulkUpdateRequest {
 	return ApiDcimPowerOutletsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerOutlet
+//
+//	@return []PowerOutlet
 func (a *DcimAPIService) DcimPowerOutletsBulkUpdateExecute(r ApiDcimPowerOutletsBulkUpdateRequest) ([]PowerOutlet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerOutlet
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerOutlet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletsBulkUpdate")
@@ -64273,8 +64471,8 @@ func (a *DcimAPIService) DcimPowerOutletsBulkUpdateExecute(r ApiDcimPowerOutlets
 }
 
 type ApiDcimPowerOutletsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
 	writablePowerOutletRequest *WritablePowerOutletRequest
 }
 
@@ -64292,24 +64490,25 @@ DcimPowerOutletsCreate Method for DcimPowerOutletsCreate
 
 Post a list of power outlet objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerOutletsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerOutletsCreateRequest
 */
 func (a *DcimAPIService) DcimPowerOutletsCreate(ctx context.Context) ApiDcimPowerOutletsCreateRequest {
 	return ApiDcimPowerOutletsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PowerOutlet
+//
+//	@return PowerOutlet
 func (a *DcimAPIService) DcimPowerOutletsCreateExecute(r ApiDcimPowerOutletsCreateRequest) (*PowerOutlet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerOutlet
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerOutlet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletsCreate")
@@ -64397,9 +64596,9 @@ func (a *DcimAPIService) DcimPowerOutletsCreateExecute(r ApiDcimPowerOutletsCrea
 }
 
 type ApiDcimPowerOutletsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerOutletsDestroyRequest) Execute() (*http.Response, error) {
@@ -64411,24 +64610,24 @@ DcimPowerOutletsDestroy Method for DcimPowerOutletsDestroy
 
 Delete a power outlet object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power outlet.
- @return ApiDcimPowerOutletsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power outlet.
+	@return ApiDcimPowerOutletsDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerOutletsDestroy(ctx context.Context, id int32) ApiDcimPowerOutletsDestroyRequest {
 	return ApiDcimPowerOutletsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerOutletsDestroyExecute(r ApiDcimPowerOutletsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletsDestroy")
@@ -64503,105 +64702,105 @@ func (a *DcimAPIService) DcimPowerOutletsDestroyExecute(r ApiDcimPowerOutletsDes
 }
 
 type ApiDcimPowerOutletsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	cableEnd *string
-	cableEndN *string
-	cabled *bool
-	connected *bool
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	device *[]*string
-	deviceN *[]*string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	feedLeg *[]string
-	feedLegN *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
-	moduleId *[]*int32
-	moduleIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	occupied *bool
-	offset *int32
-	ordering *string
-	q *string
-	rack *[]string
-	rackN *[]string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	type_ *[]string
-	typeN *[]string
-	updatedByRequest *string
-	virtualChassis *[]string
-	virtualChassisN *[]string
-	virtualChassisId *[]int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	cableEnd          *string
+	cableEndN         *string
+	cabled            *bool
+	connected         *bool
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *[]string
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	device            *[]*string
+	deviceN           *[]*string
+	deviceId          *[]int32
+	deviceIdN         *[]int32
+	feedLeg           *[]string
+	feedLegN          *[]string
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	label             *[]string
+	labelEmpty        *[]string
+	labelIc           *[]string
+	labelIe           *[]string
+	labelIew          *[]string
+	labelIsw          *[]string
+	labelN            *[]string
+	labelNic          *[]string
+	labelNie          *[]string
+	labelNiew         *[]string
+	labelNisw         *[]string
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	location          *[]string
+	locationN         *[]string
+	locationId        *[]int32
+	locationIdN       *[]int32
+	moduleId          *[]*int32
+	moduleIdN         *[]*int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	occupied          *bool
+	offset            *int32
+	ordering          *string
+	q                 *string
+	rack              *[]string
+	rackN             *[]string
+	rackId            *[]int32
+	rackIdN           *[]int32
+	region            *[]int32
+	regionN           *[]int32
+	regionId          *[]int32
+	regionIdN         *[]int32
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]int32
+	siteGroupN        *[]int32
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	tag               *[]string
+	tagN              *[]string
+	type_             *[]string
+	typeN             *[]string
+	updatedByRequest  *string
+	virtualChassis    *[]string
+	virtualChassisN   *[]string
+	virtualChassisId  *[]int32
 	virtualChassisIdN *[]int32
 }
 
@@ -65144,24 +65343,25 @@ DcimPowerOutletsList Method for DcimPowerOutletsList
 
 Get a list of power outlet objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerOutletsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerOutletsListRequest
 */
 func (a *DcimAPIService) DcimPowerOutletsList(ctx context.Context) ApiDcimPowerOutletsListRequest {
 	return ApiDcimPowerOutletsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedPowerOutletList
+//
+//	@return PaginatedPowerOutletList
 func (a *DcimAPIService) DcimPowerOutletsListExecute(r ApiDcimPowerOutletsListRequest) (*PaginatedPowerOutletList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedPowerOutletList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedPowerOutletList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletsList")
@@ -66234,9 +66434,9 @@ func (a *DcimAPIService) DcimPowerOutletsListExecute(r ApiDcimPowerOutletsListRe
 }
 
 type ApiDcimPowerOutletsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                               context.Context
+	ApiService                        *DcimAPIService
+	id                                int32
 	patchedWritablePowerOutletRequest *PatchedWritablePowerOutletRequest
 }
 
@@ -66254,26 +66454,27 @@ DcimPowerOutletsPartialUpdate Method for DcimPowerOutletsPartialUpdate
 
 Patch a power outlet object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power outlet.
- @return ApiDcimPowerOutletsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power outlet.
+	@return ApiDcimPowerOutletsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerOutletsPartialUpdate(ctx context.Context, id int32) ApiDcimPowerOutletsPartialUpdateRequest {
 	return ApiDcimPowerOutletsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerOutlet
+//
+//	@return PowerOutlet
 func (a *DcimAPIService) DcimPowerOutletsPartialUpdateExecute(r ApiDcimPowerOutletsPartialUpdateRequest) (*PowerOutlet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerOutlet
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerOutlet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletsPartialUpdate")
@@ -66359,9 +66560,9 @@ func (a *DcimAPIService) DcimPowerOutletsPartialUpdateExecute(r ApiDcimPowerOutl
 }
 
 type ApiDcimPowerOutletsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerOutletsRetrieveRequest) Execute() (*PowerOutlet, *http.Response, error) {
@@ -66373,26 +66574,27 @@ DcimPowerOutletsRetrieve Method for DcimPowerOutletsRetrieve
 
 Get a power outlet object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power outlet.
- @return ApiDcimPowerOutletsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power outlet.
+	@return ApiDcimPowerOutletsRetrieveRequest
 */
 func (a *DcimAPIService) DcimPowerOutletsRetrieve(ctx context.Context, id int32) ApiDcimPowerOutletsRetrieveRequest {
 	return ApiDcimPowerOutletsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerOutlet
+//
+//	@return PowerOutlet
 func (a *DcimAPIService) DcimPowerOutletsRetrieveExecute(r ApiDcimPowerOutletsRetrieveRequest) (*PowerOutlet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerOutlet
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerOutlet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletsRetrieve")
@@ -66476,9 +66678,9 @@ func (a *DcimAPIService) DcimPowerOutletsRetrieveExecute(r ApiDcimPowerOutletsRe
 }
 
 type ApiDcimPowerOutletsTraceRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerOutletsTraceRetrieveRequest) Execute() (*PowerOutlet, *http.Response, error) {
@@ -66490,26 +66692,27 @@ DcimPowerOutletsTraceRetrieve Method for DcimPowerOutletsTraceRetrieve
 
 Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power outlet.
- @return ApiDcimPowerOutletsTraceRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power outlet.
+	@return ApiDcimPowerOutletsTraceRetrieveRequest
 */
 func (a *DcimAPIService) DcimPowerOutletsTraceRetrieve(ctx context.Context, id int32) ApiDcimPowerOutletsTraceRetrieveRequest {
 	return ApiDcimPowerOutletsTraceRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerOutlet
+//
+//	@return PowerOutlet
 func (a *DcimAPIService) DcimPowerOutletsTraceRetrieveExecute(r ApiDcimPowerOutletsTraceRetrieveRequest) (*PowerOutlet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerOutlet
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerOutlet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletsTraceRetrieve")
@@ -66593,9 +66796,9 @@ func (a *DcimAPIService) DcimPowerOutletsTraceRetrieveExecute(r ApiDcimPowerOutl
 }
 
 type ApiDcimPowerOutletsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
+	id                         int32
 	writablePowerOutletRequest *WritablePowerOutletRequest
 }
 
@@ -66613,26 +66816,27 @@ DcimPowerOutletsUpdate Method for DcimPowerOutletsUpdate
 
 Put a power outlet object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power outlet.
- @return ApiDcimPowerOutletsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power outlet.
+	@return ApiDcimPowerOutletsUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerOutletsUpdate(ctx context.Context, id int32) ApiDcimPowerOutletsUpdateRequest {
 	return ApiDcimPowerOutletsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerOutlet
+//
+//	@return PowerOutlet
 func (a *DcimAPIService) DcimPowerOutletsUpdateExecute(r ApiDcimPowerOutletsUpdateRequest) (*PowerOutlet, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerOutlet
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerOutlet
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerOutletsUpdate")
@@ -66721,8 +66925,8 @@ func (a *DcimAPIService) DcimPowerOutletsUpdateExecute(r ApiDcimPowerOutletsUpda
 }
 
 type ApiDcimPowerPanelsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	powerPanelRequest *[]PowerPanelRequest
 }
 
@@ -66740,22 +66944,22 @@ DcimPowerPanelsBulkDestroy Method for DcimPowerPanelsBulkDestroy
 
 Delete a list of power panel objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPanelsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPanelsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerPanelsBulkDestroy(ctx context.Context) ApiDcimPowerPanelsBulkDestroyRequest {
 	return ApiDcimPowerPanelsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerPanelsBulkDestroyExecute(r ApiDcimPowerPanelsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPanelsBulkDestroy")
@@ -66834,8 +67038,8 @@ func (a *DcimAPIService) DcimPowerPanelsBulkDestroyExecute(r ApiDcimPowerPanelsB
 }
 
 type ApiDcimPowerPanelsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	powerPanelRequest *[]PowerPanelRequest
 }
 
@@ -66853,24 +67057,25 @@ DcimPowerPanelsBulkPartialUpdate Method for DcimPowerPanelsBulkPartialUpdate
 
 Patch a list of power panel objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPanelsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPanelsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPanelsBulkPartialUpdate(ctx context.Context) ApiDcimPowerPanelsBulkPartialUpdateRequest {
 	return ApiDcimPowerPanelsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerPanel
+//
+//	@return []PowerPanel
 func (a *DcimAPIService) DcimPowerPanelsBulkPartialUpdateExecute(r ApiDcimPowerPanelsBulkPartialUpdateRequest) ([]PowerPanel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerPanel
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerPanel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPanelsBulkPartialUpdate")
@@ -66958,8 +67163,8 @@ func (a *DcimAPIService) DcimPowerPanelsBulkPartialUpdateExecute(r ApiDcimPowerP
 }
 
 type ApiDcimPowerPanelsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx               context.Context
+	ApiService        *DcimAPIService
 	powerPanelRequest *[]PowerPanelRequest
 }
 
@@ -66977,24 +67182,25 @@ DcimPowerPanelsBulkUpdate Method for DcimPowerPanelsBulkUpdate
 
 Put a list of power panel objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPanelsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPanelsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPanelsBulkUpdate(ctx context.Context) ApiDcimPowerPanelsBulkUpdateRequest {
 	return ApiDcimPowerPanelsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerPanel
+//
+//	@return []PowerPanel
 func (a *DcimAPIService) DcimPowerPanelsBulkUpdateExecute(r ApiDcimPowerPanelsBulkUpdateRequest) ([]PowerPanel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerPanel
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerPanel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPanelsBulkUpdate")
@@ -67082,8 +67288,8 @@ func (a *DcimAPIService) DcimPowerPanelsBulkUpdateExecute(r ApiDcimPowerPanelsBu
 }
 
 type ApiDcimPowerPanelsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                       context.Context
+	ApiService                *DcimAPIService
 	writablePowerPanelRequest *WritablePowerPanelRequest
 }
 
@@ -67101,24 +67307,25 @@ DcimPowerPanelsCreate Method for DcimPowerPanelsCreate
 
 Post a list of power panel objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPanelsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPanelsCreateRequest
 */
 func (a *DcimAPIService) DcimPowerPanelsCreate(ctx context.Context) ApiDcimPowerPanelsCreateRequest {
 	return ApiDcimPowerPanelsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPanel
+//
+//	@return PowerPanel
 func (a *DcimAPIService) DcimPowerPanelsCreateExecute(r ApiDcimPowerPanelsCreateRequest) (*PowerPanel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPanel
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPanel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPanelsCreate")
@@ -67206,9 +67413,9 @@ func (a *DcimAPIService) DcimPowerPanelsCreateExecute(r ApiDcimPowerPanelsCreate
 }
 
 type ApiDcimPowerPanelsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerPanelsDestroyRequest) Execute() (*http.Response, error) {
@@ -67220,24 +67427,24 @@ DcimPowerPanelsDestroy Method for DcimPowerPanelsDestroy
 
 Delete a power panel object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power panel.
- @return ApiDcimPowerPanelsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power panel.
+	@return ApiDcimPowerPanelsDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerPanelsDestroy(ctx context.Context, id int32) ApiDcimPowerPanelsDestroyRequest {
 	return ApiDcimPowerPanelsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerPanelsDestroyExecute(r ApiDcimPowerPanelsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPanelsDestroy")
@@ -67312,64 +67519,64 @@ func (a *DcimAPIService) DcimPowerPanelsDestroyExecute(r ApiDcimPowerPanelsDestr
 }
 
 type ApiDcimPowerPanelsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]int32
-	contactGroupN *[]int32
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	contact          *[]int32
+	contactN         *[]int32
+	contactGroup     *[]int32
+	contactGroupN    *[]int32
+	contactRole      *[]int32
+	contactRoleN     *[]int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	locationId *[]int32
-	locationIdN *[]int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	locationId       *[]int32
+	locationIdN      *[]int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	region           *[]int32
+	regionN          *[]int32
+	regionId         *[]int32
+	regionIdN        *[]int32
+	site             *[]string
+	siteN            *[]string
+	siteGroup        *[]int32
+	siteGroupN       *[]int32
+	siteGroupId      *[]int32
+	siteGroupIdN     *[]int32
+	siteId           *[]int32
+	siteIdN          *[]int32
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -67691,24 +67898,25 @@ DcimPowerPanelsList Method for DcimPowerPanelsList
 
 Get a list of power panel objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPanelsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPanelsListRequest
 */
 func (a *DcimAPIService) DcimPowerPanelsList(ctx context.Context) ApiDcimPowerPanelsListRequest {
 	return ApiDcimPowerPanelsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedPowerPanelList
+//
+//	@return PaginatedPowerPanelList
 func (a *DcimAPIService) DcimPowerPanelsListExecute(r ApiDcimPowerPanelsListRequest) (*PaginatedPowerPanelList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedPowerPanelList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedPowerPanelList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPanelsList")
@@ -68370,9 +68578,9 @@ func (a *DcimAPIService) DcimPowerPanelsListExecute(r ApiDcimPowerPanelsListRequ
 }
 
 type ApiDcimPowerPanelsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
+	id                               int32
 	patchedWritablePowerPanelRequest *PatchedWritablePowerPanelRequest
 }
 
@@ -68390,26 +68598,27 @@ DcimPowerPanelsPartialUpdate Method for DcimPowerPanelsPartialUpdate
 
 Patch a power panel object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power panel.
- @return ApiDcimPowerPanelsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power panel.
+	@return ApiDcimPowerPanelsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPanelsPartialUpdate(ctx context.Context, id int32) ApiDcimPowerPanelsPartialUpdateRequest {
 	return ApiDcimPowerPanelsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPanel
+//
+//	@return PowerPanel
 func (a *DcimAPIService) DcimPowerPanelsPartialUpdateExecute(r ApiDcimPowerPanelsPartialUpdateRequest) (*PowerPanel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPanel
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPanel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPanelsPartialUpdate")
@@ -68495,9 +68704,9 @@ func (a *DcimAPIService) DcimPowerPanelsPartialUpdateExecute(r ApiDcimPowerPanel
 }
 
 type ApiDcimPowerPanelsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerPanelsRetrieveRequest) Execute() (*PowerPanel, *http.Response, error) {
@@ -68509,26 +68718,27 @@ DcimPowerPanelsRetrieve Method for DcimPowerPanelsRetrieve
 
 Get a power panel object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power panel.
- @return ApiDcimPowerPanelsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power panel.
+	@return ApiDcimPowerPanelsRetrieveRequest
 */
 func (a *DcimAPIService) DcimPowerPanelsRetrieve(ctx context.Context, id int32) ApiDcimPowerPanelsRetrieveRequest {
 	return ApiDcimPowerPanelsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPanel
+//
+//	@return PowerPanel
 func (a *DcimAPIService) DcimPowerPanelsRetrieveExecute(r ApiDcimPowerPanelsRetrieveRequest) (*PowerPanel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPanel
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPanel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPanelsRetrieve")
@@ -68612,9 +68822,9 @@ func (a *DcimAPIService) DcimPowerPanelsRetrieveExecute(r ApiDcimPowerPanelsRetr
 }
 
 type ApiDcimPowerPanelsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                       context.Context
+	ApiService                *DcimAPIService
+	id                        int32
 	writablePowerPanelRequest *WritablePowerPanelRequest
 }
 
@@ -68632,26 +68842,27 @@ DcimPowerPanelsUpdate Method for DcimPowerPanelsUpdate
 
 Put a power panel object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power panel.
- @return ApiDcimPowerPanelsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power panel.
+	@return ApiDcimPowerPanelsUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPanelsUpdate(ctx context.Context, id int32) ApiDcimPowerPanelsUpdateRequest {
 	return ApiDcimPowerPanelsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPanel
+//
+//	@return PowerPanel
 func (a *DcimAPIService) DcimPowerPanelsUpdateExecute(r ApiDcimPowerPanelsUpdateRequest) (*PowerPanel, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPanel
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPanel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPanelsUpdate")
@@ -68740,8 +68951,8 @@ func (a *DcimAPIService) DcimPowerPanelsUpdateExecute(r ApiDcimPowerPanelsUpdate
 }
 
 type ApiDcimPowerPortTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	powerPortTemplateRequest *[]PowerPortTemplateRequest
 }
 
@@ -68759,22 +68970,22 @@ DcimPowerPortTemplatesBulkDestroy Method for DcimPowerPortTemplatesBulkDestroy
 
 Delete a list of power port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPortTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPortTemplatesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerPortTemplatesBulkDestroy(ctx context.Context) ApiDcimPowerPortTemplatesBulkDestroyRequest {
 	return ApiDcimPowerPortTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerPortTemplatesBulkDestroyExecute(r ApiDcimPowerPortTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortTemplatesBulkDestroy")
@@ -68853,8 +69064,8 @@ func (a *DcimAPIService) DcimPowerPortTemplatesBulkDestroyExecute(r ApiDcimPower
 }
 
 type ApiDcimPowerPortTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	powerPortTemplateRequest *[]PowerPortTemplateRequest
 }
 
@@ -68872,24 +69083,25 @@ DcimPowerPortTemplatesBulkPartialUpdate Method for DcimPowerPortTemplatesBulkPar
 
 Patch a list of power port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPortTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPortTemplatesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPortTemplatesBulkPartialUpdate(ctx context.Context) ApiDcimPowerPortTemplatesBulkPartialUpdateRequest {
 	return ApiDcimPowerPortTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerPortTemplate
+//
+//	@return []PowerPortTemplate
 func (a *DcimAPIService) DcimPowerPortTemplatesBulkPartialUpdateExecute(r ApiDcimPowerPortTemplatesBulkPartialUpdateRequest) ([]PowerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerPortTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortTemplatesBulkPartialUpdate")
@@ -68977,8 +69189,8 @@ func (a *DcimAPIService) DcimPowerPortTemplatesBulkPartialUpdateExecute(r ApiDci
 }
 
 type ApiDcimPowerPortTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	powerPortTemplateRequest *[]PowerPortTemplateRequest
 }
 
@@ -68996,24 +69208,25 @@ DcimPowerPortTemplatesBulkUpdate Method for DcimPowerPortTemplatesBulkUpdate
 
 Put a list of power port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPortTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPortTemplatesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPortTemplatesBulkUpdate(ctx context.Context) ApiDcimPowerPortTemplatesBulkUpdateRequest {
 	return ApiDcimPowerPortTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerPortTemplate
+//
+//	@return []PowerPortTemplate
 func (a *DcimAPIService) DcimPowerPortTemplatesBulkUpdateExecute(r ApiDcimPowerPortTemplatesBulkUpdateRequest) ([]PowerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerPortTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortTemplatesBulkUpdate")
@@ -69101,8 +69314,8 @@ func (a *DcimAPIService) DcimPowerPortTemplatesBulkUpdateExecute(r ApiDcimPowerP
 }
 
 type ApiDcimPowerPortTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
 	writablePowerPortTemplateRequest *WritablePowerPortTemplateRequest
 }
 
@@ -69120,24 +69333,25 @@ DcimPowerPortTemplatesCreate Method for DcimPowerPortTemplatesCreate
 
 Post a list of power port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPortTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPortTemplatesCreateRequest
 */
 func (a *DcimAPIService) DcimPowerPortTemplatesCreate(ctx context.Context) ApiDcimPowerPortTemplatesCreateRequest {
 	return ApiDcimPowerPortTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPortTemplate
+//
+//	@return PowerPortTemplate
 func (a *DcimAPIService) DcimPowerPortTemplatesCreateExecute(r ApiDcimPowerPortTemplatesCreateRequest) (*PowerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPortTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortTemplatesCreate")
@@ -69225,9 +69439,9 @@ func (a *DcimAPIService) DcimPowerPortTemplatesCreateExecute(r ApiDcimPowerPortT
 }
 
 type ApiDcimPowerPortTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerPortTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -69239,24 +69453,24 @@ DcimPowerPortTemplatesDestroy Method for DcimPowerPortTemplatesDestroy
 
 Delete a power port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power port template.
- @return ApiDcimPowerPortTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power port template.
+	@return ApiDcimPowerPortTemplatesDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerPortTemplatesDestroy(ctx context.Context, id int32) ApiDcimPowerPortTemplatesDestroyRequest {
 	return ApiDcimPowerPortTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerPortTemplatesDestroyExecute(r ApiDcimPowerPortTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortTemplatesDestroy")
@@ -69331,60 +69545,60 @@ func (a *DcimAPIService) DcimPowerPortTemplatesDestroyExecute(r ApiDcimPowerPort
 }
 
 type ApiDcimPowerPortTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	allocatedDraw *[]int32
-	allocatedDrawGt *[]int32
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	allocatedDraw    *[]int32
+	allocatedDrawGt  *[]int32
 	allocatedDrawGte *[]int32
-	allocatedDrawLt *[]int32
+	allocatedDrawLt  *[]int32
 	allocatedDrawLte *[]int32
-	allocatedDrawN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	allocatedDrawN   *[]int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	devicetypeId *[]*int32
-	devicetypeIdN *[]*int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	maximumDraw *[]int32
-	maximumDrawGt *[]int32
-	maximumDrawGte *[]int32
-	maximumDrawLt *[]int32
-	maximumDrawLte *[]int32
-	maximumDrawN *[]int32
-	moduletypeId *[]*int32
-	moduletypeIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	type_ *string
-	typeN *string
+	devicetypeId     *[]*int32
+	devicetypeIdN    *[]*int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	maximumDraw      *[]int32
+	maximumDrawGt    *[]int32
+	maximumDrawGte   *[]int32
+	maximumDrawLt    *[]int32
+	maximumDrawLte   *[]int32
+	maximumDrawN     *[]int32
+	moduletypeId     *[]*int32
+	moduletypeIdN    *[]*int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	type_            *string
+	typeN            *string
 	updatedByRequest *string
 }
 
@@ -69672,24 +69886,25 @@ DcimPowerPortTemplatesList Method for DcimPowerPortTemplatesList
 
 Get a list of power port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPortTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPortTemplatesListRequest
 */
 func (a *DcimAPIService) DcimPowerPortTemplatesList(ctx context.Context) ApiDcimPowerPortTemplatesListRequest {
 	return ApiDcimPowerPortTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedPowerPortTemplateList
+//
+//	@return PaginatedPowerPortTemplateList
 func (a *DcimAPIService) DcimPowerPortTemplatesListExecute(r ApiDcimPowerPortTemplatesListRequest) (*PaginatedPowerPortTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedPowerPortTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedPowerPortTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortTemplatesList")
@@ -70291,9 +70506,9 @@ func (a *DcimAPIService) DcimPowerPortTemplatesListExecute(r ApiDcimPowerPortTem
 }
 
 type ApiDcimPowerPortTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                     context.Context
+	ApiService                              *DcimAPIService
+	id                                      int32
 	patchedWritablePowerPortTemplateRequest *PatchedWritablePowerPortTemplateRequest
 }
 
@@ -70311,26 +70526,27 @@ DcimPowerPortTemplatesPartialUpdate Method for DcimPowerPortTemplatesPartialUpda
 
 Patch a power port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power port template.
- @return ApiDcimPowerPortTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power port template.
+	@return ApiDcimPowerPortTemplatesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPortTemplatesPartialUpdate(ctx context.Context, id int32) ApiDcimPowerPortTemplatesPartialUpdateRequest {
 	return ApiDcimPowerPortTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPortTemplate
+//
+//	@return PowerPortTemplate
 func (a *DcimAPIService) DcimPowerPortTemplatesPartialUpdateExecute(r ApiDcimPowerPortTemplatesPartialUpdateRequest) (*PowerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPortTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortTemplatesPartialUpdate")
@@ -70416,9 +70632,9 @@ func (a *DcimAPIService) DcimPowerPortTemplatesPartialUpdateExecute(r ApiDcimPow
 }
 
 type ApiDcimPowerPortTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerPortTemplatesRetrieveRequest) Execute() (*PowerPortTemplate, *http.Response, error) {
@@ -70430,26 +70646,27 @@ DcimPowerPortTemplatesRetrieve Method for DcimPowerPortTemplatesRetrieve
 
 Get a power port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power port template.
- @return ApiDcimPowerPortTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power port template.
+	@return ApiDcimPowerPortTemplatesRetrieveRequest
 */
 func (a *DcimAPIService) DcimPowerPortTemplatesRetrieve(ctx context.Context, id int32) ApiDcimPowerPortTemplatesRetrieveRequest {
 	return ApiDcimPowerPortTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPortTemplate
+//
+//	@return PowerPortTemplate
 func (a *DcimAPIService) DcimPowerPortTemplatesRetrieveExecute(r ApiDcimPowerPortTemplatesRetrieveRequest) (*PowerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPortTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortTemplatesRetrieve")
@@ -70533,9 +70750,9 @@ func (a *DcimAPIService) DcimPowerPortTemplatesRetrieveExecute(r ApiDcimPowerPor
 }
 
 type ApiDcimPowerPortTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *DcimAPIService
+	id                               int32
 	writablePowerPortTemplateRequest *WritablePowerPortTemplateRequest
 }
 
@@ -70553,26 +70770,27 @@ DcimPowerPortTemplatesUpdate Method for DcimPowerPortTemplatesUpdate
 
 Put a power port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power port template.
- @return ApiDcimPowerPortTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power port template.
+	@return ApiDcimPowerPortTemplatesUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPortTemplatesUpdate(ctx context.Context, id int32) ApiDcimPowerPortTemplatesUpdateRequest {
 	return ApiDcimPowerPortTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPortTemplate
+//
+//	@return PowerPortTemplate
 func (a *DcimAPIService) DcimPowerPortTemplatesUpdateExecute(r ApiDcimPowerPortTemplatesUpdateRequest) (*PowerPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPortTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortTemplatesUpdate")
@@ -70661,8 +70879,8 @@ func (a *DcimAPIService) DcimPowerPortTemplatesUpdateExecute(r ApiDcimPowerPortT
 }
 
 type ApiDcimPowerPortsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	powerPortRequest *[]PowerPortRequest
 }
 
@@ -70680,22 +70898,22 @@ DcimPowerPortsBulkDestroy Method for DcimPowerPortsBulkDestroy
 
 Delete a list of power port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPortsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPortsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerPortsBulkDestroy(ctx context.Context) ApiDcimPowerPortsBulkDestroyRequest {
 	return ApiDcimPowerPortsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerPortsBulkDestroyExecute(r ApiDcimPowerPortsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortsBulkDestroy")
@@ -70774,8 +70992,8 @@ func (a *DcimAPIService) DcimPowerPortsBulkDestroyExecute(r ApiDcimPowerPortsBul
 }
 
 type ApiDcimPowerPortsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	powerPortRequest *[]PowerPortRequest
 }
 
@@ -70793,24 +71011,25 @@ DcimPowerPortsBulkPartialUpdate Method for DcimPowerPortsBulkPartialUpdate
 
 Patch a list of power port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPortsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPortsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPortsBulkPartialUpdate(ctx context.Context) ApiDcimPowerPortsBulkPartialUpdateRequest {
 	return ApiDcimPowerPortsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerPort
+//
+//	@return []PowerPort
 func (a *DcimAPIService) DcimPowerPortsBulkPartialUpdateExecute(r ApiDcimPowerPortsBulkPartialUpdateRequest) ([]PowerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerPort
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortsBulkPartialUpdate")
@@ -70898,8 +71117,8 @@ func (a *DcimAPIService) DcimPowerPortsBulkPartialUpdateExecute(r ApiDcimPowerPo
 }
 
 type ApiDcimPowerPortsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	powerPortRequest *[]PowerPortRequest
 }
 
@@ -70917,24 +71136,25 @@ DcimPowerPortsBulkUpdate Method for DcimPowerPortsBulkUpdate
 
 Put a list of power port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPortsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPortsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPortsBulkUpdate(ctx context.Context) ApiDcimPowerPortsBulkUpdateRequest {
 	return ApiDcimPowerPortsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []PowerPort
+//
+//	@return []PowerPort
 func (a *DcimAPIService) DcimPowerPortsBulkUpdateExecute(r ApiDcimPowerPortsBulkUpdateRequest) ([]PowerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PowerPort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PowerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortsBulkUpdate")
@@ -71022,8 +71242,8 @@ func (a *DcimAPIService) DcimPowerPortsBulkUpdateExecute(r ApiDcimPowerPortsBulk
 }
 
 type ApiDcimPowerPortsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	writablePowerPortRequest *WritablePowerPortRequest
 }
 
@@ -71041,24 +71261,25 @@ DcimPowerPortsCreate Method for DcimPowerPortsCreate
 
 Post a list of power port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPortsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPortsCreateRequest
 */
 func (a *DcimAPIService) DcimPowerPortsCreate(ctx context.Context) ApiDcimPowerPortsCreateRequest {
 	return ApiDcimPowerPortsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPort
+//
+//	@return PowerPort
 func (a *DcimAPIService) DcimPowerPortsCreateExecute(r ApiDcimPowerPortsCreateRequest) (*PowerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPort
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortsCreate")
@@ -71146,9 +71367,9 @@ func (a *DcimAPIService) DcimPowerPortsCreateExecute(r ApiDcimPowerPortsCreateRe
 }
 
 type ApiDcimPowerPortsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerPortsDestroyRequest) Execute() (*http.Response, error) {
@@ -71160,24 +71381,24 @@ DcimPowerPortsDestroy Method for DcimPowerPortsDestroy
 
 Delete a power port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power port.
- @return ApiDcimPowerPortsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power port.
+	@return ApiDcimPowerPortsDestroyRequest
 */
 func (a *DcimAPIService) DcimPowerPortsDestroy(ctx context.Context, id int32) ApiDcimPowerPortsDestroyRequest {
 	return ApiDcimPowerPortsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimPowerPortsDestroyExecute(r ApiDcimPowerPortsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortsDestroy")
@@ -71252,115 +71473,115 @@ func (a *DcimAPIService) DcimPowerPortsDestroyExecute(r ApiDcimPowerPortsDestroy
 }
 
 type ApiDcimPowerPortsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	allocatedDraw *[]int32
-	allocatedDrawGt *[]int32
-	allocatedDrawGte *[]int32
-	allocatedDrawLt *[]int32
-	allocatedDrawLte *[]int32
-	allocatedDrawN *[]int32
-	cableEnd *string
-	cableEndN *string
-	cabled *bool
-	connected *bool
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	device *[]*string
-	deviceN *[]*string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
-	maximumDraw *[]int32
-	maximumDrawGt *[]int32
-	maximumDrawGte *[]int32
-	maximumDrawLt *[]int32
-	maximumDrawLte *[]int32
-	maximumDrawN *[]int32
-	moduleId *[]*int32
-	moduleIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	occupied *bool
-	offset *int32
-	ordering *string
-	q *string
-	rack *[]string
-	rackN *[]string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	type_ *[]string
-	typeN *[]string
-	updatedByRequest *string
-	virtualChassis *[]string
-	virtualChassisN *[]string
-	virtualChassisId *[]int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	allocatedDraw     *[]int32
+	allocatedDrawGt   *[]int32
+	allocatedDrawGte  *[]int32
+	allocatedDrawLt   *[]int32
+	allocatedDrawLte  *[]int32
+	allocatedDrawN    *[]int32
+	cableEnd          *string
+	cableEndN         *string
+	cabled            *bool
+	connected         *bool
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *[]string
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	device            *[]*string
+	deviceN           *[]*string
+	deviceId          *[]int32
+	deviceIdN         *[]int32
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	label             *[]string
+	labelEmpty        *[]string
+	labelIc           *[]string
+	labelIe           *[]string
+	labelIew          *[]string
+	labelIsw          *[]string
+	labelN            *[]string
+	labelNic          *[]string
+	labelNie          *[]string
+	labelNiew         *[]string
+	labelNisw         *[]string
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	location          *[]string
+	locationN         *[]string
+	locationId        *[]int32
+	locationIdN       *[]int32
+	maximumDraw       *[]int32
+	maximumDrawGt     *[]int32
+	maximumDrawGte    *[]int32
+	maximumDrawLt     *[]int32
+	maximumDrawLte    *[]int32
+	maximumDrawN      *[]int32
+	moduleId          *[]*int32
+	moduleIdN         *[]*int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	occupied          *bool
+	offset            *int32
+	ordering          *string
+	q                 *string
+	rack              *[]string
+	rackN             *[]string
+	rackId            *[]int32
+	rackIdN           *[]int32
+	region            *[]int32
+	regionN           *[]int32
+	regionId          *[]int32
+	regionIdN         *[]int32
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]int32
+	siteGroupN        *[]int32
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	tag               *[]string
+	tagN              *[]string
+	type_             *[]string
+	typeN             *[]string
+	updatedByRequest  *string
+	virtualChassis    *[]string
+	virtualChassisN   *[]string
+	virtualChassisId  *[]int32
 	virtualChassisIdN *[]int32
 }
 
@@ -71951,24 +72172,25 @@ DcimPowerPortsList Method for DcimPowerPortsList
 
 Get a list of power port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimPowerPortsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimPowerPortsListRequest
 */
 func (a *DcimAPIService) DcimPowerPortsList(ctx context.Context) ApiDcimPowerPortsListRequest {
 	return ApiDcimPowerPortsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedPowerPortList
+//
+//	@return PaginatedPowerPortList
 func (a *DcimAPIService) DcimPowerPortsListExecute(r ApiDcimPowerPortsListRequest) (*PaginatedPowerPortList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedPowerPortList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedPowerPortList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortsList")
@@ -73151,9 +73373,9 @@ func (a *DcimAPIService) DcimPowerPortsListExecute(r ApiDcimPowerPortsListReques
 }
 
 type ApiDcimPowerPortsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *DcimAPIService
+	id                              int32
 	patchedWritablePowerPortRequest *PatchedWritablePowerPortRequest
 }
 
@@ -73171,26 +73393,27 @@ DcimPowerPortsPartialUpdate Method for DcimPowerPortsPartialUpdate
 
 Patch a power port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power port.
- @return ApiDcimPowerPortsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power port.
+	@return ApiDcimPowerPortsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPortsPartialUpdate(ctx context.Context, id int32) ApiDcimPowerPortsPartialUpdateRequest {
 	return ApiDcimPowerPortsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPort
+//
+//	@return PowerPort
 func (a *DcimAPIService) DcimPowerPortsPartialUpdateExecute(r ApiDcimPowerPortsPartialUpdateRequest) (*PowerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPort
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortsPartialUpdate")
@@ -73276,9 +73499,9 @@ func (a *DcimAPIService) DcimPowerPortsPartialUpdateExecute(r ApiDcimPowerPortsP
 }
 
 type ApiDcimPowerPortsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerPortsRetrieveRequest) Execute() (*PowerPort, *http.Response, error) {
@@ -73290,26 +73513,27 @@ DcimPowerPortsRetrieve Method for DcimPowerPortsRetrieve
 
 Get a power port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power port.
- @return ApiDcimPowerPortsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power port.
+	@return ApiDcimPowerPortsRetrieveRequest
 */
 func (a *DcimAPIService) DcimPowerPortsRetrieve(ctx context.Context, id int32) ApiDcimPowerPortsRetrieveRequest {
 	return ApiDcimPowerPortsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPort
+//
+//	@return PowerPort
 func (a *DcimAPIService) DcimPowerPortsRetrieveExecute(r ApiDcimPowerPortsRetrieveRequest) (*PowerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortsRetrieve")
@@ -73393,9 +73617,9 @@ func (a *DcimAPIService) DcimPowerPortsRetrieveExecute(r ApiDcimPowerPortsRetrie
 }
 
 type ApiDcimPowerPortsTraceRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimPowerPortsTraceRetrieveRequest) Execute() (*PowerPort, *http.Response, error) {
@@ -73407,26 +73631,27 @@ DcimPowerPortsTraceRetrieve Method for DcimPowerPortsTraceRetrieve
 
 Trace a complete cable path and return each segment as a three-tuple of (termination, cable, termination).
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power port.
- @return ApiDcimPowerPortsTraceRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power port.
+	@return ApiDcimPowerPortsTraceRetrieveRequest
 */
 func (a *DcimAPIService) DcimPowerPortsTraceRetrieve(ctx context.Context, id int32) ApiDcimPowerPortsTraceRetrieveRequest {
 	return ApiDcimPowerPortsTraceRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPort
+//
+//	@return PowerPort
 func (a *DcimAPIService) DcimPowerPortsTraceRetrieveExecute(r ApiDcimPowerPortsTraceRetrieveRequest) (*PowerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortsTraceRetrieve")
@@ -73510,9 +73735,9 @@ func (a *DcimAPIService) DcimPowerPortsTraceRetrieveExecute(r ApiDcimPowerPortsT
 }
 
 type ApiDcimPowerPortsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *DcimAPIService
+	id                       int32
 	writablePowerPortRequest *WritablePowerPortRequest
 }
 
@@ -73530,26 +73755,27 @@ DcimPowerPortsUpdate Method for DcimPowerPortsUpdate
 
 Put a power port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this power port.
- @return ApiDcimPowerPortsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this power port.
+	@return ApiDcimPowerPortsUpdateRequest
 */
 func (a *DcimAPIService) DcimPowerPortsUpdate(ctx context.Context, id int32) ApiDcimPowerPortsUpdateRequest {
 	return ApiDcimPowerPortsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return PowerPort
+//
+//	@return PowerPort
 func (a *DcimAPIService) DcimPowerPortsUpdateExecute(r ApiDcimPowerPortsUpdateRequest) (*PowerPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PowerPort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PowerPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimPowerPortsUpdate")
@@ -73638,8 +73864,8 @@ func (a *DcimAPIService) DcimPowerPortsUpdateExecute(r ApiDcimPowerPortsUpdateRe
 }
 
 type ApiDcimRackReservationsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                    context.Context
+	ApiService             *DcimAPIService
 	rackReservationRequest *[]RackReservationRequest
 }
 
@@ -73657,22 +73883,22 @@ DcimRackReservationsBulkDestroy Method for DcimRackReservationsBulkDestroy
 
 Delete a list of rack reservation objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRackReservationsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRackReservationsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimRackReservationsBulkDestroy(ctx context.Context) ApiDcimRackReservationsBulkDestroyRequest {
 	return ApiDcimRackReservationsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRackReservationsBulkDestroyExecute(r ApiDcimRackReservationsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackReservationsBulkDestroy")
@@ -73751,8 +73977,8 @@ func (a *DcimAPIService) DcimRackReservationsBulkDestroyExecute(r ApiDcimRackRes
 }
 
 type ApiDcimRackReservationsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                    context.Context
+	ApiService             *DcimAPIService
 	rackReservationRequest *[]RackReservationRequest
 }
 
@@ -73770,24 +73996,25 @@ DcimRackReservationsBulkPartialUpdate Method for DcimRackReservationsBulkPartial
 
 Patch a list of rack reservation objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRackReservationsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRackReservationsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRackReservationsBulkPartialUpdate(ctx context.Context) ApiDcimRackReservationsBulkPartialUpdateRequest {
 	return ApiDcimRackReservationsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RackReservation
+//
+//	@return []RackReservation
 func (a *DcimAPIService) DcimRackReservationsBulkPartialUpdateExecute(r ApiDcimRackReservationsBulkPartialUpdateRequest) ([]RackReservation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RackReservation
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RackReservation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackReservationsBulkPartialUpdate")
@@ -73875,8 +74102,8 @@ func (a *DcimAPIService) DcimRackReservationsBulkPartialUpdateExecute(r ApiDcimR
 }
 
 type ApiDcimRackReservationsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                    context.Context
+	ApiService             *DcimAPIService
 	rackReservationRequest *[]RackReservationRequest
 }
 
@@ -73894,24 +74121,25 @@ DcimRackReservationsBulkUpdate Method for DcimRackReservationsBulkUpdate
 
 Put a list of rack reservation objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRackReservationsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRackReservationsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimRackReservationsBulkUpdate(ctx context.Context) ApiDcimRackReservationsBulkUpdateRequest {
 	return ApiDcimRackReservationsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RackReservation
+//
+//	@return []RackReservation
 func (a *DcimAPIService) DcimRackReservationsBulkUpdateExecute(r ApiDcimRackReservationsBulkUpdateRequest) ([]RackReservation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RackReservation
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RackReservation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackReservationsBulkUpdate")
@@ -73999,8 +74227,8 @@ func (a *DcimAPIService) DcimRackReservationsBulkUpdateExecute(r ApiDcimRackRese
 }
 
 type ApiDcimRackReservationsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                            context.Context
+	ApiService                     *DcimAPIService
 	writableRackReservationRequest *WritableRackReservationRequest
 }
 
@@ -74018,24 +74246,25 @@ DcimRackReservationsCreate Method for DcimRackReservationsCreate
 
 Post a list of rack reservation objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRackReservationsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRackReservationsCreateRequest
 */
 func (a *DcimAPIService) DcimRackReservationsCreate(ctx context.Context) ApiDcimRackReservationsCreateRequest {
 	return ApiDcimRackReservationsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RackReservation
+//
+//	@return RackReservation
 func (a *DcimAPIService) DcimRackReservationsCreateExecute(r ApiDcimRackReservationsCreateRequest) (*RackReservation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RackReservation
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RackReservation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackReservationsCreate")
@@ -74123,9 +74352,9 @@ func (a *DcimAPIService) DcimRackReservationsCreateExecute(r ApiDcimRackReservat
 }
 
 type ApiDcimRackReservationsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRackReservationsDestroyRequest) Execute() (*http.Response, error) {
@@ -74137,24 +74366,24 @@ DcimRackReservationsDestroy Method for DcimRackReservationsDestroy
 
 Delete a rack reservation object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack reservation.
- @return ApiDcimRackReservationsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack reservation.
+	@return ApiDcimRackReservationsDestroyRequest
 */
 func (a *DcimAPIService) DcimRackReservationsDestroy(ctx context.Context, id int32) ApiDcimRackReservationsDestroyRequest {
 	return ApiDcimRackReservationsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRackReservationsDestroyExecute(r ApiDcimRackReservationsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackReservationsDestroy")
@@ -74229,75 +74458,75 @@ func (a *DcimAPIService) DcimRackReservationsDestroyExecute(r ApiDcimRackReserva
 }
 
 type ApiDcimRackReservationsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]int32
-	locationN *[]int32
-	locationId *[]int32
-	locationIdN *[]int32
-	offset *int32
-	ordering *string
-	q *string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]int32
-	tenantGroupN *[]int32
-	tenantGroupId *[]int32
-	tenantGroupIdN *[]int32
-	tenantId *[]*int32
-	tenantIdN *[]*int32
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	location         *[]int32
+	locationN        *[]int32
+	locationId       *[]int32
+	locationIdN      *[]int32
+	offset           *int32
+	ordering         *string
+	q                *string
+	rackId           *[]int32
+	rackIdN          *[]int32
+	region           *[]int32
+	regionN          *[]int32
+	regionId         *[]int32
+	regionIdN        *[]int32
+	site             *[]string
+	siteN            *[]string
+	siteGroup        *[]int32
+	siteGroupN       *[]int32
+	siteGroupId      *[]int32
+	siteGroupIdN     *[]int32
+	siteId           *[]int32
+	siteIdN          *[]int32
+	tag              *[]string
+	tagN             *[]string
+	tenant           *[]string
+	tenantN          *[]string
+	tenantGroup      *[]int32
+	tenantGroupN     *[]int32
+	tenantGroupId    *[]int32
+	tenantGroupIdN   *[]int32
+	tenantId         *[]*int32
+	tenantIdN        *[]*int32
 	updatedByRequest *string
-	user *[]string
-	userN *[]string
-	userId *[]int32
-	userIdN *[]int32
+	user             *[]string
+	userN            *[]string
+	userId           *[]int32
+	userIdN          *[]int32
 }
 
 func (r ApiDcimRackReservationsListRequest) Created(created []time.Time) ApiDcimRackReservationsListRequest {
@@ -74678,24 +74907,25 @@ DcimRackReservationsList Method for DcimRackReservationsList
 
 Get a list of rack reservation objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRackReservationsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRackReservationsListRequest
 */
 func (a *DcimAPIService) DcimRackReservationsList(ctx context.Context) ApiDcimRackReservationsListRequest {
 	return ApiDcimRackReservationsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedRackReservationList
+//
+//	@return PaginatedRackReservationList
 func (a *DcimAPIService) DcimRackReservationsListExecute(r ApiDcimRackReservationsListRequest) (*PaginatedRackReservationList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedRackReservationList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedRackReservationList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackReservationsList")
@@ -75467,9 +75697,9 @@ func (a *DcimAPIService) DcimRackReservationsListExecute(r ApiDcimRackReservatio
 }
 
 type ApiDcimRackReservationsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                   context.Context
+	ApiService                            *DcimAPIService
+	id                                    int32
 	patchedWritableRackReservationRequest *PatchedWritableRackReservationRequest
 }
 
@@ -75487,26 +75717,27 @@ DcimRackReservationsPartialUpdate Method for DcimRackReservationsPartialUpdate
 
 Patch a rack reservation object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack reservation.
- @return ApiDcimRackReservationsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack reservation.
+	@return ApiDcimRackReservationsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRackReservationsPartialUpdate(ctx context.Context, id int32) ApiDcimRackReservationsPartialUpdateRequest {
 	return ApiDcimRackReservationsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RackReservation
+//
+//	@return RackReservation
 func (a *DcimAPIService) DcimRackReservationsPartialUpdateExecute(r ApiDcimRackReservationsPartialUpdateRequest) (*RackReservation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RackReservation
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RackReservation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackReservationsPartialUpdate")
@@ -75592,9 +75823,9 @@ func (a *DcimAPIService) DcimRackReservationsPartialUpdateExecute(r ApiDcimRackR
 }
 
 type ApiDcimRackReservationsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRackReservationsRetrieveRequest) Execute() (*RackReservation, *http.Response, error) {
@@ -75606,26 +75837,27 @@ DcimRackReservationsRetrieve Method for DcimRackReservationsRetrieve
 
 Get a rack reservation object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack reservation.
- @return ApiDcimRackReservationsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack reservation.
+	@return ApiDcimRackReservationsRetrieveRequest
 */
 func (a *DcimAPIService) DcimRackReservationsRetrieve(ctx context.Context, id int32) ApiDcimRackReservationsRetrieveRequest {
 	return ApiDcimRackReservationsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RackReservation
+//
+//	@return RackReservation
 func (a *DcimAPIService) DcimRackReservationsRetrieveExecute(r ApiDcimRackReservationsRetrieveRequest) (*RackReservation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RackReservation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RackReservation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackReservationsRetrieve")
@@ -75709,9 +75941,9 @@ func (a *DcimAPIService) DcimRackReservationsRetrieveExecute(r ApiDcimRackReserv
 }
 
 type ApiDcimRackReservationsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                            context.Context
+	ApiService                     *DcimAPIService
+	id                             int32
 	writableRackReservationRequest *WritableRackReservationRequest
 }
 
@@ -75729,26 +75961,27 @@ DcimRackReservationsUpdate Method for DcimRackReservationsUpdate
 
 Put a rack reservation object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack reservation.
- @return ApiDcimRackReservationsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack reservation.
+	@return ApiDcimRackReservationsUpdateRequest
 */
 func (a *DcimAPIService) DcimRackReservationsUpdate(ctx context.Context, id int32) ApiDcimRackReservationsUpdateRequest {
 	return ApiDcimRackReservationsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RackReservation
+//
+//	@return RackReservation
 func (a *DcimAPIService) DcimRackReservationsUpdateExecute(r ApiDcimRackReservationsUpdateRequest) (*RackReservation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RackReservation
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RackReservation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackReservationsUpdate")
@@ -75837,8 +76070,8 @@ func (a *DcimAPIService) DcimRackReservationsUpdateExecute(r ApiDcimRackReservat
 }
 
 type ApiDcimRackRolesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	rackRoleRequest *[]RackRoleRequest
 }
 
@@ -75856,22 +76089,22 @@ DcimRackRolesBulkDestroy Method for DcimRackRolesBulkDestroy
 
 Delete a list of rack role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRackRolesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRackRolesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimRackRolesBulkDestroy(ctx context.Context) ApiDcimRackRolesBulkDestroyRequest {
 	return ApiDcimRackRolesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRackRolesBulkDestroyExecute(r ApiDcimRackRolesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackRolesBulkDestroy")
@@ -75950,8 +76183,8 @@ func (a *DcimAPIService) DcimRackRolesBulkDestroyExecute(r ApiDcimRackRolesBulkD
 }
 
 type ApiDcimRackRolesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	rackRoleRequest *[]RackRoleRequest
 }
 
@@ -75969,24 +76202,25 @@ DcimRackRolesBulkPartialUpdate Method for DcimRackRolesBulkPartialUpdate
 
 Patch a list of rack role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRackRolesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRackRolesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRackRolesBulkPartialUpdate(ctx context.Context) ApiDcimRackRolesBulkPartialUpdateRequest {
 	return ApiDcimRackRolesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RackRole
+//
+//	@return []RackRole
 func (a *DcimAPIService) DcimRackRolesBulkPartialUpdateExecute(r ApiDcimRackRolesBulkPartialUpdateRequest) ([]RackRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RackRole
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RackRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackRolesBulkPartialUpdate")
@@ -76074,8 +76308,8 @@ func (a *DcimAPIService) DcimRackRolesBulkPartialUpdateExecute(r ApiDcimRackRole
 }
 
 type ApiDcimRackRolesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	rackRoleRequest *[]RackRoleRequest
 }
 
@@ -76093,24 +76327,25 @@ DcimRackRolesBulkUpdate Method for DcimRackRolesBulkUpdate
 
 Put a list of rack role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRackRolesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRackRolesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimRackRolesBulkUpdate(ctx context.Context) ApiDcimRackRolesBulkUpdateRequest {
 	return ApiDcimRackRolesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RackRole
+//
+//	@return []RackRole
 func (a *DcimAPIService) DcimRackRolesBulkUpdateExecute(r ApiDcimRackRolesBulkUpdateRequest) ([]RackRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RackRole
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RackRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackRolesBulkUpdate")
@@ -76198,8 +76433,8 @@ func (a *DcimAPIService) DcimRackRolesBulkUpdateExecute(r ApiDcimRackRolesBulkUp
 }
 
 type ApiDcimRackRolesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	rackRoleRequest *RackRoleRequest
 }
 
@@ -76217,24 +76452,25 @@ DcimRackRolesCreate Method for DcimRackRolesCreate
 
 Post a list of rack role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRackRolesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRackRolesCreateRequest
 */
 func (a *DcimAPIService) DcimRackRolesCreate(ctx context.Context) ApiDcimRackRolesCreateRequest {
 	return ApiDcimRackRolesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RackRole
+//
+//	@return RackRole
 func (a *DcimAPIService) DcimRackRolesCreateExecute(r ApiDcimRackRolesCreateRequest) (*RackRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RackRole
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RackRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackRolesCreate")
@@ -76322,9 +76558,9 @@ func (a *DcimAPIService) DcimRackRolesCreateExecute(r ApiDcimRackRolesCreateRequ
 }
 
 type ApiDcimRackRolesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRackRolesDestroyRequest) Execute() (*http.Response, error) {
@@ -76336,24 +76572,24 @@ DcimRackRolesDestroy Method for DcimRackRolesDestroy
 
 Delete a rack role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack role.
- @return ApiDcimRackRolesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack role.
+	@return ApiDcimRackRolesDestroyRequest
 */
 func (a *DcimAPIService) DcimRackRolesDestroy(ctx context.Context, id int32) ApiDcimRackRolesDestroyRequest {
 	return ApiDcimRackRolesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRackRolesDestroyExecute(r ApiDcimRackRolesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackRolesDestroy")
@@ -76428,77 +76664,77 @@ func (a *DcimAPIService) DcimRackRolesDestroyExecute(r ApiDcimRackRolesDestroyRe
 }
 
 type ApiDcimRackRolesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	color *[]string
-	colorEmpty *[]string
-	colorIc *[]string
-	colorIe *[]string
-	colorIew *[]string
-	colorIsw *[]string
-	colorN *[]string
-	colorNic *[]string
-	colorNie *[]string
-	colorNiew *[]string
-	colorNisw *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	color            *[]string
+	colorEmpty       *[]string
+	colorIc          *[]string
+	colorIe          *[]string
+	colorIew         *[]string
+	colorIsw         *[]string
+	colorN           *[]string
+	colorNic         *[]string
+	colorNie         *[]string
+	colorNiew        *[]string
+	colorNisw        *[]string
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -76865,24 +77101,25 @@ DcimRackRolesList Method for DcimRackRolesList
 
 Get a list of rack role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRackRolesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRackRolesListRequest
 */
 func (a *DcimAPIService) DcimRackRolesList(ctx context.Context) ApiDcimRackRolesListRequest {
 	return ApiDcimRackRolesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedRackRoleList
+//
+//	@return PaginatedRackRoleList
 func (a *DcimAPIService) DcimRackRolesListExecute(r ApiDcimRackRolesListRequest) (*PaginatedRackRoleList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedRackRoleList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedRackRoleList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackRolesList")
@@ -77687,9 +77924,9 @@ func (a *DcimAPIService) DcimRackRolesListExecute(r ApiDcimRackRolesListRequest)
 }
 
 type ApiDcimRackRolesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                    context.Context
+	ApiService             *DcimAPIService
+	id                     int32
 	patchedRackRoleRequest *PatchedRackRoleRequest
 }
 
@@ -77707,26 +77944,27 @@ DcimRackRolesPartialUpdate Method for DcimRackRolesPartialUpdate
 
 Patch a rack role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack role.
- @return ApiDcimRackRolesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack role.
+	@return ApiDcimRackRolesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRackRolesPartialUpdate(ctx context.Context, id int32) ApiDcimRackRolesPartialUpdateRequest {
 	return ApiDcimRackRolesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RackRole
+//
+//	@return RackRole
 func (a *DcimAPIService) DcimRackRolesPartialUpdateExecute(r ApiDcimRackRolesPartialUpdateRequest) (*RackRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RackRole
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RackRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackRolesPartialUpdate")
@@ -77812,9 +78050,9 @@ func (a *DcimAPIService) DcimRackRolesPartialUpdateExecute(r ApiDcimRackRolesPar
 }
 
 type ApiDcimRackRolesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRackRolesRetrieveRequest) Execute() (*RackRole, *http.Response, error) {
@@ -77826,26 +78064,27 @@ DcimRackRolesRetrieve Method for DcimRackRolesRetrieve
 
 Get a rack role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack role.
- @return ApiDcimRackRolesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack role.
+	@return ApiDcimRackRolesRetrieveRequest
 */
 func (a *DcimAPIService) DcimRackRolesRetrieve(ctx context.Context, id int32) ApiDcimRackRolesRetrieveRequest {
 	return ApiDcimRackRolesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RackRole
+//
+//	@return RackRole
 func (a *DcimAPIService) DcimRackRolesRetrieveExecute(r ApiDcimRackRolesRetrieveRequest) (*RackRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RackRole
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RackRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackRolesRetrieve")
@@ -77929,9 +78168,9 @@ func (a *DcimAPIService) DcimRackRolesRetrieveExecute(r ApiDcimRackRolesRetrieve
 }
 
 type ApiDcimRackRolesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx             context.Context
+	ApiService      *DcimAPIService
+	id              int32
 	rackRoleRequest *RackRoleRequest
 }
 
@@ -77949,26 +78188,27 @@ DcimRackRolesUpdate Method for DcimRackRolesUpdate
 
 Put a rack role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack role.
- @return ApiDcimRackRolesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack role.
+	@return ApiDcimRackRolesUpdateRequest
 */
 func (a *DcimAPIService) DcimRackRolesUpdate(ctx context.Context, id int32) ApiDcimRackRolesUpdateRequest {
 	return ApiDcimRackRolesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RackRole
+//
+//	@return RackRole
 func (a *DcimAPIService) DcimRackRolesUpdateExecute(r ApiDcimRackRolesUpdateRequest) (*RackRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RackRole
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RackRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRackRolesUpdate")
@@ -78057,8 +78297,8 @@ func (a *DcimAPIService) DcimRackRolesUpdateExecute(r ApiDcimRackRolesUpdateRequ
 }
 
 type ApiDcimRacksBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx         context.Context
+	ApiService  *DcimAPIService
 	rackRequest *[]RackRequest
 }
 
@@ -78076,22 +78316,22 @@ DcimRacksBulkDestroy Method for DcimRacksBulkDestroy
 
 Delete a list of rack objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRacksBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRacksBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimRacksBulkDestroy(ctx context.Context) ApiDcimRacksBulkDestroyRequest {
 	return ApiDcimRacksBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRacksBulkDestroyExecute(r ApiDcimRacksBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRacksBulkDestroy")
@@ -78170,8 +78410,8 @@ func (a *DcimAPIService) DcimRacksBulkDestroyExecute(r ApiDcimRacksBulkDestroyRe
 }
 
 type ApiDcimRacksBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx         context.Context
+	ApiService  *DcimAPIService
 	rackRequest *[]RackRequest
 }
 
@@ -78189,24 +78429,25 @@ DcimRacksBulkPartialUpdate Method for DcimRacksBulkPartialUpdate
 
 Patch a list of rack objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRacksBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRacksBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRacksBulkPartialUpdate(ctx context.Context) ApiDcimRacksBulkPartialUpdateRequest {
 	return ApiDcimRacksBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Rack
+//
+//	@return []Rack
 func (a *DcimAPIService) DcimRacksBulkPartialUpdateExecute(r ApiDcimRacksBulkPartialUpdateRequest) ([]Rack, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Rack
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Rack
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRacksBulkPartialUpdate")
@@ -78294,8 +78535,8 @@ func (a *DcimAPIService) DcimRacksBulkPartialUpdateExecute(r ApiDcimRacksBulkPar
 }
 
 type ApiDcimRacksBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx         context.Context
+	ApiService  *DcimAPIService
 	rackRequest *[]RackRequest
 }
 
@@ -78313,24 +78554,25 @@ DcimRacksBulkUpdate Method for DcimRacksBulkUpdate
 
 Put a list of rack objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRacksBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRacksBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimRacksBulkUpdate(ctx context.Context) ApiDcimRacksBulkUpdateRequest {
 	return ApiDcimRacksBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Rack
+//
+//	@return []Rack
 func (a *DcimAPIService) DcimRacksBulkUpdateExecute(r ApiDcimRacksBulkUpdateRequest) ([]Rack, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Rack
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Rack
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRacksBulkUpdate")
@@ -78418,8 +78660,8 @@ func (a *DcimAPIService) DcimRacksBulkUpdateExecute(r ApiDcimRacksBulkUpdateRequ
 }
 
 type ApiDcimRacksCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                 context.Context
+	ApiService          *DcimAPIService
 	writableRackRequest *WritableRackRequest
 }
 
@@ -78437,24 +78679,25 @@ DcimRacksCreate Method for DcimRacksCreate
 
 Post a list of rack objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRacksCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRacksCreateRequest
 */
 func (a *DcimAPIService) DcimRacksCreate(ctx context.Context) ApiDcimRacksCreateRequest {
 	return ApiDcimRacksCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Rack
+//
+//	@return Rack
 func (a *DcimAPIService) DcimRacksCreateExecute(r ApiDcimRacksCreateRequest) (*Rack, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Rack
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Rack
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRacksCreate")
@@ -78542,9 +78785,9 @@ func (a *DcimAPIService) DcimRacksCreateExecute(r ApiDcimRacksCreateRequest) (*R
 }
 
 type ApiDcimRacksDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRacksDestroyRequest) Execute() (*http.Response, error) {
@@ -78556,24 +78799,24 @@ DcimRacksDestroy Method for DcimRacksDestroy
 
 Delete a rack object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack.
- @return ApiDcimRacksDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack.
+	@return ApiDcimRacksDestroyRequest
 */
 func (a *DcimAPIService) DcimRacksDestroy(ctx context.Context, id int32) ApiDcimRacksDestroyRequest {
 	return ApiDcimRacksDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRacksDestroyExecute(r ApiDcimRacksDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRacksDestroy")
@@ -78648,9 +78891,9 @@ func (a *DcimAPIService) DcimRacksDestroyExecute(r ApiDcimRacksDestroyRequest) (
 }
 
 type ApiDcimRacksElevationRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRacksElevationRetrieveRequest) Execute() (*Rack, *http.Response, error) {
@@ -78662,26 +78905,27 @@ DcimRacksElevationRetrieve Method for DcimRacksElevationRetrieve
 
 Rack elevation representing the list of rack units. Also supports rendering the elevation as an SVG.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack.
- @return ApiDcimRacksElevationRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack.
+	@return ApiDcimRacksElevationRetrieveRequest
 */
 func (a *DcimAPIService) DcimRacksElevationRetrieve(ctx context.Context, id int32) ApiDcimRacksElevationRetrieveRequest {
 	return ApiDcimRacksElevationRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Rack
+//
+//	@return Rack
 func (a *DcimAPIService) DcimRacksElevationRetrieveExecute(r ApiDcimRacksElevationRetrieveRequest) (*Rack, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Rack
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Rack
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRacksElevationRetrieve")
@@ -78765,159 +79009,159 @@ func (a *DcimAPIService) DcimRacksElevationRetrieveExecute(r ApiDcimRacksElevati
 }
 
 type ApiDcimRacksListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	assetTag *[]string
-	assetTagEmpty *[]string
-	assetTagIc *[]string
-	assetTagIe *[]string
-	assetTagIew *[]string
-	assetTagIsw *[]string
-	assetTagN *[]string
-	assetTagNic *[]string
-	assetTagNie *[]string
-	assetTagNiew *[]string
-	assetTagNisw *[]string
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]int32
-	contactGroupN *[]int32
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	assetTag         *[]string
+	assetTagEmpty    *[]string
+	assetTagIc       *[]string
+	assetTagIe       *[]string
+	assetTagIew      *[]string
+	assetTagIsw      *[]string
+	assetTagN        *[]string
+	assetTagNic      *[]string
+	assetTagNie      *[]string
+	assetTagNiew     *[]string
+	assetTagNisw     *[]string
+	contact          *[]int32
+	contactN         *[]int32
+	contactGroup     *[]int32
+	contactGroupN    *[]int32
+	contactRole      *[]int32
+	contactRoleN     *[]int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	descUnits *bool
-	facilityId *[]string
-	facilityIdEmpty *[]string
-	facilityIdIc *[]string
-	facilityIdIe *[]string
-	facilityIdIew *[]string
-	facilityIdIsw *[]string
-	facilityIdN *[]string
-	facilityIdNic *[]string
-	facilityIdNie *[]string
-	facilityIdNiew *[]string
-	facilityIdNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]int32
-	locationN *[]int32
-	locationId *[]int32
-	locationIdN *[]int32
-	maxWeight *[]int32
-	maxWeightGt *[]int32
-	maxWeightGte *[]int32
-	maxWeightLt *[]int32
-	maxWeightLte *[]int32
-	maxWeightN *[]int32
-	mountingDepth *[]int32
-	mountingDepthGt *[]int32
+	descUnits        *bool
+	facilityId       *[]string
+	facilityIdEmpty  *[]string
+	facilityIdIc     *[]string
+	facilityIdIe     *[]string
+	facilityIdIew    *[]string
+	facilityIdIsw    *[]string
+	facilityIdN      *[]string
+	facilityIdNic    *[]string
+	facilityIdNie    *[]string
+	facilityIdNiew   *[]string
+	facilityIdNisw   *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	location         *[]int32
+	locationN        *[]int32
+	locationId       *[]int32
+	locationIdN      *[]int32
+	maxWeight        *[]int32
+	maxWeightGt      *[]int32
+	maxWeightGte     *[]int32
+	maxWeightLt      *[]int32
+	maxWeightLte     *[]int32
+	maxWeightN       *[]int32
+	mountingDepth    *[]int32
+	mountingDepthGt  *[]int32
 	mountingDepthGte *[]int32
-	mountingDepthLt *[]int32
+	mountingDepthLt  *[]int32
 	mountingDepthLte *[]int32
-	mountingDepthN *[]int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	outerDepth *[]int32
-	outerDepthGt *[]int32
-	outerDepthGte *[]int32
-	outerDepthLt *[]int32
-	outerDepthLte *[]int32
-	outerDepthN *[]int32
-	outerUnit *string
-	outerUnitN *string
-	outerWidth *[]int32
-	outerWidthGt *[]int32
-	outerWidthGte *[]int32
-	outerWidthLt *[]int32
-	outerWidthLte *[]int32
-	outerWidthN *[]int32
-	q *string
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	role *[]string
-	roleN *[]string
-	roleId *[]*int32
-	roleIdN *[]*int32
-	serial *[]string
-	serialEmpty *[]string
-	serialIc *[]string
-	serialIe *[]string
-	serialIew *[]string
-	serialIsw *[]string
-	serialN *[]string
-	serialNic *[]string
-	serialNie *[]string
-	serialNiew *[]string
-	serialNisw *[]string
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	status *[]string
-	statusN *[]string
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]int32
-	tenantGroupN *[]int32
-	tenantGroupId *[]int32
-	tenantGroupIdN *[]int32
-	tenantId *[]*int32
-	tenantIdN *[]*int32
-	type_ *[]string
-	typeN *[]string
-	uHeight *[]int32
-	uHeightGt *[]int32
-	uHeightGte *[]int32
-	uHeightLt *[]int32
-	uHeightLte *[]int32
-	uHeightN *[]int32
+	mountingDepthN   *[]int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	outerDepth       *[]int32
+	outerDepthGt     *[]int32
+	outerDepthGte    *[]int32
+	outerDepthLt     *[]int32
+	outerDepthLte    *[]int32
+	outerDepthN      *[]int32
+	outerUnit        *string
+	outerUnitN       *string
+	outerWidth       *[]int32
+	outerWidthGt     *[]int32
+	outerWidthGte    *[]int32
+	outerWidthLt     *[]int32
+	outerWidthLte    *[]int32
+	outerWidthN      *[]int32
+	q                *string
+	region           *[]int32
+	regionN          *[]int32
+	regionId         *[]int32
+	regionIdN        *[]int32
+	role             *[]string
+	roleN            *[]string
+	roleId           *[]*int32
+	roleIdN          *[]*int32
+	serial           *[]string
+	serialEmpty      *[]string
+	serialIc         *[]string
+	serialIe         *[]string
+	serialIew        *[]string
+	serialIsw        *[]string
+	serialN          *[]string
+	serialNic        *[]string
+	serialNie        *[]string
+	serialNiew       *[]string
+	serialNisw       *[]string
+	site             *[]string
+	siteN            *[]string
+	siteGroup        *[]int32
+	siteGroupN       *[]int32
+	siteGroupId      *[]int32
+	siteGroupIdN     *[]int32
+	siteId           *[]int32
+	siteIdN          *[]int32
+	status           *[]string
+	statusN          *[]string
+	tag              *[]string
+	tagN             *[]string
+	tenant           *[]string
+	tenantN          *[]string
+	tenantGroup      *[]int32
+	tenantGroupN     *[]int32
+	tenantGroupId    *[]int32
+	tenantGroupIdN   *[]int32
+	tenantId         *[]*int32
+	tenantIdN        *[]*int32
+	type_            *[]string
+	typeN            *[]string
+	uHeight          *[]int32
+	uHeightGt        *[]int32
+	uHeightGte       *[]int32
+	uHeightLt        *[]int32
+	uHeightLte       *[]int32
+	uHeightN         *[]int32
 	updatedByRequest *string
-	weight *[]float64
-	weightGt *[]float64
-	weightGte *[]float64
-	weightLt *[]float64
-	weightLte *[]float64
-	weightN *[]float64
-	weightUnit *string
-	weightUnitN *string
-	width *[]int32
-	widthN *[]int32
+	weight           *[]float64
+	weightGt         *[]float64
+	weightGte        *[]float64
+	weightLt         *[]float64
+	weightLte        *[]float64
+	weightN          *[]float64
+	weightUnit       *string
+	weightUnitN      *string
+	width            *[]int32
+	widthN           *[]int32
 }
 
 func (r ApiDcimRacksListRequest) AssetTag(assetTag []string) ApiDcimRacksListRequest {
@@ -79732,24 +79976,25 @@ DcimRacksList Method for DcimRacksList
 
 Get a list of rack objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRacksListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRacksListRequest
 */
 func (a *DcimAPIService) DcimRacksList(ctx context.Context) ApiDcimRacksListRequest {
 	return ApiDcimRacksListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedRackList
+//
+//	@return PaginatedRackList
 func (a *DcimAPIService) DcimRacksListExecute(r ApiDcimRacksListRequest) (*PaginatedRackList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedRackList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedRackList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRacksList")
@@ -81405,9 +81650,9 @@ func (a *DcimAPIService) DcimRacksListExecute(r ApiDcimRacksListRequest) (*Pagin
 }
 
 type ApiDcimRacksPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
+	id                         int32
 	patchedWritableRackRequest *PatchedWritableRackRequest
 }
 
@@ -81425,26 +81670,27 @@ DcimRacksPartialUpdate Method for DcimRacksPartialUpdate
 
 Patch a rack object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack.
- @return ApiDcimRacksPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack.
+	@return ApiDcimRacksPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRacksPartialUpdate(ctx context.Context, id int32) ApiDcimRacksPartialUpdateRequest {
 	return ApiDcimRacksPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Rack
+//
+//	@return Rack
 func (a *DcimAPIService) DcimRacksPartialUpdateExecute(r ApiDcimRacksPartialUpdateRequest) (*Rack, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Rack
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Rack
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRacksPartialUpdate")
@@ -81530,9 +81776,9 @@ func (a *DcimAPIService) DcimRacksPartialUpdateExecute(r ApiDcimRacksPartialUpda
 }
 
 type ApiDcimRacksRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRacksRetrieveRequest) Execute() (*Rack, *http.Response, error) {
@@ -81544,26 +81790,27 @@ DcimRacksRetrieve Method for DcimRacksRetrieve
 
 Get a rack object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack.
- @return ApiDcimRacksRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack.
+	@return ApiDcimRacksRetrieveRequest
 */
 func (a *DcimAPIService) DcimRacksRetrieve(ctx context.Context, id int32) ApiDcimRacksRetrieveRequest {
 	return ApiDcimRacksRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Rack
+//
+//	@return Rack
 func (a *DcimAPIService) DcimRacksRetrieveExecute(r ApiDcimRacksRetrieveRequest) (*Rack, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Rack
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Rack
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRacksRetrieve")
@@ -81647,9 +81894,9 @@ func (a *DcimAPIService) DcimRacksRetrieveExecute(r ApiDcimRacksRetrieveRequest)
 }
 
 type ApiDcimRacksUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                 context.Context
+	ApiService          *DcimAPIService
+	id                  int32
 	writableRackRequest *WritableRackRequest
 }
 
@@ -81667,26 +81914,27 @@ DcimRacksUpdate Method for DcimRacksUpdate
 
 Put a rack object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rack.
- @return ApiDcimRacksUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rack.
+	@return ApiDcimRacksUpdateRequest
 */
 func (a *DcimAPIService) DcimRacksUpdate(ctx context.Context, id int32) ApiDcimRacksUpdateRequest {
 	return ApiDcimRacksUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Rack
+//
+//	@return Rack
 func (a *DcimAPIService) DcimRacksUpdateExecute(r ApiDcimRacksUpdateRequest) (*Rack, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Rack
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Rack
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRacksUpdate")
@@ -81775,8 +82023,8 @@ func (a *DcimAPIService) DcimRacksUpdateExecute(r ApiDcimRacksUpdateRequest) (*R
 }
 
 type ApiDcimRearPortTemplatesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                     context.Context
+	ApiService              *DcimAPIService
 	rearPortTemplateRequest *[]RearPortTemplateRequest
 }
 
@@ -81794,22 +82042,22 @@ DcimRearPortTemplatesBulkDestroy Method for DcimRearPortTemplatesBulkDestroy
 
 Delete a list of rear port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRearPortTemplatesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRearPortTemplatesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimRearPortTemplatesBulkDestroy(ctx context.Context) ApiDcimRearPortTemplatesBulkDestroyRequest {
 	return ApiDcimRearPortTemplatesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRearPortTemplatesBulkDestroyExecute(r ApiDcimRearPortTemplatesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortTemplatesBulkDestroy")
@@ -81888,8 +82136,8 @@ func (a *DcimAPIService) DcimRearPortTemplatesBulkDestroyExecute(r ApiDcimRearPo
 }
 
 type ApiDcimRearPortTemplatesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                     context.Context
+	ApiService              *DcimAPIService
 	rearPortTemplateRequest *[]RearPortTemplateRequest
 }
 
@@ -81907,24 +82155,25 @@ DcimRearPortTemplatesBulkPartialUpdate Method for DcimRearPortTemplatesBulkParti
 
 Patch a list of rear port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRearPortTemplatesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRearPortTemplatesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRearPortTemplatesBulkPartialUpdate(ctx context.Context) ApiDcimRearPortTemplatesBulkPartialUpdateRequest {
 	return ApiDcimRearPortTemplatesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RearPortTemplate
+//
+//	@return []RearPortTemplate
 func (a *DcimAPIService) DcimRearPortTemplatesBulkPartialUpdateExecute(r ApiDcimRearPortTemplatesBulkPartialUpdateRequest) ([]RearPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RearPortTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RearPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortTemplatesBulkPartialUpdate")
@@ -82012,8 +82261,8 @@ func (a *DcimAPIService) DcimRearPortTemplatesBulkPartialUpdateExecute(r ApiDcim
 }
 
 type ApiDcimRearPortTemplatesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                     context.Context
+	ApiService              *DcimAPIService
 	rearPortTemplateRequest *[]RearPortTemplateRequest
 }
 
@@ -82031,24 +82280,25 @@ DcimRearPortTemplatesBulkUpdate Method for DcimRearPortTemplatesBulkUpdate
 
 Put a list of rear port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRearPortTemplatesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRearPortTemplatesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimRearPortTemplatesBulkUpdate(ctx context.Context) ApiDcimRearPortTemplatesBulkUpdateRequest {
 	return ApiDcimRearPortTemplatesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RearPortTemplate
+//
+//	@return []RearPortTemplate
 func (a *DcimAPIService) DcimRearPortTemplatesBulkUpdateExecute(r ApiDcimRearPortTemplatesBulkUpdateRequest) ([]RearPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RearPortTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RearPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortTemplatesBulkUpdate")
@@ -82136,8 +82386,8 @@ func (a *DcimAPIService) DcimRearPortTemplatesBulkUpdateExecute(r ApiDcimRearPor
 }
 
 type ApiDcimRearPortTemplatesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                             context.Context
+	ApiService                      *DcimAPIService
 	writableRearPortTemplateRequest *WritableRearPortTemplateRequest
 }
 
@@ -82155,24 +82405,25 @@ DcimRearPortTemplatesCreate Method for DcimRearPortTemplatesCreate
 
 Post a list of rear port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRearPortTemplatesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRearPortTemplatesCreateRequest
 */
 func (a *DcimAPIService) DcimRearPortTemplatesCreate(ctx context.Context) ApiDcimRearPortTemplatesCreateRequest {
 	return ApiDcimRearPortTemplatesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RearPortTemplate
+//
+//	@return RearPortTemplate
 func (a *DcimAPIService) DcimRearPortTemplatesCreateExecute(r ApiDcimRearPortTemplatesCreateRequest) (*RearPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RearPortTemplate
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RearPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortTemplatesCreate")
@@ -82260,9 +82511,9 @@ func (a *DcimAPIService) DcimRearPortTemplatesCreateExecute(r ApiDcimRearPortTem
 }
 
 type ApiDcimRearPortTemplatesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRearPortTemplatesDestroyRequest) Execute() (*http.Response, error) {
@@ -82274,24 +82525,24 @@ DcimRearPortTemplatesDestroy Method for DcimRearPortTemplatesDestroy
 
 Delete a rear port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rear port template.
- @return ApiDcimRearPortTemplatesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rear port template.
+	@return ApiDcimRearPortTemplatesDestroyRequest
 */
 func (a *DcimAPIService) DcimRearPortTemplatesDestroy(ctx context.Context, id int32) ApiDcimRearPortTemplatesDestroyRequest {
 	return ApiDcimRearPortTemplatesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRearPortTemplatesDestroyExecute(r ApiDcimRearPortTemplatesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortTemplatesDestroy")
@@ -82366,65 +82617,65 @@ func (a *DcimAPIService) DcimRearPortTemplatesDestroyExecute(r ApiDcimRearPortTe
 }
 
 type ApiDcimRearPortTemplatesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	color *[]string
-	colorEmpty *[]string
-	colorIc *[]string
-	colorIe *[]string
-	colorIew *[]string
-	colorIsw *[]string
-	colorN *[]string
-	colorNic *[]string
-	colorNie *[]string
-	colorNiew *[]string
-	colorNisw *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	color            *[]string
+	colorEmpty       *[]string
+	colorIc          *[]string
+	colorIe          *[]string
+	colorIew         *[]string
+	colorIsw         *[]string
+	colorN           *[]string
+	colorNic         *[]string
+	colorNie         *[]string
+	colorNiew        *[]string
+	colorNisw        *[]string
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	devicetypeId *[]*int32
-	devicetypeIdN *[]*int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	moduletypeId *[]*int32
-	moduletypeIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	positions *[]int32
-	positionsGt *[]int32
-	positionsGte *[]int32
-	positionsLt *[]int32
-	positionsLte *[]int32
-	positionsN *[]int32
-	q *string
-	type_ *[]string
-	typeN *[]string
+	devicetypeId     *[]*int32
+	devicetypeIdN    *[]*int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	moduletypeId     *[]*int32
+	moduletypeIdN    *[]*int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	positions        *[]int32
+	positionsGt      *[]int32
+	positionsGte     *[]int32
+	positionsLt      *[]int32
+	positionsLte     *[]int32
+	positionsN       *[]int32
+	q                *string
+	type_            *[]string
+	typeN            *[]string
 	updatedByRequest *string
 }
 
@@ -82737,24 +82988,25 @@ DcimRearPortTemplatesList Method for DcimRearPortTemplatesList
 
 Get a list of rear port template objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRearPortTemplatesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRearPortTemplatesListRequest
 */
 func (a *DcimAPIService) DcimRearPortTemplatesList(ctx context.Context) ApiDcimRearPortTemplatesListRequest {
 	return ApiDcimRearPortTemplatesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedRearPortTemplateList
+//
+//	@return PaginatedRearPortTemplateList
 func (a *DcimAPIService) DcimRearPortTemplatesListExecute(r ApiDcimRearPortTemplatesListRequest) (*PaginatedRearPortTemplateList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedRearPortTemplateList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedRearPortTemplateList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortTemplatesList")
@@ -83427,9 +83679,9 @@ func (a *DcimAPIService) DcimRearPortTemplatesListExecute(r ApiDcimRearPortTempl
 }
 
 type ApiDcimRearPortTemplatesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                    context.Context
+	ApiService                             *DcimAPIService
+	id                                     int32
 	patchedWritableRearPortTemplateRequest *PatchedWritableRearPortTemplateRequest
 }
 
@@ -83447,26 +83699,27 @@ DcimRearPortTemplatesPartialUpdate Method for DcimRearPortTemplatesPartialUpdate
 
 Patch a rear port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rear port template.
- @return ApiDcimRearPortTemplatesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rear port template.
+	@return ApiDcimRearPortTemplatesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRearPortTemplatesPartialUpdate(ctx context.Context, id int32) ApiDcimRearPortTemplatesPartialUpdateRequest {
 	return ApiDcimRearPortTemplatesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RearPortTemplate
+//
+//	@return RearPortTemplate
 func (a *DcimAPIService) DcimRearPortTemplatesPartialUpdateExecute(r ApiDcimRearPortTemplatesPartialUpdateRequest) (*RearPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RearPortTemplate
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RearPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortTemplatesPartialUpdate")
@@ -83552,9 +83805,9 @@ func (a *DcimAPIService) DcimRearPortTemplatesPartialUpdateExecute(r ApiDcimRear
 }
 
 type ApiDcimRearPortTemplatesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRearPortTemplatesRetrieveRequest) Execute() (*RearPortTemplate, *http.Response, error) {
@@ -83566,26 +83819,27 @@ DcimRearPortTemplatesRetrieve Method for DcimRearPortTemplatesRetrieve
 
 Get a rear port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rear port template.
- @return ApiDcimRearPortTemplatesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rear port template.
+	@return ApiDcimRearPortTemplatesRetrieveRequest
 */
 func (a *DcimAPIService) DcimRearPortTemplatesRetrieve(ctx context.Context, id int32) ApiDcimRearPortTemplatesRetrieveRequest {
 	return ApiDcimRearPortTemplatesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RearPortTemplate
+//
+//	@return RearPortTemplate
 func (a *DcimAPIService) DcimRearPortTemplatesRetrieveExecute(r ApiDcimRearPortTemplatesRetrieveRequest) (*RearPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RearPortTemplate
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RearPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortTemplatesRetrieve")
@@ -83669,9 +83923,9 @@ func (a *DcimAPIService) DcimRearPortTemplatesRetrieveExecute(r ApiDcimRearPortT
 }
 
 type ApiDcimRearPortTemplatesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *DcimAPIService
+	id                              int32
 	writableRearPortTemplateRequest *WritableRearPortTemplateRequest
 }
 
@@ -83689,26 +83943,27 @@ DcimRearPortTemplatesUpdate Method for DcimRearPortTemplatesUpdate
 
 Put a rear port template object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rear port template.
- @return ApiDcimRearPortTemplatesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rear port template.
+	@return ApiDcimRearPortTemplatesUpdateRequest
 */
 func (a *DcimAPIService) DcimRearPortTemplatesUpdate(ctx context.Context, id int32) ApiDcimRearPortTemplatesUpdateRequest {
 	return ApiDcimRearPortTemplatesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RearPortTemplate
+//
+//	@return RearPortTemplate
 func (a *DcimAPIService) DcimRearPortTemplatesUpdateExecute(r ApiDcimRearPortTemplatesUpdateRequest) (*RearPortTemplate, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RearPortTemplate
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RearPortTemplate
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortTemplatesUpdate")
@@ -83797,8 +84052,8 @@ func (a *DcimAPIService) DcimRearPortTemplatesUpdateExecute(r ApiDcimRearPortTem
 }
 
 type ApiDcimRearPortsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	rearPortRequest *[]RearPortRequest
 }
 
@@ -83816,22 +84071,22 @@ DcimRearPortsBulkDestroy Method for DcimRearPortsBulkDestroy
 
 Delete a list of rear port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRearPortsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRearPortsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimRearPortsBulkDestroy(ctx context.Context) ApiDcimRearPortsBulkDestroyRequest {
 	return ApiDcimRearPortsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRearPortsBulkDestroyExecute(r ApiDcimRearPortsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortsBulkDestroy")
@@ -83910,8 +84165,8 @@ func (a *DcimAPIService) DcimRearPortsBulkDestroyExecute(r ApiDcimRearPortsBulkD
 }
 
 type ApiDcimRearPortsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	rearPortRequest *[]RearPortRequest
 }
 
@@ -83929,24 +84184,25 @@ DcimRearPortsBulkPartialUpdate Method for DcimRearPortsBulkPartialUpdate
 
 Patch a list of rear port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRearPortsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRearPortsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRearPortsBulkPartialUpdate(ctx context.Context) ApiDcimRearPortsBulkPartialUpdateRequest {
 	return ApiDcimRearPortsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RearPort
+//
+//	@return []RearPort
 func (a *DcimAPIService) DcimRearPortsBulkPartialUpdateExecute(r ApiDcimRearPortsBulkPartialUpdateRequest) ([]RearPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RearPort
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RearPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortsBulkPartialUpdate")
@@ -84034,8 +84290,8 @@ func (a *DcimAPIService) DcimRearPortsBulkPartialUpdateExecute(r ApiDcimRearPort
 }
 
 type ApiDcimRearPortsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx             context.Context
+	ApiService      *DcimAPIService
 	rearPortRequest *[]RearPortRequest
 }
 
@@ -84053,24 +84309,25 @@ DcimRearPortsBulkUpdate Method for DcimRearPortsBulkUpdate
 
 Put a list of rear port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRearPortsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRearPortsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimRearPortsBulkUpdate(ctx context.Context) ApiDcimRearPortsBulkUpdateRequest {
 	return ApiDcimRearPortsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RearPort
+//
+//	@return []RearPort
 func (a *DcimAPIService) DcimRearPortsBulkUpdateExecute(r ApiDcimRearPortsBulkUpdateRequest) ([]RearPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []RearPort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []RearPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortsBulkUpdate")
@@ -84158,8 +84415,8 @@ func (a *DcimAPIService) DcimRearPortsBulkUpdateExecute(r ApiDcimRearPortsBulkUp
 }
 
 type ApiDcimRearPortsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                     context.Context
+	ApiService              *DcimAPIService
 	writableRearPortRequest *WritableRearPortRequest
 }
 
@@ -84177,24 +84434,25 @@ DcimRearPortsCreate Method for DcimRearPortsCreate
 
 Post a list of rear port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRearPortsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRearPortsCreateRequest
 */
 func (a *DcimAPIService) DcimRearPortsCreate(ctx context.Context) ApiDcimRearPortsCreateRequest {
 	return ApiDcimRearPortsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RearPort
+//
+//	@return RearPort
 func (a *DcimAPIService) DcimRearPortsCreateExecute(r ApiDcimRearPortsCreateRequest) (*RearPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RearPort
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RearPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortsCreate")
@@ -84282,9 +84540,9 @@ func (a *DcimAPIService) DcimRearPortsCreateExecute(r ApiDcimRearPortsCreateRequ
 }
 
 type ApiDcimRearPortsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRearPortsDestroyRequest) Execute() (*http.Response, error) {
@@ -84296,24 +84554,24 @@ DcimRearPortsDestroy Method for DcimRearPortsDestroy
 
 Delete a rear port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rear port.
- @return ApiDcimRearPortsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rear port.
+	@return ApiDcimRearPortsDestroyRequest
 */
 func (a *DcimAPIService) DcimRearPortsDestroy(ctx context.Context, id int32) ApiDcimRearPortsDestroyRequest {
 	return ApiDcimRearPortsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRearPortsDestroyExecute(r ApiDcimRearPortsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortsDestroy")
@@ -84388,119 +84646,119 @@ func (a *DcimAPIService) DcimRearPortsDestroyExecute(r ApiDcimRearPortsDestroyRe
 }
 
 type ApiDcimRearPortsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	cableEnd *string
-	cableEndN *string
-	cabled *bool
-	color *[]string
-	colorEmpty *[]string
-	colorIc *[]string
-	colorIe *[]string
-	colorIew *[]string
-	colorIsw *[]string
-	colorN *[]string
-	colorNic *[]string
-	colorNie *[]string
-	colorNiew *[]string
-	colorNisw *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
-	createdByRequest *string
-	description *[]string
-	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	device *[]*string
-	deviceN *[]*string
-	deviceId *[]int32
-	deviceIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	label *[]string
-	labelEmpty *[]string
-	labelIc *[]string
-	labelIe *[]string
-	labelIew *[]string
-	labelIsw *[]string
-	labelN *[]string
-	labelNic *[]string
-	labelNie *[]string
-	labelNiew *[]string
-	labelNisw *[]string
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	location *[]string
-	locationN *[]string
-	locationId *[]int32
-	locationIdN *[]int32
-	moduleId *[]*int32
-	moduleIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	occupied *bool
-	offset *int32
-	ordering *string
-	positions *[]int32
-	positionsGt *[]int32
-	positionsGte *[]int32
-	positionsLt *[]int32
-	positionsLte *[]int32
-	positionsN *[]int32
-	q *string
-	rack *[]string
-	rackN *[]string
-	rackId *[]int32
-	rackIdN *[]int32
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	type_ *[]string
-	typeN *[]string
-	updatedByRequest *string
-	virtualChassis *[]string
-	virtualChassisN *[]string
-	virtualChassisId *[]int32
+	ctx               context.Context
+	ApiService        *DcimAPIService
+	cableEnd          *string
+	cableEndN         *string
+	cabled            *bool
+	color             *[]string
+	colorEmpty        *[]string
+	colorIc           *[]string
+	colorIe           *[]string
+	colorIew          *[]string
+	colorIsw          *[]string
+	colorN            *[]string
+	colorNic          *[]string
+	colorNie          *[]string
+	colorNiew         *[]string
+	colorNisw         *[]string
+	created           *[]time.Time
+	createdGt         *[]time.Time
+	createdGte        *[]time.Time
+	createdLt         *[]time.Time
+	createdLte        *[]time.Time
+	createdN          *[]time.Time
+	createdByRequest  *string
+	description       *[]string
+	descriptionEmpty  *[]string
+	descriptionIc     *[]string
+	descriptionIe     *[]string
+	descriptionIew    *[]string
+	descriptionIsw    *[]string
+	descriptionN      *[]string
+	descriptionNic    *[]string
+	descriptionNie    *[]string
+	descriptionNiew   *[]string
+	descriptionNisw   *[]string
+	device            *[]*string
+	deviceN           *[]*string
+	deviceId          *[]int32
+	deviceIdN         *[]int32
+	id                *[]int32
+	idGt              *[]int32
+	idGte             *[]int32
+	idLt              *[]int32
+	idLte             *[]int32
+	idN               *[]int32
+	label             *[]string
+	labelEmpty        *[]string
+	labelIc           *[]string
+	labelIe           *[]string
+	labelIew          *[]string
+	labelIsw          *[]string
+	labelN            *[]string
+	labelNic          *[]string
+	labelNie          *[]string
+	labelNiew         *[]string
+	labelNisw         *[]string
+	lastUpdated       *[]time.Time
+	lastUpdatedGt     *[]time.Time
+	lastUpdatedGte    *[]time.Time
+	lastUpdatedLt     *[]time.Time
+	lastUpdatedLte    *[]time.Time
+	lastUpdatedN      *[]time.Time
+	limit             *int32
+	location          *[]string
+	locationN         *[]string
+	locationId        *[]int32
+	locationIdN       *[]int32
+	moduleId          *[]*int32
+	moduleIdN         *[]*int32
+	name              *[]string
+	nameEmpty         *[]string
+	nameIc            *[]string
+	nameIe            *[]string
+	nameIew           *[]string
+	nameIsw           *[]string
+	nameN             *[]string
+	nameNic           *[]string
+	nameNie           *[]string
+	nameNiew          *[]string
+	nameNisw          *[]string
+	occupied          *bool
+	offset            *int32
+	ordering          *string
+	positions         *[]int32
+	positionsGt       *[]int32
+	positionsGte      *[]int32
+	positionsLt       *[]int32
+	positionsLte      *[]int32
+	positionsN        *[]int32
+	q                 *string
+	rack              *[]string
+	rackN             *[]string
+	rackId            *[]int32
+	rackIdN           *[]int32
+	region            *[]int32
+	regionN           *[]int32
+	regionId          *[]int32
+	regionIdN         *[]int32
+	site              *[]string
+	siteN             *[]string
+	siteGroup         *[]int32
+	siteGroupN        *[]int32
+	siteGroupId       *[]int32
+	siteGroupIdN      *[]int32
+	siteId            *[]int32
+	siteIdN           *[]int32
+	tag               *[]string
+	tagN              *[]string
+	type_             *[]string
+	typeN             *[]string
+	updatedByRequest  *string
+	virtualChassis    *[]string
+	virtualChassisN   *[]string
+	virtualChassisId  *[]int32
 	virtualChassisIdN *[]int32
 }
 
@@ -85111,24 +85369,25 @@ DcimRearPortsList Method for DcimRearPortsList
 
 Get a list of rear port objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRearPortsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRearPortsListRequest
 */
 func (a *DcimAPIService) DcimRearPortsList(ctx context.Context) ApiDcimRearPortsListRequest {
 	return ApiDcimRearPortsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedRearPortList
+//
+//	@return PaginatedRearPortList
 func (a *DcimAPIService) DcimRearPortsListExecute(r ApiDcimRearPortsListRequest) (*PaginatedRearPortList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedRearPortList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedRearPortList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortsList")
@@ -86363,9 +86622,9 @@ func (a *DcimAPIService) DcimRearPortsListExecute(r ApiDcimRearPortsListRequest)
 }
 
 type ApiDcimRearPortsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                            context.Context
+	ApiService                     *DcimAPIService
+	id                             int32
 	patchedWritableRearPortRequest *PatchedWritableRearPortRequest
 }
 
@@ -86383,26 +86642,27 @@ DcimRearPortsPartialUpdate Method for DcimRearPortsPartialUpdate
 
 Patch a rear port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rear port.
- @return ApiDcimRearPortsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rear port.
+	@return ApiDcimRearPortsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRearPortsPartialUpdate(ctx context.Context, id int32) ApiDcimRearPortsPartialUpdateRequest {
 	return ApiDcimRearPortsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RearPort
+//
+//	@return RearPort
 func (a *DcimAPIService) DcimRearPortsPartialUpdateExecute(r ApiDcimRearPortsPartialUpdateRequest) (*RearPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RearPort
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RearPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortsPartialUpdate")
@@ -86488,9 +86748,9 @@ func (a *DcimAPIService) DcimRearPortsPartialUpdateExecute(r ApiDcimRearPortsPar
 }
 
 type ApiDcimRearPortsPathsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRearPortsPathsRetrieveRequest) Execute() (*RearPort, *http.Response, error) {
@@ -86502,26 +86762,27 @@ DcimRearPortsPathsRetrieve Method for DcimRearPortsPathsRetrieve
 
 Return all CablePaths which traverse a given pass-through port.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rear port.
- @return ApiDcimRearPortsPathsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rear port.
+	@return ApiDcimRearPortsPathsRetrieveRequest
 */
 func (a *DcimAPIService) DcimRearPortsPathsRetrieve(ctx context.Context, id int32) ApiDcimRearPortsPathsRetrieveRequest {
 	return ApiDcimRearPortsPathsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RearPort
+//
+//	@return RearPort
 func (a *DcimAPIService) DcimRearPortsPathsRetrieveExecute(r ApiDcimRearPortsPathsRetrieveRequest) (*RearPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RearPort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RearPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortsPathsRetrieve")
@@ -86605,9 +86866,9 @@ func (a *DcimAPIService) DcimRearPortsPathsRetrieveExecute(r ApiDcimRearPortsPat
 }
 
 type ApiDcimRearPortsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRearPortsRetrieveRequest) Execute() (*RearPort, *http.Response, error) {
@@ -86619,26 +86880,27 @@ DcimRearPortsRetrieve Method for DcimRearPortsRetrieve
 
 Get a rear port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rear port.
- @return ApiDcimRearPortsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rear port.
+	@return ApiDcimRearPortsRetrieveRequest
 */
 func (a *DcimAPIService) DcimRearPortsRetrieve(ctx context.Context, id int32) ApiDcimRearPortsRetrieveRequest {
 	return ApiDcimRearPortsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RearPort
+//
+//	@return RearPort
 func (a *DcimAPIService) DcimRearPortsRetrieveExecute(r ApiDcimRearPortsRetrieveRequest) (*RearPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RearPort
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RearPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortsRetrieve")
@@ -86722,9 +86984,9 @@ func (a *DcimAPIService) DcimRearPortsRetrieveExecute(r ApiDcimRearPortsRetrieve
 }
 
 type ApiDcimRearPortsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                     context.Context
+	ApiService              *DcimAPIService
+	id                      int32
 	writableRearPortRequest *WritableRearPortRequest
 }
 
@@ -86742,26 +87004,27 @@ DcimRearPortsUpdate Method for DcimRearPortsUpdate
 
 Put a rear port object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this rear port.
- @return ApiDcimRearPortsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this rear port.
+	@return ApiDcimRearPortsUpdateRequest
 */
 func (a *DcimAPIService) DcimRearPortsUpdate(ctx context.Context, id int32) ApiDcimRearPortsUpdateRequest {
 	return ApiDcimRearPortsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return RearPort
+//
+//	@return RearPort
 func (a *DcimAPIService) DcimRearPortsUpdateExecute(r ApiDcimRearPortsUpdateRequest) (*RearPort, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *RearPort
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *RearPort
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRearPortsUpdate")
@@ -86850,8 +87113,8 @@ func (a *DcimAPIService) DcimRearPortsUpdateExecute(r ApiDcimRearPortsUpdateRequ
 }
 
 type ApiDcimRegionsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx           context.Context
+	ApiService    *DcimAPIService
 	regionRequest *[]RegionRequest
 }
 
@@ -86869,22 +87132,22 @@ DcimRegionsBulkDestroy Method for DcimRegionsBulkDestroy
 
 Delete a list of region objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRegionsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRegionsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimRegionsBulkDestroy(ctx context.Context) ApiDcimRegionsBulkDestroyRequest {
 	return ApiDcimRegionsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRegionsBulkDestroyExecute(r ApiDcimRegionsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRegionsBulkDestroy")
@@ -86963,8 +87226,8 @@ func (a *DcimAPIService) DcimRegionsBulkDestroyExecute(r ApiDcimRegionsBulkDestr
 }
 
 type ApiDcimRegionsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx           context.Context
+	ApiService    *DcimAPIService
 	regionRequest *[]RegionRequest
 }
 
@@ -86982,24 +87245,25 @@ DcimRegionsBulkPartialUpdate Method for DcimRegionsBulkPartialUpdate
 
 Patch a list of region objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRegionsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRegionsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRegionsBulkPartialUpdate(ctx context.Context) ApiDcimRegionsBulkPartialUpdateRequest {
 	return ApiDcimRegionsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Region
+//
+//	@return []Region
 func (a *DcimAPIService) DcimRegionsBulkPartialUpdateExecute(r ApiDcimRegionsBulkPartialUpdateRequest) ([]Region, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Region
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Region
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRegionsBulkPartialUpdate")
@@ -87087,8 +87351,8 @@ func (a *DcimAPIService) DcimRegionsBulkPartialUpdateExecute(r ApiDcimRegionsBul
 }
 
 type ApiDcimRegionsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx           context.Context
+	ApiService    *DcimAPIService
 	regionRequest *[]RegionRequest
 }
 
@@ -87106,24 +87370,25 @@ DcimRegionsBulkUpdate Method for DcimRegionsBulkUpdate
 
 Put a list of region objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRegionsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRegionsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimRegionsBulkUpdate(ctx context.Context) ApiDcimRegionsBulkUpdateRequest {
 	return ApiDcimRegionsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Region
+//
+//	@return []Region
 func (a *DcimAPIService) DcimRegionsBulkUpdateExecute(r ApiDcimRegionsBulkUpdateRequest) ([]Region, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Region
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Region
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRegionsBulkUpdate")
@@ -87211,8 +87476,8 @@ func (a *DcimAPIService) DcimRegionsBulkUpdateExecute(r ApiDcimRegionsBulkUpdate
 }
 
 type ApiDcimRegionsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                   context.Context
+	ApiService            *DcimAPIService
 	writableRegionRequest *WritableRegionRequest
 }
 
@@ -87230,24 +87495,25 @@ DcimRegionsCreate Method for DcimRegionsCreate
 
 Post a list of region objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRegionsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRegionsCreateRequest
 */
 func (a *DcimAPIService) DcimRegionsCreate(ctx context.Context) ApiDcimRegionsCreateRequest {
 	return ApiDcimRegionsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Region
+//
+//	@return Region
 func (a *DcimAPIService) DcimRegionsCreateExecute(r ApiDcimRegionsCreateRequest) (*Region, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Region
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Region
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRegionsCreate")
@@ -87335,9 +87601,9 @@ func (a *DcimAPIService) DcimRegionsCreateExecute(r ApiDcimRegionsCreateRequest)
 }
 
 type ApiDcimRegionsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRegionsDestroyRequest) Execute() (*http.Response, error) {
@@ -87349,24 +87615,24 @@ DcimRegionsDestroy Method for DcimRegionsDestroy
 
 Delete a region object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this region.
- @return ApiDcimRegionsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this region.
+	@return ApiDcimRegionsDestroyRequest
 */
 func (a *DcimAPIService) DcimRegionsDestroy(ctx context.Context, id int32) ApiDcimRegionsDestroyRequest {
 	return ApiDcimRegionsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimRegionsDestroyExecute(r ApiDcimRegionsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRegionsDestroy")
@@ -87441,76 +87707,76 @@ func (a *DcimAPIService) DcimRegionsDestroyExecute(r ApiDcimRegionsDestroyReques
 }
 
 type ApiDcimRegionsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]int32
-	contactGroupN *[]int32
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	contact          *[]int32
+	contactN         *[]int32
+	contactGroup     *[]int32
+	contactGroupN    *[]int32
+	contactRole      *[]int32
+	contactRoleN     *[]int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	parent *[]string
-	parentN *[]string
-	parentId *[]*int32
-	parentIdN *[]*int32
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	parent           *[]string
+	parentN          *[]string
+	parentId         *[]*int32
+	parentIdN        *[]*int32
+	q                *string
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -87882,24 +88148,25 @@ DcimRegionsList Method for DcimRegionsList
 
 Get a list of region objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimRegionsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimRegionsListRequest
 */
 func (a *DcimAPIService) DcimRegionsList(ctx context.Context) ApiDcimRegionsListRequest {
 	return ApiDcimRegionsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedRegionList
+//
+//	@return PaginatedRegionList
 func (a *DcimAPIService) DcimRegionsListExecute(r ApiDcimRegionsListRequest) (*PaginatedRegionList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedRegionList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedRegionList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRegionsList")
@@ -88693,9 +88960,9 @@ func (a *DcimAPIService) DcimRegionsListExecute(r ApiDcimRegionsListRequest) (*P
 }
 
 type ApiDcimRegionsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                          context.Context
+	ApiService                   *DcimAPIService
+	id                           int32
 	patchedWritableRegionRequest *PatchedWritableRegionRequest
 }
 
@@ -88713,26 +88980,27 @@ DcimRegionsPartialUpdate Method for DcimRegionsPartialUpdate
 
 Patch a region object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this region.
- @return ApiDcimRegionsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this region.
+	@return ApiDcimRegionsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimRegionsPartialUpdate(ctx context.Context, id int32) ApiDcimRegionsPartialUpdateRequest {
 	return ApiDcimRegionsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Region
+//
+//	@return Region
 func (a *DcimAPIService) DcimRegionsPartialUpdateExecute(r ApiDcimRegionsPartialUpdateRequest) (*Region, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Region
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Region
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRegionsPartialUpdate")
@@ -88818,9 +89086,9 @@ func (a *DcimAPIService) DcimRegionsPartialUpdateExecute(r ApiDcimRegionsPartial
 }
 
 type ApiDcimRegionsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimRegionsRetrieveRequest) Execute() (*Region, *http.Response, error) {
@@ -88832,26 +89100,27 @@ DcimRegionsRetrieve Method for DcimRegionsRetrieve
 
 Get a region object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this region.
- @return ApiDcimRegionsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this region.
+	@return ApiDcimRegionsRetrieveRequest
 */
 func (a *DcimAPIService) DcimRegionsRetrieve(ctx context.Context, id int32) ApiDcimRegionsRetrieveRequest {
 	return ApiDcimRegionsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Region
+//
+//	@return Region
 func (a *DcimAPIService) DcimRegionsRetrieveExecute(r ApiDcimRegionsRetrieveRequest) (*Region, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Region
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Region
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRegionsRetrieve")
@@ -88935,9 +89204,9 @@ func (a *DcimAPIService) DcimRegionsRetrieveExecute(r ApiDcimRegionsRetrieveRequ
 }
 
 type ApiDcimRegionsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                   context.Context
+	ApiService            *DcimAPIService
+	id                    int32
 	writableRegionRequest *WritableRegionRequest
 }
 
@@ -88955,26 +89224,27 @@ DcimRegionsUpdate Method for DcimRegionsUpdate
 
 Put a region object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this region.
- @return ApiDcimRegionsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this region.
+	@return ApiDcimRegionsUpdateRequest
 */
 func (a *DcimAPIService) DcimRegionsUpdate(ctx context.Context, id int32) ApiDcimRegionsUpdateRequest {
 	return ApiDcimRegionsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Region
+//
+//	@return Region
 func (a *DcimAPIService) DcimRegionsUpdateExecute(r ApiDcimRegionsUpdateRequest) (*Region, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Region
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Region
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimRegionsUpdate")
@@ -89063,8 +89333,8 @@ func (a *DcimAPIService) DcimRegionsUpdateExecute(r ApiDcimRegionsUpdateRequest)
 }
 
 type ApiDcimSiteGroupsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	siteGroupRequest *[]SiteGroupRequest
 }
 
@@ -89082,22 +89352,22 @@ DcimSiteGroupsBulkDestroy Method for DcimSiteGroupsBulkDestroy
 
 Delete a list of site group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimSiteGroupsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimSiteGroupsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimSiteGroupsBulkDestroy(ctx context.Context) ApiDcimSiteGroupsBulkDestroyRequest {
 	return ApiDcimSiteGroupsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimSiteGroupsBulkDestroyExecute(r ApiDcimSiteGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSiteGroupsBulkDestroy")
@@ -89176,8 +89446,8 @@ func (a *DcimAPIService) DcimSiteGroupsBulkDestroyExecute(r ApiDcimSiteGroupsBul
 }
 
 type ApiDcimSiteGroupsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	siteGroupRequest *[]SiteGroupRequest
 }
 
@@ -89195,24 +89465,25 @@ DcimSiteGroupsBulkPartialUpdate Method for DcimSiteGroupsBulkPartialUpdate
 
 Patch a list of site group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimSiteGroupsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimSiteGroupsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimSiteGroupsBulkPartialUpdate(ctx context.Context) ApiDcimSiteGroupsBulkPartialUpdateRequest {
 	return ApiDcimSiteGroupsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []SiteGroup
+//
+//	@return []SiteGroup
 func (a *DcimAPIService) DcimSiteGroupsBulkPartialUpdateExecute(r ApiDcimSiteGroupsBulkPartialUpdateRequest) ([]SiteGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []SiteGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []SiteGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSiteGroupsBulkPartialUpdate")
@@ -89300,8 +89571,8 @@ func (a *DcimAPIService) DcimSiteGroupsBulkPartialUpdateExecute(r ApiDcimSiteGro
 }
 
 type ApiDcimSiteGroupsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx              context.Context
+	ApiService       *DcimAPIService
 	siteGroupRequest *[]SiteGroupRequest
 }
 
@@ -89319,24 +89590,25 @@ DcimSiteGroupsBulkUpdate Method for DcimSiteGroupsBulkUpdate
 
 Put a list of site group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimSiteGroupsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimSiteGroupsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimSiteGroupsBulkUpdate(ctx context.Context) ApiDcimSiteGroupsBulkUpdateRequest {
 	return ApiDcimSiteGroupsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []SiteGroup
+//
+//	@return []SiteGroup
 func (a *DcimAPIService) DcimSiteGroupsBulkUpdateExecute(r ApiDcimSiteGroupsBulkUpdateRequest) ([]SiteGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []SiteGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []SiteGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSiteGroupsBulkUpdate")
@@ -89424,8 +89696,8 @@ func (a *DcimAPIService) DcimSiteGroupsBulkUpdateExecute(r ApiDcimSiteGroupsBulk
 }
 
 type ApiDcimSiteGroupsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                      context.Context
+	ApiService               *DcimAPIService
 	writableSiteGroupRequest *WritableSiteGroupRequest
 }
 
@@ -89443,24 +89715,25 @@ DcimSiteGroupsCreate Method for DcimSiteGroupsCreate
 
 Post a list of site group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimSiteGroupsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimSiteGroupsCreateRequest
 */
 func (a *DcimAPIService) DcimSiteGroupsCreate(ctx context.Context) ApiDcimSiteGroupsCreateRequest {
 	return ApiDcimSiteGroupsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return SiteGroup
+//
+//	@return SiteGroup
 func (a *DcimAPIService) DcimSiteGroupsCreateExecute(r ApiDcimSiteGroupsCreateRequest) (*SiteGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SiteGroup
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SiteGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSiteGroupsCreate")
@@ -89548,9 +89821,9 @@ func (a *DcimAPIService) DcimSiteGroupsCreateExecute(r ApiDcimSiteGroupsCreateRe
 }
 
 type ApiDcimSiteGroupsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimSiteGroupsDestroyRequest) Execute() (*http.Response, error) {
@@ -89562,24 +89835,24 @@ DcimSiteGroupsDestroy Method for DcimSiteGroupsDestroy
 
 Delete a site group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this site group.
- @return ApiDcimSiteGroupsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this site group.
+	@return ApiDcimSiteGroupsDestroyRequest
 */
 func (a *DcimAPIService) DcimSiteGroupsDestroy(ctx context.Context, id int32) ApiDcimSiteGroupsDestroyRequest {
 	return ApiDcimSiteGroupsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimSiteGroupsDestroyExecute(r ApiDcimSiteGroupsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSiteGroupsDestroy")
@@ -89654,76 +89927,76 @@ func (a *DcimAPIService) DcimSiteGroupsDestroyExecute(r ApiDcimSiteGroupsDestroy
 }
 
 type ApiDcimSiteGroupsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]int32
-	contactGroupN *[]int32
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	contact          *[]int32
+	contactN         *[]int32
+	contactGroup     *[]int32
+	contactGroupN    *[]int32
+	contactRole      *[]int32
+	contactRoleN     *[]int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	parent *[]string
-	parentN *[]string
-	parentId *[]*int32
-	parentIdN *[]*int32
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	parent           *[]string
+	parentN          *[]string
+	parentId         *[]*int32
+	parentIdN        *[]*int32
+	q                *string
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -90095,24 +90368,25 @@ DcimSiteGroupsList Method for DcimSiteGroupsList
 
 Get a list of site group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimSiteGroupsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimSiteGroupsListRequest
 */
 func (a *DcimAPIService) DcimSiteGroupsList(ctx context.Context) ApiDcimSiteGroupsListRequest {
 	return ApiDcimSiteGroupsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedSiteGroupList
+//
+//	@return PaginatedSiteGroupList
 func (a *DcimAPIService) DcimSiteGroupsListExecute(r ApiDcimSiteGroupsListRequest) (*PaginatedSiteGroupList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedSiteGroupList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedSiteGroupList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSiteGroupsList")
@@ -90906,9 +91180,9 @@ func (a *DcimAPIService) DcimSiteGroupsListExecute(r ApiDcimSiteGroupsListReques
 }
 
 type ApiDcimSiteGroupsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                             context.Context
+	ApiService                      *DcimAPIService
+	id                              int32
 	patchedWritableSiteGroupRequest *PatchedWritableSiteGroupRequest
 }
 
@@ -90926,26 +91200,27 @@ DcimSiteGroupsPartialUpdate Method for DcimSiteGroupsPartialUpdate
 
 Patch a site group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this site group.
- @return ApiDcimSiteGroupsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this site group.
+	@return ApiDcimSiteGroupsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimSiteGroupsPartialUpdate(ctx context.Context, id int32) ApiDcimSiteGroupsPartialUpdateRequest {
 	return ApiDcimSiteGroupsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return SiteGroup
+//
+//	@return SiteGroup
 func (a *DcimAPIService) DcimSiteGroupsPartialUpdateExecute(r ApiDcimSiteGroupsPartialUpdateRequest) (*SiteGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SiteGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SiteGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSiteGroupsPartialUpdate")
@@ -91031,9 +91306,9 @@ func (a *DcimAPIService) DcimSiteGroupsPartialUpdateExecute(r ApiDcimSiteGroupsP
 }
 
 type ApiDcimSiteGroupsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimSiteGroupsRetrieveRequest) Execute() (*SiteGroup, *http.Response, error) {
@@ -91045,26 +91320,27 @@ DcimSiteGroupsRetrieve Method for DcimSiteGroupsRetrieve
 
 Get a site group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this site group.
- @return ApiDcimSiteGroupsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this site group.
+	@return ApiDcimSiteGroupsRetrieveRequest
 */
 func (a *DcimAPIService) DcimSiteGroupsRetrieve(ctx context.Context, id int32) ApiDcimSiteGroupsRetrieveRequest {
 	return ApiDcimSiteGroupsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return SiteGroup
+//
+//	@return SiteGroup
 func (a *DcimAPIService) DcimSiteGroupsRetrieveExecute(r ApiDcimSiteGroupsRetrieveRequest) (*SiteGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SiteGroup
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SiteGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSiteGroupsRetrieve")
@@ -91148,9 +91424,9 @@ func (a *DcimAPIService) DcimSiteGroupsRetrieveExecute(r ApiDcimSiteGroupsRetrie
 }
 
 type ApiDcimSiteGroupsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                      context.Context
+	ApiService               *DcimAPIService
+	id                       int32
 	writableSiteGroupRequest *WritableSiteGroupRequest
 }
 
@@ -91168,26 +91444,27 @@ DcimSiteGroupsUpdate Method for DcimSiteGroupsUpdate
 
 Put a site group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this site group.
- @return ApiDcimSiteGroupsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this site group.
+	@return ApiDcimSiteGroupsUpdateRequest
 */
 func (a *DcimAPIService) DcimSiteGroupsUpdate(ctx context.Context, id int32) ApiDcimSiteGroupsUpdateRequest {
 	return ApiDcimSiteGroupsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return SiteGroup
+//
+//	@return SiteGroup
 func (a *DcimAPIService) DcimSiteGroupsUpdateExecute(r ApiDcimSiteGroupsUpdateRequest) (*SiteGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *SiteGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *SiteGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSiteGroupsUpdate")
@@ -91276,8 +91553,8 @@ func (a *DcimAPIService) DcimSiteGroupsUpdateExecute(r ApiDcimSiteGroupsUpdateRe
 }
 
 type ApiDcimSitesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx         context.Context
+	ApiService  *DcimAPIService
 	siteRequest *[]SiteRequest
 }
 
@@ -91295,22 +91572,22 @@ DcimSitesBulkDestroy Method for DcimSitesBulkDestroy
 
 Delete a list of site objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimSitesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimSitesBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimSitesBulkDestroy(ctx context.Context) ApiDcimSitesBulkDestroyRequest {
 	return ApiDcimSitesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimSitesBulkDestroyExecute(r ApiDcimSitesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSitesBulkDestroy")
@@ -91389,8 +91666,8 @@ func (a *DcimAPIService) DcimSitesBulkDestroyExecute(r ApiDcimSitesBulkDestroyRe
 }
 
 type ApiDcimSitesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx         context.Context
+	ApiService  *DcimAPIService
 	siteRequest *[]SiteRequest
 }
 
@@ -91408,24 +91685,25 @@ DcimSitesBulkPartialUpdate Method for DcimSitesBulkPartialUpdate
 
 Patch a list of site objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimSitesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimSitesBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimSitesBulkPartialUpdate(ctx context.Context) ApiDcimSitesBulkPartialUpdateRequest {
 	return ApiDcimSitesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Site
+//
+//	@return []Site
 func (a *DcimAPIService) DcimSitesBulkPartialUpdateExecute(r ApiDcimSitesBulkPartialUpdateRequest) ([]Site, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Site
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Site
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSitesBulkPartialUpdate")
@@ -91513,8 +91791,8 @@ func (a *DcimAPIService) DcimSitesBulkPartialUpdateExecute(r ApiDcimSitesBulkPar
 }
 
 type ApiDcimSitesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx         context.Context
+	ApiService  *DcimAPIService
 	siteRequest *[]SiteRequest
 }
 
@@ -91532,24 +91810,25 @@ DcimSitesBulkUpdate Method for DcimSitesBulkUpdate
 
 Put a list of site objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimSitesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimSitesBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimSitesBulkUpdate(ctx context.Context) ApiDcimSitesBulkUpdateRequest {
 	return ApiDcimSitesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Site
+//
+//	@return []Site
 func (a *DcimAPIService) DcimSitesBulkUpdateExecute(r ApiDcimSitesBulkUpdateRequest) ([]Site, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Site
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Site
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSitesBulkUpdate")
@@ -91637,8 +91916,8 @@ func (a *DcimAPIService) DcimSitesBulkUpdateExecute(r ApiDcimSitesBulkUpdateRequ
 }
 
 type ApiDcimSitesCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                 context.Context
+	ApiService          *DcimAPIService
 	writableSiteRequest *WritableSiteRequest
 }
 
@@ -91656,24 +91935,25 @@ DcimSitesCreate Method for DcimSitesCreate
 
 Post a list of site objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimSitesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimSitesCreateRequest
 */
 func (a *DcimAPIService) DcimSitesCreate(ctx context.Context) ApiDcimSitesCreateRequest {
 	return ApiDcimSitesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Site
+//
+//	@return Site
 func (a *DcimAPIService) DcimSitesCreateExecute(r ApiDcimSitesCreateRequest) (*Site, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Site
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Site
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSitesCreate")
@@ -91761,9 +92041,9 @@ func (a *DcimAPIService) DcimSitesCreateExecute(r ApiDcimSitesCreateRequest) (*S
 }
 
 type ApiDcimSitesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimSitesDestroyRequest) Execute() (*http.Response, error) {
@@ -91775,24 +92055,24 @@ DcimSitesDestroy Method for DcimSitesDestroy
 
 Delete a site object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this site.
- @return ApiDcimSitesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this site.
+	@return ApiDcimSitesDestroyRequest
 */
 func (a *DcimAPIService) DcimSitesDestroy(ctx context.Context, id int32) ApiDcimSitesDestroyRequest {
 	return ApiDcimSitesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimSitesDestroyExecute(r ApiDcimSitesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSitesDestroy")
@@ -91867,117 +92147,117 @@ func (a *DcimAPIService) DcimSitesDestroyExecute(r ApiDcimSitesDestroyRequest) (
 }
 
 type ApiDcimSitesListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	asn *[]int64
-	asnN *[]int64
-	asnId *[]int32
-	asnIdN *[]int32
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]int32
-	contactGroupN *[]int32
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	asn              *[]int64
+	asnN             *[]int64
+	asnId            *[]int32
+	asnIdN           *[]int32
+	contact          *[]int32
+	contactN         *[]int32
+	contactGroup     *[]int32
+	contactGroupN    *[]int32
+	contactRole      *[]int32
+	contactRoleN     *[]int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	facility *[]string
-	facilityEmpty *[]string
-	facilityIc *[]string
-	facilityIe *[]string
-	facilityIew *[]string
-	facilityIsw *[]string
-	facilityN *[]string
-	facilityNic *[]string
-	facilityNie *[]string
-	facilityNiew *[]string
-	facilityNisw *[]string
-	group *[]int32
-	groupN *[]int32
-	groupId *[]int32
-	groupIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	latitude *[]float64
-	latitudeGt *[]float64
-	latitudeGte *[]float64
-	latitudeLt *[]float64
-	latitudeLte *[]float64
-	latitudeN *[]float64
-	limit *int32
-	longitude *[]float64
-	longitudeGt *[]float64
-	longitudeGte *[]float64
-	longitudeLt *[]float64
-	longitudeLte *[]float64
-	longitudeN *[]float64
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	status *[]string
-	statusN *[]string
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]int32
-	tenantGroupN *[]int32
-	tenantGroupId *[]int32
-	tenantGroupIdN *[]int32
-	tenantId *[]*int32
-	tenantIdN *[]*int32
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	facility         *[]string
+	facilityEmpty    *[]string
+	facilityIc       *[]string
+	facilityIe       *[]string
+	facilityIew      *[]string
+	facilityIsw      *[]string
+	facilityN        *[]string
+	facilityNic      *[]string
+	facilityNie      *[]string
+	facilityNiew     *[]string
+	facilityNisw     *[]string
+	group            *[]int32
+	groupN           *[]int32
+	groupId          *[]int32
+	groupIdN         *[]int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	latitude         *[]float64
+	latitudeGt       *[]float64
+	latitudeGte      *[]float64
+	latitudeLt       *[]float64
+	latitudeLte      *[]float64
+	latitudeN        *[]float64
+	limit            *int32
+	longitude        *[]float64
+	longitudeGt      *[]float64
+	longitudeGte     *[]float64
+	longitudeLt      *[]float64
+	longitudeLte     *[]float64
+	longitudeN       *[]float64
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	region           *[]int32
+	regionN          *[]int32
+	regionId         *[]int32
+	regionIdN        *[]int32
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	status           *[]string
+	statusN          *[]string
+	tag              *[]string
+	tagN             *[]string
+	tenant           *[]string
+	tenantN          *[]string
+	tenantGroup      *[]int32
+	tenantGroupN     *[]int32
+	tenantGroupId    *[]int32
+	tenantGroupIdN   *[]int32
+	tenantId         *[]*int32
+	tenantIdN        *[]*int32
 	updatedByRequest *string
 }
 
@@ -92572,24 +92852,25 @@ DcimSitesList Method for DcimSitesList
 
 Get a list of site objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimSitesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimSitesListRequest
 */
 func (a *DcimAPIService) DcimSitesList(ctx context.Context) ApiDcimSitesListRequest {
 	return ApiDcimSitesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedSiteList
+//
+//	@return PaginatedSiteList
 func (a *DcimAPIService) DcimSitesListExecute(r ApiDcimSitesListRequest) (*PaginatedSiteList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedSiteList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedSiteList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSitesList")
@@ -93834,9 +94115,9 @@ func (a *DcimAPIService) DcimSitesListExecute(r ApiDcimSitesListRequest) (*Pagin
 }
 
 type ApiDcimSitesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *DcimAPIService
+	id                         int32
 	patchedWritableSiteRequest *PatchedWritableSiteRequest
 }
 
@@ -93854,26 +94135,27 @@ DcimSitesPartialUpdate Method for DcimSitesPartialUpdate
 
 Patch a site object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this site.
- @return ApiDcimSitesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this site.
+	@return ApiDcimSitesPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimSitesPartialUpdate(ctx context.Context, id int32) ApiDcimSitesPartialUpdateRequest {
 	return ApiDcimSitesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Site
+//
+//	@return Site
 func (a *DcimAPIService) DcimSitesPartialUpdateExecute(r ApiDcimSitesPartialUpdateRequest) (*Site, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Site
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Site
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSitesPartialUpdate")
@@ -93959,9 +94241,9 @@ func (a *DcimAPIService) DcimSitesPartialUpdateExecute(r ApiDcimSitesPartialUpda
 }
 
 type ApiDcimSitesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimSitesRetrieveRequest) Execute() (*Site, *http.Response, error) {
@@ -93973,26 +94255,27 @@ DcimSitesRetrieve Method for DcimSitesRetrieve
 
 Get a site object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this site.
- @return ApiDcimSitesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this site.
+	@return ApiDcimSitesRetrieveRequest
 */
 func (a *DcimAPIService) DcimSitesRetrieve(ctx context.Context, id int32) ApiDcimSitesRetrieveRequest {
 	return ApiDcimSitesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Site
+//
+//	@return Site
 func (a *DcimAPIService) DcimSitesRetrieveExecute(r ApiDcimSitesRetrieveRequest) (*Site, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Site
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Site
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSitesRetrieve")
@@ -94076,9 +94359,9 @@ func (a *DcimAPIService) DcimSitesRetrieveExecute(r ApiDcimSitesRetrieveRequest)
 }
 
 type ApiDcimSitesUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                 context.Context
+	ApiService          *DcimAPIService
+	id                  int32
 	writableSiteRequest *WritableSiteRequest
 }
 
@@ -94096,26 +94379,27 @@ DcimSitesUpdate Method for DcimSitesUpdate
 
 Put a site object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this site.
- @return ApiDcimSitesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this site.
+	@return ApiDcimSitesUpdateRequest
 */
 func (a *DcimAPIService) DcimSitesUpdate(ctx context.Context, id int32) ApiDcimSitesUpdateRequest {
 	return ApiDcimSitesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Site
+//
+//	@return Site
 func (a *DcimAPIService) DcimSitesUpdateExecute(r ApiDcimSitesUpdateRequest) (*Site, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Site
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Site
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimSitesUpdate")
@@ -94204,8 +94488,8 @@ func (a *DcimAPIService) DcimSitesUpdateExecute(r ApiDcimSitesUpdateRequest) (*S
 }
 
 type ApiDcimVirtualChassisBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                   context.Context
+	ApiService            *DcimAPIService
 	virtualChassisRequest *[]VirtualChassisRequest
 }
 
@@ -94223,22 +94507,22 @@ DcimVirtualChassisBulkDestroy Method for DcimVirtualChassisBulkDestroy
 
 Delete a list of virtual chassis objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimVirtualChassisBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimVirtualChassisBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimVirtualChassisBulkDestroy(ctx context.Context) ApiDcimVirtualChassisBulkDestroyRequest {
 	return ApiDcimVirtualChassisBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimVirtualChassisBulkDestroyExecute(r ApiDcimVirtualChassisBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualChassisBulkDestroy")
@@ -94317,8 +94601,8 @@ func (a *DcimAPIService) DcimVirtualChassisBulkDestroyExecute(r ApiDcimVirtualCh
 }
 
 type ApiDcimVirtualChassisBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                   context.Context
+	ApiService            *DcimAPIService
 	virtualChassisRequest *[]VirtualChassisRequest
 }
 
@@ -94336,24 +94620,25 @@ DcimVirtualChassisBulkPartialUpdate Method for DcimVirtualChassisBulkPartialUpda
 
 Patch a list of virtual chassis objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimVirtualChassisBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimVirtualChassisBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimVirtualChassisBulkPartialUpdate(ctx context.Context) ApiDcimVirtualChassisBulkPartialUpdateRequest {
 	return ApiDcimVirtualChassisBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []VirtualChassis
+//
+//	@return []VirtualChassis
 func (a *DcimAPIService) DcimVirtualChassisBulkPartialUpdateExecute(r ApiDcimVirtualChassisBulkPartialUpdateRequest) ([]VirtualChassis, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []VirtualChassis
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []VirtualChassis
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualChassisBulkPartialUpdate")
@@ -94441,8 +94726,8 @@ func (a *DcimAPIService) DcimVirtualChassisBulkPartialUpdateExecute(r ApiDcimVir
 }
 
 type ApiDcimVirtualChassisBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                   context.Context
+	ApiService            *DcimAPIService
 	virtualChassisRequest *[]VirtualChassisRequest
 }
 
@@ -94460,24 +94745,25 @@ DcimVirtualChassisBulkUpdate Method for DcimVirtualChassisBulkUpdate
 
 Put a list of virtual chassis objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimVirtualChassisBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimVirtualChassisBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimVirtualChassisBulkUpdate(ctx context.Context) ApiDcimVirtualChassisBulkUpdateRequest {
 	return ApiDcimVirtualChassisBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []VirtualChassis
+//
+//	@return []VirtualChassis
 func (a *DcimAPIService) DcimVirtualChassisBulkUpdateExecute(r ApiDcimVirtualChassisBulkUpdateRequest) ([]VirtualChassis, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []VirtualChassis
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []VirtualChassis
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualChassisBulkUpdate")
@@ -94565,8 +94851,8 @@ func (a *DcimAPIService) DcimVirtualChassisBulkUpdateExecute(r ApiDcimVirtualCha
 }
 
 type ApiDcimVirtualChassisCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                           context.Context
+	ApiService                    *DcimAPIService
 	writableVirtualChassisRequest *WritableVirtualChassisRequest
 }
 
@@ -94584,24 +94870,25 @@ DcimVirtualChassisCreate Method for DcimVirtualChassisCreate
 
 Post a list of virtual chassis objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimVirtualChassisCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimVirtualChassisCreateRequest
 */
 func (a *DcimAPIService) DcimVirtualChassisCreate(ctx context.Context) ApiDcimVirtualChassisCreateRequest {
 	return ApiDcimVirtualChassisCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return VirtualChassis
+//
+//	@return VirtualChassis
 func (a *DcimAPIService) DcimVirtualChassisCreateExecute(r ApiDcimVirtualChassisCreateRequest) (*VirtualChassis, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VirtualChassis
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VirtualChassis
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualChassisCreate")
@@ -94689,9 +94976,9 @@ func (a *DcimAPIService) DcimVirtualChassisCreateExecute(r ApiDcimVirtualChassis
 }
 
 type ApiDcimVirtualChassisDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimVirtualChassisDestroyRequest) Execute() (*http.Response, error) {
@@ -94703,24 +94990,24 @@ DcimVirtualChassisDestroy Method for DcimVirtualChassisDestroy
 
 Delete a virtual chassis object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this virtual chassis.
- @return ApiDcimVirtualChassisDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this virtual chassis.
+	@return ApiDcimVirtualChassisDestroyRequest
 */
 func (a *DcimAPIService) DcimVirtualChassisDestroy(ctx context.Context, id int32) ApiDcimVirtualChassisDestroyRequest {
 	return ApiDcimVirtualChassisDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimVirtualChassisDestroyExecute(r ApiDcimVirtualChassisDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualChassisDestroy")
@@ -94795,75 +95082,75 @@ func (a *DcimAPIService) DcimVirtualChassisDestroyExecute(r ApiDcimVirtualChassi
 }
 
 type ApiDcimVirtualChassisListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	domain *[]string
-	domainEmpty *[]string
-	domainIc *[]string
-	domainIe *[]string
-	domainIew *[]string
-	domainIsw *[]string
-	domainN *[]string
-	domainNic *[]string
-	domainNie *[]string
-	domainNiew *[]string
-	domainNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	master *[]*string
-	masterN *[]*string
-	masterId *[]*int32
-	masterIdN *[]*int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	region *[]int32
-	regionN *[]int32
-	regionId *[]int32
-	regionIdN *[]int32
-	site *[]string
-	siteN *[]string
-	siteGroup *[]int32
-	siteGroupN *[]int32
-	siteGroupId *[]int32
-	siteGroupIdN *[]int32
-	siteId *[]int32
-	siteIdN *[]int32
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantId *[]int32
-	tenantIdN *[]int32
+	domain           *[]string
+	domainEmpty      *[]string
+	domainIc         *[]string
+	domainIe         *[]string
+	domainIew        *[]string
+	domainIsw        *[]string
+	domainN          *[]string
+	domainNic        *[]string
+	domainNie        *[]string
+	domainNiew       *[]string
+	domainNisw       *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	master           *[]*string
+	masterN          *[]*string
+	masterId         *[]*int32
+	masterIdN        *[]*int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	region           *[]int32
+	regionN          *[]int32
+	regionId         *[]int32
+	regionIdN        *[]int32
+	site             *[]string
+	siteN            *[]string
+	siteGroup        *[]int32
+	siteGroupN       *[]int32
+	siteGroupId      *[]int32
+	siteGroupIdN     *[]int32
+	siteId           *[]int32
+	siteIdN          *[]int32
+	tag              *[]string
+	tagN             *[]string
+	tenant           *[]string
+	tenantN          *[]string
+	tenantId         *[]int32
+	tenantIdN        *[]int32
 	updatedByRequest *string
 }
 
@@ -95240,24 +95527,25 @@ DcimVirtualChassisList Method for DcimVirtualChassisList
 
 Get a list of virtual chassis objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimVirtualChassisListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimVirtualChassisListRequest
 */
 func (a *DcimAPIService) DcimVirtualChassisList(ctx context.Context) ApiDcimVirtualChassisListRequest {
 	return ApiDcimVirtualChassisListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedVirtualChassisList
+//
+//	@return PaginatedVirtualChassisList
 func (a *DcimAPIService) DcimVirtualChassisListExecute(r ApiDcimVirtualChassisListRequest) (*PaginatedVirtualChassisList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedVirtualChassisList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedVirtualChassisList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualChassisList")
@@ -96040,9 +96328,9 @@ func (a *DcimAPIService) DcimVirtualChassisListExecute(r ApiDcimVirtualChassisLi
 }
 
 type ApiDcimVirtualChassisPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                  context.Context
+	ApiService                           *DcimAPIService
+	id                                   int32
 	patchedWritableVirtualChassisRequest *PatchedWritableVirtualChassisRequest
 }
 
@@ -96060,26 +96348,27 @@ DcimVirtualChassisPartialUpdate Method for DcimVirtualChassisPartialUpdate
 
 Patch a virtual chassis object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this virtual chassis.
- @return ApiDcimVirtualChassisPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this virtual chassis.
+	@return ApiDcimVirtualChassisPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimVirtualChassisPartialUpdate(ctx context.Context, id int32) ApiDcimVirtualChassisPartialUpdateRequest {
 	return ApiDcimVirtualChassisPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return VirtualChassis
+//
+//	@return VirtualChassis
 func (a *DcimAPIService) DcimVirtualChassisPartialUpdateExecute(r ApiDcimVirtualChassisPartialUpdateRequest) (*VirtualChassis, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VirtualChassis
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VirtualChassis
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualChassisPartialUpdate")
@@ -96165,9 +96454,9 @@ func (a *DcimAPIService) DcimVirtualChassisPartialUpdateExecute(r ApiDcimVirtual
 }
 
 type ApiDcimVirtualChassisRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimVirtualChassisRetrieveRequest) Execute() (*VirtualChassis, *http.Response, error) {
@@ -96179,26 +96468,27 @@ DcimVirtualChassisRetrieve Method for DcimVirtualChassisRetrieve
 
 Get a virtual chassis object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this virtual chassis.
- @return ApiDcimVirtualChassisRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this virtual chassis.
+	@return ApiDcimVirtualChassisRetrieveRequest
 */
 func (a *DcimAPIService) DcimVirtualChassisRetrieve(ctx context.Context, id int32) ApiDcimVirtualChassisRetrieveRequest {
 	return ApiDcimVirtualChassisRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return VirtualChassis
+//
+//	@return VirtualChassis
 func (a *DcimAPIService) DcimVirtualChassisRetrieveExecute(r ApiDcimVirtualChassisRetrieveRequest) (*VirtualChassis, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VirtualChassis
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VirtualChassis
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualChassisRetrieve")
@@ -96282,9 +96572,9 @@ func (a *DcimAPIService) DcimVirtualChassisRetrieveExecute(r ApiDcimVirtualChass
 }
 
 type ApiDcimVirtualChassisUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                           context.Context
+	ApiService                    *DcimAPIService
+	id                            int32
 	writableVirtualChassisRequest *WritableVirtualChassisRequest
 }
 
@@ -96302,26 +96592,27 @@ DcimVirtualChassisUpdate Method for DcimVirtualChassisUpdate
 
 Put a virtual chassis object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this virtual chassis.
- @return ApiDcimVirtualChassisUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this virtual chassis.
+	@return ApiDcimVirtualChassisUpdateRequest
 */
 func (a *DcimAPIService) DcimVirtualChassisUpdate(ctx context.Context, id int32) ApiDcimVirtualChassisUpdateRequest {
 	return ApiDcimVirtualChassisUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return VirtualChassis
+//
+//	@return VirtualChassis
 func (a *DcimAPIService) DcimVirtualChassisUpdateExecute(r ApiDcimVirtualChassisUpdateRequest) (*VirtualChassis, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VirtualChassis
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VirtualChassis
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualChassisUpdate")
@@ -96410,8 +96701,8 @@ func (a *DcimAPIService) DcimVirtualChassisUpdateExecute(r ApiDcimVirtualChassis
 }
 
 type ApiDcimVirtualDeviceContextsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                         context.Context
+	ApiService                  *DcimAPIService
 	virtualDeviceContextRequest *[]VirtualDeviceContextRequest
 }
 
@@ -96429,22 +96720,22 @@ DcimVirtualDeviceContextsBulkDestroy Method for DcimVirtualDeviceContextsBulkDes
 
 Delete a list of virtual device context objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimVirtualDeviceContextsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimVirtualDeviceContextsBulkDestroyRequest
 */
 func (a *DcimAPIService) DcimVirtualDeviceContextsBulkDestroy(ctx context.Context) ApiDcimVirtualDeviceContextsBulkDestroyRequest {
 	return ApiDcimVirtualDeviceContextsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimVirtualDeviceContextsBulkDestroyExecute(r ApiDcimVirtualDeviceContextsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualDeviceContextsBulkDestroy")
@@ -96523,8 +96814,8 @@ func (a *DcimAPIService) DcimVirtualDeviceContextsBulkDestroyExecute(r ApiDcimVi
 }
 
 type ApiDcimVirtualDeviceContextsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                         context.Context
+	ApiService                  *DcimAPIService
 	virtualDeviceContextRequest *[]VirtualDeviceContextRequest
 }
 
@@ -96542,24 +96833,25 @@ DcimVirtualDeviceContextsBulkPartialUpdate Method for DcimVirtualDeviceContextsB
 
 Patch a list of virtual device context objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimVirtualDeviceContextsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimVirtualDeviceContextsBulkPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimVirtualDeviceContextsBulkPartialUpdate(ctx context.Context) ApiDcimVirtualDeviceContextsBulkPartialUpdateRequest {
 	return ApiDcimVirtualDeviceContextsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []VirtualDeviceContext
+//
+//	@return []VirtualDeviceContext
 func (a *DcimAPIService) DcimVirtualDeviceContextsBulkPartialUpdateExecute(r ApiDcimVirtualDeviceContextsBulkPartialUpdateRequest) ([]VirtualDeviceContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []VirtualDeviceContext
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []VirtualDeviceContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualDeviceContextsBulkPartialUpdate")
@@ -96647,8 +96939,8 @@ func (a *DcimAPIService) DcimVirtualDeviceContextsBulkPartialUpdateExecute(r Api
 }
 
 type ApiDcimVirtualDeviceContextsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                         context.Context
+	ApiService                  *DcimAPIService
 	virtualDeviceContextRequest *[]VirtualDeviceContextRequest
 }
 
@@ -96666,24 +96958,25 @@ DcimVirtualDeviceContextsBulkUpdate Method for DcimVirtualDeviceContextsBulkUpda
 
 Put a list of virtual device context objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimVirtualDeviceContextsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimVirtualDeviceContextsBulkUpdateRequest
 */
 func (a *DcimAPIService) DcimVirtualDeviceContextsBulkUpdate(ctx context.Context) ApiDcimVirtualDeviceContextsBulkUpdateRequest {
 	return ApiDcimVirtualDeviceContextsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []VirtualDeviceContext
+//
+//	@return []VirtualDeviceContext
 func (a *DcimAPIService) DcimVirtualDeviceContextsBulkUpdateExecute(r ApiDcimVirtualDeviceContextsBulkUpdateRequest) ([]VirtualDeviceContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []VirtualDeviceContext
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []VirtualDeviceContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualDeviceContextsBulkUpdate")
@@ -96771,8 +97064,8 @@ func (a *DcimAPIService) DcimVirtualDeviceContextsBulkUpdateExecute(r ApiDcimVir
 }
 
 type ApiDcimVirtualDeviceContextsCreateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
+	ctx                                 context.Context
+	ApiService                          *DcimAPIService
 	writableVirtualDeviceContextRequest *WritableVirtualDeviceContextRequest
 }
 
@@ -96790,24 +97083,25 @@ DcimVirtualDeviceContextsCreate Method for DcimVirtualDeviceContextsCreate
 
 Post a list of virtual device context objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimVirtualDeviceContextsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimVirtualDeviceContextsCreateRequest
 */
 func (a *DcimAPIService) DcimVirtualDeviceContextsCreate(ctx context.Context) ApiDcimVirtualDeviceContextsCreateRequest {
 	return ApiDcimVirtualDeviceContextsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return VirtualDeviceContext
+//
+//	@return VirtualDeviceContext
 func (a *DcimAPIService) DcimVirtualDeviceContextsCreateExecute(r ApiDcimVirtualDeviceContextsCreateRequest) (*VirtualDeviceContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VirtualDeviceContext
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VirtualDeviceContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualDeviceContextsCreate")
@@ -96895,9 +97189,9 @@ func (a *DcimAPIService) DcimVirtualDeviceContextsCreateExecute(r ApiDcimVirtual
 }
 
 type ApiDcimVirtualDeviceContextsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimVirtualDeviceContextsDestroyRequest) Execute() (*http.Response, error) {
@@ -96909,24 +97203,24 @@ DcimVirtualDeviceContextsDestroy Method for DcimVirtualDeviceContextsDestroy
 
 Delete a virtual device context object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this virtual device context.
- @return ApiDcimVirtualDeviceContextsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this virtual device context.
+	@return ApiDcimVirtualDeviceContextsDestroyRequest
 */
 func (a *DcimAPIService) DcimVirtualDeviceContextsDestroy(ctx context.Context, id int32) ApiDcimVirtualDeviceContextsDestroyRequest {
 	return ApiDcimVirtualDeviceContextsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *DcimAPIService) DcimVirtualDeviceContextsDestroyExecute(r ApiDcimVirtualDeviceContextsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualDeviceContextsDestroy")
@@ -97001,59 +97295,59 @@ func (a *DcimAPIService) DcimVirtualDeviceContextsDestroyExecute(r ApiDcimVirtua
 }
 
 type ApiDcimVirtualDeviceContextsListRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *DcimAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	device *[]int32
-	deviceN *[]int32
-	deviceId *[]int32
-	deviceIdN *[]int32
-	hasPrimaryIp *bool
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	status *[]string
-	statusN *[]string
-	tag *[]string
-	tagN *[]string
-	tenant *[]string
-	tenantN *[]string
-	tenantGroup *[]int32
-	tenantGroupN *[]int32
-	tenantGroupId *[]int32
-	tenantGroupIdN *[]int32
-	tenantId *[]*int32
-	tenantIdN *[]*int32
+	device           *[]int32
+	deviceN          *[]int32
+	deviceId         *[]int32
+	deviceIdN        *[]int32
+	hasPrimaryIp     *bool
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	status           *[]string
+	statusN          *[]string
+	tag              *[]string
+	tagN             *[]string
+	tenant           *[]string
+	tenantN          *[]string
+	tenantGroup      *[]int32
+	tenantGroupN     *[]int32
+	tenantGroupId    *[]int32
+	tenantGroupIdN   *[]int32
+	tenantId         *[]*int32
+	tenantIdN        *[]*int32
 	updatedByRequest *string
 }
 
@@ -97345,24 +97639,25 @@ DcimVirtualDeviceContextsList Method for DcimVirtualDeviceContextsList
 
 Get a list of virtual device context objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiDcimVirtualDeviceContextsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiDcimVirtualDeviceContextsListRequest
 */
 func (a *DcimAPIService) DcimVirtualDeviceContextsList(ctx context.Context) ApiDcimVirtualDeviceContextsListRequest {
 	return ApiDcimVirtualDeviceContextsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedVirtualDeviceContextList
+//
+//	@return PaginatedVirtualDeviceContextList
 func (a *DcimAPIService) DcimVirtualDeviceContextsListExecute(r ApiDcimVirtualDeviceContextsListRequest) (*PaginatedVirtualDeviceContextList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedVirtualDeviceContextList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedVirtualDeviceContextList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualDeviceContextsList")
@@ -97961,9 +98256,9 @@ func (a *DcimAPIService) DcimVirtualDeviceContextsListExecute(r ApiDcimVirtualDe
 }
 
 type ApiDcimVirtualDeviceContextsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                        context.Context
+	ApiService                                 *DcimAPIService
+	id                                         int32
 	patchedWritableVirtualDeviceContextRequest *PatchedWritableVirtualDeviceContextRequest
 }
 
@@ -97981,26 +98276,27 @@ DcimVirtualDeviceContextsPartialUpdate Method for DcimVirtualDeviceContextsParti
 
 Patch a virtual device context object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this virtual device context.
- @return ApiDcimVirtualDeviceContextsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this virtual device context.
+	@return ApiDcimVirtualDeviceContextsPartialUpdateRequest
 */
 func (a *DcimAPIService) DcimVirtualDeviceContextsPartialUpdate(ctx context.Context, id int32) ApiDcimVirtualDeviceContextsPartialUpdateRequest {
 	return ApiDcimVirtualDeviceContextsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return VirtualDeviceContext
+//
+//	@return VirtualDeviceContext
 func (a *DcimAPIService) DcimVirtualDeviceContextsPartialUpdateExecute(r ApiDcimVirtualDeviceContextsPartialUpdateRequest) (*VirtualDeviceContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VirtualDeviceContext
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VirtualDeviceContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualDeviceContextsPartialUpdate")
@@ -98086,9 +98382,9 @@ func (a *DcimAPIService) DcimVirtualDeviceContextsPartialUpdateExecute(r ApiDcim
 }
 
 type ApiDcimVirtualDeviceContextsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DcimAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiDcimVirtualDeviceContextsRetrieveRequest) Execute() (*VirtualDeviceContext, *http.Response, error) {
@@ -98100,26 +98396,27 @@ DcimVirtualDeviceContextsRetrieve Method for DcimVirtualDeviceContextsRetrieve
 
 Get a virtual device context object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this virtual device context.
- @return ApiDcimVirtualDeviceContextsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this virtual device context.
+	@return ApiDcimVirtualDeviceContextsRetrieveRequest
 */
 func (a *DcimAPIService) DcimVirtualDeviceContextsRetrieve(ctx context.Context, id int32) ApiDcimVirtualDeviceContextsRetrieveRequest {
 	return ApiDcimVirtualDeviceContextsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return VirtualDeviceContext
+//
+//	@return VirtualDeviceContext
 func (a *DcimAPIService) DcimVirtualDeviceContextsRetrieveExecute(r ApiDcimVirtualDeviceContextsRetrieveRequest) (*VirtualDeviceContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VirtualDeviceContext
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VirtualDeviceContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualDeviceContextsRetrieve")
@@ -98203,9 +98500,9 @@ func (a *DcimAPIService) DcimVirtualDeviceContextsRetrieveExecute(r ApiDcimVirtu
 }
 
 type ApiDcimVirtualDeviceContextsUpdateRequest struct {
-	ctx context.Context
-	ApiService *DcimAPIService
-	id int32
+	ctx                                 context.Context
+	ApiService                          *DcimAPIService
+	id                                  int32
 	writableVirtualDeviceContextRequest *WritableVirtualDeviceContextRequest
 }
 
@@ -98223,26 +98520,27 @@ DcimVirtualDeviceContextsUpdate Method for DcimVirtualDeviceContextsUpdate
 
 Put a virtual device context object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this virtual device context.
- @return ApiDcimVirtualDeviceContextsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this virtual device context.
+	@return ApiDcimVirtualDeviceContextsUpdateRequest
 */
 func (a *DcimAPIService) DcimVirtualDeviceContextsUpdate(ctx context.Context, id int32) ApiDcimVirtualDeviceContextsUpdateRequest {
 	return ApiDcimVirtualDeviceContextsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return VirtualDeviceContext
+//
+//	@return VirtualDeviceContext
 func (a *DcimAPIService) DcimVirtualDeviceContextsUpdateExecute(r ApiDcimVirtualDeviceContextsUpdateRequest) (*VirtualDeviceContext, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *VirtualDeviceContext
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *VirtualDeviceContext
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DcimAPIService.DcimVirtualDeviceContextsUpdate")

@@ -16,17 +16,17 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"strings"
 	"reflect"
+	"strings"
+	"time"
 )
-
 
 // TenancyAPIService TenancyAPI service
 type TenancyAPIService service
 
 type ApiTenancyContactAssignmentsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                      context.Context
+	ApiService               *TenancyAPIService
 	contactAssignmentRequest *[]ContactAssignmentRequest
 }
 
@@ -44,22 +44,22 @@ TenancyContactAssignmentsBulkDestroy Method for TenancyContactAssignmentsBulkDes
 
 Delete a list of contact assignment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactAssignmentsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactAssignmentsBulkDestroyRequest
 */
 func (a *TenancyAPIService) TenancyContactAssignmentsBulkDestroy(ctx context.Context) ApiTenancyContactAssignmentsBulkDestroyRequest {
 	return ApiTenancyContactAssignmentsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyContactAssignmentsBulkDestroyExecute(r ApiTenancyContactAssignmentsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsBulkDestroy")
@@ -138,8 +138,8 @@ func (a *TenancyAPIService) TenancyContactAssignmentsBulkDestroyExecute(r ApiTen
 }
 
 type ApiTenancyContactAssignmentsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                      context.Context
+	ApiService               *TenancyAPIService
 	contactAssignmentRequest *[]ContactAssignmentRequest
 }
 
@@ -157,24 +157,25 @@ TenancyContactAssignmentsBulkPartialUpdate Method for TenancyContactAssignmentsB
 
 Patch a list of contact assignment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactAssignmentsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactAssignmentsBulkPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactAssignmentsBulkPartialUpdate(ctx context.Context) ApiTenancyContactAssignmentsBulkPartialUpdateRequest {
 	return ApiTenancyContactAssignmentsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ContactAssignment
+//
+//	@return []ContactAssignment
 func (a *TenancyAPIService) TenancyContactAssignmentsBulkPartialUpdateExecute(r ApiTenancyContactAssignmentsBulkPartialUpdateRequest) ([]ContactAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ContactAssignment
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ContactAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsBulkPartialUpdate")
@@ -262,8 +263,8 @@ func (a *TenancyAPIService) TenancyContactAssignmentsBulkPartialUpdateExecute(r 
 }
 
 type ApiTenancyContactAssignmentsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                      context.Context
+	ApiService               *TenancyAPIService
 	contactAssignmentRequest *[]ContactAssignmentRequest
 }
 
@@ -281,24 +282,25 @@ TenancyContactAssignmentsBulkUpdate Method for TenancyContactAssignmentsBulkUpda
 
 Put a list of contact assignment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactAssignmentsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactAssignmentsBulkUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactAssignmentsBulkUpdate(ctx context.Context) ApiTenancyContactAssignmentsBulkUpdateRequest {
 	return ApiTenancyContactAssignmentsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ContactAssignment
+//
+//	@return []ContactAssignment
 func (a *TenancyAPIService) TenancyContactAssignmentsBulkUpdateExecute(r ApiTenancyContactAssignmentsBulkUpdateRequest) ([]ContactAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ContactAssignment
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ContactAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsBulkUpdate")
@@ -386,8 +388,8 @@ func (a *TenancyAPIService) TenancyContactAssignmentsBulkUpdateExecute(r ApiTena
 }
 
 type ApiTenancyContactAssignmentsCreateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                              context.Context
+	ApiService                       *TenancyAPIService
 	writableContactAssignmentRequest *WritableContactAssignmentRequest
 }
 
@@ -405,24 +407,25 @@ TenancyContactAssignmentsCreate Method for TenancyContactAssignmentsCreate
 
 Post a list of contact assignment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactAssignmentsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactAssignmentsCreateRequest
 */
 func (a *TenancyAPIService) TenancyContactAssignmentsCreate(ctx context.Context) ApiTenancyContactAssignmentsCreateRequest {
 	return ApiTenancyContactAssignmentsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ContactAssignment
+//
+//	@return ContactAssignment
 func (a *TenancyAPIService) TenancyContactAssignmentsCreateExecute(r ApiTenancyContactAssignmentsCreateRequest) (*ContactAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactAssignment
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsCreate")
@@ -510,9 +513,9 @@ func (a *TenancyAPIService) TenancyContactAssignmentsCreateExecute(r ApiTenancyC
 }
 
 type ApiTenancyContactAssignmentsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyContactAssignmentsDestroyRequest) Execute() (*http.Response, error) {
@@ -524,24 +527,24 @@ TenancyContactAssignmentsDestroy Method for TenancyContactAssignmentsDestroy
 
 Delete a contact assignment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact assignment.
- @return ApiTenancyContactAssignmentsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact assignment.
+	@return ApiTenancyContactAssignmentsDestroyRequest
 */
 func (a *TenancyAPIService) TenancyContactAssignmentsDestroy(ctx context.Context, id int32) ApiTenancyContactAssignmentsDestroyRequest {
 	return ApiTenancyContactAssignmentsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyContactAssignmentsDestroyExecute(r ApiTenancyContactAssignmentsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsDestroy")
@@ -616,49 +619,49 @@ func (a *TenancyAPIService) TenancyContactAssignmentsDestroyExecute(r ApiTenancy
 }
 
 type ApiTenancyContactAssignmentsListRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	contactId *[]int32
-	contactIdN *[]int32
-	contentType *string
-	contentTypeN *string
-	contentTypeId *int32
-	contentTypeIdN *int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *TenancyAPIService
+	contactId        *[]int32
+	contactIdN       *[]int32
+	contentType      *string
+	contentTypeN     *string
+	contentTypeId    *int32
+	contentTypeIdN   *int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	objectId *[]int32
-	objectIdGt *[]int32
-	objectIdGte *[]int32
-	objectIdLt *[]int32
-	objectIdLte *[]int32
-	objectIdN *[]int32
-	offset *int32
-	ordering *string
-	priority *string
-	priorityN *string
-	q *string
-	role *[]string
-	roleN *[]string
-	roleId *[]int32
-	roleIdN *[]int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	objectId         *[]int32
+	objectIdGt       *[]int32
+	objectIdGte      *[]int32
+	objectIdLt       *[]int32
+	objectIdLte      *[]int32
+	objectIdN        *[]int32
+	offset           *int32
+	ordering         *string
+	priority         *string
+	priorityN        *string
+	q                *string
+	role             *[]string
+	roleN            *[]string
+	roleId           *[]int32
+	roleIdN          *[]int32
 	updatedByRequest *string
 }
 
@@ -893,24 +896,25 @@ TenancyContactAssignmentsList Method for TenancyContactAssignmentsList
 
 Get a list of contact assignment objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactAssignmentsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactAssignmentsListRequest
 */
 func (a *TenancyAPIService) TenancyContactAssignmentsList(ctx context.Context) ApiTenancyContactAssignmentsListRequest {
 	return ApiTenancyContactAssignmentsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedContactAssignmentList
+//
+//	@return PaginatedContactAssignmentList
 func (a *TenancyAPIService) TenancyContactAssignmentsListExecute(r ApiTenancyContactAssignmentsListRequest) (*PaginatedContactAssignmentList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedContactAssignmentList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedContactAssignmentList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsList")
@@ -1359,9 +1363,9 @@ func (a *TenancyAPIService) TenancyContactAssignmentsListExecute(r ApiTenancyCon
 }
 
 type ApiTenancyContactAssignmentsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                                     context.Context
+	ApiService                              *TenancyAPIService
+	id                                      int32
 	patchedWritableContactAssignmentRequest *PatchedWritableContactAssignmentRequest
 }
 
@@ -1379,26 +1383,27 @@ TenancyContactAssignmentsPartialUpdate Method for TenancyContactAssignmentsParti
 
 Patch a contact assignment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact assignment.
- @return ApiTenancyContactAssignmentsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact assignment.
+	@return ApiTenancyContactAssignmentsPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactAssignmentsPartialUpdate(ctx context.Context, id int32) ApiTenancyContactAssignmentsPartialUpdateRequest {
 	return ApiTenancyContactAssignmentsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ContactAssignment
+//
+//	@return ContactAssignment
 func (a *TenancyAPIService) TenancyContactAssignmentsPartialUpdateExecute(r ApiTenancyContactAssignmentsPartialUpdateRequest) (*ContactAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactAssignment
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsPartialUpdate")
@@ -1484,9 +1489,9 @@ func (a *TenancyAPIService) TenancyContactAssignmentsPartialUpdateExecute(r ApiT
 }
 
 type ApiTenancyContactAssignmentsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyContactAssignmentsRetrieveRequest) Execute() (*ContactAssignment, *http.Response, error) {
@@ -1498,26 +1503,27 @@ TenancyContactAssignmentsRetrieve Method for TenancyContactAssignmentsRetrieve
 
 Get a contact assignment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact assignment.
- @return ApiTenancyContactAssignmentsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact assignment.
+	@return ApiTenancyContactAssignmentsRetrieveRequest
 */
 func (a *TenancyAPIService) TenancyContactAssignmentsRetrieve(ctx context.Context, id int32) ApiTenancyContactAssignmentsRetrieveRequest {
 	return ApiTenancyContactAssignmentsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ContactAssignment
+//
+//	@return ContactAssignment
 func (a *TenancyAPIService) TenancyContactAssignmentsRetrieveExecute(r ApiTenancyContactAssignmentsRetrieveRequest) (*ContactAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactAssignment
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsRetrieve")
@@ -1601,9 +1607,9 @@ func (a *TenancyAPIService) TenancyContactAssignmentsRetrieveExecute(r ApiTenanc
 }
 
 type ApiTenancyContactAssignmentsUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                              context.Context
+	ApiService                       *TenancyAPIService
+	id                               int32
 	writableContactAssignmentRequest *WritableContactAssignmentRequest
 }
 
@@ -1621,26 +1627,27 @@ TenancyContactAssignmentsUpdate Method for TenancyContactAssignmentsUpdate
 
 Put a contact assignment object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact assignment.
- @return ApiTenancyContactAssignmentsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact assignment.
+	@return ApiTenancyContactAssignmentsUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactAssignmentsUpdate(ctx context.Context, id int32) ApiTenancyContactAssignmentsUpdateRequest {
 	return ApiTenancyContactAssignmentsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ContactAssignment
+//
+//	@return ContactAssignment
 func (a *TenancyAPIService) TenancyContactAssignmentsUpdateExecute(r ApiTenancyContactAssignmentsUpdateRequest) (*ContactAssignment, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactAssignment
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactAssignment
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactAssignmentsUpdate")
@@ -1729,8 +1736,8 @@ func (a *TenancyAPIService) TenancyContactAssignmentsUpdateExecute(r ApiTenancyC
 }
 
 type ApiTenancyContactGroupsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                 context.Context
+	ApiService          *TenancyAPIService
 	contactGroupRequest *[]ContactGroupRequest
 }
 
@@ -1748,22 +1755,22 @@ TenancyContactGroupsBulkDestroy Method for TenancyContactGroupsBulkDestroy
 
 Delete a list of contact group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactGroupsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactGroupsBulkDestroyRequest
 */
 func (a *TenancyAPIService) TenancyContactGroupsBulkDestroy(ctx context.Context) ApiTenancyContactGroupsBulkDestroyRequest {
 	return ApiTenancyContactGroupsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyContactGroupsBulkDestroyExecute(r ApiTenancyContactGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsBulkDestroy")
@@ -1842,8 +1849,8 @@ func (a *TenancyAPIService) TenancyContactGroupsBulkDestroyExecute(r ApiTenancyC
 }
 
 type ApiTenancyContactGroupsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                 context.Context
+	ApiService          *TenancyAPIService
 	contactGroupRequest *[]ContactGroupRequest
 }
 
@@ -1861,24 +1868,25 @@ TenancyContactGroupsBulkPartialUpdate Method for TenancyContactGroupsBulkPartial
 
 Patch a list of contact group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactGroupsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactGroupsBulkPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactGroupsBulkPartialUpdate(ctx context.Context) ApiTenancyContactGroupsBulkPartialUpdateRequest {
 	return ApiTenancyContactGroupsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ContactGroup
+//
+//	@return []ContactGroup
 func (a *TenancyAPIService) TenancyContactGroupsBulkPartialUpdateExecute(r ApiTenancyContactGroupsBulkPartialUpdateRequest) ([]ContactGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ContactGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ContactGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsBulkPartialUpdate")
@@ -1966,8 +1974,8 @@ func (a *TenancyAPIService) TenancyContactGroupsBulkPartialUpdateExecute(r ApiTe
 }
 
 type ApiTenancyContactGroupsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                 context.Context
+	ApiService          *TenancyAPIService
 	contactGroupRequest *[]ContactGroupRequest
 }
 
@@ -1985,24 +1993,25 @@ TenancyContactGroupsBulkUpdate Method for TenancyContactGroupsBulkUpdate
 
 Put a list of contact group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactGroupsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactGroupsBulkUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactGroupsBulkUpdate(ctx context.Context) ApiTenancyContactGroupsBulkUpdateRequest {
 	return ApiTenancyContactGroupsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ContactGroup
+//
+//	@return []ContactGroup
 func (a *TenancyAPIService) TenancyContactGroupsBulkUpdateExecute(r ApiTenancyContactGroupsBulkUpdateRequest) ([]ContactGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ContactGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ContactGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsBulkUpdate")
@@ -2090,8 +2099,8 @@ func (a *TenancyAPIService) TenancyContactGroupsBulkUpdateExecute(r ApiTenancyCo
 }
 
 type ApiTenancyContactGroupsCreateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                         context.Context
+	ApiService                  *TenancyAPIService
 	writableContactGroupRequest *WritableContactGroupRequest
 }
 
@@ -2109,24 +2118,25 @@ TenancyContactGroupsCreate Method for TenancyContactGroupsCreate
 
 Post a list of contact group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactGroupsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactGroupsCreateRequest
 */
 func (a *TenancyAPIService) TenancyContactGroupsCreate(ctx context.Context) ApiTenancyContactGroupsCreateRequest {
 	return ApiTenancyContactGroupsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ContactGroup
+//
+//	@return ContactGroup
 func (a *TenancyAPIService) TenancyContactGroupsCreateExecute(r ApiTenancyContactGroupsCreateRequest) (*ContactGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactGroup
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsCreate")
@@ -2214,9 +2224,9 @@ func (a *TenancyAPIService) TenancyContactGroupsCreateExecute(r ApiTenancyContac
 }
 
 type ApiTenancyContactGroupsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyContactGroupsDestroyRequest) Execute() (*http.Response, error) {
@@ -2228,24 +2238,24 @@ TenancyContactGroupsDestroy Method for TenancyContactGroupsDestroy
 
 Delete a contact group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact group.
- @return ApiTenancyContactGroupsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact group.
+	@return ApiTenancyContactGroupsDestroyRequest
 */
 func (a *TenancyAPIService) TenancyContactGroupsDestroy(ctx context.Context, id int32) ApiTenancyContactGroupsDestroyRequest {
 	return ApiTenancyContactGroupsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyContactGroupsDestroyExecute(r ApiTenancyContactGroupsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsDestroy")
@@ -2320,70 +2330,70 @@ func (a *TenancyAPIService) TenancyContactGroupsDestroyExecute(r ApiTenancyConta
 }
 
 type ApiTenancyContactGroupsListRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *TenancyAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	parent *[]string
-	parentN *[]string
-	parentId *[]*int32
-	parentIdN *[]*int32
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	parent           *[]string
+	parentN          *[]string
+	parentId         *[]*int32
+	parentIdN        *[]*int32
+	q                *string
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -2719,24 +2729,25 @@ TenancyContactGroupsList Method for TenancyContactGroupsList
 
 Get a list of contact group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactGroupsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactGroupsListRequest
 */
 func (a *TenancyAPIService) TenancyContactGroupsList(ctx context.Context) ApiTenancyContactGroupsListRequest {
 	return ApiTenancyContactGroupsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedContactGroupList
+//
+//	@return PaginatedContactGroupList
 func (a *TenancyAPIService) TenancyContactGroupsListExecute(r ApiTenancyContactGroupsListRequest) (*PaginatedContactGroupList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedContactGroupList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedContactGroupList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsList")
@@ -3464,9 +3475,9 @@ func (a *TenancyAPIService) TenancyContactGroupsListExecute(r ApiTenancyContactG
 }
 
 type ApiTenancyContactGroupsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                                context.Context
+	ApiService                         *TenancyAPIService
+	id                                 int32
 	patchedWritableContactGroupRequest *PatchedWritableContactGroupRequest
 }
 
@@ -3484,26 +3495,27 @@ TenancyContactGroupsPartialUpdate Method for TenancyContactGroupsPartialUpdate
 
 Patch a contact group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact group.
- @return ApiTenancyContactGroupsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact group.
+	@return ApiTenancyContactGroupsPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactGroupsPartialUpdate(ctx context.Context, id int32) ApiTenancyContactGroupsPartialUpdateRequest {
 	return ApiTenancyContactGroupsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ContactGroup
+//
+//	@return ContactGroup
 func (a *TenancyAPIService) TenancyContactGroupsPartialUpdateExecute(r ApiTenancyContactGroupsPartialUpdateRequest) (*ContactGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsPartialUpdate")
@@ -3589,9 +3601,9 @@ func (a *TenancyAPIService) TenancyContactGroupsPartialUpdateExecute(r ApiTenanc
 }
 
 type ApiTenancyContactGroupsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyContactGroupsRetrieveRequest) Execute() (*ContactGroup, *http.Response, error) {
@@ -3603,26 +3615,27 @@ TenancyContactGroupsRetrieve Method for TenancyContactGroupsRetrieve
 
 Get a contact group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact group.
- @return ApiTenancyContactGroupsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact group.
+	@return ApiTenancyContactGroupsRetrieveRequest
 */
 func (a *TenancyAPIService) TenancyContactGroupsRetrieve(ctx context.Context, id int32) ApiTenancyContactGroupsRetrieveRequest {
 	return ApiTenancyContactGroupsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ContactGroup
+//
+//	@return ContactGroup
 func (a *TenancyAPIService) TenancyContactGroupsRetrieveExecute(r ApiTenancyContactGroupsRetrieveRequest) (*ContactGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactGroup
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsRetrieve")
@@ -3706,9 +3719,9 @@ func (a *TenancyAPIService) TenancyContactGroupsRetrieveExecute(r ApiTenancyCont
 }
 
 type ApiTenancyContactGroupsUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                         context.Context
+	ApiService                  *TenancyAPIService
+	id                          int32
 	writableContactGroupRequest *WritableContactGroupRequest
 }
 
@@ -3726,26 +3739,27 @@ TenancyContactGroupsUpdate Method for TenancyContactGroupsUpdate
 
 Put a contact group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact group.
- @return ApiTenancyContactGroupsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact group.
+	@return ApiTenancyContactGroupsUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactGroupsUpdate(ctx context.Context, id int32) ApiTenancyContactGroupsUpdateRequest {
 	return ApiTenancyContactGroupsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ContactGroup
+//
+//	@return ContactGroup
 func (a *TenancyAPIService) TenancyContactGroupsUpdateExecute(r ApiTenancyContactGroupsUpdateRequest) (*ContactGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactGroupsUpdate")
@@ -3834,8 +3848,8 @@ func (a *TenancyAPIService) TenancyContactGroupsUpdateExecute(r ApiTenancyContac
 }
 
 type ApiTenancyContactRolesBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                context.Context
+	ApiService         *TenancyAPIService
 	contactRoleRequest *[]ContactRoleRequest
 }
 
@@ -3853,22 +3867,22 @@ TenancyContactRolesBulkDestroy Method for TenancyContactRolesBulkDestroy
 
 Delete a list of contact role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactRolesBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactRolesBulkDestroyRequest
 */
 func (a *TenancyAPIService) TenancyContactRolesBulkDestroy(ctx context.Context) ApiTenancyContactRolesBulkDestroyRequest {
 	return ApiTenancyContactRolesBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyContactRolesBulkDestroyExecute(r ApiTenancyContactRolesBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesBulkDestroy")
@@ -3947,8 +3961,8 @@ func (a *TenancyAPIService) TenancyContactRolesBulkDestroyExecute(r ApiTenancyCo
 }
 
 type ApiTenancyContactRolesBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                context.Context
+	ApiService         *TenancyAPIService
 	contactRoleRequest *[]ContactRoleRequest
 }
 
@@ -3966,24 +3980,25 @@ TenancyContactRolesBulkPartialUpdate Method for TenancyContactRolesBulkPartialUp
 
 Patch a list of contact role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactRolesBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactRolesBulkPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactRolesBulkPartialUpdate(ctx context.Context) ApiTenancyContactRolesBulkPartialUpdateRequest {
 	return ApiTenancyContactRolesBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ContactRole
+//
+//	@return []ContactRole
 func (a *TenancyAPIService) TenancyContactRolesBulkPartialUpdateExecute(r ApiTenancyContactRolesBulkPartialUpdateRequest) ([]ContactRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ContactRole
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ContactRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesBulkPartialUpdate")
@@ -4071,8 +4086,8 @@ func (a *TenancyAPIService) TenancyContactRolesBulkPartialUpdateExecute(r ApiTen
 }
 
 type ApiTenancyContactRolesBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                context.Context
+	ApiService         *TenancyAPIService
 	contactRoleRequest *[]ContactRoleRequest
 }
 
@@ -4090,24 +4105,25 @@ TenancyContactRolesBulkUpdate Method for TenancyContactRolesBulkUpdate
 
 Put a list of contact role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactRolesBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactRolesBulkUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactRolesBulkUpdate(ctx context.Context) ApiTenancyContactRolesBulkUpdateRequest {
 	return ApiTenancyContactRolesBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []ContactRole
+//
+//	@return []ContactRole
 func (a *TenancyAPIService) TenancyContactRolesBulkUpdateExecute(r ApiTenancyContactRolesBulkUpdateRequest) ([]ContactRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ContactRole
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ContactRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesBulkUpdate")
@@ -4195,8 +4211,8 @@ func (a *TenancyAPIService) TenancyContactRolesBulkUpdateExecute(r ApiTenancyCon
 }
 
 type ApiTenancyContactRolesCreateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                context.Context
+	ApiService         *TenancyAPIService
 	contactRoleRequest *ContactRoleRequest
 }
 
@@ -4214,24 +4230,25 @@ TenancyContactRolesCreate Method for TenancyContactRolesCreate
 
 Post a list of contact role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactRolesCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactRolesCreateRequest
 */
 func (a *TenancyAPIService) TenancyContactRolesCreate(ctx context.Context) ApiTenancyContactRolesCreateRequest {
 	return ApiTenancyContactRolesCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return ContactRole
+//
+//	@return ContactRole
 func (a *TenancyAPIService) TenancyContactRolesCreateExecute(r ApiTenancyContactRolesCreateRequest) (*ContactRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactRole
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesCreate")
@@ -4319,9 +4336,9 @@ func (a *TenancyAPIService) TenancyContactRolesCreateExecute(r ApiTenancyContact
 }
 
 type ApiTenancyContactRolesDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyContactRolesDestroyRequest) Execute() (*http.Response, error) {
@@ -4333,24 +4350,24 @@ TenancyContactRolesDestroy Method for TenancyContactRolesDestroy
 
 Delete a contact role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact role.
- @return ApiTenancyContactRolesDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact role.
+	@return ApiTenancyContactRolesDestroyRequest
 */
 func (a *TenancyAPIService) TenancyContactRolesDestroy(ctx context.Context, id int32) ApiTenancyContactRolesDestroyRequest {
 	return ApiTenancyContactRolesDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyContactRolesDestroyExecute(r ApiTenancyContactRolesDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesDestroy")
@@ -4425,66 +4442,66 @@ func (a *TenancyAPIService) TenancyContactRolesDestroyExecute(r ApiTenancyContac
 }
 
 type ApiTenancyContactRolesListRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *TenancyAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -4796,24 +4813,25 @@ TenancyContactRolesList Method for TenancyContactRolesList
 
 Get a list of contact role objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactRolesListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactRolesListRequest
 */
 func (a *TenancyAPIService) TenancyContactRolesList(ctx context.Context) ApiTenancyContactRolesListRequest {
 	return ApiTenancyContactRolesListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedContactRoleList
+//
+//	@return PaginatedContactRoleList
 func (a *TenancyAPIService) TenancyContactRolesListExecute(r ApiTenancyContactRolesListRequest) (*PaginatedContactRoleList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedContactRoleList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedContactRoleList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesList")
@@ -5497,9 +5515,9 @@ func (a *TenancyAPIService) TenancyContactRolesListExecute(r ApiTenancyContactRo
 }
 
 type ApiTenancyContactRolesPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                       context.Context
+	ApiService                *TenancyAPIService
+	id                        int32
 	patchedContactRoleRequest *PatchedContactRoleRequest
 }
 
@@ -5517,26 +5535,27 @@ TenancyContactRolesPartialUpdate Method for TenancyContactRolesPartialUpdate
 
 Patch a contact role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact role.
- @return ApiTenancyContactRolesPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact role.
+	@return ApiTenancyContactRolesPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactRolesPartialUpdate(ctx context.Context, id int32) ApiTenancyContactRolesPartialUpdateRequest {
 	return ApiTenancyContactRolesPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ContactRole
+//
+//	@return ContactRole
 func (a *TenancyAPIService) TenancyContactRolesPartialUpdateExecute(r ApiTenancyContactRolesPartialUpdateRequest) (*ContactRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactRole
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesPartialUpdate")
@@ -5622,9 +5641,9 @@ func (a *TenancyAPIService) TenancyContactRolesPartialUpdateExecute(r ApiTenancy
 }
 
 type ApiTenancyContactRolesRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyContactRolesRetrieveRequest) Execute() (*ContactRole, *http.Response, error) {
@@ -5636,26 +5655,27 @@ TenancyContactRolesRetrieve Method for TenancyContactRolesRetrieve
 
 Get a contact role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact role.
- @return ApiTenancyContactRolesRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact role.
+	@return ApiTenancyContactRolesRetrieveRequest
 */
 func (a *TenancyAPIService) TenancyContactRolesRetrieve(ctx context.Context, id int32) ApiTenancyContactRolesRetrieveRequest {
 	return ApiTenancyContactRolesRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ContactRole
+//
+//	@return ContactRole
 func (a *TenancyAPIService) TenancyContactRolesRetrieveExecute(r ApiTenancyContactRolesRetrieveRequest) (*ContactRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactRole
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesRetrieve")
@@ -5739,9 +5759,9 @@ func (a *TenancyAPIService) TenancyContactRolesRetrieveExecute(r ApiTenancyConta
 }
 
 type ApiTenancyContactRolesUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                context.Context
+	ApiService         *TenancyAPIService
+	id                 int32
 	contactRoleRequest *ContactRoleRequest
 }
 
@@ -5759,26 +5779,27 @@ TenancyContactRolesUpdate Method for TenancyContactRolesUpdate
 
 Put a contact role object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact role.
- @return ApiTenancyContactRolesUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact role.
+	@return ApiTenancyContactRolesUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactRolesUpdate(ctx context.Context, id int32) ApiTenancyContactRolesUpdateRequest {
 	return ApiTenancyContactRolesUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ContactRole
+//
+//	@return ContactRole
 func (a *TenancyAPIService) TenancyContactRolesUpdateExecute(r ApiTenancyContactRolesUpdateRequest) (*ContactRole, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ContactRole
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ContactRole
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactRolesUpdate")
@@ -5867,8 +5888,8 @@ func (a *TenancyAPIService) TenancyContactRolesUpdateExecute(r ApiTenancyContact
 }
 
 type ApiTenancyContactsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx            context.Context
+	ApiService     *TenancyAPIService
 	contactRequest *[]ContactRequest
 }
 
@@ -5886,22 +5907,22 @@ TenancyContactsBulkDestroy Method for TenancyContactsBulkDestroy
 
 Delete a list of contact objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactsBulkDestroyRequest
 */
 func (a *TenancyAPIService) TenancyContactsBulkDestroy(ctx context.Context) ApiTenancyContactsBulkDestroyRequest {
 	return ApiTenancyContactsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyContactsBulkDestroyExecute(r ApiTenancyContactsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsBulkDestroy")
@@ -5980,8 +6001,8 @@ func (a *TenancyAPIService) TenancyContactsBulkDestroyExecute(r ApiTenancyContac
 }
 
 type ApiTenancyContactsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx            context.Context
+	ApiService     *TenancyAPIService
 	contactRequest *[]ContactRequest
 }
 
@@ -5999,24 +6020,25 @@ TenancyContactsBulkPartialUpdate Method for TenancyContactsBulkPartialUpdate
 
 Patch a list of contact objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactsBulkPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactsBulkPartialUpdate(ctx context.Context) ApiTenancyContactsBulkPartialUpdateRequest {
 	return ApiTenancyContactsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Contact
+//
+//	@return []Contact
 func (a *TenancyAPIService) TenancyContactsBulkPartialUpdateExecute(r ApiTenancyContactsBulkPartialUpdateRequest) ([]Contact, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Contact
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Contact
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsBulkPartialUpdate")
@@ -6104,8 +6126,8 @@ func (a *TenancyAPIService) TenancyContactsBulkPartialUpdateExecute(r ApiTenancy
 }
 
 type ApiTenancyContactsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx            context.Context
+	ApiService     *TenancyAPIService
 	contactRequest *[]ContactRequest
 }
 
@@ -6123,24 +6145,25 @@ TenancyContactsBulkUpdate Method for TenancyContactsBulkUpdate
 
 Put a list of contact objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactsBulkUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactsBulkUpdate(ctx context.Context) ApiTenancyContactsBulkUpdateRequest {
 	return ApiTenancyContactsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Contact
+//
+//	@return []Contact
 func (a *TenancyAPIService) TenancyContactsBulkUpdateExecute(r ApiTenancyContactsBulkUpdateRequest) ([]Contact, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Contact
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Contact
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsBulkUpdate")
@@ -6228,8 +6251,8 @@ func (a *TenancyAPIService) TenancyContactsBulkUpdateExecute(r ApiTenancyContact
 }
 
 type ApiTenancyContactsCreateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                    context.Context
+	ApiService             *TenancyAPIService
 	writableContactRequest *WritableContactRequest
 }
 
@@ -6247,24 +6270,25 @@ TenancyContactsCreate Method for TenancyContactsCreate
 
 Post a list of contact objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactsCreateRequest
 */
 func (a *TenancyAPIService) TenancyContactsCreate(ctx context.Context) ApiTenancyContactsCreateRequest {
 	return ApiTenancyContactsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Contact
+//
+//	@return Contact
 func (a *TenancyAPIService) TenancyContactsCreateExecute(r ApiTenancyContactsCreateRequest) (*Contact, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Contact
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Contact
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsCreate")
@@ -6352,9 +6376,9 @@ func (a *TenancyAPIService) TenancyContactsCreateExecute(r ApiTenancyContactsCre
 }
 
 type ApiTenancyContactsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyContactsDestroyRequest) Execute() (*http.Response, error) {
@@ -6366,24 +6390,24 @@ TenancyContactsDestroy Method for TenancyContactsDestroy
 
 Delete a contact object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact.
- @return ApiTenancyContactsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact.
+	@return ApiTenancyContactsDestroyRequest
 */
 func (a *TenancyAPIService) TenancyContactsDestroy(ctx context.Context, id int32) ApiTenancyContactsDestroyRequest {
 	return ApiTenancyContactsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyContactsDestroyExecute(r ApiTenancyContactsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsDestroy")
@@ -6458,103 +6482,103 @@ func (a *TenancyAPIService) TenancyContactsDestroyExecute(r ApiTenancyContactsDe
 }
 
 type ApiTenancyContactsListRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	address *[]string
-	addressEmpty *[]string
-	addressIc *[]string
-	addressIe *[]string
-	addressIew *[]string
-	addressIsw *[]string
-	addressN *[]string
-	addressNic *[]string
-	addressNie *[]string
-	addressNiew *[]string
-	addressNisw *[]string
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *TenancyAPIService
+	address          *[]string
+	addressEmpty     *[]string
+	addressIc        *[]string
+	addressIe        *[]string
+	addressIew       *[]string
+	addressIsw       *[]string
+	addressN         *[]string
+	addressNic       *[]string
+	addressNie       *[]string
+	addressNiew      *[]string
+	addressNisw      *[]string
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	email *[]string
-	emailEmpty *[]string
-	emailIc *[]string
-	emailIe *[]string
-	emailIew *[]string
-	emailIsw *[]string
-	emailN *[]string
-	emailNic *[]string
-	emailNie *[]string
-	emailNiew *[]string
-	emailNisw *[]string
-	group *[]int32
-	groupN *[]int32
-	groupId *[]int32
-	groupIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	link *[]string
-	linkEmpty *[]string
-	linkIc *[]string
-	linkIe *[]string
-	linkIew *[]string
-	linkIsw *[]string
-	linkN *[]string
-	linkNic *[]string
-	linkNie *[]string
-	linkNiew *[]string
-	linkNisw *[]string
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	phone *[]string
-	phoneEmpty *[]string
-	phoneIc *[]string
-	phoneIe *[]string
-	phoneIew *[]string
-	phoneIsw *[]string
-	phoneN *[]string
-	phoneNic *[]string
-	phoneNie *[]string
-	phoneNiew *[]string
-	phoneNisw *[]string
-	q *string
-	tag *[]string
-	tagN *[]string
-	title *[]string
-	titleEmpty *[]string
-	titleIc *[]string
-	titleIe *[]string
-	titleIew *[]string
-	titleIsw *[]string
-	titleN *[]string
-	titleNic *[]string
-	titleNie *[]string
-	titleNiew *[]string
-	titleNisw *[]string
+	email            *[]string
+	emailEmpty       *[]string
+	emailIc          *[]string
+	emailIe          *[]string
+	emailIew         *[]string
+	emailIsw         *[]string
+	emailN           *[]string
+	emailNic         *[]string
+	emailNie         *[]string
+	emailNiew        *[]string
+	emailNisw        *[]string
+	group            *[]int32
+	groupN           *[]int32
+	groupId          *[]int32
+	groupIdN         *[]int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	link             *[]string
+	linkEmpty        *[]string
+	linkIc           *[]string
+	linkIe           *[]string
+	linkIew          *[]string
+	linkIsw          *[]string
+	linkN            *[]string
+	linkNic          *[]string
+	linkNie          *[]string
+	linkNiew         *[]string
+	linkNisw         *[]string
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	phone            *[]string
+	phoneEmpty       *[]string
+	phoneIc          *[]string
+	phoneIe          *[]string
+	phoneIew         *[]string
+	phoneIsw         *[]string
+	phoneN           *[]string
+	phoneNic         *[]string
+	phoneNie         *[]string
+	phoneNiew        *[]string
+	phoneNisw        *[]string
+	q                *string
+	tag              *[]string
+	tagN             *[]string
+	title            *[]string
+	titleEmpty       *[]string
+	titleIc          *[]string
+	titleIe          *[]string
+	titleIew         *[]string
+	titleIsw         *[]string
+	titleN           *[]string
+	titleNic         *[]string
+	titleNie         *[]string
+	titleNiew        *[]string
+	titleNisw        *[]string
 	updatedByRequest *string
 }
 
@@ -7055,24 +7079,25 @@ TenancyContactsList Method for TenancyContactsList
 
 Get a list of contact objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyContactsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyContactsListRequest
 */
 func (a *TenancyAPIService) TenancyContactsList(ctx context.Context) ApiTenancyContactsListRequest {
 	return ApiTenancyContactsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedContactList
+//
+//	@return PaginatedContactList
 func (a *TenancyAPIService) TenancyContactsListExecute(r ApiTenancyContactsListRequest) (*PaginatedContactList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedContactList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedContactList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsList")
@@ -8163,9 +8188,9 @@ func (a *TenancyAPIService) TenancyContactsListExecute(r ApiTenancyContactsListR
 }
 
 type ApiTenancyContactsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                           context.Context
+	ApiService                    *TenancyAPIService
+	id                            int32
 	patchedWritableContactRequest *PatchedWritableContactRequest
 }
 
@@ -8183,26 +8208,27 @@ TenancyContactsPartialUpdate Method for TenancyContactsPartialUpdate
 
 Patch a contact object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact.
- @return ApiTenancyContactsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact.
+	@return ApiTenancyContactsPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactsPartialUpdate(ctx context.Context, id int32) ApiTenancyContactsPartialUpdateRequest {
 	return ApiTenancyContactsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Contact
+//
+//	@return Contact
 func (a *TenancyAPIService) TenancyContactsPartialUpdateExecute(r ApiTenancyContactsPartialUpdateRequest) (*Contact, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Contact
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Contact
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsPartialUpdate")
@@ -8288,9 +8314,9 @@ func (a *TenancyAPIService) TenancyContactsPartialUpdateExecute(r ApiTenancyCont
 }
 
 type ApiTenancyContactsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyContactsRetrieveRequest) Execute() (*Contact, *http.Response, error) {
@@ -8302,26 +8328,27 @@ TenancyContactsRetrieve Method for TenancyContactsRetrieve
 
 Get a contact object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact.
- @return ApiTenancyContactsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact.
+	@return ApiTenancyContactsRetrieveRequest
 */
 func (a *TenancyAPIService) TenancyContactsRetrieve(ctx context.Context, id int32) ApiTenancyContactsRetrieveRequest {
 	return ApiTenancyContactsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Contact
+//
+//	@return Contact
 func (a *TenancyAPIService) TenancyContactsRetrieveExecute(r ApiTenancyContactsRetrieveRequest) (*Contact, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Contact
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Contact
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsRetrieve")
@@ -8405,9 +8432,9 @@ func (a *TenancyAPIService) TenancyContactsRetrieveExecute(r ApiTenancyContactsR
 }
 
 type ApiTenancyContactsUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                    context.Context
+	ApiService             *TenancyAPIService
+	id                     int32
 	writableContactRequest *WritableContactRequest
 }
 
@@ -8425,26 +8452,27 @@ TenancyContactsUpdate Method for TenancyContactsUpdate
 
 Put a contact object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this contact.
- @return ApiTenancyContactsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this contact.
+	@return ApiTenancyContactsUpdateRequest
 */
 func (a *TenancyAPIService) TenancyContactsUpdate(ctx context.Context, id int32) ApiTenancyContactsUpdateRequest {
 	return ApiTenancyContactsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Contact
+//
+//	@return Contact
 func (a *TenancyAPIService) TenancyContactsUpdateExecute(r ApiTenancyContactsUpdateRequest) (*Contact, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Contact
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Contact
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyContactsUpdate")
@@ -8533,8 +8561,8 @@ func (a *TenancyAPIService) TenancyContactsUpdateExecute(r ApiTenancyContactsUpd
 }
 
 type ApiTenancyTenantGroupsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                context.Context
+	ApiService         *TenancyAPIService
 	tenantGroupRequest *[]TenantGroupRequest
 }
 
@@ -8552,22 +8580,22 @@ TenancyTenantGroupsBulkDestroy Method for TenancyTenantGroupsBulkDestroy
 
 Delete a list of tenant group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyTenantGroupsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyTenantGroupsBulkDestroyRequest
 */
 func (a *TenancyAPIService) TenancyTenantGroupsBulkDestroy(ctx context.Context) ApiTenancyTenantGroupsBulkDestroyRequest {
 	return ApiTenancyTenantGroupsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyTenantGroupsBulkDestroyExecute(r ApiTenancyTenantGroupsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsBulkDestroy")
@@ -8646,8 +8674,8 @@ func (a *TenancyAPIService) TenancyTenantGroupsBulkDestroyExecute(r ApiTenancyTe
 }
 
 type ApiTenancyTenantGroupsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                context.Context
+	ApiService         *TenancyAPIService
 	tenantGroupRequest *[]TenantGroupRequest
 }
 
@@ -8665,24 +8693,25 @@ TenancyTenantGroupsBulkPartialUpdate Method for TenancyTenantGroupsBulkPartialUp
 
 Patch a list of tenant group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyTenantGroupsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyTenantGroupsBulkPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyTenantGroupsBulkPartialUpdate(ctx context.Context) ApiTenancyTenantGroupsBulkPartialUpdateRequest {
 	return ApiTenancyTenantGroupsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []TenantGroup
+//
+//	@return []TenantGroup
 func (a *TenancyAPIService) TenancyTenantGroupsBulkPartialUpdateExecute(r ApiTenancyTenantGroupsBulkPartialUpdateRequest) ([]TenantGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []TenantGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []TenantGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsBulkPartialUpdate")
@@ -8770,8 +8799,8 @@ func (a *TenancyAPIService) TenancyTenantGroupsBulkPartialUpdateExecute(r ApiTen
 }
 
 type ApiTenancyTenantGroupsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                context.Context
+	ApiService         *TenancyAPIService
 	tenantGroupRequest *[]TenantGroupRequest
 }
 
@@ -8789,24 +8818,25 @@ TenancyTenantGroupsBulkUpdate Method for TenancyTenantGroupsBulkUpdate
 
 Put a list of tenant group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyTenantGroupsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyTenantGroupsBulkUpdateRequest
 */
 func (a *TenancyAPIService) TenancyTenantGroupsBulkUpdate(ctx context.Context) ApiTenancyTenantGroupsBulkUpdateRequest {
 	return ApiTenancyTenantGroupsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []TenantGroup
+//
+//	@return []TenantGroup
 func (a *TenancyAPIService) TenancyTenantGroupsBulkUpdateExecute(r ApiTenancyTenantGroupsBulkUpdateRequest) ([]TenantGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []TenantGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []TenantGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsBulkUpdate")
@@ -8894,8 +8924,8 @@ func (a *TenancyAPIService) TenancyTenantGroupsBulkUpdateExecute(r ApiTenancyTen
 }
 
 type ApiTenancyTenantGroupsCreateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                        context.Context
+	ApiService                 *TenancyAPIService
 	writableTenantGroupRequest *WritableTenantGroupRequest
 }
 
@@ -8913,24 +8943,25 @@ TenancyTenantGroupsCreate Method for TenancyTenantGroupsCreate
 
 Post a list of tenant group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyTenantGroupsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyTenantGroupsCreateRequest
 */
 func (a *TenancyAPIService) TenancyTenantGroupsCreate(ctx context.Context) ApiTenancyTenantGroupsCreateRequest {
 	return ApiTenancyTenantGroupsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return TenantGroup
+//
+//	@return TenantGroup
 func (a *TenancyAPIService) TenancyTenantGroupsCreateExecute(r ApiTenancyTenantGroupsCreateRequest) (*TenantGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TenantGroup
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TenantGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsCreate")
@@ -9018,9 +9049,9 @@ func (a *TenancyAPIService) TenancyTenantGroupsCreateExecute(r ApiTenancyTenantG
 }
 
 type ApiTenancyTenantGroupsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyTenantGroupsDestroyRequest) Execute() (*http.Response, error) {
@@ -9032,24 +9063,24 @@ TenancyTenantGroupsDestroy Method for TenancyTenantGroupsDestroy
 
 Delete a tenant group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tenant group.
- @return ApiTenancyTenantGroupsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tenant group.
+	@return ApiTenancyTenantGroupsDestroyRequest
 */
 func (a *TenancyAPIService) TenancyTenantGroupsDestroy(ctx context.Context, id int32) ApiTenancyTenantGroupsDestroyRequest {
 	return ApiTenancyTenantGroupsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyTenantGroupsDestroyExecute(r ApiTenancyTenantGroupsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsDestroy")
@@ -9124,70 +9155,70 @@ func (a *TenancyAPIService) TenancyTenantGroupsDestroyExecute(r ApiTenancyTenant
 }
 
 type ApiTenancyTenantGroupsListRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *TenancyAPIService
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	parent *[]string
-	parentN *[]string
-	parentId *[]*int32
-	parentIdN *[]*int32
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	parent           *[]string
+	parentN          *[]string
+	parentId         *[]*int32
+	parentIdN        *[]*int32
+	q                *string
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -9523,24 +9554,25 @@ TenancyTenantGroupsList Method for TenancyTenantGroupsList
 
 Get a list of tenant group objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyTenantGroupsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyTenantGroupsListRequest
 */
 func (a *TenancyAPIService) TenancyTenantGroupsList(ctx context.Context) ApiTenancyTenantGroupsListRequest {
 	return ApiTenancyTenantGroupsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedTenantGroupList
+//
+//	@return PaginatedTenantGroupList
 func (a *TenancyAPIService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGroupsListRequest) (*PaginatedTenantGroupList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedTenantGroupList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedTenantGroupList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsList")
@@ -10268,9 +10300,9 @@ func (a *TenancyAPIService) TenancyTenantGroupsListExecute(r ApiTenancyTenantGro
 }
 
 type ApiTenancyTenantGroupsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                               context.Context
+	ApiService                        *TenancyAPIService
+	id                                int32
 	patchedWritableTenantGroupRequest *PatchedWritableTenantGroupRequest
 }
 
@@ -10288,26 +10320,27 @@ TenancyTenantGroupsPartialUpdate Method for TenancyTenantGroupsPartialUpdate
 
 Patch a tenant group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tenant group.
- @return ApiTenancyTenantGroupsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tenant group.
+	@return ApiTenancyTenantGroupsPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyTenantGroupsPartialUpdate(ctx context.Context, id int32) ApiTenancyTenantGroupsPartialUpdateRequest {
 	return ApiTenancyTenantGroupsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return TenantGroup
+//
+//	@return TenantGroup
 func (a *TenancyAPIService) TenancyTenantGroupsPartialUpdateExecute(r ApiTenancyTenantGroupsPartialUpdateRequest) (*TenantGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TenantGroup
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TenantGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsPartialUpdate")
@@ -10393,9 +10426,9 @@ func (a *TenancyAPIService) TenancyTenantGroupsPartialUpdateExecute(r ApiTenancy
 }
 
 type ApiTenancyTenantGroupsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyTenantGroupsRetrieveRequest) Execute() (*TenantGroup, *http.Response, error) {
@@ -10407,26 +10440,27 @@ TenancyTenantGroupsRetrieve Method for TenancyTenantGroupsRetrieve
 
 Get a tenant group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tenant group.
- @return ApiTenancyTenantGroupsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tenant group.
+	@return ApiTenancyTenantGroupsRetrieveRequest
 */
 func (a *TenancyAPIService) TenancyTenantGroupsRetrieve(ctx context.Context, id int32) ApiTenancyTenantGroupsRetrieveRequest {
 	return ApiTenancyTenantGroupsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return TenantGroup
+//
+//	@return TenantGroup
 func (a *TenancyAPIService) TenancyTenantGroupsRetrieveExecute(r ApiTenancyTenantGroupsRetrieveRequest) (*TenantGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TenantGroup
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TenantGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsRetrieve")
@@ -10510,9 +10544,9 @@ func (a *TenancyAPIService) TenancyTenantGroupsRetrieveExecute(r ApiTenancyTenan
 }
 
 type ApiTenancyTenantGroupsUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                        context.Context
+	ApiService                 *TenancyAPIService
+	id                         int32
 	writableTenantGroupRequest *WritableTenantGroupRequest
 }
 
@@ -10530,26 +10564,27 @@ TenancyTenantGroupsUpdate Method for TenancyTenantGroupsUpdate
 
 Put a tenant group object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tenant group.
- @return ApiTenancyTenantGroupsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tenant group.
+	@return ApiTenancyTenantGroupsUpdateRequest
 */
 func (a *TenancyAPIService) TenancyTenantGroupsUpdate(ctx context.Context, id int32) ApiTenancyTenantGroupsUpdateRequest {
 	return ApiTenancyTenantGroupsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return TenantGroup
+//
+//	@return TenantGroup
 func (a *TenancyAPIService) TenancyTenantGroupsUpdateExecute(r ApiTenancyTenantGroupsUpdateRequest) (*TenantGroup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *TenantGroup
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *TenantGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantGroupsUpdate")
@@ -10638,8 +10673,8 @@ func (a *TenancyAPIService) TenancyTenantGroupsUpdateExecute(r ApiTenancyTenantG
 }
 
 type ApiTenancyTenantsBulkDestroyRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx           context.Context
+	ApiService    *TenancyAPIService
 	tenantRequest *[]TenantRequest
 }
 
@@ -10657,22 +10692,22 @@ TenancyTenantsBulkDestroy Method for TenancyTenantsBulkDestroy
 
 Delete a list of tenant objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyTenantsBulkDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyTenantsBulkDestroyRequest
 */
 func (a *TenancyAPIService) TenancyTenantsBulkDestroy(ctx context.Context) ApiTenancyTenantsBulkDestroyRequest {
 	return ApiTenancyTenantsBulkDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyTenantsBulkDestroyExecute(r ApiTenancyTenantsBulkDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsBulkDestroy")
@@ -10751,8 +10786,8 @@ func (a *TenancyAPIService) TenancyTenantsBulkDestroyExecute(r ApiTenancyTenants
 }
 
 type ApiTenancyTenantsBulkPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx           context.Context
+	ApiService    *TenancyAPIService
 	tenantRequest *[]TenantRequest
 }
 
@@ -10770,24 +10805,25 @@ TenancyTenantsBulkPartialUpdate Method for TenancyTenantsBulkPartialUpdate
 
 Patch a list of tenant objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyTenantsBulkPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyTenantsBulkPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyTenantsBulkPartialUpdate(ctx context.Context) ApiTenancyTenantsBulkPartialUpdateRequest {
 	return ApiTenancyTenantsBulkPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Tenant
+//
+//	@return []Tenant
 func (a *TenancyAPIService) TenancyTenantsBulkPartialUpdateExecute(r ApiTenancyTenantsBulkPartialUpdateRequest) ([]Tenant, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Tenant
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Tenant
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsBulkPartialUpdate")
@@ -10875,8 +10911,8 @@ func (a *TenancyAPIService) TenancyTenantsBulkPartialUpdateExecute(r ApiTenancyT
 }
 
 type ApiTenancyTenantsBulkUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx           context.Context
+	ApiService    *TenancyAPIService
 	tenantRequest *[]TenantRequest
 }
 
@@ -10894,24 +10930,25 @@ TenancyTenantsBulkUpdate Method for TenancyTenantsBulkUpdate
 
 Put a list of tenant objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyTenantsBulkUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyTenantsBulkUpdateRequest
 */
 func (a *TenancyAPIService) TenancyTenantsBulkUpdate(ctx context.Context) ApiTenancyTenantsBulkUpdateRequest {
 	return ApiTenancyTenantsBulkUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []Tenant
+//
+//	@return []Tenant
 func (a *TenancyAPIService) TenancyTenantsBulkUpdateExecute(r ApiTenancyTenantsBulkUpdateRequest) ([]Tenant, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []Tenant
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Tenant
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsBulkUpdate")
@@ -10999,8 +11036,8 @@ func (a *TenancyAPIService) TenancyTenantsBulkUpdateExecute(r ApiTenancyTenantsB
 }
 
 type ApiTenancyTenantsCreateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
+	ctx                   context.Context
+	ApiService            *TenancyAPIService
 	writableTenantRequest *WritableTenantRequest
 }
 
@@ -11018,24 +11055,25 @@ TenancyTenantsCreate Method for TenancyTenantsCreate
 
 Post a list of tenant objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyTenantsCreateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyTenantsCreateRequest
 */
 func (a *TenancyAPIService) TenancyTenantsCreate(ctx context.Context) ApiTenancyTenantsCreateRequest {
 	return ApiTenancyTenantsCreateRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Tenant
+//
+//	@return Tenant
 func (a *TenancyAPIService) TenancyTenantsCreateExecute(r ApiTenancyTenantsCreateRequest) (*Tenant, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Tenant
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Tenant
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsCreate")
@@ -11123,9 +11161,9 @@ func (a *TenancyAPIService) TenancyTenantsCreateExecute(r ApiTenancyTenantsCreat
 }
 
 type ApiTenancyTenantsDestroyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyTenantsDestroyRequest) Execute() (*http.Response, error) {
@@ -11137,24 +11175,24 @@ TenancyTenantsDestroy Method for TenancyTenantsDestroy
 
 Delete a tenant object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tenant.
- @return ApiTenancyTenantsDestroyRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tenant.
+	@return ApiTenancyTenantsDestroyRequest
 */
 func (a *TenancyAPIService) TenancyTenantsDestroy(ctx context.Context, id int32) ApiTenancyTenantsDestroyRequest {
 	return ApiTenancyTenantsDestroyRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
 func (a *TenancyAPIService) TenancyTenantsDestroyExecute(r ApiTenancyTenantsDestroyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsDestroy")
@@ -11229,76 +11267,76 @@ func (a *TenancyAPIService) TenancyTenantsDestroyExecute(r ApiTenancyTenantsDest
 }
 
 type ApiTenancyTenantsListRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	contact *[]int32
-	contactN *[]int32
-	contactGroup *[]int32
-	contactGroupN *[]int32
-	contactRole *[]int32
-	contactRoleN *[]int32
-	created *[]time.Time
-	createdGt *[]time.Time
-	createdGte *[]time.Time
-	createdLt *[]time.Time
-	createdLte *[]time.Time
-	createdN *[]time.Time
+	ctx              context.Context
+	ApiService       *TenancyAPIService
+	contact          *[]int32
+	contactN         *[]int32
+	contactGroup     *[]int32
+	contactGroupN    *[]int32
+	contactRole      *[]int32
+	contactRoleN     *[]int32
+	created          *[]time.Time
+	createdGt        *[]time.Time
+	createdGte       *[]time.Time
+	createdLt        *[]time.Time
+	createdLte       *[]time.Time
+	createdN         *[]time.Time
 	createdByRequest *string
-	description *[]string
+	description      *[]string
 	descriptionEmpty *[]string
-	descriptionIc *[]string
-	descriptionIe *[]string
-	descriptionIew *[]string
-	descriptionIsw *[]string
-	descriptionN *[]string
-	descriptionNic *[]string
-	descriptionNie *[]string
-	descriptionNiew *[]string
-	descriptionNisw *[]string
-	group *[]int32
-	groupN *[]int32
-	groupId *[]int32
-	groupIdN *[]int32
-	id *[]int32
-	idGt *[]int32
-	idGte *[]int32
-	idLt *[]int32
-	idLte *[]int32
-	idN *[]int32
-	lastUpdated *[]time.Time
-	lastUpdatedGt *[]time.Time
-	lastUpdatedGte *[]time.Time
-	lastUpdatedLt *[]time.Time
-	lastUpdatedLte *[]time.Time
-	lastUpdatedN *[]time.Time
-	limit *int32
-	name *[]string
-	nameEmpty *[]string
-	nameIc *[]string
-	nameIe *[]string
-	nameIew *[]string
-	nameIsw *[]string
-	nameN *[]string
-	nameNic *[]string
-	nameNie *[]string
-	nameNiew *[]string
-	nameNisw *[]string
-	offset *int32
-	ordering *string
-	q *string
-	slug *[]string
-	slugEmpty *[]string
-	slugIc *[]string
-	slugIe *[]string
-	slugIew *[]string
-	slugIsw *[]string
-	slugN *[]string
-	slugNic *[]string
-	slugNie *[]string
-	slugNiew *[]string
-	slugNisw *[]string
-	tag *[]string
-	tagN *[]string
+	descriptionIc    *[]string
+	descriptionIe    *[]string
+	descriptionIew   *[]string
+	descriptionIsw   *[]string
+	descriptionN     *[]string
+	descriptionNic   *[]string
+	descriptionNie   *[]string
+	descriptionNiew  *[]string
+	descriptionNisw  *[]string
+	group            *[]int32
+	groupN           *[]int32
+	groupId          *[]int32
+	groupIdN         *[]int32
+	id               *[]int32
+	idGt             *[]int32
+	idGte            *[]int32
+	idLt             *[]int32
+	idLte            *[]int32
+	idN              *[]int32
+	lastUpdated      *[]time.Time
+	lastUpdatedGt    *[]time.Time
+	lastUpdatedGte   *[]time.Time
+	lastUpdatedLt    *[]time.Time
+	lastUpdatedLte   *[]time.Time
+	lastUpdatedN     *[]time.Time
+	limit            *int32
+	name             *[]string
+	nameEmpty        *[]string
+	nameIc           *[]string
+	nameIe           *[]string
+	nameIew          *[]string
+	nameIsw          *[]string
+	nameN            *[]string
+	nameNic          *[]string
+	nameNie          *[]string
+	nameNiew         *[]string
+	nameNisw         *[]string
+	offset           *int32
+	ordering         *string
+	q                *string
+	slug             *[]string
+	slugEmpty        *[]string
+	slugIc           *[]string
+	slugIe           *[]string
+	slugIew          *[]string
+	slugIsw          *[]string
+	slugN            *[]string
+	slugNic          *[]string
+	slugNie          *[]string
+	slugNiew         *[]string
+	slugNisw         *[]string
+	tag              *[]string
+	tagN             *[]string
 	updatedByRequest *string
 }
 
@@ -11670,24 +11708,25 @@ TenancyTenantsList Method for TenancyTenantsList
 
 Get a list of tenant objects.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiTenancyTenantsListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiTenancyTenantsListRequest
 */
 func (a *TenancyAPIService) TenancyTenantsList(ctx context.Context) ApiTenancyTenantsListRequest {
 	return ApiTenancyTenantsListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return PaginatedTenantList
+//
+//	@return PaginatedTenantList
 func (a *TenancyAPIService) TenancyTenantsListExecute(r ApiTenancyTenantsListRequest) (*PaginatedTenantList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PaginatedTenantList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedTenantList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsList")
@@ -12481,9 +12520,9 @@ func (a *TenancyAPIService) TenancyTenantsListExecute(r ApiTenancyTenantsListReq
 }
 
 type ApiTenancyTenantsPartialUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                          context.Context
+	ApiService                   *TenancyAPIService
+	id                           int32
 	patchedWritableTenantRequest *PatchedWritableTenantRequest
 }
 
@@ -12501,26 +12540,27 @@ TenancyTenantsPartialUpdate Method for TenancyTenantsPartialUpdate
 
 Patch a tenant object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tenant.
- @return ApiTenancyTenantsPartialUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tenant.
+	@return ApiTenancyTenantsPartialUpdateRequest
 */
 func (a *TenancyAPIService) TenancyTenantsPartialUpdate(ctx context.Context, id int32) ApiTenancyTenantsPartialUpdateRequest {
 	return ApiTenancyTenantsPartialUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Tenant
+//
+//	@return Tenant
 func (a *TenancyAPIService) TenancyTenantsPartialUpdateExecute(r ApiTenancyTenantsPartialUpdateRequest) (*Tenant, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Tenant
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Tenant
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsPartialUpdate")
@@ -12606,9 +12646,9 @@ func (a *TenancyAPIService) TenancyTenantsPartialUpdateExecute(r ApiTenancyTenan
 }
 
 type ApiTenancyTenantsRetrieveRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TenancyAPIService
-	id int32
+	id         int32
 }
 
 func (r ApiTenancyTenantsRetrieveRequest) Execute() (*Tenant, *http.Response, error) {
@@ -12620,26 +12660,27 @@ TenancyTenantsRetrieve Method for TenancyTenantsRetrieve
 
 Get a tenant object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tenant.
- @return ApiTenancyTenantsRetrieveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tenant.
+	@return ApiTenancyTenantsRetrieveRequest
 */
 func (a *TenancyAPIService) TenancyTenantsRetrieve(ctx context.Context, id int32) ApiTenancyTenantsRetrieveRequest {
 	return ApiTenancyTenantsRetrieveRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Tenant
+//
+//	@return Tenant
 func (a *TenancyAPIService) TenancyTenantsRetrieveExecute(r ApiTenancyTenantsRetrieveRequest) (*Tenant, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Tenant
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Tenant
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsRetrieve")
@@ -12723,9 +12764,9 @@ func (a *TenancyAPIService) TenancyTenantsRetrieveExecute(r ApiTenancyTenantsRet
 }
 
 type ApiTenancyTenantsUpdateRequest struct {
-	ctx context.Context
-	ApiService *TenancyAPIService
-	id int32
+	ctx                   context.Context
+	ApiService            *TenancyAPIService
+	id                    int32
 	writableTenantRequest *WritableTenantRequest
 }
 
@@ -12743,26 +12784,27 @@ TenancyTenantsUpdate Method for TenancyTenantsUpdate
 
 Put a tenant object.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param id A unique integer value identifying this tenant.
- @return ApiTenancyTenantsUpdateRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this tenant.
+	@return ApiTenancyTenantsUpdateRequest
 */
 func (a *TenancyAPIService) TenancyTenantsUpdate(ctx context.Context, id int32) ApiTenancyTenantsUpdateRequest {
 	return ApiTenancyTenantsUpdateRequest{
 		ApiService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return Tenant
+//
+//	@return Tenant
 func (a *TenancyAPIService) TenancyTenantsUpdateExecute(r ApiTenancyTenantsUpdateRequest) (*Tenant, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *Tenant
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Tenant
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TenancyAPIService.TenancyTenantsUpdate")
