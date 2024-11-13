@@ -1,4 +1,4 @@
-module github.com/jqueuniet/netbox-go/v4
+module github.com/jqueuniet/netbox-go
 
 go 1.18
 

@@ -1,5 +1,5 @@
 generatorName: go
-packageName: v3_7
+packageName: apiv3_7
 packageVersion: 3.7.8
 
 gitHost: github.com
@@ -7,7 +7,7 @@ gitUserId: jqueuniet
 gitRepoId: netbox-go
 
 inputSpec: schemas/patched-3.7.8.yaml
-outputDir: v3_7
+outputDir: apiv3_7
 
 globalProperty:
   apiDocs: false

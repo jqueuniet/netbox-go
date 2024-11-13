@@ -1,5 +1,5 @@
 generatorName: go
-packageName: v4_0
+packageName: apiv4_0
 packageVersion: 4.0.11
 
 gitHost: github.com
@@ -7,7 +7,7 @@ gitUserId: jqueuniet
 gitRepoId: netbox-go
 
 inputSpec: schemas/patched-4.0.11.yaml
-outputDir: v4_0
+outputDir: apiv4_0
 
 globalProperty:
   apiDocs: false
