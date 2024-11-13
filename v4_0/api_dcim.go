@@ -279,17 +279,17 @@ type DcimAPI interface {
 	DcimCablesUpdateExecute(r ApiDcimCablesUpdateRequest) (*Cable, *http.Response, error)
 
 	/*
-		DcimConnectedDeviceList Method for DcimConnectedDeviceList
+			DcimConnectedDeviceList Method for DcimConnectedDeviceList
 
-		This endpoint allows a user to determine what device (if any) is connected to a given peer device and peer
-	interface. This is useful in a situation where a device boots with no configuration, but can detect its neighbors
-	via a protocol such as LLDP. Two query parameters must be included in the request:
+			This endpoint allows a user to determine what device (if any) is connected to a given peer device and peer
+		interface. This is useful in a situation where a device boots with no configuration, but can detect its neighbors
+		via a protocol such as LLDP. Two query parameters must be included in the request:
 
-	* `peer_device`: The name of the peer device
-	* `peer_interface`: The name of the peer interface
+		* `peer_device`: The name of the peer device
+		* `peer_interface`: The name of the peer interface
 
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiDcimConnectedDeviceListRequest
+			@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+			@return ApiDcimConnectedDeviceListRequest
 	*/
 	DcimConnectedDeviceList(ctx context.Context) ApiDcimConnectedDeviceListRequest
 

@@ -393,14 +393,14 @@ type ExtrasAPI interface {
 	ExtrasConfigTemplatesPartialUpdateExecute(r ApiExtrasConfigTemplatesPartialUpdateRequest) (*ConfigTemplate, *http.Response, error)
 
 	/*
-		ExtrasConfigTemplatesRenderCreate Method for ExtrasConfigTemplatesRenderCreate
+			ExtrasConfigTemplatesRenderCreate Method for ExtrasConfigTemplatesRenderCreate
 
-		Render a ConfigTemplate using the context data provided (if any). If the client requests "text/plain" data,
-	return the raw rendered content, rather than serialized JSON.
+			Render a ConfigTemplate using the context data provided (if any). If the client requests "text/plain" data,
+		return the raw rendered content, rather than serialized JSON.
 
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param id A unique integer value identifying this config template.
-		@return ApiExtrasConfigTemplatesRenderCreateRequest
+			@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+			@param id A unique integer value identifying this config template.
+			@return ApiExtrasConfigTemplatesRenderCreateRequest
 	*/
 	ExtrasConfigTemplatesRenderCreate(ctx context.Context, id int32) ApiExtrasConfigTemplatesRenderCreateRequest
 

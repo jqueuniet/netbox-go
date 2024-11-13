@@ -21,15 +21,15 @@ import (
 type SchemaAPI interface {
 
 	/*
-		SchemaRetrieve Method for SchemaRetrieve
+			SchemaRetrieve Method for SchemaRetrieve
 
-		OpenApi3 schema for this API. Format can be selected via content negotiation.
+			OpenApi3 schema for this API. Format can be selected via content negotiation.
 
-	- YAML: application/vnd.oai.openapi
-	- JSON: application/vnd.oai.openapi+json
+		- YAML: application/vnd.oai.openapi
+		- JSON: application/vnd.oai.openapi+json
 
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiSchemaRetrieveRequest
+			@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+			@return ApiSchemaRetrieveRequest
 	*/
 	SchemaRetrieve(ctx context.Context) ApiSchemaRetrieveRequest
 
