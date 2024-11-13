@@ -18,6 +18,6 @@ additionalProperties:
   generateInterfaces: true
   isGoSubmodule: true
   withGoMod: false
-  disallowAdditionalPropertiesIfNotPresent: "false"
-  useDefaultValuesForRequiredVars: "true"
+  disallowAdditionalPropertiesIfNotPresent: false
+  useDefaultValuesForRequiredVars: true
   enumClassPrefix: true
