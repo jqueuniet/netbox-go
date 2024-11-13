@@ -114,7 +114,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -178,7 +178,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -244,7 +244,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -310,7 +310,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -376,7 +376,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -445,7 +445,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -657,7 +657,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -729,7 +729,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -799,7 +799,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -871,7 +871,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -935,7 +935,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1001,7 +1001,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1067,7 +1067,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1133,7 +1133,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1202,7 +1202,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1408,7 +1408,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1480,7 +1480,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1550,7 +1550,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1622,7 +1622,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1686,7 +1686,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1752,7 +1752,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1818,7 +1818,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1884,7 +1884,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -1953,7 +1953,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2141,7 +2141,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2213,7 +2213,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2283,7 +2283,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2355,7 +2355,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2419,7 +2419,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2485,7 +2485,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2551,7 +2551,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2617,7 +2617,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2686,7 +2686,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2874,7 +2874,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -2946,7 +2946,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3016,7 +3016,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3088,7 +3088,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3152,7 +3152,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3218,7 +3218,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3284,7 +3284,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3350,7 +3350,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3419,7 +3419,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3631,7 +3631,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3703,7 +3703,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3773,7 +3773,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3845,7 +3845,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3909,7 +3909,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -3975,7 +3975,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4041,7 +4041,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4107,7 +4107,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4176,7 +4176,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4388,7 +4388,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4460,7 +4460,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4530,7 +4530,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4602,7 +4602,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4666,7 +4666,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4732,7 +4732,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4798,7 +4798,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4864,7 +4864,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -4933,7 +4933,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5173,7 +5173,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5245,7 +5245,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5315,7 +5315,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5387,7 +5387,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5451,7 +5451,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5517,7 +5517,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5583,7 +5583,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5649,7 +5649,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5718,7 +5718,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5908,7 +5908,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -5980,7 +5980,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6050,7 +6050,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6122,7 +6122,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6186,7 +6186,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6252,7 +6252,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6318,7 +6318,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6384,7 +6384,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6453,7 +6453,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6627,7 +6627,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6699,7 +6699,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6769,7 +6769,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6841,7 +6841,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6905,7 +6905,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -6971,7 +6971,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -7037,7 +7037,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -7103,7 +7103,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -7172,7 +7172,7 @@ import (
 	"fmt"
 	"os"
     "time"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -7394,7 +7394,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -7466,7 +7466,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {
@@ -7536,7 +7536,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go"
+	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 )
 
 func main() {

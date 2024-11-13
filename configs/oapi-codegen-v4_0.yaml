@@ -1,0 +1,23 @@
+generatorName: go
+packageName: v4_0
+
+gitUserId: jqueuniet
+gitRepoId: netbox-go
+
+inputSpec: schema/netbox-4.0.11.yaml
+outputDir: v4_0
+
+globalProperty:
+  apiDocs: false
+  modelDocs: false
+  apiTests: false
+  modelTests: false
+
+generateInterfaces: true
+isGoSubmodule: true
+withGoMod: false
+packageVersion: 4.0.11
+
+additionalProperties:
+  disallowAdditionalPropertiesIfNotPresent: "false"
+  enumClassPrefix: true

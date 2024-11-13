@@ -1,4 +1,5 @@
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -754,8 +755,6 @@ docs/WritableWirelessLANGroupRequest.md
 docs/WritableWirelessLANRequest.md
 docs/WritableWirelessLinkRequest.md
 git_push.sh
-go.mod
-go.sum
 model_aggregate.go
 model_aggregate_family.go
 model_aggregate_request.go
@@ -1482,4 +1481,16 @@ model_writable_wireless_lan_group_request.go
 model_writable_wireless_lan_request.go
 model_writable_wireless_link_request.go
 response.go
+test/api_circuits_test.go
+test/api_core_test.go
+test/api_dcim_test.go
+test/api_extras_test.go
+test/api_ipam_test.go
+test/api_schema_test.go
+test/api_status_test.go
+test/api_tenancy_test.go
+test/api_users_test.go
+test/api_virtualization_test.go
+test/api_vpn_test.go
+test/api_wireless_test.go
 utils.go
