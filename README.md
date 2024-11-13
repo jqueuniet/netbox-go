@@ -44,3 +44,34 @@ import netbox "github.com/jqueuniet/netbox-go/apiv4_0"
 
 Detailed usage can be found in the README.md under each specific version, may vary from one version to the next but 
 should remain consistent as long as the same generator is used.
+
+# Development
+
+## Build
+
+The following dependencies are locally required for now:
+
+* A Python interpreter with the PyYAML module
+* Any Go SDK >= 1.18
+* goimports
+
+openapi-generator can either be run locally or in a container. Use either `build-local.sh` or `build-podman.sh` 
+depending on the desired workflow. Refer to the container workflow for the currently used generator version.
+
+## Schema patches
+
+Any new schema patch should be applied through the `patcher/pre_gen.py` script.
+
+## Netbox patch releases
+
+New schema files for now need to be imported manually into the `schemas` directory, as the process requires an active 
+Netbox server using the desired version. The easiest way to do that is to use the `compose` files provided by the
+[netbox-docker](https://github.com/netbox-community/netbox-docker/) project. Once done, the relevant generator config 
+file in the `configs` directory should be updated, both the `inputSpec` and `packageVersion` fields should reflect the 
+new patch release.
+
+## Netbox minor/major releases
+
+New minor or major releases require generating a new client. First import the schema like with patch releases, and then 
+copy any generator config file, editing `packageName` and `outputDir` on top of `inputSpec` and `packageVersion`. The 
+rest of the tooling should adapt automatically once the code generation is started.
