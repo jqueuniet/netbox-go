@@ -2,10 +2,11 @@ generatorName: go
 packageName: v4_0
 packageVersion: 4.0.11
 
+gitHost: github.com
 gitUserId: jqueuniet
 gitRepoId: netbox-go
 
-inputSpec: schema/netbox-4.0.11.yaml
+inputSpec: schemas/patched-4.0.11.yaml
 outputDir: v4_0
 
 globalProperty:

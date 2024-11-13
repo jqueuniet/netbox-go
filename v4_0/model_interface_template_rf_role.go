@@ -20,8 +20,8 @@ var _ MappedNullable = &InterfaceTemplateRfRole{}
 // InterfaceTemplateRfRole struct for InterfaceTemplateRfRole
 type InterfaceTemplateRfRole struct {
 	// * `ap` - Access point * `station` - Station
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                NullableString `json:"value,omitempty"`
+	Label                *string        `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,36 +44,47 @@ func NewInterfaceTemplateRfRoleWithDefaults() *InterfaceTemplateRfRole {
 	return &this
 }
 
-// GetValue returns the Value field value if set, zero value otherwise.
+// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InterfaceTemplateRfRole) GetValue() string {
-	if o == nil || IsNil(o.Value) {
+	if o == nil || IsNil(o.Value.Get()) {
 		var ret string
 		return ret
 	}
-	return *o.Value
+	return *o.Value.Get()
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InterfaceTemplateRfRole) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Value, true
+	return o.Value.Get(), o.Value.IsSet()
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *InterfaceTemplateRfRole) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
+	if o != nil && o.Value.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
+// SetValue gets a reference to the given NullableString and assigns it to the Value field.
 func (o *InterfaceTemplateRfRole) SetValue(v string) {
-	o.Value = &v
+	o.Value.Set(&v)
+}
+
+// SetValueNil sets the value for Value to be an explicit nil
+func (o *InterfaceTemplateRfRole) SetValueNil() {
+	o.Value.Set(nil)
+}
+
+// UnsetValue ensures that no value is present for Value, not even an explicit nil
+func (o *InterfaceTemplateRfRole) UnsetValue() {
+	o.Value.Unset()
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
@@ -118,8 +129,8 @@ func (o InterfaceTemplateRfRole) MarshalJSON() ([]byte, error) {
 
 func (o InterfaceTemplateRfRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Value) {
-		toSerialize["value"] = o.Value
+	if o.Value.IsSet() {
+		toSerialize["value"] = o.Value.Get()
 	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label

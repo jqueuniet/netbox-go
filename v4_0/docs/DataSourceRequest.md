@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Type** | **string** | * &#x60;None&#x60; - --------- * &#x60;local&#x60; - Local * &#x60;git&#x60; - Git * &#x60;amazon-s3&#x60; - Amazon S3 | 
+**Type** | **NullableString** | * &#x60;None&#x60; - --------- * &#x60;local&#x60; - Local * &#x60;git&#x60; - Git * &#x60;amazon-s3&#x60; - Amazon S3 | 
 **SourceUrl** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewDataSourceRequest
 
-`func NewDataSourceRequest(name string, type_ string, sourceUrl string, ) *DataSourceRequest`
+`func NewDataSourceRequest(name string, type_ NullableString, sourceUrl string, ) *DataSourceRequest`
 
 NewDataSourceRequest instantiates a new DataSourceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -73,6 +73,16 @@ and a boolean to check if the value has been set.
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *DataSourceRequest) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *DataSourceRequest) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetSourceUrl
 
 `func (o *DataSourceRequest) GetSourceUrl() string`

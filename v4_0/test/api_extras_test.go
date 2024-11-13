@@ -11,10 +11,11 @@ package v4_0
 
 import (
 	"context"
+	"testing"
+
 	openapiclient "github.com/jqueuniet/netbox-go/v4_0"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
 )
 
 func Test_v4_0_ExtrasAPIService(t *testing.T) {

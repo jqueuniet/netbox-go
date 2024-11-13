@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;pd&#x60; - PD * &#x60;pse&#x60; - PSE | [optional] 
+**Value** | Pointer to **NullableString** | * &#x60;pd&#x60; - PD * &#x60;pse&#x60; - PSE | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -51,6 +51,16 @@ SetValue sets Value field to given value.
 
 HasValue returns a boolean if a field has been set.
 
+### SetValueNil
+
+`func (o *InterfaceTemplatePoeMode) SetValueNil(b bool)`
+
+ SetValueNil sets the value for Value to be an explicit nil
+
+### UnsetValue
+`func (o *InterfaceTemplatePoeMode) UnsetValue()`
+
+UnsetValue ensures that no value is present for Value, not even an explicit nil
 ### GetLabel
 
 `func (o *InterfaceTemplatePoeMode) GetLabel() string`

@@ -21,6 +21,8 @@ All API clients are generated using the [OpenAPI Generator](https://openapi-gene
 has its own generator config to allow changing the way code is generated across API versions and generator releases 
 without impacting older client versions.
 
+Schemas are patched before generation to work around bugs in either the generator or the upstream schema.
+
 ## Installation
 
 Import the module in your Go codebase.
