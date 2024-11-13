@@ -5,4 +5,6 @@ podman run --rm -v "${PWD}:/local" \
   docker.io/openapitools/openapi-generator-cli:latest \
   generate -c "/local/configs/oapi-codegen-v${1}.yaml"
 
-go fmt ./...
+# Needs to be run twice for some reason
+go fmt v"${1}"/*.go
+go fmt v"${1}"/*.go
