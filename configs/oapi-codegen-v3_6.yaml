@@ -1,0 +1,24 @@
+generatorName: go
+packageName: v3_6
+packageVersion: 3.6.9
+
+gitHost: github.com
+gitUserId: jqueuniet
+gitRepoId: netbox-go
+
+inputSpec: schemas/patched-3.6.9.yaml
+outputDir: v3_6
+
+globalProperty:
+  apiDocs: false
+  modelDocs: false
+  apiTests: false
+  modelTests: false
+
+additionalProperties:
+  generateInterfaces: true
+  isGoSubmodule: true
+  withGoMod: false
+  disallowAdditionalPropertiesIfNotPresent: false
+  useDefaultValuesForRequiredVars: true
+  enumClassPrefix: true
