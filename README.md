@@ -4,9 +4,9 @@ This package provides a Go API client for the Netbox REST API with multiple API 
 
 ## Overview
 
-The Netbox server does not support API versioning and only provides limited API guarantees, especially for statically 
-typed languages like Go and clients generated using the OpenAPI specification rather than crafted by hand. Experience 
-showed each new minor version should be considered as major for Go development.
+The Netbox server does not support API versioning and only provides limited API stability guarantees, especially for 
+statically typed languages like Go and clients generated using the OpenAPI specification rather than crafted by hand. 
+Experience showed each new minor version should be considered as major for Go development.
 
 As such, this API client tries to provide support for multiple API versions, each living in a submodule called 
 `apiv{MAJOR}_{MINOR}`. The global module version does not mirror the latest Netbox API version supported, and rather 
