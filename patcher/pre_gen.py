@@ -49,14 +49,14 @@ def patch_spec_file(version: str):
     with open(input_path, "r") as file:
         data = yaml.load(file, Loader=yaml.CSafeLoader)
 
-    patched_data = patch_spec_v4_0(data)
+    patched_data = patch_spec(data)
 
     output_path = build_patched_path(version)
     with open(output_path, "w") as file:
         yaml.dump(patched_data, file, Dumper=yaml.CDumper, sort_keys=False)
 
 
-def patch_spec_v4_0(data):
+def patch_spec(data):
     if "components" in data and "schemas" in data["components"]:
         for name, schema in data["components"]["schemas"].items():
             if "properties" in schema:
@@ -69,7 +69,8 @@ def patch_spec_v4_0(data):
 
                 for ntype in non_nullable_types:
                     if ntype in schema["properties"]:
-                        if schema["properties"][ntype]["format"] == "binary":
+                        if schema["properties"][ntype]["format"] == "binary" \
+                                and "nullable" in schema["properties"][ntype]:
                             schema["properties"][ntype].pop("nullable")
 
     return data
