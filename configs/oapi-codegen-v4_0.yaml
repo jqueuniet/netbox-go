@@ -1,5 +1,6 @@
 generatorName: go
 packageName: v4_0
+packageVersion: 4.0.11
 
 gitUserId: jqueuniet
 gitRepoId: netbox-go
@@ -13,11 +14,10 @@ globalProperty:
   apiTests: false
   modelTests: false
 
-generateInterfaces: true
-isGoSubmodule: true
-withGoMod: false
-packageVersion: 4.0.11
-
 additionalProperties:
+  generateInterfaces: true
+  isGoSubmodule: true
+  withGoMod: false
   disallowAdditionalPropertiesIfNotPresent: "false"
+  useDefaultValuesForRequiredVars: "true"
   enumClassPrefix: true
