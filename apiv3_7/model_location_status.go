@@ -19,9 +19,8 @@ var _ MappedNullable = &LocationStatus{}
 
 // LocationStatus struct for LocationStatus
 type LocationStatus struct {
-	// * `planned` - Planned * `staging` - Staging * `active` - Active * `decommissioning` - Decommissioning * `retired` - Retired
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *LocationStatusValue `json:"value,omitempty"`
+	Label                *LocationStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewLocationStatusWithDefaults() *LocationStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *LocationStatus) GetValue() string {
+func (o *LocationStatus) GetValue() LocationStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret LocationStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *LocationStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocationStatus) GetValueOk() (*string, bool) {
+func (o *LocationStatus) GetValueOk() (*LocationStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *LocationStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *LocationStatus) SetValue(v string) {
+// SetValue gets a reference to the given LocationStatusValue and assigns it to the Value field.
+func (o *LocationStatus) SetValue(v LocationStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *LocationStatus) GetLabel() string {
+func (o *LocationStatus) GetLabel() LocationStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret LocationStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *LocationStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LocationStatus) GetLabelOk() (*string, bool) {
+func (o *LocationStatus) GetLabelOk() (*LocationStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *LocationStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *LocationStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given LocationStatusLabel and assigns it to the Label field.
+func (o *LocationStatus) SetLabel(v LocationStatusLabel) {
 	o.Label = &v
 }
 

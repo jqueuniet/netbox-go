@@ -24,16 +24,15 @@ type WritableEventRuleRequest struct {
 	Name        string   `json:"name"`
 	Enabled     *bool    `json:"enabled,omitempty"`
 	// The types of event which will trigger this rule.
-	EventTypes []string `json:"event_types"`
+	EventTypes []EventRuleEventTypesInner `json:"event_types"`
 	// A set of conditions which determine whether the event will be generated.
-	Conditions interface{} `json:"conditions,omitempty"`
-	// * `webhook` - Webhook * `script` - Script * `notification` - Notification
-	ActionType           *string                `json:"action_type,omitempty"`
-	ActionObjectType     string                 `json:"action_object_type"`
-	ActionObjectId       NullableInt64          `json:"action_object_id,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	Conditions           interface{}               `json:"conditions,omitempty"`
+	ActionType           *EventRuleActionTypeValue `json:"action_type,omitempty"`
+	ActionObjectType     string                    `json:"action_object_type"`
+	ActionObjectId       NullableInt64             `json:"action_object_id,omitempty"`
+	Description          *string                   `json:"description,omitempty"`
+	CustomFields         map[string]interface{}    `json:"custom_fields,omitempty"`
+	Tags                 []NestedTagRequest        `json:"tags,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,7 +42,7 @@ type _WritableEventRuleRequest WritableEventRuleRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableEventRuleRequest(objectTypes []string, name string, eventTypes []string, actionObjectType string) *WritableEventRuleRequest {
+func NewWritableEventRuleRequest(objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionObjectType string) *WritableEventRuleRequest {
 	this := WritableEventRuleRequest{}
 	this.ObjectTypes = objectTypes
 	this.Name = name
@@ -141,9 +140,9 @@ func (o *WritableEventRuleRequest) SetEnabled(v bool) {
 }
 
 // GetEventTypes returns the EventTypes field value
-func (o *WritableEventRuleRequest) GetEventTypes() []string {
+func (o *WritableEventRuleRequest) GetEventTypes() []EventRuleEventTypesInner {
 	if o == nil {
-		var ret []string
+		var ret []EventRuleEventTypesInner
 		return ret
 	}
 
@@ -152,7 +151,7 @@ func (o *WritableEventRuleRequest) GetEventTypes() []string {
 
 // GetEventTypesOk returns a tuple with the EventTypes field value
 // and a boolean to check if the value has been set.
-func (o *WritableEventRuleRequest) GetEventTypesOk() ([]string, bool) {
+func (o *WritableEventRuleRequest) GetEventTypesOk() ([]EventRuleEventTypesInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -160,7 +159,7 @@ func (o *WritableEventRuleRequest) GetEventTypesOk() ([]string, bool) {
 }
 
 // SetEventTypes sets field value
-func (o *WritableEventRuleRequest) SetEventTypes(v []string) {
+func (o *WritableEventRuleRequest) SetEventTypes(v []EventRuleEventTypesInner) {
 	o.EventTypes = v
 }
 
@@ -198,9 +197,9 @@ func (o *WritableEventRuleRequest) SetConditions(v interface{}) {
 }
 
 // GetActionType returns the ActionType field value if set, zero value otherwise.
-func (o *WritableEventRuleRequest) GetActionType() string {
+func (o *WritableEventRuleRequest) GetActionType() EventRuleActionTypeValue {
 	if o == nil || IsNil(o.ActionType) {
-		var ret string
+		var ret EventRuleActionTypeValue
 		return ret
 	}
 	return *o.ActionType
@@ -208,7 +207,7 @@ func (o *WritableEventRuleRequest) GetActionType() string {
 
 // GetActionTypeOk returns a tuple with the ActionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableEventRuleRequest) GetActionTypeOk() (*string, bool) {
+func (o *WritableEventRuleRequest) GetActionTypeOk() (*EventRuleActionTypeValue, bool) {
 	if o == nil || IsNil(o.ActionType) {
 		return nil, false
 	}
@@ -224,8 +223,8 @@ func (o *WritableEventRuleRequest) HasActionType() bool {
 	return false
 }
 
-// SetActionType gets a reference to the given string and assigns it to the ActionType field.
-func (o *WritableEventRuleRequest) SetActionType(v string) {
+// SetActionType gets a reference to the given EventRuleActionTypeValue and assigns it to the ActionType field.
+func (o *WritableEventRuleRequest) SetActionType(v EventRuleActionTypeValue) {
 	o.ActionType = &v
 }
 

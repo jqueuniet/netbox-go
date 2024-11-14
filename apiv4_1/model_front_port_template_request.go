@@ -25,9 +25,8 @@ type FrontPortTemplateRequest struct {
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	// * `8p8c` - 8P8C * `8p6c` - 8P6C * `8p4c` - 8P4C * `8p2c` - 8P2C * `6p6c` - 6P6C * `6p4c` - 6P4C * `6p2c` - 6P2C * `4p4c` - 4P4C * `4p2c` - 4P2C * `gg45` - GG45 * `tera-4p` - TERA 4P * `tera-2p` - TERA 2P * `tera-1p` - TERA 1P * `110-punch` - 110 Punch * `bnc` - BNC * `f` - F Connector * `n` - N Connector * `mrj21` - MRJ21 * `fc` - FC * `lc` - LC * `lc-pc` - LC/PC * `lc-upc` - LC/UPC * `lc-apc` - LC/APC * `lsh` - LSH * `lsh-pc` - LSH/PC * `lsh-upc` - LSH/UPC * `lsh-apc` - LSH/APC * `lx5` - LX.5 * `lx5-pc` - LX.5/PC * `lx5-upc` - LX.5/UPC * `lx5-apc` - LX.5/APC * `mpo` - MPO * `mtrj` - MTRJ * `sc` - SC * `sc-pc` - SC/PC * `sc-upc` - SC/UPC * `sc-apc` - SC/APC * `st` - ST * `cs` - CS * `sn` - SN * `sma-905` - SMA 905 * `sma-906` - SMA 906 * `urm-p2` - URM-P2 * `urm-p4` - URM-P4 * `urm-p8` - URM-P8 * `splice` - Splice * `usb-a` - USB Type A * `usb-b` - USB Type B * `usb-c` - USB Type C * `usb-mini-a` - USB Mini A * `usb-mini-b` - USB Mini B * `usb-micro-a` - USB Micro A * `usb-micro-b` - USB Micro B * `usb-micro-ab` - USB Micro AB * `other` - Other
-	Type                 string                       `json:"type"`
+	Label                *string                      `json:"label,omitempty"`
+	Type                 FrontPortTypeValue           `json:"type"`
 	Color                *string                      `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
 	RearPort             BriefRearPortTemplateRequest `json:"rear_port"`
 	RearPortPosition     *int32                       `json:"rear_port_position,omitempty"`
@@ -41,7 +40,7 @@ type _FrontPortTemplateRequest FrontPortTemplateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFrontPortTemplateRequest(name string, type_ string, rearPort BriefRearPortTemplateRequest) *FrontPortTemplateRequest {
+func NewFrontPortTemplateRequest(name string, type_ FrontPortTypeValue, rearPort BriefRearPortTemplateRequest) *FrontPortTemplateRequest {
 	this := FrontPortTemplateRequest{}
 	this.Name = name
 	this.Type = type_
@@ -204,9 +203,9 @@ func (o *FrontPortTemplateRequest) SetLabel(v string) {
 }
 
 // GetType returns the Type field value
-func (o *FrontPortTemplateRequest) GetType() string {
+func (o *FrontPortTemplateRequest) GetType() FrontPortTypeValue {
 	if o == nil {
-		var ret string
+		var ret FrontPortTypeValue
 		return ret
 	}
 
@@ -215,7 +214,7 @@ func (o *FrontPortTemplateRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *FrontPortTemplateRequest) GetTypeOk() (*string, bool) {
+func (o *FrontPortTemplateRequest) GetTypeOk() (*FrontPortTypeValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -223,7 +222,7 @@ func (o *FrontPortTemplateRequest) GetTypeOk() (*string, bool) {
 }
 
 // SetType sets field value
-func (o *FrontPortTemplateRequest) SetType(v string) {
+func (o *FrontPortTemplateRequest) SetType(v FrontPortTypeValue) {
 	o.Type = v
 }
 

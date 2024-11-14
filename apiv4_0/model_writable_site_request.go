@@ -21,10 +21,9 @@ var _ MappedNullable = &WritableSiteRequest{}
 // WritableSiteRequest Adds support for custom fields and tags.
 type WritableSiteRequest struct {
 	// Full name of the site
-	Name string `json:"name"`
-	Slug string `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	// * `planned` - Planned * `staging` - Staging * `active` - Active * `decommissioning` - Decommissioning * `retired` - Retired
-	Status *string                       `json:"status,omitempty"`
+	Name   string                        `json:"name"`
+	Slug   string                        `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Status *LocationStatusValue          `json:"status,omitempty"`
 	Region NullableBriefRegionRequest    `json:"region,omitempty"`
 	Group  NullableBriefSiteGroupRequest `json:"group,omitempty"`
 	Tenant NullableBriefTenantRequest    `json:"tenant,omitempty"`
@@ -117,9 +116,9 @@ func (o *WritableSiteRequest) SetSlug(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableSiteRequest) GetStatus() string {
+func (o *WritableSiteRequest) GetStatus() LocationStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret LocationStatusValue
 		return ret
 	}
 	return *o.Status
@@ -127,7 +126,7 @@ func (o *WritableSiteRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableSiteRequest) GetStatusOk() (*string, bool) {
+func (o *WritableSiteRequest) GetStatusOk() (*LocationStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -143,8 +142,8 @@ func (o *WritableSiteRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableSiteRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given LocationStatusValue and assigns it to the Status field.
+func (o *WritableSiteRequest) SetStatus(v LocationStatusValue) {
 	o.Status = &v
 }
 

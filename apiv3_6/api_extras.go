@@ -7908,7 +7908,7 @@ type ApiExtrasConfigTemplatesRenderCreateRequest struct {
 	ApiService                    ExtrasAPI
 	id                            int32
 	writableConfigTemplateRequest *WritableConfigTemplateRequest
-	format                        *string
+	format                        *DcimDevicesRenderConfigCreateFormatParameter
 }
 
 func (r ApiExtrasConfigTemplatesRenderCreateRequest) WritableConfigTemplateRequest(writableConfigTemplateRequest WritableConfigTemplateRequest) ApiExtrasConfigTemplatesRenderCreateRequest {
@@ -7916,7 +7916,7 @@ func (r ApiExtrasConfigTemplatesRenderCreateRequest) WritableConfigTemplateReque
 	return r
 }
 
-func (r ApiExtrasConfigTemplatesRenderCreateRequest) Format(format string) ApiExtrasConfigTemplatesRenderCreateRequest {
+func (r ApiExtrasConfigTemplatesRenderCreateRequest) Format(format DcimDevicesRenderConfigCreateFormatParameter) ApiExtrasConfigTemplatesRenderCreateRequest {
 	r.format = &format
 	return r
 }

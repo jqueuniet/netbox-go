@@ -19,47 +19,41 @@ var _ MappedNullable = &PatchedWritableRackRequest{}
 
 // PatchedWritableRackRequest Adds support for custom fields and tags.
 type PatchedWritableRackRequest struct {
-	Name       *string                      `json:"name,omitempty"`
-	FacilityId NullableString               `json:"facility_id,omitempty"`
-	Site       *BriefSiteRequest            `json:"site,omitempty"`
-	Location   NullableBriefLocationRequest `json:"location,omitempty"`
-	Tenant     NullableBriefTenantRequest   `json:"tenant,omitempty"`
-	// * `reserved` - Reserved * `available` - Available * `planned` - Planned * `active` - Active * `deprecated` - Deprecated
-	Status *string                      `json:"status,omitempty"`
-	Role   NullableBriefRackRoleRequest `json:"role,omitempty"`
-	Serial *string                      `json:"serial,omitempty"`
+	Name       *string                           `json:"name,omitempty"`
+	FacilityId NullableString                    `json:"facility_id,omitempty"`
+	Site       *BriefSiteRequest                 `json:"site,omitempty"`
+	Location   NullableBriefLocationRequest      `json:"location,omitempty"`
+	Tenant     NullableBriefTenantRequest        `json:"tenant,omitempty"`
+	Status     *PatchedWritableRackRequestStatus `json:"status,omitempty"`
+	Role       NullableBriefRackRoleRequest      `json:"role,omitempty"`
+	Serial     *string                           `json:"serial,omitempty"`
 	// A unique tag used to identify this rack
-	AssetTag NullableString               `json:"asset_tag,omitempty"`
-	RackType NullableBriefRackTypeRequest `json:"rack_type,omitempty"`
-	// * `2-post-frame` - 2-post frame * `4-post-frame` - 4-post frame * `4-post-cabinet` - 4-post cabinet * `wall-frame` - Wall-mounted frame * `wall-frame-vertical` - Wall-mounted frame (vertical) * `wall-cabinet` - Wall-mounted cabinet * `wall-cabinet-vertical` - Wall-mounted cabinet (vertical)
-	FormFactor *string `json:"form_factor,omitempty"`
-	// Rail-to-rail width  * `10` - 10 inches * `19` - 19 inches * `21` - 21 inches * `23` - 23 inches
-	Width *int32 `json:"width,omitempty"`
+	AssetTag   NullableString                        `json:"asset_tag,omitempty"`
+	RackType   NullableBriefRackTypeRequest          `json:"rack_type,omitempty"`
+	FormFactor *PatchedWritableRackRequestFormFactor `json:"form_factor,omitempty"`
+	Width      *PatchedWritableRackRequestWidth      `json:"width,omitempty"`
 	// Height in rack units
 	UHeight *int32 `json:"u_height,omitempty"`
 	// Starting unit for rack
 	StartingUnit *int32          `json:"starting_unit,omitempty"`
 	Weight       NullableFloat64 `json:"weight,omitempty"`
 	// Maximum load capacity for the rack
-	MaxWeight NullableInt32 `json:"max_weight,omitempty"`
-	// * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces
-	WeightUnit *string `json:"weight_unit,omitempty"`
+	MaxWeight  NullableInt32                               `json:"max_weight,omitempty"`
+	WeightUnit *PatchedWritableDeviceTypeRequestWeightUnit `json:"weight_unit,omitempty"`
 	// Units are numbered top-to-bottom
 	DescUnits *bool `json:"desc_units,omitempty"`
 	// Outer dimension of rack (width)
 	OuterWidth NullableInt32 `json:"outer_width,omitempty"`
 	// Outer dimension of rack (depth)
-	OuterDepth NullableInt32 `json:"outer_depth,omitempty"`
-	// * `mm` - Millimeters * `in` - Inches
-	OuterUnit *string `json:"outer_unit,omitempty"`
+	OuterDepth NullableInt32                        `json:"outer_depth,omitempty"`
+	OuterUnit  *PatchedWritableRackRequestOuterUnit `json:"outer_unit,omitempty"`
 	// Maximum depth of a mounted device, in millimeters. For four-post racks, this is the distance between the front and rear rails.
-	MountingDepth NullableInt32 `json:"mounting_depth,omitempty"`
-	// * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front
-	Airflow              *string                `json:"airflow,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	MountingDepth        NullableInt32                      `json:"mounting_depth,omitempty"`
+	Airflow              *PatchedWritableRackRequestAirflow `json:"airflow,omitempty"`
+	Description          *string                            `json:"description,omitempty"`
+	Comments             *string                            `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                 `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}             `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -276,9 +270,9 @@ func (o *PatchedWritableRackRequest) UnsetTenant() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableRackRequest) GetStatus() string {
+func (o *PatchedWritableRackRequest) GetStatus() PatchedWritableRackRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableRackRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -286,7 +280,7 @@ func (o *PatchedWritableRackRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableRackRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableRackRequest) GetStatusOk() (*PatchedWritableRackRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -302,8 +296,8 @@ func (o *PatchedWritableRackRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableRackRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableRackRequestStatus and assigns it to the Status field.
+func (o *PatchedWritableRackRequest) SetStatus(v PatchedWritableRackRequestStatus) {
 	o.Status = &v
 }
 
@@ -469,9 +463,9 @@ func (o *PatchedWritableRackRequest) UnsetRackType() {
 }
 
 // GetFormFactor returns the FormFactor field value if set, zero value otherwise.
-func (o *PatchedWritableRackRequest) GetFormFactor() string {
+func (o *PatchedWritableRackRequest) GetFormFactor() PatchedWritableRackRequestFormFactor {
 	if o == nil || IsNil(o.FormFactor) {
-		var ret string
+		var ret PatchedWritableRackRequestFormFactor
 		return ret
 	}
 	return *o.FormFactor
@@ -479,7 +473,7 @@ func (o *PatchedWritableRackRequest) GetFormFactor() string {
 
 // GetFormFactorOk returns a tuple with the FormFactor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableRackRequest) GetFormFactorOk() (*string, bool) {
+func (o *PatchedWritableRackRequest) GetFormFactorOk() (*PatchedWritableRackRequestFormFactor, bool) {
 	if o == nil || IsNil(o.FormFactor) {
 		return nil, false
 	}
@@ -495,15 +489,15 @@ func (o *PatchedWritableRackRequest) HasFormFactor() bool {
 	return false
 }
 
-// SetFormFactor gets a reference to the given string and assigns it to the FormFactor field.
-func (o *PatchedWritableRackRequest) SetFormFactor(v string) {
+// SetFormFactor gets a reference to the given PatchedWritableRackRequestFormFactor and assigns it to the FormFactor field.
+func (o *PatchedWritableRackRequest) SetFormFactor(v PatchedWritableRackRequestFormFactor) {
 	o.FormFactor = &v
 }
 
 // GetWidth returns the Width field value if set, zero value otherwise.
-func (o *PatchedWritableRackRequest) GetWidth() int32 {
+func (o *PatchedWritableRackRequest) GetWidth() PatchedWritableRackRequestWidth {
 	if o == nil || IsNil(o.Width) {
-		var ret int32
+		var ret PatchedWritableRackRequestWidth
 		return ret
 	}
 	return *o.Width
@@ -511,7 +505,7 @@ func (o *PatchedWritableRackRequest) GetWidth() int32 {
 
 // GetWidthOk returns a tuple with the Width field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableRackRequest) GetWidthOk() (*int32, bool) {
+func (o *PatchedWritableRackRequest) GetWidthOk() (*PatchedWritableRackRequestWidth, bool) {
 	if o == nil || IsNil(o.Width) {
 		return nil, false
 	}
@@ -527,8 +521,8 @@ func (o *PatchedWritableRackRequest) HasWidth() bool {
 	return false
 }
 
-// SetWidth gets a reference to the given int32 and assigns it to the Width field.
-func (o *PatchedWritableRackRequest) SetWidth(v int32) {
+// SetWidth gets a reference to the given PatchedWritableRackRequestWidth and assigns it to the Width field.
+func (o *PatchedWritableRackRequest) SetWidth(v PatchedWritableRackRequestWidth) {
 	o.Width = &v
 }
 
@@ -683,9 +677,9 @@ func (o *PatchedWritableRackRequest) UnsetMaxWeight() {
 }
 
 // GetWeightUnit returns the WeightUnit field value if set, zero value otherwise.
-func (o *PatchedWritableRackRequest) GetWeightUnit() string {
+func (o *PatchedWritableRackRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit {
 	if o == nil || IsNil(o.WeightUnit) {
-		var ret string
+		var ret PatchedWritableDeviceTypeRequestWeightUnit
 		return ret
 	}
 	return *o.WeightUnit
@@ -693,7 +687,7 @@ func (o *PatchedWritableRackRequest) GetWeightUnit() string {
 
 // GetWeightUnitOk returns a tuple with the WeightUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableRackRequest) GetWeightUnitOk() (*string, bool) {
+func (o *PatchedWritableRackRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool) {
 	if o == nil || IsNil(o.WeightUnit) {
 		return nil, false
 	}
@@ -709,8 +703,8 @@ func (o *PatchedWritableRackRequest) HasWeightUnit() bool {
 	return false
 }
 
-// SetWeightUnit gets a reference to the given string and assigns it to the WeightUnit field.
-func (o *PatchedWritableRackRequest) SetWeightUnit(v string) {
+// SetWeightUnit gets a reference to the given PatchedWritableDeviceTypeRequestWeightUnit and assigns it to the WeightUnit field.
+func (o *PatchedWritableRackRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit) {
 	o.WeightUnit = &v
 }
 
@@ -833,9 +827,9 @@ func (o *PatchedWritableRackRequest) UnsetOuterDepth() {
 }
 
 // GetOuterUnit returns the OuterUnit field value if set, zero value otherwise.
-func (o *PatchedWritableRackRequest) GetOuterUnit() string {
+func (o *PatchedWritableRackRequest) GetOuterUnit() PatchedWritableRackRequestOuterUnit {
 	if o == nil || IsNil(o.OuterUnit) {
-		var ret string
+		var ret PatchedWritableRackRequestOuterUnit
 		return ret
 	}
 	return *o.OuterUnit
@@ -843,7 +837,7 @@ func (o *PatchedWritableRackRequest) GetOuterUnit() string {
 
 // GetOuterUnitOk returns a tuple with the OuterUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableRackRequest) GetOuterUnitOk() (*string, bool) {
+func (o *PatchedWritableRackRequest) GetOuterUnitOk() (*PatchedWritableRackRequestOuterUnit, bool) {
 	if o == nil || IsNil(o.OuterUnit) {
 		return nil, false
 	}
@@ -859,8 +853,8 @@ func (o *PatchedWritableRackRequest) HasOuterUnit() bool {
 	return false
 }
 
-// SetOuterUnit gets a reference to the given string and assigns it to the OuterUnit field.
-func (o *PatchedWritableRackRequest) SetOuterUnit(v string) {
+// SetOuterUnit gets a reference to the given PatchedWritableRackRequestOuterUnit and assigns it to the OuterUnit field.
+func (o *PatchedWritableRackRequest) SetOuterUnit(v PatchedWritableRackRequestOuterUnit) {
 	o.OuterUnit = &v
 }
 
@@ -908,9 +902,9 @@ func (o *PatchedWritableRackRequest) UnsetMountingDepth() {
 }
 
 // GetAirflow returns the Airflow field value if set, zero value otherwise.
-func (o *PatchedWritableRackRequest) GetAirflow() string {
+func (o *PatchedWritableRackRequest) GetAirflow() PatchedWritableRackRequestAirflow {
 	if o == nil || IsNil(o.Airflow) {
-		var ret string
+		var ret PatchedWritableRackRequestAirflow
 		return ret
 	}
 	return *o.Airflow
@@ -918,7 +912,7 @@ func (o *PatchedWritableRackRequest) GetAirflow() string {
 
 // GetAirflowOk returns a tuple with the Airflow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableRackRequest) GetAirflowOk() (*string, bool) {
+func (o *PatchedWritableRackRequest) GetAirflowOk() (*PatchedWritableRackRequestAirflow, bool) {
 	if o == nil || IsNil(o.Airflow) {
 		return nil, false
 	}
@@ -934,8 +928,8 @@ func (o *PatchedWritableRackRequest) HasAirflow() bool {
 	return false
 }
 
-// SetAirflow gets a reference to the given string and assigns it to the Airflow field.
-func (o *PatchedWritableRackRequest) SetAirflow(v string) {
+// SetAirflow gets a reference to the given PatchedWritableRackRequestAirflow and assigns it to the Airflow field.
+func (o *PatchedWritableRackRequest) SetAirflow(v PatchedWritableRackRequestAirflow) {
 	o.Airflow = &v
 }
 

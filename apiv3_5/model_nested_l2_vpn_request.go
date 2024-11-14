@@ -20,11 +20,10 @@ var _ MappedNullable = &NestedL2VPNRequest{}
 
 // NestedL2VPNRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedL2VPNRequest struct {
-	Identifier NullableInt64 `json:"identifier,omitempty"`
-	Name       string        `json:"name"`
-	Slug       string        `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	// * `vpws` - VPWS * `vpls` - VPLS * `vxlan` - VXLAN * `vxlan-evpn` - VXLAN-EVPN * `mpls-evpn` - MPLS EVPN * `pbb-evpn` - PBB EVPN * `epl` - EPL * `evpl` - EVPL * `ep-lan` - Ethernet Private LAN * `evp-lan` - Ethernet Virtual Private LAN * `ep-tree` - Ethernet Private Tree * `evp-tree` - Ethernet Virtual Private Tree
-	Type                 string `json:"type"`
+	Identifier           NullableInt64  `json:"identifier,omitempty"`
+	Name                 string         `json:"name"`
+	Slug                 string         `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Type                 L2VPNTypeValue `json:"type"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,7 +33,7 @@ type _NestedL2VPNRequest NestedL2VPNRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedL2VPNRequest(name string, slug string, type_ string) *NestedL2VPNRequest {
+func NewNestedL2VPNRequest(name string, slug string, type_ L2VPNTypeValue) *NestedL2VPNRequest {
 	this := NestedL2VPNRequest{}
 	this.Name = name
 	this.Slug = slug
@@ -142,9 +141,9 @@ func (o *NestedL2VPNRequest) SetSlug(v string) {
 }
 
 // GetType returns the Type field value
-func (o *NestedL2VPNRequest) GetType() string {
+func (o *NestedL2VPNRequest) GetType() L2VPNTypeValue {
 	if o == nil {
-		var ret string
+		var ret L2VPNTypeValue
 		return ret
 	}
 
@@ -153,7 +152,7 @@ func (o *NestedL2VPNRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *NestedL2VPNRequest) GetTypeOk() (*string, bool) {
+func (o *NestedL2VPNRequest) GetTypeOk() (*L2VPNTypeValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -161,7 +160,7 @@ func (o *NestedL2VPNRequest) GetTypeOk() (*string, bool) {
 }
 
 // SetType sets field value
-func (o *NestedL2VPNRequest) SetType(v string) {
+func (o *NestedL2VPNRequest) SetType(v L2VPNTypeValue) {
 	o.Type = v
 }
 

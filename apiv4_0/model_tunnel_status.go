@@ -19,9 +19,8 @@ var _ MappedNullable = &TunnelStatus{}
 
 // TunnelStatus struct for TunnelStatus
 type TunnelStatus struct {
-	// * `planned` - Planned * `active` - Active * `disabled` - Disabled
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *PatchedWritableTunnelRequestStatus `json:"value,omitempty"`
+	Label                *TunnelStatusLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewTunnelStatusWithDefaults() *TunnelStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *TunnelStatus) GetValue() string {
+func (o *TunnelStatus) GetValue() PatchedWritableTunnelRequestStatus {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret PatchedWritableTunnelRequestStatus
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *TunnelStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TunnelStatus) GetValueOk() (*string, bool) {
+func (o *TunnelStatus) GetValueOk() (*PatchedWritableTunnelRequestStatus, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *TunnelStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *TunnelStatus) SetValue(v string) {
+// SetValue gets a reference to the given PatchedWritableTunnelRequestStatus and assigns it to the Value field.
+func (o *TunnelStatus) SetValue(v PatchedWritableTunnelRequestStatus) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *TunnelStatus) GetLabel() string {
+func (o *TunnelStatus) GetLabel() TunnelStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret TunnelStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *TunnelStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TunnelStatus) GetLabelOk() (*string, bool) {
+func (o *TunnelStatus) GetLabelOk() (*TunnelStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *TunnelStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *TunnelStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given TunnelStatusLabel and assigns it to the Label field.
+func (o *TunnelStatus) SetLabel(v TunnelStatusLabel) {
 	o.Label = &v
 }
 

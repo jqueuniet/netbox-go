@@ -20,9 +20,8 @@ var _ MappedNullable = &WritableCircuitTerminationRequest{}
 
 // WritableCircuitTerminationRequest Adds support for custom fields and tags.
 type WritableCircuitTerminationRequest struct {
-	Circuit int32 `json:"circuit"`
-	// * `A` - A * `Z` - Z
-	TermSide        string        `json:"term_side"`
+	Circuit         int32         `json:"circuit"`
+	TermSide        Termination   `json:"term_side"`
 	Site            NullableInt32 `json:"site,omitempty"`
 	ProviderNetwork NullableInt32 `json:"provider_network,omitempty"`
 	// Physical circuit speed
@@ -47,7 +46,7 @@ type _WritableCircuitTerminationRequest WritableCircuitTerminationRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableCircuitTerminationRequest(circuit int32, termSide string) *WritableCircuitTerminationRequest {
+func NewWritableCircuitTerminationRequest(circuit int32, termSide Termination) *WritableCircuitTerminationRequest {
 	this := WritableCircuitTerminationRequest{}
 	this.Circuit = circuit
 	this.TermSide = termSide
@@ -87,9 +86,9 @@ func (o *WritableCircuitTerminationRequest) SetCircuit(v int32) {
 }
 
 // GetTermSide returns the TermSide field value
-func (o *WritableCircuitTerminationRequest) GetTermSide() string {
+func (o *WritableCircuitTerminationRequest) GetTermSide() Termination {
 	if o == nil {
-		var ret string
+		var ret Termination
 		return ret
 	}
 
@@ -98,7 +97,7 @@ func (o *WritableCircuitTerminationRequest) GetTermSide() string {
 
 // GetTermSideOk returns a tuple with the TermSide field value
 // and a boolean to check if the value has been set.
-func (o *WritableCircuitTerminationRequest) GetTermSideOk() (*string, bool) {
+func (o *WritableCircuitTerminationRequest) GetTermSideOk() (*Termination, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -106,7 +105,7 @@ func (o *WritableCircuitTerminationRequest) GetTermSideOk() (*string, bool) {
 }
 
 // SetTermSide sets field value
-func (o *WritableCircuitTerminationRequest) SetTermSide(v string) {
+func (o *WritableCircuitTerminationRequest) SetTermSide(v Termination) {
 	o.TermSide = v
 }
 

@@ -29,7 +29,7 @@ type EventRule struct {
 	Name        string   `json:"name"`
 	Enabled     *bool    `json:"enabled,omitempty"`
 	// The types of event which will trigger this rule.
-	EventTypes []string `json:"event_types"`
+	EventTypes []EventRuleEventTypesInner `json:"event_types"`
 	// A set of conditions which determine whether the event will be generated.
 	Conditions           interface{}            `json:"conditions,omitempty"`
 	ActionType           EventRuleActionType    `json:"action_type"`
@@ -50,7 +50,7 @@ type _EventRule EventRule
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEventRule(id int32, url string, displayUrl string, display string, objectTypes []string, name string, eventTypes []string, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, created NullableTime, lastUpdated NullableTime) *EventRule {
+func NewEventRule(id int32, url string, displayUrl string, display string, objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, created NullableTime, lastUpdated NullableTime) *EventRule {
 	this := EventRule{}
 	this.Id = id
 	this.Url = url
@@ -252,9 +252,9 @@ func (o *EventRule) SetEnabled(v bool) {
 }
 
 // GetEventTypes returns the EventTypes field value
-func (o *EventRule) GetEventTypes() []string {
+func (o *EventRule) GetEventTypes() []EventRuleEventTypesInner {
 	if o == nil {
-		var ret []string
+		var ret []EventRuleEventTypesInner
 		return ret
 	}
 
@@ -263,7 +263,7 @@ func (o *EventRule) GetEventTypes() []string {
 
 // GetEventTypesOk returns a tuple with the EventTypes field value
 // and a boolean to check if the value has been set.
-func (o *EventRule) GetEventTypesOk() ([]string, bool) {
+func (o *EventRule) GetEventTypesOk() ([]EventRuleEventTypesInner, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -271,7 +271,7 @@ func (o *EventRule) GetEventTypesOk() ([]string, bool) {
 }
 
 // SetEventTypes sets field value
-func (o *EventRule) SetEventTypes(v []string) {
+func (o *EventRule) SetEventTypes(v []EventRuleEventTypesInner) {
 	o.EventTypes = v
 }
 

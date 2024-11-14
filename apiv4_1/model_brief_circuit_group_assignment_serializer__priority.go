@@ -19,9 +19,8 @@ var _ MappedNullable = &BriefCircuitGroupAssignmentSerializerPriority{}
 
 // BriefCircuitGroupAssignmentSerializerPriority struct for BriefCircuitGroupAssignmentSerializerPriority
 type BriefCircuitGroupAssignmentSerializerPriority struct {
-	// * `primary` - Primary * `secondary` - Secondary * `tertiary` - Tertiary * `inactive` - Inactive
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"value,omitempty"`
+	Label                *BriefCircuitGroupAssignmentSerializerPriorityLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewBriefCircuitGroupAssignmentSerializerPriorityWithDefaults() *BriefCircui
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *BriefCircuitGroupAssignmentSerializerPriority) GetValue() string {
+func (o *BriefCircuitGroupAssignmentSerializerPriority) GetValue() BriefCircuitGroupAssignmentSerializerPriorityValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret BriefCircuitGroupAssignmentSerializerPriorityValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *BriefCircuitGroupAssignmentSerializerPriority) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BriefCircuitGroupAssignmentSerializerPriority) GetValueOk() (*string, bool) {
+func (o *BriefCircuitGroupAssignmentSerializerPriority) GetValueOk() (*BriefCircuitGroupAssignmentSerializerPriorityValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *BriefCircuitGroupAssignmentSerializerPriority) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *BriefCircuitGroupAssignmentSerializerPriority) SetValue(v string) {
+// SetValue gets a reference to the given BriefCircuitGroupAssignmentSerializerPriorityValue and assigns it to the Value field.
+func (o *BriefCircuitGroupAssignmentSerializerPriority) SetValue(v BriefCircuitGroupAssignmentSerializerPriorityValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *BriefCircuitGroupAssignmentSerializerPriority) GetLabel() string {
+func (o *BriefCircuitGroupAssignmentSerializerPriority) GetLabel() BriefCircuitGroupAssignmentSerializerPriorityLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret BriefCircuitGroupAssignmentSerializerPriorityLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *BriefCircuitGroupAssignmentSerializerPriority) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BriefCircuitGroupAssignmentSerializerPriority) GetLabelOk() (*string, bool) {
+func (o *BriefCircuitGroupAssignmentSerializerPriority) GetLabelOk() (*BriefCircuitGroupAssignmentSerializerPriorityLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *BriefCircuitGroupAssignmentSerializerPriority) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *BriefCircuitGroupAssignmentSerializerPriority) SetLabel(v string) {
+// SetLabel gets a reference to the given BriefCircuitGroupAssignmentSerializerPriorityLabel and assigns it to the Label field.
+func (o *BriefCircuitGroupAssignmentSerializerPriority) SetLabel(v BriefCircuitGroupAssignmentSerializerPriorityLabel) {
 	o.Label = &v
 }
 

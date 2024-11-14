@@ -19,12 +19,11 @@ var _ MappedNullable = &PatchedWritableIPRangeRequest{}
 
 // PatchedWritableIPRangeRequest Adds support for custom fields and tags.
 type PatchedWritableIPRangeRequest struct {
-	StartAddress *string       `json:"start_address,omitempty"`
-	EndAddress   *string       `json:"end_address,omitempty"`
-	Vrf          NullableInt32 `json:"vrf,omitempty"`
-	Tenant       NullableInt32 `json:"tenant,omitempty"`
-	// Operational status of this range  * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
-	Status *string `json:"status,omitempty"`
+	StartAddress *string                              `json:"start_address,omitempty"`
+	EndAddress   *string                              `json:"end_address,omitempty"`
+	Vrf          NullableInt32                        `json:"vrf,omitempty"`
+	Tenant       NullableInt32                        `json:"tenant,omitempty"`
+	Status       *PatchedWritableIPRangeRequestStatus `json:"status,omitempty"`
 	// The primary function of this range
 	Role         NullableInt32          `json:"role,omitempty"`
 	Description  *string                `json:"description,omitempty"`
@@ -206,9 +205,9 @@ func (o *PatchedWritableIPRangeRequest) UnsetTenant() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableIPRangeRequest) GetStatus() string {
+func (o *PatchedWritableIPRangeRequest) GetStatus() PatchedWritableIPRangeRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableIPRangeRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -216,7 +215,7 @@ func (o *PatchedWritableIPRangeRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableIPRangeRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableIPRangeRequest) GetStatusOk() (*PatchedWritableIPRangeRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -232,8 +231,8 @@ func (o *PatchedWritableIPRangeRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableIPRangeRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableIPRangeRequestStatus and assigns it to the Status field.
+func (o *PatchedWritableIPRangeRequest) SetStatus(v PatchedWritableIPRangeRequestStatus) {
 	o.Status = &v
 }
 

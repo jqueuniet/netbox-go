@@ -23,16 +23,15 @@ type VLANRequest struct {
 	Site  NullableNestedSiteRequest      `json:"site,omitempty"`
 	Group NullableNestedVLANGroupRequest `json:"group,omitempty"`
 	// Numeric VLAN ID (1-4094)
-	Vid    int32                       `json:"vid"`
-	Name   string                      `json:"name"`
-	Tenant NullableNestedTenantRequest `json:"tenant,omitempty"`
-	// * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
-	Status               *string                   `json:"status,omitempty"`
-	Role                 NullableNestedRoleRequest `json:"role,omitempty"`
-	Description          *string                   `json:"description,omitempty"`
-	Comments             *string                   `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest        `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}    `json:"custom_fields,omitempty"`
+	Vid                  int32                       `json:"vid"`
+	Name                 string                      `json:"name"`
+	Tenant               NullableNestedTenantRequest `json:"tenant,omitempty"`
+	Status               *IPRangeStatusValue         `json:"status,omitempty"`
+	Role                 NullableNestedRoleRequest   `json:"role,omitempty"`
+	Description          *string                     `json:"description,omitempty"`
+	Comments             *string                     `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest          `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}      `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -235,9 +234,9 @@ func (o *VLANRequest) UnsetTenant() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *VLANRequest) GetStatus() string {
+func (o *VLANRequest) GetStatus() IPRangeStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret IPRangeStatusValue
 		return ret
 	}
 	return *o.Status
@@ -245,7 +244,7 @@ func (o *VLANRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VLANRequest) GetStatusOk() (*string, bool) {
+func (o *VLANRequest) GetStatusOk() (*IPRangeStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -261,8 +260,8 @@ func (o *VLANRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *VLANRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given IPRangeStatusValue and assigns it to the Status field.
+func (o *VLANRequest) SetStatus(v IPRangeStatusValue) {
 	o.Status = &v
 }
 

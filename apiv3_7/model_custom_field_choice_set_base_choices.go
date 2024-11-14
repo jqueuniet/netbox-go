@@ -19,9 +19,8 @@ var _ MappedNullable = &CustomFieldChoiceSetBaseChoices{}
 
 // CustomFieldChoiceSetBaseChoices struct for CustomFieldChoiceSetBaseChoices
 type CustomFieldChoiceSetBaseChoices struct {
-	// * `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *CustomFieldChoiceSetBaseChoicesValue `json:"value,omitempty"`
+	Label                *CustomFieldChoiceSetBaseChoicesLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewCustomFieldChoiceSetBaseChoicesWithDefaults() *CustomFieldChoiceSetBaseC
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *CustomFieldChoiceSetBaseChoices) GetValue() string {
+func (o *CustomFieldChoiceSetBaseChoices) GetValue() CustomFieldChoiceSetBaseChoicesValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret CustomFieldChoiceSetBaseChoicesValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *CustomFieldChoiceSetBaseChoices) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldChoiceSetBaseChoices) GetValueOk() (*string, bool) {
+func (o *CustomFieldChoiceSetBaseChoices) GetValueOk() (*CustomFieldChoiceSetBaseChoicesValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *CustomFieldChoiceSetBaseChoices) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *CustomFieldChoiceSetBaseChoices) SetValue(v string) {
+// SetValue gets a reference to the given CustomFieldChoiceSetBaseChoicesValue and assigns it to the Value field.
+func (o *CustomFieldChoiceSetBaseChoices) SetValue(v CustomFieldChoiceSetBaseChoicesValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *CustomFieldChoiceSetBaseChoices) GetLabel() string {
+func (o *CustomFieldChoiceSetBaseChoices) GetLabel() CustomFieldChoiceSetBaseChoicesLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret CustomFieldChoiceSetBaseChoicesLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *CustomFieldChoiceSetBaseChoices) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldChoiceSetBaseChoices) GetLabelOk() (*string, bool) {
+func (o *CustomFieldChoiceSetBaseChoices) GetLabelOk() (*CustomFieldChoiceSetBaseChoicesLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *CustomFieldChoiceSetBaseChoices) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *CustomFieldChoiceSetBaseChoices) SetLabel(v string) {
+// SetLabel gets a reference to the given CustomFieldChoiceSetBaseChoicesLabel and assigns it to the Label field.
+func (o *CustomFieldChoiceSetBaseChoices) SetLabel(v CustomFieldChoiceSetBaseChoicesLabel) {
 	o.Label = &v
 }
 

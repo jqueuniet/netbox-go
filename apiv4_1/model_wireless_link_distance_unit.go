@@ -19,9 +19,8 @@ var _ MappedNullable = &WirelessLinkDistanceUnit{}
 
 // WirelessLinkDistanceUnit struct for WirelessLinkDistanceUnit
 type WirelessLinkDistanceUnit struct {
-	// * `km` - Kilometers * `m` - Meters * `mi` - Miles * `ft` - Feet
-	Value                NullableString `json:"value,omitempty"`
-	Label                *string        `json:"label,omitempty"`
+	Value                *WirelessLinkDistanceUnitValue `json:"value,omitempty"`
+	Label                *WirelessLinkDistanceUnitLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,53 +43,42 @@ func NewWirelessLinkDistanceUnitWithDefaults() *WirelessLinkDistanceUnit {
 	return &this
 }
 
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *WirelessLinkDistanceUnit) GetValue() string {
-	if o == nil || IsNil(o.Value.Get()) {
-		var ret string
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *WirelessLinkDistanceUnit) GetValue() WirelessLinkDistanceUnitValue {
+	if o == nil || IsNil(o.Value) {
+		var ret WirelessLinkDistanceUnitValue
 		return ret
 	}
-	return *o.Value.Get()
+	return *o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WirelessLinkDistanceUnit) GetValueOk() (*string, bool) {
-	if o == nil {
+func (o *WirelessLinkDistanceUnit) GetValueOk() (*WirelessLinkDistanceUnitValue, bool) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
-	return o.Value.Get(), o.Value.IsSet()
+	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *WirelessLinkDistanceUnit) HasValue() bool {
-	if o != nil && o.Value.IsSet() {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
 	return false
 }
 
-// SetValue gets a reference to the given NullableString and assigns it to the Value field.
-func (o *WirelessLinkDistanceUnit) SetValue(v string) {
-	o.Value.Set(&v)
-}
-
-// SetValueNil sets the value for Value to be an explicit nil
-func (o *WirelessLinkDistanceUnit) SetValueNil() {
-	o.Value.Set(nil)
-}
-
-// UnsetValue ensures that no value is present for Value, not even an explicit nil
-func (o *WirelessLinkDistanceUnit) UnsetValue() {
-	o.Value.Unset()
+// SetValue gets a reference to the given WirelessLinkDistanceUnitValue and assigns it to the Value field.
+func (o *WirelessLinkDistanceUnit) SetValue(v WirelessLinkDistanceUnitValue) {
+	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *WirelessLinkDistanceUnit) GetLabel() string {
+func (o *WirelessLinkDistanceUnit) GetLabel() WirelessLinkDistanceUnitLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret WirelessLinkDistanceUnitLabel
 		return ret
 	}
 	return *o.Label
@@ -98,7 +86,7 @@ func (o *WirelessLinkDistanceUnit) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WirelessLinkDistanceUnit) GetLabelOk() (*string, bool) {
+func (o *WirelessLinkDistanceUnit) GetLabelOk() (*WirelessLinkDistanceUnitLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -114,8 +102,8 @@ func (o *WirelessLinkDistanceUnit) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *WirelessLinkDistanceUnit) SetLabel(v string) {
+// SetLabel gets a reference to the given WirelessLinkDistanceUnitLabel and assigns it to the Label field.
+func (o *WirelessLinkDistanceUnit) SetLabel(v WirelessLinkDistanceUnitLabel) {
 	o.Label = &v
 }
 
@@ -129,8 +117,8 @@ func (o WirelessLinkDistanceUnit) MarshalJSON() ([]byte, error) {
 
 func (o WirelessLinkDistanceUnit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Value.IsSet() {
-		toSerialize["value"] = o.Value.Get()
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label

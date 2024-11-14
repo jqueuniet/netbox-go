@@ -34,14 +34,13 @@ type EventRuleRequest struct {
 	TypeJobEnd *bool `json:"type_job_end,omitempty"`
 	Enabled    *bool `json:"enabled,omitempty"`
 	// A set of conditions which determine whether the event will be generated.
-	Conditions interface{} `json:"conditions,omitempty"`
-	// * `webhook` - Webhook * `script` - Script
-	ActionType           string                 `json:"action_type"`
-	ActionObjectType     string                 `json:"action_object_type"`
-	ActionObjectId       NullableInt64          `json:"action_object_id,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
+	Conditions           interface{}              `json:"conditions,omitempty"`
+	ActionType           EventRuleActionTypeValue `json:"action_type"`
+	ActionObjectType     string                   `json:"action_object_type"`
+	ActionObjectId       NullableInt64            `json:"action_object_id,omitempty"`
+	Description          *string                  `json:"description,omitempty"`
+	CustomFields         map[string]interface{}   `json:"custom_fields,omitempty"`
+	Tags                 []NestedTagRequest       `json:"tags,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -51,7 +50,7 @@ type _EventRuleRequest EventRuleRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEventRuleRequest(contentTypes []string, name string, actionType string, actionObjectType string) *EventRuleRequest {
+func NewEventRuleRequest(contentTypes []string, name string, actionType EventRuleActionTypeValue, actionObjectType string) *EventRuleRequest {
 	this := EventRuleRequest{}
 	this.ContentTypes = contentTypes
 	this.Name = name
@@ -342,9 +341,9 @@ func (o *EventRuleRequest) SetConditions(v interface{}) {
 }
 
 // GetActionType returns the ActionType field value
-func (o *EventRuleRequest) GetActionType() string {
+func (o *EventRuleRequest) GetActionType() EventRuleActionTypeValue {
 	if o == nil {
-		var ret string
+		var ret EventRuleActionTypeValue
 		return ret
 	}
 
@@ -353,7 +352,7 @@ func (o *EventRuleRequest) GetActionType() string {
 
 // GetActionTypeOk returns a tuple with the ActionType field value
 // and a boolean to check if the value has been set.
-func (o *EventRuleRequest) GetActionTypeOk() (*string, bool) {
+func (o *EventRuleRequest) GetActionTypeOk() (*EventRuleActionTypeValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -361,7 +360,7 @@ func (o *EventRuleRequest) GetActionTypeOk() (*string, bool) {
 }
 
 // SetActionType sets field value
-func (o *EventRuleRequest) SetActionType(v string) {
+func (o *EventRuleRequest) SetActionType(v EventRuleActionTypeValue) {
 	o.ActionType = v
 }
 

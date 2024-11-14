@@ -8589,7 +8589,7 @@ type ApiExtrasConfigTemplatesRenderCreateRequest struct {
 	ApiService            ExtrasAPI
 	id                    int32
 	configTemplateRequest *ConfigTemplateRequest
-	format                *string
+	format                *DcimDevicesRenderConfigCreateFormatParameter
 }
 
 func (r ApiExtrasConfigTemplatesRenderCreateRequest) ConfigTemplateRequest(configTemplateRequest ConfigTemplateRequest) ApiExtrasConfigTemplatesRenderCreateRequest {
@@ -8597,7 +8597,7 @@ func (r ApiExtrasConfigTemplatesRenderCreateRequest) ConfigTemplateRequest(confi
 	return r
 }
 
-func (r ApiExtrasConfigTemplatesRenderCreateRequest) Format(format string) ApiExtrasConfigTemplatesRenderCreateRequest {
+func (r ApiExtrasConfigTemplatesRenderCreateRequest) Format(format DcimDevicesRenderConfigCreateFormatParameter) ApiExtrasConfigTemplatesRenderCreateRequest {
 	r.format = &format
 	return r
 }
@@ -9814,8 +9814,8 @@ func (a *ExtrasAPIService) ExtrasCustomFieldChoiceSetsDestroyExecute(r ApiExtras
 type ApiExtrasCustomFieldChoiceSetsListRequest struct {
 	ctx                 context.Context
 	ApiService          ExtrasAPI
-	baseChoices         *string
-	baseChoicesN        *string
+	baseChoices         *ExtrasCustomFieldChoiceSetsListBaseChoicesParameter
+	baseChoicesN        *ExtrasCustomFieldChoiceSetsListBaseChoicesParameter
 	choice              *[]string
 	created             *[]time.Time
 	createdEmpty        *[]time.Time
@@ -9871,13 +9871,13 @@ type ApiExtrasCustomFieldChoiceSetsListRequest struct {
 }
 
 // Base set of predefined choices (optional)  * &#x60;IATA&#x60; - IATA (Airport codes) * &#x60;ISO_3166&#x60; - ISO 3166 (Country codes) * &#x60;UN_LOCODE&#x60; - UN/LOCODE (Location codes)
-func (r ApiExtrasCustomFieldChoiceSetsListRequest) BaseChoices(baseChoices string) ApiExtrasCustomFieldChoiceSetsListRequest {
+func (r ApiExtrasCustomFieldChoiceSetsListRequest) BaseChoices(baseChoices ExtrasCustomFieldChoiceSetsListBaseChoicesParameter) ApiExtrasCustomFieldChoiceSetsListRequest {
 	r.baseChoices = &baseChoices
 	return r
 }
 
 // Base set of predefined choices (optional)  * &#x60;IATA&#x60; - IATA (Airport codes) * &#x60;ISO_3166&#x60; - ISO 3166 (Country codes) * &#x60;UN_LOCODE&#x60; - UN/LOCODE (Location codes)
-func (r ApiExtrasCustomFieldChoiceSetsListRequest) BaseChoicesN(baseChoicesN string) ApiExtrasCustomFieldChoiceSetsListRequest {
+func (r ApiExtrasCustomFieldChoiceSetsListRequest) BaseChoicesN(baseChoicesN ExtrasCustomFieldChoiceSetsListBaseChoicesParameter) ApiExtrasCustomFieldChoiceSetsListRequest {
 	r.baseChoicesN = &baseChoicesN
 	return r
 }
@@ -11738,8 +11738,8 @@ type ApiExtrasCustomFieldsListRequest struct {
 	descriptionNie         *[]string
 	descriptionNiew        *[]string
 	descriptionNisw        *[]string
-	filterLogic            *string
-	filterLogicN           *string
+	filterLogic            *ExtrasCustomFieldsListFilterLogicParameter
+	filterLogicN           *ExtrasCustomFieldsListFilterLogicParameter
 	groupName              *[]string
 	groupNameEmpty         *bool
 	groupNameIc            *[]string
@@ -11819,10 +11819,10 @@ type ApiExtrasCustomFieldsListRequest struct {
 	searchWeightN          *[]int32
 	type_                  *[]string
 	typeN                  *[]string
-	uiEditable             *string
-	uiEditableN            *string
-	uiVisible              *string
-	uiVisibleN             *string
+	uiEditable             *ExtrasCustomFieldsListUiEditableParameter
+	uiEditableN            *ExtrasCustomFieldsListUiEditableParameter
+	uiVisible              *ExtrasCustomFieldsListUiVisibleParameter
+	uiVisibleN             *ExtrasCustomFieldsListUiVisibleParameter
 	updatedByRequest       *string
 	validationMaximum      *[]int32
 	validationMaximumEmpty *bool
@@ -11974,13 +11974,13 @@ func (r ApiExtrasCustomFieldsListRequest) DescriptionNisw(descriptionNisw []stri
 }
 
 // Loose matches any instance of a given string; exact matches the entire field.  * &#x60;disabled&#x60; - Disabled * &#x60;loose&#x60; - Loose * &#x60;exact&#x60; - Exact
-func (r ApiExtrasCustomFieldsListRequest) FilterLogic(filterLogic string) ApiExtrasCustomFieldsListRequest {
+func (r ApiExtrasCustomFieldsListRequest) FilterLogic(filterLogic ExtrasCustomFieldsListFilterLogicParameter) ApiExtrasCustomFieldsListRequest {
 	r.filterLogic = &filterLogic
 	return r
 }
 
 // Loose matches any instance of a given string; exact matches the entire field.  * &#x60;disabled&#x60; - Disabled * &#x60;loose&#x60; - Loose * &#x60;exact&#x60; - Exact
-func (r ApiExtrasCustomFieldsListRequest) FilterLogicN(filterLogicN string) ApiExtrasCustomFieldsListRequest {
+func (r ApiExtrasCustomFieldsListRequest) FilterLogicN(filterLogicN ExtrasCustomFieldsListFilterLogicParameter) ApiExtrasCustomFieldsListRequest {
 	r.filterLogicN = &filterLogicN
 	return r
 }
@@ -12387,25 +12387,25 @@ func (r ApiExtrasCustomFieldsListRequest) TypeN(typeN []string) ApiExtrasCustomF
 }
 
 // Specifies whether the custom field value can be edited in the UI  * &#x60;yes&#x60; - Yes * &#x60;no&#x60; - No * &#x60;hidden&#x60; - Hidden
-func (r ApiExtrasCustomFieldsListRequest) UiEditable(uiEditable string) ApiExtrasCustomFieldsListRequest {
+func (r ApiExtrasCustomFieldsListRequest) UiEditable(uiEditable ExtrasCustomFieldsListUiEditableParameter) ApiExtrasCustomFieldsListRequest {
 	r.uiEditable = &uiEditable
 	return r
 }
 
 // Specifies whether the custom field value can be edited in the UI  * &#x60;yes&#x60; - Yes * &#x60;no&#x60; - No * &#x60;hidden&#x60; - Hidden
-func (r ApiExtrasCustomFieldsListRequest) UiEditableN(uiEditableN string) ApiExtrasCustomFieldsListRequest {
+func (r ApiExtrasCustomFieldsListRequest) UiEditableN(uiEditableN ExtrasCustomFieldsListUiEditableParameter) ApiExtrasCustomFieldsListRequest {
 	r.uiEditableN = &uiEditableN
 	return r
 }
 
 // Specifies whether the custom field is displayed in the UI  * &#x60;always&#x60; - Always * &#x60;if-set&#x60; - If set * &#x60;hidden&#x60; - Hidden
-func (r ApiExtrasCustomFieldsListRequest) UiVisible(uiVisible string) ApiExtrasCustomFieldsListRequest {
+func (r ApiExtrasCustomFieldsListRequest) UiVisible(uiVisible ExtrasCustomFieldsListUiVisibleParameter) ApiExtrasCustomFieldsListRequest {
 	r.uiVisible = &uiVisible
 	return r
 }
 
 // Specifies whether the custom field is displayed in the UI  * &#x60;always&#x60; - Always * &#x60;if-set&#x60; - If set * &#x60;hidden&#x60; - Hidden
-func (r ApiExtrasCustomFieldsListRequest) UiVisibleN(uiVisibleN string) ApiExtrasCustomFieldsListRequest {
+func (r ApiExtrasCustomFieldsListRequest) UiVisibleN(uiVisibleN ExtrasCustomFieldsListUiVisibleParameter) ApiExtrasCustomFieldsListRequest {
 	r.uiVisibleN = &uiVisibleN
 	return r
 }
@@ -14909,8 +14909,8 @@ func (a *ExtrasAPIService) ExtrasCustomLinksDestroyExecute(r ApiExtrasCustomLink
 type ApiExtrasCustomLinksListRequest struct {
 	ctx               context.Context
 	ApiService        ExtrasAPI
-	buttonClass       *string
-	buttonClassN      *string
+	buttonClass       *ExtrasCustomLinksListButtonClassParameter
+	buttonClassN      *ExtrasCustomLinksListButtonClassParameter
 	created           *[]time.Time
 	createdEmpty      *[]time.Time
 	createdGt         *[]time.Time
@@ -15005,13 +15005,13 @@ type ApiExtrasCustomLinksListRequest struct {
 }
 
 // The class of the first link in a group will be used for the dropdown button  * &#x60;default&#x60; - Default * &#x60;blue&#x60; - Blue * &#x60;indigo&#x60; - Indigo * &#x60;purple&#x60; - Purple * &#x60;pink&#x60; - Pink * &#x60;red&#x60; - Red * &#x60;orange&#x60; - Orange * &#x60;yellow&#x60; - Yellow * &#x60;green&#x60; - Green * &#x60;teal&#x60; - Teal * &#x60;cyan&#x60; - Cyan * &#x60;gray&#x60; - Gray * &#x60;black&#x60; - Black * &#x60;white&#x60; - White * &#x60;ghost-dark&#x60; - Link
-func (r ApiExtrasCustomLinksListRequest) ButtonClass(buttonClass string) ApiExtrasCustomLinksListRequest {
+func (r ApiExtrasCustomLinksListRequest) ButtonClass(buttonClass ExtrasCustomLinksListButtonClassParameter) ApiExtrasCustomLinksListRequest {
 	r.buttonClass = &buttonClass
 	return r
 }
 
 // The class of the first link in a group will be used for the dropdown button  * &#x60;default&#x60; - Default * &#x60;blue&#x60; - Blue * &#x60;indigo&#x60; - Indigo * &#x60;purple&#x60; - Purple * &#x60;pink&#x60; - Pink * &#x60;red&#x60; - Red * &#x60;orange&#x60; - Orange * &#x60;yellow&#x60; - Yellow * &#x60;green&#x60; - Green * &#x60;teal&#x60; - Teal * &#x60;cyan&#x60; - Cyan * &#x60;gray&#x60; - Gray * &#x60;black&#x60; - Black * &#x60;white&#x60; - White * &#x60;ghost-dark&#x60; - Link
-func (r ApiExtrasCustomLinksListRequest) ButtonClassN(buttonClassN string) ApiExtrasCustomLinksListRequest {
+func (r ApiExtrasCustomLinksListRequest) ButtonClassN(buttonClassN ExtrasCustomLinksListButtonClassParameter) ApiExtrasCustomLinksListRequest {
 	r.buttonClassN = &buttonClassN
 	return r
 }
@@ -25732,8 +25732,8 @@ func (a *ExtrasAPIService) ExtrasJournalEntriesUpdateExecute(r ApiExtrasJournalE
 type ApiExtrasObjectChangesListRequest struct {
 	ctx                  context.Context
 	ApiService           ExtrasAPI
-	action               *string
-	actionN              *string
+	action               *ExtrasObjectChangesListActionParameter
+	actionN              *ExtrasObjectChangesListActionParameter
 	changedObjectId      *[]int32
 	changedObjectIdEmpty *bool
 	changedObjectIdGt    *[]int32
@@ -25797,13 +25797,13 @@ type ApiExtrasObjectChangesListRequest struct {
 }
 
 // * &#x60;create&#x60; - Created * &#x60;update&#x60; - Updated * &#x60;delete&#x60; - Deleted
-func (r ApiExtrasObjectChangesListRequest) Action(action string) ApiExtrasObjectChangesListRequest {
+func (r ApiExtrasObjectChangesListRequest) Action(action ExtrasObjectChangesListActionParameter) ApiExtrasObjectChangesListRequest {
 	r.action = &action
 	return r
 }
 
 // * &#x60;create&#x60; - Created * &#x60;update&#x60; - Updated * &#x60;delete&#x60; - Deleted
-func (r ApiExtrasObjectChangesListRequest) ActionN(actionN string) ApiExtrasObjectChangesListRequest {
+func (r ApiExtrasObjectChangesListRequest) ActionN(actionN ExtrasObjectChangesListActionParameter) ApiExtrasObjectChangesListRequest {
 	r.actionN = &actionN
 	return r
 }

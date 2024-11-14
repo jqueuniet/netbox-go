@@ -23,14 +23,13 @@ type ModuleTypeRequest struct {
 	Manufacturer NestedManufacturerRequest `json:"manufacturer"`
 	Model        string                    `json:"model"`
 	// Discrete part number (optional)
-	PartNumber *string         `json:"part_number,omitempty"`
-	Weight     NullableFloat64 `json:"weight,omitempty"`
-	// * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces
-	WeightUnit           NullableString         `json:"weight_unit,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	PartNumber           *string                             `json:"part_number,omitempty"`
+	Weight               NullableFloat64                     `json:"weight,omitempty"`
+	WeightUnit           NullableDeviceTypeRequestWeightUnit `json:"weight_unit,omitempty"`
+	Description          *string                             `json:"description,omitempty"`
+	Comments             *string                             `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                  `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}              `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -179,9 +178,9 @@ func (o *ModuleTypeRequest) UnsetWeight() {
 }
 
 // GetWeightUnit returns the WeightUnit field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ModuleTypeRequest) GetWeightUnit() string {
+func (o *ModuleTypeRequest) GetWeightUnit() DeviceTypeRequestWeightUnit {
 	if o == nil || IsNil(o.WeightUnit.Get()) {
-		var ret string
+		var ret DeviceTypeRequestWeightUnit
 		return ret
 	}
 	return *o.WeightUnit.Get()
@@ -190,7 +189,7 @@ func (o *ModuleTypeRequest) GetWeightUnit() string {
 // GetWeightUnitOk returns a tuple with the WeightUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ModuleTypeRequest) GetWeightUnitOk() (*string, bool) {
+func (o *ModuleTypeRequest) GetWeightUnitOk() (*DeviceTypeRequestWeightUnit, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -206,8 +205,8 @@ func (o *ModuleTypeRequest) HasWeightUnit() bool {
 	return false
 }
 
-// SetWeightUnit gets a reference to the given NullableString and assigns it to the WeightUnit field.
-func (o *ModuleTypeRequest) SetWeightUnit(v string) {
+// SetWeightUnit gets a reference to the given NullableDeviceTypeRequestWeightUnit and assigns it to the WeightUnit field.
+func (o *ModuleTypeRequest) SetWeightUnit(v DeviceTypeRequestWeightUnit) {
 	o.WeightUnit.Set(&v)
 }
 

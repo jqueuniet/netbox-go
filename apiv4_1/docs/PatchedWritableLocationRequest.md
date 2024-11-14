@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Slug** | Pointer to **string** |  | [optional] 
 **Site** | Pointer to [**BriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;planned&#x60; - Planned * &#x60;staging&#x60; - Staging * &#x60;active&#x60; - Active * &#x60;decommissioning&#x60; - Decommissioning * &#x60;retired&#x60; - Retired | [optional] 
+**Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Facility** | Pointer to **string** | Local facility ID or description | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -146,20 +146,20 @@ HasParent returns a boolean if a field has been set.
 UnsetParent ensures that no value is present for Parent, not even an explicit nil
 ### GetStatus
 
-`func (o *PatchedWritableLocationRequest) GetStatus() string`
+`func (o *PatchedWritableLocationRequest) GetStatus() LocationStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableLocationRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritableLocationRequest) GetStatusOk() (*LocationStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableLocationRequest) SetStatus(v string)`
+`func (o *PatchedWritableLocationRequest) SetStatus(v LocationStatusValue)`
 
 SetStatus sets Status field to given value.
 

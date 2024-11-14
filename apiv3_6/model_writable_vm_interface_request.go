@@ -20,21 +20,20 @@ var _ MappedNullable = &WritableVMInterfaceRequest{}
 
 // WritableVMInterfaceRequest Adds support for custom fields and tags.
 type WritableVMInterfaceRequest struct {
-	VirtualMachine int32          `json:"virtual_machine"`
-	Name           string         `json:"name"`
-	Enabled        *bool          `json:"enabled,omitempty"`
-	Parent         NullableInt32  `json:"parent,omitempty"`
-	Bridge         NullableInt32  `json:"bridge,omitempty"`
-	Mtu            NullableInt32  `json:"mtu,omitempty"`
-	MacAddress     NullableString `json:"mac_address,omitempty"`
-	Description    *string        `json:"description,omitempty"`
-	// IEEE 802.1Q tagging strategy  * `access` - Access * `tagged` - Tagged * `tagged-all` - Tagged (All)
-	Mode                 *string                `json:"mode,omitempty"`
-	UntaggedVlan         NullableInt32          `json:"untagged_vlan,omitempty"`
-	TaggedVlans          []int32                `json:"tagged_vlans,omitempty"`
-	Vrf                  NullableInt32          `json:"vrf,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	VirtualMachine       int32                                `json:"virtual_machine"`
+	Name                 string                               `json:"name"`
+	Enabled              *bool                                `json:"enabled,omitempty"`
+	Parent               NullableInt32                        `json:"parent,omitempty"`
+	Bridge               NullableInt32                        `json:"bridge,omitempty"`
+	Mtu                  NullableInt32                        `json:"mtu,omitempty"`
+	MacAddress           NullableString                       `json:"mac_address,omitempty"`
+	Description          *string                              `json:"description,omitempty"`
+	Mode                 *PatchedWritableInterfaceRequestMode `json:"mode,omitempty"`
+	UntaggedVlan         NullableInt32                        `json:"untagged_vlan,omitempty"`
+	TaggedVlans          []int32                              `json:"tagged_vlans,omitempty"`
+	Vrf                  NullableInt32                        `json:"vrf,omitempty"`
+	Tags                 []NestedTagRequest                   `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}               `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -344,9 +343,9 @@ func (o *WritableVMInterfaceRequest) SetDescription(v string) {
 }
 
 // GetMode returns the Mode field value if set, zero value otherwise.
-func (o *WritableVMInterfaceRequest) GetMode() string {
+func (o *WritableVMInterfaceRequest) GetMode() PatchedWritableInterfaceRequestMode {
 	if o == nil || IsNil(o.Mode) {
-		var ret string
+		var ret PatchedWritableInterfaceRequestMode
 		return ret
 	}
 	return *o.Mode
@@ -354,7 +353,7 @@ func (o *WritableVMInterfaceRequest) GetMode() string {
 
 // GetModeOk returns a tuple with the Mode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableVMInterfaceRequest) GetModeOk() (*string, bool) {
+func (o *WritableVMInterfaceRequest) GetModeOk() (*PatchedWritableInterfaceRequestMode, bool) {
 	if o == nil || IsNil(o.Mode) {
 		return nil, false
 	}
@@ -370,8 +369,8 @@ func (o *WritableVMInterfaceRequest) HasMode() bool {
 	return false
 }
 
-// SetMode gets a reference to the given string and assigns it to the Mode field.
-func (o *WritableVMInterfaceRequest) SetMode(v string) {
+// SetMode gets a reference to the given PatchedWritableInterfaceRequestMode and assigns it to the Mode field.
+func (o *WritableVMInterfaceRequest) SetMode(v PatchedWritableInterfaceRequestMode) {
 	o.Mode = &v
 }
 

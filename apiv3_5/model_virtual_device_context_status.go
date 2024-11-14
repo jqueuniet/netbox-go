@@ -19,9 +19,8 @@ var _ MappedNullable = &VirtualDeviceContextStatus{}
 
 // VirtualDeviceContextStatus struct for VirtualDeviceContextStatus
 type VirtualDeviceContextStatus struct {
-	// * `active` - Active * `planned` - Planned * `offline` - Offline
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *PatchedWritableVirtualDeviceContextRequestStatus `json:"value,omitempty"`
+	Label                *VirtualDeviceContextStatusLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewVirtualDeviceContextStatusWithDefaults() *VirtualDeviceContextStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *VirtualDeviceContextStatus) GetValue() string {
+func (o *VirtualDeviceContextStatus) GetValue() PatchedWritableVirtualDeviceContextRequestStatus {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret PatchedWritableVirtualDeviceContextRequestStatus
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *VirtualDeviceContextStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualDeviceContextStatus) GetValueOk() (*string, bool) {
+func (o *VirtualDeviceContextStatus) GetValueOk() (*PatchedWritableVirtualDeviceContextRequestStatus, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *VirtualDeviceContextStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *VirtualDeviceContextStatus) SetValue(v string) {
+// SetValue gets a reference to the given PatchedWritableVirtualDeviceContextRequestStatus and assigns it to the Value field.
+func (o *VirtualDeviceContextStatus) SetValue(v PatchedWritableVirtualDeviceContextRequestStatus) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *VirtualDeviceContextStatus) GetLabel() string {
+func (o *VirtualDeviceContextStatus) GetLabel() VirtualDeviceContextStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret VirtualDeviceContextStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *VirtualDeviceContextStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualDeviceContextStatus) GetLabelOk() (*string, bool) {
+func (o *VirtualDeviceContextStatus) GetLabelOk() (*VirtualDeviceContextStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *VirtualDeviceContextStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *VirtualDeviceContextStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given VirtualDeviceContextStatusLabel and assigns it to the Label field.
+func (o *VirtualDeviceContextStatus) SetLabel(v VirtualDeviceContextStatusLabel) {
 	o.Label = &v
 }
 

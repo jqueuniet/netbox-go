@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
-**Protocol** | **string** | * &#x60;vrrp2&#x60; - VRRPv2 * &#x60;vrrp3&#x60; - VRRPv3 * &#x60;carp&#x60; - CARP * &#x60;clusterxl&#x60; - ClusterXL * &#x60;hsrp&#x60; - HSRP * &#x60;glbp&#x60; - GLBP * &#x60;other&#x60; - Other | 
+**Protocol** | [**BriefFHRPGroupProtocol**](BriefFHRPGroupProtocol.md) |  | 
 **GroupId** | **int32** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewBriefFHRPGroup
 
-`func NewBriefFHRPGroup(id int32, url string, display string, protocol string, groupId int32, ) *BriefFHRPGroup`
+`func NewBriefFHRPGroup(id int32, url string, display string, protocol BriefFHRPGroupProtocol, groupId int32, ) *BriefFHRPGroup`
 
 NewBriefFHRPGroup instantiates a new BriefFHRPGroup object
 This constructor will assign default values to properties that have it defined,
@@ -92,20 +92,20 @@ SetDisplay sets Display field to given value.
 
 ### GetProtocol
 
-`func (o *BriefFHRPGroup) GetProtocol() string`
+`func (o *BriefFHRPGroup) GetProtocol() BriefFHRPGroupProtocol`
 
 GetProtocol returns the Protocol field if non-nil, zero value otherwise.
 
 ### GetProtocolOk
 
-`func (o *BriefFHRPGroup) GetProtocolOk() (*string, bool)`
+`func (o *BriefFHRPGroup) GetProtocolOk() (*BriefFHRPGroupProtocol, bool)`
 
 GetProtocolOk returns a tuple with the Protocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocol
 
-`func (o *BriefFHRPGroup) SetProtocol(v string)`
+`func (o *BriefFHRPGroup) SetProtocol(v BriefFHRPGroupProtocol)`
 
 SetProtocol sets Protocol field to given value.
 

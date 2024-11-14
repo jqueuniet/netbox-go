@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Tunnel** | [**BriefTunnelRequest**](BriefTunnelRequest.md) |  | 
-**Role** | **string** | * &#x60;peer&#x60; - Peer * &#x60;hub&#x60; - Hub * &#x60;spoke&#x60; - Spoke | 
+**Role** | [**PatchedWritableTunnelTerminationRequestRole**](PatchedWritableTunnelTerminationRequestRole.md) |  | 
 **TerminationType** | **string** |  | 
 **TerminationId** | **NullableInt64** |  | 
 **OutsideIp** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewTunnelTerminationRequest
 
-`func NewTunnelTerminationRequest(tunnel BriefTunnelRequest, role string, terminationType string, terminationId NullableInt64, ) *TunnelTerminationRequest`
+`func NewTunnelTerminationRequest(tunnel BriefTunnelRequest, role PatchedWritableTunnelTerminationRequestRole, terminationType string, terminationId NullableInt64, ) *TunnelTerminationRequest`
 
 NewTunnelTerminationRequest instantiates a new TunnelTerminationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -53,20 +53,20 @@ SetTunnel sets Tunnel field to given value.
 
 ### GetRole
 
-`func (o *TunnelTerminationRequest) GetRole() string`
+`func (o *TunnelTerminationRequest) GetRole() PatchedWritableTunnelTerminationRequestRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *TunnelTerminationRequest) GetRoleOk() (*string, bool)`
+`func (o *TunnelTerminationRequest) GetRoleOk() (*PatchedWritableTunnelTerminationRequestRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *TunnelTerminationRequest) SetRole(v string)`
+`func (o *TunnelTerminationRequest) SetRole(v PatchedWritableTunnelTerminationRequestRole)`
 
 SetRole sets Role field to given value.
 

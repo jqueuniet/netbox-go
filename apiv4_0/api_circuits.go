@@ -1407,8 +1407,8 @@ func (a *CircuitsAPIService) CircuitsCircuitTerminationsDestroyExecute(r ApiCirc
 type ApiCircuitsCircuitTerminationsListRequest struct {
 	ctx                context.Context
 	ApiService         CircuitsAPI
-	cableEnd           *string
-	cableEndN          *string
+	cableEnd           *CircuitsCircuitTerminationsListCableEndParameter
+	cableEndN          *CircuitsCircuitTerminationsListCableEndParameter
 	cableId            *[]*int32
 	cableIdN           *[]*int32
 	cabled             *bool
@@ -1484,8 +1484,8 @@ type ApiCircuitsCircuitTerminationsListRequest struct {
 	siteIdN            *[]*int32
 	tag                *[]string
 	tagN               *[]string
-	termSide           *string
-	termSideN          *string
+	termSide           *Termination
+	termSideN          *Termination
 	updatedByRequest   *string
 	upstreamSpeed      *[]int32
 	upstreamSpeedEmpty *bool
@@ -1508,13 +1508,13 @@ type ApiCircuitsCircuitTerminationsListRequest struct {
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiCircuitsCircuitTerminationsListRequest) CableEnd(cableEnd string) ApiCircuitsCircuitTerminationsListRequest {
+func (r ApiCircuitsCircuitTerminationsListRequest) CableEnd(cableEnd CircuitsCircuitTerminationsListCableEndParameter) ApiCircuitsCircuitTerminationsListRequest {
 	r.cableEnd = &cableEnd
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiCircuitsCircuitTerminationsListRequest) CableEndN(cableEndN string) ApiCircuitsCircuitTerminationsListRequest {
+func (r ApiCircuitsCircuitTerminationsListRequest) CableEndN(cableEndN CircuitsCircuitTerminationsListCableEndParameter) ApiCircuitsCircuitTerminationsListRequest {
 	r.cableEndN = &cableEndN
 	return r
 }
@@ -1913,13 +1913,13 @@ func (r ApiCircuitsCircuitTerminationsListRequest) TagN(tagN []string) ApiCircui
 }
 
 // * &#x60;A&#x60; - A * &#x60;Z&#x60; - Z
-func (r ApiCircuitsCircuitTerminationsListRequest) TermSide(termSide string) ApiCircuitsCircuitTerminationsListRequest {
+func (r ApiCircuitsCircuitTerminationsListRequest) TermSide(termSide Termination) ApiCircuitsCircuitTerminationsListRequest {
 	r.termSide = &termSide
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;Z&#x60; - Z
-func (r ApiCircuitsCircuitTerminationsListRequest) TermSideN(termSideN string) ApiCircuitsCircuitTerminationsListRequest {
+func (r ApiCircuitsCircuitTerminationsListRequest) TermSideN(termSideN Termination) ApiCircuitsCircuitTerminationsListRequest {
 	r.termSideN = &termSideN
 	return r
 }

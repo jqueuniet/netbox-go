@@ -19,9 +19,8 @@ var _ MappedNullable = &IPRangeStatus{}
 
 // IPRangeStatus struct for IPRangeStatus
 type IPRangeStatus struct {
-	// * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *IPRangeStatusValue `json:"value,omitempty"`
+	Label                *IPRangeStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewIPRangeStatusWithDefaults() *IPRangeStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *IPRangeStatus) GetValue() string {
+func (o *IPRangeStatus) GetValue() IPRangeStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret IPRangeStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *IPRangeStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPRangeStatus) GetValueOk() (*string, bool) {
+func (o *IPRangeStatus) GetValueOk() (*IPRangeStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *IPRangeStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *IPRangeStatus) SetValue(v string) {
+// SetValue gets a reference to the given IPRangeStatusValue and assigns it to the Value field.
+func (o *IPRangeStatus) SetValue(v IPRangeStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *IPRangeStatus) GetLabel() string {
+func (o *IPRangeStatus) GetLabel() IPRangeStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret IPRangeStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *IPRangeStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPRangeStatus) GetLabelOk() (*string, bool) {
+func (o *IPRangeStatus) GetLabelOk() (*IPRangeStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *IPRangeStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *IPRangeStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given IPRangeStatusLabel and assigns it to the Label field.
+func (o *IPRangeStatus) SetLabel(v IPRangeStatusLabel) {
 	o.Label = &v
 }
 

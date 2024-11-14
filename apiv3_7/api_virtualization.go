@@ -15432,7 +15432,7 @@ type ApiVirtualizationVirtualMachinesRenderConfigCreateRequest struct {
 	ApiService                                     VirtualizationAPI
 	id                                             int32
 	writableVirtualMachineWithConfigContextRequest *WritableVirtualMachineWithConfigContextRequest
-	format                                         *string
+	format                                         *DcimDevicesRenderConfigCreateFormatParameter
 }
 
 func (r ApiVirtualizationVirtualMachinesRenderConfigCreateRequest) WritableVirtualMachineWithConfigContextRequest(writableVirtualMachineWithConfigContextRequest WritableVirtualMachineWithConfigContextRequest) ApiVirtualizationVirtualMachinesRenderConfigCreateRequest {
@@ -15440,7 +15440,7 @@ func (r ApiVirtualizationVirtualMachinesRenderConfigCreateRequest) WritableVirtu
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesRenderConfigCreateRequest) Format(format string) ApiVirtualizationVirtualMachinesRenderConfigCreateRequest {
+func (r ApiVirtualizationVirtualMachinesRenderConfigCreateRequest) Format(format DcimDevicesRenderConfigCreateFormatParameter) ApiVirtualizationVirtualMachinesRenderConfigCreateRequest {
 	r.format = &format
 	return r
 }

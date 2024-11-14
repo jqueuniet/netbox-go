@@ -19,9 +19,8 @@ var _ MappedNullable = &DeviceTypeAirflow{}
 
 // DeviceTypeAirflow struct for DeviceTypeAirflow
 type DeviceTypeAirflow struct {
-	// * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `passive` - Passive * `mixed` - Mixed
-	Value                NullableString `json:"value,omitempty"`
-	Label                *string        `json:"label,omitempty"`
+	Value                *DeviceTypeAirflowValue `json:"value,omitempty"`
+	Label                *DeviceAirflowLabel     `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,53 +43,42 @@ func NewDeviceTypeAirflowWithDefaults() *DeviceTypeAirflow {
 	return &this
 }
 
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DeviceTypeAirflow) GetValue() string {
-	if o == nil || IsNil(o.Value.Get()) {
-		var ret string
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *DeviceTypeAirflow) GetValue() DeviceTypeAirflowValue {
+	if o == nil || IsNil(o.Value) {
+		var ret DeviceTypeAirflowValue
 		return ret
 	}
-	return *o.Value.Get()
+	return *o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DeviceTypeAirflow) GetValueOk() (*string, bool) {
-	if o == nil {
+func (o *DeviceTypeAirflow) GetValueOk() (*DeviceTypeAirflowValue, bool) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
-	return o.Value.Get(), o.Value.IsSet()
+	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *DeviceTypeAirflow) HasValue() bool {
-	if o != nil && o.Value.IsSet() {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
 	return false
 }
 
-// SetValue gets a reference to the given NullableString and assigns it to the Value field.
-func (o *DeviceTypeAirflow) SetValue(v string) {
-	o.Value.Set(&v)
-}
-
-// SetValueNil sets the value for Value to be an explicit nil
-func (o *DeviceTypeAirflow) SetValueNil() {
-	o.Value.Set(nil)
-}
-
-// UnsetValue ensures that no value is present for Value, not even an explicit nil
-func (o *DeviceTypeAirflow) UnsetValue() {
-	o.Value.Unset()
+// SetValue gets a reference to the given DeviceTypeAirflowValue and assigns it to the Value field.
+func (o *DeviceTypeAirflow) SetValue(v DeviceTypeAirflowValue) {
+	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *DeviceTypeAirflow) GetLabel() string {
+func (o *DeviceTypeAirflow) GetLabel() DeviceAirflowLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DeviceAirflowLabel
 		return ret
 	}
 	return *o.Label
@@ -98,7 +86,7 @@ func (o *DeviceTypeAirflow) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceTypeAirflow) GetLabelOk() (*string, bool) {
+func (o *DeviceTypeAirflow) GetLabelOk() (*DeviceAirflowLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -114,8 +102,8 @@ func (o *DeviceTypeAirflow) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *DeviceTypeAirflow) SetLabel(v string) {
+// SetLabel gets a reference to the given DeviceAirflowLabel and assigns it to the Label field.
+func (o *DeviceTypeAirflow) SetLabel(v DeviceAirflowLabel) {
 	o.Label = &v
 }
 
@@ -129,8 +117,8 @@ func (o DeviceTypeAirflow) MarshalJSON() ([]byte, error) {
 
 func (o DeviceTypeAirflow) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Value.IsSet() {
-		toSerialize["value"] = o.Value.Get()
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label

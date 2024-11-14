@@ -21,11 +21,10 @@ var _ MappedNullable = &Cable{}
 
 // Cable Adds support for custom fields and tags.
 type Cable struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
-	// * `cat3` - CAT3 * `cat5` - CAT5 * `cat5e` - CAT5e * `cat6` - CAT6 * `cat6a` - CAT6a * `cat7` - CAT7 * `cat7a` - CAT7a * `cat8` - CAT8 * `dac-active` - Direct Attach Copper (Active) * `dac-passive` - Direct Attach Copper (Passive) * `mrj21-trunk` - MRJ21 Trunk * `coaxial` - Coaxial * `mmf` - Multimode Fiber * `mmf-om1` - Multimode Fiber (OM1) * `mmf-om2` - Multimode Fiber (OM2) * `mmf-om3` - Multimode Fiber (OM3) * `mmf-om4` - Multimode Fiber (OM4) * `mmf-om5` - Multimode Fiber (OM5) * `smf` - Singlemode Fiber * `smf-os1` - Singlemode Fiber (OS1) * `smf-os2` - Singlemode Fiber (OS2) * `aoc` - Active Optical Cabling (AOC) * `power` - Power
-	Type                 *string                 `json:"type,omitempty"`
+	Id                   int32                   `json:"id"`
+	Url                  string                  `json:"url"`
+	Display              string                  `json:"display"`
+	Type                 *CableType              `json:"type,omitempty"`
 	ATerminations        []GenericObject         `json:"a_terminations,omitempty"`
 	BTerminations        []GenericObject         `json:"b_terminations,omitempty"`
 	Status               *CableStatus            `json:"status,omitempty"`
@@ -140,9 +139,9 @@ func (o *Cable) SetDisplay(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *Cable) GetType() string {
+func (o *Cable) GetType() CableType {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret CableType
 		return ret
 	}
 	return *o.Type
@@ -150,7 +149,7 @@ func (o *Cable) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Cable) GetTypeOk() (*string, bool) {
+func (o *Cable) GetTypeOk() (*CableType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -166,8 +165,8 @@ func (o *Cable) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *Cable) SetType(v string) {
+// SetType gets a reference to the given CableType and assigns it to the Type field.
+func (o *Cable) SetType(v CableType) {
 	o.Type = &v
 }
 

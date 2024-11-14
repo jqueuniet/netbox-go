@@ -21,12 +21,11 @@ var _ MappedNullable = &CableTermination{}
 
 // CableTermination Adds support for custom fields and tags.
 type CableTermination struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
-	Cable   int32  `json:"cable"`
-	// * `A` - A * `B` - B
-	CableEnd             string       `json:"cable_end"`
+	Id                   int32        `json:"id"`
+	Url                  string       `json:"url"`
+	Display              string       `json:"display"`
+	Cable                int32        `json:"cable"`
+	CableEnd             End          `json:"cable_end"`
 	TerminationType      string       `json:"termination_type"`
 	TerminationId        int64        `json:"termination_id"`
 	Termination          interface{}  `json:"termination"`
@@ -41,7 +40,7 @@ type _CableTermination CableTermination
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCableTermination(id int32, url string, display string, cable int32, cableEnd string, terminationType string, terminationId int64, termination interface{}, created NullableTime, lastUpdated NullableTime) *CableTermination {
+func NewCableTermination(id int32, url string, display string, cable int32, cableEnd End, terminationType string, terminationId int64, termination interface{}, created NullableTime, lastUpdated NullableTime) *CableTermination {
 	this := CableTermination{}
 	this.Id = id
 	this.Url = url
@@ -161,9 +160,9 @@ func (o *CableTermination) SetCable(v int32) {
 }
 
 // GetCableEnd returns the CableEnd field value
-func (o *CableTermination) GetCableEnd() string {
+func (o *CableTermination) GetCableEnd() End {
 	if o == nil {
-		var ret string
+		var ret End
 		return ret
 	}
 
@@ -172,7 +171,7 @@ func (o *CableTermination) GetCableEnd() string {
 
 // GetCableEndOk returns a tuple with the CableEnd field value
 // and a boolean to check if the value has been set.
-func (o *CableTermination) GetCableEndOk() (*string, bool) {
+func (o *CableTermination) GetCableEndOk() (*End, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -180,7 +179,7 @@ func (o *CableTermination) GetCableEndOk() (*string, bool) {
 }
 
 // SetCableEnd sets field value
-func (o *CableTermination) SetCableEnd(v string) {
+func (o *CableTermination) SetCableEnd(v End) {
 	o.CableEnd = v
 }
 

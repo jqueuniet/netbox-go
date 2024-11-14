@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **NullableString** | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**ModuleTypeAirflowValue**](ModuleTypeAirflowValue.md) |  | [optional] 
+**Label** | Pointer to [**ModuleTypeAirflowLabel**](ModuleTypeAirflowLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *ModuleTypeAirflow) GetValue() string`
+`func (o *ModuleTypeAirflow) GetValue() ModuleTypeAirflowValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *ModuleTypeAirflow) GetValueOk() (*string, bool)`
+`func (o *ModuleTypeAirflow) GetValueOk() (*ModuleTypeAirflowValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *ModuleTypeAirflow) SetValue(v string)`
+`func (o *ModuleTypeAirflow) SetValue(v ModuleTypeAirflowValue)`
 
 SetValue sets Value field to given value.
 
@@ -51,32 +51,22 @@ SetValue sets Value field to given value.
 
 HasValue returns a boolean if a field has been set.
 
-### SetValueNil
-
-`func (o *ModuleTypeAirflow) SetValueNil(b bool)`
-
- SetValueNil sets the value for Value to be an explicit nil
-
-### UnsetValue
-`func (o *ModuleTypeAirflow) UnsetValue()`
-
-UnsetValue ensures that no value is present for Value, not even an explicit nil
 ### GetLabel
 
-`func (o *ModuleTypeAirflow) GetLabel() string`
+`func (o *ModuleTypeAirflow) GetLabel() ModuleTypeAirflowLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *ModuleTypeAirflow) GetLabelOk() (*string, bool)`
+`func (o *ModuleTypeAirflow) GetLabelOk() (*ModuleTypeAirflowLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *ModuleTypeAirflow) SetLabel(v string)`
+`func (o *ModuleTypeAirflow) SetLabel(v ModuleTypeAirflowLabel)`
 
 SetLabel sets Label field to given value.
 

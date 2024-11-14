@@ -83,7 +83,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewNestedCircuitRequest("Cid_example"), "TermSide_example")} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewNestedCircuitRequest("Cid_example"), openapiclient.Termination("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -147,7 +147,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewNestedCircuitRequest("Cid_example"), "TermSide_example")} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewNestedCircuitRequest("Cid_example"), openapiclient.Termination("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -213,7 +213,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewNestedCircuitRequest("Cid_example"), "TermSide_example")} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewNestedCircuitRequest("Cid_example"), openapiclient.Termination("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -279,7 +279,7 @@ import (
 )
 
 func main() {
-	writableCircuitTerminationRequest := *openapiclient.NewWritableCircuitTerminationRequest(int32(123), "TermSide_example") // WritableCircuitTerminationRequest | 
+	writableCircuitTerminationRequest := *openapiclient.NewWritableCircuitTerminationRequest(int32(123), openapiclient.Termination("A")) // WritableCircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -851,7 +851,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit termination.
-	writableCircuitTerminationRequest := *openapiclient.NewWritableCircuitTerminationRequest(int32(123), "TermSide_example") // WritableCircuitTerminationRequest | 
+	writableCircuitTerminationRequest := *openapiclient.NewWritableCircuitTerminationRequest(int32(123), openapiclient.Termination("A")) // WritableCircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

@@ -19,9 +19,8 @@ var _ MappedNullable = &DataSourceType{}
 
 // DataSourceType struct for DataSourceType
 type DataSourceType struct {
-	// * `local` - Local * `git` - Git * `amazon-s3` - Amazon S3
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *DataSourceTypeValue `json:"value,omitempty"`
+	Label                *DataSourceTypeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewDataSourceTypeWithDefaults() *DataSourceType {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *DataSourceType) GetValue() string {
+func (o *DataSourceType) GetValue() DataSourceTypeValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret DataSourceTypeValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *DataSourceType) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DataSourceType) GetValueOk() (*string, bool) {
+func (o *DataSourceType) GetValueOk() (*DataSourceTypeValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *DataSourceType) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *DataSourceType) SetValue(v string) {
+// SetValue gets a reference to the given DataSourceTypeValue and assigns it to the Value field.
+func (o *DataSourceType) SetValue(v DataSourceTypeValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *DataSourceType) GetLabel() string {
+func (o *DataSourceType) GetLabel() DataSourceTypeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DataSourceTypeLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *DataSourceType) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DataSourceType) GetLabelOk() (*string, bool) {
+func (o *DataSourceType) GetLabelOk() (*DataSourceTypeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *DataSourceType) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *DataSourceType) SetLabel(v string) {
+// SetLabel gets a reference to the given DataSourceTypeLabel and assigns it to the Label field.
+func (o *DataSourceType) SetLabel(v DataSourceTypeLabel) {
 	o.Label = &v
 }
 

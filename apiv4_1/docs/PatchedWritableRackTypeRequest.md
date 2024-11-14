@@ -8,17 +8,17 @@ Name | Type | Description | Notes
 **Model** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**FormFactor** | Pointer to **string** | * &#x60;2-post-frame&#x60; - 2-post frame * &#x60;4-post-frame&#x60; - 4-post frame * &#x60;4-post-cabinet&#x60; - 4-post cabinet * &#x60;wall-frame&#x60; - Wall-mounted frame * &#x60;wall-frame-vertical&#x60; - Wall-mounted frame (vertical) * &#x60;wall-cabinet&#x60; - Wall-mounted cabinet * &#x60;wall-cabinet-vertical&#x60; - Wall-mounted cabinet (vertical) | [optional] 
-**Width** | Pointer to **int32** | Rail-to-rail width  * &#x60;10&#x60; - 10 inches * &#x60;19&#x60; - 19 inches * &#x60;21&#x60; - 21 inches * &#x60;23&#x60; - 23 inches | [optional] 
+**FormFactor** | Pointer to [**PatchedWritableRackTypeRequestFormFactor**](PatchedWritableRackTypeRequestFormFactor.md) |  | [optional] 
+**Width** | Pointer to [**PatchedWritableRackRequestWidth**](PatchedWritableRackRequestWidth.md) |  | [optional] 
 **UHeight** | Pointer to **int32** | Height in rack units | [optional] 
 **StartingUnit** | Pointer to **int32** | Starting unit for rack | [optional] 
 **DescUnits** | Pointer to **bool** | Units are numbered top-to-bottom | [optional] 
 **OuterWidth** | Pointer to **NullableInt32** | Outer dimension of rack (width) | [optional] 
 **OuterDepth** | Pointer to **NullableInt32** | Outer dimension of rack (depth) | [optional] 
-**OuterUnit** | Pointer to **string** | * &#x60;mm&#x60; - Millimeters * &#x60;in&#x60; - Inches | [optional] 
+**OuterUnit** | Pointer to [**PatchedWritableRackRequestOuterUnit**](PatchedWritableRackRequestOuterUnit.md) |  | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
 **MaxWeight** | Pointer to **NullableInt32** | Maximum load capacity for the rack | [optional] 
-**WeightUnit** | Pointer to **string** | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | [optional] 
+**WeightUnit** | Pointer to [**PatchedWritableDeviceTypeRequestWeightUnit**](PatchedWritableDeviceTypeRequestWeightUnit.md) |  | [optional] 
 **MountingDepth** | Pointer to **NullableInt32** | Maximum depth of a mounted device, in millimeters. For four-post racks, this is the distance between the front and rear rails. | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -145,20 +145,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetFormFactor
 
-`func (o *PatchedWritableRackTypeRequest) GetFormFactor() string`
+`func (o *PatchedWritableRackTypeRequest) GetFormFactor() PatchedWritableRackTypeRequestFormFactor`
 
 GetFormFactor returns the FormFactor field if non-nil, zero value otherwise.
 
 ### GetFormFactorOk
 
-`func (o *PatchedWritableRackTypeRequest) GetFormFactorOk() (*string, bool)`
+`func (o *PatchedWritableRackTypeRequest) GetFormFactorOk() (*PatchedWritableRackTypeRequestFormFactor, bool)`
 
 GetFormFactorOk returns a tuple with the FormFactor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormFactor
 
-`func (o *PatchedWritableRackTypeRequest) SetFormFactor(v string)`
+`func (o *PatchedWritableRackTypeRequest) SetFormFactor(v PatchedWritableRackTypeRequestFormFactor)`
 
 SetFormFactor sets FormFactor field to given value.
 
@@ -170,20 +170,20 @@ HasFormFactor returns a boolean if a field has been set.
 
 ### GetWidth
 
-`func (o *PatchedWritableRackTypeRequest) GetWidth() int32`
+`func (o *PatchedWritableRackTypeRequest) GetWidth() PatchedWritableRackRequestWidth`
 
 GetWidth returns the Width field if non-nil, zero value otherwise.
 
 ### GetWidthOk
 
-`func (o *PatchedWritableRackTypeRequest) GetWidthOk() (*int32, bool)`
+`func (o *PatchedWritableRackTypeRequest) GetWidthOk() (*PatchedWritableRackRequestWidth, bool)`
 
 GetWidthOk returns a tuple with the Width field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWidth
 
-`func (o *PatchedWritableRackTypeRequest) SetWidth(v int32)`
+`func (o *PatchedWritableRackTypeRequest) SetWidth(v PatchedWritableRackRequestWidth)`
 
 SetWidth sets Width field to given value.
 
@@ -340,20 +340,20 @@ HasOuterDepth returns a boolean if a field has been set.
 UnsetOuterDepth ensures that no value is present for OuterDepth, not even an explicit nil
 ### GetOuterUnit
 
-`func (o *PatchedWritableRackTypeRequest) GetOuterUnit() string`
+`func (o *PatchedWritableRackTypeRequest) GetOuterUnit() PatchedWritableRackRequestOuterUnit`
 
 GetOuterUnit returns the OuterUnit field if non-nil, zero value otherwise.
 
 ### GetOuterUnitOk
 
-`func (o *PatchedWritableRackTypeRequest) GetOuterUnitOk() (*string, bool)`
+`func (o *PatchedWritableRackTypeRequest) GetOuterUnitOk() (*PatchedWritableRackRequestOuterUnit, bool)`
 
 GetOuterUnitOk returns a tuple with the OuterUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOuterUnit
 
-`func (o *PatchedWritableRackTypeRequest) SetOuterUnit(v string)`
+`func (o *PatchedWritableRackTypeRequest) SetOuterUnit(v PatchedWritableRackRequestOuterUnit)`
 
 SetOuterUnit sets OuterUnit field to given value.
 
@@ -435,20 +435,20 @@ HasMaxWeight returns a boolean if a field has been set.
 UnsetMaxWeight ensures that no value is present for MaxWeight, not even an explicit nil
 ### GetWeightUnit
 
-`func (o *PatchedWritableRackTypeRequest) GetWeightUnit() string`
+`func (o *PatchedWritableRackTypeRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit`
 
 GetWeightUnit returns the WeightUnit field if non-nil, zero value otherwise.
 
 ### GetWeightUnitOk
 
-`func (o *PatchedWritableRackTypeRequest) GetWeightUnitOk() (*string, bool)`
+`func (o *PatchedWritableRackTypeRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool)`
 
 GetWeightUnitOk returns a tuple with the WeightUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeightUnit
 
-`func (o *PatchedWritableRackTypeRequest) SetWeightUnit(v string)`
+`func (o *PatchedWritableRackTypeRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit)`
 
 SetWeightUnit sets WeightUnit field to given value.
 

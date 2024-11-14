@@ -19,9 +19,8 @@ var _ MappedNullable = &RackWidth{}
 
 // RackWidth struct for RackWidth
 type RackWidth struct {
-	// * `10` - 10 inches * `19` - 19 inches * `21` - 21 inches * `23` - 23 inches
-	Value                *int32  `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *RackWidthValue `json:"value,omitempty"`
+	Label                *RackWidthLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewRackWidthWithDefaults() *RackWidth {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *RackWidth) GetValue() int32 {
+func (o *RackWidth) GetValue() RackWidthValue {
 	if o == nil || IsNil(o.Value) {
-		var ret int32
+		var ret RackWidthValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *RackWidth) GetValue() int32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackWidth) GetValueOk() (*int32, bool) {
+func (o *RackWidth) GetValueOk() (*RackWidthValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *RackWidth) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given int32 and assigns it to the Value field.
-func (o *RackWidth) SetValue(v int32) {
+// SetValue gets a reference to the given RackWidthValue and assigns it to the Value field.
+func (o *RackWidth) SetValue(v RackWidthValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *RackWidth) GetLabel() string {
+func (o *RackWidth) GetLabel() RackWidthLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret RackWidthLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *RackWidth) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackWidth) GetLabelOk() (*string, bool) {
+func (o *RackWidth) GetLabelOk() (*RackWidthLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *RackWidth) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *RackWidth) SetLabel(v string) {
+// SetLabel gets a reference to the given RackWidthLabel and assigns it to the Label field.
+func (o *RackWidth) SetLabel(v RackWidthLabel) {
 	o.Label = &v
 }
 

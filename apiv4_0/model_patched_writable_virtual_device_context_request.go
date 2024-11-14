@@ -19,18 +19,17 @@ var _ MappedNullable = &PatchedWritableVirtualDeviceContextRequest{}
 
 // PatchedWritableVirtualDeviceContextRequest Adds support for custom fields and tags.
 type PatchedWritableVirtualDeviceContextRequest struct {
-	Name       *string                       `json:"name,omitempty"`
-	Device     *BriefDeviceRequest           `json:"device,omitempty"`
-	Identifier NullableInt32                 `json:"identifier,omitempty"`
-	Tenant     NullableBriefTenantRequest    `json:"tenant,omitempty"`
-	PrimaryIp4 NullableBriefIPAddressRequest `json:"primary_ip4,omitempty"`
-	PrimaryIp6 NullableBriefIPAddressRequest `json:"primary_ip6,omitempty"`
-	// * `active` - Active * `planned` - Planned * `offline` - Offline
-	Status               *string                `json:"status,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 *string                                           `json:"name,omitempty"`
+	Device               *BriefDeviceRequest                               `json:"device,omitempty"`
+	Identifier           NullableInt32                                     `json:"identifier,omitempty"`
+	Tenant               NullableBriefTenantRequest                        `json:"tenant,omitempty"`
+	PrimaryIp4           NullableBriefIPAddressRequest                     `json:"primary_ip4,omitempty"`
+	PrimaryIp6           NullableBriefIPAddressRequest                     `json:"primary_ip6,omitempty"`
+	Status               *PatchedWritableVirtualDeviceContextRequestStatus `json:"status,omitempty"`
+	Description          *string                                           `json:"description,omitempty"`
+	Comments             *string                                           `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                                `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                            `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -290,9 +289,9 @@ func (o *PatchedWritableVirtualDeviceContextRequest) UnsetPrimaryIp6() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableVirtualDeviceContextRequest) GetStatus() string {
+func (o *PatchedWritableVirtualDeviceContextRequest) GetStatus() PatchedWritableVirtualDeviceContextRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableVirtualDeviceContextRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -300,7 +299,7 @@ func (o *PatchedWritableVirtualDeviceContextRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableVirtualDeviceContextRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableVirtualDeviceContextRequest) GetStatusOk() (*PatchedWritableVirtualDeviceContextRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -316,8 +315,8 @@ func (o *PatchedWritableVirtualDeviceContextRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableVirtualDeviceContextRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableVirtualDeviceContextRequestStatus and assigns it to the Status field.
+func (o *PatchedWritableVirtualDeviceContextRequest) SetStatus(v PatchedWritableVirtualDeviceContextRequestStatus) {
 	o.Status = &v
 }
 

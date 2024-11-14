@@ -20,10 +20,9 @@ var _ MappedNullable = &CustomFieldRequest{}
 
 // CustomFieldRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type CustomFieldRequest struct {
-	ContentTypes []string `json:"content_types"`
-	// * `text` - Text * `longtext` - Text (long) * `integer` - Integer * `decimal` - Decimal * `boolean` - Boolean (true/false) * `date` - Date * `datetime` - Date & time * `url` - URL * `json` - JSON * `select` - Selection * `multiselect` - Multiple selection * `object` - Object * `multiobject` - Multiple objects
-	Type       string  `json:"type"`
-	ObjectType *string `json:"object_type,omitempty"`
+	ContentTypes []string             `json:"content_types"`
+	Type         CustomFieldTypeValue `json:"type"`
+	ObjectType   *string              `json:"object_type,omitempty"`
 	// Internal field name
 	Name string `json:"name" validate:"regexp=^[a-z0-9_]+$"`
 	// Name of the field as displayed to users (if not provided, the field's name will be used)
@@ -34,11 +33,9 @@ type CustomFieldRequest struct {
 	// If true, this field is required when creating new objects or editing an existing object.
 	Required *bool `json:"required,omitempty"`
 	// Weighting for search. Lower values are considered more important. Fields with a search weight of zero will be ignored.
-	SearchWeight *int32 `json:"search_weight,omitempty"`
-	// * `disabled` - Disabled * `loose` - Loose * `exact` - Exact
-	FilterLogic *string `json:"filter_logic,omitempty"`
-	// * `read-write` - Read/Write * `read-only` - Read-only * `hidden` - Hidden * `hidden-ifunset` - Hidden (if unset)
-	UiVisibility *string `json:"ui_visibility,omitempty"`
+	SearchWeight *int32                        `json:"search_weight,omitempty"`
+	FilterLogic  *CustomFieldFilterLogicValue  `json:"filter_logic,omitempty"`
+	UiVisibility *CustomFieldUiVisibilityValue `json:"ui_visibility,omitempty"`
 	// Replicate this value when cloning objects
 	IsCloneable *bool `json:"is_cloneable,omitempty"`
 	// Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. \"Foo\").
@@ -62,7 +59,7 @@ type _CustomFieldRequest CustomFieldRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomFieldRequest(contentTypes []string, type_ string, name string) *CustomFieldRequest {
+func NewCustomFieldRequest(contentTypes []string, type_ CustomFieldTypeValue, name string) *CustomFieldRequest {
 	this := CustomFieldRequest{}
 	this.ContentTypes = contentTypes
 	this.Type = type_
@@ -103,9 +100,9 @@ func (o *CustomFieldRequest) SetContentTypes(v []string) {
 }
 
 // GetType returns the Type field value
-func (o *CustomFieldRequest) GetType() string {
+func (o *CustomFieldRequest) GetType() CustomFieldTypeValue {
 	if o == nil {
-		var ret string
+		var ret CustomFieldTypeValue
 		return ret
 	}
 
@@ -114,7 +111,7 @@ func (o *CustomFieldRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *CustomFieldRequest) GetTypeOk() (*string, bool) {
+func (o *CustomFieldRequest) GetTypeOk() (*CustomFieldTypeValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -122,7 +119,7 @@ func (o *CustomFieldRequest) GetTypeOk() (*string, bool) {
 }
 
 // SetType sets field value
-func (o *CustomFieldRequest) SetType(v string) {
+func (o *CustomFieldRequest) SetType(v CustomFieldTypeValue) {
 	o.Type = v
 }
 
@@ -343,9 +340,9 @@ func (o *CustomFieldRequest) SetSearchWeight(v int32) {
 }
 
 // GetFilterLogic returns the FilterLogic field value if set, zero value otherwise.
-func (o *CustomFieldRequest) GetFilterLogic() string {
+func (o *CustomFieldRequest) GetFilterLogic() CustomFieldFilterLogicValue {
 	if o == nil || IsNil(o.FilterLogic) {
-		var ret string
+		var ret CustomFieldFilterLogicValue
 		return ret
 	}
 	return *o.FilterLogic
@@ -353,7 +350,7 @@ func (o *CustomFieldRequest) GetFilterLogic() string {
 
 // GetFilterLogicOk returns a tuple with the FilterLogic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldRequest) GetFilterLogicOk() (*string, bool) {
+func (o *CustomFieldRequest) GetFilterLogicOk() (*CustomFieldFilterLogicValue, bool) {
 	if o == nil || IsNil(o.FilterLogic) {
 		return nil, false
 	}
@@ -369,15 +366,15 @@ func (o *CustomFieldRequest) HasFilterLogic() bool {
 	return false
 }
 
-// SetFilterLogic gets a reference to the given string and assigns it to the FilterLogic field.
-func (o *CustomFieldRequest) SetFilterLogic(v string) {
+// SetFilterLogic gets a reference to the given CustomFieldFilterLogicValue and assigns it to the FilterLogic field.
+func (o *CustomFieldRequest) SetFilterLogic(v CustomFieldFilterLogicValue) {
 	o.FilterLogic = &v
 }
 
 // GetUiVisibility returns the UiVisibility field value if set, zero value otherwise.
-func (o *CustomFieldRequest) GetUiVisibility() string {
+func (o *CustomFieldRequest) GetUiVisibility() CustomFieldUiVisibilityValue {
 	if o == nil || IsNil(o.UiVisibility) {
-		var ret string
+		var ret CustomFieldUiVisibilityValue
 		return ret
 	}
 	return *o.UiVisibility
@@ -385,7 +382,7 @@ func (o *CustomFieldRequest) GetUiVisibility() string {
 
 // GetUiVisibilityOk returns a tuple with the UiVisibility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldRequest) GetUiVisibilityOk() (*string, bool) {
+func (o *CustomFieldRequest) GetUiVisibilityOk() (*CustomFieldUiVisibilityValue, bool) {
 	if o == nil || IsNil(o.UiVisibility) {
 		return nil, false
 	}
@@ -401,8 +398,8 @@ func (o *CustomFieldRequest) HasUiVisibility() bool {
 	return false
 }
 
-// SetUiVisibility gets a reference to the given string and assigns it to the UiVisibility field.
-func (o *CustomFieldRequest) SetUiVisibility(v string) {
+// SetUiVisibility gets a reference to the given CustomFieldUiVisibilityValue and assigns it to the UiVisibility field.
+func (o *CustomFieldRequest) SetUiVisibility(v CustomFieldUiVisibilityValue) {
 	o.UiVisibility = &v
 }
 

@@ -20,10 +20,9 @@ var _ MappedNullable = &IPSecProfileRequest{}
 
 // IPSecProfileRequest Adds support for custom fields and tags.
 type IPSecProfileRequest struct {
-	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
-	// * `esp` - ESP * `ah` - AH
-	Mode                 string                  `json:"mode"`
+	Name                 string                  `json:"name"`
+	Description          *string                 `json:"description,omitempty"`
+	Mode                 IPSecProfileModeValue   `json:"mode"`
 	IkePolicy            BriefIKEPolicyRequest   `json:"ike_policy"`
 	IpsecPolicy          BriefIPSecPolicyRequest `json:"ipsec_policy"`
 	Comments             *string                 `json:"comments,omitempty"`
@@ -38,7 +37,7 @@ type _IPSecProfileRequest IPSecProfileRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIPSecProfileRequest(name string, mode string, ikePolicy BriefIKEPolicyRequest, ipsecPolicy BriefIPSecPolicyRequest) *IPSecProfileRequest {
+func NewIPSecProfileRequest(name string, mode IPSecProfileModeValue, ikePolicy BriefIKEPolicyRequest, ipsecPolicy BriefIPSecPolicyRequest) *IPSecProfileRequest {
 	this := IPSecProfileRequest{}
 	this.Name = name
 	this.Mode = mode
@@ -112,9 +111,9 @@ func (o *IPSecProfileRequest) SetDescription(v string) {
 }
 
 // GetMode returns the Mode field value
-func (o *IPSecProfileRequest) GetMode() string {
+func (o *IPSecProfileRequest) GetMode() IPSecProfileModeValue {
 	if o == nil {
-		var ret string
+		var ret IPSecProfileModeValue
 		return ret
 	}
 
@@ -123,7 +122,7 @@ func (o *IPSecProfileRequest) GetMode() string {
 
 // GetModeOk returns a tuple with the Mode field value
 // and a boolean to check if the value has been set.
-func (o *IPSecProfileRequest) GetModeOk() (*string, bool) {
+func (o *IPSecProfileRequest) GetModeOk() (*IPSecProfileModeValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -131,7 +130,7 @@ func (o *IPSecProfileRequest) GetModeOk() (*string, bool) {
 }
 
 // SetMode sets field value
-func (o *IPSecProfileRequest) SetMode(v string) {
+func (o *IPSecProfileRequest) SetMode(v IPSecProfileModeValue) {
 	o.Mode = v
 }
 

@@ -27,9 +27,8 @@ type Webhook struct {
 	Name        string  `json:"name"`
 	Description *string `json:"description,omitempty"`
 	// This URL will be called using the HTTP method defined when the webhook is called. Jinja2 template processing is supported with the same context as the request body.
-	PayloadUrl string `json:"payload_url"`
-	// * `GET` - GET * `POST` - POST * `PUT` - PUT * `PATCH` - PATCH * `DELETE` - DELETE
-	HttpMethod *string `json:"http_method,omitempty"`
+	PayloadUrl string                           `json:"payload_url"`
+	HttpMethod *PatchedWebhookRequestHttpMethod `json:"http_method,omitempty"`
 	// The complete list of official content types is available <a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\">here</a>.
 	HttpContentType *string `json:"http_content_type,omitempty"`
 	// User-supplied HTTP headers to be sent with the request in addition to the HTTP content type. Headers should be defined in the format <code>Name: Value</code>. Jinja2 template processing is supported with the same context as the request body (below).
@@ -228,9 +227,9 @@ func (o *Webhook) SetPayloadUrl(v string) {
 }
 
 // GetHttpMethod returns the HttpMethod field value if set, zero value otherwise.
-func (o *Webhook) GetHttpMethod() string {
+func (o *Webhook) GetHttpMethod() PatchedWebhookRequestHttpMethod {
 	if o == nil || IsNil(o.HttpMethod) {
-		var ret string
+		var ret PatchedWebhookRequestHttpMethod
 		return ret
 	}
 	return *o.HttpMethod
@@ -238,7 +237,7 @@ func (o *Webhook) GetHttpMethod() string {
 
 // GetHttpMethodOk returns a tuple with the HttpMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Webhook) GetHttpMethodOk() (*string, bool) {
+func (o *Webhook) GetHttpMethodOk() (*PatchedWebhookRequestHttpMethod, bool) {
 	if o == nil || IsNil(o.HttpMethod) {
 		return nil, false
 	}
@@ -254,8 +253,8 @@ func (o *Webhook) HasHttpMethod() bool {
 	return false
 }
 
-// SetHttpMethod gets a reference to the given string and assigns it to the HttpMethod field.
-func (o *Webhook) SetHttpMethod(v string) {
+// SetHttpMethod gets a reference to the given PatchedWebhookRequestHttpMethod and assigns it to the HttpMethod field.
+func (o *Webhook) SetHttpMethod(v PatchedWebhookRequestHttpMethod) {
 	o.HttpMethod = &v
 }
 

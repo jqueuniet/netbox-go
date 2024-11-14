@@ -33349,7 +33349,7 @@ type ApiDcimDevicesRenderConfigCreateRequest struct {
 	ApiService                             DcimAPI
 	id                                     int32
 	writableDeviceWithConfigContextRequest *WritableDeviceWithConfigContextRequest
-	format                                 *string
+	format                                 *DcimDevicesRenderConfigCreateFormatParameter
 }
 
 func (r ApiDcimDevicesRenderConfigCreateRequest) WritableDeviceWithConfigContextRequest(writableDeviceWithConfigContextRequest WritableDeviceWithConfigContextRequest) ApiDcimDevicesRenderConfigCreateRequest {
@@ -33357,7 +33357,7 @@ func (r ApiDcimDevicesRenderConfigCreateRequest) WritableDeviceWithConfigContext
 	return r
 }
 
-func (r ApiDcimDevicesRenderConfigCreateRequest) Format(format string) ApiDcimDevicesRenderConfigCreateRequest {
+func (r ApiDcimDevicesRenderConfigCreateRequest) Format(format DcimDevicesRenderConfigCreateFormatParameter) ApiDcimDevicesRenderConfigCreateRequest {
 	r.format = &format
 	return r
 }
@@ -90976,14 +90976,14 @@ type ApiDcimRacksElevationRetrieveRequest struct {
 	id            int32
 	exclude       *int32
 	expandDevices *bool
-	face          *string
+	face          *DcimRacksElevationRetrieveFaceParameter
 	includeImages *bool
 	legendWidth   *int32
 	limit         *int32
 	marginWidth   *int32
 	offset        *int32
 	q             *string
-	render        *string
+	render        *DcimRacksElevationRetrieveRenderParameter
 	unitHeight    *int32
 	unitWidth     *int32
 }
@@ -90999,7 +90999,7 @@ func (r ApiDcimRacksElevationRetrieveRequest) ExpandDevices(expandDevices bool) 
 }
 
 // * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear
-func (r ApiDcimRacksElevationRetrieveRequest) Face(face string) ApiDcimRacksElevationRetrieveRequest {
+func (r ApiDcimRacksElevationRetrieveRequest) Face(face DcimRacksElevationRetrieveFaceParameter) ApiDcimRacksElevationRetrieveRequest {
 	r.face = &face
 	return r
 }
@@ -91037,7 +91037,7 @@ func (r ApiDcimRacksElevationRetrieveRequest) Q(q string) ApiDcimRacksElevationR
 }
 
 // * &#x60;json&#x60; - json * &#x60;svg&#x60; - svg
-func (r ApiDcimRacksElevationRetrieveRequest) Render(render string) ApiDcimRacksElevationRetrieveRequest {
+func (r ApiDcimRacksElevationRetrieveRequest) Render(render DcimRacksElevationRetrieveRenderParameter) ApiDcimRacksElevationRetrieveRequest {
 	r.render = &render
 	return r
 }
@@ -91108,7 +91108,7 @@ func (a *DcimAPIService) DcimRacksElevationRetrieveExecute(r ApiDcimRacksElevati
 	if r.face != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "face", r.face, "form", "")
 	} else {
-		var defaultValue string = "front"
+		var defaultValue DcimRacksElevationRetrieveFaceParameter = "front"
 		r.face = &defaultValue
 	}
 	if r.includeImages != nil {
@@ -91141,7 +91141,7 @@ func (a *DcimAPIService) DcimRacksElevationRetrieveExecute(r ApiDcimRacksElevati
 	if r.render != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "render", r.render, "form", "")
 	} else {
-		var defaultValue string = "json"
+		var defaultValue DcimRacksElevationRetrieveRenderParameter = "json"
 		r.render = &defaultValue
 	}
 	if r.unitHeight != nil {

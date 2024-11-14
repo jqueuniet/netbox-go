@@ -20,14 +20,13 @@ var _ MappedNullable = &DataSourceRequest{}
 
 // DataSourceRequest Adds support for custom fields and tags.
 type DataSourceRequest struct {
-	Name string `json:"name"`
-	// * `None` - --------- * `local` - Local * `git` - Git * `amazon-s3` - Amazon S3
-	Type        NullableString `json:"type"`
-	SourceUrl   string         `json:"source_url"`
-	Enabled     *bool          `json:"enabled,omitempty"`
-	Description *string        `json:"description,omitempty"`
-	Comments    *string        `json:"comments,omitempty"`
-	Parameters  interface{}    `json:"parameters,omitempty"`
+	Name        string              `json:"name"`
+	Type        DataSourceTypeValue `json:"type"`
+	SourceUrl   string              `json:"source_url"`
+	Enabled     *bool               `json:"enabled,omitempty"`
+	Description *string             `json:"description,omitempty"`
+	Comments    *string             `json:"comments,omitempty"`
+	Parameters  interface{}         `json:"parameters,omitempty"`
 	// Patterns (one per line) matching files to ignore when syncing
 	IgnoreRules          *string                `json:"ignore_rules,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
@@ -40,7 +39,7 @@ type _DataSourceRequest DataSourceRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDataSourceRequest(name string, type_ NullableString, sourceUrl string) *DataSourceRequest {
+func NewDataSourceRequest(name string, type_ DataSourceTypeValue, sourceUrl string) *DataSourceRequest {
 	this := DataSourceRequest{}
 	this.Name = name
 	this.Type = type_
@@ -81,29 +80,27 @@ func (o *DataSourceRequest) SetName(v string) {
 }
 
 // GetType returns the Type field value
-// If the value is explicit nil, the zero value for string will be returned
-func (o *DataSourceRequest) GetType() string {
-	if o == nil || o.Type.Get() == nil {
-		var ret string
+func (o *DataSourceRequest) GetType() DataSourceTypeValue {
+	if o == nil {
+		var ret DataSourceTypeValue
 		return ret
 	}
 
-	return *o.Type.Get()
+	return o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DataSourceRequest) GetTypeOk() (*string, bool) {
+func (o *DataSourceRequest) GetTypeOk() (*DataSourceTypeValue, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.Type.Get(), o.Type.IsSet()
+	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *DataSourceRequest) SetType(v string) {
-	o.Type.Set(&v)
+func (o *DataSourceRequest) SetType(v DataSourceTypeValue) {
+	o.Type = v
 }
 
 // GetSourceUrl returns the SourceUrl field value
@@ -334,7 +331,7 @@ func (o DataSourceRequest) MarshalJSON() ([]byte, error) {
 func (o DataSourceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-	toSerialize["type"] = o.Type.Get()
+	toSerialize["type"] = o.Type
 	toSerialize["source_url"] = o.SourceUrl
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled

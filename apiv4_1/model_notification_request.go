@@ -21,12 +21,11 @@ var _ MappedNullable = &NotificationRequest{}
 
 // NotificationRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type NotificationRequest struct {
-	ObjectType string           `json:"object_type"`
-	ObjectId   int64            `json:"object_id"`
-	User       BriefUserRequest `json:"user"`
-	Read       NullableTime     `json:"read,omitempty"`
-	// * `object_created` - Object created * `object_updated` - Object updated * `object_deleted` - Object deleted * `job_started` - Job started * `job_completed` - Job completed * `job_failed` - Job failed * `job_errored` - Job errored
-	EventType            string `json:"event_type"`
+	ObjectType           string           `json:"object_type"`
+	ObjectId             int64            `json:"object_id"`
+	User                 BriefUserRequest `json:"user"`
+	Read                 NullableTime     `json:"read,omitempty"`
+	EventType            Event            `json:"event_type"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +35,7 @@ type _NotificationRequest NotificationRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotificationRequest(objectType string, objectId int64, user BriefUserRequest, eventType string) *NotificationRequest {
+func NewNotificationRequest(objectType string, objectId int64, user BriefUserRequest, eventType Event) *NotificationRequest {
 	this := NotificationRequest{}
 	this.ObjectType = objectType
 	this.ObjectId = objectId
@@ -169,9 +168,9 @@ func (o *NotificationRequest) UnsetRead() {
 }
 
 // GetEventType returns the EventType field value
-func (o *NotificationRequest) GetEventType() string {
+func (o *NotificationRequest) GetEventType() Event {
 	if o == nil {
-		var ret string
+		var ret Event
 		return ret
 	}
 
@@ -180,7 +179,7 @@ func (o *NotificationRequest) GetEventType() string {
 
 // GetEventTypeOk returns a tuple with the EventType field value
 // and a boolean to check if the value has been set.
-func (o *NotificationRequest) GetEventTypeOk() (*string, bool) {
+func (o *NotificationRequest) GetEventTypeOk() (*Event, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -188,7 +187,7 @@ func (o *NotificationRequest) GetEventTypeOk() (*string, bool) {
 }
 
 // SetEventType sets field value
-func (o *NotificationRequest) SetEventType(v string) {
+func (o *NotificationRequest) SetEventType(v Event) {
 	o.EventType = v
 }
 

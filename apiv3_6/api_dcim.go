@@ -33187,7 +33187,7 @@ type ApiDcimDevicesRenderConfigCreateRequest struct {
 	ApiService                             DcimAPI
 	id                                     int32
 	writableDeviceWithConfigContextRequest *WritableDeviceWithConfigContextRequest
-	format                                 *string
+	format                                 *DcimDevicesRenderConfigCreateFormatParameter
 }
 
 func (r ApiDcimDevicesRenderConfigCreateRequest) WritableDeviceWithConfigContextRequest(writableDeviceWithConfigContextRequest WritableDeviceWithConfigContextRequest) ApiDcimDevicesRenderConfigCreateRequest {
@@ -33195,7 +33195,7 @@ func (r ApiDcimDevicesRenderConfigCreateRequest) WritableDeviceWithConfigContext
 	return r
 }
 
-func (r ApiDcimDevicesRenderConfigCreateRequest) Format(format string) ApiDcimDevicesRenderConfigCreateRequest {
+func (r ApiDcimDevicesRenderConfigCreateRequest) Format(format DcimDevicesRenderConfigCreateFormatParameter) ApiDcimDevicesRenderConfigCreateRequest {
 	r.format = &format
 	return r
 }

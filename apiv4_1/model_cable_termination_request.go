@@ -20,9 +20,8 @@ var _ MappedNullable = &CableTerminationRequest{}
 
 // CableTerminationRequest Adds support for custom fields and tags.
 type CableTerminationRequest struct {
-	Cable int32 `json:"cable"`
-	// * `A` - A * `B` - B
-	CableEnd             string `json:"cable_end"`
+	Cable                int32  `json:"cable"`
+	CableEnd             End1   `json:"cable_end"`
 	TerminationType      string `json:"termination_type"`
 	TerminationId        int64  `json:"termination_id"`
 	AdditionalProperties map[string]interface{}
@@ -34,7 +33,7 @@ type _CableTerminationRequest CableTerminationRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCableTerminationRequest(cable int32, cableEnd string, terminationType string, terminationId int64) *CableTerminationRequest {
+func NewCableTerminationRequest(cable int32, cableEnd End1, terminationType string, terminationId int64) *CableTerminationRequest {
 	this := CableTerminationRequest{}
 	this.Cable = cable
 	this.CableEnd = cableEnd
@@ -76,9 +75,9 @@ func (o *CableTerminationRequest) SetCable(v int32) {
 }
 
 // GetCableEnd returns the CableEnd field value
-func (o *CableTerminationRequest) GetCableEnd() string {
+func (o *CableTerminationRequest) GetCableEnd() End1 {
 	if o == nil {
-		var ret string
+		var ret End1
 		return ret
 	}
 
@@ -87,7 +86,7 @@ func (o *CableTerminationRequest) GetCableEnd() string {
 
 // GetCableEndOk returns a tuple with the CableEnd field value
 // and a boolean to check if the value has been set.
-func (o *CableTerminationRequest) GetCableEndOk() (*string, bool) {
+func (o *CableTerminationRequest) GetCableEndOk() (*End1, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -95,7 +94,7 @@ func (o *CableTerminationRequest) GetCableEndOk() (*string, bool) {
 }
 
 // SetCableEnd sets field value
-func (o *CableTerminationRequest) SetCableEnd(v string) {
+func (o *CableTerminationRequest) SetCableEnd(v End1) {
 	o.CableEnd = v
 }
 

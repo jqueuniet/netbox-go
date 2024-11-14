@@ -19,9 +19,8 @@ var _ MappedNullable = &RackUnitFace{}
 
 // RackUnitFace struct for RackUnitFace
 type RackUnitFace struct {
-	// * `front` - Front * `rear` - Rear
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *RackUnitFaceValue `json:"value,omitempty"`
+	Label                *DeviceFaceLabel   `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewRackUnitFaceWithDefaults() *RackUnitFace {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *RackUnitFace) GetValue() string {
+func (o *RackUnitFace) GetValue() RackUnitFaceValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret RackUnitFaceValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *RackUnitFace) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackUnitFace) GetValueOk() (*string, bool) {
+func (o *RackUnitFace) GetValueOk() (*RackUnitFaceValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *RackUnitFace) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *RackUnitFace) SetValue(v string) {
+// SetValue gets a reference to the given RackUnitFaceValue and assigns it to the Value field.
+func (o *RackUnitFace) SetValue(v RackUnitFaceValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *RackUnitFace) GetLabel() string {
+func (o *RackUnitFace) GetLabel() DeviceFaceLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DeviceFaceLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *RackUnitFace) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackUnitFace) GetLabelOk() (*string, bool) {
+func (o *RackUnitFace) GetLabelOk() (*DeviceFaceLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *RackUnitFace) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *RackUnitFace) SetLabel(v string) {
+// SetLabel gets a reference to the given DeviceFaceLabel and assigns it to the Label field.
+func (o *RackUnitFace) SetLabel(v DeviceFaceLabel) {
 	o.Label = &v
 }
 

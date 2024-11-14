@@ -19,9 +19,8 @@ var _ MappedNullable = &CustomFieldUiVisible{}
 
 // CustomFieldUiVisible struct for CustomFieldUiVisible
 type CustomFieldUiVisible struct {
-	// * `always` - Always * `if-set` - If set * `hidden` - Hidden
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *CustomFieldUiVisibleValue `json:"value,omitempty"`
+	Label                *CustomFieldUiVisibleLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewCustomFieldUiVisibleWithDefaults() *CustomFieldUiVisible {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *CustomFieldUiVisible) GetValue() string {
+func (o *CustomFieldUiVisible) GetValue() CustomFieldUiVisibleValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret CustomFieldUiVisibleValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *CustomFieldUiVisible) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldUiVisible) GetValueOk() (*string, bool) {
+func (o *CustomFieldUiVisible) GetValueOk() (*CustomFieldUiVisibleValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *CustomFieldUiVisible) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *CustomFieldUiVisible) SetValue(v string) {
+// SetValue gets a reference to the given CustomFieldUiVisibleValue and assigns it to the Value field.
+func (o *CustomFieldUiVisible) SetValue(v CustomFieldUiVisibleValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *CustomFieldUiVisible) GetLabel() string {
+func (o *CustomFieldUiVisible) GetLabel() CustomFieldUiVisibleLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret CustomFieldUiVisibleLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *CustomFieldUiVisible) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldUiVisible) GetLabelOk() (*string, bool) {
+func (o *CustomFieldUiVisible) GetLabelOk() (*CustomFieldUiVisibleLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *CustomFieldUiVisible) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *CustomFieldUiVisible) SetLabel(v string) {
+// SetLabel gets a reference to the given CustomFieldUiVisibleLabel and assigns it to the Label field.
+func (o *CustomFieldUiVisible) SetLabel(v CustomFieldUiVisibleLabel) {
 	o.Label = &v
 }
 

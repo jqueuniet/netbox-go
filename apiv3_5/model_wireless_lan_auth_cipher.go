@@ -19,9 +19,8 @@ var _ MappedNullable = &WirelessLANAuthCipher{}
 
 // WirelessLANAuthCipher struct for WirelessLANAuthCipher
 type WirelessLANAuthCipher struct {
-	// * `auto` - Auto * `tkip` - TKIP * `aes` - AES
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *PatchedWritableWirelessLANRequestAuthCipher `json:"value,omitempty"`
+	Label                *WirelessLANAuthCipherLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewWirelessLANAuthCipherWithDefaults() *WirelessLANAuthCipher {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *WirelessLANAuthCipher) GetValue() string {
+func (o *WirelessLANAuthCipher) GetValue() PatchedWritableWirelessLANRequestAuthCipher {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret PatchedWritableWirelessLANRequestAuthCipher
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *WirelessLANAuthCipher) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WirelessLANAuthCipher) GetValueOk() (*string, bool) {
+func (o *WirelessLANAuthCipher) GetValueOk() (*PatchedWritableWirelessLANRequestAuthCipher, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *WirelessLANAuthCipher) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *WirelessLANAuthCipher) SetValue(v string) {
+// SetValue gets a reference to the given PatchedWritableWirelessLANRequestAuthCipher and assigns it to the Value field.
+func (o *WirelessLANAuthCipher) SetValue(v PatchedWritableWirelessLANRequestAuthCipher) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *WirelessLANAuthCipher) GetLabel() string {
+func (o *WirelessLANAuthCipher) GetLabel() WirelessLANAuthCipherLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret WirelessLANAuthCipherLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *WirelessLANAuthCipher) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WirelessLANAuthCipher) GetLabelOk() (*string, bool) {
+func (o *WirelessLANAuthCipher) GetLabelOk() (*WirelessLANAuthCipherLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *WirelessLANAuthCipher) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *WirelessLANAuthCipher) SetLabel(v string) {
+// SetLabel gets a reference to the given WirelessLANAuthCipherLabel and assigns it to the Label field.
+func (o *WirelessLANAuthCipher) SetLabel(v WirelessLANAuthCipherLabel) {
 	o.Label = &v
 }
 

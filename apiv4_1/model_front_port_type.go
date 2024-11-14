@@ -19,9 +19,8 @@ var _ MappedNullable = &FrontPortType{}
 
 // FrontPortType struct for FrontPortType
 type FrontPortType struct {
-	// * `8p8c` - 8P8C * `8p6c` - 8P6C * `8p4c` - 8P4C * `8p2c` - 8P2C * `6p6c` - 6P6C * `6p4c` - 6P4C * `6p2c` - 6P2C * `4p4c` - 4P4C * `4p2c` - 4P2C * `gg45` - GG45 * `tera-4p` - TERA 4P * `tera-2p` - TERA 2P * `tera-1p` - TERA 1P * `110-punch` - 110 Punch * `bnc` - BNC * `f` - F Connector * `n` - N Connector * `mrj21` - MRJ21 * `fc` - FC * `lc` - LC * `lc-pc` - LC/PC * `lc-upc` - LC/UPC * `lc-apc` - LC/APC * `lsh` - LSH * `lsh-pc` - LSH/PC * `lsh-upc` - LSH/UPC * `lsh-apc` - LSH/APC * `lx5` - LX.5 * `lx5-pc` - LX.5/PC * `lx5-upc` - LX.5/UPC * `lx5-apc` - LX.5/APC * `mpo` - MPO * `mtrj` - MTRJ * `sc` - SC * `sc-pc` - SC/PC * `sc-upc` - SC/UPC * `sc-apc` - SC/APC * `st` - ST * `cs` - CS * `sn` - SN * `sma-905` - SMA 905 * `sma-906` - SMA 906 * `urm-p2` - URM-P2 * `urm-p4` - URM-P4 * `urm-p8` - URM-P8 * `splice` - Splice * `usb-a` - USB Type A * `usb-b` - USB Type B * `usb-c` - USB Type C * `usb-mini-a` - USB Mini A * `usb-mini-b` - USB Mini B * `usb-micro-a` - USB Micro A * `usb-micro-b` - USB Micro B * `usb-micro-ab` - USB Micro AB * `other` - Other
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *FrontPortTypeValue `json:"value,omitempty"`
+	Label                *FrontPortTypeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewFrontPortTypeWithDefaults() *FrontPortType {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *FrontPortType) GetValue() string {
+func (o *FrontPortType) GetValue() FrontPortTypeValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret FrontPortTypeValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *FrontPortType) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FrontPortType) GetValueOk() (*string, bool) {
+func (o *FrontPortType) GetValueOk() (*FrontPortTypeValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *FrontPortType) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *FrontPortType) SetValue(v string) {
+// SetValue gets a reference to the given FrontPortTypeValue and assigns it to the Value field.
+func (o *FrontPortType) SetValue(v FrontPortTypeValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *FrontPortType) GetLabel() string {
+func (o *FrontPortType) GetLabel() FrontPortTypeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret FrontPortTypeLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *FrontPortType) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FrontPortType) GetLabelOk() (*string, bool) {
+func (o *FrontPortType) GetLabelOk() (*FrontPortTypeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *FrontPortType) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *FrontPortType) SetLabel(v string) {
+// SetLabel gets a reference to the given FrontPortTypeLabel and assigns it to the Label field.
+func (o *FrontPortType) SetLabel(v FrontPortTypeLabel) {
 	o.Label = &v
 }
 

@@ -19,22 +19,19 @@ var _ MappedNullable = &PatchedWritableCableRequest{}
 
 // PatchedWritableCableRequest Adds support for custom fields and tags.
 type PatchedWritableCableRequest struct {
-	// * `cat3` - CAT3 * `cat5` - CAT5 * `cat5e` - CAT5e * `cat6` - CAT6 * `cat6a` - CAT6a * `cat7` - CAT7 * `cat7a` - CAT7a * `cat8` - CAT8 * `dac-active` - Direct Attach Copper (Active) * `dac-passive` - Direct Attach Copper (Passive) * `mrj21-trunk` - MRJ21 Trunk * `coaxial` - Coaxial * `mmf` - Multimode Fiber * `mmf-om1` - Multimode Fiber (OM1) * `mmf-om2` - Multimode Fiber (OM2) * `mmf-om3` - Multimode Fiber (OM3) * `mmf-om4` - Multimode Fiber (OM4) * `mmf-om5` - Multimode Fiber (OM5) * `smf` - Singlemode Fiber * `smf-os1` - Singlemode Fiber (OS1) * `smf-os2` - Singlemode Fiber (OS2) * `aoc` - Active Optical Cabling (AOC) * `power` - Power
-	Type          *string                `json:"type,omitempty"`
-	ATerminations []GenericObjectRequest `json:"a_terminations,omitempty"`
-	BTerminations []GenericObjectRequest `json:"b_terminations,omitempty"`
-	// * `connected` - Connected * `planned` - Planned * `decommissioning` - Decommissioning
-	Status *string                    `json:"status,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	Label  *string                    `json:"label,omitempty"`
-	Color  *string                    `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
-	Length NullableFloat64            `json:"length,omitempty"`
-	// * `km` - Kilometers * `m` - Meters * `cm` - Centimeters * `mi` - Miles * `ft` - Feet * `in` - Inches
-	LengthUnit           *string                `json:"length_unit,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Type                 *CableType                             `json:"type,omitempty"`
+	ATerminations        []GenericObjectRequest                 `json:"a_terminations,omitempty"`
+	BTerminations        []GenericObjectRequest                 `json:"b_terminations,omitempty"`
+	Status               *CableStatusValue                      `json:"status,omitempty"`
+	Tenant               NullableBriefTenantRequest             `json:"tenant,omitempty"`
+	Label                *string                                `json:"label,omitempty"`
+	Color                *string                                `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
+	Length               NullableFloat64                        `json:"length,omitempty"`
+	LengthUnit           *PatchedWritableCableRequestLengthUnit `json:"length_unit,omitempty"`
+	Description          *string                                `json:"description,omitempty"`
+	Comments             *string                                `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                 `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,9 +55,9 @@ func NewPatchedWritableCableRequestWithDefaults() *PatchedWritableCableRequest {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *PatchedWritableCableRequest) GetType() string {
+func (o *PatchedWritableCableRequest) GetType() CableType {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret CableType
 		return ret
 	}
 	return *o.Type
@@ -68,7 +65,7 @@ func (o *PatchedWritableCableRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableCableRequest) GetTypeOk() (*string, bool) {
+func (o *PatchedWritableCableRequest) GetTypeOk() (*CableType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -84,8 +81,8 @@ func (o *PatchedWritableCableRequest) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *PatchedWritableCableRequest) SetType(v string) {
+// SetType gets a reference to the given CableType and assigns it to the Type field.
+func (o *PatchedWritableCableRequest) SetType(v CableType) {
 	o.Type = &v
 }
 
@@ -154,9 +151,9 @@ func (o *PatchedWritableCableRequest) SetBTerminations(v []GenericObjectRequest)
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableCableRequest) GetStatus() string {
+func (o *PatchedWritableCableRequest) GetStatus() CableStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret CableStatusValue
 		return ret
 	}
 	return *o.Status
@@ -164,7 +161,7 @@ func (o *PatchedWritableCableRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableCableRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableCableRequest) GetStatusOk() (*CableStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -180,8 +177,8 @@ func (o *PatchedWritableCableRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableCableRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given CableStatusValue and assigns it to the Status field.
+func (o *PatchedWritableCableRequest) SetStatus(v CableStatusValue) {
 	o.Status = &v
 }
 
@@ -336,9 +333,9 @@ func (o *PatchedWritableCableRequest) UnsetLength() {
 }
 
 // GetLengthUnit returns the LengthUnit field value if set, zero value otherwise.
-func (o *PatchedWritableCableRequest) GetLengthUnit() string {
+func (o *PatchedWritableCableRequest) GetLengthUnit() PatchedWritableCableRequestLengthUnit {
 	if o == nil || IsNil(o.LengthUnit) {
-		var ret string
+		var ret PatchedWritableCableRequestLengthUnit
 		return ret
 	}
 	return *o.LengthUnit
@@ -346,7 +343,7 @@ func (o *PatchedWritableCableRequest) GetLengthUnit() string {
 
 // GetLengthUnitOk returns a tuple with the LengthUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableCableRequest) GetLengthUnitOk() (*string, bool) {
+func (o *PatchedWritableCableRequest) GetLengthUnitOk() (*PatchedWritableCableRequestLengthUnit, bool) {
 	if o == nil || IsNil(o.LengthUnit) {
 		return nil, false
 	}
@@ -362,8 +359,8 @@ func (o *PatchedWritableCableRequest) HasLengthUnit() bool {
 	return false
 }
 
-// SetLengthUnit gets a reference to the given string and assigns it to the LengthUnit field.
-func (o *PatchedWritableCableRequest) SetLengthUnit(v string) {
+// SetLengthUnit gets a reference to the given PatchedWritableCableRequestLengthUnit and assigns it to the LengthUnit field.
+func (o *PatchedWritableCableRequest) SetLengthUnit(v PatchedWritableCableRequestLengthUnit) {
 	o.LengthUnit = &v
 }
 

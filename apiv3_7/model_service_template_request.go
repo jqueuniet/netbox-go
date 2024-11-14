@@ -20,14 +20,13 @@ var _ MappedNullable = &ServiceTemplateRequest{}
 
 // ServiceTemplateRequest Adds support for custom fields and tags.
 type ServiceTemplateRequest struct {
-	Name  string  `json:"name"`
-	Ports []int32 `json:"ports"`
-	// * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP
-	Protocol             *string                `json:"protocol,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                                 `json:"name"`
+	Ports                []int32                                `json:"ports"`
+	Protocol             *PatchedWritableServiceRequestProtocol `json:"protocol,omitempty"`
+	Description          *string                                `json:"description,omitempty"`
+	Comments             *string                                `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                 `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -101,9 +100,9 @@ func (o *ServiceTemplateRequest) SetPorts(v []int32) {
 }
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
-func (o *ServiceTemplateRequest) GetProtocol() string {
+func (o *ServiceTemplateRequest) GetProtocol() PatchedWritableServiceRequestProtocol {
 	if o == nil || IsNil(o.Protocol) {
-		var ret string
+		var ret PatchedWritableServiceRequestProtocol
 		return ret
 	}
 	return *o.Protocol
@@ -111,7 +110,7 @@ func (o *ServiceTemplateRequest) GetProtocol() string {
 
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceTemplateRequest) GetProtocolOk() (*string, bool) {
+func (o *ServiceTemplateRequest) GetProtocolOk() (*PatchedWritableServiceRequestProtocol, bool) {
 	if o == nil || IsNil(o.Protocol) {
 		return nil, false
 	}
@@ -127,8 +126,8 @@ func (o *ServiceTemplateRequest) HasProtocol() bool {
 	return false
 }
 
-// SetProtocol gets a reference to the given string and assigns it to the Protocol field.
-func (o *ServiceTemplateRequest) SetProtocol(v string) {
+// SetProtocol gets a reference to the given PatchedWritableServiceRequestProtocol and assigns it to the Protocol field.
+func (o *ServiceTemplateRequest) SetProtocol(v PatchedWritableServiceRequestProtocol) {
 	o.Protocol = &v
 }
 

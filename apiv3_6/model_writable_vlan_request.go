@@ -25,11 +25,10 @@ type WritableVLANRequest struct {
 	// VLAN group (optional)
 	Group NullableInt32 `json:"group,omitempty"`
 	// Numeric VLAN ID (1-4094)
-	Vid    int32         `json:"vid"`
-	Name   string        `json:"name"`
-	Tenant NullableInt32 `json:"tenant,omitempty"`
-	// Operational status of this VLAN  * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
-	Status *string `json:"status,omitempty"`
+	Vid    int32                             `json:"vid"`
+	Name   string                            `json:"name"`
+	Tenant NullableInt32                     `json:"tenant,omitempty"`
+	Status *PatchedWritableVLANRequestStatus `json:"status,omitempty"`
 	// The primary function of this VLAN
 	Role                 NullableInt32          `json:"role,omitempty"`
 	Description          *string                `json:"description,omitempty"`
@@ -238,9 +237,9 @@ func (o *WritableVLANRequest) UnsetTenant() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableVLANRequest) GetStatus() string {
+func (o *WritableVLANRequest) GetStatus() PatchedWritableVLANRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableVLANRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -248,7 +247,7 @@ func (o *WritableVLANRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableVLANRequest) GetStatusOk() (*string, bool) {
+func (o *WritableVLANRequest) GetStatusOk() (*PatchedWritableVLANRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -264,8 +263,8 @@ func (o *WritableVLANRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableVLANRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableVLANRequestStatus and assigns it to the Status field.
+func (o *WritableVLANRequest) SetStatus(v PatchedWritableVLANRequestStatus) {
 	o.Status = &v
 }
 

@@ -24,12 +24,10 @@ type ConsoleServerPortRequest struct {
 	Module NullableComponentNestedModuleRequest `json:"module,omitempty"`
 	Name   string                               `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	// * `de-9` - DE-9 * `db-25` - DB-25 * `rj-11` - RJ-11 * `rj-12` - RJ-12 * `rj-45` - RJ-45 * `mini-din-8` - Mini-DIN 8 * `usb-a` - USB Type A * `usb-b` - USB Type B * `usb-c` - USB Type C * `usb-mini-a` - USB Mini A * `usb-mini-b` - USB Mini B * `usb-micro-a` - USB Micro A * `usb-micro-b` - USB Micro B * `usb-micro-ab` - USB Micro AB * `other` - Other
-	Type *string `json:"type,omitempty"`
-	// * `1200` - 1200 bps * `2400` - 2400 bps * `4800` - 4800 bps * `9600` - 9600 bps * `19200` - 19.2 kbps * `38400` - 38.4 kbps * `57600` - 57.6 kbps * `115200` - 115.2 kbps
-	Speed       NullableInt32 `json:"speed,omitempty"`
-	Description *string       `json:"description,omitempty"`
+	Label       *string                         `json:"label,omitempty"`
+	Type        *ConsolePortTypeValue           `json:"type,omitempty"`
+	Speed       NullableConsolePortRequestSpeed `json:"speed,omitempty"`
+	Description *string                         `json:"description,omitempty"`
 	// Treat as if a cable is connected
 	MarkConnected        *bool                  `json:"mark_connected,omitempty"`
 	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
@@ -182,9 +180,9 @@ func (o *ConsoleServerPortRequest) SetLabel(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *ConsoleServerPortRequest) GetType() string {
+func (o *ConsoleServerPortRequest) GetType() ConsolePortTypeValue {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret ConsolePortTypeValue
 		return ret
 	}
 	return *o.Type
@@ -192,7 +190,7 @@ func (o *ConsoleServerPortRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConsoleServerPortRequest) GetTypeOk() (*string, bool) {
+func (o *ConsoleServerPortRequest) GetTypeOk() (*ConsolePortTypeValue, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -208,15 +206,15 @@ func (o *ConsoleServerPortRequest) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *ConsoleServerPortRequest) SetType(v string) {
+// SetType gets a reference to the given ConsolePortTypeValue and assigns it to the Type field.
+func (o *ConsoleServerPortRequest) SetType(v ConsolePortTypeValue) {
 	o.Type = &v
 }
 
 // GetSpeed returns the Speed field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ConsoleServerPortRequest) GetSpeed() int32 {
+func (o *ConsoleServerPortRequest) GetSpeed() ConsolePortRequestSpeed {
 	if o == nil || IsNil(o.Speed.Get()) {
-		var ret int32
+		var ret ConsolePortRequestSpeed
 		return ret
 	}
 	return *o.Speed.Get()
@@ -225,7 +223,7 @@ func (o *ConsoleServerPortRequest) GetSpeed() int32 {
 // GetSpeedOk returns a tuple with the Speed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ConsoleServerPortRequest) GetSpeedOk() (*int32, bool) {
+func (o *ConsoleServerPortRequest) GetSpeedOk() (*ConsolePortRequestSpeed, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -241,8 +239,8 @@ func (o *ConsoleServerPortRequest) HasSpeed() bool {
 	return false
 }
 
-// SetSpeed gets a reference to the given NullableInt32 and assigns it to the Speed field.
-func (o *ConsoleServerPortRequest) SetSpeed(v int32) {
+// SetSpeed gets a reference to the given NullableConsolePortRequestSpeed and assigns it to the Speed field.
+func (o *ConsoleServerPortRequest) SetSpeed(v ConsolePortRequestSpeed) {
 	o.Speed.Set(&v)
 }
 

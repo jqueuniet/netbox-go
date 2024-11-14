@@ -19,9 +19,8 @@ var _ MappedNullable = &IKEPolicyVersion{}
 
 // IKEPolicyVersion struct for IKEPolicyVersion
 type IKEPolicyVersion struct {
-	// * `1` - IKEv1 * `2` - IKEv2
-	Value                *int32  `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *IKEPolicyVersionValue `json:"value,omitempty"`
+	Label                *IKEPolicyVersionLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewIKEPolicyVersionWithDefaults() *IKEPolicyVersion {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *IKEPolicyVersion) GetValue() int32 {
+func (o *IKEPolicyVersion) GetValue() IKEPolicyVersionValue {
 	if o == nil || IsNil(o.Value) {
-		var ret int32
+		var ret IKEPolicyVersionValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *IKEPolicyVersion) GetValue() int32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEPolicyVersion) GetValueOk() (*int32, bool) {
+func (o *IKEPolicyVersion) GetValueOk() (*IKEPolicyVersionValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *IKEPolicyVersion) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given int32 and assigns it to the Value field.
-func (o *IKEPolicyVersion) SetValue(v int32) {
+// SetValue gets a reference to the given IKEPolicyVersionValue and assigns it to the Value field.
+func (o *IKEPolicyVersion) SetValue(v IKEPolicyVersionValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *IKEPolicyVersion) GetLabel() string {
+func (o *IKEPolicyVersion) GetLabel() IKEPolicyVersionLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret IKEPolicyVersionLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *IKEPolicyVersion) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEPolicyVersion) GetLabelOk() (*string, bool) {
+func (o *IKEPolicyVersion) GetLabelOk() (*IKEPolicyVersionLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *IKEPolicyVersion) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *IKEPolicyVersion) SetLabel(v string) {
+// SetLabel gets a reference to the given IKEPolicyVersionLabel and assigns it to the Label field.
+func (o *IKEPolicyVersion) SetLabel(v IKEPolicyVersionLabel) {
 	o.Label = &v
 }
 

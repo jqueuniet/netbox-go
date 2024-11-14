@@ -20,14 +20,13 @@ var _ MappedNullable = &WritableTunnelTerminationRequest{}
 
 // WritableTunnelTerminationRequest Adds support for custom fields and tags.
 type WritableTunnelTerminationRequest struct {
-	Tunnel int32 `json:"tunnel"`
-	// * `peer` - Peer * `hub` - Hub * `spoke` - Spoke
-	Role                 *string                `json:"role,omitempty"`
-	TerminationType      string                 `json:"termination_type"`
-	TerminationId        NullableInt64          `json:"termination_id,omitempty"`
-	OutsideIp            NullableInt32          `json:"outside_ip,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Tunnel               int32                                        `json:"tunnel"`
+	Role                 *PatchedWritableTunnelTerminationRequestRole `json:"role,omitempty"`
+	TerminationType      string                                       `json:"termination_type"`
+	TerminationId        NullableInt64                                `json:"termination_id,omitempty"`
+	OutsideIp            NullableInt32                                `json:"outside_ip,omitempty"`
+	Tags                 []NestedTagRequest                           `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                       `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -77,9 +76,9 @@ func (o *WritableTunnelTerminationRequest) SetTunnel(v int32) {
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
-func (o *WritableTunnelTerminationRequest) GetRole() string {
+func (o *WritableTunnelTerminationRequest) GetRole() PatchedWritableTunnelTerminationRequestRole {
 	if o == nil || IsNil(o.Role) {
-		var ret string
+		var ret PatchedWritableTunnelTerminationRequestRole
 		return ret
 	}
 	return *o.Role
@@ -87,7 +86,7 @@ func (o *WritableTunnelTerminationRequest) GetRole() string {
 
 // GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableTunnelTerminationRequest) GetRoleOk() (*string, bool) {
+func (o *WritableTunnelTerminationRequest) GetRoleOk() (*PatchedWritableTunnelTerminationRequestRole, bool) {
 	if o == nil || IsNil(o.Role) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *WritableTunnelTerminationRequest) HasRole() bool {
 	return false
 }
 
-// SetRole gets a reference to the given string and assigns it to the Role field.
-func (o *WritableTunnelTerminationRequest) SetRole(v string) {
+// SetRole gets a reference to the given PatchedWritableTunnelTerminationRequestRole and assigns it to the Role field.
+func (o *WritableTunnelTerminationRequest) SetRole(v PatchedWritableTunnelTerminationRequestRole) {
 	o.Role = &v
 }
 

@@ -22,16 +22,15 @@ type PatchedWritableVLANRequest struct {
 	Site  NullableBriefSiteRequest      `json:"site,omitempty"`
 	Group NullableBriefVLANGroupRequest `json:"group,omitempty"`
 	// Numeric VLAN ID (1-4094)
-	Vid    *int32                     `json:"vid,omitempty"`
-	Name   *string                    `json:"name,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	// Operational status of this VLAN  * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
-	Status               *string                  `json:"status,omitempty"`
-	Role                 NullableBriefRoleRequest `json:"role,omitempty"`
-	Description          *string                  `json:"description,omitempty"`
-	Comments             *string                  `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest       `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}   `json:"custom_fields,omitempty"`
+	Vid                  *int32                            `json:"vid,omitempty"`
+	Name                 *string                           `json:"name,omitempty"`
+	Tenant               NullableBriefTenantRequest        `json:"tenant,omitempty"`
+	Status               *PatchedWritableVLANRequestStatus `json:"status,omitempty"`
+	Role                 NullableBriefRoleRequest          `json:"role,omitempty"`
+	Description          *string                           `json:"description,omitempty"`
+	Comments             *string                           `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}            `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -248,9 +247,9 @@ func (o *PatchedWritableVLANRequest) UnsetTenant() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableVLANRequest) GetStatus() string {
+func (o *PatchedWritableVLANRequest) GetStatus() PatchedWritableVLANRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableVLANRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -258,7 +257,7 @@ func (o *PatchedWritableVLANRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableVLANRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableVLANRequest) GetStatusOk() (*PatchedWritableVLANRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -274,8 +273,8 @@ func (o *PatchedWritableVLANRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableVLANRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableVLANRequestStatus and assigns it to the Status field.
+func (o *PatchedWritableVLANRequest) SetStatus(v PatchedWritableVLANRequestStatus) {
 	o.Status = &v
 }
 

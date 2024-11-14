@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Manufacturer** | Pointer to [**BriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
 **Model** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** | Discrete part number (optional) | [optional] 
-**Airflow** | Pointer to **string** | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive | [optional] 
+**Airflow** | Pointer to [**PatchedWritableModuleTypeRequestAirflow**](PatchedWritableModuleTypeRequestAirflow.md) |  | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
-**WeightUnit** | Pointer to **string** | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | [optional] 
+**WeightUnit** | Pointer to [**PatchedWritableDeviceTypeRequestWeightUnit**](PatchedWritableDeviceTypeRequestWeightUnit.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -111,20 +111,20 @@ HasPartNumber returns a boolean if a field has been set.
 
 ### GetAirflow
 
-`func (o *PatchedWritableModuleTypeRequest) GetAirflow() string`
+`func (o *PatchedWritableModuleTypeRequest) GetAirflow() PatchedWritableModuleTypeRequestAirflow`
 
 GetAirflow returns the Airflow field if non-nil, zero value otherwise.
 
 ### GetAirflowOk
 
-`func (o *PatchedWritableModuleTypeRequest) GetAirflowOk() (*string, bool)`
+`func (o *PatchedWritableModuleTypeRequest) GetAirflowOk() (*PatchedWritableModuleTypeRequestAirflow, bool)`
 
 GetAirflowOk returns a tuple with the Airflow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAirflow
 
-`func (o *PatchedWritableModuleTypeRequest) SetAirflow(v string)`
+`func (o *PatchedWritableModuleTypeRequest) SetAirflow(v PatchedWritableModuleTypeRequestAirflow)`
 
 SetAirflow sets Airflow field to given value.
 
@@ -171,20 +171,20 @@ HasWeight returns a boolean if a field has been set.
 UnsetWeight ensures that no value is present for Weight, not even an explicit nil
 ### GetWeightUnit
 
-`func (o *PatchedWritableModuleTypeRequest) GetWeightUnit() string`
+`func (o *PatchedWritableModuleTypeRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit`
 
 GetWeightUnit returns the WeightUnit field if non-nil, zero value otherwise.
 
 ### GetWeightUnitOk
 
-`func (o *PatchedWritableModuleTypeRequest) GetWeightUnitOk() (*string, bool)`
+`func (o *PatchedWritableModuleTypeRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool)`
 
 GetWeightUnitOk returns a tuple with the WeightUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeightUnit
 
-`func (o *PatchedWritableModuleTypeRequest) SetWeightUnit(v string)`
+`func (o *PatchedWritableModuleTypeRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit)`
 
 SetWeightUnit sets WeightUnit field to given value.
 

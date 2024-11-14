@@ -20,23 +20,22 @@ var _ MappedNullable = &WritableVirtualMachineWithConfigContextRequest{}
 
 // WritableVirtualMachineWithConfigContextRequest Adds support for custom fields and tags.
 type WritableVirtualMachineWithConfigContextRequest struct {
-	Name string `json:"name"`
-	// * `offline` - Offline * `active` - Active * `planned` - Planned * `staged` - Staged * `failed` - Failed * `decommissioning` - Decommissioning
-	Status         *string         `json:"status,omitempty"`
-	Site           NullableInt32   `json:"site,omitempty"`
-	Cluster        NullableInt32   `json:"cluster,omitempty"`
-	Device         NullableInt32   `json:"device,omitempty"`
-	Role           NullableInt32   `json:"role,omitempty"`
-	Tenant         NullableInt32   `json:"tenant,omitempty"`
-	Platform       NullableInt32   `json:"platform,omitempty"`
-	PrimaryIp4     NullableInt32   `json:"primary_ip4,omitempty"`
-	PrimaryIp6     NullableInt32   `json:"primary_ip6,omitempty"`
-	Vcpus          NullableFloat64 `json:"vcpus,omitempty"`
-	Memory         NullableInt32   `json:"memory,omitempty"`
-	Disk           NullableInt32   `json:"disk,omitempty"`
-	Description    *string         `json:"description,omitempty"`
-	Comments       *string         `json:"comments,omitempty"`
-	ConfigTemplate NullableInt32   `json:"config_template,omitempty"`
+	Name           string             `json:"name"`
+	Status         *ModuleStatusValue `json:"status,omitempty"`
+	Site           NullableInt32      `json:"site,omitempty"`
+	Cluster        NullableInt32      `json:"cluster,omitempty"`
+	Device         NullableInt32      `json:"device,omitempty"`
+	Role           NullableInt32      `json:"role,omitempty"`
+	Tenant         NullableInt32      `json:"tenant,omitempty"`
+	Platform       NullableInt32      `json:"platform,omitempty"`
+	PrimaryIp4     NullableInt32      `json:"primary_ip4,omitempty"`
+	PrimaryIp6     NullableInt32      `json:"primary_ip6,omitempty"`
+	Vcpus          NullableFloat64    `json:"vcpus,omitempty"`
+	Memory         NullableInt32      `json:"memory,omitempty"`
+	Disk           NullableInt32      `json:"disk,omitempty"`
+	Description    *string            `json:"description,omitempty"`
+	Comments       *string            `json:"comments,omitempty"`
+	ConfigTemplate NullableInt32      `json:"config_template,omitempty"`
 	// Local config context data takes precedence over source contexts in the final rendered config context
 	LocalContextData     interface{}            `json:"local_context_data,omitempty"`
 	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
@@ -89,9 +88,9 @@ func (o *WritableVirtualMachineWithConfigContextRequest) SetName(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableVirtualMachineWithConfigContextRequest) GetStatus() string {
+func (o *WritableVirtualMachineWithConfigContextRequest) GetStatus() ModuleStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret ModuleStatusValue
 		return ret
 	}
 	return *o.Status
@@ -99,7 +98,7 @@ func (o *WritableVirtualMachineWithConfigContextRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableVirtualMachineWithConfigContextRequest) GetStatusOk() (*string, bool) {
+func (o *WritableVirtualMachineWithConfigContextRequest) GetStatusOk() (*ModuleStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -115,8 +114,8 @@ func (o *WritableVirtualMachineWithConfigContextRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableVirtualMachineWithConfigContextRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given ModuleStatusValue and assigns it to the Status field.
+func (o *WritableVirtualMachineWithConfigContextRequest) SetStatus(v ModuleStatusValue) {
 	o.Status = &v
 }
 

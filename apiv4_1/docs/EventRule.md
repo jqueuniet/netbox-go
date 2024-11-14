@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**EventTypes** | **[]string** | The types of event which will trigger this rule. | 
+**EventTypes** | [**[]EventRuleEventTypesInner**](EventRuleEventTypesInner.md) | The types of event which will trigger this rule. | 
 **Conditions** | Pointer to **interface{}** | A set of conditions which determine whether the event will be generated. | [optional] 
 **ActionType** | [**EventRuleActionType**](EventRuleActionType.md) |  | 
 **ActionObjectType** | **string** |  | 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewEventRule
 
-`func NewEventRule(id int32, url string, displayUrl string, display string, objectTypes []string, name string, eventTypes []string, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *EventRule`
+`func NewEventRule(id int32, url string, displayUrl string, display string, objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *EventRule`
 
 NewEventRule instantiates a new EventRule object
 This constructor will assign default values to properties that have it defined,
@@ -189,20 +189,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetEventTypes
 
-`func (o *EventRule) GetEventTypes() []string`
+`func (o *EventRule) GetEventTypes() []EventRuleEventTypesInner`
 
 GetEventTypes returns the EventTypes field if non-nil, zero value otherwise.
 
 ### GetEventTypesOk
 
-`func (o *EventRule) GetEventTypesOk() (*[]string, bool)`
+`func (o *EventRule) GetEventTypesOk() (*[]EventRuleEventTypesInner, bool)`
 
 GetEventTypesOk returns a tuple with the EventTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventTypes
 
-`func (o *EventRule) SetEventTypes(v []string)`
+`func (o *EventRule) SetEventTypes(v []EventRuleEventTypesInner)`
 
 SetEventTypes sets EventTypes field to given value.
 

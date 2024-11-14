@@ -6152,7 +6152,7 @@ type ApiWirelessWirelessLinksListRequest struct {
 	distanceLt        *[]float64
 	distanceLte       *[]float64
 	distanceN         *[]float64
-	distanceUnit      *string
+	distanceUnit      *WirelessWirelessLinksListDistanceUnitParameter
 	id                *[]int32
 	idEmpty           *bool
 	idGt              *[]int32
@@ -6507,7 +6507,7 @@ func (r ApiWirelessWirelessLinksListRequest) DistanceN(distanceN []float64) ApiW
 }
 
 // * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet
-func (r ApiWirelessWirelessLinksListRequest) DistanceUnit(distanceUnit string) ApiWirelessWirelessLinksListRequest {
+func (r ApiWirelessWirelessLinksListRequest) DistanceUnit(distanceUnit WirelessWirelessLinksListDistanceUnitParameter) ApiWirelessWirelessLinksListRequest {
 	r.distanceUnit = &distanceUnit
 	return r
 }

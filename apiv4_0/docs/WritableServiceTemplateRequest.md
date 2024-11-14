@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Protocol** | **string** | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
+**Protocol** | [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | 
 **Ports** | **[]int32** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewWritableServiceTemplateRequest
 
-`func NewWritableServiceTemplateRequest(name string, protocol string, ports []int32, ) *WritableServiceTemplateRequest`
+`func NewWritableServiceTemplateRequest(name string, protocol PatchedWritableServiceRequestProtocol, ports []int32, ) *WritableServiceTemplateRequest`
 
 NewWritableServiceTemplateRequest instantiates a new WritableServiceTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -53,20 +53,20 @@ SetName sets Name field to given value.
 
 ### GetProtocol
 
-`func (o *WritableServiceTemplateRequest) GetProtocol() string`
+`func (o *WritableServiceTemplateRequest) GetProtocol() PatchedWritableServiceRequestProtocol`
 
 GetProtocol returns the Protocol field if non-nil, zero value otherwise.
 
 ### GetProtocolOk
 
-`func (o *WritableServiceTemplateRequest) GetProtocolOk() (*string, bool)`
+`func (o *WritableServiceTemplateRequest) GetProtocolOk() (*PatchedWritableServiceRequestProtocol, bool)`
 
 GetProtocolOk returns a tuple with the Protocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocol
 
-`func (o *WritableServiceTemplateRequest) SetProtocol(v string)`
+`func (o *WritableServiceTemplateRequest) SetProtocol(v PatchedWritableServiceRequestProtocol)`
 
 SetProtocol sets Protocol field to given value.
 

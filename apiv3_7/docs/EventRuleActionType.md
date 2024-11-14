@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;webhook&#x60; - Webhook * &#x60;script&#x60; - Script | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**EventRuleActionTypeValue**](EventRuleActionTypeValue.md) |  | [optional] 
+**Label** | Pointer to [**EventRuleActionTypeLabel**](EventRuleActionTypeLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *EventRuleActionType) GetValue() string`
+`func (o *EventRuleActionType) GetValue() EventRuleActionTypeValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *EventRuleActionType) GetValueOk() (*string, bool)`
+`func (o *EventRuleActionType) GetValueOk() (*EventRuleActionTypeValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *EventRuleActionType) SetValue(v string)`
+`func (o *EventRuleActionType) SetValue(v EventRuleActionTypeValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *EventRuleActionType) GetLabel() string`
+`func (o *EventRuleActionType) GetLabel() EventRuleActionTypeLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *EventRuleActionType) GetLabelOk() (*string, bool)`
+`func (o *EventRuleActionType) GetLabelOk() (*EventRuleActionTypeLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *EventRuleActionType) SetLabel(v string)`
+`func (o *EventRuleActionType) SetLabel(v EventRuleActionTypeLabel)`
 
 SetLabel sets Label field to given value.
 

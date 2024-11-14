@@ -19,9 +19,8 @@ var _ MappedNullable = &IPAddressRole{}
 
 // IPAddressRole struct for IPAddressRole
 type IPAddressRole struct {
-	// * `loopback` - Loopback * `secondary` - Secondary * `anycast` - Anycast * `vip` - VIP * `vrrp` - VRRP * `hsrp` - HSRP * `glbp` - GLBP * `carp` - CARP
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *IPAddressRoleValue `json:"value,omitempty"`
+	Label                *IPAddressRoleLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewIPAddressRoleWithDefaults() *IPAddressRole {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *IPAddressRole) GetValue() string {
+func (o *IPAddressRole) GetValue() IPAddressRoleValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret IPAddressRoleValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *IPAddressRole) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPAddressRole) GetValueOk() (*string, bool) {
+func (o *IPAddressRole) GetValueOk() (*IPAddressRoleValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *IPAddressRole) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *IPAddressRole) SetValue(v string) {
+// SetValue gets a reference to the given IPAddressRoleValue and assigns it to the Value field.
+func (o *IPAddressRole) SetValue(v IPAddressRoleValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *IPAddressRole) GetLabel() string {
+func (o *IPAddressRole) GetLabel() IPAddressRoleLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret IPAddressRoleLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *IPAddressRole) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPAddressRole) GetLabelOk() (*string, bool) {
+func (o *IPAddressRole) GetLabelOk() (*IPAddressRoleLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *IPAddressRole) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *IPAddressRole) SetLabel(v string) {
+// SetLabel gets a reference to the given IPAddressRoleLabel and assigns it to the Label field.
+func (o *IPAddressRole) SetLabel(v IPAddressRoleLabel) {
 	o.Label = &v
 }
 

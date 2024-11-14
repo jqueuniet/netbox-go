@@ -19,12 +19,10 @@ var _ MappedNullable = &PatchedWritableIPSecProposalRequest{}
 
 // PatchedWritableIPSecProposalRequest Adds support for custom fields and tags.
 type PatchedWritableIPSecProposalRequest struct {
-	Name        *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	// * `aes-128-cbc` - 128-bit AES (CBC) * `aes-128-gcm` - 128-bit AES (GCM) * `aes-192-cbc` - 192-bit AES (CBC) * `aes-192-gcm` - 192-bit AES (GCM) * `aes-256-cbc` - 256-bit AES (CBC) * `aes-256-gcm` - 256-bit AES (GCM) * `3des-cbc` - 3DES * `des-cbc` - DES
-	EncryptionAlgorithm *string `json:"encryption_algorithm,omitempty"`
-	// * `hmac-sha1` - SHA-1 HMAC * `hmac-sha256` - SHA-256 HMAC * `hmac-sha384` - SHA-384 HMAC * `hmac-sha512` - SHA-512 HMAC * `hmac-md5` - MD5 HMAC
-	AuthenticationAlgorithm *string `json:"authentication_algorithm,omitempty"`
+	Name                    *string         `json:"name,omitempty"`
+	Description             *string         `json:"description,omitempty"`
+	EncryptionAlgorithm     *Encryption     `json:"encryption_algorithm,omitempty"`
+	AuthenticationAlgorithm *Authentication `json:"authentication_algorithm,omitempty"`
 	// Security association lifetime (seconds)
 	SaLifetimeSeconds NullableInt32 `json:"sa_lifetime_seconds,omitempty"`
 	// Security association lifetime (in kilobytes)
@@ -119,9 +117,9 @@ func (o *PatchedWritableIPSecProposalRequest) SetDescription(v string) {
 }
 
 // GetEncryptionAlgorithm returns the EncryptionAlgorithm field value if set, zero value otherwise.
-func (o *PatchedWritableIPSecProposalRequest) GetEncryptionAlgorithm() string {
+func (o *PatchedWritableIPSecProposalRequest) GetEncryptionAlgorithm() Encryption {
 	if o == nil || IsNil(o.EncryptionAlgorithm) {
-		var ret string
+		var ret Encryption
 		return ret
 	}
 	return *o.EncryptionAlgorithm
@@ -129,7 +127,7 @@ func (o *PatchedWritableIPSecProposalRequest) GetEncryptionAlgorithm() string {
 
 // GetEncryptionAlgorithmOk returns a tuple with the EncryptionAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableIPSecProposalRequest) GetEncryptionAlgorithmOk() (*string, bool) {
+func (o *PatchedWritableIPSecProposalRequest) GetEncryptionAlgorithmOk() (*Encryption, bool) {
 	if o == nil || IsNil(o.EncryptionAlgorithm) {
 		return nil, false
 	}
@@ -145,15 +143,15 @@ func (o *PatchedWritableIPSecProposalRequest) HasEncryptionAlgorithm() bool {
 	return false
 }
 
-// SetEncryptionAlgorithm gets a reference to the given string and assigns it to the EncryptionAlgorithm field.
-func (o *PatchedWritableIPSecProposalRequest) SetEncryptionAlgorithm(v string) {
+// SetEncryptionAlgorithm gets a reference to the given Encryption and assigns it to the EncryptionAlgorithm field.
+func (o *PatchedWritableIPSecProposalRequest) SetEncryptionAlgorithm(v Encryption) {
 	o.EncryptionAlgorithm = &v
 }
 
 // GetAuthenticationAlgorithm returns the AuthenticationAlgorithm field value if set, zero value otherwise.
-func (o *PatchedWritableIPSecProposalRequest) GetAuthenticationAlgorithm() string {
+func (o *PatchedWritableIPSecProposalRequest) GetAuthenticationAlgorithm() Authentication {
 	if o == nil || IsNil(o.AuthenticationAlgorithm) {
-		var ret string
+		var ret Authentication
 		return ret
 	}
 	return *o.AuthenticationAlgorithm
@@ -161,7 +159,7 @@ func (o *PatchedWritableIPSecProposalRequest) GetAuthenticationAlgorithm() strin
 
 // GetAuthenticationAlgorithmOk returns a tuple with the AuthenticationAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableIPSecProposalRequest) GetAuthenticationAlgorithmOk() (*string, bool) {
+func (o *PatchedWritableIPSecProposalRequest) GetAuthenticationAlgorithmOk() (*Authentication, bool) {
 	if o == nil || IsNil(o.AuthenticationAlgorithm) {
 		return nil, false
 	}
@@ -177,8 +175,8 @@ func (o *PatchedWritableIPSecProposalRequest) HasAuthenticationAlgorithm() bool 
 	return false
 }
 
-// SetAuthenticationAlgorithm gets a reference to the given string and assigns it to the AuthenticationAlgorithm field.
-func (o *PatchedWritableIPSecProposalRequest) SetAuthenticationAlgorithm(v string) {
+// SetAuthenticationAlgorithm gets a reference to the given Authentication and assigns it to the AuthenticationAlgorithm field.
+func (o *PatchedWritableIPSecProposalRequest) SetAuthenticationAlgorithm(v Authentication) {
 	o.AuthenticationAlgorithm = &v
 }
 

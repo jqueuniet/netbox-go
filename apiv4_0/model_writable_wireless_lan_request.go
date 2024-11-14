@@ -20,21 +20,18 @@ var _ MappedNullable = &WritableWirelessLANRequest{}
 
 // WritableWirelessLANRequest Adds support for custom fields and tags.
 type WritableWirelessLANRequest struct {
-	Ssid        string                               `json:"ssid"`
-	Description *string                              `json:"description,omitempty"`
-	Group       NullableBriefWirelessLANGroupRequest `json:"group,omitempty"`
-	// * `active` - Active * `reserved` - Reserved * `disabled` - Disabled * `deprecated` - Deprecated
-	Status *string                    `json:"status,omitempty"`
-	Vlan   NullableBriefVLANRequest   `json:"vlan,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	// * `open` - Open * `wep` - WEP * `wpa-personal` - WPA Personal (PSK) * `wpa-enterprise` - WPA Enterprise
-	AuthType *string `json:"auth_type,omitempty"`
-	// * `auto` - Auto * `tkip` - TKIP * `aes` - AES
-	AuthCipher           *string                `json:"auth_cipher,omitempty"`
-	AuthPsk              *string                `json:"auth_psk,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Ssid                 string                                   `json:"ssid"`
+	Description          *string                                  `json:"description,omitempty"`
+	Group                NullableBriefWirelessLANGroupRequest     `json:"group,omitempty"`
+	Status               *PatchedWritableWirelessLANRequestStatus `json:"status,omitempty"`
+	Vlan                 NullableBriefVLANRequest                 `json:"vlan,omitempty"`
+	Tenant               NullableBriefTenantRequest               `json:"tenant,omitempty"`
+	AuthType             *AuthenticationType1                     `json:"auth_type,omitempty"`
+	AuthCipher           *AuthenticationCipher                    `json:"auth_cipher,omitempty"`
+	AuthPsk              *string                                  `json:"auth_psk,omitempty"`
+	Comments             *string                                  `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                       `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                   `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -158,9 +155,9 @@ func (o *WritableWirelessLANRequest) UnsetGroup() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableWirelessLANRequest) GetStatus() string {
+func (o *WritableWirelessLANRequest) GetStatus() PatchedWritableWirelessLANRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableWirelessLANRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -168,7 +165,7 @@ func (o *WritableWirelessLANRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableWirelessLANRequest) GetStatusOk() (*string, bool) {
+func (o *WritableWirelessLANRequest) GetStatusOk() (*PatchedWritableWirelessLANRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -184,8 +181,8 @@ func (o *WritableWirelessLANRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableWirelessLANRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableWirelessLANRequestStatus and assigns it to the Status field.
+func (o *WritableWirelessLANRequest) SetStatus(v PatchedWritableWirelessLANRequestStatus) {
 	o.Status = &v
 }
 
@@ -276,9 +273,9 @@ func (o *WritableWirelessLANRequest) UnsetTenant() {
 }
 
 // GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *WritableWirelessLANRequest) GetAuthType() string {
+func (o *WritableWirelessLANRequest) GetAuthType() AuthenticationType1 {
 	if o == nil || IsNil(o.AuthType) {
-		var ret string
+		var ret AuthenticationType1
 		return ret
 	}
 	return *o.AuthType
@@ -286,7 +283,7 @@ func (o *WritableWirelessLANRequest) GetAuthType() string {
 
 // GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableWirelessLANRequest) GetAuthTypeOk() (*string, bool) {
+func (o *WritableWirelessLANRequest) GetAuthTypeOk() (*AuthenticationType1, bool) {
 	if o == nil || IsNil(o.AuthType) {
 		return nil, false
 	}
@@ -302,15 +299,15 @@ func (o *WritableWirelessLANRequest) HasAuthType() bool {
 	return false
 }
 
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
-func (o *WritableWirelessLANRequest) SetAuthType(v string) {
+// SetAuthType gets a reference to the given AuthenticationType1 and assigns it to the AuthType field.
+func (o *WritableWirelessLANRequest) SetAuthType(v AuthenticationType1) {
 	o.AuthType = &v
 }
 
 // GetAuthCipher returns the AuthCipher field value if set, zero value otherwise.
-func (o *WritableWirelessLANRequest) GetAuthCipher() string {
+func (o *WritableWirelessLANRequest) GetAuthCipher() AuthenticationCipher {
 	if o == nil || IsNil(o.AuthCipher) {
-		var ret string
+		var ret AuthenticationCipher
 		return ret
 	}
 	return *o.AuthCipher
@@ -318,7 +315,7 @@ func (o *WritableWirelessLANRequest) GetAuthCipher() string {
 
 // GetAuthCipherOk returns a tuple with the AuthCipher field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableWirelessLANRequest) GetAuthCipherOk() (*string, bool) {
+func (o *WritableWirelessLANRequest) GetAuthCipherOk() (*AuthenticationCipher, bool) {
 	if o == nil || IsNil(o.AuthCipher) {
 		return nil, false
 	}
@@ -334,8 +331,8 @@ func (o *WritableWirelessLANRequest) HasAuthCipher() bool {
 	return false
 }
 
-// SetAuthCipher gets a reference to the given string and assigns it to the AuthCipher field.
-func (o *WritableWirelessLANRequest) SetAuthCipher(v string) {
+// SetAuthCipher gets a reference to the given AuthenticationCipher and assigns it to the AuthCipher field.
+func (o *WritableWirelessLANRequest) SetAuthCipher(v AuthenticationCipher) {
 	o.AuthCipher = &v
 }
 

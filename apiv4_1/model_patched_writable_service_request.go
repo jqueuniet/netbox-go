@@ -19,17 +19,16 @@ var _ MappedNullable = &PatchedWritableServiceRequest{}
 
 // PatchedWritableServiceRequest Adds support for custom fields and tags.
 type PatchedWritableServiceRequest struct {
-	Device         NullableBriefDeviceRequest         `json:"device,omitempty"`
-	VirtualMachine NullableBriefVirtualMachineRequest `json:"virtual_machine,omitempty"`
-	Name           *string                            `json:"name,omitempty"`
-	// * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP
-	Protocol             *string                `json:"protocol,omitempty"`
-	Ports                []int32                `json:"ports,omitempty"`
-	Ipaddresses          []int32                `json:"ipaddresses,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Device               NullableBriefDeviceRequest             `json:"device,omitempty"`
+	VirtualMachine       NullableBriefVirtualMachineRequest     `json:"virtual_machine,omitempty"`
+	Name                 *string                                `json:"name,omitempty"`
+	Protocol             *PatchedWritableServiceRequestProtocol `json:"protocol,omitempty"`
+	Ports                []int32                                `json:"ports,omitempty"`
+	Ipaddresses          []int32                                `json:"ipaddresses,omitempty"`
+	Description          *string                                `json:"description,omitempty"`
+	Comments             *string                                `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                     `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                 `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -171,9 +170,9 @@ func (o *PatchedWritableServiceRequest) SetName(v string) {
 }
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
-func (o *PatchedWritableServiceRequest) GetProtocol() string {
+func (o *PatchedWritableServiceRequest) GetProtocol() PatchedWritableServiceRequestProtocol {
 	if o == nil || IsNil(o.Protocol) {
-		var ret string
+		var ret PatchedWritableServiceRequestProtocol
 		return ret
 	}
 	return *o.Protocol
@@ -181,7 +180,7 @@ func (o *PatchedWritableServiceRequest) GetProtocol() string {
 
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableServiceRequest) GetProtocolOk() (*string, bool) {
+func (o *PatchedWritableServiceRequest) GetProtocolOk() (*PatchedWritableServiceRequestProtocol, bool) {
 	if o == nil || IsNil(o.Protocol) {
 		return nil, false
 	}
@@ -197,8 +196,8 @@ func (o *PatchedWritableServiceRequest) HasProtocol() bool {
 	return false
 }
 
-// SetProtocol gets a reference to the given string and assigns it to the Protocol field.
-func (o *PatchedWritableServiceRequest) SetProtocol(v string) {
+// SetProtocol gets a reference to the given PatchedWritableServiceRequestProtocol and assigns it to the Protocol field.
+func (o *PatchedWritableServiceRequest) SetProtocol(v PatchedWritableServiceRequestProtocol) {
 	o.Protocol = &v
 }
 

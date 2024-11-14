@@ -19,9 +19,8 @@ var _ MappedNullable = &CableStatus{}
 
 // CableStatus struct for CableStatus
 type CableStatus struct {
-	// * `connected` - Connected * `planned` - Planned * `decommissioning` - Decommissioning
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *CableStatusValue `json:"value,omitempty"`
+	Label                *CableStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewCableStatusWithDefaults() *CableStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *CableStatus) GetValue() string {
+func (o *CableStatus) GetValue() CableStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret CableStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *CableStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CableStatus) GetValueOk() (*string, bool) {
+func (o *CableStatus) GetValueOk() (*CableStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *CableStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *CableStatus) SetValue(v string) {
+// SetValue gets a reference to the given CableStatusValue and assigns it to the Value field.
+func (o *CableStatus) SetValue(v CableStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *CableStatus) GetLabel() string {
+func (o *CableStatus) GetLabel() CableStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret CableStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *CableStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CableStatus) GetLabelOk() (*string, bool) {
+func (o *CableStatus) GetLabelOk() (*CableStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *CableStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *CableStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given CableStatusLabel and assigns it to the Label field.
+func (o *CableStatus) SetLabel(v CableStatusLabel) {
 	o.Label = &v
 }
 

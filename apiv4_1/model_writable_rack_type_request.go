@@ -20,14 +20,12 @@ var _ MappedNullable = &WritableRackTypeRequest{}
 
 // WritableRackTypeRequest Adds support for custom fields and tags.
 type WritableRackTypeRequest struct {
-	Manufacturer BriefManufacturerRequest `json:"manufacturer"`
-	Model        string                   `json:"model"`
-	Slug         string                   `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	Description  *string                  `json:"description,omitempty"`
-	// * `2-post-frame` - 2-post frame * `4-post-frame` - 4-post frame * `4-post-cabinet` - 4-post cabinet * `wall-frame` - Wall-mounted frame * `wall-frame-vertical` - Wall-mounted frame (vertical) * `wall-cabinet` - Wall-mounted cabinet * `wall-cabinet-vertical` - Wall-mounted cabinet (vertical)
-	FormFactor string `json:"form_factor"`
-	// Rail-to-rail width  * `10` - 10 inches * `19` - 19 inches * `21` - 21 inches * `23` - 23 inches
-	Width *int32 `json:"width,omitempty"`
+	Manufacturer BriefManufacturerRequest                 `json:"manufacturer"`
+	Model        string                                   `json:"model"`
+	Slug         string                                   `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Description  *string                                  `json:"description,omitempty"`
+	FormFactor   PatchedWritableRackTypeRequestFormFactor `json:"form_factor"`
+	Width        *PatchedWritableRackRequestWidth         `json:"width,omitempty"`
 	// Height in rack units
 	UHeight *int32 `json:"u_height,omitempty"`
 	// Starting unit for rack
@@ -37,14 +35,12 @@ type WritableRackTypeRequest struct {
 	// Outer dimension of rack (width)
 	OuterWidth NullableInt32 `json:"outer_width,omitempty"`
 	// Outer dimension of rack (depth)
-	OuterDepth NullableInt32 `json:"outer_depth,omitempty"`
-	// * `mm` - Millimeters * `in` - Inches
-	OuterUnit *string         `json:"outer_unit,omitempty"`
-	Weight    NullableFloat64 `json:"weight,omitempty"`
+	OuterDepth NullableInt32                        `json:"outer_depth,omitempty"`
+	OuterUnit  *PatchedWritableRackRequestOuterUnit `json:"outer_unit,omitempty"`
+	Weight     NullableFloat64                      `json:"weight,omitempty"`
 	// Maximum load capacity for the rack
-	MaxWeight NullableInt32 `json:"max_weight,omitempty"`
-	// * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces
-	WeightUnit *string `json:"weight_unit,omitempty"`
+	MaxWeight  NullableInt32                               `json:"max_weight,omitempty"`
+	WeightUnit *PatchedWritableDeviceTypeRequestWeightUnit `json:"weight_unit,omitempty"`
 	// Maximum depth of a mounted device, in millimeters. For four-post racks, this is the distance between the front and rear rails.
 	MountingDepth        NullableInt32          `json:"mounting_depth,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
@@ -59,7 +55,7 @@ type _WritableRackTypeRequest WritableRackTypeRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableRackTypeRequest(manufacturer BriefManufacturerRequest, model string, slug string, formFactor string) *WritableRackTypeRequest {
+func NewWritableRackTypeRequest(manufacturer BriefManufacturerRequest, model string, slug string, formFactor PatchedWritableRackTypeRequestFormFactor) *WritableRackTypeRequest {
 	this := WritableRackTypeRequest{}
 	this.Manufacturer = manufacturer
 	this.Model = model
@@ -181,9 +177,9 @@ func (o *WritableRackTypeRequest) SetDescription(v string) {
 }
 
 // GetFormFactor returns the FormFactor field value
-func (o *WritableRackTypeRequest) GetFormFactor() string {
+func (o *WritableRackTypeRequest) GetFormFactor() PatchedWritableRackTypeRequestFormFactor {
 	if o == nil {
-		var ret string
+		var ret PatchedWritableRackTypeRequestFormFactor
 		return ret
 	}
 
@@ -192,7 +188,7 @@ func (o *WritableRackTypeRequest) GetFormFactor() string {
 
 // GetFormFactorOk returns a tuple with the FormFactor field value
 // and a boolean to check if the value has been set.
-func (o *WritableRackTypeRequest) GetFormFactorOk() (*string, bool) {
+func (o *WritableRackTypeRequest) GetFormFactorOk() (*PatchedWritableRackTypeRequestFormFactor, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -200,14 +196,14 @@ func (o *WritableRackTypeRequest) GetFormFactorOk() (*string, bool) {
 }
 
 // SetFormFactor sets field value
-func (o *WritableRackTypeRequest) SetFormFactor(v string) {
+func (o *WritableRackTypeRequest) SetFormFactor(v PatchedWritableRackTypeRequestFormFactor) {
 	o.FormFactor = v
 }
 
 // GetWidth returns the Width field value if set, zero value otherwise.
-func (o *WritableRackTypeRequest) GetWidth() int32 {
+func (o *WritableRackTypeRequest) GetWidth() PatchedWritableRackRequestWidth {
 	if o == nil || IsNil(o.Width) {
-		var ret int32
+		var ret PatchedWritableRackRequestWidth
 		return ret
 	}
 	return *o.Width
@@ -215,7 +211,7 @@ func (o *WritableRackTypeRequest) GetWidth() int32 {
 
 // GetWidthOk returns a tuple with the Width field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableRackTypeRequest) GetWidthOk() (*int32, bool) {
+func (o *WritableRackTypeRequest) GetWidthOk() (*PatchedWritableRackRequestWidth, bool) {
 	if o == nil || IsNil(o.Width) {
 		return nil, false
 	}
@@ -231,8 +227,8 @@ func (o *WritableRackTypeRequest) HasWidth() bool {
 	return false
 }
 
-// SetWidth gets a reference to the given int32 and assigns it to the Width field.
-func (o *WritableRackTypeRequest) SetWidth(v int32) {
+// SetWidth gets a reference to the given PatchedWritableRackRequestWidth and assigns it to the Width field.
+func (o *WritableRackTypeRequest) SetWidth(v PatchedWritableRackRequestWidth) {
 	o.Width = &v
 }
 
@@ -419,9 +415,9 @@ func (o *WritableRackTypeRequest) UnsetOuterDepth() {
 }
 
 // GetOuterUnit returns the OuterUnit field value if set, zero value otherwise.
-func (o *WritableRackTypeRequest) GetOuterUnit() string {
+func (o *WritableRackTypeRequest) GetOuterUnit() PatchedWritableRackRequestOuterUnit {
 	if o == nil || IsNil(o.OuterUnit) {
-		var ret string
+		var ret PatchedWritableRackRequestOuterUnit
 		return ret
 	}
 	return *o.OuterUnit
@@ -429,7 +425,7 @@ func (o *WritableRackTypeRequest) GetOuterUnit() string {
 
 // GetOuterUnitOk returns a tuple with the OuterUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableRackTypeRequest) GetOuterUnitOk() (*string, bool) {
+func (o *WritableRackTypeRequest) GetOuterUnitOk() (*PatchedWritableRackRequestOuterUnit, bool) {
 	if o == nil || IsNil(o.OuterUnit) {
 		return nil, false
 	}
@@ -445,8 +441,8 @@ func (o *WritableRackTypeRequest) HasOuterUnit() bool {
 	return false
 }
 
-// SetOuterUnit gets a reference to the given string and assigns it to the OuterUnit field.
-func (o *WritableRackTypeRequest) SetOuterUnit(v string) {
+// SetOuterUnit gets a reference to the given PatchedWritableRackRequestOuterUnit and assigns it to the OuterUnit field.
+func (o *WritableRackTypeRequest) SetOuterUnit(v PatchedWritableRackRequestOuterUnit) {
 	o.OuterUnit = &v
 }
 
@@ -537,9 +533,9 @@ func (o *WritableRackTypeRequest) UnsetMaxWeight() {
 }
 
 // GetWeightUnit returns the WeightUnit field value if set, zero value otherwise.
-func (o *WritableRackTypeRequest) GetWeightUnit() string {
+func (o *WritableRackTypeRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit {
 	if o == nil || IsNil(o.WeightUnit) {
-		var ret string
+		var ret PatchedWritableDeviceTypeRequestWeightUnit
 		return ret
 	}
 	return *o.WeightUnit
@@ -547,7 +543,7 @@ func (o *WritableRackTypeRequest) GetWeightUnit() string {
 
 // GetWeightUnitOk returns a tuple with the WeightUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableRackTypeRequest) GetWeightUnitOk() (*string, bool) {
+func (o *WritableRackTypeRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool) {
 	if o == nil || IsNil(o.WeightUnit) {
 		return nil, false
 	}
@@ -563,8 +559,8 @@ func (o *WritableRackTypeRequest) HasWeightUnit() bool {
 	return false
 }
 
-// SetWeightUnit gets a reference to the given string and assigns it to the WeightUnit field.
-func (o *WritableRackTypeRequest) SetWeightUnit(v string) {
+// SetWeightUnit gets a reference to the given PatchedWritableDeviceTypeRequestWeightUnit and assigns it to the WeightUnit field.
+func (o *WritableRackTypeRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit) {
 	o.WeightUnit = &v
 }
 

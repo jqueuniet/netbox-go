@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;pending&#x60; - Pending * &#x60;scheduled&#x60; - Scheduled * &#x60;running&#x60; - Running * &#x60;completed&#x60; - Completed * &#x60;errored&#x60; - Errored * &#x60;failed&#x60; - Failed | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**BriefJobStatusValue**](BriefJobStatusValue.md) |  | [optional] 
+**Label** | Pointer to [**BriefJobStatusLabel**](BriefJobStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *BriefJobStatus) GetValue() string`
+`func (o *BriefJobStatus) GetValue() BriefJobStatusValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *BriefJobStatus) GetValueOk() (*string, bool)`
+`func (o *BriefJobStatus) GetValueOk() (*BriefJobStatusValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *BriefJobStatus) SetValue(v string)`
+`func (o *BriefJobStatus) SetValue(v BriefJobStatusValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *BriefJobStatus) GetLabel() string`
+`func (o *BriefJobStatus) GetLabel() BriefJobStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *BriefJobStatus) GetLabelOk() (*string, bool)`
+`func (o *BriefJobStatus) GetLabelOk() (*BriefJobStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *BriefJobStatus) SetLabel(v string)`
+`func (o *BriefJobStatus) SetLabel(v BriefJobStatusLabel)`
 
 SetLabel sets Label field to given value.
 

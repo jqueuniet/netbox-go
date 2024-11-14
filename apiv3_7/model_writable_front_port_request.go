@@ -24,11 +24,10 @@ type WritableFrontPortRequest struct {
 	Module NullableInt32 `json:"module,omitempty"`
 	Name   string        `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	// * `8p8c` - 8P8C * `8p6c` - 8P6C * `8p4c` - 8P4C * `8p2c` - 8P2C * `6p6c` - 6P6C * `6p4c` - 6P4C * `6p2c` - 6P2C * `4p4c` - 4P4C * `4p2c` - 4P2C * `gg45` - GG45 * `tera-4p` - TERA 4P * `tera-2p` - TERA 2P * `tera-1p` - TERA 1P * `110-punch` - 110 Punch * `bnc` - BNC * `f` - F Connector * `n` - N Connector * `mrj21` - MRJ21 * `fc` - FC * `lc` - LC * `lc-pc` - LC/PC * `lc-upc` - LC/UPC * `lc-apc` - LC/APC * `lsh` - LSH * `lsh-pc` - LSH/PC * `lsh-upc` - LSH/UPC * `lsh-apc` - LSH/APC * `lx5` - LX.5 * `lx5-pc` - LX.5/PC * `lx5-upc` - LX.5/UPC * `lx5-apc` - LX.5/APC * `mpo` - MPO * `mtrj` - MTRJ * `sc` - SC * `sc-pc` - SC/PC * `sc-upc` - SC/UPC * `sc-apc` - SC/APC * `st` - ST * `cs` - CS * `sn` - SN * `sma-905` - SMA 905 * `sma-906` - SMA 906 * `urm-p2` - URM-P2 * `urm-p4` - URM-P4 * `urm-p8` - URM-P8 * `splice` - Splice * `other` - Other
-	Type     string  `json:"type"`
-	Color    *string `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
-	RearPort int32   `json:"rear_port"`
+	Label    *string            `json:"label,omitempty"`
+	Type     FrontPortTypeValue `json:"type"`
+	Color    *string            `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
+	RearPort int32              `json:"rear_port"`
 	// Mapped position on corresponding rear port
 	RearPortPosition *int32  `json:"rear_port_position,omitempty"`
 	Description      *string `json:"description,omitempty"`
@@ -45,7 +44,7 @@ type _WritableFrontPortRequest WritableFrontPortRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableFrontPortRequest(device int32, name string, type_ string, rearPort int32) *WritableFrontPortRequest {
+func NewWritableFrontPortRequest(device int32, name string, type_ FrontPortTypeValue, rearPort int32) *WritableFrontPortRequest {
 	this := WritableFrontPortRequest{}
 	this.Device = device
 	this.Name = name
@@ -186,9 +185,9 @@ func (o *WritableFrontPortRequest) SetLabel(v string) {
 }
 
 // GetType returns the Type field value
-func (o *WritableFrontPortRequest) GetType() string {
+func (o *WritableFrontPortRequest) GetType() FrontPortTypeValue {
 	if o == nil {
-		var ret string
+		var ret FrontPortTypeValue
 		return ret
 	}
 
@@ -197,7 +196,7 @@ func (o *WritableFrontPortRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *WritableFrontPortRequest) GetTypeOk() (*string, bool) {
+func (o *WritableFrontPortRequest) GetTypeOk() (*FrontPortTypeValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -205,7 +204,7 @@ func (o *WritableFrontPortRequest) GetTypeOk() (*string, bool) {
 }
 
 // SetType sets field value
-func (o *WritableFrontPortRequest) SetType(v string) {
+func (o *WritableFrontPortRequest) SetType(v FrontPortTypeValue) {
 	o.Type = v
 }
 

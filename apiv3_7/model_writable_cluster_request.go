@@ -20,11 +20,10 @@ var _ MappedNullable = &WritableClusterRequest{}
 
 // WritableClusterRequest Adds support for custom fields and tags.
 type WritableClusterRequest struct {
-	Name  string        `json:"name"`
-	Type  int32         `json:"type"`
-	Group NullableInt32 `json:"group,omitempty"`
-	// * `planned` - Planned * `staging` - Staging * `active` - Active * `decommissioning` - Decommissioning * `offline` - Offline
-	Status               *string                `json:"status,omitempty"`
+	Name                 string                 `json:"name"`
+	Type                 int32                  `json:"type"`
+	Group                NullableInt32          `json:"group,omitempty"`
+	Status               *ClusterStatusValue    `json:"status,omitempty"`
 	Tenant               NullableInt32          `json:"tenant,omitempty"`
 	Site                 NullableInt32          `json:"site,omitempty"`
 	Description          *string                `json:"description,omitempty"`
@@ -147,9 +146,9 @@ func (o *WritableClusterRequest) UnsetGroup() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableClusterRequest) GetStatus() string {
+func (o *WritableClusterRequest) GetStatus() ClusterStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret ClusterStatusValue
 		return ret
 	}
 	return *o.Status
@@ -157,7 +156,7 @@ func (o *WritableClusterRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableClusterRequest) GetStatusOk() (*string, bool) {
+func (o *WritableClusterRequest) GetStatusOk() (*ClusterStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -173,8 +172,8 @@ func (o *WritableClusterRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableClusterRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given ClusterStatusValue and assigns it to the Status field.
+func (o *WritableClusterRequest) SetStatus(v ClusterStatusValue) {
 	o.Status = &v
 }
 

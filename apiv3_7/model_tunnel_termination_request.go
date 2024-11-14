@@ -20,14 +20,13 @@ var _ MappedNullable = &TunnelTerminationRequest{}
 
 // TunnelTerminationRequest Adds support for custom fields and tags.
 type TunnelTerminationRequest struct {
-	Tunnel NestedTunnelRequest `json:"tunnel"`
-	// * `peer` - Peer * `hub` - Hub * `spoke` - Spoke
-	Role                 string                         `json:"role"`
-	TerminationType      string                         `json:"termination_type"`
-	TerminationId        NullableInt64                  `json:"termination_id,omitempty"`
-	OutsideIp            NullableNestedIPAddressRequest `json:"outside_ip,omitempty"`
-	Tags                 []NestedTagRequest             `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}         `json:"custom_fields,omitempty"`
+	Tunnel               NestedTunnelRequest                         `json:"tunnel"`
+	Role                 PatchedWritableTunnelTerminationRequestRole `json:"role"`
+	TerminationType      string                                      `json:"termination_type"`
+	TerminationId        NullableInt64                               `json:"termination_id,omitempty"`
+	OutsideIp            NullableNestedIPAddressRequest              `json:"outside_ip,omitempty"`
+	Tags                 []NestedTagRequest                          `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                      `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -37,7 +36,7 @@ type _TunnelTerminationRequest TunnelTerminationRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTunnelTerminationRequest(tunnel NestedTunnelRequest, role string, terminationType string) *TunnelTerminationRequest {
+func NewTunnelTerminationRequest(tunnel NestedTunnelRequest, role PatchedWritableTunnelTerminationRequestRole, terminationType string) *TunnelTerminationRequest {
 	this := TunnelTerminationRequest{}
 	this.Tunnel = tunnel
 	this.Role = role
@@ -78,9 +77,9 @@ func (o *TunnelTerminationRequest) SetTunnel(v NestedTunnelRequest) {
 }
 
 // GetRole returns the Role field value
-func (o *TunnelTerminationRequest) GetRole() string {
+func (o *TunnelTerminationRequest) GetRole() PatchedWritableTunnelTerminationRequestRole {
 	if o == nil {
-		var ret string
+		var ret PatchedWritableTunnelTerminationRequestRole
 		return ret
 	}
 
@@ -89,7 +88,7 @@ func (o *TunnelTerminationRequest) GetRole() string {
 
 // GetRoleOk returns a tuple with the Role field value
 // and a boolean to check if the value has been set.
-func (o *TunnelTerminationRequest) GetRoleOk() (*string, bool) {
+func (o *TunnelTerminationRequest) GetRoleOk() (*PatchedWritableTunnelTerminationRequestRole, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -97,7 +96,7 @@ func (o *TunnelTerminationRequest) GetRoleOk() (*string, bool) {
 }
 
 // SetRole sets field value
-func (o *TunnelTerminationRequest) SetRole(v string) {
+func (o *TunnelTerminationRequest) SetRole(v PatchedWritableTunnelTerminationRequestRole) {
 	o.Role = v
 }
 

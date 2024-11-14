@@ -21,16 +21,14 @@ var _ MappedNullable = &FHRPGroup{}
 
 // FHRPGroup Adds support for custom fields and tags.
 type FHRPGroup struct {
-	Id         int32   `json:"id"`
-	Name       *string `json:"name,omitempty"`
-	Url        string  `json:"url"`
-	DisplayUrl string  `json:"display_url"`
-	Display    string  `json:"display"`
-	// * `vrrp2` - VRRPv2 * `vrrp3` - VRRPv3 * `carp` - CARP * `clusterxl` - ClusterXL * `hsrp` - HSRP * `glbp` - GLBP * `other` - Other
-	Protocol string `json:"protocol"`
-	GroupId  int32  `json:"group_id"`
-	// * `plaintext` - Plaintext * `md5` - MD5
-	AuthType             *string                `json:"auth_type,omitempty"`
+	Id                   int32                  `json:"id"`
+	Name                 *string                `json:"name,omitempty"`
+	Url                  string                 `json:"url"`
+	DisplayUrl           string                 `json:"display_url"`
+	Display              string                 `json:"display"`
+	Protocol             BriefFHRPGroupProtocol `json:"protocol"`
+	GroupId              int32                  `json:"group_id"`
+	AuthType             *AuthenticationType    `json:"auth_type,omitempty"`
 	AuthKey              *string                `json:"auth_key,omitempty"`
 	Description          *string                `json:"description,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
@@ -48,7 +46,7 @@ type _FHRPGroup FHRPGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFHRPGroup(id int32, url string, displayUrl string, display string, protocol string, groupId int32, created NullableTime, lastUpdated NullableTime, ipAddresses []BriefIPAddress) *FHRPGroup {
+func NewFHRPGroup(id int32, url string, displayUrl string, display string, protocol BriefFHRPGroupProtocol, groupId int32, created NullableTime, lastUpdated NullableTime, ipAddresses []BriefIPAddress) *FHRPGroup {
 	this := FHRPGroup{}
 	this.Id = id
 	this.Url = url
@@ -199,9 +197,9 @@ func (o *FHRPGroup) SetDisplay(v string) {
 }
 
 // GetProtocol returns the Protocol field value
-func (o *FHRPGroup) GetProtocol() string {
+func (o *FHRPGroup) GetProtocol() BriefFHRPGroupProtocol {
 	if o == nil {
-		var ret string
+		var ret BriefFHRPGroupProtocol
 		return ret
 	}
 
@@ -210,7 +208,7 @@ func (o *FHRPGroup) GetProtocol() string {
 
 // GetProtocolOk returns a tuple with the Protocol field value
 // and a boolean to check if the value has been set.
-func (o *FHRPGroup) GetProtocolOk() (*string, bool) {
+func (o *FHRPGroup) GetProtocolOk() (*BriefFHRPGroupProtocol, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -218,7 +216,7 @@ func (o *FHRPGroup) GetProtocolOk() (*string, bool) {
 }
 
 // SetProtocol sets field value
-func (o *FHRPGroup) SetProtocol(v string) {
+func (o *FHRPGroup) SetProtocol(v BriefFHRPGroupProtocol) {
 	o.Protocol = v
 }
 
@@ -247,9 +245,9 @@ func (o *FHRPGroup) SetGroupId(v int32) {
 }
 
 // GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *FHRPGroup) GetAuthType() string {
+func (o *FHRPGroup) GetAuthType() AuthenticationType {
 	if o == nil || IsNil(o.AuthType) {
-		var ret string
+		var ret AuthenticationType
 		return ret
 	}
 	return *o.AuthType
@@ -257,7 +255,7 @@ func (o *FHRPGroup) GetAuthType() string {
 
 // GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FHRPGroup) GetAuthTypeOk() (*string, bool) {
+func (o *FHRPGroup) GetAuthTypeOk() (*AuthenticationType, bool) {
 	if o == nil || IsNil(o.AuthType) {
 		return nil, false
 	}
@@ -273,8 +271,8 @@ func (o *FHRPGroup) HasAuthType() bool {
 	return false
 }
 
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
-func (o *FHRPGroup) SetAuthType(v string) {
+// SetAuthType gets a reference to the given AuthenticationType and assigns it to the AuthType field.
+func (o *FHRPGroup) SetAuthType(v AuthenticationType) {
 	o.AuthType = &v
 }
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;planned&#x60; - Planned * &#x60;active&#x60; - Active * &#x60;disabled&#x60; - Disabled | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**PatchedWritableTunnelRequestStatus**](PatchedWritableTunnelRequestStatus.md) |  | [optional] 
+**Label** | Pointer to [**TunnelStatusLabel**](TunnelStatusLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *TunnelStatus) GetValue() string`
+`func (o *TunnelStatus) GetValue() PatchedWritableTunnelRequestStatus`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *TunnelStatus) GetValueOk() (*string, bool)`
+`func (o *TunnelStatus) GetValueOk() (*PatchedWritableTunnelRequestStatus, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *TunnelStatus) SetValue(v string)`
+`func (o *TunnelStatus) SetValue(v PatchedWritableTunnelRequestStatus)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *TunnelStatus) GetLabel() string`
+`func (o *TunnelStatus) GetLabel() TunnelStatusLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *TunnelStatus) GetLabelOk() (*string, bool)`
+`func (o *TunnelStatus) GetLabelOk() (*TunnelStatusLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *TunnelStatus) SetLabel(v string)`
+`func (o *TunnelStatus) SetLabel(v TunnelStatusLabel)`
 
 SetLabel sets Label field to given value.
 

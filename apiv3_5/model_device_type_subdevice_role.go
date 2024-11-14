@@ -19,9 +19,8 @@ var _ MappedNullable = &DeviceTypeSubdeviceRole{}
 
 // DeviceTypeSubdeviceRole struct for DeviceTypeSubdeviceRole
 type DeviceTypeSubdeviceRole struct {
-	// * `parent` - Parent * `child` - Child
-	Value                NullableString `json:"value,omitempty"`
-	Label                *string        `json:"label,omitempty"`
+	Value                *DeviceTypeSubdeviceRoleValue `json:"value,omitempty"`
+	Label                *DeviceTypeSubdeviceRoleLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,53 +43,42 @@ func NewDeviceTypeSubdeviceRoleWithDefaults() *DeviceTypeSubdeviceRole {
 	return &this
 }
 
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DeviceTypeSubdeviceRole) GetValue() string {
-	if o == nil || IsNil(o.Value.Get()) {
-		var ret string
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *DeviceTypeSubdeviceRole) GetValue() DeviceTypeSubdeviceRoleValue {
+	if o == nil || IsNil(o.Value) {
+		var ret DeviceTypeSubdeviceRoleValue
 		return ret
 	}
-	return *o.Value.Get()
+	return *o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DeviceTypeSubdeviceRole) GetValueOk() (*string, bool) {
-	if o == nil {
+func (o *DeviceTypeSubdeviceRole) GetValueOk() (*DeviceTypeSubdeviceRoleValue, bool) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
-	return o.Value.Get(), o.Value.IsSet()
+	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *DeviceTypeSubdeviceRole) HasValue() bool {
-	if o != nil && o.Value.IsSet() {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
 	return false
 }
 
-// SetValue gets a reference to the given NullableString and assigns it to the Value field.
-func (o *DeviceTypeSubdeviceRole) SetValue(v string) {
-	o.Value.Set(&v)
-}
-
-// SetValueNil sets the value for Value to be an explicit nil
-func (o *DeviceTypeSubdeviceRole) SetValueNil() {
-	o.Value.Set(nil)
-}
-
-// UnsetValue ensures that no value is present for Value, not even an explicit nil
-func (o *DeviceTypeSubdeviceRole) UnsetValue() {
-	o.Value.Unset()
+// SetValue gets a reference to the given DeviceTypeSubdeviceRoleValue and assigns it to the Value field.
+func (o *DeviceTypeSubdeviceRole) SetValue(v DeviceTypeSubdeviceRoleValue) {
+	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *DeviceTypeSubdeviceRole) GetLabel() string {
+func (o *DeviceTypeSubdeviceRole) GetLabel() DeviceTypeSubdeviceRoleLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DeviceTypeSubdeviceRoleLabel
 		return ret
 	}
 	return *o.Label
@@ -98,7 +86,7 @@ func (o *DeviceTypeSubdeviceRole) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceTypeSubdeviceRole) GetLabelOk() (*string, bool) {
+func (o *DeviceTypeSubdeviceRole) GetLabelOk() (*DeviceTypeSubdeviceRoleLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -114,8 +102,8 @@ func (o *DeviceTypeSubdeviceRole) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *DeviceTypeSubdeviceRole) SetLabel(v string) {
+// SetLabel gets a reference to the given DeviceTypeSubdeviceRoleLabel and assigns it to the Label field.
+func (o *DeviceTypeSubdeviceRole) SetLabel(v DeviceTypeSubdeviceRoleLabel) {
 	o.Label = &v
 }
 
@@ -129,8 +117,8 @@ func (o DeviceTypeSubdeviceRole) MarshalJSON() ([]byte, error) {
 
 func (o DeviceTypeSubdeviceRole) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Value.IsSet() {
-		toSerialize["value"] = o.Value.Get()
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label

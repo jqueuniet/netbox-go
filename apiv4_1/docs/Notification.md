@@ -13,13 +13,13 @@ Name | Type | Description | Notes
 **User** | [**BriefUser**](BriefUser.md) |  | 
 **Created** | **time.Time** |  | [readonly] 
 **Read** | Pointer to **NullableTime** |  | [optional] 
-**EventType** | **string** | * &#x60;object_created&#x60; - Object created * &#x60;object_updated&#x60; - Object updated * &#x60;object_deleted&#x60; - Object deleted * &#x60;job_started&#x60; - Job started * &#x60;job_completed&#x60; - Job completed * &#x60;job_failed&#x60; - Job failed * &#x60;job_errored&#x60; - Job errored | 
+**EventType** | [**Event**](Event.md) |  | 
 
 ## Methods
 
 ### NewNotification
 
-`func NewNotification(id int32, url string, display string, objectType string, objectId int64, object interface{}, user BriefUser, created time.Time, eventType string, ) *Notification`
+`func NewNotification(id int32, url string, display string, objectType string, objectId int64, object interface{}, user BriefUser, created time.Time, eventType Event, ) *Notification`
 
 NewNotification instantiates a new Notification object
 This constructor will assign default values to properties that have it defined,
@@ -241,20 +241,20 @@ HasRead returns a boolean if a field has been set.
 UnsetRead ensures that no value is present for Read, not even an explicit nil
 ### GetEventType
 
-`func (o *Notification) GetEventType() string`
+`func (o *Notification) GetEventType() Event`
 
 GetEventType returns the EventType field if non-nil, zero value otherwise.
 
 ### GetEventTypeOk
 
-`func (o *Notification) GetEventTypeOk() (*string, bool)`
+`func (o *Notification) GetEventTypeOk() (*Event, bool)`
 
 GetEventTypeOk returns a tuple with the EventType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventType
 
-`func (o *Notification) SetEventType(v string)`
+`func (o *Notification) SetEventType(v Event)`
 
 SetEventType sets EventType field to given value.
 

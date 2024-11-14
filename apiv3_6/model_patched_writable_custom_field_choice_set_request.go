@@ -19,11 +19,10 @@ var _ MappedNullable = &PatchedWritableCustomFieldChoiceSetRequest{}
 
 // PatchedWritableCustomFieldChoiceSetRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type PatchedWritableCustomFieldChoiceSetRequest struct {
-	Name        *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	// Base set of predefined choices (optional)  * `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)
-	BaseChoices  *string    `json:"base_choices,omitempty"`
-	ExtraChoices [][]string `json:"extra_choices,omitempty"`
+	Name         *string                                                `json:"name,omitempty"`
+	Description  *string                                                `json:"description,omitempty"`
+	BaseChoices  *PatchedWritableCustomFieldChoiceSetRequestBaseChoices `json:"base_choices,omitempty"`
+	ExtraChoices [][]string                                             `json:"extra_choices,omitempty"`
 	// Choices are automatically ordered alphabetically
 	OrderAlphabetically  *bool `json:"order_alphabetically,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -113,9 +112,9 @@ func (o *PatchedWritableCustomFieldChoiceSetRequest) SetDescription(v string) {
 }
 
 // GetBaseChoices returns the BaseChoices field value if set, zero value otherwise.
-func (o *PatchedWritableCustomFieldChoiceSetRequest) GetBaseChoices() string {
+func (o *PatchedWritableCustomFieldChoiceSetRequest) GetBaseChoices() PatchedWritableCustomFieldChoiceSetRequestBaseChoices {
 	if o == nil || IsNil(o.BaseChoices) {
-		var ret string
+		var ret PatchedWritableCustomFieldChoiceSetRequestBaseChoices
 		return ret
 	}
 	return *o.BaseChoices
@@ -123,7 +122,7 @@ func (o *PatchedWritableCustomFieldChoiceSetRequest) GetBaseChoices() string {
 
 // GetBaseChoicesOk returns a tuple with the BaseChoices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableCustomFieldChoiceSetRequest) GetBaseChoicesOk() (*string, bool) {
+func (o *PatchedWritableCustomFieldChoiceSetRequest) GetBaseChoicesOk() (*PatchedWritableCustomFieldChoiceSetRequestBaseChoices, bool) {
 	if o == nil || IsNil(o.BaseChoices) {
 		return nil, false
 	}
@@ -139,8 +138,8 @@ func (o *PatchedWritableCustomFieldChoiceSetRequest) HasBaseChoices() bool {
 	return false
 }
 
-// SetBaseChoices gets a reference to the given string and assigns it to the BaseChoices field.
-func (o *PatchedWritableCustomFieldChoiceSetRequest) SetBaseChoices(v string) {
+// SetBaseChoices gets a reference to the given PatchedWritableCustomFieldChoiceSetRequestBaseChoices and assigns it to the BaseChoices field.
+func (o *PatchedWritableCustomFieldChoiceSetRequest) SetBaseChoices(v PatchedWritableCustomFieldChoiceSetRequestBaseChoices) {
 	o.BaseChoices = &v
 }
 

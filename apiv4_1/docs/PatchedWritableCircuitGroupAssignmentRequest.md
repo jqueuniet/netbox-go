@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Group** | Pointer to [**BriefCircuitGroupRequest**](BriefCircuitGroupRequest.md) |  | [optional] 
 **Circuit** | Pointer to [**BriefCircuitRequest**](BriefCircuitRequest.md) |  | [optional] 
-**Priority** | Pointer to **string** | * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive | [optional] 
+**Priority** | Pointer to [**BriefCircuitGroupAssignmentSerializerPriorityValue**](BriefCircuitGroupAssignmentSerializerPriorityValue.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasCircuit returns a boolean if a field has been set.
 
 ### GetPriority
 
-`func (o *PatchedWritableCircuitGroupAssignmentRequest) GetPriority() string`
+`func (o *PatchedWritableCircuitGroupAssignmentRequest) GetPriority() BriefCircuitGroupAssignmentSerializerPriorityValue`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *PatchedWritableCircuitGroupAssignmentRequest) GetPriorityOk() (*string, bool)`
+`func (o *PatchedWritableCircuitGroupAssignmentRequest) GetPriorityOk() (*BriefCircuitGroupAssignmentSerializerPriorityValue, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *PatchedWritableCircuitGroupAssignmentRequest) SetPriority(v string)`
+`func (o *PatchedWritableCircuitGroupAssignmentRequest) SetPriority(v BriefCircuitGroupAssignmentSerializerPriorityValue)`
 
 SetPriority sets Priority field to given value.
 

@@ -1435,8 +1435,8 @@ type ApiTenancyContactAssignmentsListRequest struct {
 	objectTypeIdN     *int32
 	offset            *int32
 	ordering          *string
-	priority          *string
-	priorityN         *string
+	priority          *TenancyContactAssignmentsListPriorityParameter
+	priorityN         *TenancyContactAssignmentsListPriorityParameter
 	q                 *string
 	role              *[]string
 	roleN             *[]string
@@ -1668,13 +1668,13 @@ func (r ApiTenancyContactAssignmentsListRequest) Ordering(ordering string) ApiTe
 }
 
 // * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive
-func (r ApiTenancyContactAssignmentsListRequest) Priority(priority string) ApiTenancyContactAssignmentsListRequest {
+func (r ApiTenancyContactAssignmentsListRequest) Priority(priority TenancyContactAssignmentsListPriorityParameter) ApiTenancyContactAssignmentsListRequest {
 	r.priority = &priority
 	return r
 }
 
 // * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive
-func (r ApiTenancyContactAssignmentsListRequest) PriorityN(priorityN string) ApiTenancyContactAssignmentsListRequest {
+func (r ApiTenancyContactAssignmentsListRequest) PriorityN(priorityN TenancyContactAssignmentsListPriorityParameter) ApiTenancyContactAssignmentsListRequest {
 	r.priorityN = &priorityN
 	return r
 }

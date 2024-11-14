@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Type** | Pointer to **string** | * &#x60;local&#x60; - Local * &#x60;git&#x60; - Git * &#x60;amazon-s3&#x60; - Amazon S3 | [optional] 
+**Type** | Pointer to [**DataSourceTypeValue**](DataSourceTypeValue.md) |  | [optional] 
 **SourceUrl** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -54,20 +54,20 @@ SetName sets Name field to given value.
 
 ### GetType
 
-`func (o *WritableDataSourceRequest) GetType() string`
+`func (o *WritableDataSourceRequest) GetType() DataSourceTypeValue`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *WritableDataSourceRequest) GetTypeOk() (*string, bool)`
+`func (o *WritableDataSourceRequest) GetTypeOk() (*DataSourceTypeValue, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *WritableDataSourceRequest) SetType(v string)`
+`func (o *WritableDataSourceRequest) SetType(v DataSourceTypeValue)`
 
 SetType sets Type field to given value.
 

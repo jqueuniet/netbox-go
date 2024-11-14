@@ -20,9 +20,8 @@ var _ MappedNullable = &BriefCircuitGroupAssignmentSerializerRequest{}
 
 // BriefCircuitGroupAssignmentSerializerRequest Base serializer for group assignments under CircuitSerializer.
 type BriefCircuitGroupAssignmentSerializerRequest struct {
-	Group BriefCircuitGroupRequest `json:"group"`
-	// * `primary` - Primary * `secondary` - Secondary * `tertiary` - Tertiary * `inactive` - Inactive
-	Priority             *string `json:"priority,omitempty"`
+	Group                BriefCircuitGroupRequest                            `json:"group"`
+	Priority             *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"priority,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -71,9 +70,9 @@ func (o *BriefCircuitGroupAssignmentSerializerRequest) SetGroup(v BriefCircuitGr
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *BriefCircuitGroupAssignmentSerializerRequest) GetPriority() string {
+func (o *BriefCircuitGroupAssignmentSerializerRequest) GetPriority() BriefCircuitGroupAssignmentSerializerPriorityValue {
 	if o == nil || IsNil(o.Priority) {
-		var ret string
+		var ret BriefCircuitGroupAssignmentSerializerPriorityValue
 		return ret
 	}
 	return *o.Priority
@@ -81,7 +80,7 @@ func (o *BriefCircuitGroupAssignmentSerializerRequest) GetPriority() string {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BriefCircuitGroupAssignmentSerializerRequest) GetPriorityOk() (*string, bool) {
+func (o *BriefCircuitGroupAssignmentSerializerRequest) GetPriorityOk() (*BriefCircuitGroupAssignmentSerializerPriorityValue, bool) {
 	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
@@ -97,8 +96,8 @@ func (o *BriefCircuitGroupAssignmentSerializerRequest) HasPriority() bool {
 	return false
 }
 
-// SetPriority gets a reference to the given string and assigns it to the Priority field.
-func (o *BriefCircuitGroupAssignmentSerializerRequest) SetPriority(v string) {
+// SetPriority gets a reference to the given BriefCircuitGroupAssignmentSerializerPriorityValue and assigns it to the Priority field.
+func (o *BriefCircuitGroupAssignmentSerializerRequest) SetPriority(v BriefCircuitGroupAssignmentSerializerPriorityValue) {
 	o.Priority = &v
 }
 

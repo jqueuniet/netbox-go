@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Vrf** | Pointer to [**NullableBriefVRFRequest**](BriefVRFRequest.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Vlan** | Pointer to [**NullableBriefVLANRequest**](BriefVLANRequest.md) |  | [optional] 
-**Status** | Pointer to **string** | Operational status of this prefix  * &#x60;container&#x60; - Container * &#x60;active&#x60; - Active * &#x60;reserved&#x60; - Reserved * &#x60;deprecated&#x60; - Deprecated | [optional] 
+**Status** | Pointer to [**PatchedWritablePrefixRequestStatus**](PatchedWritablePrefixRequestStatus.md) |  | [optional] 
 **Role** | Pointer to [**NullableBriefRoleRequest**](BriefRoleRequest.md) |  | [optional] 
 **IsPool** | Pointer to **bool** | All IP addresses within this prefix are considered usable | [optional] 
 **MarkUtilized** | Pointer to **bool** | Treat as fully utilized | [optional] 
@@ -204,20 +204,20 @@ HasVlan returns a boolean if a field has been set.
 UnsetVlan ensures that no value is present for Vlan, not even an explicit nil
 ### GetStatus
 
-`func (o *PatchedWritablePrefixRequest) GetStatus() string`
+`func (o *PatchedWritablePrefixRequest) GetStatus() PatchedWritablePrefixRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritablePrefixRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritablePrefixRequest) GetStatusOk() (*PatchedWritablePrefixRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritablePrefixRequest) SetStatus(v string)`
+`func (o *PatchedWritablePrefixRequest) SetStatus(v PatchedWritablePrefixRequestStatus)`
 
 SetStatus sets Status field to given value.
 

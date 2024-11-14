@@ -20,11 +20,10 @@ var _ MappedNullable = &IPSecPolicyRequest{}
 
 // IPSecPolicyRequest Adds support for custom fields and tags.
 type IPSecPolicyRequest struct {
-	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
-	Proposals   []int32 `json:"proposals,omitempty"`
-	// * `1` - Group 1 * `2` - Group 2 * `5` - Group 5 * `14` - Group 14 * `15` - Group 15 * `16` - Group 16 * `17` - Group 17 * `18` - Group 18 * `19` - Group 19 * `20` - Group 20 * `21` - Group 21 * `22` - Group 22 * `23` - Group 23 * `24` - Group 24 * `25` - Group 25 * `26` - Group 26 * `27` - Group 27 * `28` - Group 28 * `29` - Group 29 * `30` - Group 30 * `31` - Group 31 * `32` - Group 32 * `33` - Group 33 * `34` - Group 34
-	PfsGroup             *int32                 `json:"pfs_group,omitempty"`
+	Name                 string                 `json:"name"`
+	Description          *string                `json:"description,omitempty"`
+	Proposals            []int32                `json:"proposals,omitempty"`
+	PfsGroup             *IKEProposalGroupValue `json:"pfs_group,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
 	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
@@ -140,9 +139,9 @@ func (o *IPSecPolicyRequest) SetProposals(v []int32) {
 }
 
 // GetPfsGroup returns the PfsGroup field value if set, zero value otherwise.
-func (o *IPSecPolicyRequest) GetPfsGroup() int32 {
+func (o *IPSecPolicyRequest) GetPfsGroup() IKEProposalGroupValue {
 	if o == nil || IsNil(o.PfsGroup) {
-		var ret int32
+		var ret IKEProposalGroupValue
 		return ret
 	}
 	return *o.PfsGroup
@@ -150,7 +149,7 @@ func (o *IPSecPolicyRequest) GetPfsGroup() int32 {
 
 // GetPfsGroupOk returns a tuple with the PfsGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPSecPolicyRequest) GetPfsGroupOk() (*int32, bool) {
+func (o *IPSecPolicyRequest) GetPfsGroupOk() (*IKEProposalGroupValue, bool) {
 	if o == nil || IsNil(o.PfsGroup) {
 		return nil, false
 	}
@@ -166,8 +165,8 @@ func (o *IPSecPolicyRequest) HasPfsGroup() bool {
 	return false
 }
 
-// SetPfsGroup gets a reference to the given int32 and assigns it to the PfsGroup field.
-func (o *IPSecPolicyRequest) SetPfsGroup(v int32) {
+// SetPfsGroup gets a reference to the given IKEProposalGroupValue and assigns it to the PfsGroup field.
+func (o *IPSecPolicyRequest) SetPfsGroup(v IKEProposalGroupValue) {
 	o.PfsGroup = &v
 }
 

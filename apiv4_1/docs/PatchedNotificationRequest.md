@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ObjectId** | Pointer to **int64** |  | [optional] 
 **User** | Pointer to [**BriefUserRequest**](BriefUserRequest.md) |  | [optional] 
 **Read** | Pointer to **NullableTime** |  | [optional] 
-**EventType** | Pointer to **string** | * &#x60;object_created&#x60; - Object created * &#x60;object_updated&#x60; - Object updated * &#x60;object_deleted&#x60; - Object deleted * &#x60;job_started&#x60; - Job started * &#x60;job_completed&#x60; - Job completed * &#x60;job_failed&#x60; - Job failed * &#x60;job_errored&#x60; - Job errored | [optional] 
+**EventType** | Pointer to [**Event**](Event.md) |  | [optional] 
 
 ## Methods
 
@@ -141,20 +141,20 @@ HasRead returns a boolean if a field has been set.
 UnsetRead ensures that no value is present for Read, not even an explicit nil
 ### GetEventType
 
-`func (o *PatchedNotificationRequest) GetEventType() string`
+`func (o *PatchedNotificationRequest) GetEventType() Event`
 
 GetEventType returns the EventType field if non-nil, zero value otherwise.
 
 ### GetEventTypeOk
 
-`func (o *PatchedNotificationRequest) GetEventTypeOk() (*string, bool)`
+`func (o *PatchedNotificationRequest) GetEventTypeOk() (*Event, bool)`
 
 GetEventTypeOk returns a tuple with the EventType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventType
 
-`func (o *PatchedNotificationRequest) SetEventType(v string)`
+`func (o *PatchedNotificationRequest) SetEventType(v Event)`
 
 SetEventType sets EventType field to given value.
 

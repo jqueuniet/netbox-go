@@ -20,14 +20,13 @@ var _ MappedNullable = &ContactAssignmentRequest{}
 
 // ContactAssignmentRequest Adds support for custom fields and tags.
 type ContactAssignmentRequest struct {
-	ObjectType string                          `json:"object_type"`
-	ObjectId   int64                           `json:"object_id"`
-	Contact    BriefContactRequest             `json:"contact"`
-	Role       NullableBriefContactRoleRequest `json:"role,omitempty"`
-	// * `primary` - Primary * `secondary` - Secondary * `tertiary` - Tertiary * `inactive` - Inactive
-	Priority             *string                `json:"priority,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	ObjectType           string                                              `json:"object_type"`
+	ObjectId             int64                                               `json:"object_id"`
+	Contact              BriefContactRequest                                 `json:"contact"`
+	Role                 NullableBriefContactRoleRequest                     `json:"role,omitempty"`
+	Priority             *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"priority,omitempty"`
+	Tags                 []NestedTagRequest                                  `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                              `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -169,9 +168,9 @@ func (o *ContactAssignmentRequest) UnsetRole() {
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *ContactAssignmentRequest) GetPriority() string {
+func (o *ContactAssignmentRequest) GetPriority() BriefCircuitGroupAssignmentSerializerPriorityValue {
 	if o == nil || IsNil(o.Priority) {
-		var ret string
+		var ret BriefCircuitGroupAssignmentSerializerPriorityValue
 		return ret
 	}
 	return *o.Priority
@@ -179,7 +178,7 @@ func (o *ContactAssignmentRequest) GetPriority() string {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContactAssignmentRequest) GetPriorityOk() (*string, bool) {
+func (o *ContactAssignmentRequest) GetPriorityOk() (*BriefCircuitGroupAssignmentSerializerPriorityValue, bool) {
 	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
@@ -195,8 +194,8 @@ func (o *ContactAssignmentRequest) HasPriority() bool {
 	return false
 }
 
-// SetPriority gets a reference to the given string and assigns it to the Priority field.
-func (o *ContactAssignmentRequest) SetPriority(v string) {
+// SetPriority gets a reference to the given BriefCircuitGroupAssignmentSerializerPriorityValue and assigns it to the Priority field.
+func (o *ContactAssignmentRequest) SetPriority(v BriefCircuitGroupAssignmentSerializerPriorityValue) {
 	o.Priority = &v
 }
 

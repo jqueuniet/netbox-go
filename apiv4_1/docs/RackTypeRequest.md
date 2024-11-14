@@ -8,17 +8,17 @@ Name | Type | Description | Notes
 **Model** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**FormFactor** | Pointer to **NullableString** | * &#x60;2-post-frame&#x60; - 2-post frame * &#x60;4-post-frame&#x60; - 4-post frame * &#x60;4-post-cabinet&#x60; - 4-post cabinet * &#x60;wall-frame&#x60; - Wall-mounted frame * &#x60;wall-frame-vertical&#x60; - Wall-mounted frame (vertical) * &#x60;wall-cabinet&#x60; - Wall-mounted cabinet * &#x60;wall-cabinet-vertical&#x60; - Wall-mounted cabinet (vertical) | [optional] 
-**Width** | Pointer to **int32** | * &#x60;10&#x60; - 10 inches * &#x60;19&#x60; - 19 inches * &#x60;21&#x60; - 21 inches * &#x60;23&#x60; - 23 inches | [optional] 
+**FormFactor** | Pointer to [**NullableRackRequestFormFactor**](RackRequestFormFactor.md) |  | [optional] 
+**Width** | Pointer to [**RackWidthValue**](RackWidthValue.md) |  | [optional] 
 **UHeight** | Pointer to **int32** | Height in rack units | [optional] 
 **StartingUnit** | Pointer to **int32** | Starting unit for rack | [optional] 
 **DescUnits** | Pointer to **bool** | Units are numbered top-to-bottom | [optional] 
 **OuterWidth** | Pointer to **NullableInt32** | Outer dimension of rack (width) | [optional] 
 **OuterDepth** | Pointer to **NullableInt32** | Outer dimension of rack (depth) | [optional] 
-**OuterUnit** | Pointer to **NullableString** | * &#x60;mm&#x60; - Millimeters * &#x60;in&#x60; - Inches | [optional] 
+**OuterUnit** | Pointer to [**NullableRackRequestOuterUnit**](RackRequestOuterUnit.md) |  | [optional] 
 **Weight** | Pointer to **NullableFloat64** |  | [optional] 
 **MaxWeight** | Pointer to **NullableInt32** | Maximum load capacity for the rack | [optional] 
-**WeightUnit** | Pointer to **NullableString** | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | [optional] 
+**WeightUnit** | Pointer to [**NullableDeviceTypeRequestWeightUnit**](DeviceTypeRequestWeightUnit.md) |  | [optional] 
 **MountingDepth** | Pointer to **NullableInt32** | Maximum depth of a mounted device, in millimeters. For four-post racks, this is the distance between the front and rear rails. | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -130,20 +130,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetFormFactor
 
-`func (o *RackTypeRequest) GetFormFactor() string`
+`func (o *RackTypeRequest) GetFormFactor() RackRequestFormFactor`
 
 GetFormFactor returns the FormFactor field if non-nil, zero value otherwise.
 
 ### GetFormFactorOk
 
-`func (o *RackTypeRequest) GetFormFactorOk() (*string, bool)`
+`func (o *RackTypeRequest) GetFormFactorOk() (*RackRequestFormFactor, bool)`
 
 GetFormFactorOk returns a tuple with the FormFactor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormFactor
 
-`func (o *RackTypeRequest) SetFormFactor(v string)`
+`func (o *RackTypeRequest) SetFormFactor(v RackRequestFormFactor)`
 
 SetFormFactor sets FormFactor field to given value.
 
@@ -165,20 +165,20 @@ HasFormFactor returns a boolean if a field has been set.
 UnsetFormFactor ensures that no value is present for FormFactor, not even an explicit nil
 ### GetWidth
 
-`func (o *RackTypeRequest) GetWidth() int32`
+`func (o *RackTypeRequest) GetWidth() RackWidthValue`
 
 GetWidth returns the Width field if non-nil, zero value otherwise.
 
 ### GetWidthOk
 
-`func (o *RackTypeRequest) GetWidthOk() (*int32, bool)`
+`func (o *RackTypeRequest) GetWidthOk() (*RackWidthValue, bool)`
 
 GetWidthOk returns a tuple with the Width field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWidth
 
-`func (o *RackTypeRequest) SetWidth(v int32)`
+`func (o *RackTypeRequest) SetWidth(v RackWidthValue)`
 
 SetWidth sets Width field to given value.
 
@@ -335,20 +335,20 @@ HasOuterDepth returns a boolean if a field has been set.
 UnsetOuterDepth ensures that no value is present for OuterDepth, not even an explicit nil
 ### GetOuterUnit
 
-`func (o *RackTypeRequest) GetOuterUnit() string`
+`func (o *RackTypeRequest) GetOuterUnit() RackRequestOuterUnit`
 
 GetOuterUnit returns the OuterUnit field if non-nil, zero value otherwise.
 
 ### GetOuterUnitOk
 
-`func (o *RackTypeRequest) GetOuterUnitOk() (*string, bool)`
+`func (o *RackTypeRequest) GetOuterUnitOk() (*RackRequestOuterUnit, bool)`
 
 GetOuterUnitOk returns a tuple with the OuterUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOuterUnit
 
-`func (o *RackTypeRequest) SetOuterUnit(v string)`
+`func (o *RackTypeRequest) SetOuterUnit(v RackRequestOuterUnit)`
 
 SetOuterUnit sets OuterUnit field to given value.
 
@@ -440,20 +440,20 @@ HasMaxWeight returns a boolean if a field has been set.
 UnsetMaxWeight ensures that no value is present for MaxWeight, not even an explicit nil
 ### GetWeightUnit
 
-`func (o *RackTypeRequest) GetWeightUnit() string`
+`func (o *RackTypeRequest) GetWeightUnit() DeviceTypeRequestWeightUnit`
 
 GetWeightUnit returns the WeightUnit field if non-nil, zero value otherwise.
 
 ### GetWeightUnitOk
 
-`func (o *RackTypeRequest) GetWeightUnitOk() (*string, bool)`
+`func (o *RackTypeRequest) GetWeightUnitOk() (*DeviceTypeRequestWeightUnit, bool)`
 
 GetWeightUnitOk returns a tuple with the WeightUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWeightUnit
 
-`func (o *RackTypeRequest) SetWeightUnit(v string)`
+`func (o *RackTypeRequest) SetWeightUnit(v DeviceTypeRequestWeightUnit)`
 
 SetWeightUnit sets WeightUnit field to given value.
 

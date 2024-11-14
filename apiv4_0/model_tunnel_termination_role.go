@@ -19,9 +19,8 @@ var _ MappedNullable = &TunnelTerminationRole{}
 
 // TunnelTerminationRole struct for TunnelTerminationRole
 type TunnelTerminationRole struct {
-	// * `peer` - Peer * `hub` - Hub * `spoke` - Spoke
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *PatchedWritableTunnelTerminationRequestRole `json:"value,omitempty"`
+	Label                *TunnelTerminationRoleLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewTunnelTerminationRoleWithDefaults() *TunnelTerminationRole {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *TunnelTerminationRole) GetValue() string {
+func (o *TunnelTerminationRole) GetValue() PatchedWritableTunnelTerminationRequestRole {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret PatchedWritableTunnelTerminationRequestRole
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *TunnelTerminationRole) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TunnelTerminationRole) GetValueOk() (*string, bool) {
+func (o *TunnelTerminationRole) GetValueOk() (*PatchedWritableTunnelTerminationRequestRole, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *TunnelTerminationRole) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *TunnelTerminationRole) SetValue(v string) {
+// SetValue gets a reference to the given PatchedWritableTunnelTerminationRequestRole and assigns it to the Value field.
+func (o *TunnelTerminationRole) SetValue(v PatchedWritableTunnelTerminationRequestRole) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *TunnelTerminationRole) GetLabel() string {
+func (o *TunnelTerminationRole) GetLabel() TunnelTerminationRoleLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret TunnelTerminationRoleLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *TunnelTerminationRole) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TunnelTerminationRole) GetLabelOk() (*string, bool) {
+func (o *TunnelTerminationRole) GetLabelOk() (*TunnelTerminationRoleLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *TunnelTerminationRole) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *TunnelTerminationRole) SetLabel(v string) {
+// SetLabel gets a reference to the given TunnelTerminationRoleLabel and assigns it to the Label field.
+func (o *TunnelTerminationRole) SetLabel(v TunnelTerminationRoleLabel) {
 	o.Label = &v
 }
 

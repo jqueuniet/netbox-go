@@ -20,13 +20,11 @@ var _ MappedNullable = &IPAddressRequest{}
 
 // IPAddressRequest Adds support for custom fields and tags.
 type IPAddressRequest struct {
-	Address string                      `json:"address"`
-	Vrf     NullableNestedVRFRequest    `json:"vrf,omitempty"`
-	Tenant  NullableNestedTenantRequest `json:"tenant,omitempty"`
-	// * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated * `dhcp` - DHCP * `slaac` - SLAAC
-	Status *string `json:"status,omitempty"`
-	// * `loopback` - Loopback * `secondary` - Secondary * `anycast` - Anycast * `vip` - VIP * `vrrp` - VRRP * `hsrp` - HSRP * `glbp` - GLBP * `carp` - CARP
-	Role               *string                        `json:"role,omitempty"`
+	Address            string                         `json:"address"`
+	Vrf                NullableNestedVRFRequest       `json:"vrf,omitempty"`
+	Tenant             NullableNestedTenantRequest    `json:"tenant,omitempty"`
+	Status             *IPAddressStatusValue          `json:"status,omitempty"`
+	Role               *IPAddressRoleValue            `json:"role,omitempty"`
 	AssignedObjectType NullableString                 `json:"assigned_object_type,omitempty"`
 	AssignedObjectId   NullableInt64                  `json:"assigned_object_id,omitempty"`
 	NatInside          NullableNestedIPAddressRequest `json:"nat_inside,omitempty"`
@@ -170,9 +168,9 @@ func (o *IPAddressRequest) UnsetTenant() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *IPAddressRequest) GetStatus() string {
+func (o *IPAddressRequest) GetStatus() IPAddressStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret IPAddressStatusValue
 		return ret
 	}
 	return *o.Status
@@ -180,7 +178,7 @@ func (o *IPAddressRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPAddressRequest) GetStatusOk() (*string, bool) {
+func (o *IPAddressRequest) GetStatusOk() (*IPAddressStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -196,15 +194,15 @@ func (o *IPAddressRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *IPAddressRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given IPAddressStatusValue and assigns it to the Status field.
+func (o *IPAddressRequest) SetStatus(v IPAddressStatusValue) {
 	o.Status = &v
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
-func (o *IPAddressRequest) GetRole() string {
+func (o *IPAddressRequest) GetRole() IPAddressRoleValue {
 	if o == nil || IsNil(o.Role) {
-		var ret string
+		var ret IPAddressRoleValue
 		return ret
 	}
 	return *o.Role
@@ -212,7 +210,7 @@ func (o *IPAddressRequest) GetRole() string {
 
 // GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPAddressRequest) GetRoleOk() (*string, bool) {
+func (o *IPAddressRequest) GetRoleOk() (*IPAddressRoleValue, bool) {
 	if o == nil || IsNil(o.Role) {
 		return nil, false
 	}
@@ -228,8 +226,8 @@ func (o *IPAddressRequest) HasRole() bool {
 	return false
 }
 
-// SetRole gets a reference to the given string and assigns it to the Role field.
-func (o *IPAddressRequest) SetRole(v string) {
+// SetRole gets a reference to the given IPAddressRoleValue and assigns it to the Role field.
+func (o *IPAddressRequest) SetRole(v IPAddressRoleValue) {
 	o.Role = &v
 }
 

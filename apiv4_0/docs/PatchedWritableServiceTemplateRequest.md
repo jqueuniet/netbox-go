@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Protocol** | Pointer to **string** | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | [optional] 
+**Protocol** | Pointer to [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | [optional] 
 **Ports** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -58,20 +58,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetProtocol
 
-`func (o *PatchedWritableServiceTemplateRequest) GetProtocol() string`
+`func (o *PatchedWritableServiceTemplateRequest) GetProtocol() PatchedWritableServiceRequestProtocol`
 
 GetProtocol returns the Protocol field if non-nil, zero value otherwise.
 
 ### GetProtocolOk
 
-`func (o *PatchedWritableServiceTemplateRequest) GetProtocolOk() (*string, bool)`
+`func (o *PatchedWritableServiceTemplateRequest) GetProtocolOk() (*PatchedWritableServiceRequestProtocol, bool)`
 
 GetProtocolOk returns a tuple with the Protocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocol
 
-`func (o *PatchedWritableServiceTemplateRequest) SetProtocol(v string)`
+`func (o *PatchedWritableServiceTemplateRequest) SetProtocol(v PatchedWritableServiceRequestProtocol)`
 
 SetProtocol sets Protocol field to given value.
 

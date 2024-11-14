@@ -23,9 +23,8 @@ type ModuleRequest struct {
 	Device     NestedDeviceRequest     `json:"device"`
 	ModuleBay  NestedModuleBayRequest  `json:"module_bay"`
 	ModuleType NestedModuleTypeRequest `json:"module_type"`
-	// * `offline` - Offline * `active` - Active * `planned` - Planned * `staged` - Staged * `failed` - Failed * `decommissioning` - Decommissioning
-	Status *string `json:"status,omitempty"`
-	Serial *string `json:"serial,omitempty"`
+	Status     *ModuleStatusValue      `json:"status,omitempty"`
+	Serial     *string                 `json:"serial,omitempty"`
 	// A unique tag used to identify this device
 	AssetTag             NullableString         `json:"asset_tag,omitempty"`
 	Description          *string                `json:"description,omitempty"`
@@ -130,9 +129,9 @@ func (o *ModuleRequest) SetModuleType(v NestedModuleTypeRequest) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *ModuleRequest) GetStatus() string {
+func (o *ModuleRequest) GetStatus() ModuleStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret ModuleStatusValue
 		return ret
 	}
 	return *o.Status
@@ -140,7 +139,7 @@ func (o *ModuleRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModuleRequest) GetStatusOk() (*string, bool) {
+func (o *ModuleRequest) GetStatusOk() (*ModuleStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -156,8 +155,8 @@ func (o *ModuleRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *ModuleRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given ModuleStatusValue and assigns it to the Status field.
+func (o *ModuleRequest) SetStatus(v ModuleStatusValue) {
 	o.Status = &v
 }
 

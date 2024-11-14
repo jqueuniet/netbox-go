@@ -20,14 +20,13 @@ var _ MappedNullable = &WritableServiceTemplateRequest{}
 
 // WritableServiceTemplateRequest Adds support for custom fields and tags.
 type WritableServiceTemplateRequest struct {
-	Name string `json:"name"`
-	// * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP
-	Protocol             string                 `json:"protocol"`
-	Ports                []int32                `json:"ports"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                                `json:"name"`
+	Protocol             PatchedWritableServiceRequestProtocol `json:"protocol"`
+	Ports                []int32                               `json:"ports"`
+	Description          *string                               `json:"description,omitempty"`
+	Comments             *string                               `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                    `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -37,7 +36,7 @@ type _WritableServiceTemplateRequest WritableServiceTemplateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableServiceTemplateRequest(name string, protocol string, ports []int32) *WritableServiceTemplateRequest {
+func NewWritableServiceTemplateRequest(name string, protocol PatchedWritableServiceRequestProtocol, ports []int32) *WritableServiceTemplateRequest {
 	this := WritableServiceTemplateRequest{}
 	this.Name = name
 	this.Protocol = protocol
@@ -78,9 +77,9 @@ func (o *WritableServiceTemplateRequest) SetName(v string) {
 }
 
 // GetProtocol returns the Protocol field value
-func (o *WritableServiceTemplateRequest) GetProtocol() string {
+func (o *WritableServiceTemplateRequest) GetProtocol() PatchedWritableServiceRequestProtocol {
 	if o == nil {
-		var ret string
+		var ret PatchedWritableServiceRequestProtocol
 		return ret
 	}
 
@@ -89,7 +88,7 @@ func (o *WritableServiceTemplateRequest) GetProtocol() string {
 
 // GetProtocolOk returns a tuple with the Protocol field value
 // and a boolean to check if the value has been set.
-func (o *WritableServiceTemplateRequest) GetProtocolOk() (*string, bool) {
+func (o *WritableServiceTemplateRequest) GetProtocolOk() (*PatchedWritableServiceRequestProtocol, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -97,7 +96,7 @@ func (o *WritableServiceTemplateRequest) GetProtocolOk() (*string, bool) {
 }
 
 // SetProtocol sets field value
-func (o *WritableServiceTemplateRequest) SetProtocol(v string) {
+func (o *WritableServiceTemplateRequest) SetProtocol(v PatchedWritableServiceRequestProtocol) {
 	o.Protocol = v
 }
 

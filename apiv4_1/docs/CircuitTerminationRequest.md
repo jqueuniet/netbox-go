@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Circuit** | [**BriefCircuitRequest**](BriefCircuitRequest.md) |  | 
-**TermSide** | **string** | * &#x60;A&#x60; - A * &#x60;Z&#x60; - Z | 
+**TermSide** | [**Termination1**](Termination1.md) |  | 
 **Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
 **ProviderNetwork** | Pointer to [**NullableBriefProviderNetworkRequest**](BriefProviderNetworkRequest.md) |  | [optional] 
 **PortSpeed** | Pointer to **NullableInt32** | Physical circuit speed | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitTerminationRequest
 
-`func NewCircuitTerminationRequest(circuit BriefCircuitRequest, termSide string, ) *CircuitTerminationRequest`
+`func NewCircuitTerminationRequest(circuit BriefCircuitRequest, termSide Termination1, ) *CircuitTerminationRequest`
 
 NewCircuitTerminationRequest instantiates a new CircuitTerminationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -58,20 +58,20 @@ SetCircuit sets Circuit field to given value.
 
 ### GetTermSide
 
-`func (o *CircuitTerminationRequest) GetTermSide() string`
+`func (o *CircuitTerminationRequest) GetTermSide() Termination1`
 
 GetTermSide returns the TermSide field if non-nil, zero value otherwise.
 
 ### GetTermSideOk
 
-`func (o *CircuitTerminationRequest) GetTermSideOk() (*string, bool)`
+`func (o *CircuitTerminationRequest) GetTermSideOk() (*Termination1, bool)`
 
 GetTermSideOk returns a tuple with the TermSide field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTermSide
 
-`func (o *CircuitTerminationRequest) SetTermSide(v string)`
+`func (o *CircuitTerminationRequest) SetTermSide(v Termination1)`
 
 SetTermSide sets TermSide field to given value.
 

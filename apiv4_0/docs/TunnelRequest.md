@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Status** | **string** | * &#x60;planned&#x60; - Planned * &#x60;active&#x60; - Active * &#x60;disabled&#x60; - Disabled | 
+**Status** | [**PatchedWritableTunnelRequestStatus**](PatchedWritableTunnelRequestStatus.md) |  | 
 **Group** | Pointer to [**NullableBriefTunnelGroupRequest**](BriefTunnelGroupRequest.md) |  | [optional] 
-**Encapsulation** | **string** | * &#x60;ipsec-transport&#x60; - IPsec - Transport * &#x60;ipsec-tunnel&#x60; - IPsec - Tunnel * &#x60;ip-ip&#x60; - IP-in-IP * &#x60;gre&#x60; - GRE | 
+**Encapsulation** | [**PatchedWritableTunnelRequestEncapsulation**](PatchedWritableTunnelRequestEncapsulation.md) |  | 
 **IpsecProfile** | Pointer to [**NullableBriefIPSecProfileRequest**](BriefIPSecProfileRequest.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **TunnelId** | Pointer to **NullableInt64** |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewTunnelRequest
 
-`func NewTunnelRequest(name string, status string, encapsulation string, ) *TunnelRequest`
+`func NewTunnelRequest(name string, status PatchedWritableTunnelRequestStatus, encapsulation PatchedWritableTunnelRequestEncapsulation, ) *TunnelRequest`
 
 NewTunnelRequest instantiates a new TunnelRequest object
 This constructor will assign default values to properties that have it defined,
@@ -57,20 +57,20 @@ SetName sets Name field to given value.
 
 ### GetStatus
 
-`func (o *TunnelRequest) GetStatus() string`
+`func (o *TunnelRequest) GetStatus() PatchedWritableTunnelRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *TunnelRequest) GetStatusOk() (*string, bool)`
+`func (o *TunnelRequest) GetStatusOk() (*PatchedWritableTunnelRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *TunnelRequest) SetStatus(v string)`
+`func (o *TunnelRequest) SetStatus(v PatchedWritableTunnelRequestStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -112,20 +112,20 @@ HasGroup returns a boolean if a field has been set.
 UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetEncapsulation
 
-`func (o *TunnelRequest) GetEncapsulation() string`
+`func (o *TunnelRequest) GetEncapsulation() PatchedWritableTunnelRequestEncapsulation`
 
 GetEncapsulation returns the Encapsulation field if non-nil, zero value otherwise.
 
 ### GetEncapsulationOk
 
-`func (o *TunnelRequest) GetEncapsulationOk() (*string, bool)`
+`func (o *TunnelRequest) GetEncapsulationOk() (*PatchedWritableTunnelRequestEncapsulation, bool)`
 
 GetEncapsulationOk returns a tuple with the Encapsulation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEncapsulation
 
-`func (o *TunnelRequest) SetEncapsulation(v string)`
+`func (o *TunnelRequest) SetEncapsulation(v PatchedWritableTunnelRequestEncapsulation)`
 
 SetEncapsulation sets Encapsulation field to given value.
 

@@ -20,12 +20,10 @@ var _ MappedNullable = &IPSecProposalRequest{}
 
 // IPSecProposalRequest Adds support for custom fields and tags.
 type IPSecProposalRequest struct {
-	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
-	// * `aes-128-cbc` - 128-bit AES (CBC) * `aes-128-gcm` - 128-bit AES (GCM) * `aes-192-cbc` - 192-bit AES (CBC) * `aes-192-gcm` - 192-bit AES (GCM) * `aes-256-cbc` - 256-bit AES (CBC) * `aes-256-gcm` - 256-bit AES (GCM) * `3des-cbc` - 3DES * `des-cbc` - DES
-	EncryptionAlgorithm string `json:"encryption_algorithm"`
-	// * `hmac-sha1` - SHA-1 HMAC * `hmac-sha256` - SHA-256 HMAC * `hmac-sha384` - SHA-384 HMAC * `hmac-sha512` - SHA-512 HMAC * `hmac-md5` - MD5 HMAC
-	AuthenticationAlgorithm string `json:"authentication_algorithm"`
+	Name                    string                                  `json:"name"`
+	Description             *string                                 `json:"description,omitempty"`
+	EncryptionAlgorithm     IKEProposalEncryptionAlgorithmValue     `json:"encryption_algorithm"`
+	AuthenticationAlgorithm IKEProposalAuthenticationAlgorithmValue `json:"authentication_algorithm"`
 	// Security association lifetime (seconds)
 	SaLifetimeSeconds NullableInt32 `json:"sa_lifetime_seconds,omitempty"`
 	// Security association lifetime (in kilobytes)
@@ -42,7 +40,7 @@ type _IPSecProposalRequest IPSecProposalRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIPSecProposalRequest(name string, encryptionAlgorithm string, authenticationAlgorithm string) *IPSecProposalRequest {
+func NewIPSecProposalRequest(name string, encryptionAlgorithm IKEProposalEncryptionAlgorithmValue, authenticationAlgorithm IKEProposalAuthenticationAlgorithmValue) *IPSecProposalRequest {
 	this := IPSecProposalRequest{}
 	this.Name = name
 	this.EncryptionAlgorithm = encryptionAlgorithm
@@ -115,9 +113,9 @@ func (o *IPSecProposalRequest) SetDescription(v string) {
 }
 
 // GetEncryptionAlgorithm returns the EncryptionAlgorithm field value
-func (o *IPSecProposalRequest) GetEncryptionAlgorithm() string {
+func (o *IPSecProposalRequest) GetEncryptionAlgorithm() IKEProposalEncryptionAlgorithmValue {
 	if o == nil {
-		var ret string
+		var ret IKEProposalEncryptionAlgorithmValue
 		return ret
 	}
 
@@ -126,7 +124,7 @@ func (o *IPSecProposalRequest) GetEncryptionAlgorithm() string {
 
 // GetEncryptionAlgorithmOk returns a tuple with the EncryptionAlgorithm field value
 // and a boolean to check if the value has been set.
-func (o *IPSecProposalRequest) GetEncryptionAlgorithmOk() (*string, bool) {
+func (o *IPSecProposalRequest) GetEncryptionAlgorithmOk() (*IKEProposalEncryptionAlgorithmValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -134,14 +132,14 @@ func (o *IPSecProposalRequest) GetEncryptionAlgorithmOk() (*string, bool) {
 }
 
 // SetEncryptionAlgorithm sets field value
-func (o *IPSecProposalRequest) SetEncryptionAlgorithm(v string) {
+func (o *IPSecProposalRequest) SetEncryptionAlgorithm(v IKEProposalEncryptionAlgorithmValue) {
 	o.EncryptionAlgorithm = v
 }
 
 // GetAuthenticationAlgorithm returns the AuthenticationAlgorithm field value
-func (o *IPSecProposalRequest) GetAuthenticationAlgorithm() string {
+func (o *IPSecProposalRequest) GetAuthenticationAlgorithm() IKEProposalAuthenticationAlgorithmValue {
 	if o == nil {
-		var ret string
+		var ret IKEProposalAuthenticationAlgorithmValue
 		return ret
 	}
 
@@ -150,7 +148,7 @@ func (o *IPSecProposalRequest) GetAuthenticationAlgorithm() string {
 
 // GetAuthenticationAlgorithmOk returns a tuple with the AuthenticationAlgorithm field value
 // and a boolean to check if the value has been set.
-func (o *IPSecProposalRequest) GetAuthenticationAlgorithmOk() (*string, bool) {
+func (o *IPSecProposalRequest) GetAuthenticationAlgorithmOk() (*IKEProposalAuthenticationAlgorithmValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -158,7 +156,7 @@ func (o *IPSecProposalRequest) GetAuthenticationAlgorithmOk() (*string, bool) {
 }
 
 // SetAuthenticationAlgorithm sets field value
-func (o *IPSecProposalRequest) SetAuthenticationAlgorithm(v string) {
+func (o *IPSecProposalRequest) SetAuthenticationAlgorithm(v IKEProposalAuthenticationAlgorithmValue) {
 	o.AuthenticationAlgorithm = v
 }
 

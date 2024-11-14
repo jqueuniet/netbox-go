@@ -20,13 +20,12 @@ var _ MappedNullable = &BriefFHRPGroup{}
 
 // BriefFHRPGroup Adds support for custom fields and tags.
 type BriefFHRPGroup struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
-	// * `vrrp2` - VRRPv2 * `vrrp3` - VRRPv3 * `carp` - CARP * `clusterxl` - ClusterXL * `hsrp` - HSRP * `glbp` - GLBP * `other` - Other
-	Protocol             string  `json:"protocol"`
-	GroupId              int32   `json:"group_id"`
-	Description          *string `json:"description,omitempty"`
+	Id                   int32                  `json:"id"`
+	Url                  string                 `json:"url"`
+	Display              string                 `json:"display"`
+	Protocol             BriefFHRPGroupProtocol `json:"protocol"`
+	GroupId              int32                  `json:"group_id"`
+	Description          *string                `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,7 +35,7 @@ type _BriefFHRPGroup BriefFHRPGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefFHRPGroup(id int32, url string, display string, protocol string, groupId int32) *BriefFHRPGroup {
+func NewBriefFHRPGroup(id int32, url string, display string, protocol BriefFHRPGroupProtocol, groupId int32) *BriefFHRPGroup {
 	this := BriefFHRPGroup{}
 	this.Id = id
 	this.Url = url
@@ -127,9 +126,9 @@ func (o *BriefFHRPGroup) SetDisplay(v string) {
 }
 
 // GetProtocol returns the Protocol field value
-func (o *BriefFHRPGroup) GetProtocol() string {
+func (o *BriefFHRPGroup) GetProtocol() BriefFHRPGroupProtocol {
 	if o == nil {
-		var ret string
+		var ret BriefFHRPGroupProtocol
 		return ret
 	}
 
@@ -138,7 +137,7 @@ func (o *BriefFHRPGroup) GetProtocol() string {
 
 // GetProtocolOk returns a tuple with the Protocol field value
 // and a boolean to check if the value has been set.
-func (o *BriefFHRPGroup) GetProtocolOk() (*string, bool) {
+func (o *BriefFHRPGroup) GetProtocolOk() (*BriefFHRPGroupProtocol, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -146,7 +145,7 @@ func (o *BriefFHRPGroup) GetProtocolOk() (*string, bool) {
 }
 
 // SetProtocol sets field value
-func (o *BriefFHRPGroup) SetProtocol(v string) {
+func (o *BriefFHRPGroup) SetProtocol(v BriefFHRPGroupProtocol) {
 	o.Protocol = v
 }
 

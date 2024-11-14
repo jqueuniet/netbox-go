@@ -19,9 +19,8 @@ var _ MappedNullable = &IPSecProfileMode{}
 
 // IPSecProfileMode struct for IPSecProfileMode
 type IPSecProfileMode struct {
-	// * `esp` - ESP * `ah` - AH
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *IPSecProfileModeValue `json:"value,omitempty"`
+	Label                *IPSecProfileModeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewIPSecProfileModeWithDefaults() *IPSecProfileMode {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *IPSecProfileMode) GetValue() string {
+func (o *IPSecProfileMode) GetValue() IPSecProfileModeValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret IPSecProfileModeValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *IPSecProfileMode) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPSecProfileMode) GetValueOk() (*string, bool) {
+func (o *IPSecProfileMode) GetValueOk() (*IPSecProfileModeValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *IPSecProfileMode) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *IPSecProfileMode) SetValue(v string) {
+// SetValue gets a reference to the given IPSecProfileModeValue and assigns it to the Value field.
+func (o *IPSecProfileMode) SetValue(v IPSecProfileModeValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *IPSecProfileMode) GetLabel() string {
+func (o *IPSecProfileMode) GetLabel() IPSecProfileModeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret IPSecProfileModeLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *IPSecProfileMode) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPSecProfileMode) GetLabelOk() (*string, bool) {
+func (o *IPSecProfileMode) GetLabelOk() (*IPSecProfileModeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *IPSecProfileMode) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *IPSecProfileMode) SetLabel(v string) {
+// SetLabel gets a reference to the given IPSecProfileModeLabel and assigns it to the Label field.
+func (o *IPSecProfileMode) SetLabel(v IPSecProfileModeLabel) {
 	o.Label = &v
 }
 

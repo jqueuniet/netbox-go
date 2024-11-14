@@ -19,11 +19,10 @@ var _ MappedNullable = &PatchedWritableCircuitGroupAssignmentRequest{}
 
 // PatchedWritableCircuitGroupAssignmentRequest Base serializer for group assignments under CircuitSerializer.
 type PatchedWritableCircuitGroupAssignmentRequest struct {
-	Group   *BriefCircuitGroupRequest `json:"group,omitempty"`
-	Circuit *BriefCircuitRequest      `json:"circuit,omitempty"`
-	// * `primary` - Primary * `secondary` - Secondary * `tertiary` - Tertiary * `inactive` - Inactive
-	Priority             *string            `json:"priority,omitempty"`
-	Tags                 []NestedTagRequest `json:"tags,omitempty"`
+	Group                *BriefCircuitGroupRequest                           `json:"group,omitempty"`
+	Circuit              *BriefCircuitRequest                                `json:"circuit,omitempty"`
+	Priority             *BriefCircuitGroupAssignmentSerializerPriorityValue `json:"priority,omitempty"`
+	Tags                 []NestedTagRequest                                  `json:"tags,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -111,9 +110,9 @@ func (o *PatchedWritableCircuitGroupAssignmentRequest) SetCircuit(v BriefCircuit
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *PatchedWritableCircuitGroupAssignmentRequest) GetPriority() string {
+func (o *PatchedWritableCircuitGroupAssignmentRequest) GetPriority() BriefCircuitGroupAssignmentSerializerPriorityValue {
 	if o == nil || IsNil(o.Priority) {
-		var ret string
+		var ret BriefCircuitGroupAssignmentSerializerPriorityValue
 		return ret
 	}
 	return *o.Priority
@@ -121,7 +120,7 @@ func (o *PatchedWritableCircuitGroupAssignmentRequest) GetPriority() string {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableCircuitGroupAssignmentRequest) GetPriorityOk() (*string, bool) {
+func (o *PatchedWritableCircuitGroupAssignmentRequest) GetPriorityOk() (*BriefCircuitGroupAssignmentSerializerPriorityValue, bool) {
 	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
@@ -137,8 +136,8 @@ func (o *PatchedWritableCircuitGroupAssignmentRequest) HasPriority() bool {
 	return false
 }
 
-// SetPriority gets a reference to the given string and assigns it to the Priority field.
-func (o *PatchedWritableCircuitGroupAssignmentRequest) SetPriority(v string) {
+// SetPriority gets a reference to the given BriefCircuitGroupAssignmentSerializerPriorityValue and assigns it to the Priority field.
+func (o *PatchedWritableCircuitGroupAssignmentRequest) SetPriority(v BriefCircuitGroupAssignmentSerializerPriorityValue) {
 	o.Priority = &v
 }
 

@@ -20,17 +20,16 @@ var _ MappedNullable = &WritableServiceRequest{}
 
 // WritableServiceRequest Adds support for custom fields and tags.
 type WritableServiceRequest struct {
-	Device         NullableBriefDeviceRequest         `json:"device,omitempty"`
-	VirtualMachine NullableBriefVirtualMachineRequest `json:"virtual_machine,omitempty"`
-	Name           string                             `json:"name"`
-	// * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP
-	Protocol             string                 `json:"protocol"`
-	Ports                []int32                `json:"ports"`
-	Ipaddresses          []int32                `json:"ipaddresses,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Device               NullableBriefDeviceRequest            `json:"device,omitempty"`
+	VirtualMachine       NullableBriefVirtualMachineRequest    `json:"virtual_machine,omitempty"`
+	Name                 string                                `json:"name"`
+	Protocol             PatchedWritableServiceRequestProtocol `json:"protocol"`
+	Ports                []int32                               `json:"ports"`
+	Ipaddresses          []int32                               `json:"ipaddresses,omitempty"`
+	Description          *string                               `json:"description,omitempty"`
+	Comments             *string                               `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                    `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -40,7 +39,7 @@ type _WritableServiceRequest WritableServiceRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableServiceRequest(name string, protocol string, ports []int32) *WritableServiceRequest {
+func NewWritableServiceRequest(name string, protocol PatchedWritableServiceRequestProtocol, ports []int32) *WritableServiceRequest {
 	this := WritableServiceRequest{}
 	this.Name = name
 	this.Protocol = protocol
@@ -167,9 +166,9 @@ func (o *WritableServiceRequest) SetName(v string) {
 }
 
 // GetProtocol returns the Protocol field value
-func (o *WritableServiceRequest) GetProtocol() string {
+func (o *WritableServiceRequest) GetProtocol() PatchedWritableServiceRequestProtocol {
 	if o == nil {
-		var ret string
+		var ret PatchedWritableServiceRequestProtocol
 		return ret
 	}
 
@@ -178,7 +177,7 @@ func (o *WritableServiceRequest) GetProtocol() string {
 
 // GetProtocolOk returns a tuple with the Protocol field value
 // and a boolean to check if the value has been set.
-func (o *WritableServiceRequest) GetProtocolOk() (*string, bool) {
+func (o *WritableServiceRequest) GetProtocolOk() (*PatchedWritableServiceRequestProtocol, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -186,7 +185,7 @@ func (o *WritableServiceRequest) GetProtocolOk() (*string, bool) {
 }
 
 // SetProtocol sets field value
-func (o *WritableServiceRequest) SetProtocol(v string) {
+func (o *WritableServiceRequest) SetProtocol(v PatchedWritableServiceRequestProtocol) {
 	o.Protocol = v
 }
 

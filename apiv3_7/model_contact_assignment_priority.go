@@ -19,9 +19,8 @@ var _ MappedNullable = &ContactAssignmentPriority{}
 
 // ContactAssignmentPriority struct for ContactAssignmentPriority
 type ContactAssignmentPriority struct {
-	// * `primary` - Primary * `secondary` - Secondary * `tertiary` - Tertiary * `inactive` - Inactive
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *ContactAssignmentPriorityValue `json:"value,omitempty"`
+	Label                *ContactAssignmentPriorityLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewContactAssignmentPriorityWithDefaults() *ContactAssignmentPriority {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *ContactAssignmentPriority) GetValue() string {
+func (o *ContactAssignmentPriority) GetValue() ContactAssignmentPriorityValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret ContactAssignmentPriorityValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *ContactAssignmentPriority) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContactAssignmentPriority) GetValueOk() (*string, bool) {
+func (o *ContactAssignmentPriority) GetValueOk() (*ContactAssignmentPriorityValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *ContactAssignmentPriority) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *ContactAssignmentPriority) SetValue(v string) {
+// SetValue gets a reference to the given ContactAssignmentPriorityValue and assigns it to the Value field.
+func (o *ContactAssignmentPriority) SetValue(v ContactAssignmentPriorityValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *ContactAssignmentPriority) GetLabel() string {
+func (o *ContactAssignmentPriority) GetLabel() ContactAssignmentPriorityLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret ContactAssignmentPriorityLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *ContactAssignmentPriority) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContactAssignmentPriority) GetLabelOk() (*string, bool) {
+func (o *ContactAssignmentPriority) GetLabelOk() (*ContactAssignmentPriorityLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *ContactAssignmentPriority) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *ContactAssignmentPriority) SetLabel(v string) {
+// SetLabel gets a reference to the given ContactAssignmentPriorityLabel and assigns it to the Label field.
+func (o *ContactAssignmentPriority) SetLabel(v ContactAssignmentPriorityLabel) {
 	o.Label = &v
 }
 

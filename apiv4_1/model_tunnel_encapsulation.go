@@ -19,9 +19,8 @@ var _ MappedNullable = &TunnelEncapsulation{}
 
 // TunnelEncapsulation struct for TunnelEncapsulation
 type TunnelEncapsulation struct {
-	// * `ipsec-transport` - IPsec - Transport * `ipsec-tunnel` - IPsec - Tunnel * `ip-ip` - IP-in-IP * `gre` - GRE
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *PatchedWritableTunnelRequestEncapsulation `json:"value,omitempty"`
+	Label                *TunnelEncapsulationLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewTunnelEncapsulationWithDefaults() *TunnelEncapsulation {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *TunnelEncapsulation) GetValue() string {
+func (o *TunnelEncapsulation) GetValue() PatchedWritableTunnelRequestEncapsulation {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret PatchedWritableTunnelRequestEncapsulation
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *TunnelEncapsulation) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TunnelEncapsulation) GetValueOk() (*string, bool) {
+func (o *TunnelEncapsulation) GetValueOk() (*PatchedWritableTunnelRequestEncapsulation, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *TunnelEncapsulation) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *TunnelEncapsulation) SetValue(v string) {
+// SetValue gets a reference to the given PatchedWritableTunnelRequestEncapsulation and assigns it to the Value field.
+func (o *TunnelEncapsulation) SetValue(v PatchedWritableTunnelRequestEncapsulation) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *TunnelEncapsulation) GetLabel() string {
+func (o *TunnelEncapsulation) GetLabel() TunnelEncapsulationLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret TunnelEncapsulationLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *TunnelEncapsulation) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TunnelEncapsulation) GetLabelOk() (*string, bool) {
+func (o *TunnelEncapsulation) GetLabelOk() (*TunnelEncapsulationLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *TunnelEncapsulation) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *TunnelEncapsulation) SetLabel(v string) {
+// SetLabel gets a reference to the given TunnelEncapsulationLabel and assigns it to the Label field.
+func (o *TunnelEncapsulation) SetLabel(v TunnelEncapsulationLabel) {
 	o.Label = &v
 }
 

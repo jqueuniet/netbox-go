@@ -28,9 +28,8 @@ type PatchedCustomLinkRequest struct {
 	LinkUrl *string `json:"link_url,omitempty"`
 	Weight  *int32  `json:"weight,omitempty"`
 	// Links with the same group will appear as a dropdown menu
-	GroupName *string `json:"group_name,omitempty"`
-	// The class of the first link in a group will be used for the dropdown button  * `default` - Default * `blue` - Blue * `indigo` - Indigo * `purple` - Purple * `pink` - Pink * `red` - Red * `orange` - Orange * `yellow` - Yellow * `green` - Green * `teal` - Teal * `cyan` - Cyan * `gray` - Gray * `black` - Black * `white` - White * `ghost-dark` - Link
-	ButtonClass *string `json:"button_class,omitempty"`
+	GroupName   *string                `json:"group_name,omitempty"`
+	ButtonClass *CustomLinkButtonClass `json:"button_class,omitempty"`
 	// Force link to open in a new window
 	NewWindow            *bool `json:"new_window,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -280,9 +279,9 @@ func (o *PatchedCustomLinkRequest) SetGroupName(v string) {
 }
 
 // GetButtonClass returns the ButtonClass field value if set, zero value otherwise.
-func (o *PatchedCustomLinkRequest) GetButtonClass() string {
+func (o *PatchedCustomLinkRequest) GetButtonClass() CustomLinkButtonClass {
 	if o == nil || IsNil(o.ButtonClass) {
-		var ret string
+		var ret CustomLinkButtonClass
 		return ret
 	}
 	return *o.ButtonClass
@@ -290,7 +289,7 @@ func (o *PatchedCustomLinkRequest) GetButtonClass() string {
 
 // GetButtonClassOk returns a tuple with the ButtonClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedCustomLinkRequest) GetButtonClassOk() (*string, bool) {
+func (o *PatchedCustomLinkRequest) GetButtonClassOk() (*CustomLinkButtonClass, bool) {
 	if o == nil || IsNil(o.ButtonClass) {
 		return nil, false
 	}
@@ -306,8 +305,8 @@ func (o *PatchedCustomLinkRequest) HasButtonClass() bool {
 	return false
 }
 
-// SetButtonClass gets a reference to the given string and assigns it to the ButtonClass field.
-func (o *PatchedCustomLinkRequest) SetButtonClass(v string) {
+// SetButtonClass gets a reference to the given CustomLinkButtonClass and assigns it to the ButtonClass field.
+func (o *PatchedCustomLinkRequest) SetButtonClass(v CustomLinkButtonClass) {
 	o.ButtonClass = &v
 }
 

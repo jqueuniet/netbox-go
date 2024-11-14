@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**PatchedWritableRackRequestAirflow**](PatchedWritableRackRequestAirflow.md) |  | [optional] 
+**Label** | Pointer to [**RackAirflowLabel**](RackAirflowLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *RackAirflow) GetValue() string`
+`func (o *RackAirflow) GetValue() PatchedWritableRackRequestAirflow`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *RackAirflow) GetValueOk() (*string, bool)`
+`func (o *RackAirflow) GetValueOk() (*PatchedWritableRackRequestAirflow, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *RackAirflow) SetValue(v string)`
+`func (o *RackAirflow) SetValue(v PatchedWritableRackRequestAirflow)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *RackAirflow) GetLabel() string`
+`func (o *RackAirflow) GetLabel() RackAirflowLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *RackAirflow) GetLabelOk() (*string, bool)`
+`func (o *RackAirflow) GetLabelOk() (*RackAirflowLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *RackAirflow) SetLabel(v string)`
+`func (o *RackAirflow) SetLabel(v RackAirflowLabel)`
 
 SetLabel sets Label field to given value.
 

@@ -19,10 +19,9 @@ var _ MappedNullable = &PatchedWritableCustomFieldRequest{}
 
 // PatchedWritableCustomFieldRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type PatchedWritableCustomFieldRequest struct {
-	ContentTypes []string `json:"content_types,omitempty"`
-	// The type of data this custom field holds  * `text` - Text * `longtext` - Text (long) * `integer` - Integer * `decimal` - Decimal * `boolean` - Boolean (true/false) * `date` - Date * `datetime` - Date & time * `url` - URL * `json` - JSON * `select` - Selection * `multiselect` - Multiple selection * `object` - Object * `multiobject` - Multiple objects
-	Type       *string `json:"type,omitempty"`
-	ObjectType *string `json:"object_type,omitempty"`
+	ContentTypes []string                               `json:"content_types,omitempty"`
+	Type         *PatchedWritableCustomFieldRequestType `json:"type,omitempty"`
+	ObjectType   *string                                `json:"object_type,omitempty"`
 	// Internal field name
 	Name *string `json:"name,omitempty" validate:"regexp=^[a-z0-9_]+$"`
 	// Name of the field as displayed to users (if not provided, 'the field's name will be used)
@@ -33,11 +32,9 @@ type PatchedWritableCustomFieldRequest struct {
 	// If true, this field is required when creating new objects or editing an existing object.
 	Required *bool `json:"required,omitempty"`
 	// Weighting for search. Lower values are considered more important. Fields with a search weight of zero will be ignored.
-	SearchWeight *int32 `json:"search_weight,omitempty"`
-	// Loose matches any instance of a given string; exact matches the entire field.  * `disabled` - Disabled * `loose` - Loose * `exact` - Exact
-	FilterLogic *string `json:"filter_logic,omitempty"`
-	// Specifies the visibility of custom field in the UI  * `read-write` - Read/write * `read-only` - Read-only * `hidden` - Hidden * `hidden-ifunset` - Hidden (if unset)
-	UiVisibility *string `json:"ui_visibility,omitempty"`
+	SearchWeight *int32                                         `json:"search_weight,omitempty"`
+	FilterLogic  *PatchedWritableCustomFieldRequestFilterLogic  `json:"filter_logic,omitempty"`
+	UiVisibility *PatchedWritableCustomFieldRequestUiVisibility `json:"ui_visibility,omitempty"`
 	// Replicate this value when cloning objects
 	IsCloneable *bool `json:"is_cloneable,omitempty"`
 	// Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. \"Foo\").
@@ -106,9 +103,9 @@ func (o *PatchedWritableCustomFieldRequest) SetContentTypes(v []string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *PatchedWritableCustomFieldRequest) GetType() string {
+func (o *PatchedWritableCustomFieldRequest) GetType() PatchedWritableCustomFieldRequestType {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret PatchedWritableCustomFieldRequestType
 		return ret
 	}
 	return *o.Type
@@ -116,7 +113,7 @@ func (o *PatchedWritableCustomFieldRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableCustomFieldRequest) GetTypeOk() (*string, bool) {
+func (o *PatchedWritableCustomFieldRequest) GetTypeOk() (*PatchedWritableCustomFieldRequestType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -132,8 +129,8 @@ func (o *PatchedWritableCustomFieldRequest) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *PatchedWritableCustomFieldRequest) SetType(v string) {
+// SetType gets a reference to the given PatchedWritableCustomFieldRequestType and assigns it to the Type field.
+func (o *PatchedWritableCustomFieldRequest) SetType(v PatchedWritableCustomFieldRequestType) {
 	o.Type = &v
 }
 
@@ -362,9 +359,9 @@ func (o *PatchedWritableCustomFieldRequest) SetSearchWeight(v int32) {
 }
 
 // GetFilterLogic returns the FilterLogic field value if set, zero value otherwise.
-func (o *PatchedWritableCustomFieldRequest) GetFilterLogic() string {
+func (o *PatchedWritableCustomFieldRequest) GetFilterLogic() PatchedWritableCustomFieldRequestFilterLogic {
 	if o == nil || IsNil(o.FilterLogic) {
-		var ret string
+		var ret PatchedWritableCustomFieldRequestFilterLogic
 		return ret
 	}
 	return *o.FilterLogic
@@ -372,7 +369,7 @@ func (o *PatchedWritableCustomFieldRequest) GetFilterLogic() string {
 
 // GetFilterLogicOk returns a tuple with the FilterLogic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableCustomFieldRequest) GetFilterLogicOk() (*string, bool) {
+func (o *PatchedWritableCustomFieldRequest) GetFilterLogicOk() (*PatchedWritableCustomFieldRequestFilterLogic, bool) {
 	if o == nil || IsNil(o.FilterLogic) {
 		return nil, false
 	}
@@ -388,15 +385,15 @@ func (o *PatchedWritableCustomFieldRequest) HasFilterLogic() bool {
 	return false
 }
 
-// SetFilterLogic gets a reference to the given string and assigns it to the FilterLogic field.
-func (o *PatchedWritableCustomFieldRequest) SetFilterLogic(v string) {
+// SetFilterLogic gets a reference to the given PatchedWritableCustomFieldRequestFilterLogic and assigns it to the FilterLogic field.
+func (o *PatchedWritableCustomFieldRequest) SetFilterLogic(v PatchedWritableCustomFieldRequestFilterLogic) {
 	o.FilterLogic = &v
 }
 
 // GetUiVisibility returns the UiVisibility field value if set, zero value otherwise.
-func (o *PatchedWritableCustomFieldRequest) GetUiVisibility() string {
+func (o *PatchedWritableCustomFieldRequest) GetUiVisibility() PatchedWritableCustomFieldRequestUiVisibility {
 	if o == nil || IsNil(o.UiVisibility) {
-		var ret string
+		var ret PatchedWritableCustomFieldRequestUiVisibility
 		return ret
 	}
 	return *o.UiVisibility
@@ -404,7 +401,7 @@ func (o *PatchedWritableCustomFieldRequest) GetUiVisibility() string {
 
 // GetUiVisibilityOk returns a tuple with the UiVisibility field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableCustomFieldRequest) GetUiVisibilityOk() (*string, bool) {
+func (o *PatchedWritableCustomFieldRequest) GetUiVisibilityOk() (*PatchedWritableCustomFieldRequestUiVisibility, bool) {
 	if o == nil || IsNil(o.UiVisibility) {
 		return nil, false
 	}
@@ -420,8 +417,8 @@ func (o *PatchedWritableCustomFieldRequest) HasUiVisibility() bool {
 	return false
 }
 
-// SetUiVisibility gets a reference to the given string and assigns it to the UiVisibility field.
-func (o *PatchedWritableCustomFieldRequest) SetUiVisibility(v string) {
+// SetUiVisibility gets a reference to the given PatchedWritableCustomFieldRequestUiVisibility and assigns it to the UiVisibility field.
+func (o *PatchedWritableCustomFieldRequest) SetUiVisibility(v PatchedWritableCustomFieldRequestUiVisibility) {
 	o.UiVisibility = &v
 }
 

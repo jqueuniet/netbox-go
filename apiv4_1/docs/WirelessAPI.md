@@ -2029,7 +2029,7 @@ func main() {
 	distanceLt := []float64{float64(123)} // []float64 |  (optional)
 	distanceLte := []float64{float64(123)} // []float64 |  (optional)
 	distanceN := []float64{float64(123)} // []float64 |  (optional)
-	distanceUnit := "distanceUnit_example" // string | * `km` - Kilometers * `m` - Meters * `mi` - Miles * `ft` - Feet (optional)
+	distanceUnit := openapiclient.wireless_wireless_links_list_distance_unit_parameter("ft") // WirelessWirelessLinksListDistanceUnitParameter | * `km` - Kilometers * `m` - Meters * `mi` - Miles * `ft` - Feet (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -2169,7 +2169,7 @@ Name | Type | Description  | Notes
  **distanceLt** | **[]float64** |  | 
  **distanceLte** | **[]float64** |  | 
  **distanceN** | **[]float64** |  | 
- **distanceUnit** | **string** | * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet | 
+ **distanceUnit** | [**WirelessWirelessLinksListDistanceUnitParameter**](WirelessWirelessLinksListDistanceUnitParameter.md) | * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 

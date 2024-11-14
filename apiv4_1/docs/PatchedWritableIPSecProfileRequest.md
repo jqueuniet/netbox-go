@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Mode** | Pointer to **string** | * &#x60;esp&#x60; - ESP * &#x60;ah&#x60; - AH | [optional] 
+**Mode** | Pointer to [**IPSecProfileModeValue**](IPSecProfileModeValue.md) |  | [optional] 
 **IkePolicy** | Pointer to [**BriefIKEPolicyRequest**](BriefIKEPolicyRequest.md) |  | [optional] 
 **IpsecPolicy** | Pointer to [**BriefIPSecPolicyRequest**](BriefIPSecPolicyRequest.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -84,20 +84,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetMode
 
-`func (o *PatchedWritableIPSecProfileRequest) GetMode() string`
+`func (o *PatchedWritableIPSecProfileRequest) GetMode() IPSecProfileModeValue`
 
 GetMode returns the Mode field if non-nil, zero value otherwise.
 
 ### GetModeOk
 
-`func (o *PatchedWritableIPSecProfileRequest) GetModeOk() (*string, bool)`
+`func (o *PatchedWritableIPSecProfileRequest) GetModeOk() (*IPSecProfileModeValue, bool)`
 
 GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMode
 
-`func (o *PatchedWritableIPSecProfileRequest) SetMode(v string)`
+`func (o *PatchedWritableIPSecProfileRequest) SetMode(v IPSecProfileModeValue)`
 
 SetMode sets Mode field to given value.
 

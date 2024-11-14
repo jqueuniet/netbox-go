@@ -19,9 +19,8 @@ var _ MappedNullable = &DeviceFace{}
 
 // DeviceFace struct for DeviceFace
 type DeviceFace struct {
-	// * `front` - Front * `rear` - Rear
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *DeviceFaceValue `json:"value,omitempty"`
+	Label                *DeviceFaceLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewDeviceFaceWithDefaults() *DeviceFace {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *DeviceFace) GetValue() string {
+func (o *DeviceFace) GetValue() DeviceFaceValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret DeviceFaceValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *DeviceFace) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceFace) GetValueOk() (*string, bool) {
+func (o *DeviceFace) GetValueOk() (*DeviceFaceValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *DeviceFace) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *DeviceFace) SetValue(v string) {
+// SetValue gets a reference to the given DeviceFaceValue and assigns it to the Value field.
+func (o *DeviceFace) SetValue(v DeviceFaceValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *DeviceFace) GetLabel() string {
+func (o *DeviceFace) GetLabel() DeviceFaceLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DeviceFaceLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *DeviceFace) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceFace) GetLabelOk() (*string, bool) {
+func (o *DeviceFace) GetLabelOk() (*DeviceFaceLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *DeviceFace) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *DeviceFace) SetLabel(v string) {
+// SetLabel gets a reference to the given DeviceFaceLabel and assigns it to the Label field.
+func (o *DeviceFace) SetLabel(v DeviceFaceLabel) {
 	o.Label = &v
 }
 

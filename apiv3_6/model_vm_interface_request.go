@@ -20,21 +20,20 @@ var _ MappedNullable = &VMInterfaceRequest{}
 
 // VMInterfaceRequest Adds support for custom fields and tags.
 type VMInterfaceRequest struct {
-	VirtualMachine NestedVirtualMachineRequest      `json:"virtual_machine"`
-	Name           string                           `json:"name"`
-	Enabled        *bool                            `json:"enabled,omitempty"`
-	Parent         NullableNestedVMInterfaceRequest `json:"parent,omitempty"`
-	Bridge         NullableNestedVMInterfaceRequest `json:"bridge,omitempty"`
-	Mtu            NullableInt32                    `json:"mtu,omitempty"`
-	MacAddress     NullableString                   `json:"mac_address,omitempty"`
-	Description    *string                          `json:"description,omitempty"`
-	// * `access` - Access * `tagged` - Tagged * `tagged-all` - Tagged (All)
-	Mode                 *string                   `json:"mode,omitempty"`
-	UntaggedVlan         NullableNestedVLANRequest `json:"untagged_vlan,omitempty"`
-	TaggedVlans          []int32                   `json:"tagged_vlans,omitempty"`
-	Vrf                  NullableNestedVRFRequest  `json:"vrf,omitempty"`
-	Tags                 []NestedTagRequest        `json:"tags,omitempty"`
-	CustomFields         map[string]interface{}    `json:"custom_fields,omitempty"`
+	VirtualMachine       NestedVirtualMachineRequest      `json:"virtual_machine"`
+	Name                 string                           `json:"name"`
+	Enabled              *bool                            `json:"enabled,omitempty"`
+	Parent               NullableNestedVMInterfaceRequest `json:"parent,omitempty"`
+	Bridge               NullableNestedVMInterfaceRequest `json:"bridge,omitempty"`
+	Mtu                  NullableInt32                    `json:"mtu,omitempty"`
+	MacAddress           NullableString                   `json:"mac_address,omitempty"`
+	Description          *string                          `json:"description,omitempty"`
+	Mode                 *InterfaceModeValue              `json:"mode,omitempty"`
+	UntaggedVlan         NullableNestedVLANRequest        `json:"untagged_vlan,omitempty"`
+	TaggedVlans          []int32                          `json:"tagged_vlans,omitempty"`
+	Vrf                  NullableNestedVRFRequest         `json:"vrf,omitempty"`
+	Tags                 []NestedTagRequest               `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}           `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -344,9 +343,9 @@ func (o *VMInterfaceRequest) SetDescription(v string) {
 }
 
 // GetMode returns the Mode field value if set, zero value otherwise.
-func (o *VMInterfaceRequest) GetMode() string {
+func (o *VMInterfaceRequest) GetMode() InterfaceModeValue {
 	if o == nil || IsNil(o.Mode) {
-		var ret string
+		var ret InterfaceModeValue
 		return ret
 	}
 	return *o.Mode
@@ -354,7 +353,7 @@ func (o *VMInterfaceRequest) GetMode() string {
 
 // GetModeOk returns a tuple with the Mode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VMInterfaceRequest) GetModeOk() (*string, bool) {
+func (o *VMInterfaceRequest) GetModeOk() (*InterfaceModeValue, bool) {
 	if o == nil || IsNil(o.Mode) {
 		return nil, false
 	}
@@ -370,8 +369,8 @@ func (o *VMInterfaceRequest) HasMode() bool {
 	return false
 }
 
-// SetMode gets a reference to the given string and assigns it to the Mode field.
-func (o *VMInterfaceRequest) SetMode(v string) {
+// SetMode gets a reference to the given InterfaceModeValue and assigns it to the Mode field.
+func (o *VMInterfaceRequest) SetMode(v InterfaceModeValue) {
 	o.Mode = &v
 }
 

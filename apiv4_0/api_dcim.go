@@ -6043,8 +6043,8 @@ type ApiDcimCableTerminationsListRequest struct {
 	ApiService         DcimAPI
 	cable              *int32
 	cableN             *int32
-	cableEnd           *string
-	cableEndN          *string
+	cableEnd           *End
+	cableEndN          *End
 	created            *[]time.Time
 	createdEmpty       *[]time.Time
 	createdGt          *[]time.Time
@@ -6094,13 +6094,13 @@ func (r ApiDcimCableTerminationsListRequest) CableN(cableN int32) ApiDcimCableTe
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimCableTerminationsListRequest) CableEnd(cableEnd string) ApiDcimCableTerminationsListRequest {
+func (r ApiDcimCableTerminationsListRequest) CableEnd(cableEnd End) ApiDcimCableTerminationsListRequest {
 	r.cableEnd = &cableEnd
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimCableTerminationsListRequest) CableEndN(cableEndN string) ApiDcimCableTerminationsListRequest {
+func (r ApiDcimCableTerminationsListRequest) CableEndN(cableEndN End) ApiDcimCableTerminationsListRequest {
 	r.cableEndN = &cableEndN
 	return r
 }
@@ -7752,8 +7752,8 @@ type ApiDcimCablesListRequest struct {
 	lengthLt             *[]float64
 	lengthLte            *[]float64
 	lengthN              *[]float64
-	lengthUnit           *string
-	lengthUnitN          *string
+	lengthUnit           *DcimCablesListLengthUnitParameter
+	lengthUnitN          *DcimCablesListLengthUnitParameter
 	limit                *int32
 	location             *[]string
 	locationId           *[]int32
@@ -8094,13 +8094,13 @@ func (r ApiDcimCablesListRequest) LengthN(lengthN []float64) ApiDcimCablesListRe
 }
 
 // * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;cm&#x60; - Centimeters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet * &#x60;in&#x60; - Inches
-func (r ApiDcimCablesListRequest) LengthUnit(lengthUnit string) ApiDcimCablesListRequest {
+func (r ApiDcimCablesListRequest) LengthUnit(lengthUnit DcimCablesListLengthUnitParameter) ApiDcimCablesListRequest {
 	r.lengthUnit = &lengthUnit
 	return r
 }
 
 // * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;cm&#x60; - Centimeters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet * &#x60;in&#x60; - Inches
-func (r ApiDcimCablesListRequest) LengthUnitN(lengthUnitN string) ApiDcimCablesListRequest {
+func (r ApiDcimCablesListRequest) LengthUnitN(lengthUnitN DcimCablesListLengthUnitParameter) ApiDcimCablesListRequest {
 	r.lengthUnitN = &lengthUnitN
 	return r
 }
@@ -10529,8 +10529,8 @@ type ApiDcimConsolePortTemplatesListRequest struct {
 	offset            *int32
 	ordering          *string
 	q                 *string
-	type_             *string
-	typeN             *string
+	type_             *DcimConsolePortTemplatesListTypeParameter
+	typeN             *DcimConsolePortTemplatesListTypeParameter
 	updatedByRequest  *string
 }
 
@@ -10887,13 +10887,13 @@ func (r ApiDcimConsolePortTemplatesListRequest) Q(q string) ApiDcimConsolePortTe
 }
 
 // * &#x60;Serial&#x60; - [(&#39;de-9&#39;, &#39;DE-9&#39;), (&#39;db-25&#39;, &#39;DB-25&#39;), (&#39;rj-11&#39;, &#39;RJ-11&#39;), (&#39;rj-12&#39;, &#39;RJ-12&#39;), (&#39;rj-45&#39;, &#39;RJ-45&#39;), (&#39;mini-din-8&#39;, &#39;Mini-DIN 8&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;)] * &#x60;Other&#x60; - [(&#39;other&#39;, &#39;Other&#39;)]
-func (r ApiDcimConsolePortTemplatesListRequest) Type_(type_ string) ApiDcimConsolePortTemplatesListRequest {
+func (r ApiDcimConsolePortTemplatesListRequest) Type_(type_ DcimConsolePortTemplatesListTypeParameter) ApiDcimConsolePortTemplatesListRequest {
 	r.type_ = &type_
 	return r
 }
 
 // * &#x60;Serial&#x60; - [(&#39;de-9&#39;, &#39;DE-9&#39;), (&#39;db-25&#39;, &#39;DB-25&#39;), (&#39;rj-11&#39;, &#39;RJ-11&#39;), (&#39;rj-12&#39;, &#39;RJ-12&#39;), (&#39;rj-45&#39;, &#39;RJ-45&#39;), (&#39;mini-din-8&#39;, &#39;Mini-DIN 8&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;)] * &#x60;Other&#x60; - [(&#39;other&#39;, &#39;Other&#39;)]
-func (r ApiDcimConsolePortTemplatesListRequest) TypeN(typeN string) ApiDcimConsolePortTemplatesListRequest {
+func (r ApiDcimConsolePortTemplatesListRequest) TypeN(typeN DcimConsolePortTemplatesListTypeParameter) ApiDcimConsolePortTemplatesListRequest {
 	r.typeN = &typeN
 	return r
 }
@@ -12659,8 +12659,8 @@ func (a *DcimAPIService) DcimConsolePortsDestroyExecute(r ApiDcimConsolePortsDes
 type ApiDcimConsolePortsListRequest struct {
 	ctx               context.Context
 	ApiService        DcimAPI
-	cableEnd          *string
-	cableEndN         *string
+	cableEnd          *CircuitsCircuitTerminationsListCableEndParameter
+	cableEndN         *CircuitsCircuitTerminationsListCableEndParameter
 	cableId           *[]*int32
 	cableIdN          *[]*int32
 	cabled            *bool
@@ -12763,8 +12763,8 @@ type ApiDcimConsolePortsListRequest struct {
 	siteGroupIdN      *[]string
 	siteId            *[]int32
 	siteIdN           *[]int32
-	speed             *int32
-	speedN            *int32
+	speed             *DcimConsolePortsListSpeedParameter
+	speedN            *DcimConsolePortsListSpeedParameter
 	tag               *[]string
 	tagN              *[]string
 	type_             *[]string
@@ -12777,13 +12777,13 @@ type ApiDcimConsolePortsListRequest struct {
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimConsolePortsListRequest) CableEnd(cableEnd string) ApiDcimConsolePortsListRequest {
+func (r ApiDcimConsolePortsListRequest) CableEnd(cableEnd CircuitsCircuitTerminationsListCableEndParameter) ApiDcimConsolePortsListRequest {
 	r.cableEnd = &cableEnd
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimConsolePortsListRequest) CableEndN(cableEndN string) ApiDcimConsolePortsListRequest {
+func (r ApiDcimConsolePortsListRequest) CableEndN(cableEndN CircuitsCircuitTerminationsListCableEndParameter) ApiDcimConsolePortsListRequest {
 	r.cableEndN = &cableEndN
 	return r
 }
@@ -13331,13 +13331,13 @@ func (r ApiDcimConsolePortsListRequest) SiteIdN(siteIdN []int32) ApiDcimConsoleP
 }
 
 // Port speed in bits per second  * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps
-func (r ApiDcimConsolePortsListRequest) Speed(speed int32) ApiDcimConsolePortsListRequest {
+func (r ApiDcimConsolePortsListRequest) Speed(speed DcimConsolePortsListSpeedParameter) ApiDcimConsolePortsListRequest {
 	r.speed = &speed
 	return r
 }
 
 // Port speed in bits per second  * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps
-func (r ApiDcimConsolePortsListRequest) SpeedN(speedN int32) ApiDcimConsolePortsListRequest {
+func (r ApiDcimConsolePortsListRequest) SpeedN(speedN DcimConsolePortsListSpeedParameter) ApiDcimConsolePortsListRequest {
 	r.speedN = &speedN
 	return r
 }
@@ -15771,8 +15771,8 @@ type ApiDcimConsoleServerPortTemplatesListRequest struct {
 	offset            *int32
 	ordering          *string
 	q                 *string
-	type_             *string
-	typeN             *string
+	type_             *DcimConsolePortTemplatesListTypeParameter
+	typeN             *DcimConsolePortTemplatesListTypeParameter
 	updatedByRequest  *string
 }
 
@@ -16129,13 +16129,13 @@ func (r ApiDcimConsoleServerPortTemplatesListRequest) Q(q string) ApiDcimConsole
 }
 
 // * &#x60;Serial&#x60; - [(&#39;de-9&#39;, &#39;DE-9&#39;), (&#39;db-25&#39;, &#39;DB-25&#39;), (&#39;rj-11&#39;, &#39;RJ-11&#39;), (&#39;rj-12&#39;, &#39;RJ-12&#39;), (&#39;rj-45&#39;, &#39;RJ-45&#39;), (&#39;mini-din-8&#39;, &#39;Mini-DIN 8&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;)] * &#x60;Other&#x60; - [(&#39;other&#39;, &#39;Other&#39;)]
-func (r ApiDcimConsoleServerPortTemplatesListRequest) Type_(type_ string) ApiDcimConsoleServerPortTemplatesListRequest {
+func (r ApiDcimConsoleServerPortTemplatesListRequest) Type_(type_ DcimConsolePortTemplatesListTypeParameter) ApiDcimConsoleServerPortTemplatesListRequest {
 	r.type_ = &type_
 	return r
 }
 
 // * &#x60;Serial&#x60; - [(&#39;de-9&#39;, &#39;DE-9&#39;), (&#39;db-25&#39;, &#39;DB-25&#39;), (&#39;rj-11&#39;, &#39;RJ-11&#39;), (&#39;rj-12&#39;, &#39;RJ-12&#39;), (&#39;rj-45&#39;, &#39;RJ-45&#39;), (&#39;mini-din-8&#39;, &#39;Mini-DIN 8&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;)] * &#x60;Other&#x60; - [(&#39;other&#39;, &#39;Other&#39;)]
-func (r ApiDcimConsoleServerPortTemplatesListRequest) TypeN(typeN string) ApiDcimConsoleServerPortTemplatesListRequest {
+func (r ApiDcimConsoleServerPortTemplatesListRequest) TypeN(typeN DcimConsolePortTemplatesListTypeParameter) ApiDcimConsoleServerPortTemplatesListRequest {
 	r.typeN = &typeN
 	return r
 }
@@ -17901,8 +17901,8 @@ func (a *DcimAPIService) DcimConsoleServerPortsDestroyExecute(r ApiDcimConsoleSe
 type ApiDcimConsoleServerPortsListRequest struct {
 	ctx               context.Context
 	ApiService        DcimAPI
-	cableEnd          *string
-	cableEndN         *string
+	cableEnd          *CircuitsCircuitTerminationsListCableEndParameter
+	cableEndN         *CircuitsCircuitTerminationsListCableEndParameter
 	cableId           *[]*int32
 	cableIdN          *[]*int32
 	cabled            *bool
@@ -18005,8 +18005,8 @@ type ApiDcimConsoleServerPortsListRequest struct {
 	siteGroupIdN      *[]string
 	siteId            *[]int32
 	siteIdN           *[]int32
-	speed             *int32
-	speedN            *int32
+	speed             *DcimConsolePortsListSpeedParameter
+	speedN            *DcimConsolePortsListSpeedParameter
 	tag               *[]string
 	tagN              *[]string
 	type_             *[]string
@@ -18019,13 +18019,13 @@ type ApiDcimConsoleServerPortsListRequest struct {
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimConsoleServerPortsListRequest) CableEnd(cableEnd string) ApiDcimConsoleServerPortsListRequest {
+func (r ApiDcimConsoleServerPortsListRequest) CableEnd(cableEnd CircuitsCircuitTerminationsListCableEndParameter) ApiDcimConsoleServerPortsListRequest {
 	r.cableEnd = &cableEnd
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimConsoleServerPortsListRequest) CableEndN(cableEndN string) ApiDcimConsoleServerPortsListRequest {
+func (r ApiDcimConsoleServerPortsListRequest) CableEndN(cableEndN CircuitsCircuitTerminationsListCableEndParameter) ApiDcimConsoleServerPortsListRequest {
 	r.cableEndN = &cableEndN
 	return r
 }
@@ -18573,13 +18573,13 @@ func (r ApiDcimConsoleServerPortsListRequest) SiteIdN(siteIdN []int32) ApiDcimCo
 }
 
 // Port speed in bits per second  * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps
-func (r ApiDcimConsoleServerPortsListRequest) Speed(speed int32) ApiDcimConsoleServerPortsListRequest {
+func (r ApiDcimConsoleServerPortsListRequest) Speed(speed DcimConsolePortsListSpeedParameter) ApiDcimConsoleServerPortsListRequest {
 	r.speed = &speed
 	return r
 }
 
 // Port speed in bits per second  * &#x60;1200&#x60; - 1200 bps * &#x60;2400&#x60; - 2400 bps * &#x60;4800&#x60; - 4800 bps * &#x60;9600&#x60; - 9600 bps * &#x60;19200&#x60; - 19.2 kbps * &#x60;38400&#x60; - 38.4 kbps * &#x60;57600&#x60; - 57.6 kbps * &#x60;115200&#x60; - 115.2 kbps
-func (r ApiDcimConsoleServerPortsListRequest) SpeedN(speedN int32) ApiDcimConsoleServerPortsListRequest {
+func (r ApiDcimConsoleServerPortsListRequest) SpeedN(speedN DcimConsolePortsListSpeedParameter) ApiDcimConsoleServerPortsListRequest {
 	r.speedN = &speedN
 	return r
 }
@@ -28157,8 +28157,8 @@ func (a *DcimAPIService) DcimDeviceTypesDestroyExecute(r ApiDcimDeviceTypesDestr
 type ApiDcimDeviceTypesListRequest struct {
 	ctx                                 context.Context
 	ApiService                          DcimAPI
-	airflow                             *string
-	airflowN                            *string
+	airflow                             *DcimDeviceTypesListAirflowParameter
+	airflowN                            *DcimDeviceTypesListAirflowParameter
 	consolePortTemplateCount            *[]int32
 	consolePortTemplateCountEmpty       *bool
 	consolePortTemplateCountGt          *[]int32
@@ -28321,8 +28321,8 @@ type ApiDcimDeviceTypesListRequest struct {
 	slugNie                             *[]string
 	slugNiew                            *[]string
 	slugNisw                            *[]string
-	subdeviceRole                       *string
-	subdeviceRoleN                      *string
+	subdeviceRole                       *ParentChildStatus
+	subdeviceRoleN                      *ParentChildStatus
 	tag                                 *[]string
 	tagN                                *[]string
 	uHeight                             *[]float64
@@ -28340,18 +28340,18 @@ type ApiDcimDeviceTypesListRequest struct {
 	weightLt                            *[]float64
 	weightLte                           *[]float64
 	weightN                             *[]float64
-	weightUnit                          *string
-	weightUnitN                         *string
+	weightUnit                          *DcimDeviceTypesListWeightUnitParameter
+	weightUnitN                         *DcimDeviceTypesListWeightUnitParameter
 }
 
 // * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed
-func (r ApiDcimDeviceTypesListRequest) Airflow(airflow string) ApiDcimDeviceTypesListRequest {
+func (r ApiDcimDeviceTypesListRequest) Airflow(airflow DcimDeviceTypesListAirflowParameter) ApiDcimDeviceTypesListRequest {
 	r.airflow = &airflow
 	return r
 }
 
 // * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed
-func (r ApiDcimDeviceTypesListRequest) AirflowN(airflowN string) ApiDcimDeviceTypesListRequest {
+func (r ApiDcimDeviceTypesListRequest) AirflowN(airflowN DcimDeviceTypesListAirflowParameter) ApiDcimDeviceTypesListRequest {
 	r.airflowN = &airflowN
 	return r
 }
@@ -29190,13 +29190,13 @@ func (r ApiDcimDeviceTypesListRequest) SlugNisw(slugNisw []string) ApiDcimDevice
 }
 
 // Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child.  * &#x60;parent&#x60; - Parent * &#x60;child&#x60; - Child
-func (r ApiDcimDeviceTypesListRequest) SubdeviceRole(subdeviceRole string) ApiDcimDeviceTypesListRequest {
+func (r ApiDcimDeviceTypesListRequest) SubdeviceRole(subdeviceRole ParentChildStatus) ApiDcimDeviceTypesListRequest {
 	r.subdeviceRole = &subdeviceRole
 	return r
 }
 
 // Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child.  * &#x60;parent&#x60; - Parent * &#x60;child&#x60; - Child
-func (r ApiDcimDeviceTypesListRequest) SubdeviceRoleN(subdeviceRoleN string) ApiDcimDeviceTypesListRequest {
+func (r ApiDcimDeviceTypesListRequest) SubdeviceRoleN(subdeviceRoleN ParentChildStatus) ApiDcimDeviceTypesListRequest {
 	r.subdeviceRoleN = &subdeviceRoleN
 	return r
 }
@@ -29287,13 +29287,13 @@ func (r ApiDcimDeviceTypesListRequest) WeightN(weightN []float64) ApiDcimDeviceT
 }
 
 // * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces
-func (r ApiDcimDeviceTypesListRequest) WeightUnit(weightUnit string) ApiDcimDeviceTypesListRequest {
+func (r ApiDcimDeviceTypesListRequest) WeightUnit(weightUnit DcimDeviceTypesListWeightUnitParameter) ApiDcimDeviceTypesListRequest {
 	r.weightUnit = &weightUnit
 	return r
 }
 
 // * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces
-func (r ApiDcimDeviceTypesListRequest) WeightUnitN(weightUnitN string) ApiDcimDeviceTypesListRequest {
+func (r ApiDcimDeviceTypesListRequest) WeightUnitN(weightUnitN DcimDeviceTypesListWeightUnitParameter) ApiDcimDeviceTypesListRequest {
 	r.weightUnitN = &weightUnitN
 	return r
 }
@@ -32068,8 +32068,8 @@ func (a *DcimAPIService) DcimDevicesDestroyExecute(r ApiDcimDevicesDestroyReques
 type ApiDcimDevicesListRequest struct {
 	ctx                         context.Context
 	ApiService                  DcimAPI
-	airflow                     *string
-	airflowN                    *string
+	airflow                     *DcimDeviceTypesListAirflowParameter
+	airflowN                    *DcimDeviceTypesListAirflowParameter
 	assetTag                    *[]string
 	assetTagEmpty               *bool
 	assetTagIc                  *[]string
@@ -32142,8 +32142,8 @@ type ApiDcimDevicesListRequest struct {
 	deviceTypeN                 *[]string
 	deviceTypeId                *[]int32
 	deviceTypeIdN               *[]int32
-	face                        *string
-	faceN                       *string
+	face                        *RackFace
+	faceN                       *RackFace
 	frontPortCount              *[]int32
 	frontPortCountEmpty         *bool
 	frontPortCountGt            *[]int32
@@ -32348,13 +32348,13 @@ type ApiDcimDevicesListRequest struct {
 }
 
 // * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed
-func (r ApiDcimDevicesListRequest) Airflow(airflow string) ApiDcimDevicesListRequest {
+func (r ApiDcimDevicesListRequest) Airflow(airflow DcimDeviceTypesListAirflowParameter) ApiDcimDevicesListRequest {
 	r.airflow = &airflow
 	return r
 }
 
 // * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed
-func (r ApiDcimDevicesListRequest) AirflowN(airflowN string) ApiDcimDevicesListRequest {
+func (r ApiDcimDevicesListRequest) AirflowN(airflowN DcimDeviceTypesListAirflowParameter) ApiDcimDevicesListRequest {
 	r.airflowN = &airflowN
 	return r
 }
@@ -32739,13 +32739,13 @@ func (r ApiDcimDevicesListRequest) DeviceTypeIdN(deviceTypeIdN []int32) ApiDcimD
 }
 
 // * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear
-func (r ApiDcimDevicesListRequest) Face(face string) ApiDcimDevicesListRequest {
+func (r ApiDcimDevicesListRequest) Face(face RackFace) ApiDcimDevicesListRequest {
 	r.face = &face
 	return r
 }
 
 // * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear
-func (r ApiDcimDevicesListRequest) FaceN(faceN string) ApiDcimDevicesListRequest {
+func (r ApiDcimDevicesListRequest) FaceN(faceN RackFace) ApiDcimDevicesListRequest {
 	r.faceN = &faceN
 	return r
 }
@@ -36733,7 +36733,7 @@ type ApiDcimDevicesRenderConfigCreateRequest struct {
 	ApiService                             DcimAPI
 	id                                     int32
 	writableDeviceWithConfigContextRequest *WritableDeviceWithConfigContextRequest
-	format                                 *string
+	format                                 *DcimDevicesRenderConfigCreateFormatParameter
 }
 
 func (r ApiDcimDevicesRenderConfigCreateRequest) WritableDeviceWithConfigContextRequest(writableDeviceWithConfigContextRequest WritableDeviceWithConfigContextRequest) ApiDcimDevicesRenderConfigCreateRequest {
@@ -36741,7 +36741,7 @@ func (r ApiDcimDevicesRenderConfigCreateRequest) WritableDeviceWithConfigContext
 	return r
 }
 
-func (r ApiDcimDevicesRenderConfigCreateRequest) Format(format string) ApiDcimDevicesRenderConfigCreateRequest {
+func (r ApiDcimDevicesRenderConfigCreateRequest) Format(format DcimDevicesRenderConfigCreateFormatParameter) ApiDcimDevicesRenderConfigCreateRequest {
 	r.format = &format
 	return r
 }
@@ -40246,8 +40246,8 @@ func (a *DcimAPIService) DcimFrontPortsDestroyExecute(r ApiDcimFrontPortsDestroy
 type ApiDcimFrontPortsListRequest struct {
 	ctx                   context.Context
 	ApiService            DcimAPI
-	cableEnd              *string
-	cableEndN             *string
+	cableEnd              *CircuitsCircuitTerminationsListCableEndParameter
+	cableEndN             *CircuitsCircuitTerminationsListCableEndParameter
 	cableId               *[]*int32
 	cableIdN              *[]*int32
 	cabled                *bool
@@ -40381,13 +40381,13 @@ type ApiDcimFrontPortsListRequest struct {
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimFrontPortsListRequest) CableEnd(cableEnd string) ApiDcimFrontPortsListRequest {
+func (r ApiDcimFrontPortsListRequest) CableEnd(cableEnd CircuitsCircuitTerminationsListCableEndParameter) ApiDcimFrontPortsListRequest {
 	r.cableEnd = &cableEnd
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimFrontPortsListRequest) CableEndN(cableEndN string) ApiDcimFrontPortsListRequest {
+func (r ApiDcimFrontPortsListRequest) CableEndN(cableEndN CircuitsCircuitTerminationsListCableEndParameter) ApiDcimFrontPortsListRequest {
 	r.cableEndN = &cableEndN
 	return r
 }
@@ -45951,8 +45951,8 @@ type ApiDcimInterfacesListRequest struct {
 	ApiService              DcimAPI
 	bridgeId                *[]int32
 	bridgeIdN               *[]int32
-	cableEnd                *string
-	cableEndN               *string
+	cableEnd                *CircuitsCircuitTerminationsListCableEndParameter
+	cableEndN               *CircuitsCircuitTerminationsListCableEndParameter
 	cableId                 *[]*int32
 	cableIdN                *[]*int32
 	cabled                  *bool
@@ -46042,8 +46042,8 @@ type ApiDcimInterfacesListRequest struct {
 	macAddressNisw          *[]string
 	markConnected           *bool
 	mgmtOnly                *bool
-	mode                    *string
-	modeN                   *string
+	mode                    *DcimInterfacesListModeParameter
+	modeN                   *DcimInterfacesListModeParameter
 	modifiedByRequest       *string
 	moduleId                *[]*int32
 	moduleIdN               *[]*int32
@@ -46175,13 +46175,13 @@ func (r ApiDcimInterfacesListRequest) BridgeIdN(bridgeIdN []int32) ApiDcimInterf
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimInterfacesListRequest) CableEnd(cableEnd string) ApiDcimInterfacesListRequest {
+func (r ApiDcimInterfacesListRequest) CableEnd(cableEnd CircuitsCircuitTerminationsListCableEndParameter) ApiDcimInterfacesListRequest {
 	r.cableEnd = &cableEnd
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimInterfacesListRequest) CableEndN(cableEndN string) ApiDcimInterfacesListRequest {
+func (r ApiDcimInterfacesListRequest) CableEndN(cableEndN CircuitsCircuitTerminationsListCableEndParameter) ApiDcimInterfacesListRequest {
 	r.cableEndN = &cableEndN
 	return r
 }
@@ -46658,13 +46658,13 @@ func (r ApiDcimInterfacesListRequest) MgmtOnly(mgmtOnly bool) ApiDcimInterfacesL
 }
 
 // IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All)
-func (r ApiDcimInterfacesListRequest) Mode(mode string) ApiDcimInterfacesListRequest {
+func (r ApiDcimInterfacesListRequest) Mode(mode DcimInterfacesListModeParameter) ApiDcimInterfacesListRequest {
 	r.mode = &mode
 	return r
 }
 
 // IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All)
-func (r ApiDcimInterfacesListRequest) ModeN(modeN string) ApiDcimInterfacesListRequest {
+func (r ApiDcimInterfacesListRequest) ModeN(modeN DcimInterfacesListModeParameter) ApiDcimInterfacesListRequest {
 	r.modeN = &modeN
 	return r
 }
@@ -69403,8 +69403,8 @@ type ApiDcimModuleTypesListRequest struct {
 	weightLt           *[]float64
 	weightLte          *[]float64
 	weightN            *[]float64
-	weightUnit         *string
-	weightUnitN        *string
+	weightUnit         *DcimDeviceTypesListWeightUnitParameter
+	weightUnitN        *DcimDeviceTypesListWeightUnitParameter
 }
 
 // Has console ports
@@ -69822,13 +69822,13 @@ func (r ApiDcimModuleTypesListRequest) WeightN(weightN []float64) ApiDcimModuleT
 }
 
 // * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces
-func (r ApiDcimModuleTypesListRequest) WeightUnit(weightUnit string) ApiDcimModuleTypesListRequest {
+func (r ApiDcimModuleTypesListRequest) WeightUnit(weightUnit DcimDeviceTypesListWeightUnitParameter) ApiDcimModuleTypesListRequest {
 	r.weightUnit = &weightUnit
 	return r
 }
 
 // * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces
-func (r ApiDcimModuleTypesListRequest) WeightUnitN(weightUnitN string) ApiDcimModuleTypesListRequest {
+func (r ApiDcimModuleTypesListRequest) WeightUnitN(weightUnitN DcimDeviceTypesListWeightUnitParameter) ApiDcimModuleTypesListRequest {
 	r.weightUnitN = &weightUnitN
 	return r
 }
@@ -76171,8 +76171,8 @@ type ApiDcimPowerFeedsListRequest struct {
 	availablePowerLt    *[]int32
 	availablePowerLte   *[]int32
 	availablePowerN     *[]int32
-	cableEnd            *string
-	cableEndN           *string
+	cableEnd            *CircuitsCircuitTerminationsListCableEndParameter
+	cableEndN           *CircuitsCircuitTerminationsListCableEndParameter
 	cableId             *[]*int32
 	cableIdN            *[]*int32
 	cabled              *bool
@@ -76234,8 +76234,8 @@ type ApiDcimPowerFeedsListRequest struct {
 	occupied            *bool
 	offset              *int32
 	ordering            *string
-	phase               *string
-	phaseN              *string
+	phase               *DcimPowerFeedsListPhaseParameter
+	phaseN              *DcimPowerFeedsListPhaseParameter
 	powerPanelId        *[]int32
 	powerPanelIdN       *[]int32
 	q                   *string
@@ -76255,8 +76255,8 @@ type ApiDcimPowerFeedsListRequest struct {
 	siteIdN             *[]int32
 	status              *[]string
 	statusN             *[]string
-	supply              *string
-	supplyN             *string
+	supply              *DcimPowerFeedsListSupplyParameter
+	supplyN             *DcimPowerFeedsListSupplyParameter
 	tag                 *[]string
 	tagN                *[]string
 	tenant              *[]string
@@ -76267,8 +76267,8 @@ type ApiDcimPowerFeedsListRequest struct {
 	tenantGroupIdN      *[]string
 	tenantId            *[]*int32
 	tenantIdN           *[]*int32
-	type_               *string
-	typeN               *string
+	type_               *DcimPowerFeedsListTypeParameter
+	typeN               *DcimPowerFeedsListTypeParameter
 	updatedByRequest    *string
 	voltage             *[]int32
 	voltageEmpty        *bool
@@ -76350,13 +76350,13 @@ func (r ApiDcimPowerFeedsListRequest) AvailablePowerN(availablePowerN []int32) A
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimPowerFeedsListRequest) CableEnd(cableEnd string) ApiDcimPowerFeedsListRequest {
+func (r ApiDcimPowerFeedsListRequest) CableEnd(cableEnd CircuitsCircuitTerminationsListCableEndParameter) ApiDcimPowerFeedsListRequest {
 	r.cableEnd = &cableEnd
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimPowerFeedsListRequest) CableEndN(cableEndN string) ApiDcimPowerFeedsListRequest {
+func (r ApiDcimPowerFeedsListRequest) CableEndN(cableEndN CircuitsCircuitTerminationsListCableEndParameter) ApiDcimPowerFeedsListRequest {
 	r.cableEndN = &cableEndN
 	return r
 }
@@ -76672,13 +76672,13 @@ func (r ApiDcimPowerFeedsListRequest) Ordering(ordering string) ApiDcimPowerFeed
 }
 
 // * &#x60;single-phase&#x60; - Single phase * &#x60;three-phase&#x60; - Three-phase
-func (r ApiDcimPowerFeedsListRequest) Phase(phase string) ApiDcimPowerFeedsListRequest {
+func (r ApiDcimPowerFeedsListRequest) Phase(phase DcimPowerFeedsListPhaseParameter) ApiDcimPowerFeedsListRequest {
 	r.phase = &phase
 	return r
 }
 
 // * &#x60;single-phase&#x60; - Single phase * &#x60;three-phase&#x60; - Three-phase
-func (r ApiDcimPowerFeedsListRequest) PhaseN(phaseN string) ApiDcimPowerFeedsListRequest {
+func (r ApiDcimPowerFeedsListRequest) PhaseN(phaseN DcimPowerFeedsListPhaseParameter) ApiDcimPowerFeedsListRequest {
 	r.phaseN = &phaseN
 	return r
 }
@@ -76788,13 +76788,13 @@ func (r ApiDcimPowerFeedsListRequest) StatusN(statusN []string) ApiDcimPowerFeed
 }
 
 // * &#x60;ac&#x60; - AC * &#x60;dc&#x60; - DC
-func (r ApiDcimPowerFeedsListRequest) Supply(supply string) ApiDcimPowerFeedsListRequest {
+func (r ApiDcimPowerFeedsListRequest) Supply(supply DcimPowerFeedsListSupplyParameter) ApiDcimPowerFeedsListRequest {
 	r.supply = &supply
 	return r
 }
 
 // * &#x60;ac&#x60; - AC * &#x60;dc&#x60; - DC
-func (r ApiDcimPowerFeedsListRequest) SupplyN(supplyN string) ApiDcimPowerFeedsListRequest {
+func (r ApiDcimPowerFeedsListRequest) SupplyN(supplyN DcimPowerFeedsListSupplyParameter) ApiDcimPowerFeedsListRequest {
 	r.supplyN = &supplyN
 	return r
 }
@@ -76854,13 +76854,13 @@ func (r ApiDcimPowerFeedsListRequest) TenantIdN(tenantIdN []*int32) ApiDcimPower
 }
 
 // * &#x60;primary&#x60; - Primary * &#x60;redundant&#x60; - Redundant
-func (r ApiDcimPowerFeedsListRequest) Type_(type_ string) ApiDcimPowerFeedsListRequest {
+func (r ApiDcimPowerFeedsListRequest) Type_(type_ DcimPowerFeedsListTypeParameter) ApiDcimPowerFeedsListRequest {
 	r.type_ = &type_
 	return r
 }
 
 // * &#x60;primary&#x60; - Primary * &#x60;redundant&#x60; - Redundant
-func (r ApiDcimPowerFeedsListRequest) TypeN(typeN string) ApiDcimPowerFeedsListRequest {
+func (r ApiDcimPowerFeedsListRequest) TypeN(typeN DcimPowerFeedsListTypeParameter) ApiDcimPowerFeedsListRequest {
 	r.typeN = &typeN
 	return r
 }
@@ -79286,8 +79286,8 @@ type ApiDcimPowerOutletTemplatesListRequest struct {
 	powerPortId       *[]*int32
 	powerPortIdN      *[]*int32
 	q                 *string
-	type_             *string
-	typeN             *string
+	type_             *DcimPowerOutletTemplatesListTypeParameter
+	typeN             *DcimPowerOutletTemplatesListTypeParameter
 	updatedByRequest  *string
 }
 
@@ -79668,13 +79668,13 @@ func (r ApiDcimPowerOutletTemplatesListRequest) Q(q string) ApiDcimPowerOutletTe
 }
 
 // * &#x60;IEC 60320&#x60; - [(&#39;iec-60320-c5&#39;, &#39;C5&#39;), (&#39;iec-60320-c7&#39;, &#39;C7&#39;), (&#39;iec-60320-c13&#39;, &#39;C13&#39;), (&#39;iec-60320-c15&#39;, &#39;C15&#39;), (&#39;iec-60320-c19&#39;, &#39;C19&#39;), (&#39;iec-60320-c21&#39;, &#39;C21&#39;)] * &#x60;IEC 60309&#x60; - [(&#39;iec-60309-p-n-e-4h&#39;, &#39;P+N+E 4H&#39;), (&#39;iec-60309-p-n-e-6h&#39;, &#39;P+N+E 6H&#39;), (&#39;iec-60309-p-n-e-9h&#39;, &#39;P+N+E 9H&#39;), (&#39;iec-60309-2p-e-4h&#39;, &#39;2P+E 4H&#39;), (&#39;iec-60309-2p-e-6h&#39;, &#39;2P+E 6H&#39;), (&#39;iec-60309-2p-e-9h&#39;, &#39;2P+E 9H&#39;), (&#39;iec-60309-3p-e-4h&#39;, &#39;3P+E 4H&#39;), (&#39;iec-60309-3p-e-6h&#39;, &#39;3P+E 6H&#39;), (&#39;iec-60309-3p-e-9h&#39;, &#39;3P+E 9H&#39;), (&#39;iec-60309-3p-n-e-4h&#39;, &#39;3P+N+E 4H&#39;), (&#39;iec-60309-3p-n-e-6h&#39;, &#39;3P+N+E 6H&#39;), (&#39;iec-60309-3p-n-e-9h&#39;, &#39;3P+N+E 9H&#39;)] * &#x60;IEC 60906-1&#x60; - [(&#39;iec-60906-1&#39;, &#39;IEC 60906-1&#39;), (&#39;nbr-14136-10a&#39;, &#39;2P+T 10A (NBR 14136)&#39;), (&#39;nbr-14136-20a&#39;, &#39;2P+T 20A (NBR 14136)&#39;)] * &#x60;NEMA (Non-locking)&#x60; - [(&#39;nema-1-15r&#39;, &#39;NEMA 1-15R&#39;), (&#39;nema-5-15r&#39;, &#39;NEMA 5-15R&#39;), (&#39;nema-5-20r&#39;, &#39;NEMA 5-20R&#39;), (&#39;nema-5-30r&#39;, &#39;NEMA 5-30R&#39;), (&#39;nema-5-50r&#39;, &#39;NEMA 5-50R&#39;), (&#39;nema-6-15r&#39;, &#39;NEMA 6-15R&#39;), (&#39;nema-6-20r&#39;, &#39;NEMA 6-20R&#39;), (&#39;nema-6-30r&#39;, &#39;NEMA 6-30R&#39;), (&#39;nema-6-50r&#39;, &#39;NEMA 6-50R&#39;), (&#39;nema-10-30r&#39;, &#39;NEMA 10-30R&#39;), (&#39;nema-10-50r&#39;, &#39;NEMA 10-50R&#39;), (&#39;nema-14-20r&#39;, &#39;NEMA 14-20R&#39;), (&#39;nema-14-30r&#39;, &#39;NEMA 14-30R&#39;), (&#39;nema-14-50r&#39;, &#39;NEMA 14-50R&#39;), (&#39;nema-14-60r&#39;, &#39;NEMA 14-60R&#39;), (&#39;nema-15-15r&#39;, &#39;NEMA 15-15R&#39;), (&#39;nema-15-20r&#39;, &#39;NEMA 15-20R&#39;), (&#39;nema-15-30r&#39;, &#39;NEMA 15-30R&#39;), (&#39;nema-15-50r&#39;, &#39;NEMA 15-50R&#39;), (&#39;nema-15-60r&#39;, &#39;NEMA 15-60R&#39;)] * &#x60;NEMA (Locking)&#x60; - [(&#39;nema-l1-15r&#39;, &#39;NEMA L1-15R&#39;), (&#39;nema-l5-15r&#39;, &#39;NEMA L5-15R&#39;), (&#39;nema-l5-20r&#39;, &#39;NEMA L5-20R&#39;), (&#39;nema-l5-30r&#39;, &#39;NEMA L5-30R&#39;), (&#39;nema-l5-50r&#39;, &#39;NEMA L5-50R&#39;), (&#39;nema-l6-15r&#39;, &#39;NEMA L6-15R&#39;), (&#39;nema-l6-20r&#39;, &#39;NEMA L6-20R&#39;), (&#39;nema-l6-30r&#39;, &#39;NEMA L6-30R&#39;), (&#39;nema-l6-50r&#39;, &#39;NEMA L6-50R&#39;), (&#39;nema-l10-30r&#39;, &#39;NEMA L10-30R&#39;), (&#39;nema-l14-20r&#39;, &#39;NEMA L14-20R&#39;), (&#39;nema-l14-30r&#39;, &#39;NEMA L14-30R&#39;), (&#39;nema-l14-50r&#39;, &#39;NEMA L14-50R&#39;), (&#39;nema-l14-60r&#39;, &#39;NEMA L14-60R&#39;), (&#39;nema-l15-20r&#39;, &#39;NEMA L15-20R&#39;), (&#39;nema-l15-30r&#39;, &#39;NEMA L15-30R&#39;), (&#39;nema-l15-50r&#39;, &#39;NEMA L15-50R&#39;), (&#39;nema-l15-60r&#39;, &#39;NEMA L15-60R&#39;), (&#39;nema-l21-20r&#39;, &#39;NEMA L21-20R&#39;), (&#39;nema-l21-30r&#39;, &#39;NEMA L21-30R&#39;), (&#39;nema-l22-30r&#39;, &#39;NEMA L22-30R&#39;)] * &#x60;California Style&#x60; - [(&#39;CS6360C&#39;, &#39;CS6360C&#39;), (&#39;CS6364C&#39;, &#39;CS6364C&#39;), (&#39;CS8164C&#39;, &#39;CS8164C&#39;), (&#39;CS8264C&#39;, &#39;CS8264C&#39;), (&#39;CS8364C&#39;, &#39;CS8364C&#39;), (&#39;CS8464C&#39;, &#39;CS8464C&#39;)] * &#x60;ITA/International&#x60; - [(&#39;ita-e&#39;, &#39;ITA Type E (CEE 7/5)&#39;), (&#39;ita-f&#39;, &#39;ITA Type F (CEE 7/3)&#39;), (&#39;ita-g&#39;, &#39;ITA Type G (BS 1363)&#39;), (&#39;ita-h&#39;, &#39;ITA Type H&#39;), (&#39;ita-i&#39;, &#39;ITA Type I&#39;), (&#39;ita-j&#39;, &#39;ITA Type J&#39;), (&#39;ita-k&#39;, &#39;ITA Type K&#39;), (&#39;ita-l&#39;, &#39;ITA Type L (CEI 23-50)&#39;), (&#39;ita-m&#39;, &#39;ITA Type M (BS 546)&#39;), (&#39;ita-n&#39;, &#39;ITA Type N&#39;), (&#39;ita-o&#39;, &#39;ITA Type O&#39;), (&#39;ita-multistandard&#39;, &#39;ITA Multistandard&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;)] * &#x60;Molex&#x60; - [(&#39;molex-micro-fit-1x2&#39;, &#39;Molex Micro-Fit 1x2&#39;), (&#39;molex-micro-fit-2x2&#39;, &#39;Molex Micro-Fit 2x2&#39;), (&#39;molex-micro-fit-2x4&#39;, &#39;Molex Micro-Fit 2x4&#39;)] * &#x60;DC&#x60; - [(&#39;dc-terminal&#39;, &#39;DC Terminal&#39;)] * &#x60;Proprietary&#x60; - [(&#39;hdot-cx&#39;, &#39;HDOT Cx&#39;), (&#39;saf-d-grid&#39;, &#39;Saf-D-Grid&#39;), (&#39;neutrik-powercon-20a&#39;, &#39;Neutrik powerCON (20A)&#39;), (&#39;neutrik-powercon-32a&#39;, &#39;Neutrik powerCON (32A)&#39;), (&#39;neutrik-powercon-true1&#39;, &#39;Neutrik powerCON TRUE1&#39;), (&#39;neutrik-powercon-true1-top&#39;, &#39;Neutrik powerCON TRUE1 TOP&#39;), (&#39;ubiquiti-smartpower&#39;, &#39;Ubiquiti SmartPower&#39;)] * &#x60;Other&#x60; - [(&#39;hardwired&#39;, &#39;Hardwired&#39;), (&#39;other&#39;, &#39;Other&#39;)]
-func (r ApiDcimPowerOutletTemplatesListRequest) Type_(type_ string) ApiDcimPowerOutletTemplatesListRequest {
+func (r ApiDcimPowerOutletTemplatesListRequest) Type_(type_ DcimPowerOutletTemplatesListTypeParameter) ApiDcimPowerOutletTemplatesListRequest {
 	r.type_ = &type_
 	return r
 }
 
 // * &#x60;IEC 60320&#x60; - [(&#39;iec-60320-c5&#39;, &#39;C5&#39;), (&#39;iec-60320-c7&#39;, &#39;C7&#39;), (&#39;iec-60320-c13&#39;, &#39;C13&#39;), (&#39;iec-60320-c15&#39;, &#39;C15&#39;), (&#39;iec-60320-c19&#39;, &#39;C19&#39;), (&#39;iec-60320-c21&#39;, &#39;C21&#39;)] * &#x60;IEC 60309&#x60; - [(&#39;iec-60309-p-n-e-4h&#39;, &#39;P+N+E 4H&#39;), (&#39;iec-60309-p-n-e-6h&#39;, &#39;P+N+E 6H&#39;), (&#39;iec-60309-p-n-e-9h&#39;, &#39;P+N+E 9H&#39;), (&#39;iec-60309-2p-e-4h&#39;, &#39;2P+E 4H&#39;), (&#39;iec-60309-2p-e-6h&#39;, &#39;2P+E 6H&#39;), (&#39;iec-60309-2p-e-9h&#39;, &#39;2P+E 9H&#39;), (&#39;iec-60309-3p-e-4h&#39;, &#39;3P+E 4H&#39;), (&#39;iec-60309-3p-e-6h&#39;, &#39;3P+E 6H&#39;), (&#39;iec-60309-3p-e-9h&#39;, &#39;3P+E 9H&#39;), (&#39;iec-60309-3p-n-e-4h&#39;, &#39;3P+N+E 4H&#39;), (&#39;iec-60309-3p-n-e-6h&#39;, &#39;3P+N+E 6H&#39;), (&#39;iec-60309-3p-n-e-9h&#39;, &#39;3P+N+E 9H&#39;)] * &#x60;IEC 60906-1&#x60; - [(&#39;iec-60906-1&#39;, &#39;IEC 60906-1&#39;), (&#39;nbr-14136-10a&#39;, &#39;2P+T 10A (NBR 14136)&#39;), (&#39;nbr-14136-20a&#39;, &#39;2P+T 20A (NBR 14136)&#39;)] * &#x60;NEMA (Non-locking)&#x60; - [(&#39;nema-1-15r&#39;, &#39;NEMA 1-15R&#39;), (&#39;nema-5-15r&#39;, &#39;NEMA 5-15R&#39;), (&#39;nema-5-20r&#39;, &#39;NEMA 5-20R&#39;), (&#39;nema-5-30r&#39;, &#39;NEMA 5-30R&#39;), (&#39;nema-5-50r&#39;, &#39;NEMA 5-50R&#39;), (&#39;nema-6-15r&#39;, &#39;NEMA 6-15R&#39;), (&#39;nema-6-20r&#39;, &#39;NEMA 6-20R&#39;), (&#39;nema-6-30r&#39;, &#39;NEMA 6-30R&#39;), (&#39;nema-6-50r&#39;, &#39;NEMA 6-50R&#39;), (&#39;nema-10-30r&#39;, &#39;NEMA 10-30R&#39;), (&#39;nema-10-50r&#39;, &#39;NEMA 10-50R&#39;), (&#39;nema-14-20r&#39;, &#39;NEMA 14-20R&#39;), (&#39;nema-14-30r&#39;, &#39;NEMA 14-30R&#39;), (&#39;nema-14-50r&#39;, &#39;NEMA 14-50R&#39;), (&#39;nema-14-60r&#39;, &#39;NEMA 14-60R&#39;), (&#39;nema-15-15r&#39;, &#39;NEMA 15-15R&#39;), (&#39;nema-15-20r&#39;, &#39;NEMA 15-20R&#39;), (&#39;nema-15-30r&#39;, &#39;NEMA 15-30R&#39;), (&#39;nema-15-50r&#39;, &#39;NEMA 15-50R&#39;), (&#39;nema-15-60r&#39;, &#39;NEMA 15-60R&#39;)] * &#x60;NEMA (Locking)&#x60; - [(&#39;nema-l1-15r&#39;, &#39;NEMA L1-15R&#39;), (&#39;nema-l5-15r&#39;, &#39;NEMA L5-15R&#39;), (&#39;nema-l5-20r&#39;, &#39;NEMA L5-20R&#39;), (&#39;nema-l5-30r&#39;, &#39;NEMA L5-30R&#39;), (&#39;nema-l5-50r&#39;, &#39;NEMA L5-50R&#39;), (&#39;nema-l6-15r&#39;, &#39;NEMA L6-15R&#39;), (&#39;nema-l6-20r&#39;, &#39;NEMA L6-20R&#39;), (&#39;nema-l6-30r&#39;, &#39;NEMA L6-30R&#39;), (&#39;nema-l6-50r&#39;, &#39;NEMA L6-50R&#39;), (&#39;nema-l10-30r&#39;, &#39;NEMA L10-30R&#39;), (&#39;nema-l14-20r&#39;, &#39;NEMA L14-20R&#39;), (&#39;nema-l14-30r&#39;, &#39;NEMA L14-30R&#39;), (&#39;nema-l14-50r&#39;, &#39;NEMA L14-50R&#39;), (&#39;nema-l14-60r&#39;, &#39;NEMA L14-60R&#39;), (&#39;nema-l15-20r&#39;, &#39;NEMA L15-20R&#39;), (&#39;nema-l15-30r&#39;, &#39;NEMA L15-30R&#39;), (&#39;nema-l15-50r&#39;, &#39;NEMA L15-50R&#39;), (&#39;nema-l15-60r&#39;, &#39;NEMA L15-60R&#39;), (&#39;nema-l21-20r&#39;, &#39;NEMA L21-20R&#39;), (&#39;nema-l21-30r&#39;, &#39;NEMA L21-30R&#39;), (&#39;nema-l22-30r&#39;, &#39;NEMA L22-30R&#39;)] * &#x60;California Style&#x60; - [(&#39;CS6360C&#39;, &#39;CS6360C&#39;), (&#39;CS6364C&#39;, &#39;CS6364C&#39;), (&#39;CS8164C&#39;, &#39;CS8164C&#39;), (&#39;CS8264C&#39;, &#39;CS8264C&#39;), (&#39;CS8364C&#39;, &#39;CS8364C&#39;), (&#39;CS8464C&#39;, &#39;CS8464C&#39;)] * &#x60;ITA/International&#x60; - [(&#39;ita-e&#39;, &#39;ITA Type E (CEE 7/5)&#39;), (&#39;ita-f&#39;, &#39;ITA Type F (CEE 7/3)&#39;), (&#39;ita-g&#39;, &#39;ITA Type G (BS 1363)&#39;), (&#39;ita-h&#39;, &#39;ITA Type H&#39;), (&#39;ita-i&#39;, &#39;ITA Type I&#39;), (&#39;ita-j&#39;, &#39;ITA Type J&#39;), (&#39;ita-k&#39;, &#39;ITA Type K&#39;), (&#39;ita-l&#39;, &#39;ITA Type L (CEI 23-50)&#39;), (&#39;ita-m&#39;, &#39;ITA Type M (BS 546)&#39;), (&#39;ita-n&#39;, &#39;ITA Type N&#39;), (&#39;ita-o&#39;, &#39;ITA Type O&#39;), (&#39;ita-multistandard&#39;, &#39;ITA Multistandard&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;)] * &#x60;Molex&#x60; - [(&#39;molex-micro-fit-1x2&#39;, &#39;Molex Micro-Fit 1x2&#39;), (&#39;molex-micro-fit-2x2&#39;, &#39;Molex Micro-Fit 2x2&#39;), (&#39;molex-micro-fit-2x4&#39;, &#39;Molex Micro-Fit 2x4&#39;)] * &#x60;DC&#x60; - [(&#39;dc-terminal&#39;, &#39;DC Terminal&#39;)] * &#x60;Proprietary&#x60; - [(&#39;hdot-cx&#39;, &#39;HDOT Cx&#39;), (&#39;saf-d-grid&#39;, &#39;Saf-D-Grid&#39;), (&#39;neutrik-powercon-20a&#39;, &#39;Neutrik powerCON (20A)&#39;), (&#39;neutrik-powercon-32a&#39;, &#39;Neutrik powerCON (32A)&#39;), (&#39;neutrik-powercon-true1&#39;, &#39;Neutrik powerCON TRUE1&#39;), (&#39;neutrik-powercon-true1-top&#39;, &#39;Neutrik powerCON TRUE1 TOP&#39;), (&#39;ubiquiti-smartpower&#39;, &#39;Ubiquiti SmartPower&#39;)] * &#x60;Other&#x60; - [(&#39;hardwired&#39;, &#39;Hardwired&#39;), (&#39;other&#39;, &#39;Other&#39;)]
-func (r ApiDcimPowerOutletTemplatesListRequest) TypeN(typeN string) ApiDcimPowerOutletTemplatesListRequest {
+func (r ApiDcimPowerOutletTemplatesListRequest) TypeN(typeN DcimPowerOutletTemplatesListTypeParameter) ApiDcimPowerOutletTemplatesListRequest {
 	r.typeN = &typeN
 	return r
 }
@@ -81484,8 +81484,8 @@ func (a *DcimAPIService) DcimPowerOutletsDestroyExecute(r ApiDcimPowerOutletsDes
 type ApiDcimPowerOutletsListRequest struct {
 	ctx               context.Context
 	ApiService        DcimAPI
-	cableEnd          *string
-	cableEndN         *string
+	cableEnd          *CircuitsCircuitTerminationsListCableEndParameter
+	cableEndN         *CircuitsCircuitTerminationsListCableEndParameter
 	cableId           *[]*int32
 	cableIdN          *[]*int32
 	cabled            *bool
@@ -81604,13 +81604,13 @@ type ApiDcimPowerOutletsListRequest struct {
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimPowerOutletsListRequest) CableEnd(cableEnd string) ApiDcimPowerOutletsListRequest {
+func (r ApiDcimPowerOutletsListRequest) CableEnd(cableEnd CircuitsCircuitTerminationsListCableEndParameter) ApiDcimPowerOutletsListRequest {
 	r.cableEnd = &cableEnd
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimPowerOutletsListRequest) CableEndN(cableEndN string) ApiDcimPowerOutletsListRequest {
+func (r ApiDcimPowerOutletsListRequest) CableEndN(cableEndN CircuitsCircuitTerminationsListCableEndParameter) ApiDcimPowerOutletsListRequest {
 	r.cableEndN = &cableEndN
 	return r
 }
@@ -86899,8 +86899,8 @@ type ApiDcimPowerPortTemplatesListRequest struct {
 	offset             *int32
 	ordering           *string
 	q                  *string
-	type_              *string
-	typeN              *string
+	type_              *DcimPowerPortTemplatesListTypeParameter
+	typeN              *DcimPowerPortTemplatesListTypeParameter
 	updatedByRequest   *string
 }
 
@@ -87327,13 +87327,13 @@ func (r ApiDcimPowerPortTemplatesListRequest) Q(q string) ApiDcimPowerPortTempla
 }
 
 // * &#x60;IEC 60320&#x60; - [(&#39;iec-60320-c6&#39;, &#39;C6&#39;), (&#39;iec-60320-c8&#39;, &#39;C8&#39;), (&#39;iec-60320-c14&#39;, &#39;C14&#39;), (&#39;iec-60320-c16&#39;, &#39;C16&#39;), (&#39;iec-60320-c20&#39;, &#39;C20&#39;), (&#39;iec-60320-c22&#39;, &#39;C22&#39;)] * &#x60;IEC 60309&#x60; - [(&#39;iec-60309-p-n-e-4h&#39;, &#39;P+N+E 4H&#39;), (&#39;iec-60309-p-n-e-6h&#39;, &#39;P+N+E 6H&#39;), (&#39;iec-60309-p-n-e-9h&#39;, &#39;P+N+E 9H&#39;), (&#39;iec-60309-2p-e-4h&#39;, &#39;2P+E 4H&#39;), (&#39;iec-60309-2p-e-6h&#39;, &#39;2P+E 6H&#39;), (&#39;iec-60309-2p-e-9h&#39;, &#39;2P+E 9H&#39;), (&#39;iec-60309-3p-e-4h&#39;, &#39;3P+E 4H&#39;), (&#39;iec-60309-3p-e-6h&#39;, &#39;3P+E 6H&#39;), (&#39;iec-60309-3p-e-9h&#39;, &#39;3P+E 9H&#39;), (&#39;iec-60309-3p-n-e-4h&#39;, &#39;3P+N+E 4H&#39;), (&#39;iec-60309-3p-n-e-6h&#39;, &#39;3P+N+E 6H&#39;), (&#39;iec-60309-3p-n-e-9h&#39;, &#39;3P+N+E 9H&#39;)] * &#x60;IEC 60906-1&#x60; - [(&#39;iec-60906-1&#39;, &#39;IEC 60906-1&#39;), (&#39;nbr-14136-10a&#39;, &#39;2P+T 10A (NBR 14136)&#39;), (&#39;nbr-14136-20a&#39;, &#39;2P+T 20A (NBR 14136)&#39;)] * &#x60;NEMA (Non-locking)&#x60; - [(&#39;nema-1-15p&#39;, &#39;NEMA 1-15P&#39;), (&#39;nema-5-15p&#39;, &#39;NEMA 5-15P&#39;), (&#39;nema-5-20p&#39;, &#39;NEMA 5-20P&#39;), (&#39;nema-5-30p&#39;, &#39;NEMA 5-30P&#39;), (&#39;nema-5-50p&#39;, &#39;NEMA 5-50P&#39;), (&#39;nema-6-15p&#39;, &#39;NEMA 6-15P&#39;), (&#39;nema-6-20p&#39;, &#39;NEMA 6-20P&#39;), (&#39;nema-6-30p&#39;, &#39;NEMA 6-30P&#39;), (&#39;nema-6-50p&#39;, &#39;NEMA 6-50P&#39;), (&#39;nema-10-30p&#39;, &#39;NEMA 10-30P&#39;), (&#39;nema-10-50p&#39;, &#39;NEMA 10-50P&#39;), (&#39;nema-14-20p&#39;, &#39;NEMA 14-20P&#39;), (&#39;nema-14-30p&#39;, &#39;NEMA 14-30P&#39;), (&#39;nema-14-50p&#39;, &#39;NEMA 14-50P&#39;), (&#39;nema-14-60p&#39;, &#39;NEMA 14-60P&#39;), (&#39;nema-15-15p&#39;, &#39;NEMA 15-15P&#39;), (&#39;nema-15-20p&#39;, &#39;NEMA 15-20P&#39;), (&#39;nema-15-30p&#39;, &#39;NEMA 15-30P&#39;), (&#39;nema-15-50p&#39;, &#39;NEMA 15-50P&#39;), (&#39;nema-15-60p&#39;, &#39;NEMA 15-60P&#39;)] * &#x60;NEMA (Locking)&#x60; - [(&#39;nema-l1-15p&#39;, &#39;NEMA L1-15P&#39;), (&#39;nema-l5-15p&#39;, &#39;NEMA L5-15P&#39;), (&#39;nema-l5-20p&#39;, &#39;NEMA L5-20P&#39;), (&#39;nema-l5-30p&#39;, &#39;NEMA L5-30P&#39;), (&#39;nema-l5-50p&#39;, &#39;NEMA L5-50P&#39;), (&#39;nema-l6-15p&#39;, &#39;NEMA L6-15P&#39;), (&#39;nema-l6-20p&#39;, &#39;NEMA L6-20P&#39;), (&#39;nema-l6-30p&#39;, &#39;NEMA L6-30P&#39;), (&#39;nema-l6-50p&#39;, &#39;NEMA L6-50P&#39;), (&#39;nema-l10-30p&#39;, &#39;NEMA L10-30P&#39;), (&#39;nema-l14-20p&#39;, &#39;NEMA L14-20P&#39;), (&#39;nema-l14-30p&#39;, &#39;NEMA L14-30P&#39;), (&#39;nema-l14-50p&#39;, &#39;NEMA L14-50P&#39;), (&#39;nema-l14-60p&#39;, &#39;NEMA L14-60P&#39;), (&#39;nema-l15-20p&#39;, &#39;NEMA L15-20P&#39;), (&#39;nema-l15-30p&#39;, &#39;NEMA L15-30P&#39;), (&#39;nema-l15-50p&#39;, &#39;NEMA L15-50P&#39;), (&#39;nema-l15-60p&#39;, &#39;NEMA L15-60P&#39;), (&#39;nema-l21-20p&#39;, &#39;NEMA L21-20P&#39;), (&#39;nema-l21-30p&#39;, &#39;NEMA L21-30P&#39;), (&#39;nema-l22-30p&#39;, &#39;NEMA L22-30P&#39;)] * &#x60;California Style&#x60; - [(&#39;cs6361c&#39;, &#39;CS6361C&#39;), (&#39;cs6365c&#39;, &#39;CS6365C&#39;), (&#39;cs8165c&#39;, &#39;CS8165C&#39;), (&#39;cs8265c&#39;, &#39;CS8265C&#39;), (&#39;cs8365c&#39;, &#39;CS8365C&#39;), (&#39;cs8465c&#39;, &#39;CS8465C&#39;)] * &#x60;International/ITA&#x60; - [(&#39;ita-c&#39;, &#39;ITA Type C (CEE 7/16)&#39;), (&#39;ita-e&#39;, &#39;ITA Type E (CEE 7/6)&#39;), (&#39;ita-f&#39;, &#39;ITA Type F (CEE 7/4)&#39;), (&#39;ita-ef&#39;, &#39;ITA Type E/F (CEE 7/7)&#39;), (&#39;ita-g&#39;, &#39;ITA Type G (BS 1363)&#39;), (&#39;ita-h&#39;, &#39;ITA Type H&#39;), (&#39;ita-i&#39;, &#39;ITA Type I&#39;), (&#39;ita-j&#39;, &#39;ITA Type J&#39;), (&#39;ita-k&#39;, &#39;ITA Type K&#39;), (&#39;ita-l&#39;, &#39;ITA Type L (CEI 23-50)&#39;), (&#39;ita-m&#39;, &#39;ITA Type M (BS 546)&#39;), (&#39;ita-n&#39;, &#39;ITA Type N&#39;), (&#39;ita-o&#39;, &#39;ITA Type O&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;), (&#39;usb-3-b&#39;, &#39;USB 3.0 Type B&#39;), (&#39;usb-3-micro-b&#39;, &#39;USB 3.0 Micro B&#39;)] * &#x60;Molex&#x60; - [(&#39;molex-micro-fit-1x2&#39;, &#39;Molex Micro-Fit 1x2&#39;), (&#39;molex-micro-fit-2x2&#39;, &#39;Molex Micro-Fit 2x2&#39;), (&#39;molex-micro-fit-2x4&#39;, &#39;Molex Micro-Fit 2x4&#39;)] * &#x60;DC&#x60; - [(&#39;dc-terminal&#39;, &#39;DC Terminal&#39;)] * &#x60;Proprietary&#x60; - [(&#39;saf-d-grid&#39;, &#39;Saf-D-Grid&#39;), (&#39;neutrik-powercon-20&#39;, &#39;Neutrik powerCON (20A)&#39;), (&#39;neutrik-powercon-32&#39;, &#39;Neutrik powerCON (32A)&#39;), (&#39;neutrik-powercon-true1&#39;, &#39;Neutrik powerCON TRUE1&#39;), (&#39;neutrik-powercon-true1-top&#39;, &#39;Neutrik powerCON TRUE1 TOP&#39;), (&#39;ubiquiti-smartpower&#39;, &#39;Ubiquiti SmartPower&#39;)] * &#x60;Other&#x60; - [(&#39;hardwired&#39;, &#39;Hardwired&#39;), (&#39;other&#39;, &#39;Other&#39;)]
-func (r ApiDcimPowerPortTemplatesListRequest) Type_(type_ string) ApiDcimPowerPortTemplatesListRequest {
+func (r ApiDcimPowerPortTemplatesListRequest) Type_(type_ DcimPowerPortTemplatesListTypeParameter) ApiDcimPowerPortTemplatesListRequest {
 	r.type_ = &type_
 	return r
 }
 
 // * &#x60;IEC 60320&#x60; - [(&#39;iec-60320-c6&#39;, &#39;C6&#39;), (&#39;iec-60320-c8&#39;, &#39;C8&#39;), (&#39;iec-60320-c14&#39;, &#39;C14&#39;), (&#39;iec-60320-c16&#39;, &#39;C16&#39;), (&#39;iec-60320-c20&#39;, &#39;C20&#39;), (&#39;iec-60320-c22&#39;, &#39;C22&#39;)] * &#x60;IEC 60309&#x60; - [(&#39;iec-60309-p-n-e-4h&#39;, &#39;P+N+E 4H&#39;), (&#39;iec-60309-p-n-e-6h&#39;, &#39;P+N+E 6H&#39;), (&#39;iec-60309-p-n-e-9h&#39;, &#39;P+N+E 9H&#39;), (&#39;iec-60309-2p-e-4h&#39;, &#39;2P+E 4H&#39;), (&#39;iec-60309-2p-e-6h&#39;, &#39;2P+E 6H&#39;), (&#39;iec-60309-2p-e-9h&#39;, &#39;2P+E 9H&#39;), (&#39;iec-60309-3p-e-4h&#39;, &#39;3P+E 4H&#39;), (&#39;iec-60309-3p-e-6h&#39;, &#39;3P+E 6H&#39;), (&#39;iec-60309-3p-e-9h&#39;, &#39;3P+E 9H&#39;), (&#39;iec-60309-3p-n-e-4h&#39;, &#39;3P+N+E 4H&#39;), (&#39;iec-60309-3p-n-e-6h&#39;, &#39;3P+N+E 6H&#39;), (&#39;iec-60309-3p-n-e-9h&#39;, &#39;3P+N+E 9H&#39;)] * &#x60;IEC 60906-1&#x60; - [(&#39;iec-60906-1&#39;, &#39;IEC 60906-1&#39;), (&#39;nbr-14136-10a&#39;, &#39;2P+T 10A (NBR 14136)&#39;), (&#39;nbr-14136-20a&#39;, &#39;2P+T 20A (NBR 14136)&#39;)] * &#x60;NEMA (Non-locking)&#x60; - [(&#39;nema-1-15p&#39;, &#39;NEMA 1-15P&#39;), (&#39;nema-5-15p&#39;, &#39;NEMA 5-15P&#39;), (&#39;nema-5-20p&#39;, &#39;NEMA 5-20P&#39;), (&#39;nema-5-30p&#39;, &#39;NEMA 5-30P&#39;), (&#39;nema-5-50p&#39;, &#39;NEMA 5-50P&#39;), (&#39;nema-6-15p&#39;, &#39;NEMA 6-15P&#39;), (&#39;nema-6-20p&#39;, &#39;NEMA 6-20P&#39;), (&#39;nema-6-30p&#39;, &#39;NEMA 6-30P&#39;), (&#39;nema-6-50p&#39;, &#39;NEMA 6-50P&#39;), (&#39;nema-10-30p&#39;, &#39;NEMA 10-30P&#39;), (&#39;nema-10-50p&#39;, &#39;NEMA 10-50P&#39;), (&#39;nema-14-20p&#39;, &#39;NEMA 14-20P&#39;), (&#39;nema-14-30p&#39;, &#39;NEMA 14-30P&#39;), (&#39;nema-14-50p&#39;, &#39;NEMA 14-50P&#39;), (&#39;nema-14-60p&#39;, &#39;NEMA 14-60P&#39;), (&#39;nema-15-15p&#39;, &#39;NEMA 15-15P&#39;), (&#39;nema-15-20p&#39;, &#39;NEMA 15-20P&#39;), (&#39;nema-15-30p&#39;, &#39;NEMA 15-30P&#39;), (&#39;nema-15-50p&#39;, &#39;NEMA 15-50P&#39;), (&#39;nema-15-60p&#39;, &#39;NEMA 15-60P&#39;)] * &#x60;NEMA (Locking)&#x60; - [(&#39;nema-l1-15p&#39;, &#39;NEMA L1-15P&#39;), (&#39;nema-l5-15p&#39;, &#39;NEMA L5-15P&#39;), (&#39;nema-l5-20p&#39;, &#39;NEMA L5-20P&#39;), (&#39;nema-l5-30p&#39;, &#39;NEMA L5-30P&#39;), (&#39;nema-l5-50p&#39;, &#39;NEMA L5-50P&#39;), (&#39;nema-l6-15p&#39;, &#39;NEMA L6-15P&#39;), (&#39;nema-l6-20p&#39;, &#39;NEMA L6-20P&#39;), (&#39;nema-l6-30p&#39;, &#39;NEMA L6-30P&#39;), (&#39;nema-l6-50p&#39;, &#39;NEMA L6-50P&#39;), (&#39;nema-l10-30p&#39;, &#39;NEMA L10-30P&#39;), (&#39;nema-l14-20p&#39;, &#39;NEMA L14-20P&#39;), (&#39;nema-l14-30p&#39;, &#39;NEMA L14-30P&#39;), (&#39;nema-l14-50p&#39;, &#39;NEMA L14-50P&#39;), (&#39;nema-l14-60p&#39;, &#39;NEMA L14-60P&#39;), (&#39;nema-l15-20p&#39;, &#39;NEMA L15-20P&#39;), (&#39;nema-l15-30p&#39;, &#39;NEMA L15-30P&#39;), (&#39;nema-l15-50p&#39;, &#39;NEMA L15-50P&#39;), (&#39;nema-l15-60p&#39;, &#39;NEMA L15-60P&#39;), (&#39;nema-l21-20p&#39;, &#39;NEMA L21-20P&#39;), (&#39;nema-l21-30p&#39;, &#39;NEMA L21-30P&#39;), (&#39;nema-l22-30p&#39;, &#39;NEMA L22-30P&#39;)] * &#x60;California Style&#x60; - [(&#39;cs6361c&#39;, &#39;CS6361C&#39;), (&#39;cs6365c&#39;, &#39;CS6365C&#39;), (&#39;cs8165c&#39;, &#39;CS8165C&#39;), (&#39;cs8265c&#39;, &#39;CS8265C&#39;), (&#39;cs8365c&#39;, &#39;CS8365C&#39;), (&#39;cs8465c&#39;, &#39;CS8465C&#39;)] * &#x60;International/ITA&#x60; - [(&#39;ita-c&#39;, &#39;ITA Type C (CEE 7/16)&#39;), (&#39;ita-e&#39;, &#39;ITA Type E (CEE 7/6)&#39;), (&#39;ita-f&#39;, &#39;ITA Type F (CEE 7/4)&#39;), (&#39;ita-ef&#39;, &#39;ITA Type E/F (CEE 7/7)&#39;), (&#39;ita-g&#39;, &#39;ITA Type G (BS 1363)&#39;), (&#39;ita-h&#39;, &#39;ITA Type H&#39;), (&#39;ita-i&#39;, &#39;ITA Type I&#39;), (&#39;ita-j&#39;, &#39;ITA Type J&#39;), (&#39;ita-k&#39;, &#39;ITA Type K&#39;), (&#39;ita-l&#39;, &#39;ITA Type L (CEI 23-50)&#39;), (&#39;ita-m&#39;, &#39;ITA Type M (BS 546)&#39;), (&#39;ita-n&#39;, &#39;ITA Type N&#39;), (&#39;ita-o&#39;, &#39;ITA Type O&#39;)] * &#x60;USB&#x60; - [(&#39;usb-a&#39;, &#39;USB Type A&#39;), (&#39;usb-b&#39;, &#39;USB Type B&#39;), (&#39;usb-c&#39;, &#39;USB Type C&#39;), (&#39;usb-mini-a&#39;, &#39;USB Mini A&#39;), (&#39;usb-mini-b&#39;, &#39;USB Mini B&#39;), (&#39;usb-micro-a&#39;, &#39;USB Micro A&#39;), (&#39;usb-micro-b&#39;, &#39;USB Micro B&#39;), (&#39;usb-micro-ab&#39;, &#39;USB Micro AB&#39;), (&#39;usb-3-b&#39;, &#39;USB 3.0 Type B&#39;), (&#39;usb-3-micro-b&#39;, &#39;USB 3.0 Micro B&#39;)] * &#x60;Molex&#x60; - [(&#39;molex-micro-fit-1x2&#39;, &#39;Molex Micro-Fit 1x2&#39;), (&#39;molex-micro-fit-2x2&#39;, &#39;Molex Micro-Fit 2x2&#39;), (&#39;molex-micro-fit-2x4&#39;, &#39;Molex Micro-Fit 2x4&#39;)] * &#x60;DC&#x60; - [(&#39;dc-terminal&#39;, &#39;DC Terminal&#39;)] * &#x60;Proprietary&#x60; - [(&#39;saf-d-grid&#39;, &#39;Saf-D-Grid&#39;), (&#39;neutrik-powercon-20&#39;, &#39;Neutrik powerCON (20A)&#39;), (&#39;neutrik-powercon-32&#39;, &#39;Neutrik powerCON (32A)&#39;), (&#39;neutrik-powercon-true1&#39;, &#39;Neutrik powerCON TRUE1&#39;), (&#39;neutrik-powercon-true1-top&#39;, &#39;Neutrik powerCON TRUE1 TOP&#39;), (&#39;ubiquiti-smartpower&#39;, &#39;Ubiquiti SmartPower&#39;)] * &#x60;Other&#x60; - [(&#39;hardwired&#39;, &#39;Hardwired&#39;), (&#39;other&#39;, &#39;Other&#39;)]
-func (r ApiDcimPowerPortTemplatesListRequest) TypeN(typeN string) ApiDcimPowerPortTemplatesListRequest {
+func (r ApiDcimPowerPortTemplatesListRequest) TypeN(typeN DcimPowerPortTemplatesListTypeParameter) ApiDcimPowerPortTemplatesListRequest {
 	r.typeN = &typeN
 	return r
 }
@@ -89244,8 +89244,8 @@ type ApiDcimPowerPortsListRequest struct {
 	allocatedDrawLt    *[]int32
 	allocatedDrawLte   *[]int32
 	allocatedDrawN     *[]int32
-	cableEnd           *string
-	cableEndN          *string
+	cableEnd           *CircuitsCircuitTerminationsListCableEndParameter
+	cableEndN          *CircuitsCircuitTerminationsListCableEndParameter
 	cableId            *[]*int32
 	cableIdN           *[]*int32
 	cabled             *bool
@@ -89402,13 +89402,13 @@ func (r ApiDcimPowerPortsListRequest) AllocatedDrawN(allocatedDrawN []int32) Api
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimPowerPortsListRequest) CableEnd(cableEnd string) ApiDcimPowerPortsListRequest {
+func (r ApiDcimPowerPortsListRequest) CableEnd(cableEnd CircuitsCircuitTerminationsListCableEndParameter) ApiDcimPowerPortsListRequest {
 	r.cableEnd = &cableEnd
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimPowerPortsListRequest) CableEndN(cableEndN string) ApiDcimPowerPortsListRequest {
+func (r ApiDcimPowerPortsListRequest) CableEndN(cableEndN CircuitsCircuitTerminationsListCableEndParameter) ApiDcimPowerPortsListRequest {
 	r.cableEndN = &cableEndN
 	return r
 }
@@ -96976,14 +96976,14 @@ type ApiDcimRacksElevationRetrieveRequest struct {
 	id            int32
 	exclude       *int32
 	expandDevices *bool
-	face          *string
+	face          *DcimRacksElevationRetrieveFaceParameter
 	includeImages *bool
 	legendWidth   *int32
 	limit         *int32
 	marginWidth   *int32
 	offset        *int32
 	q             *string
-	render        *string
+	render        *DcimRacksElevationRetrieveRenderParameter
 	unitHeight    *int32
 	unitWidth     *int32
 }
@@ -96999,7 +96999,7 @@ func (r ApiDcimRacksElevationRetrieveRequest) ExpandDevices(expandDevices bool) 
 }
 
 // * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear
-func (r ApiDcimRacksElevationRetrieveRequest) Face(face string) ApiDcimRacksElevationRetrieveRequest {
+func (r ApiDcimRacksElevationRetrieveRequest) Face(face DcimRacksElevationRetrieveFaceParameter) ApiDcimRacksElevationRetrieveRequest {
 	r.face = &face
 	return r
 }
@@ -97037,7 +97037,7 @@ func (r ApiDcimRacksElevationRetrieveRequest) Q(q string) ApiDcimRacksElevationR
 }
 
 // * &#x60;json&#x60; - json * &#x60;svg&#x60; - svg
-func (r ApiDcimRacksElevationRetrieveRequest) Render(render string) ApiDcimRacksElevationRetrieveRequest {
+func (r ApiDcimRacksElevationRetrieveRequest) Render(render DcimRacksElevationRetrieveRenderParameter) ApiDcimRacksElevationRetrieveRequest {
 	r.render = &render
 	return r
 }
@@ -97108,7 +97108,7 @@ func (a *DcimAPIService) DcimRacksElevationRetrieveExecute(r ApiDcimRacksElevati
 	if r.face != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "face", r.face, "form", "")
 	} else {
-		var defaultValue string = "front"
+		var defaultValue DcimRacksElevationRetrieveFaceParameter = "front"
 		r.face = &defaultValue
 	}
 	if r.includeImages != nil {
@@ -97141,7 +97141,7 @@ func (a *DcimAPIService) DcimRacksElevationRetrieveExecute(r ApiDcimRacksElevati
 	if r.render != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "render", r.render, "form", "")
 	} else {
-		var defaultValue string = "json"
+		var defaultValue DcimRacksElevationRetrieveRenderParameter = "json"
 		r.render = &defaultValue
 	}
 	if r.unitHeight != nil {
@@ -97323,8 +97323,8 @@ type ApiDcimRacksListRequest struct {
 	outerDepthLt       *[]int32
 	outerDepthLte      *[]int32
 	outerDepthN        *[]int32
-	outerUnit          *string
-	outerUnitN         *string
+	outerUnit          *DcimRacksListOuterUnitParameter
+	outerUnitN         *DcimRacksListOuterUnitParameter
 	outerWidth         *[]int32
 	outerWidthEmpty    *bool
 	outerWidthGt       *[]int32
@@ -97396,8 +97396,8 @@ type ApiDcimRacksListRequest struct {
 	weightLt           *[]float64
 	weightLte          *[]float64
 	weightN            *[]float64
-	weightUnit         *string
-	weightUnitN        *string
+	weightUnit         *DcimDeviceTypesListWeightUnitParameter
+	weightUnitN        *DcimDeviceTypesListWeightUnitParameter
 	width              *[]int32
 	widthN             *[]int32
 }
@@ -97920,13 +97920,13 @@ func (r ApiDcimRacksListRequest) OuterDepthN(outerDepthN []int32) ApiDcimRacksLi
 }
 
 // * &#x60;mm&#x60; - Millimeters * &#x60;in&#x60; - Inches
-func (r ApiDcimRacksListRequest) OuterUnit(outerUnit string) ApiDcimRacksListRequest {
+func (r ApiDcimRacksListRequest) OuterUnit(outerUnit DcimRacksListOuterUnitParameter) ApiDcimRacksListRequest {
 	r.outerUnit = &outerUnit
 	return r
 }
 
 // * &#x60;mm&#x60; - Millimeters * &#x60;in&#x60; - Inches
-func (r ApiDcimRacksListRequest) OuterUnitN(outerUnitN string) ApiDcimRacksListRequest {
+func (r ApiDcimRacksListRequest) OuterUnitN(outerUnitN DcimRacksListOuterUnitParameter) ApiDcimRacksListRequest {
 	r.outerUnitN = &outerUnitN
 	return r
 }
@@ -98300,13 +98300,13 @@ func (r ApiDcimRacksListRequest) WeightN(weightN []float64) ApiDcimRacksListRequ
 }
 
 // * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces
-func (r ApiDcimRacksListRequest) WeightUnit(weightUnit string) ApiDcimRacksListRequest {
+func (r ApiDcimRacksListRequest) WeightUnit(weightUnit DcimDeviceTypesListWeightUnitParameter) ApiDcimRacksListRequest {
 	r.weightUnit = &weightUnit
 	return r
 }
 
 // * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces
-func (r ApiDcimRacksListRequest) WeightUnitN(weightUnitN string) ApiDcimRacksListRequest {
+func (r ApiDcimRacksListRequest) WeightUnitN(weightUnitN DcimDeviceTypesListWeightUnitParameter) ApiDcimRacksListRequest {
 	r.weightUnitN = &weightUnitN
 	return r
 }
@@ -103673,8 +103673,8 @@ func (a *DcimAPIService) DcimRearPortsDestroyExecute(r ApiDcimRearPortsDestroyRe
 type ApiDcimRearPortsListRequest struct {
 	ctx               context.Context
 	ApiService        DcimAPI
-	cableEnd          *string
-	cableEndN         *string
+	cableEnd          *CircuitsCircuitTerminationsListCableEndParameter
+	cableEndN         *CircuitsCircuitTerminationsListCableEndParameter
 	cableId           *[]*int32
 	cableIdN          *[]*int32
 	cabled            *bool
@@ -103806,13 +103806,13 @@ type ApiDcimRearPortsListRequest struct {
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimRearPortsListRequest) CableEnd(cableEnd string) ApiDcimRearPortsListRequest {
+func (r ApiDcimRearPortsListRequest) CableEnd(cableEnd CircuitsCircuitTerminationsListCableEndParameter) ApiDcimRearPortsListRequest {
 	r.cableEnd = &cableEnd
 	return r
 }
 
 // * &#x60;A&#x60; - A * &#x60;B&#x60; - B
-func (r ApiDcimRearPortsListRequest) CableEndN(cableEndN string) ApiDcimRearPortsListRequest {
+func (r ApiDcimRearPortsListRequest) CableEndN(cableEndN CircuitsCircuitTerminationsListCableEndParameter) ApiDcimRearPortsListRequest {
 	r.cableEndN = &cableEndN
 	return r
 }

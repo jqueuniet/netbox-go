@@ -20,12 +20,11 @@ var _ MappedNullable = &ContactAssignmentRequest{}
 
 // ContactAssignmentRequest Adds support for custom fields and tags.
 type ContactAssignmentRequest struct {
-	ContentType string                           `json:"content_type"`
-	ObjectId    int64                            `json:"object_id"`
-	Contact     NestedContactRequest             `json:"contact"`
-	Role        NullableNestedContactRoleRequest `json:"role,omitempty"`
-	// * `primary` - Primary * `secondary` - Secondary * `tertiary` - Tertiary * `inactive` - Inactive
-	Priority             *string `json:"priority,omitempty"`
+	ContentType          string                           `json:"content_type"`
+	ObjectId             int64                            `json:"object_id"`
+	Contact              NestedContactRequest             `json:"contact"`
+	Role                 NullableNestedContactRoleRequest `json:"role,omitempty"`
+	Priority             *ContactAssignmentPriorityValue  `json:"priority,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -167,9 +166,9 @@ func (o *ContactAssignmentRequest) UnsetRole() {
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *ContactAssignmentRequest) GetPriority() string {
+func (o *ContactAssignmentRequest) GetPriority() ContactAssignmentPriorityValue {
 	if o == nil || IsNil(o.Priority) {
-		var ret string
+		var ret ContactAssignmentPriorityValue
 		return ret
 	}
 	return *o.Priority
@@ -177,7 +176,7 @@ func (o *ContactAssignmentRequest) GetPriority() string {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContactAssignmentRequest) GetPriorityOk() (*string, bool) {
+func (o *ContactAssignmentRequest) GetPriorityOk() (*ContactAssignmentPriorityValue, bool) {
 	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
@@ -193,8 +192,8 @@ func (o *ContactAssignmentRequest) HasPriority() bool {
 	return false
 }
 
-// SetPriority gets a reference to the given string and assigns it to the Priority field.
-func (o *ContactAssignmentRequest) SetPriority(v string) {
+// SetPriority gets a reference to the given ContactAssignmentPriorityValue and assigns it to the Priority field.
+func (o *ContactAssignmentRequest) SetPriority(v ContactAssignmentPriorityValue) {
 	o.Priority = &v
 }
 

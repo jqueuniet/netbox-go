@@ -19,9 +19,8 @@ var _ MappedNullable = &L2VPNType{}
 
 // L2VPNType struct for L2VPNType
 type L2VPNType struct {
-	// * `vpws` - VPWS * `vpls` - VPLS * `vxlan` - VXLAN * `vxlan-evpn` - VXLAN-EVPN * `mpls-evpn` - MPLS EVPN * `pbb-evpn` - PBB EVPN * `epl` - EPL * `evpl` - EVPL * `ep-lan` - Ethernet Private LAN * `evp-lan` - Ethernet Virtual Private LAN * `ep-tree` - Ethernet Private Tree * `evp-tree` - Ethernet Virtual Private Tree
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *L2VPNTypeValue `json:"value,omitempty"`
+	Label                *L2VPNTypeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewL2VPNTypeWithDefaults() *L2VPNType {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *L2VPNType) GetValue() string {
+func (o *L2VPNType) GetValue() L2VPNTypeValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret L2VPNTypeValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *L2VPNType) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *L2VPNType) GetValueOk() (*string, bool) {
+func (o *L2VPNType) GetValueOk() (*L2VPNTypeValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *L2VPNType) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *L2VPNType) SetValue(v string) {
+// SetValue gets a reference to the given L2VPNTypeValue and assigns it to the Value field.
+func (o *L2VPNType) SetValue(v L2VPNTypeValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *L2VPNType) GetLabel() string {
+func (o *L2VPNType) GetLabel() L2VPNTypeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret L2VPNTypeLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *L2VPNType) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *L2VPNType) GetLabelOk() (*string, bool) {
+func (o *L2VPNType) GetLabelOk() (*L2VPNTypeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *L2VPNType) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *L2VPNType) SetLabel(v string) {
+// SetLabel gets a reference to the given L2VPNTypeLabel and assigns it to the Label field.
+func (o *L2VPNType) SetLabel(v L2VPNTypeLabel) {
 	o.Label = &v
 }
 

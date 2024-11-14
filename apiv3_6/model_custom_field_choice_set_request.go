@@ -20,11 +20,10 @@ var _ MappedNullable = &CustomFieldChoiceSetRequest{}
 
 // CustomFieldChoiceSetRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type CustomFieldChoiceSetRequest struct {
-	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
-	// * `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes)
-	BaseChoices  *string    `json:"base_choices,omitempty"`
-	ExtraChoices [][]string `json:"extra_choices,omitempty"`
+	Name         string                                `json:"name"`
+	Description  *string                               `json:"description,omitempty"`
+	BaseChoices  *CustomFieldChoiceSetBaseChoicesValue `json:"base_choices,omitempty"`
+	ExtraChoices [][]string                            `json:"extra_choices,omitempty"`
 	// Choices are automatically ordered alphabetically
 	OrderAlphabetically  *bool `json:"order_alphabetically,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -107,9 +106,9 @@ func (o *CustomFieldChoiceSetRequest) SetDescription(v string) {
 }
 
 // GetBaseChoices returns the BaseChoices field value if set, zero value otherwise.
-func (o *CustomFieldChoiceSetRequest) GetBaseChoices() string {
+func (o *CustomFieldChoiceSetRequest) GetBaseChoices() CustomFieldChoiceSetBaseChoicesValue {
 	if o == nil || IsNil(o.BaseChoices) {
-		var ret string
+		var ret CustomFieldChoiceSetBaseChoicesValue
 		return ret
 	}
 	return *o.BaseChoices
@@ -117,7 +116,7 @@ func (o *CustomFieldChoiceSetRequest) GetBaseChoices() string {
 
 // GetBaseChoicesOk returns a tuple with the BaseChoices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldChoiceSetRequest) GetBaseChoicesOk() (*string, bool) {
+func (o *CustomFieldChoiceSetRequest) GetBaseChoicesOk() (*CustomFieldChoiceSetBaseChoicesValue, bool) {
 	if o == nil || IsNil(o.BaseChoices) {
 		return nil, false
 	}
@@ -133,8 +132,8 @@ func (o *CustomFieldChoiceSetRequest) HasBaseChoices() bool {
 	return false
 }
 
-// SetBaseChoices gets a reference to the given string and assigns it to the BaseChoices field.
-func (o *CustomFieldChoiceSetRequest) SetBaseChoices(v string) {
+// SetBaseChoices gets a reference to the given CustomFieldChoiceSetBaseChoicesValue and assigns it to the BaseChoices field.
+func (o *CustomFieldChoiceSetRequest) SetBaseChoices(v CustomFieldChoiceSetBaseChoicesValue) {
 	o.BaseChoices = &v
 }
 

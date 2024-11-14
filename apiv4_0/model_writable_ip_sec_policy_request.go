@@ -20,14 +20,13 @@ var _ MappedNullable = &WritableIPSecPolicyRequest{}
 
 // WritableIPSecPolicyRequest Adds support for custom fields and tags.
 type WritableIPSecPolicyRequest struct {
-	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
-	Proposals   []int32 `json:"proposals,omitempty"`
-	// Diffie-Hellman group for Perfect Forward Secrecy  * `1` - Group 1 * `2` - Group 2 * `5` - Group 5 * `14` - Group 14 * `15` - Group 15 * `16` - Group 16 * `17` - Group 17 * `18` - Group 18 * `19` - Group 19 * `20` - Group 20 * `21` - Group 21 * `22` - Group 22 * `23` - Group 23 * `24` - Group 24 * `25` - Group 25 * `26` - Group 26 * `27` - Group 27 * `28` - Group 28 * `29` - Group 29 * `30` - Group 30 * `31` - Group 31 * `32` - Group 32 * `33` - Group 33 * `34` - Group 34
-	PfsGroup             NullableInt32          `json:"pfs_group,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                                            `json:"name"`
+	Description          *string                                           `json:"description,omitempty"`
+	Proposals            []int32                                           `json:"proposals,omitempty"`
+	PfsGroup             NullablePatchedWritableIPSecPolicyRequestPfsGroup `json:"pfs_group,omitempty"`
+	Comments             *string                                           `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                                `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                            `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -140,9 +139,9 @@ func (o *WritableIPSecPolicyRequest) SetProposals(v []int32) {
 }
 
 // GetPfsGroup returns the PfsGroup field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *WritableIPSecPolicyRequest) GetPfsGroup() int32 {
+func (o *WritableIPSecPolicyRequest) GetPfsGroup() PatchedWritableIPSecPolicyRequestPfsGroup {
 	if o == nil || IsNil(o.PfsGroup.Get()) {
-		var ret int32
+		var ret PatchedWritableIPSecPolicyRequestPfsGroup
 		return ret
 	}
 	return *o.PfsGroup.Get()
@@ -151,7 +150,7 @@ func (o *WritableIPSecPolicyRequest) GetPfsGroup() int32 {
 // GetPfsGroupOk returns a tuple with the PfsGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *WritableIPSecPolicyRequest) GetPfsGroupOk() (*int32, bool) {
+func (o *WritableIPSecPolicyRequest) GetPfsGroupOk() (*PatchedWritableIPSecPolicyRequestPfsGroup, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -167,8 +166,8 @@ func (o *WritableIPSecPolicyRequest) HasPfsGroup() bool {
 	return false
 }
 
-// SetPfsGroup gets a reference to the given NullableInt32 and assigns it to the PfsGroup field.
-func (o *WritableIPSecPolicyRequest) SetPfsGroup(v int32) {
+// SetPfsGroup gets a reference to the given NullablePatchedWritableIPSecPolicyRequestPfsGroup and assigns it to the PfsGroup field.
+func (o *WritableIPSecPolicyRequest) SetPfsGroup(v PatchedWritableIPSecPolicyRequestPfsGroup) {
 	o.PfsGroup.Set(&v)
 }
 

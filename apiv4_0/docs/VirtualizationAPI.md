@@ -2736,8 +2736,8 @@ func main() {
 	macAddressNie := []string{"Inner_example"} // []string |  (optional)
 	macAddressNiew := []string{"Inner_example"} // []string |  (optional)
 	macAddressNisw := []string{"Inner_example"} // []string |  (optional)
-	mode := "mode_example" // string | IEEE 802.1Q tagging strategy  * `access` - Access * `tagged` - Tagged * `tagged-all` - Tagged (All) (optional)
-	modeN := "modeN_example" // string | IEEE 802.1Q tagging strategy  * `access` - Access * `tagged` - Tagged * `tagged-all` - Tagged (All) (optional)
+	mode := openapiclient.dcim_interfaces_list_mode_parameter("access") // DcimInterfacesListModeParameter | IEEE 802.1Q tagging strategy  * `access` - Access * `tagged` - Tagged * `tagged-all` - Tagged (All) (optional)
+	modeN := openapiclient.dcim_interfaces_list_mode_parameter("access") // DcimInterfacesListModeParameter | IEEE 802.1Q tagging strategy  * `access` - Access * `tagged` - Tagged * `tagged-all` - Tagged (All) (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	mtu := []int32{int32(123)} // []int32 |  (optional)
 	mtuEmpty := true // bool |  (optional)
@@ -2854,8 +2854,8 @@ Name | Type | Description  | Notes
  **macAddressNie** | **[]string** |  | 
  **macAddressNiew** | **[]string** |  | 
  **macAddressNisw** | **[]string** |  | 
- **mode** | **string** | IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All) | 
- **modeN** | **string** | IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All) | 
+ **mode** | [**DcimInterfacesListModeParameter**](DcimInterfacesListModeParameter.md) | IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All) | 
+ **modeN** | [**DcimInterfacesListModeParameter**](DcimInterfacesListModeParameter.md) | IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All) | 
  **modifiedByRequest** | **string** |  | 
  **mtu** | **[]int32** |  | 
  **mtuEmpty** | **bool** |  | 
@@ -4665,7 +4665,7 @@ import (
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this virtual machine.
 	writableVirtualMachineWithConfigContextRequest := *openapiclient.NewWritableVirtualMachineWithConfigContextRequest("Name_example") // WritableVirtualMachineWithConfigContextRequest | 
-	format := "format_example" // string |  (optional)
+	format := openapiclient.dcim_devices_render_config_create_format_parameter("json") // DcimDevicesRenderConfigCreateFormatParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4696,7 +4696,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **writableVirtualMachineWithConfigContextRequest** | [**WritableVirtualMachineWithConfigContextRequest**](WritableVirtualMachineWithConfigContextRequest.md) |  | 
- **format** | **string** |  | 
+ **format** | [**DcimDevicesRenderConfigCreateFormatParameter**](DcimDevicesRenderConfigCreateFormatParameter.md) |  | 
 
 ### Return type
 

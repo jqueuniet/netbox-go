@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**Version** | **int32** | * &#x60;1&#x60; - IKEv1 * &#x60;2&#x60; - IKEv2 | 
-**Mode** | Pointer to **string** | * &#x60;aggressive&#x60; - Aggressive * &#x60;main&#x60; - Main | [optional] 
+**Version** | [**IKEPolicyVersionValue**](IKEPolicyVersionValue.md) |  | 
+**Mode** | Pointer to [**IKEPolicyModeValue**](IKEPolicyModeValue.md) |  | [optional] 
 **Proposals** | Pointer to **[]int32** |  | [optional] 
 **PresharedKey** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewIKEPolicyRequest
 
-`func NewIKEPolicyRequest(name string, version int32, ) *IKEPolicyRequest`
+`func NewIKEPolicyRequest(name string, version IKEPolicyVersionValue, ) *IKEPolicyRequest`
 
 NewIKEPolicyRequest instantiates a new IKEPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -80,40 +80,40 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *IKEPolicyRequest) GetVersion() int32`
+`func (o *IKEPolicyRequest) GetVersion() IKEPolicyVersionValue`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *IKEPolicyRequest) GetVersionOk() (*int32, bool)`
+`func (o *IKEPolicyRequest) GetVersionOk() (*IKEPolicyVersionValue, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *IKEPolicyRequest) SetVersion(v int32)`
+`func (o *IKEPolicyRequest) SetVersion(v IKEPolicyVersionValue)`
 
 SetVersion sets Version field to given value.
 
 
 ### GetMode
 
-`func (o *IKEPolicyRequest) GetMode() string`
+`func (o *IKEPolicyRequest) GetMode() IKEPolicyModeValue`
 
 GetMode returns the Mode field if non-nil, zero value otherwise.
 
 ### GetModeOk
 
-`func (o *IKEPolicyRequest) GetModeOk() (*string, bool)`
+`func (o *IKEPolicyRequest) GetModeOk() (*IKEPolicyModeValue, bool)`
 
 GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMode
 
-`func (o *IKEPolicyRequest) SetMode(v string)`
+`func (o *IKEPolicyRequest) SetMode(v IKEPolicyModeValue)`
 
 SetMode sets Mode field to given value.
 

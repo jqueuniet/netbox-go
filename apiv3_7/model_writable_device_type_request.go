@@ -31,20 +31,17 @@ type WritableDeviceTypeRequest struct {
 	// Devices of this type are excluded when calculating rack utilization.
 	ExcludeFromUtilization *bool `json:"exclude_from_utilization,omitempty"`
 	// Device consumes both front and rear rack faces.
-	IsFullDepth *bool `json:"is_full_depth,omitempty"`
-	// Parent devices house child devices in device bays. Leave blank if this device type is neither a parent nor a child.  * `parent` - Parent * `child` - Child
-	SubdeviceRole *string `json:"subdevice_role,omitempty"`
-	// * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `passive` - Passive * `mixed` - Mixed
-	Airflow *string         `json:"airflow,omitempty"`
-	Weight  NullableFloat64 `json:"weight,omitempty"`
-	// * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces
-	WeightUnit           *string                `json:"weight_unit,omitempty"`
-	FrontImage           **os.File              `json:"front_image,omitempty"`
-	RearImage            **os.File              `json:"rear_image,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	IsFullDepth          *bool                                       `json:"is_full_depth,omitempty"`
+	SubdeviceRole        *ParentChildStatus                          `json:"subdevice_role,omitempty"`
+	Airflow              *DeviceAirflowValue                         `json:"airflow,omitempty"`
+	Weight               NullableFloat64                             `json:"weight,omitempty"`
+	WeightUnit           *PatchedWritableDeviceTypeRequestWeightUnit `json:"weight_unit,omitempty"`
+	FrontImage           **os.File                                   `json:"front_image,omitempty"`
+	RearImage            **os.File                                   `json:"rear_image,omitempty"`
+	Description          *string                                     `json:"description,omitempty"`
+	Comments             *string                                     `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                          `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                      `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -318,9 +315,9 @@ func (o *WritableDeviceTypeRequest) SetIsFullDepth(v bool) {
 }
 
 // GetSubdeviceRole returns the SubdeviceRole field value if set, zero value otherwise.
-func (o *WritableDeviceTypeRequest) GetSubdeviceRole() string {
+func (o *WritableDeviceTypeRequest) GetSubdeviceRole() ParentChildStatus {
 	if o == nil || IsNil(o.SubdeviceRole) {
-		var ret string
+		var ret ParentChildStatus
 		return ret
 	}
 	return *o.SubdeviceRole
@@ -328,7 +325,7 @@ func (o *WritableDeviceTypeRequest) GetSubdeviceRole() string {
 
 // GetSubdeviceRoleOk returns a tuple with the SubdeviceRole field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableDeviceTypeRequest) GetSubdeviceRoleOk() (*string, bool) {
+func (o *WritableDeviceTypeRequest) GetSubdeviceRoleOk() (*ParentChildStatus, bool) {
 	if o == nil || IsNil(o.SubdeviceRole) {
 		return nil, false
 	}
@@ -344,15 +341,15 @@ func (o *WritableDeviceTypeRequest) HasSubdeviceRole() bool {
 	return false
 }
 
-// SetSubdeviceRole gets a reference to the given string and assigns it to the SubdeviceRole field.
-func (o *WritableDeviceTypeRequest) SetSubdeviceRole(v string) {
+// SetSubdeviceRole gets a reference to the given ParentChildStatus and assigns it to the SubdeviceRole field.
+func (o *WritableDeviceTypeRequest) SetSubdeviceRole(v ParentChildStatus) {
 	o.SubdeviceRole = &v
 }
 
 // GetAirflow returns the Airflow field value if set, zero value otherwise.
-func (o *WritableDeviceTypeRequest) GetAirflow() string {
+func (o *WritableDeviceTypeRequest) GetAirflow() DeviceAirflowValue {
 	if o == nil || IsNil(o.Airflow) {
-		var ret string
+		var ret DeviceAirflowValue
 		return ret
 	}
 	return *o.Airflow
@@ -360,7 +357,7 @@ func (o *WritableDeviceTypeRequest) GetAirflow() string {
 
 // GetAirflowOk returns a tuple with the Airflow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableDeviceTypeRequest) GetAirflowOk() (*string, bool) {
+func (o *WritableDeviceTypeRequest) GetAirflowOk() (*DeviceAirflowValue, bool) {
 	if o == nil || IsNil(o.Airflow) {
 		return nil, false
 	}
@@ -376,8 +373,8 @@ func (o *WritableDeviceTypeRequest) HasAirflow() bool {
 	return false
 }
 
-// SetAirflow gets a reference to the given string and assigns it to the Airflow field.
-func (o *WritableDeviceTypeRequest) SetAirflow(v string) {
+// SetAirflow gets a reference to the given DeviceAirflowValue and assigns it to the Airflow field.
+func (o *WritableDeviceTypeRequest) SetAirflow(v DeviceAirflowValue) {
 	o.Airflow = &v
 }
 
@@ -425,9 +422,9 @@ func (o *WritableDeviceTypeRequest) UnsetWeight() {
 }
 
 // GetWeightUnit returns the WeightUnit field value if set, zero value otherwise.
-func (o *WritableDeviceTypeRequest) GetWeightUnit() string {
+func (o *WritableDeviceTypeRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit {
 	if o == nil || IsNil(o.WeightUnit) {
-		var ret string
+		var ret PatchedWritableDeviceTypeRequestWeightUnit
 		return ret
 	}
 	return *o.WeightUnit
@@ -435,7 +432,7 @@ func (o *WritableDeviceTypeRequest) GetWeightUnit() string {
 
 // GetWeightUnitOk returns a tuple with the WeightUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableDeviceTypeRequest) GetWeightUnitOk() (*string, bool) {
+func (o *WritableDeviceTypeRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool) {
 	if o == nil || IsNil(o.WeightUnit) {
 		return nil, false
 	}
@@ -451,8 +448,8 @@ func (o *WritableDeviceTypeRequest) HasWeightUnit() bool {
 	return false
 }
 
-// SetWeightUnit gets a reference to the given string and assigns it to the WeightUnit field.
-func (o *WritableDeviceTypeRequest) SetWeightUnit(v string) {
+// SetWeightUnit gets a reference to the given PatchedWritableDeviceTypeRequestWeightUnit and assigns it to the WeightUnit field.
+func (o *WritableDeviceTypeRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit) {
 	o.WeightUnit = &v
 }
 

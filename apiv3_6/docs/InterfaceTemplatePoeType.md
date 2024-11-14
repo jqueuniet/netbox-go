@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **NullableString** | * &#x60;type1-ieee802.3af&#x60; - 802.3af (Type 1) * &#x60;type2-ieee802.3at&#x60; - 802.3at (Type 2) * &#x60;type3-ieee802.3bt&#x60; - 802.3bt (Type 3) * &#x60;type4-ieee802.3bt&#x60; - 802.3bt (Type 4) * &#x60;passive-24v-2pair&#x60; - Passive 24V (2-pair) * &#x60;passive-24v-4pair&#x60; - Passive 24V (4-pair) * &#x60;passive-48v-2pair&#x60; - Passive 48V (2-pair) * &#x60;passive-48v-4pair&#x60; - Passive 48V (4-pair) | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**InterfaceTemplatePoeTypeValue**](InterfaceTemplatePoeTypeValue.md) |  | [optional] 
+**Label** | Pointer to [**InterfacePoeTypeLabel**](InterfacePoeTypeLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *InterfaceTemplatePoeType) GetValue() string`
+`func (o *InterfaceTemplatePoeType) GetValue() InterfaceTemplatePoeTypeValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *InterfaceTemplatePoeType) GetValueOk() (*string, bool)`
+`func (o *InterfaceTemplatePoeType) GetValueOk() (*InterfaceTemplatePoeTypeValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *InterfaceTemplatePoeType) SetValue(v string)`
+`func (o *InterfaceTemplatePoeType) SetValue(v InterfaceTemplatePoeTypeValue)`
 
 SetValue sets Value field to given value.
 
@@ -51,32 +51,22 @@ SetValue sets Value field to given value.
 
 HasValue returns a boolean if a field has been set.
 
-### SetValueNil
-
-`func (o *InterfaceTemplatePoeType) SetValueNil(b bool)`
-
- SetValueNil sets the value for Value to be an explicit nil
-
-### UnsetValue
-`func (o *InterfaceTemplatePoeType) UnsetValue()`
-
-UnsetValue ensures that no value is present for Value, not even an explicit nil
 ### GetLabel
 
-`func (o *InterfaceTemplatePoeType) GetLabel() string`
+`func (o *InterfaceTemplatePoeType) GetLabel() InterfacePoeTypeLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *InterfaceTemplatePoeType) GetLabelOk() (*string, bool)`
+`func (o *InterfaceTemplatePoeType) GetLabelOk() (*InterfacePoeTypeLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *InterfaceTemplatePoeType) SetLabel(v string)`
+`func (o *InterfaceTemplatePoeType) SetLabel(v InterfacePoeTypeLabel)`
 
 SetLabel sets Label field to given value.
 

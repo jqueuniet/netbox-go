@@ -19,9 +19,8 @@ var _ MappedNullable = &DataSourceStatus{}
 
 // DataSourceStatus struct for DataSourceStatus
 type DataSourceStatus struct {
-	// * `new` - New * `queued` - Queued * `syncing` - Syncing * `completed` - Completed * `failed` - Failed
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *DataSourceStatusValue `json:"value,omitempty"`
+	Label                *DataSourceStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewDataSourceStatusWithDefaults() *DataSourceStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *DataSourceStatus) GetValue() string {
+func (o *DataSourceStatus) GetValue() DataSourceStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret DataSourceStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *DataSourceStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DataSourceStatus) GetValueOk() (*string, bool) {
+func (o *DataSourceStatus) GetValueOk() (*DataSourceStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *DataSourceStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *DataSourceStatus) SetValue(v string) {
+// SetValue gets a reference to the given DataSourceStatusValue and assigns it to the Value field.
+func (o *DataSourceStatus) SetValue(v DataSourceStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *DataSourceStatus) GetLabel() string {
+func (o *DataSourceStatus) GetLabel() DataSourceStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DataSourceStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *DataSourceStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DataSourceStatus) GetLabelOk() (*string, bool) {
+func (o *DataSourceStatus) GetLabelOk() (*DataSourceStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *DataSourceStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *DataSourceStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given DataSourceStatusLabel and assigns it to the Label field.
+func (o *DataSourceStatus) SetLabel(v DataSourceStatusLabel) {
 	o.Label = &v
 }
 

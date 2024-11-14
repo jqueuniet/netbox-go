@@ -20,14 +20,12 @@ var _ MappedNullable = &RackTypeRequest{}
 
 // RackTypeRequest Adds support for custom fields and tags.
 type RackTypeRequest struct {
-	Manufacturer BriefManufacturerRequest `json:"manufacturer"`
-	Model        string                   `json:"model"`
-	Slug         string                   `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	Description  *string                  `json:"description,omitempty"`
-	// * `2-post-frame` - 2-post frame * `4-post-frame` - 4-post frame * `4-post-cabinet` - 4-post cabinet * `wall-frame` - Wall-mounted frame * `wall-frame-vertical` - Wall-mounted frame (vertical) * `wall-cabinet` - Wall-mounted cabinet * `wall-cabinet-vertical` - Wall-mounted cabinet (vertical)
-	FormFactor NullableString `json:"form_factor,omitempty"`
-	// * `10` - 10 inches * `19` - 19 inches * `21` - 21 inches * `23` - 23 inches
-	Width *int32 `json:"width,omitempty"`
+	Manufacturer BriefManufacturerRequest      `json:"manufacturer"`
+	Model        string                        `json:"model"`
+	Slug         string                        `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Description  *string                       `json:"description,omitempty"`
+	FormFactor   NullableRackRequestFormFactor `json:"form_factor,omitempty"`
+	Width        *RackWidthValue               `json:"width,omitempty"`
 	// Height in rack units
 	UHeight *int32 `json:"u_height,omitempty"`
 	// Starting unit for rack
@@ -37,14 +35,12 @@ type RackTypeRequest struct {
 	// Outer dimension of rack (width)
 	OuterWidth NullableInt32 `json:"outer_width,omitempty"`
 	// Outer dimension of rack (depth)
-	OuterDepth NullableInt32 `json:"outer_depth,omitempty"`
-	// * `mm` - Millimeters * `in` - Inches
-	OuterUnit NullableString  `json:"outer_unit,omitempty"`
-	Weight    NullableFloat64 `json:"weight,omitempty"`
+	OuterDepth NullableInt32                `json:"outer_depth,omitempty"`
+	OuterUnit  NullableRackRequestOuterUnit `json:"outer_unit,omitempty"`
+	Weight     NullableFloat64              `json:"weight,omitempty"`
 	// Maximum load capacity for the rack
-	MaxWeight NullableInt32 `json:"max_weight,omitempty"`
-	// * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces
-	WeightUnit NullableString `json:"weight_unit,omitempty"`
+	MaxWeight  NullableInt32                       `json:"max_weight,omitempty"`
+	WeightUnit NullableDeviceTypeRequestWeightUnit `json:"weight_unit,omitempty"`
 	// Maximum depth of a mounted device, in millimeters. For four-post racks, this is the distance between the front and rear rails.
 	MountingDepth        NullableInt32          `json:"mounting_depth,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
@@ -180,9 +176,9 @@ func (o *RackTypeRequest) SetDescription(v string) {
 }
 
 // GetFormFactor returns the FormFactor field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RackTypeRequest) GetFormFactor() string {
+func (o *RackTypeRequest) GetFormFactor() RackRequestFormFactor {
 	if o == nil || IsNil(o.FormFactor.Get()) {
-		var ret string
+		var ret RackRequestFormFactor
 		return ret
 	}
 	return *o.FormFactor.Get()
@@ -191,7 +187,7 @@ func (o *RackTypeRequest) GetFormFactor() string {
 // GetFormFactorOk returns a tuple with the FormFactor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RackTypeRequest) GetFormFactorOk() (*string, bool) {
+func (o *RackTypeRequest) GetFormFactorOk() (*RackRequestFormFactor, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -207,8 +203,8 @@ func (o *RackTypeRequest) HasFormFactor() bool {
 	return false
 }
 
-// SetFormFactor gets a reference to the given NullableString and assigns it to the FormFactor field.
-func (o *RackTypeRequest) SetFormFactor(v string) {
+// SetFormFactor gets a reference to the given NullableRackRequestFormFactor and assigns it to the FormFactor field.
+func (o *RackTypeRequest) SetFormFactor(v RackRequestFormFactor) {
 	o.FormFactor.Set(&v)
 }
 
@@ -223,9 +219,9 @@ func (o *RackTypeRequest) UnsetFormFactor() {
 }
 
 // GetWidth returns the Width field value if set, zero value otherwise.
-func (o *RackTypeRequest) GetWidth() int32 {
+func (o *RackTypeRequest) GetWidth() RackWidthValue {
 	if o == nil || IsNil(o.Width) {
-		var ret int32
+		var ret RackWidthValue
 		return ret
 	}
 	return *o.Width
@@ -233,7 +229,7 @@ func (o *RackTypeRequest) GetWidth() int32 {
 
 // GetWidthOk returns a tuple with the Width field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackTypeRequest) GetWidthOk() (*int32, bool) {
+func (o *RackTypeRequest) GetWidthOk() (*RackWidthValue, bool) {
 	if o == nil || IsNil(o.Width) {
 		return nil, false
 	}
@@ -249,8 +245,8 @@ func (o *RackTypeRequest) HasWidth() bool {
 	return false
 }
 
-// SetWidth gets a reference to the given int32 and assigns it to the Width field.
-func (o *RackTypeRequest) SetWidth(v int32) {
+// SetWidth gets a reference to the given RackWidthValue and assigns it to the Width field.
+func (o *RackTypeRequest) SetWidth(v RackWidthValue) {
 	o.Width = &v
 }
 
@@ -437,9 +433,9 @@ func (o *RackTypeRequest) UnsetOuterDepth() {
 }
 
 // GetOuterUnit returns the OuterUnit field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RackTypeRequest) GetOuterUnit() string {
+func (o *RackTypeRequest) GetOuterUnit() RackRequestOuterUnit {
 	if o == nil || IsNil(o.OuterUnit.Get()) {
-		var ret string
+		var ret RackRequestOuterUnit
 		return ret
 	}
 	return *o.OuterUnit.Get()
@@ -448,7 +444,7 @@ func (o *RackTypeRequest) GetOuterUnit() string {
 // GetOuterUnitOk returns a tuple with the OuterUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RackTypeRequest) GetOuterUnitOk() (*string, bool) {
+func (o *RackTypeRequest) GetOuterUnitOk() (*RackRequestOuterUnit, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -464,8 +460,8 @@ func (o *RackTypeRequest) HasOuterUnit() bool {
 	return false
 }
 
-// SetOuterUnit gets a reference to the given NullableString and assigns it to the OuterUnit field.
-func (o *RackTypeRequest) SetOuterUnit(v string) {
+// SetOuterUnit gets a reference to the given NullableRackRequestOuterUnit and assigns it to the OuterUnit field.
+func (o *RackTypeRequest) SetOuterUnit(v RackRequestOuterUnit) {
 	o.OuterUnit.Set(&v)
 }
 
@@ -566,9 +562,9 @@ func (o *RackTypeRequest) UnsetMaxWeight() {
 }
 
 // GetWeightUnit returns the WeightUnit field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RackTypeRequest) GetWeightUnit() string {
+func (o *RackTypeRequest) GetWeightUnit() DeviceTypeRequestWeightUnit {
 	if o == nil || IsNil(o.WeightUnit.Get()) {
-		var ret string
+		var ret DeviceTypeRequestWeightUnit
 		return ret
 	}
 	return *o.WeightUnit.Get()
@@ -577,7 +573,7 @@ func (o *RackTypeRequest) GetWeightUnit() string {
 // GetWeightUnitOk returns a tuple with the WeightUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RackTypeRequest) GetWeightUnitOk() (*string, bool) {
+func (o *RackTypeRequest) GetWeightUnitOk() (*DeviceTypeRequestWeightUnit, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -593,8 +589,8 @@ func (o *RackTypeRequest) HasWeightUnit() bool {
 	return false
 }
 
-// SetWeightUnit gets a reference to the given NullableString and assigns it to the WeightUnit field.
-func (o *RackTypeRequest) SetWeightUnit(v string) {
+// SetWeightUnit gets a reference to the given NullableDeviceTypeRequestWeightUnit and assigns it to the WeightUnit field.
+func (o *RackTypeRequest) SetWeightUnit(v DeviceTypeRequestWeightUnit) {
 	o.WeightUnit.Set(&v)
 }
 

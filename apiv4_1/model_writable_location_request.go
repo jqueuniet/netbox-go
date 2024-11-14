@@ -20,12 +20,11 @@ var _ MappedNullable = &WritableLocationRequest{}
 
 // WritableLocationRequest Extends PrimaryModelSerializer to include MPTT support.
 type WritableLocationRequest struct {
-	Name   string           `json:"name"`
-	Slug   string           `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	Site   BriefSiteRequest `json:"site"`
-	Parent NullableInt32    `json:"parent"`
-	// * `planned` - Planned * `staging` - Staging * `active` - Active * `decommissioning` - Decommissioning * `retired` - Retired
-	Status *string                    `json:"status,omitempty"`
+	Name   string                     `json:"name"`
+	Slug   string                     `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Site   BriefSiteRequest           `json:"site"`
+	Parent NullableInt32              `json:"parent"`
+	Status *LocationStatusValue       `json:"status,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
 	// Local facility ID or description
 	Facility             *string                `json:"facility,omitempty"`
@@ -157,9 +156,9 @@ func (o *WritableLocationRequest) SetParent(v int32) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableLocationRequest) GetStatus() string {
+func (o *WritableLocationRequest) GetStatus() LocationStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret LocationStatusValue
 		return ret
 	}
 	return *o.Status
@@ -167,7 +166,7 @@ func (o *WritableLocationRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableLocationRequest) GetStatusOk() (*string, bool) {
+func (o *WritableLocationRequest) GetStatusOk() (*LocationStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -183,8 +182,8 @@ func (o *WritableLocationRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableLocationRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given LocationStatusValue and assigns it to the Status field.
+func (o *WritableLocationRequest) SetStatus(v LocationStatusValue) {
 	o.Status = &v
 }
 

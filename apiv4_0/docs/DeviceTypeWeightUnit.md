@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **NullableString** | * &#x60;kg&#x60; - Kilograms * &#x60;g&#x60; - Grams * &#x60;lb&#x60; - Pounds * &#x60;oz&#x60; - Ounces | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**DeviceTypeWeightUnitValue**](DeviceTypeWeightUnitValue.md) |  | [optional] 
+**Label** | Pointer to [**DeviceTypeWeightUnitLabel**](DeviceTypeWeightUnitLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *DeviceTypeWeightUnit) GetValue() string`
+`func (o *DeviceTypeWeightUnit) GetValue() DeviceTypeWeightUnitValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *DeviceTypeWeightUnit) GetValueOk() (*string, bool)`
+`func (o *DeviceTypeWeightUnit) GetValueOk() (*DeviceTypeWeightUnitValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *DeviceTypeWeightUnit) SetValue(v string)`
+`func (o *DeviceTypeWeightUnit) SetValue(v DeviceTypeWeightUnitValue)`
 
 SetValue sets Value field to given value.
 
@@ -51,32 +51,22 @@ SetValue sets Value field to given value.
 
 HasValue returns a boolean if a field has been set.
 
-### SetValueNil
-
-`func (o *DeviceTypeWeightUnit) SetValueNil(b bool)`
-
- SetValueNil sets the value for Value to be an explicit nil
-
-### UnsetValue
-`func (o *DeviceTypeWeightUnit) UnsetValue()`
-
-UnsetValue ensures that no value is present for Value, not even an explicit nil
 ### GetLabel
 
-`func (o *DeviceTypeWeightUnit) GetLabel() string`
+`func (o *DeviceTypeWeightUnit) GetLabel() DeviceTypeWeightUnitLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *DeviceTypeWeightUnit) GetLabelOk() (*string, bool)`
+`func (o *DeviceTypeWeightUnit) GetLabelOk() (*DeviceTypeWeightUnitLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *DeviceTypeWeightUnit) SetLabel(v string)`
+`func (o *DeviceTypeWeightUnit) SetLabel(v DeviceTypeWeightUnitLabel)`
 
 SetLabel sets Label field to given value.
 

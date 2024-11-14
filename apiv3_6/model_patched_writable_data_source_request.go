@@ -19,14 +19,13 @@ var _ MappedNullable = &PatchedWritableDataSourceRequest{}
 
 // PatchedWritableDataSourceRequest Adds support for custom fields and tags.
 type PatchedWritableDataSourceRequest struct {
-	Name *string `json:"name,omitempty"`
-	// * `local` - Local * `git` - Git * `amazon-s3` - Amazon S3
-	Type        *string     `json:"type,omitempty"`
-	SourceUrl   *string     `json:"source_url,omitempty"`
-	Enabled     *bool       `json:"enabled,omitempty"`
-	Description *string     `json:"description,omitempty"`
-	Comments    *string     `json:"comments,omitempty"`
-	Parameters  interface{} `json:"parameters,omitempty"`
+	Name        *string              `json:"name,omitempty"`
+	Type        *DataSourceTypeValue `json:"type,omitempty"`
+	SourceUrl   *string              `json:"source_url,omitempty"`
+	Enabled     *bool                `json:"enabled,omitempty"`
+	Description *string              `json:"description,omitempty"`
+	Comments    *string              `json:"comments,omitempty"`
+	Parameters  interface{}          `json:"parameters,omitempty"`
 	// Patterns (one per line) matching files to ignore when syncing
 	IgnoreRules          *string `json:"ignore_rules,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -84,9 +83,9 @@ func (o *PatchedWritableDataSourceRequest) SetName(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *PatchedWritableDataSourceRequest) GetType() string {
+func (o *PatchedWritableDataSourceRequest) GetType() DataSourceTypeValue {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret DataSourceTypeValue
 		return ret
 	}
 	return *o.Type
@@ -94,7 +93,7 @@ func (o *PatchedWritableDataSourceRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableDataSourceRequest) GetTypeOk() (*string, bool) {
+func (o *PatchedWritableDataSourceRequest) GetTypeOk() (*DataSourceTypeValue, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -110,8 +109,8 @@ func (o *PatchedWritableDataSourceRequest) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *PatchedWritableDataSourceRequest) SetType(v string) {
+// SetType gets a reference to the given DataSourceTypeValue and assigns it to the Type field.
+func (o *PatchedWritableDataSourceRequest) SetType(v DataSourceTypeValue) {
 	o.Type = &v
 }
 

@@ -19,12 +19,10 @@ var _ MappedNullable = &PatchedFHRPGroupRequest{}
 
 // PatchedFHRPGroupRequest Adds support for custom fields and tags.
 type PatchedFHRPGroupRequest struct {
-	Name *string `json:"name,omitempty"`
-	// * `vrrp2` - VRRPv2 * `vrrp3` - VRRPv3 * `carp` - CARP * `clusterxl` - ClusterXL * `hsrp` - HSRP * `glbp` - GLBP * `other` - Other
-	Protocol *string `json:"protocol,omitempty"`
-	GroupId  *int32  `json:"group_id,omitempty"`
-	// * `plaintext` - Plaintext * `md5` - MD5
-	AuthType             *string                `json:"auth_type,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Protocol             *FHRPGroupProtocol     `json:"protocol,omitempty"`
+	GroupId              *int32                 `json:"group_id,omitempty"`
+	AuthType             *AuthenticationType    `json:"auth_type,omitempty"`
 	AuthKey              *string                `json:"auth_key,omitempty"`
 	Description          *string                `json:"description,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
@@ -85,9 +83,9 @@ func (o *PatchedFHRPGroupRequest) SetName(v string) {
 }
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
-func (o *PatchedFHRPGroupRequest) GetProtocol() string {
+func (o *PatchedFHRPGroupRequest) GetProtocol() FHRPGroupProtocol {
 	if o == nil || IsNil(o.Protocol) {
-		var ret string
+		var ret FHRPGroupProtocol
 		return ret
 	}
 	return *o.Protocol
@@ -95,7 +93,7 @@ func (o *PatchedFHRPGroupRequest) GetProtocol() string {
 
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedFHRPGroupRequest) GetProtocolOk() (*string, bool) {
+func (o *PatchedFHRPGroupRequest) GetProtocolOk() (*FHRPGroupProtocol, bool) {
 	if o == nil || IsNil(o.Protocol) {
 		return nil, false
 	}
@@ -111,8 +109,8 @@ func (o *PatchedFHRPGroupRequest) HasProtocol() bool {
 	return false
 }
 
-// SetProtocol gets a reference to the given string and assigns it to the Protocol field.
-func (o *PatchedFHRPGroupRequest) SetProtocol(v string) {
+// SetProtocol gets a reference to the given FHRPGroupProtocol and assigns it to the Protocol field.
+func (o *PatchedFHRPGroupRequest) SetProtocol(v FHRPGroupProtocol) {
 	o.Protocol = &v
 }
 
@@ -149,9 +147,9 @@ func (o *PatchedFHRPGroupRequest) SetGroupId(v int32) {
 }
 
 // GetAuthType returns the AuthType field value if set, zero value otherwise.
-func (o *PatchedFHRPGroupRequest) GetAuthType() string {
+func (o *PatchedFHRPGroupRequest) GetAuthType() AuthenticationType {
 	if o == nil || IsNil(o.AuthType) {
-		var ret string
+		var ret AuthenticationType
 		return ret
 	}
 	return *o.AuthType
@@ -159,7 +157,7 @@ func (o *PatchedFHRPGroupRequest) GetAuthType() string {
 
 // GetAuthTypeOk returns a tuple with the AuthType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedFHRPGroupRequest) GetAuthTypeOk() (*string, bool) {
+func (o *PatchedFHRPGroupRequest) GetAuthTypeOk() (*AuthenticationType, bool) {
 	if o == nil || IsNil(o.AuthType) {
 		return nil, false
 	}
@@ -175,8 +173,8 @@ func (o *PatchedFHRPGroupRequest) HasAuthType() bool {
 	return false
 }
 
-// SetAuthType gets a reference to the given string and assigns it to the AuthType field.
-func (o *PatchedFHRPGroupRequest) SetAuthType(v string) {
+// SetAuthType gets a reference to the given AuthenticationType and assigns it to the AuthType field.
+func (o *PatchedFHRPGroupRequest) SetAuthType(v AuthenticationType) {
 	o.AuthType = &v
 }
 

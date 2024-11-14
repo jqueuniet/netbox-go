@@ -29827,7 +29827,7 @@ type ApiIpamServiceTemplatesListRequest struct {
 	offset            *int32
 	ordering          *string
 	port              *float32
-	protocol          *string
+	protocol          *IpamServiceTemplatesListProtocolParameter
 	q                 *string
 	tag               *[]string
 	tagN              *[]string
@@ -30083,7 +30083,7 @@ func (r ApiIpamServiceTemplatesListRequest) Port(port float32) ApiIpamServiceTem
 }
 
 // * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP
-func (r ApiIpamServiceTemplatesListRequest) Protocol(protocol string) ApiIpamServiceTemplatesListRequest {
+func (r ApiIpamServiceTemplatesListRequest) Protocol(protocol IpamServiceTemplatesListProtocolParameter) ApiIpamServiceTemplatesListRequest {
 	r.protocol = &protocol
 	return r
 }
@@ -31743,7 +31743,7 @@ type ApiIpamServicesListRequest struct {
 	offset            *int32
 	ordering          *string
 	port              *float32
-	protocol          *string
+	protocol          *IpamServiceTemplatesListProtocolParameter
 	q                 *string
 	tag               *[]string
 	tagN              *[]string
@@ -32051,7 +32051,7 @@ func (r ApiIpamServicesListRequest) Port(port float32) ApiIpamServicesListReques
 }
 
 // * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP
-func (r ApiIpamServicesListRequest) Protocol(protocol string) ApiIpamServicesListRequest {
+func (r ApiIpamServicesListRequest) Protocol(protocol IpamServiceTemplatesListProtocolParameter) ApiIpamServicesListRequest {
 	r.protocol = &protocol
 	return r
 }

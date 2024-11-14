@@ -20,12 +20,11 @@ var _ MappedNullable = &WritableServiceRequest{}
 
 // WritableServiceRequest Adds support for custom fields and tags.
 type WritableServiceRequest struct {
-	Device         NullableInt32 `json:"device,omitempty"`
-	VirtualMachine NullableInt32 `json:"virtual_machine,omitempty"`
-	Name           string        `json:"name"`
-	Ports          []int32       `json:"ports"`
-	// * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP
-	Protocol string `json:"protocol"`
+	Device         NullableInt32                         `json:"device,omitempty"`
+	VirtualMachine NullableInt32                         `json:"virtual_machine,omitempty"`
+	Name           string                                `json:"name"`
+	Ports          []int32                               `json:"ports"`
+	Protocol       PatchedWritableServiceRequestProtocol `json:"protocol"`
 	// The specific IP addresses (if any) to which this service is bound
 	Ipaddresses          []int32                `json:"ipaddresses,omitempty"`
 	Description          *string                `json:"description,omitempty"`
@@ -41,7 +40,7 @@ type _WritableServiceRequest WritableServiceRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableServiceRequest(name string, ports []int32, protocol string) *WritableServiceRequest {
+func NewWritableServiceRequest(name string, ports []int32, protocol PatchedWritableServiceRequestProtocol) *WritableServiceRequest {
 	this := WritableServiceRequest{}
 	this.Name = name
 	this.Ports = ports
@@ -192,9 +191,9 @@ func (o *WritableServiceRequest) SetPorts(v []int32) {
 }
 
 // GetProtocol returns the Protocol field value
-func (o *WritableServiceRequest) GetProtocol() string {
+func (o *WritableServiceRequest) GetProtocol() PatchedWritableServiceRequestProtocol {
 	if o == nil {
-		var ret string
+		var ret PatchedWritableServiceRequestProtocol
 		return ret
 	}
 
@@ -203,7 +202,7 @@ func (o *WritableServiceRequest) GetProtocol() string {
 
 // GetProtocolOk returns a tuple with the Protocol field value
 // and a boolean to check if the value has been set.
-func (o *WritableServiceRequest) GetProtocolOk() (*string, bool) {
+func (o *WritableServiceRequest) GetProtocolOk() (*PatchedWritableServiceRequestProtocol, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -211,7 +210,7 @@ func (o *WritableServiceRequest) GetProtocolOk() (*string, bool) {
 }
 
 // SetProtocol sets field value
-func (o *WritableServiceRequest) SetProtocol(v string) {
+func (o *WritableServiceRequest) SetProtocol(v PatchedWritableServiceRequestProtocol) {
 	o.Protocol = v
 }
 

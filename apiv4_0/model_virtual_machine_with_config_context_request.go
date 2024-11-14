@@ -20,9 +20,8 @@ var _ MappedNullable = &VirtualMachineWithConfigContextRequest{}
 
 // VirtualMachineWithConfigContextRequest Adds support for custom fields and tags.
 type VirtualMachineWithConfigContextRequest struct {
-	Name string `json:"name"`
-	// * `offline` - Offline * `active` - Active * `planned` - Planned * `staged` - Staged * `failed` - Failed * `decommissioning` - Decommissioning
-	Status         *string                            `json:"status,omitempty"`
+	Name           string                             `json:"name"`
+	Status         *ModuleStatusValue                 `json:"status,omitempty"`
 	Site           NullableBriefSiteRequest           `json:"site,omitempty"`
 	Cluster        NullableBriefClusterRequest        `json:"cluster,omitempty"`
 	Device         NullableBriefDeviceRequest         `json:"device,omitempty"`
@@ -89,9 +88,9 @@ func (o *VirtualMachineWithConfigContextRequest) SetName(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *VirtualMachineWithConfigContextRequest) GetStatus() string {
+func (o *VirtualMachineWithConfigContextRequest) GetStatus() ModuleStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret ModuleStatusValue
 		return ret
 	}
 	return *o.Status
@@ -99,7 +98,7 @@ func (o *VirtualMachineWithConfigContextRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VirtualMachineWithConfigContextRequest) GetStatusOk() (*string, bool) {
+func (o *VirtualMachineWithConfigContextRequest) GetStatusOk() (*ModuleStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -115,8 +114,8 @@ func (o *VirtualMachineWithConfigContextRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *VirtualMachineWithConfigContextRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given ModuleStatusValue and assigns it to the Status field.
+func (o *VirtualMachineWithConfigContextRequest) SetStatus(v ModuleStatusValue) {
 	o.Status = &v
 }
 

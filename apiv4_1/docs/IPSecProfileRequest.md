@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**Mode** | **string** | * &#x60;esp&#x60; - ESP * &#x60;ah&#x60; - AH | 
+**Mode** | [**IPSecProfileModeValue**](IPSecProfileModeValue.md) |  | 
 **IkePolicy** | [**BriefIKEPolicyRequest**](BriefIKEPolicyRequest.md) |  | 
 **IpsecPolicy** | [**BriefIPSecPolicyRequest**](BriefIPSecPolicyRequest.md) |  | 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewIPSecProfileRequest
 
-`func NewIPSecProfileRequest(name string, mode string, ikePolicy BriefIKEPolicyRequest, ipsecPolicy BriefIPSecPolicyRequest, ) *IPSecProfileRequest`
+`func NewIPSecProfileRequest(name string, mode IPSecProfileModeValue, ikePolicy BriefIKEPolicyRequest, ipsecPolicy BriefIPSecPolicyRequest, ) *IPSecProfileRequest`
 
 NewIPSecProfileRequest instantiates a new IPSecProfileRequest object
 This constructor will assign default values to properties that have it defined,
@@ -79,20 +79,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetMode
 
-`func (o *IPSecProfileRequest) GetMode() string`
+`func (o *IPSecProfileRequest) GetMode() IPSecProfileModeValue`
 
 GetMode returns the Mode field if non-nil, zero value otherwise.
 
 ### GetModeOk
 
-`func (o *IPSecProfileRequest) GetModeOk() (*string, bool)`
+`func (o *IPSecProfileRequest) GetModeOk() (*IPSecProfileModeValue, bool)`
 
 GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMode
 
-`func (o *IPSecProfileRequest) SetMode(v string)`
+`func (o *IPSecProfileRequest) SetMode(v IPSecProfileModeValue)`
 
 SetMode sets Mode field to given value.
 

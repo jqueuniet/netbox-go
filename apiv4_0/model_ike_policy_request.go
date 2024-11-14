@@ -20,12 +20,10 @@ var _ MappedNullable = &IKEPolicyRequest{}
 
 // IKEPolicyRequest Adds support for custom fields and tags.
 type IKEPolicyRequest struct {
-	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
-	// * `1` - IKEv1 * `2` - IKEv2
-	Version int32 `json:"version"`
-	// * `aggressive` - Aggressive * `main` - Main
-	Mode                 *string                `json:"mode,omitempty"`
+	Name                 string                 `json:"name"`
+	Description          *string                `json:"description,omitempty"`
+	Version              IKEPolicyVersionValue  `json:"version"`
+	Mode                 *IKEPolicyModeValue    `json:"mode,omitempty"`
 	Proposals            []int32                `json:"proposals,omitempty"`
 	PresharedKey         *string                `json:"preshared_key,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
@@ -40,7 +38,7 @@ type _IKEPolicyRequest IKEPolicyRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIKEPolicyRequest(name string, version int32) *IKEPolicyRequest {
+func NewIKEPolicyRequest(name string, version IKEPolicyVersionValue) *IKEPolicyRequest {
 	this := IKEPolicyRequest{}
 	this.Name = name
 	this.Version = version
@@ -112,9 +110,9 @@ func (o *IKEPolicyRequest) SetDescription(v string) {
 }
 
 // GetVersion returns the Version field value
-func (o *IKEPolicyRequest) GetVersion() int32 {
+func (o *IKEPolicyRequest) GetVersion() IKEPolicyVersionValue {
 	if o == nil {
-		var ret int32
+		var ret IKEPolicyVersionValue
 		return ret
 	}
 
@@ -123,7 +121,7 @@ func (o *IKEPolicyRequest) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value
 // and a boolean to check if the value has been set.
-func (o *IKEPolicyRequest) GetVersionOk() (*int32, bool) {
+func (o *IKEPolicyRequest) GetVersionOk() (*IKEPolicyVersionValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -131,14 +129,14 @@ func (o *IKEPolicyRequest) GetVersionOk() (*int32, bool) {
 }
 
 // SetVersion sets field value
-func (o *IKEPolicyRequest) SetVersion(v int32) {
+func (o *IKEPolicyRequest) SetVersion(v IKEPolicyVersionValue) {
 	o.Version = v
 }
 
 // GetMode returns the Mode field value if set, zero value otherwise.
-func (o *IKEPolicyRequest) GetMode() string {
+func (o *IKEPolicyRequest) GetMode() IKEPolicyModeValue {
 	if o == nil || IsNil(o.Mode) {
-		var ret string
+		var ret IKEPolicyModeValue
 		return ret
 	}
 	return *o.Mode
@@ -146,7 +144,7 @@ func (o *IKEPolicyRequest) GetMode() string {
 
 // GetModeOk returns a tuple with the Mode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEPolicyRequest) GetModeOk() (*string, bool) {
+func (o *IKEPolicyRequest) GetModeOk() (*IKEPolicyModeValue, bool) {
 	if o == nil || IsNil(o.Mode) {
 		return nil, false
 	}
@@ -162,8 +160,8 @@ func (o *IKEPolicyRequest) HasMode() bool {
 	return false
 }
 
-// SetMode gets a reference to the given string and assigns it to the Mode field.
-func (o *IKEPolicyRequest) SetMode(v string) {
+// SetMode gets a reference to the given IKEPolicyModeValue and assigns it to the Mode field.
+func (o *IKEPolicyRequest) SetMode(v IKEPolicyModeValue) {
 	o.Mode = &v
 }
 

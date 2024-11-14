@@ -8225,8 +8225,8 @@ type ApiVirtualizationInterfacesListRequest struct {
 	macAddressNie     *[]string
 	macAddressNiew    *[]string
 	macAddressNisw    *[]string
-	mode              *string
-	modeN             *string
+	mode              *DcimInterfacesListModeParameter
+	modeN             *DcimInterfacesListModeParameter
 	modifiedByRequest *string
 	mtu               *[]int32
 	mtuEmpty          *bool
@@ -8553,13 +8553,13 @@ func (r ApiVirtualizationInterfacesListRequest) MacAddressNisw(macAddressNisw []
 }
 
 // IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All)
-func (r ApiVirtualizationInterfacesListRequest) Mode(mode string) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) Mode(mode DcimInterfacesListModeParameter) ApiVirtualizationInterfacesListRequest {
 	r.mode = &mode
 	return r
 }
 
 // IEEE 802.1Q tagging strategy  * &#x60;access&#x60; - Access * &#x60;tagged&#x60; - Tagged * &#x60;tagged-all&#x60; - Tagged (All)
-func (r ApiVirtualizationInterfacesListRequest) ModeN(modeN string) ApiVirtualizationInterfacesListRequest {
+func (r ApiVirtualizationInterfacesListRequest) ModeN(modeN DcimInterfacesListModeParameter) ApiVirtualizationInterfacesListRequest {
 	r.modeN = &modeN
 	return r
 }
@@ -15644,7 +15644,7 @@ type ApiVirtualizationVirtualMachinesRenderConfigCreateRequest struct {
 	ApiService                                     VirtualizationAPI
 	id                                             int32
 	writableVirtualMachineWithConfigContextRequest *WritableVirtualMachineWithConfigContextRequest
-	format                                         *string
+	format                                         *DcimDevicesRenderConfigCreateFormatParameter
 }
 
 func (r ApiVirtualizationVirtualMachinesRenderConfigCreateRequest) WritableVirtualMachineWithConfigContextRequest(writableVirtualMachineWithConfigContextRequest WritableVirtualMachineWithConfigContextRequest) ApiVirtualizationVirtualMachinesRenderConfigCreateRequest {
@@ -15652,7 +15652,7 @@ func (r ApiVirtualizationVirtualMachinesRenderConfigCreateRequest) WritableVirtu
 	return r
 }
 
-func (r ApiVirtualizationVirtualMachinesRenderConfigCreateRequest) Format(format string) ApiVirtualizationVirtualMachinesRenderConfigCreateRequest {
+func (r ApiVirtualizationVirtualMachinesRenderConfigCreateRequest) Format(format DcimDevicesRenderConfigCreateFormatParameter) ApiVirtualizationVirtualMachinesRenderConfigCreateRequest {
 	r.format = &format
 	return r
 }

@@ -19,9 +19,8 @@ var _ MappedNullable = &IKEProposalEncryptionAlgorithm{}
 
 // IKEProposalEncryptionAlgorithm struct for IKEProposalEncryptionAlgorithm
 type IKEProposalEncryptionAlgorithm struct {
-	// * `aes-128-cbc` - 128-bit AES (CBC) * `aes-128-gcm` - 128-bit AES (GCM) * `aes-192-cbc` - 192-bit AES (CBC) * `aes-192-gcm` - 192-bit AES (GCM) * `aes-256-cbc` - 256-bit AES (CBC) * `aes-256-gcm` - 256-bit AES (GCM) * `3des-cbc` - 3DES * `des-cbc` - DES
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *IKEProposalEncryptionAlgorithmValue `json:"value,omitempty"`
+	Label                *IKEProposalEncryptionAlgorithmLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewIKEProposalEncryptionAlgorithmWithDefaults() *IKEProposalEncryptionAlgor
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *IKEProposalEncryptionAlgorithm) GetValue() string {
+func (o *IKEProposalEncryptionAlgorithm) GetValue() IKEProposalEncryptionAlgorithmValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret IKEProposalEncryptionAlgorithmValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *IKEProposalEncryptionAlgorithm) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEProposalEncryptionAlgorithm) GetValueOk() (*string, bool) {
+func (o *IKEProposalEncryptionAlgorithm) GetValueOk() (*IKEProposalEncryptionAlgorithmValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *IKEProposalEncryptionAlgorithm) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *IKEProposalEncryptionAlgorithm) SetValue(v string) {
+// SetValue gets a reference to the given IKEProposalEncryptionAlgorithmValue and assigns it to the Value field.
+func (o *IKEProposalEncryptionAlgorithm) SetValue(v IKEProposalEncryptionAlgorithmValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *IKEProposalEncryptionAlgorithm) GetLabel() string {
+func (o *IKEProposalEncryptionAlgorithm) GetLabel() IKEProposalEncryptionAlgorithmLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret IKEProposalEncryptionAlgorithmLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *IKEProposalEncryptionAlgorithm) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEProposalEncryptionAlgorithm) GetLabelOk() (*string, bool) {
+func (o *IKEProposalEncryptionAlgorithm) GetLabelOk() (*IKEProposalEncryptionAlgorithmLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *IKEProposalEncryptionAlgorithm) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *IKEProposalEncryptionAlgorithm) SetLabel(v string) {
+// SetLabel gets a reference to the given IKEProposalEncryptionAlgorithmLabel and assigns it to the Label field.
+func (o *IKEProposalEncryptionAlgorithm) SetLabel(v IKEProposalEncryptionAlgorithmLabel) {
 	o.Label = &v
 }
 

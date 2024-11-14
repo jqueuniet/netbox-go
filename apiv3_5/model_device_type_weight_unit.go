@@ -19,9 +19,8 @@ var _ MappedNullable = &DeviceTypeWeightUnit{}
 
 // DeviceTypeWeightUnit struct for DeviceTypeWeightUnit
 type DeviceTypeWeightUnit struct {
-	// * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces
-	Value                NullableString `json:"value,omitempty"`
-	Label                *string        `json:"label,omitempty"`
+	Value                *DeviceTypeWeightUnitValue `json:"value,omitempty"`
+	Label                *DeviceTypeWeightUnitLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,53 +43,42 @@ func NewDeviceTypeWeightUnitWithDefaults() *DeviceTypeWeightUnit {
 	return &this
 }
 
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DeviceTypeWeightUnit) GetValue() string {
-	if o == nil || IsNil(o.Value.Get()) {
-		var ret string
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *DeviceTypeWeightUnit) GetValue() DeviceTypeWeightUnitValue {
+	if o == nil || IsNil(o.Value) {
+		var ret DeviceTypeWeightUnitValue
 		return ret
 	}
-	return *o.Value.Get()
+	return *o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DeviceTypeWeightUnit) GetValueOk() (*string, bool) {
-	if o == nil {
+func (o *DeviceTypeWeightUnit) GetValueOk() (*DeviceTypeWeightUnitValue, bool) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
-	return o.Value.Get(), o.Value.IsSet()
+	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *DeviceTypeWeightUnit) HasValue() bool {
-	if o != nil && o.Value.IsSet() {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
 	return false
 }
 
-// SetValue gets a reference to the given NullableString and assigns it to the Value field.
-func (o *DeviceTypeWeightUnit) SetValue(v string) {
-	o.Value.Set(&v)
-}
-
-// SetValueNil sets the value for Value to be an explicit nil
-func (o *DeviceTypeWeightUnit) SetValueNil() {
-	o.Value.Set(nil)
-}
-
-// UnsetValue ensures that no value is present for Value, not even an explicit nil
-func (o *DeviceTypeWeightUnit) UnsetValue() {
-	o.Value.Unset()
+// SetValue gets a reference to the given DeviceTypeWeightUnitValue and assigns it to the Value field.
+func (o *DeviceTypeWeightUnit) SetValue(v DeviceTypeWeightUnitValue) {
+	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *DeviceTypeWeightUnit) GetLabel() string {
+func (o *DeviceTypeWeightUnit) GetLabel() DeviceTypeWeightUnitLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DeviceTypeWeightUnitLabel
 		return ret
 	}
 	return *o.Label
@@ -98,7 +86,7 @@ func (o *DeviceTypeWeightUnit) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceTypeWeightUnit) GetLabelOk() (*string, bool) {
+func (o *DeviceTypeWeightUnit) GetLabelOk() (*DeviceTypeWeightUnitLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -114,8 +102,8 @@ func (o *DeviceTypeWeightUnit) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *DeviceTypeWeightUnit) SetLabel(v string) {
+// SetLabel gets a reference to the given DeviceTypeWeightUnitLabel and assigns it to the Label field.
+func (o *DeviceTypeWeightUnit) SetLabel(v DeviceTypeWeightUnitLabel) {
 	o.Label = &v
 }
 
@@ -129,8 +117,8 @@ func (o DeviceTypeWeightUnit) MarshalJSON() ([]byte, error) {
 
 func (o DeviceTypeWeightUnit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Value.IsSet() {
-		toSerialize["value"] = o.Value.Get()
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label

@@ -19,9 +19,8 @@ var _ MappedNullable = &CableLengthUnit{}
 
 // CableLengthUnit struct for CableLengthUnit
 type CableLengthUnit struct {
-	// * `km` - Kilometers * `m` - Meters * `cm` - Centimeters * `mi` - Miles * `ft` - Feet * `in` - Inches
-	Value                NullableString `json:"value,omitempty"`
-	Label                *string        `json:"label,omitempty"`
+	Value                *CableLengthUnitValue `json:"value,omitempty"`
+	Label                *CableLengthUnitLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,53 +43,42 @@ func NewCableLengthUnitWithDefaults() *CableLengthUnit {
 	return &this
 }
 
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CableLengthUnit) GetValue() string {
-	if o == nil || IsNil(o.Value.Get()) {
-		var ret string
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *CableLengthUnit) GetValue() CableLengthUnitValue {
+	if o == nil || IsNil(o.Value) {
+		var ret CableLengthUnitValue
 		return ret
 	}
-	return *o.Value.Get()
+	return *o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CableLengthUnit) GetValueOk() (*string, bool) {
-	if o == nil {
+func (o *CableLengthUnit) GetValueOk() (*CableLengthUnitValue, bool) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
-	return o.Value.Get(), o.Value.IsSet()
+	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *CableLengthUnit) HasValue() bool {
-	if o != nil && o.Value.IsSet() {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
 	return false
 }
 
-// SetValue gets a reference to the given NullableString and assigns it to the Value field.
-func (o *CableLengthUnit) SetValue(v string) {
-	o.Value.Set(&v)
-}
-
-// SetValueNil sets the value for Value to be an explicit nil
-func (o *CableLengthUnit) SetValueNil() {
-	o.Value.Set(nil)
-}
-
-// UnsetValue ensures that no value is present for Value, not even an explicit nil
-func (o *CableLengthUnit) UnsetValue() {
-	o.Value.Unset()
+// SetValue gets a reference to the given CableLengthUnitValue and assigns it to the Value field.
+func (o *CableLengthUnit) SetValue(v CableLengthUnitValue) {
+	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *CableLengthUnit) GetLabel() string {
+func (o *CableLengthUnit) GetLabel() CableLengthUnitLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret CableLengthUnitLabel
 		return ret
 	}
 	return *o.Label
@@ -98,7 +86,7 @@ func (o *CableLengthUnit) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CableLengthUnit) GetLabelOk() (*string, bool) {
+func (o *CableLengthUnit) GetLabelOk() (*CableLengthUnitLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -114,8 +102,8 @@ func (o *CableLengthUnit) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *CableLengthUnit) SetLabel(v string) {
+// SetLabel gets a reference to the given CableLengthUnitLabel and assigns it to the Label field.
+func (o *CableLengthUnit) SetLabel(v CableLengthUnitLabel) {
 	o.Label = &v
 }
 
@@ -129,8 +117,8 @@ func (o CableLengthUnit) MarshalJSON() ([]byte, error) {
 
 func (o CableLengthUnit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Value.IsSet() {
-		toSerialize["value"] = o.Value.Get()
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label

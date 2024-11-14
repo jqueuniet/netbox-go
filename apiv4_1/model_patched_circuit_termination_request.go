@@ -19,9 +19,8 @@ var _ MappedNullable = &PatchedCircuitTerminationRequest{}
 
 // PatchedCircuitTerminationRequest Adds support for custom fields and tags.
 type PatchedCircuitTerminationRequest struct {
-	Circuit *BriefCircuitRequest `json:"circuit,omitempty"`
-	// * `A` - A * `Z` - Z
-	TermSide        *string                             `json:"term_side,omitempty"`
+	Circuit         *BriefCircuitRequest                `json:"circuit,omitempty"`
+	TermSide        *Termination1                       `json:"term_side,omitempty"`
 	Site            NullableBriefSiteRequest            `json:"site,omitempty"`
 	ProviderNetwork NullableBriefProviderNetworkRequest `json:"provider_network,omitempty"`
 	// Physical circuit speed
@@ -92,9 +91,9 @@ func (o *PatchedCircuitTerminationRequest) SetCircuit(v BriefCircuitRequest) {
 }
 
 // GetTermSide returns the TermSide field value if set, zero value otherwise.
-func (o *PatchedCircuitTerminationRequest) GetTermSide() string {
+func (o *PatchedCircuitTerminationRequest) GetTermSide() Termination1 {
 	if o == nil || IsNil(o.TermSide) {
-		var ret string
+		var ret Termination1
 		return ret
 	}
 	return *o.TermSide
@@ -102,7 +101,7 @@ func (o *PatchedCircuitTerminationRequest) GetTermSide() string {
 
 // GetTermSideOk returns a tuple with the TermSide field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedCircuitTerminationRequest) GetTermSideOk() (*string, bool) {
+func (o *PatchedCircuitTerminationRequest) GetTermSideOk() (*Termination1, bool) {
 	if o == nil || IsNil(o.TermSide) {
 		return nil, false
 	}
@@ -118,8 +117,8 @@ func (o *PatchedCircuitTerminationRequest) HasTermSide() bool {
 	return false
 }
 
-// SetTermSide gets a reference to the given string and assigns it to the TermSide field.
-func (o *PatchedCircuitTerminationRequest) SetTermSide(v string) {
+// SetTermSide gets a reference to the given Termination1 and assigns it to the TermSide field.
+func (o *PatchedCircuitTerminationRequest) SetTermSide(v Termination1) {
 	o.TermSide = &v
 }
 

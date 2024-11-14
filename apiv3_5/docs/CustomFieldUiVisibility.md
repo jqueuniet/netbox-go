@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;read-write&#x60; - Read/Write * &#x60;read-only&#x60; - Read-only * &#x60;hidden&#x60; - Hidden * &#x60;hidden-ifunset&#x60; - Hidden (if unset) | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**CustomFieldUiVisibilityValue**](CustomFieldUiVisibilityValue.md) |  | [optional] 
+**Label** | Pointer to [**CustomFieldUiVisibilityLabel**](CustomFieldUiVisibilityLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *CustomFieldUiVisibility) GetValue() string`
+`func (o *CustomFieldUiVisibility) GetValue() CustomFieldUiVisibilityValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *CustomFieldUiVisibility) GetValueOk() (*string, bool)`
+`func (o *CustomFieldUiVisibility) GetValueOk() (*CustomFieldUiVisibilityValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *CustomFieldUiVisibility) SetValue(v string)`
+`func (o *CustomFieldUiVisibility) SetValue(v CustomFieldUiVisibilityValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *CustomFieldUiVisibility) GetLabel() string`
+`func (o *CustomFieldUiVisibility) GetLabel() CustomFieldUiVisibilityLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *CustomFieldUiVisibility) GetLabelOk() (*string, bool)`
+`func (o *CustomFieldUiVisibility) GetLabelOk() (*CustomFieldUiVisibilityLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *CustomFieldUiVisibility) SetLabel(v string)`
+`func (o *CustomFieldUiVisibility) SetLabel(v CustomFieldUiVisibilityLabel)`
 
 SetLabel sets Label field to given value.
 

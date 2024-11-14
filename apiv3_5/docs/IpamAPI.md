@@ -2577,7 +2577,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewNestedFHRPGroupRequest("Protocol_example", int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewNestedFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2641,7 +2641,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewNestedFHRPGroupRequest("Protocol_example", int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewNestedFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2707,7 +2707,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewNestedFHRPGroupRequest("Protocol_example", int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewNestedFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3284,7 +3284,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest("Protocol_example", int32(123))} // []FHRPGroupRequest | 
+	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3348,7 +3348,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest("Protocol_example", int32(123))} // []FHRPGroupRequest | 
+	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3414,7 +3414,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest("Protocol_example", int32(123))} // []FHRPGroupRequest | 
+	fHRPGroupRequest := []openapiclient.FHRPGroupRequest{*openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123))} // []FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3480,7 +3480,7 @@ import (
 )
 
 func main() {
-	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest("Protocol_example", int32(123)) // FHRPGroupRequest | 
+	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)) // FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3950,7 +3950,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this FHRP group.
-	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest("Protocol_example", int32(123)) // FHRPGroupRequest | 
+	fHRPGroupRequest := *openapiclient.NewFHRPGroupRequest(openapiclient.FHRPGroup_protocol("vrrp2"), int32(123)) // FHRPGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5691,7 +5691,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewNestedL2VPNRequest("Name_example", "Slug_example", "Type_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewNestedL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5755,7 +5755,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewNestedL2VPNRequest("Name_example", "Slug_example", "Type_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewNestedL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5821,7 +5821,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewNestedL2VPNRequest("Name_example", "Slug_example", "Type_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewNestedL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6634,7 +6634,7 @@ import (
 )
 
 func main() {
-	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", "Type_example") // WritableL2VPNRequest | 
+	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")) // WritableL2VPNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7152,7 +7152,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this L2VPN.
-	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", "Type_example") // WritableL2VPNRequest | 
+	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.L2VPN_type_value("vpws")) // WritableL2VPNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10741,7 +10741,7 @@ import (
 )
 
 func main() {
-	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", []int32{int32(123)}, "Protocol_example") // WritableServiceTemplateRequest | 
+	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", []int32{int32(123)}, openapiclient.PatchedWritableServiceRequest_protocol("tcp")) // WritableServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11171,7 +11171,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this service template.
-	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", []int32{int32(123)}, "Protocol_example") // WritableServiceTemplateRequest | 
+	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", []int32{int32(123)}, openapiclient.PatchedWritableServiceRequest_protocol("tcp")) // WritableServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11438,7 +11438,7 @@ import (
 )
 
 func main() {
-	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", []int32{int32(123)}, "Protocol_example") // WritableServiceRequest | 
+	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", []int32{int32(123)}, openapiclient.PatchedWritableServiceRequest_protocol("tcp")) // WritableServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11914,7 +11914,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this service.
-	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", []int32{int32(123)}, "Protocol_example") // WritableServiceRequest | 
+	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", []int32{int32(123)}, openapiclient.PatchedWritableServiceRequest_protocol("tcp")) // WritableServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

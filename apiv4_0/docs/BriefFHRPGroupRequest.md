@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Protocol** | **string** | * &#x60;vrrp2&#x60; - VRRPv2 * &#x60;vrrp3&#x60; - VRRPv3 * &#x60;carp&#x60; - CARP * &#x60;clusterxl&#x60; - ClusterXL * &#x60;hsrp&#x60; - HSRP * &#x60;glbp&#x60; - GLBP * &#x60;other&#x60; - Other | 
+**Protocol** | [**BriefFHRPGroupProtocol**](BriefFHRPGroupProtocol.md) |  | 
 **GroupId** | **int32** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewBriefFHRPGroupRequest
 
-`func NewBriefFHRPGroupRequest(protocol string, groupId int32, ) *BriefFHRPGroupRequest`
+`func NewBriefFHRPGroupRequest(protocol BriefFHRPGroupProtocol, groupId int32, ) *BriefFHRPGroupRequest`
 
 NewBriefFHRPGroupRequest instantiates a new BriefFHRPGroupRequest object
 This constructor will assign default values to properties that have it defined,
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetProtocol
 
-`func (o *BriefFHRPGroupRequest) GetProtocol() string`
+`func (o *BriefFHRPGroupRequest) GetProtocol() BriefFHRPGroupProtocol`
 
 GetProtocol returns the Protocol field if non-nil, zero value otherwise.
 
 ### GetProtocolOk
 
-`func (o *BriefFHRPGroupRequest) GetProtocolOk() (*string, bool)`
+`func (o *BriefFHRPGroupRequest) GetProtocolOk() (*BriefFHRPGroupProtocol, bool)`
 
 GetProtocolOk returns a tuple with the Protocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocol
 
-`func (o *BriefFHRPGroupRequest) SetProtocol(v string)`
+`func (o *BriefFHRPGroupRequest) SetProtocol(v BriefFHRPGroupProtocol)`
 
 SetProtocol sets Protocol field to given value.
 

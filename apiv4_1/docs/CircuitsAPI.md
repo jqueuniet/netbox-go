@@ -466,7 +466,7 @@ func main() {
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
-	priority := "priority_example" // string | * `primary` - Primary * `secondary` - Secondary * `tertiary` - Tertiary * `inactive` - Inactive (optional)
+	priority := openapiclient.circuits_circuit_group_assignments_list_priority_parameter("inactive") // CircuitsCircuitGroupAssignmentsListPriorityParameter | * `primary` - Primary * `secondary` - Secondary * `tertiary` - Tertiary * `inactive` - Inactive (optional)
 	provider := []string{"Inner_example"} // []string | Provider (slug) (optional)
 	providerN := []string{"Inner_example"} // []string | Provider (slug) (optional)
 	providerId := []int32{int32(123)} // []int32 | Provider (ID) (optional)
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
  **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
- **priority** | **string** | * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive | 
+ **priority** | [**CircuitsCircuitGroupAssignmentsListPriorityParameter**](CircuitsCircuitGroupAssignmentsListPriorityParameter.md) | * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive | 
  **provider** | **[]string** | Provider (slug) | 
  **providerN** | **[]string** | Provider (slug) | 
  **providerId** | **[]int32** | Provider (ID) | 
@@ -1547,7 +1547,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), "TermSide_example")} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1611,7 +1611,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), "TermSide_example")} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1677,7 +1677,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), "TermSide_example")} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), openapiclient.Termination_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1743,7 +1743,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), "TermSide_example") // CircuitTerminationRequest | 
+	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), openapiclient.Termination_1("A")) // CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1878,7 +1878,7 @@ import (
 )
 
 func main() {
-	cableEnd := "cableEnd_example" // string | * `A` - A * `B` - B (optional)
+	cableEnd := openapiclient.circuits_circuit_terminations_list_cable_end_parameter("A") // CircuitsCircuitTerminationsListCableEndParameter | * `A` - A * `B` - B (optional)
 	cableId := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cableIdN := []*int32{int32(123)} // []*int32 | Cable (ID) (optional)
 	cabled := true // bool |  (optional)
@@ -1954,7 +1954,7 @@ func main() {
 	siteIdN := []*int32{int32(123)} // []*int32 | Site (ID) (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	termSide := "termSide_example" // string | * `A` - A * `Z` - Z (optional)
+	termSide := openapiclient.Termination("A") // Termination | * `A` - A * `Z` - Z (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	upstreamSpeed := []int32{int32(123)} // []int32 |  (optional)
 	upstreamSpeedEmpty := true // bool |  (optional)
@@ -1998,7 +1998,7 @@ Other parameters are passed through a pointer to a apiCircuitsCircuitTermination
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cableEnd** | **string** | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
+ **cableEnd** | [**CircuitsCircuitTerminationsListCableEndParameter**](CircuitsCircuitTerminationsListCableEndParameter.md) | * &#x60;A&#x60; - A * &#x60;B&#x60; - B | 
  **cableId** | **[]int32** | Cable (ID) | 
  **cableIdN** | **[]int32** | Cable (ID) | 
  **cabled** | **bool** |  | 
@@ -2074,7 +2074,7 @@ Name | Type | Description  | Notes
  **siteIdN** | **[]int32** | Site (ID) | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **termSide** | **string** | * &#x60;A&#x60; - A * &#x60;Z&#x60; - Z | 
+ **termSide** | [**Termination**](Termination.md) | * &#x60;A&#x60; - A * &#x60;Z&#x60; - Z | 
  **updatedByRequest** | **string** |  | 
  **upstreamSpeed** | **[]int32** |  | 
  **upstreamSpeedEmpty** | **bool** |  | 
@@ -2347,7 +2347,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit termination.
-	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), "TermSide_example") // CircuitTerminationRequest | 
+	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), openapiclient.Termination_1("A")) // CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

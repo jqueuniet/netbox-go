@@ -44,10 +44,10 @@ type SchemaAPIService service
 type ApiSchemaRetrieveRequest struct {
 	ctx        context.Context
 	ApiService SchemaAPI
-	format     *string
+	format     *SchemaRetrieveFormatParameter
 }
 
-func (r ApiSchemaRetrieveRequest) Format(format string) ApiSchemaRetrieveRequest {
+func (r ApiSchemaRetrieveRequest) Format(format SchemaRetrieveFormatParameter) ApiSchemaRetrieveRequest {
 	r.format = &format
 	return r
 }

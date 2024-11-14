@@ -19,9 +19,8 @@ var _ MappedNullable = &ConsolePortType{}
 
 // ConsolePortType struct for ConsolePortType
 type ConsolePortType struct {
-	// * `de-9` - DE-9 * `db-25` - DB-25 * `rj-11` - RJ-11 * `rj-12` - RJ-12 * `rj-45` - RJ-45 * `mini-din-8` - Mini-DIN 8 * `usb-a` - USB Type A * `usb-b` - USB Type B * `usb-c` - USB Type C * `usb-mini-a` - USB Mini A * `usb-mini-b` - USB Mini B * `usb-micro-a` - USB Micro A * `usb-micro-b` - USB Micro B * `usb-micro-ab` - USB Micro AB * `other` - Other
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *ConsolePortTypeValue `json:"value,omitempty"`
+	Label                *ConsolePortTypeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewConsolePortTypeWithDefaults() *ConsolePortType {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *ConsolePortType) GetValue() string {
+func (o *ConsolePortType) GetValue() ConsolePortTypeValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret ConsolePortTypeValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *ConsolePortType) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConsolePortType) GetValueOk() (*string, bool) {
+func (o *ConsolePortType) GetValueOk() (*ConsolePortTypeValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *ConsolePortType) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *ConsolePortType) SetValue(v string) {
+// SetValue gets a reference to the given ConsolePortTypeValue and assigns it to the Value field.
+func (o *ConsolePortType) SetValue(v ConsolePortTypeValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *ConsolePortType) GetLabel() string {
+func (o *ConsolePortType) GetLabel() ConsolePortTypeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret ConsolePortTypeLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *ConsolePortType) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConsolePortType) GetLabelOk() (*string, bool) {
+func (o *ConsolePortType) GetLabelOk() (*ConsolePortTypeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *ConsolePortType) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *ConsolePortType) SetLabel(v string) {
+// SetLabel gets a reference to the given ConsolePortTypeLabel and assigns it to the Label field.
+func (o *ConsolePortType) SetLabel(v ConsolePortTypeLabel) {
 	o.Label = &v
 }
 

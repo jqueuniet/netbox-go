@@ -28925,8 +28925,8 @@ type ApiIpamServiceTemplatesListRequest struct {
 	offset            *int32
 	ordering          *string
 	port              *float32
-	protocol          *string
-	protocolN         *string
+	protocol          *IpamServiceTemplatesListProtocolParameter
+	protocolN         *IpamServiceTemplatesListProtocolParameter
 	q                 *string
 	tag               *[]string
 	tagN              *[]string
@@ -29182,13 +29182,13 @@ func (r ApiIpamServiceTemplatesListRequest) Port(port float32) ApiIpamServiceTem
 }
 
 // * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP
-func (r ApiIpamServiceTemplatesListRequest) Protocol(protocol string) ApiIpamServiceTemplatesListRequest {
+func (r ApiIpamServiceTemplatesListRequest) Protocol(protocol IpamServiceTemplatesListProtocolParameter) ApiIpamServiceTemplatesListRequest {
 	r.protocol = &protocol
 	return r
 }
 
 // * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP
-func (r ApiIpamServiceTemplatesListRequest) ProtocolN(protocolN string) ApiIpamServiceTemplatesListRequest {
+func (r ApiIpamServiceTemplatesListRequest) ProtocolN(protocolN IpamServiceTemplatesListProtocolParameter) ApiIpamServiceTemplatesListRequest {
 	r.protocolN = &protocolN
 	return r
 }
@@ -30855,8 +30855,8 @@ type ApiIpamServicesListRequest struct {
 	offset            *int32
 	ordering          *string
 	port              *float32
-	protocol          *string
-	protocolN         *string
+	protocol          *IpamServiceTemplatesListProtocolParameter
+	protocolN         *IpamServiceTemplatesListProtocolParameter
 	q                 *string
 	tag               *[]string
 	tagN              *[]string
@@ -31188,13 +31188,13 @@ func (r ApiIpamServicesListRequest) Port(port float32) ApiIpamServicesListReques
 }
 
 // * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP
-func (r ApiIpamServicesListRequest) Protocol(protocol string) ApiIpamServicesListRequest {
+func (r ApiIpamServicesListRequest) Protocol(protocol IpamServiceTemplatesListProtocolParameter) ApiIpamServicesListRequest {
 	r.protocol = &protocol
 	return r
 }
 
 // * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP
-func (r ApiIpamServicesListRequest) ProtocolN(protocolN string) ApiIpamServicesListRequest {
+func (r ApiIpamServicesListRequest) ProtocolN(protocolN IpamServiceTemplatesListProtocolParameter) ApiIpamServicesListRequest {
 	r.protocolN = &protocolN
 	return r
 }

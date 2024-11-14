@@ -28,17 +28,14 @@ type DeviceWithConfigContextRequest struct {
 	// Chassis serial number, assigned by the manufacturer
 	Serial *string `json:"serial,omitempty"`
 	// A unique tag used to identify this device
-	AssetTag NullableString                `json:"asset_tag,omitempty"`
-	Site     NestedSiteRequest             `json:"site"`
-	Location NullableNestedLocationRequest `json:"location,omitempty"`
-	Rack     NullableNestedRackRequest     `json:"rack,omitempty"`
-	Position NullableFloat64               `json:"position,omitempty"`
-	// * `front` - Front * `rear` - Rear
-	Face *string `json:"face,omitempty"`
-	// * `offline` - Offline * `active` - Active * `planned` - Planned * `staged` - Staged * `failed` - Failed * `inventory` - Inventory * `decommissioning` - Decommissioning
-	Status *string `json:"status,omitempty"`
-	// * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `passive` - Passive * `mixed` - Mixed
-	Airflow        *string                             `json:"airflow,omitempty"`
+	AssetTag       NullableString                      `json:"asset_tag,omitempty"`
+	Site           NestedSiteRequest                   `json:"site"`
+	Location       NullableNestedLocationRequest       `json:"location,omitempty"`
+	Rack           NullableNestedRackRequest           `json:"rack,omitempty"`
+	Position       NullableFloat64                     `json:"position,omitempty"`
+	Face           *DeviceFaceValue                    `json:"face,omitempty"`
+	Status         *DeviceStatusValue                  `json:"status,omitempty"`
+	Airflow        *DeviceAirflowValue                 `json:"airflow,omitempty"`
 	PrimaryIp4     NullableNestedIPAddressRequest      `json:"primary_ip4,omitempty"`
 	PrimaryIp6     NullableNestedIPAddressRequest      `json:"primary_ip6,omitempty"`
 	Cluster        NullableNestedClusterRequest        `json:"cluster,omitempty"`
@@ -484,9 +481,9 @@ func (o *DeviceWithConfigContextRequest) UnsetPosition() {
 }
 
 // GetFace returns the Face field value if set, zero value otherwise.
-func (o *DeviceWithConfigContextRequest) GetFace() string {
+func (o *DeviceWithConfigContextRequest) GetFace() DeviceFaceValue {
 	if o == nil || IsNil(o.Face) {
-		var ret string
+		var ret DeviceFaceValue
 		return ret
 	}
 	return *o.Face
@@ -494,7 +491,7 @@ func (o *DeviceWithConfigContextRequest) GetFace() string {
 
 // GetFaceOk returns a tuple with the Face field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceWithConfigContextRequest) GetFaceOk() (*string, bool) {
+func (o *DeviceWithConfigContextRequest) GetFaceOk() (*DeviceFaceValue, bool) {
 	if o == nil || IsNil(o.Face) {
 		return nil, false
 	}
@@ -510,15 +507,15 @@ func (o *DeviceWithConfigContextRequest) HasFace() bool {
 	return false
 }
 
-// SetFace gets a reference to the given string and assigns it to the Face field.
-func (o *DeviceWithConfigContextRequest) SetFace(v string) {
+// SetFace gets a reference to the given DeviceFaceValue and assigns it to the Face field.
+func (o *DeviceWithConfigContextRequest) SetFace(v DeviceFaceValue) {
 	o.Face = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *DeviceWithConfigContextRequest) GetStatus() string {
+func (o *DeviceWithConfigContextRequest) GetStatus() DeviceStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret DeviceStatusValue
 		return ret
 	}
 	return *o.Status
@@ -526,7 +523,7 @@ func (o *DeviceWithConfigContextRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceWithConfigContextRequest) GetStatusOk() (*string, bool) {
+func (o *DeviceWithConfigContextRequest) GetStatusOk() (*DeviceStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -542,15 +539,15 @@ func (o *DeviceWithConfigContextRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *DeviceWithConfigContextRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given DeviceStatusValue and assigns it to the Status field.
+func (o *DeviceWithConfigContextRequest) SetStatus(v DeviceStatusValue) {
 	o.Status = &v
 }
 
 // GetAirflow returns the Airflow field value if set, zero value otherwise.
-func (o *DeviceWithConfigContextRequest) GetAirflow() string {
+func (o *DeviceWithConfigContextRequest) GetAirflow() DeviceAirflowValue {
 	if o == nil || IsNil(o.Airflow) {
-		var ret string
+		var ret DeviceAirflowValue
 		return ret
 	}
 	return *o.Airflow
@@ -558,7 +555,7 @@ func (o *DeviceWithConfigContextRequest) GetAirflow() string {
 
 // GetAirflowOk returns a tuple with the Airflow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceWithConfigContextRequest) GetAirflowOk() (*string, bool) {
+func (o *DeviceWithConfigContextRequest) GetAirflowOk() (*DeviceAirflowValue, bool) {
 	if o == nil || IsNil(o.Airflow) {
 		return nil, false
 	}
@@ -574,8 +571,8 @@ func (o *DeviceWithConfigContextRequest) HasAirflow() bool {
 	return false
 }
 
-// SetAirflow gets a reference to the given string and assigns it to the Airflow field.
-func (o *DeviceWithConfigContextRequest) SetAirflow(v string) {
+// SetAirflow gets a reference to the given DeviceAirflowValue and assigns it to the Airflow field.
+func (o *DeviceWithConfigContextRequest) SetAirflow(v DeviceAirflowValue) {
 	o.Airflow = &v
 }
 

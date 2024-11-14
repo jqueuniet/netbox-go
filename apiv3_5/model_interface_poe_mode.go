@@ -19,9 +19,8 @@ var _ MappedNullable = &InterfacePoeMode{}
 
 // InterfacePoeMode struct for InterfacePoeMode
 type InterfacePoeMode struct {
-	// * `pd` - PD * `pse` - PSE
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *InterfacePoeModeValue `json:"value,omitempty"`
+	Label                *InterfacePoeModeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewInterfacePoeModeWithDefaults() *InterfacePoeMode {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *InterfacePoeMode) GetValue() string {
+func (o *InterfacePoeMode) GetValue() InterfacePoeModeValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret InterfacePoeModeValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *InterfacePoeMode) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfacePoeMode) GetValueOk() (*string, bool) {
+func (o *InterfacePoeMode) GetValueOk() (*InterfacePoeModeValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *InterfacePoeMode) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *InterfacePoeMode) SetValue(v string) {
+// SetValue gets a reference to the given InterfacePoeModeValue and assigns it to the Value field.
+func (o *InterfacePoeMode) SetValue(v InterfacePoeModeValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *InterfacePoeMode) GetLabel() string {
+func (o *InterfacePoeMode) GetLabel() InterfacePoeModeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret InterfacePoeModeLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *InterfacePoeMode) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfacePoeMode) GetLabelOk() (*string, bool) {
+func (o *InterfacePoeMode) GetLabelOk() (*InterfacePoeModeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *InterfacePoeMode) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *InterfacePoeMode) SetLabel(v string) {
+// SetLabel gets a reference to the given InterfacePoeModeLabel and assigns it to the Label field.
+func (o *InterfacePoeMode) SetLabel(v InterfacePoeModeLabel) {
 	o.Label = &v
 }
 

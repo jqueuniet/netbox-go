@@ -19,9 +19,8 @@ var _ MappedNullable = &CircuitStatus{}
 
 // CircuitStatus struct for CircuitStatus
 type CircuitStatus struct {
-	// * `planned` - Planned * `provisioning` - Provisioning * `active` - Active * `offline` - Offline * `deprovisioning` - Deprovisioning * `decommissioned` - Decommissioned
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *CircuitStatusValue `json:"value,omitempty"`
+	Label                *CircuitStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewCircuitStatusWithDefaults() *CircuitStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *CircuitStatus) GetValue() string {
+func (o *CircuitStatus) GetValue() CircuitStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret CircuitStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *CircuitStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CircuitStatus) GetValueOk() (*string, bool) {
+func (o *CircuitStatus) GetValueOk() (*CircuitStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *CircuitStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *CircuitStatus) SetValue(v string) {
+// SetValue gets a reference to the given CircuitStatusValue and assigns it to the Value field.
+func (o *CircuitStatus) SetValue(v CircuitStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *CircuitStatus) GetLabel() string {
+func (o *CircuitStatus) GetLabel() CircuitStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret CircuitStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *CircuitStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CircuitStatus) GetLabelOk() (*string, bool) {
+func (o *CircuitStatus) GetLabelOk() (*CircuitStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *CircuitStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *CircuitStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given CircuitStatusLabel and assigns it to the Label field.
+func (o *CircuitStatus) SetLabel(v CircuitStatusLabel) {
 	o.Label = &v
 }
 

@@ -19,9 +19,8 @@ var _ MappedNullable = &InterfaceMode{}
 
 // InterfaceMode struct for InterfaceMode
 type InterfaceMode struct {
-	// * `access` - Access * `tagged` - Tagged * `tagged-all` - Tagged (All)
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *InterfaceModeValue `json:"value,omitempty"`
+	Label                *InterfaceModeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewInterfaceModeWithDefaults() *InterfaceMode {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *InterfaceMode) GetValue() string {
+func (o *InterfaceMode) GetValue() InterfaceModeValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret InterfaceModeValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *InterfaceMode) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfaceMode) GetValueOk() (*string, bool) {
+func (o *InterfaceMode) GetValueOk() (*InterfaceModeValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *InterfaceMode) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *InterfaceMode) SetValue(v string) {
+// SetValue gets a reference to the given InterfaceModeValue and assigns it to the Value field.
+func (o *InterfaceMode) SetValue(v InterfaceModeValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *InterfaceMode) GetLabel() string {
+func (o *InterfaceMode) GetLabel() InterfaceModeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret InterfaceModeLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *InterfaceMode) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfaceMode) GetLabelOk() (*string, bool) {
+func (o *InterfaceMode) GetLabelOk() (*InterfaceModeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *InterfaceMode) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *InterfaceMode) SetLabel(v string) {
+// SetLabel gets a reference to the given InterfaceModeLabel and assigns it to the Label field.
+func (o *InterfaceMode) SetLabel(v InterfaceModeLabel) {
 	o.Label = &v
 }
 

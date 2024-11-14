@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**EventTypes** | **[]string** | The types of event which will trigger this rule. | 
+**EventTypes** | [**[]EventRuleEventTypesInner**](EventRuleEventTypesInner.md) | The types of event which will trigger this rule. | 
 **Conditions** | Pointer to **interface{}** | A set of conditions which determine whether the event will be generated. | [optional] 
-**ActionType** | Pointer to **string** | * &#x60;webhook&#x60; - Webhook * &#x60;script&#x60; - Script * &#x60;notification&#x60; - Notification | [optional] 
+**ActionType** | Pointer to [**EventRuleActionTypeValue**](EventRuleActionTypeValue.md) |  | [optional] 
 **ActionObjectType** | **string** |  | 
 **ActionObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritableEventRuleRequest
 
-`func NewWritableEventRuleRequest(objectTypes []string, name string, eventTypes []string, actionObjectType string, ) *WritableEventRuleRequest`
+`func NewWritableEventRuleRequest(objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionObjectType string, ) *WritableEventRuleRequest`
 
 NewWritableEventRuleRequest instantiates a new WritableEventRuleRequest object
 This constructor will assign default values to properties that have it defined,
@@ -102,20 +102,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetEventTypes
 
-`func (o *WritableEventRuleRequest) GetEventTypes() []string`
+`func (o *WritableEventRuleRequest) GetEventTypes() []EventRuleEventTypesInner`
 
 GetEventTypes returns the EventTypes field if non-nil, zero value otherwise.
 
 ### GetEventTypesOk
 
-`func (o *WritableEventRuleRequest) GetEventTypesOk() (*[]string, bool)`
+`func (o *WritableEventRuleRequest) GetEventTypesOk() (*[]EventRuleEventTypesInner, bool)`
 
 GetEventTypesOk returns a tuple with the EventTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventTypes
 
-`func (o *WritableEventRuleRequest) SetEventTypes(v []string)`
+`func (o *WritableEventRuleRequest) SetEventTypes(v []EventRuleEventTypesInner)`
 
 SetEventTypes sets EventTypes field to given value.
 
@@ -157,20 +157,20 @@ HasConditions returns a boolean if a field has been set.
 UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
 ### GetActionType
 
-`func (o *WritableEventRuleRequest) GetActionType() string`
+`func (o *WritableEventRuleRequest) GetActionType() EventRuleActionTypeValue`
 
 GetActionType returns the ActionType field if non-nil, zero value otherwise.
 
 ### GetActionTypeOk
 
-`func (o *WritableEventRuleRequest) GetActionTypeOk() (*string, bool)`
+`func (o *WritableEventRuleRequest) GetActionTypeOk() (*EventRuleActionTypeValue, bool)`
 
 GetActionTypeOk returns a tuple with the ActionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActionType
 
-`func (o *WritableEventRuleRequest) SetActionType(v string)`
+`func (o *WritableEventRuleRequest) SetActionType(v EventRuleActionTypeValue)`
 
 SetActionType sets ActionType field to given value.
 

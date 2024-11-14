@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 **Location** | Pointer to [**NullableBriefLocationRequest**](BriefLocationRequest.md) |  | [optional] 
 **Rack** | Pointer to [**NullableBriefRackRequest**](BriefRackRequest.md) |  | [optional] 
 **Position** | Pointer to **NullableFloat64** |  | [optional] 
-**Face** | **string** | * &#x60;front&#x60; - Front * &#x60;rear&#x60; - Rear | 
+**Face** | [**RackFace1**](RackFace1.md) |  | 
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
-**Status** | Pointer to **string** | * &#x60;offline&#x60; - Offline * &#x60;active&#x60; - Active * &#x60;planned&#x60; - Planned * &#x60;staged&#x60; - Staged * &#x60;failed&#x60; - Failed * &#x60;inventory&#x60; - Inventory * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
-**Airflow** | Pointer to **string** | * &#x60;front-to-rear&#x60; - Front to rear * &#x60;rear-to-front&#x60; - Rear to front * &#x60;left-to-right&#x60; - Left to right * &#x60;right-to-left&#x60; - Right to left * &#x60;side-to-rear&#x60; - Side to rear * &#x60;passive&#x60; - Passive * &#x60;mixed&#x60; - Mixed | [optional] 
+**Status** | Pointer to [**DeviceStatusValue**](DeviceStatusValue.md) |  | [optional] 
+**Airflow** | Pointer to [**DeviceAirflowValue**](DeviceAirflowValue.md) |  | [optional] 
 **PrimaryIp4** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
 **PrimaryIp6** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
 **OobIp** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewWritableDeviceWithConfigContextRequest
 
-`func NewWritableDeviceWithConfigContextRequest(deviceType BriefDeviceTypeRequest, role BriefDeviceRoleRequest, site BriefSiteRequest, face string, ) *WritableDeviceWithConfigContextRequest`
+`func NewWritableDeviceWithConfigContextRequest(deviceType BriefDeviceTypeRequest, role BriefDeviceRoleRequest, site BriefSiteRequest, face RackFace1, ) *WritableDeviceWithConfigContextRequest`
 
 NewWritableDeviceWithConfigContextRequest instantiates a new WritableDeviceWithConfigContextRequest object
 This constructor will assign default values to properties that have it defined,
@@ -385,20 +385,20 @@ HasPosition returns a boolean if a field has been set.
 UnsetPosition ensures that no value is present for Position, not even an explicit nil
 ### GetFace
 
-`func (o *WritableDeviceWithConfigContextRequest) GetFace() string`
+`func (o *WritableDeviceWithConfigContextRequest) GetFace() RackFace1`
 
 GetFace returns the Face field if non-nil, zero value otherwise.
 
 ### GetFaceOk
 
-`func (o *WritableDeviceWithConfigContextRequest) GetFaceOk() (*string, bool)`
+`func (o *WritableDeviceWithConfigContextRequest) GetFaceOk() (*RackFace1, bool)`
 
 GetFaceOk returns a tuple with the Face field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFace
 
-`func (o *WritableDeviceWithConfigContextRequest) SetFace(v string)`
+`func (o *WritableDeviceWithConfigContextRequest) SetFace(v RackFace1)`
 
 SetFace sets Face field to given value.
 
@@ -475,20 +475,20 @@ HasLongitude returns a boolean if a field has been set.
 UnsetLongitude ensures that no value is present for Longitude, not even an explicit nil
 ### GetStatus
 
-`func (o *WritableDeviceWithConfigContextRequest) GetStatus() string`
+`func (o *WritableDeviceWithConfigContextRequest) GetStatus() DeviceStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableDeviceWithConfigContextRequest) GetStatusOk() (*string, bool)`
+`func (o *WritableDeviceWithConfigContextRequest) GetStatusOk() (*DeviceStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableDeviceWithConfigContextRequest) SetStatus(v string)`
+`func (o *WritableDeviceWithConfigContextRequest) SetStatus(v DeviceStatusValue)`
 
 SetStatus sets Status field to given value.
 
@@ -500,20 +500,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetAirflow
 
-`func (o *WritableDeviceWithConfigContextRequest) GetAirflow() string`
+`func (o *WritableDeviceWithConfigContextRequest) GetAirflow() DeviceAirflowValue`
 
 GetAirflow returns the Airflow field if non-nil, zero value otherwise.
 
 ### GetAirflowOk
 
-`func (o *WritableDeviceWithConfigContextRequest) GetAirflowOk() (*string, bool)`
+`func (o *WritableDeviceWithConfigContextRequest) GetAirflowOk() (*DeviceAirflowValue, bool)`
 
 GetAirflowOk returns a tuple with the Airflow field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAirflow
 
-`func (o *WritableDeviceWithConfigContextRequest) SetAirflow(v string)`
+`func (o *WritableDeviceWithConfigContextRequest) SetAirflow(v DeviceAirflowValue)`
 
 SetAirflow sets Airflow field to given value.
 

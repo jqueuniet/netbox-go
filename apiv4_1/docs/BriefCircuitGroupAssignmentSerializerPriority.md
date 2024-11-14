@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;primary&#x60; - Primary * &#x60;secondary&#x60; - Secondary * &#x60;tertiary&#x60; - Tertiary * &#x60;inactive&#x60; - Inactive | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**BriefCircuitGroupAssignmentSerializerPriorityValue**](BriefCircuitGroupAssignmentSerializerPriorityValue.md) |  | [optional] 
+**Label** | Pointer to [**BriefCircuitGroupAssignmentSerializerPriorityLabel**](BriefCircuitGroupAssignmentSerializerPriorityLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *BriefCircuitGroupAssignmentSerializerPriority) GetValue() string`
+`func (o *BriefCircuitGroupAssignmentSerializerPriority) GetValue() BriefCircuitGroupAssignmentSerializerPriorityValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *BriefCircuitGroupAssignmentSerializerPriority) GetValueOk() (*string, bool)`
+`func (o *BriefCircuitGroupAssignmentSerializerPriority) GetValueOk() (*BriefCircuitGroupAssignmentSerializerPriorityValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *BriefCircuitGroupAssignmentSerializerPriority) SetValue(v string)`
+`func (o *BriefCircuitGroupAssignmentSerializerPriority) SetValue(v BriefCircuitGroupAssignmentSerializerPriorityValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *BriefCircuitGroupAssignmentSerializerPriority) GetLabel() string`
+`func (o *BriefCircuitGroupAssignmentSerializerPriority) GetLabel() BriefCircuitGroupAssignmentSerializerPriorityLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *BriefCircuitGroupAssignmentSerializerPriority) GetLabelOk() (*string, bool)`
+`func (o *BriefCircuitGroupAssignmentSerializerPriority) GetLabelOk() (*BriefCircuitGroupAssignmentSerializerPriorityLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *BriefCircuitGroupAssignmentSerializerPriority) SetLabel(v string)`
+`func (o *BriefCircuitGroupAssignmentSerializerPriority) SetLabel(v BriefCircuitGroupAssignmentSerializerPriorityLabel)`
 
 SetLabel sets Label field to given value.
 

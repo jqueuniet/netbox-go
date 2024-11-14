@@ -19,14 +19,13 @@ var _ MappedNullable = &PatchedWritablePrefixRequest{}
 
 // PatchedWritablePrefixRequest Adds support for custom fields and tags.
 type PatchedWritablePrefixRequest struct {
-	Prefix *string                    `json:"prefix,omitempty"`
-	Site   NullableBriefSiteRequest   `json:"site,omitempty"`
-	Vrf    NullableBriefVRFRequest    `json:"vrf,omitempty"`
-	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
-	Vlan   NullableBriefVLANRequest   `json:"vlan,omitempty"`
-	// Operational status of this prefix  * `container` - Container * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
-	Status *string                  `json:"status,omitempty"`
-	Role   NullableBriefRoleRequest `json:"role,omitempty"`
+	Prefix *string                             `json:"prefix,omitempty"`
+	Site   NullableBriefSiteRequest            `json:"site,omitempty"`
+	Vrf    NullableBriefVRFRequest             `json:"vrf,omitempty"`
+	Tenant NullableBriefTenantRequest          `json:"tenant,omitempty"`
+	Vlan   NullableBriefVLANRequest            `json:"vlan,omitempty"`
+	Status *PatchedWritablePrefixRequestStatus `json:"status,omitempty"`
+	Role   NullableBriefRoleRequest            `json:"role,omitempty"`
 	// All IP addresses within this prefix are considered usable
 	IsPool *bool `json:"is_pool,omitempty"`
 	// Treat as fully utilized
@@ -262,9 +261,9 @@ func (o *PatchedWritablePrefixRequest) UnsetVlan() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritablePrefixRequest) GetStatus() string {
+func (o *PatchedWritablePrefixRequest) GetStatus() PatchedWritablePrefixRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritablePrefixRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -272,7 +271,7 @@ func (o *PatchedWritablePrefixRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritablePrefixRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritablePrefixRequest) GetStatusOk() (*PatchedWritablePrefixRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -288,8 +287,8 @@ func (o *PatchedWritablePrefixRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritablePrefixRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritablePrefixRequestStatus and assigns it to the Status field.
+func (o *PatchedWritablePrefixRequest) SetStatus(v PatchedWritablePrefixRequestStatus) {
 	o.Status = &v
 }
 

@@ -25,10 +25,9 @@ type ConsolePortTemplateRequest struct {
 	//          {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name string `json:"name"`
 	// Physical label
-	Label *string `json:"label,omitempty"`
-	// * `de-9` - DE-9 * `db-25` - DB-25 * `rj-11` - RJ-11 * `rj-12` - RJ-12 * `rj-45` - RJ-45 * `mini-din-8` - Mini-DIN 8 * `usb-a` - USB Type A * `usb-b` - USB Type B * `usb-c` - USB Type C * `usb-mini-a` - USB Mini A * `usb-mini-b` - USB Mini B * `usb-micro-a` - USB Micro A * `usb-micro-b` - USB Micro B * `usb-micro-ab` - USB Micro AB * `other` - Other
-	Type                 *string `json:"type,omitempty"`
-	Description          *string `json:"description,omitempty"`
+	Label                *string               `json:"label,omitempty"`
+	Type                 *ConsolePortTypeValue `json:"type,omitempty"`
+	Description          *string               `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -195,9 +194,9 @@ func (o *ConsolePortTemplateRequest) SetLabel(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *ConsolePortTemplateRequest) GetType() string {
+func (o *ConsolePortTemplateRequest) GetType() ConsolePortTypeValue {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret ConsolePortTypeValue
 		return ret
 	}
 	return *o.Type
@@ -205,7 +204,7 @@ func (o *ConsolePortTemplateRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConsolePortTemplateRequest) GetTypeOk() (*string, bool) {
+func (o *ConsolePortTemplateRequest) GetTypeOk() (*ConsolePortTypeValue, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -221,8 +220,8 @@ func (o *ConsolePortTemplateRequest) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *ConsolePortTemplateRequest) SetType(v string) {
+// SetType gets a reference to the given ConsolePortTypeValue and assigns it to the Type field.
+func (o *ConsolePortTemplateRequest) SetType(v ConsolePortTypeValue) {
 	o.Type = &v
 }
 

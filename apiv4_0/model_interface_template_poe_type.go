@@ -19,9 +19,8 @@ var _ MappedNullable = &InterfaceTemplatePoeType{}
 
 // InterfaceTemplatePoeType struct for InterfaceTemplatePoeType
 type InterfaceTemplatePoeType struct {
-	// * `type1-ieee802.3af` - 802.3af (Type 1) * `type2-ieee802.3at` - 802.3at (Type 2) * `type3-ieee802.3bt` - 802.3bt (Type 3) * `type4-ieee802.3bt` - 802.3bt (Type 4) * `passive-24v-2pair` - Passive 24V (2-pair) * `passive-24v-4pair` - Passive 24V (4-pair) * `passive-48v-2pair` - Passive 48V (2-pair) * `passive-48v-4pair` - Passive 48V (4-pair)
-	Value                NullableString `json:"value,omitempty"`
-	Label                *string        `json:"label,omitempty"`
+	Value                *InterfaceTemplatePoeTypeValue `json:"value,omitempty"`
+	Label                *InterfacePoeTypeLabel         `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,53 +43,42 @@ func NewInterfaceTemplatePoeTypeWithDefaults() *InterfaceTemplatePoeType {
 	return &this
 }
 
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *InterfaceTemplatePoeType) GetValue() string {
-	if o == nil || IsNil(o.Value.Get()) {
-		var ret string
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *InterfaceTemplatePoeType) GetValue() InterfaceTemplatePoeTypeValue {
+	if o == nil || IsNil(o.Value) {
+		var ret InterfaceTemplatePoeTypeValue
 		return ret
 	}
-	return *o.Value.Get()
+	return *o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *InterfaceTemplatePoeType) GetValueOk() (*string, bool) {
-	if o == nil {
+func (o *InterfaceTemplatePoeType) GetValueOk() (*InterfaceTemplatePoeTypeValue, bool) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
-	return o.Value.Get(), o.Value.IsSet()
+	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *InterfaceTemplatePoeType) HasValue() bool {
-	if o != nil && o.Value.IsSet() {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
 	return false
 }
 
-// SetValue gets a reference to the given NullableString and assigns it to the Value field.
-func (o *InterfaceTemplatePoeType) SetValue(v string) {
-	o.Value.Set(&v)
-}
-
-// SetValueNil sets the value for Value to be an explicit nil
-func (o *InterfaceTemplatePoeType) SetValueNil() {
-	o.Value.Set(nil)
-}
-
-// UnsetValue ensures that no value is present for Value, not even an explicit nil
-func (o *InterfaceTemplatePoeType) UnsetValue() {
-	o.Value.Unset()
+// SetValue gets a reference to the given InterfaceTemplatePoeTypeValue and assigns it to the Value field.
+func (o *InterfaceTemplatePoeType) SetValue(v InterfaceTemplatePoeTypeValue) {
+	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *InterfaceTemplatePoeType) GetLabel() string {
+func (o *InterfaceTemplatePoeType) GetLabel() InterfacePoeTypeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret InterfacePoeTypeLabel
 		return ret
 	}
 	return *o.Label
@@ -98,7 +86,7 @@ func (o *InterfaceTemplatePoeType) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfaceTemplatePoeType) GetLabelOk() (*string, bool) {
+func (o *InterfaceTemplatePoeType) GetLabelOk() (*InterfacePoeTypeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -114,8 +102,8 @@ func (o *InterfaceTemplatePoeType) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *InterfaceTemplatePoeType) SetLabel(v string) {
+// SetLabel gets a reference to the given InterfacePoeTypeLabel and assigns it to the Label field.
+func (o *InterfaceTemplatePoeType) SetLabel(v InterfacePoeTypeLabel) {
 	o.Label = &v
 }
 
@@ -129,8 +117,8 @@ func (o InterfaceTemplatePoeType) MarshalJSON() ([]byte, error) {
 
 func (o InterfaceTemplatePoeType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Value.IsSet() {
-		toSerialize["value"] = o.Value.Get()
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label

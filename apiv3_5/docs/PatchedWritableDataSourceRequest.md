@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** | * &#x60;local&#x60; - Local * &#x60;git&#x60; - Git * &#x60;amazon-s3&#x60; - Amazon S3 | [optional] 
+**Type** | Pointer to [**DataSourceTypeValue**](DataSourceTypeValue.md) |  | [optional] 
 **SourceUrl** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -59,20 +59,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *PatchedWritableDataSourceRequest) GetType() string`
+`func (o *PatchedWritableDataSourceRequest) GetType() DataSourceTypeValue`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PatchedWritableDataSourceRequest) GetTypeOk() (*string, bool)`
+`func (o *PatchedWritableDataSourceRequest) GetTypeOk() (*DataSourceTypeValue, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PatchedWritableDataSourceRequest) SetType(v string)`
+`func (o *PatchedWritableDataSourceRequest) SetType(v DataSourceTypeValue)`
 
 SetType sets Type field to given value.
 

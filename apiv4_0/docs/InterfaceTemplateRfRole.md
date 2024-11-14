@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **NullableString** | * &#x60;ap&#x60; - Access point * &#x60;station&#x60; - Station | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**InterfaceTemplateRfRoleValue**](InterfaceTemplateRfRoleValue.md) |  | [optional] 
+**Label** | Pointer to [**InterfaceRfRoleLabel**](InterfaceRfRoleLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *InterfaceTemplateRfRole) GetValue() string`
+`func (o *InterfaceTemplateRfRole) GetValue() InterfaceTemplateRfRoleValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *InterfaceTemplateRfRole) GetValueOk() (*string, bool)`
+`func (o *InterfaceTemplateRfRole) GetValueOk() (*InterfaceTemplateRfRoleValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *InterfaceTemplateRfRole) SetValue(v string)`
+`func (o *InterfaceTemplateRfRole) SetValue(v InterfaceTemplateRfRoleValue)`
 
 SetValue sets Value field to given value.
 
@@ -51,32 +51,22 @@ SetValue sets Value field to given value.
 
 HasValue returns a boolean if a field has been set.
 
-### SetValueNil
-
-`func (o *InterfaceTemplateRfRole) SetValueNil(b bool)`
-
- SetValueNil sets the value for Value to be an explicit nil
-
-### UnsetValue
-`func (o *InterfaceTemplateRfRole) UnsetValue()`
-
-UnsetValue ensures that no value is present for Value, not even an explicit nil
 ### GetLabel
 
-`func (o *InterfaceTemplateRfRole) GetLabel() string`
+`func (o *InterfaceTemplateRfRole) GetLabel() InterfaceRfRoleLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *InterfaceTemplateRfRole) GetLabelOk() (*string, bool)`
+`func (o *InterfaceTemplateRfRole) GetLabelOk() (*InterfaceRfRoleLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *InterfaceTemplateRfRole) SetLabel(v string)`
+`func (o *InterfaceTemplateRfRole) SetLabel(v InterfaceRfRoleLabel)`
 
 SetLabel sets Label field to given value.
 

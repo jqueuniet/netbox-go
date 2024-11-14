@@ -19,9 +19,8 @@ var _ MappedNullable = &ModuleStatus{}
 
 // ModuleStatus struct for ModuleStatus
 type ModuleStatus struct {
-	// * `offline` - Offline * `active` - Active * `planned` - Planned * `staged` - Staged * `failed` - Failed * `decommissioning` - Decommissioning
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *ModuleStatusValue `json:"value,omitempty"`
+	Label                *ModuleStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewModuleStatusWithDefaults() *ModuleStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *ModuleStatus) GetValue() string {
+func (o *ModuleStatus) GetValue() ModuleStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret ModuleStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *ModuleStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModuleStatus) GetValueOk() (*string, bool) {
+func (o *ModuleStatus) GetValueOk() (*ModuleStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *ModuleStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *ModuleStatus) SetValue(v string) {
+// SetValue gets a reference to the given ModuleStatusValue and assigns it to the Value field.
+func (o *ModuleStatus) SetValue(v ModuleStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *ModuleStatus) GetLabel() string {
+func (o *ModuleStatus) GetLabel() ModuleStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret ModuleStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *ModuleStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ModuleStatus) GetLabelOk() (*string, bool) {
+func (o *ModuleStatus) GetLabelOk() (*ModuleStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *ModuleStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *ModuleStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given ModuleStatusLabel and assigns it to the Label field.
+func (o *ModuleStatus) SetLabel(v ModuleStatusLabel) {
 	o.Label = &v
 }
 

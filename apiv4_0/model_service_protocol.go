@@ -19,9 +19,8 @@ var _ MappedNullable = &ServiceProtocol{}
 
 // ServiceProtocol struct for ServiceProtocol
 type ServiceProtocol struct {
-	// * `tcp` - TCP * `udp` - UDP * `sctp` - SCTP
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *PatchedWritableServiceRequestProtocol `json:"value,omitempty"`
+	Label                *ServiceProtocolLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewServiceProtocolWithDefaults() *ServiceProtocol {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *ServiceProtocol) GetValue() string {
+func (o *ServiceProtocol) GetValue() PatchedWritableServiceRequestProtocol {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret PatchedWritableServiceRequestProtocol
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *ServiceProtocol) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceProtocol) GetValueOk() (*string, bool) {
+func (o *ServiceProtocol) GetValueOk() (*PatchedWritableServiceRequestProtocol, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *ServiceProtocol) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *ServiceProtocol) SetValue(v string) {
+// SetValue gets a reference to the given PatchedWritableServiceRequestProtocol and assigns it to the Value field.
+func (o *ServiceProtocol) SetValue(v PatchedWritableServiceRequestProtocol) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *ServiceProtocol) GetLabel() string {
+func (o *ServiceProtocol) GetLabel() ServiceProtocolLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret ServiceProtocolLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *ServiceProtocol) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceProtocol) GetLabelOk() (*string, bool) {
+func (o *ServiceProtocol) GetLabelOk() (*ServiceProtocolLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *ServiceProtocol) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *ServiceProtocol) SetLabel(v string) {
+// SetLabel gets a reference to the given ServiceProtocolLabel and assigns it to the Label field.
+func (o *ServiceProtocol) SetLabel(v ServiceProtocolLabel) {
 	o.Label = &v
 }
 

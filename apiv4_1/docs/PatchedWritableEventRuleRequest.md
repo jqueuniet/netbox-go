@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **ObjectTypes** | Pointer to **[]string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**EventTypes** | Pointer to **[]string** | The types of event which will trigger this rule. | [optional] 
+**EventTypes** | Pointer to [**[]EventRuleEventTypesInner**](EventRuleEventTypesInner.md) | The types of event which will trigger this rule. | [optional] 
 **Conditions** | Pointer to **interface{}** | A set of conditions which determine whether the event will be generated. | [optional] 
-**ActionType** | Pointer to **string** | * &#x60;webhook&#x60; - Webhook * &#x60;script&#x60; - Script * &#x60;notification&#x60; - Notification | [optional] 
+**ActionType** | Pointer to [**EventRuleActionTypeValue**](EventRuleActionTypeValue.md) |  | [optional] 
 **ActionObjectType** | Pointer to **string** |  | [optional] 
 **ActionObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -112,20 +112,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetEventTypes
 
-`func (o *PatchedWritableEventRuleRequest) GetEventTypes() []string`
+`func (o *PatchedWritableEventRuleRequest) GetEventTypes() []EventRuleEventTypesInner`
 
 GetEventTypes returns the EventTypes field if non-nil, zero value otherwise.
 
 ### GetEventTypesOk
 
-`func (o *PatchedWritableEventRuleRequest) GetEventTypesOk() (*[]string, bool)`
+`func (o *PatchedWritableEventRuleRequest) GetEventTypesOk() (*[]EventRuleEventTypesInner, bool)`
 
 GetEventTypesOk returns a tuple with the EventTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventTypes
 
-`func (o *PatchedWritableEventRuleRequest) SetEventTypes(v []string)`
+`func (o *PatchedWritableEventRuleRequest) SetEventTypes(v []EventRuleEventTypesInner)`
 
 SetEventTypes sets EventTypes field to given value.
 
@@ -172,20 +172,20 @@ HasConditions returns a boolean if a field has been set.
 UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
 ### GetActionType
 
-`func (o *PatchedWritableEventRuleRequest) GetActionType() string`
+`func (o *PatchedWritableEventRuleRequest) GetActionType() EventRuleActionTypeValue`
 
 GetActionType returns the ActionType field if non-nil, zero value otherwise.
 
 ### GetActionTypeOk
 
-`func (o *PatchedWritableEventRuleRequest) GetActionTypeOk() (*string, bool)`
+`func (o *PatchedWritableEventRuleRequest) GetActionTypeOk() (*EventRuleActionTypeValue, bool)`
 
 GetActionTypeOk returns a tuple with the ActionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActionType
 
-`func (o *PatchedWritableEventRuleRequest) SetActionType(v string)`
+`func (o *PatchedWritableEventRuleRequest) SetActionType(v EventRuleActionTypeValue)`
 
 SetActionType sets ActionType field to given value.
 

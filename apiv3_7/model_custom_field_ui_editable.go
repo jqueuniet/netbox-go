@@ -19,9 +19,8 @@ var _ MappedNullable = &CustomFieldUiEditable{}
 
 // CustomFieldUiEditable struct for CustomFieldUiEditable
 type CustomFieldUiEditable struct {
-	// * `yes` - Yes * `no` - No * `hidden` - Hidden
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *CustomFieldUiEditableValue `json:"value,omitempty"`
+	Label                *CustomFieldUiEditableLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewCustomFieldUiEditableWithDefaults() *CustomFieldUiEditable {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *CustomFieldUiEditable) GetValue() string {
+func (o *CustomFieldUiEditable) GetValue() CustomFieldUiEditableValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret CustomFieldUiEditableValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *CustomFieldUiEditable) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldUiEditable) GetValueOk() (*string, bool) {
+func (o *CustomFieldUiEditable) GetValueOk() (*CustomFieldUiEditableValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *CustomFieldUiEditable) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *CustomFieldUiEditable) SetValue(v string) {
+// SetValue gets a reference to the given CustomFieldUiEditableValue and assigns it to the Value field.
+func (o *CustomFieldUiEditable) SetValue(v CustomFieldUiEditableValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *CustomFieldUiEditable) GetLabel() string {
+func (o *CustomFieldUiEditable) GetLabel() CustomFieldUiEditableLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret CustomFieldUiEditableLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *CustomFieldUiEditable) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldUiEditable) GetLabelOk() (*string, bool) {
+func (o *CustomFieldUiEditable) GetLabelOk() (*CustomFieldUiEditableLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *CustomFieldUiEditable) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *CustomFieldUiEditable) SetLabel(v string) {
+// SetLabel gets a reference to the given CustomFieldUiEditableLabel and assigns it to the Label field.
+func (o *CustomFieldUiEditable) SetLabel(v CustomFieldUiEditableLabel) {
 	o.Label = &v
 }
 

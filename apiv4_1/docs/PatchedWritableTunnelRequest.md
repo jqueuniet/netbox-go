@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;planned&#x60; - Planned * &#x60;active&#x60; - Active * &#x60;disabled&#x60; - Disabled | [optional] 
+**Status** | Pointer to [**PatchedWritableTunnelRequestStatus**](PatchedWritableTunnelRequestStatus.md) |  | [optional] 
 **Group** | Pointer to [**NullableBriefTunnelGroupRequest**](BriefTunnelGroupRequest.md) |  | [optional] 
-**Encapsulation** | Pointer to **string** | * &#x60;ipsec-transport&#x60; - IPsec - Transport * &#x60;ipsec-tunnel&#x60; - IPsec - Tunnel * &#x60;ip-ip&#x60; - IP-in-IP * &#x60;gre&#x60; - GRE | [optional] 
+**Encapsulation** | Pointer to [**PatchedWritableTunnelRequestEncapsulation**](PatchedWritableTunnelRequestEncapsulation.md) |  | [optional] 
 **IpsecProfile** | Pointer to [**NullableBriefIPSecProfileRequest**](BriefIPSecProfileRequest.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **TunnelId** | Pointer to **NullableInt64** |  | [optional] 
@@ -62,20 +62,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *PatchedWritableTunnelRequest) GetStatus() string`
+`func (o *PatchedWritableTunnelRequest) GetStatus() PatchedWritableTunnelRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *PatchedWritableTunnelRequest) GetStatusOk() (*string, bool)`
+`func (o *PatchedWritableTunnelRequest) GetStatusOk() (*PatchedWritableTunnelRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *PatchedWritableTunnelRequest) SetStatus(v string)`
+`func (o *PatchedWritableTunnelRequest) SetStatus(v PatchedWritableTunnelRequestStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -122,20 +122,20 @@ HasGroup returns a boolean if a field has been set.
 UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetEncapsulation
 
-`func (o *PatchedWritableTunnelRequest) GetEncapsulation() string`
+`func (o *PatchedWritableTunnelRequest) GetEncapsulation() PatchedWritableTunnelRequestEncapsulation`
 
 GetEncapsulation returns the Encapsulation field if non-nil, zero value otherwise.
 
 ### GetEncapsulationOk
 
-`func (o *PatchedWritableTunnelRequest) GetEncapsulationOk() (*string, bool)`
+`func (o *PatchedWritableTunnelRequest) GetEncapsulationOk() (*PatchedWritableTunnelRequestEncapsulation, bool)`
 
 GetEncapsulationOk returns a tuple with the Encapsulation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEncapsulation
 
-`func (o *PatchedWritableTunnelRequest) SetEncapsulation(v string)`
+`func (o *PatchedWritableTunnelRequest) SetEncapsulation(v PatchedWritableTunnelRequestEncapsulation)`
 
 SetEncapsulation sets Encapsulation field to given value.
 

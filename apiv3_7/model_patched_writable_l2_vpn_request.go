@@ -19,11 +19,10 @@ var _ MappedNullable = &PatchedWritableL2VPNRequest{}
 
 // PatchedWritableL2VPNRequest Adds support for custom fields and tags.
 type PatchedWritableL2VPNRequest struct {
-	Identifier NullableInt64 `json:"identifier,omitempty"`
-	Name       *string       `json:"name,omitempty"`
-	Slug       *string       `json:"slug,omitempty" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	// * `vpws` - VPWS * `vpls` - VPLS * `vxlan` - VXLAN * `vxlan-evpn` - VXLAN-EVPN * `mpls-evpn` - MPLS EVPN * `pbb-evpn` - PBB EVPN * `epl` - EPL * `evpl` - EVPL * `ep-lan` - Ethernet Private LAN * `evp-lan` - Ethernet Virtual Private LAN * `ep-tree` - Ethernet Private Tree * `evp-tree` - Ethernet Virtual Private Tree
-	Type                 *string                `json:"type,omitempty"`
+	Identifier           NullableInt64          `json:"identifier,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Slug                 *string                `json:"slug,omitempty" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Type                 *L2VPNTypeValue        `json:"type,omitempty"`
 	ImportTargets        []int32                `json:"import_targets,omitempty"`
 	ExportTargets        []int32                `json:"export_targets,omitempty"`
 	Description          *string                `json:"description,omitempty"`
@@ -161,9 +160,9 @@ func (o *PatchedWritableL2VPNRequest) SetSlug(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *PatchedWritableL2VPNRequest) GetType() string {
+func (o *PatchedWritableL2VPNRequest) GetType() L2VPNTypeValue {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret L2VPNTypeValue
 		return ret
 	}
 	return *o.Type
@@ -171,7 +170,7 @@ func (o *PatchedWritableL2VPNRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableL2VPNRequest) GetTypeOk() (*string, bool) {
+func (o *PatchedWritableL2VPNRequest) GetTypeOk() (*L2VPNTypeValue, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -187,8 +186,8 @@ func (o *PatchedWritableL2VPNRequest) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *PatchedWritableL2VPNRequest) SetType(v string) {
+// SetType gets a reference to the given L2VPNTypeValue and assigns it to the Type field.
+func (o *PatchedWritableL2VPNRequest) SetType(v L2VPNTypeValue) {
 	o.Type = &v
 }
 

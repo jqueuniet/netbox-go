@@ -2374,7 +2374,7 @@ import (
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this config template.
 	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example") // ConfigTemplateRequest | 
-	format := "format_example" // string |  (optional)
+	format := openapiclient.dcim_devices_render_config_create_format_parameter("json") // DcimDevicesRenderConfigCreateFormatParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2405,7 +2405,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **configTemplateRequest** | [**ConfigTemplateRequest**](ConfigTemplateRequest.md) |  | 
- **format** | **string** |  | 
+ **format** | [**DcimDevicesRenderConfigCreateFormatParameter**](DcimDevicesRenderConfigCreateFormatParameter.md) |  | 
 
 ### Return type
 
@@ -3061,7 +3061,7 @@ import (
 )
 
 func main() {
-	baseChoices := "baseChoices_example" // string | Base set of predefined choices (optional)  * `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes) (optional)
+	baseChoices := openapiclient.extras_custom_field_choice_sets_list_base_choices_parameter("IATA") // ExtrasCustomFieldChoiceSetsListBaseChoicesParameter | Base set of predefined choices (optional)  * `IATA` - IATA (Airport codes) * `ISO_3166` - ISO 3166 (Country codes) * `UN_LOCODE` - UN/LOCODE (Location codes) (optional)
 	choice := []string{"Inner_example"} // []string |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3138,7 +3138,7 @@ Other parameters are passed through a pointer to a apiExtrasCustomFieldChoiceSet
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **baseChoices** | **string** | Base set of predefined choices (optional)  * &#x60;IATA&#x60; - IATA (Airport codes) * &#x60;ISO_3166&#x60; - ISO 3166 (Country codes) * &#x60;UN_LOCODE&#x60; - UN/LOCODE (Location codes) | 
+ **baseChoices** | [**ExtrasCustomFieldChoiceSetsListBaseChoicesParameter**](ExtrasCustomFieldChoiceSetsListBaseChoicesParameter.md) | Base set of predefined choices (optional)  * &#x60;IATA&#x60; - IATA (Airport codes) * &#x60;ISO_3166&#x60; - ISO 3166 (Country codes) * &#x60;UN_LOCODE&#x60; - UN/LOCODE (Location codes) | 
  **choice** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
@@ -3445,7 +3445,7 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, "Type_example", "Name_example")} // []CustomFieldRequest | 
+	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3509,7 +3509,7 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, "Type_example", "Name_example")} // []CustomFieldRequest | 
+	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3575,7 +3575,7 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, "Type_example", "Name_example")} // []CustomFieldRequest | 
+	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3799,7 +3799,7 @@ func main() {
 	descriptionNie := []string{"Inner_example"} // []string |  (optional)
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-	filterLogic := "filterLogic_example" // string | Loose matches any instance of a given string; exact matches the entire field.  * `disabled` - Disabled * `loose` - Loose * `exact` - Exact (optional)
+	filterLogic := openapiclient.extras_custom_fields_list_filter_logic_parameter("disabled") // ExtrasCustomFieldsListFilterLogicParameter | Loose matches any instance of a given string; exact matches the entire field.  * `disabled` - Disabled * `loose` - Loose * `exact` - Exact (optional)
 	groupName := []string{"Inner_example"} // []string |  (optional)
 	groupNameEmpty := true // bool |  (optional)
 	groupNameIc := []string{"Inner_example"} // []string |  (optional)
@@ -3888,8 +3888,8 @@ func main() {
 	typeNie := []string{"Inner_example"} // []string | The type of data this custom field holds (optional)
 	typeNiew := []string{"Inner_example"} // []string | The type of data this custom field holds (optional)
 	typeNisw := []string{"Inner_example"} // []string | The type of data this custom field holds (optional)
-	uiEditable := "uiEditable_example" // string | Specifies whether the custom field value can be edited in the UI  * `yes` - Yes * `no` - No * `hidden` - Hidden (optional)
-	uiVisible := "uiVisible_example" // string | Specifies whether the custom field is displayed in the UI  * `always` - Always * `if-set` - If set * `hidden` - Hidden (optional)
+	uiEditable := openapiclient.extras_custom_fields_list_ui_editable_parameter("hidden") // ExtrasCustomFieldsListUiEditableParameter | Specifies whether the custom field value can be edited in the UI  * `yes` - Yes * `no` - No * `hidden` - Hidden (optional)
+	uiVisible := openapiclient.extras_custom_fields_list_ui_visible_parameter("always") // ExtrasCustomFieldsListUiVisibleParameter | Specifies whether the custom field is displayed in the UI  * `always` - Always * `if-set` - If set * `hidden` - Hidden (optional)
 	unique := true // bool |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	validationMaximum := []int32{int32(123)} // []int32 |  (optional)
@@ -3971,7 +3971,7 @@ Name | Type | Description  | Notes
  **descriptionNie** | **[]string** |  | 
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
- **filterLogic** | **string** | Loose matches any instance of a given string; exact matches the entire field.  * &#x60;disabled&#x60; - Disabled * &#x60;loose&#x60; - Loose * &#x60;exact&#x60; - Exact | 
+ **filterLogic** | [**ExtrasCustomFieldsListFilterLogicParameter**](ExtrasCustomFieldsListFilterLogicParameter.md) | Loose matches any instance of a given string; exact matches the entire field.  * &#x60;disabled&#x60; - Disabled * &#x60;loose&#x60; - Loose * &#x60;exact&#x60; - Exact | 
  **groupName** | **[]string** |  | 
  **groupNameEmpty** | **bool** |  | 
  **groupNameIc** | **[]string** |  | 
@@ -4060,8 +4060,8 @@ Name | Type | Description  | Notes
  **typeNie** | **[]string** | The type of data this custom field holds | 
  **typeNiew** | **[]string** | The type of data this custom field holds | 
  **typeNisw** | **[]string** | The type of data this custom field holds | 
- **uiEditable** | **string** | Specifies whether the custom field value can be edited in the UI  * &#x60;yes&#x60; - Yes * &#x60;no&#x60; - No * &#x60;hidden&#x60; - Hidden | 
- **uiVisible** | **string** | Specifies whether the custom field is displayed in the UI  * &#x60;always&#x60; - Always * &#x60;if-set&#x60; - If set * &#x60;hidden&#x60; - Hidden | 
+ **uiEditable** | [**ExtrasCustomFieldsListUiEditableParameter**](ExtrasCustomFieldsListUiEditableParameter.md) | Specifies whether the custom field value can be edited in the UI  * &#x60;yes&#x60; - Yes * &#x60;no&#x60; - No * &#x60;hidden&#x60; - Hidden | 
+ **uiVisible** | [**ExtrasCustomFieldsListUiVisibleParameter**](ExtrasCustomFieldsListUiVisibleParameter.md) | Specifies whether the custom field is displayed in the UI  * &#x60;always&#x60; - Always * &#x60;if-set&#x60; - If set * &#x60;hidden&#x60; - Hidden | 
  **unique** | **bool** |  | 
  **updatedByRequest** | **string** |  | 
  **validationMaximum** | **[]int32** |  | 
@@ -4681,7 +4681,7 @@ import (
 )
 
 func main() {
-	buttonClass := "buttonClass_example" // string | The class of the first link in a group will be used for the dropdown button  * `default` - Default * `blue` - Blue * `indigo` - Indigo * `purple` - Purple * `pink` - Pink * `red` - Red * `orange` - Orange * `yellow` - Yellow * `green` - Green * `teal` - Teal * `cyan` - Cyan * `gray` - Gray * `black` - Black * `white` - White * `ghost-dark` - Link (optional)
+	buttonClass := openapiclient.extras_custom_links_list_button_class_parameter("black") // ExtrasCustomLinksListButtonClassParameter | The class of the first link in a group will be used for the dropdown button  * `default` - Default * `blue` - Blue * `indigo` - Indigo * `purple` - Purple * `pink` - Pink * `red` - Red * `orange` - Orange * `yellow` - Yellow * `green` - Green * `teal` - Teal * `cyan` - Cyan * `gray` - Gray * `black` - Black * `white` - White * `ghost-dark` - Link (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4797,7 +4797,7 @@ Other parameters are passed through a pointer to a apiExtrasCustomLinksListReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **buttonClass** | **string** | The class of the first link in a group will be used for the dropdown button  * &#x60;default&#x60; - Default * &#x60;blue&#x60; - Blue * &#x60;indigo&#x60; - Indigo * &#x60;purple&#x60; - Purple * &#x60;pink&#x60; - Pink * &#x60;red&#x60; - Red * &#x60;orange&#x60; - Orange * &#x60;yellow&#x60; - Yellow * &#x60;green&#x60; - Green * &#x60;teal&#x60; - Teal * &#x60;cyan&#x60; - Cyan * &#x60;gray&#x60; - Gray * &#x60;black&#x60; - Black * &#x60;white&#x60; - White * &#x60;ghost-dark&#x60; - Link | 
+ **buttonClass** | [**ExtrasCustomLinksListButtonClassParameter**](ExtrasCustomLinksListButtonClassParameter.md) | The class of the first link in a group will be used for the dropdown button  * &#x60;default&#x60; - Default * &#x60;blue&#x60; - Blue * &#x60;indigo&#x60; - Indigo * &#x60;purple&#x60; - Purple * &#x60;pink&#x60; - Pink * &#x60;red&#x60; - Red * &#x60;orange&#x60; - Orange * &#x60;yellow&#x60; - Yellow * &#x60;green&#x60; - Green * &#x60;teal&#x60; - Teal * &#x60;cyan&#x60; - Cyan * &#x60;gray&#x60; - Gray * &#x60;black&#x60; - Black * &#x60;white&#x60; - White * &#x60;ghost-dark&#x60; - Link | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -5395,7 +5395,7 @@ import (
 )
 
 func main() {
-	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []string{"EventTypes_example"}, "ActionType_example", "ActionObjectType_example")} // []EventRuleRequest | 
+	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5459,7 +5459,7 @@ import (
 )
 
 func main() {
-	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []string{"EventTypes_example"}, "ActionType_example", "ActionObjectType_example")} // []EventRuleRequest | 
+	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5525,7 +5525,7 @@ import (
 )
 
 func main() {
-	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []string{"EventTypes_example"}, "ActionType_example", "ActionObjectType_example")} // []EventRuleRequest | 
+	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5591,7 +5591,7 @@ import (
 )
 
 func main() {
-	writableEventRuleRequest := *openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []string{"EventTypes_example"}, "ActionObjectType_example") // WritableEventRuleRequest | 
+	writableEventRuleRequest := *openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, "ActionObjectType_example") // WritableEventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6105,7 +6105,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this event rule.
-	writableEventRuleRequest := *openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []string{"EventTypes_example"}, "ActionObjectType_example") // WritableEventRuleRequest | 
+	writableEventRuleRequest := *openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, "ActionObjectType_example") // WritableEventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9113,7 +9113,7 @@ import (
 )
 
 func main() {
-	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), "EventType_example")} // []NotificationRequest | 
+	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), openapiclient.Event("object_created"))} // []NotificationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9177,7 +9177,7 @@ import (
 )
 
 func main() {
-	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), "EventType_example")} // []NotificationRequest | 
+	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), openapiclient.Event("object_created"))} // []NotificationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9243,7 +9243,7 @@ import (
 )
 
 func main() {
-	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), "EventType_example")} // []NotificationRequest | 
+	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), openapiclient.Event("object_created"))} // []NotificationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9309,7 +9309,7 @@ import (
 )
 
 func main() {
-	notificationRequest := *openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), "EventType_example") // NotificationRequest | 
+	notificationRequest := *openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), openapiclient.Event("object_created")) // NotificationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9656,7 +9656,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this notification.
-	notificationRequest := *openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), "EventType_example") // NotificationRequest | 
+	notificationRequest := *openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), openapiclient.Event("object_created")) // NotificationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

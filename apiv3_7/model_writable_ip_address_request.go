@@ -20,15 +20,13 @@ var _ MappedNullable = &WritableIPAddressRequest{}
 
 // WritableIPAddressRequest Adds support for custom fields and tags.
 type WritableIPAddressRequest struct {
-	Address string        `json:"address"`
-	Vrf     NullableInt32 `json:"vrf,omitempty"`
-	Tenant  NullableInt32 `json:"tenant,omitempty"`
-	// The operational status of this IP  * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated * `dhcp` - DHCP * `slaac` - SLAAC
-	Status *string `json:"status,omitempty"`
-	// The functional role of this IP  * `loopback` - Loopback * `secondary` - Secondary * `anycast` - Anycast * `vip` - VIP * `vrrp` - VRRP * `hsrp` - HSRP * `glbp` - GLBP * `carp` - CARP
-	Role               *string        `json:"role,omitempty"`
-	AssignedObjectType NullableString `json:"assigned_object_type,omitempty"`
-	AssignedObjectId   NullableInt64  `json:"assigned_object_id,omitempty"`
+	Address            string                                 `json:"address"`
+	Vrf                NullableInt32                          `json:"vrf,omitempty"`
+	Tenant             NullableInt32                          `json:"tenant,omitempty"`
+	Status             *PatchedWritableIPAddressRequestStatus `json:"status,omitempty"`
+	Role               *PatchedWritableIPAddressRequestRole   `json:"role,omitempty"`
+	AssignedObjectType NullableString                         `json:"assigned_object_type,omitempty"`
+	AssignedObjectId   NullableInt64                          `json:"assigned_object_id,omitempty"`
 	// The IP for which this address is the \"outside\" IP
 	NatInside NullableInt32 `json:"nat_inside,omitempty"`
 	// Hostname or FQDN (not case-sensitive)
@@ -171,9 +169,9 @@ func (o *WritableIPAddressRequest) UnsetTenant() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableIPAddressRequest) GetStatus() string {
+func (o *WritableIPAddressRequest) GetStatus() PatchedWritableIPAddressRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableIPAddressRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -181,7 +179,7 @@ func (o *WritableIPAddressRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableIPAddressRequest) GetStatusOk() (*string, bool) {
+func (o *WritableIPAddressRequest) GetStatusOk() (*PatchedWritableIPAddressRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -197,15 +195,15 @@ func (o *WritableIPAddressRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableIPAddressRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableIPAddressRequestStatus and assigns it to the Status field.
+func (o *WritableIPAddressRequest) SetStatus(v PatchedWritableIPAddressRequestStatus) {
 	o.Status = &v
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
-func (o *WritableIPAddressRequest) GetRole() string {
+func (o *WritableIPAddressRequest) GetRole() PatchedWritableIPAddressRequestRole {
 	if o == nil || IsNil(o.Role) {
-		var ret string
+		var ret PatchedWritableIPAddressRequestRole
 		return ret
 	}
 	return *o.Role
@@ -213,7 +211,7 @@ func (o *WritableIPAddressRequest) GetRole() string {
 
 // GetRoleOk returns a tuple with the Role field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableIPAddressRequest) GetRoleOk() (*string, bool) {
+func (o *WritableIPAddressRequest) GetRoleOk() (*PatchedWritableIPAddressRequestRole, bool) {
 	if o == nil || IsNil(o.Role) {
 		return nil, false
 	}
@@ -229,8 +227,8 @@ func (o *WritableIPAddressRequest) HasRole() bool {
 	return false
 }
 
-// SetRole gets a reference to the given string and assigns it to the Role field.
-func (o *WritableIPAddressRequest) SetRole(v string) {
+// SetRole gets a reference to the given PatchedWritableIPAddressRequestRole and assigns it to the Role field.
+func (o *WritableIPAddressRequest) SetRole(v PatchedWritableIPAddressRequestRole) {
 	o.Role = &v
 }
 

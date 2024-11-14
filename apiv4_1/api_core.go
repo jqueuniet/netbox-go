@@ -5239,7 +5239,7 @@ func (a *CoreAPIService) CoreJobsRetrieveExecute(r ApiCoreJobsRetrieveRequest) (
 type ApiCoreObjectChangesListRequest struct {
 	ctx                  context.Context
 	ApiService           CoreAPI
-	action               *string
+	action               *CoreObjectChangesListActionParameter
 	changedObjectId      *[]int32
 	changedObjectIdEmpty *bool
 	changedObjectIdGt    *[]int32
@@ -5303,7 +5303,7 @@ type ApiCoreObjectChangesListRequest struct {
 }
 
 // * &#x60;create&#x60; - Created * &#x60;update&#x60; - Updated * &#x60;delete&#x60; - Deleted
-func (r ApiCoreObjectChangesListRequest) Action(action string) ApiCoreObjectChangesListRequest {
+func (r ApiCoreObjectChangesListRequest) Action(action CoreObjectChangesListActionParameter) ApiCoreObjectChangesListRequest {
 	r.action = &action
 	return r
 }

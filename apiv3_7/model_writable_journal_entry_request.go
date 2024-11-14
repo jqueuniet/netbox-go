@@ -20,11 +20,10 @@ var _ MappedNullable = &WritableJournalEntryRequest{}
 
 // WritableJournalEntryRequest Adds support for custom fields and tags.
 type WritableJournalEntryRequest struct {
-	AssignedObjectType string        `json:"assigned_object_type"`
-	AssignedObjectId   int64         `json:"assigned_object_id"`
-	CreatedBy          NullableInt32 `json:"created_by,omitempty"`
-	// * `info` - Info * `success` - Success * `warning` - Warning * `danger` - Danger
-	Kind                 *string                `json:"kind,omitempty"`
+	AssignedObjectType   string                 `json:"assigned_object_type"`
+	AssignedObjectId     int64                  `json:"assigned_object_id"`
+	CreatedBy            NullableInt32          `json:"created_by,omitempty"`
+	Kind                 *JournalEntryKindValue `json:"kind,omitempty"`
 	Comments             string                 `json:"comments"`
 	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
@@ -145,9 +144,9 @@ func (o *WritableJournalEntryRequest) UnsetCreatedBy() {
 }
 
 // GetKind returns the Kind field value if set, zero value otherwise.
-func (o *WritableJournalEntryRequest) GetKind() string {
+func (o *WritableJournalEntryRequest) GetKind() JournalEntryKindValue {
 	if o == nil || IsNil(o.Kind) {
-		var ret string
+		var ret JournalEntryKindValue
 		return ret
 	}
 	return *o.Kind
@@ -155,7 +154,7 @@ func (o *WritableJournalEntryRequest) GetKind() string {
 
 // GetKindOk returns a tuple with the Kind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableJournalEntryRequest) GetKindOk() (*string, bool) {
+func (o *WritableJournalEntryRequest) GetKindOk() (*JournalEntryKindValue, bool) {
 	if o == nil || IsNil(o.Kind) {
 		return nil, false
 	}
@@ -171,8 +170,8 @@ func (o *WritableJournalEntryRequest) HasKind() bool {
 	return false
 }
 
-// SetKind gets a reference to the given string and assigns it to the Kind field.
-func (o *WritableJournalEntryRequest) SetKind(v string) {
+// SetKind gets a reference to the given JournalEntryKindValue and assigns it to the Kind field.
+func (o *WritableJournalEntryRequest) SetKind(v JournalEntryKindValue) {
 	o.Kind = &v
 }
 

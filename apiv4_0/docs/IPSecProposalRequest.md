@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**EncryptionAlgorithm** | **string** | * &#x60;aes-128-cbc&#x60; - 128-bit AES (CBC) * &#x60;aes-128-gcm&#x60; - 128-bit AES (GCM) * &#x60;aes-192-cbc&#x60; - 192-bit AES (CBC) * &#x60;aes-192-gcm&#x60; - 192-bit AES (GCM) * &#x60;aes-256-cbc&#x60; - 256-bit AES (CBC) * &#x60;aes-256-gcm&#x60; - 256-bit AES (GCM) * &#x60;3des-cbc&#x60; - 3DES * &#x60;des-cbc&#x60; - DES | 
-**AuthenticationAlgorithm** | **string** | * &#x60;hmac-sha1&#x60; - SHA-1 HMAC * &#x60;hmac-sha256&#x60; - SHA-256 HMAC * &#x60;hmac-sha384&#x60; - SHA-384 HMAC * &#x60;hmac-sha512&#x60; - SHA-512 HMAC * &#x60;hmac-md5&#x60; - MD5 HMAC | 
+**EncryptionAlgorithm** | [**IKEProposalEncryptionAlgorithmValue**](IKEProposalEncryptionAlgorithmValue.md) |  | 
+**AuthenticationAlgorithm** | [**IKEProposalAuthenticationAlgorithmValue**](IKEProposalAuthenticationAlgorithmValue.md) |  | 
 **SaLifetimeSeconds** | Pointer to **NullableInt32** | Security association lifetime (seconds) | [optional] 
 **SaLifetimeData** | Pointer to **NullableInt32** | Security association lifetime (in kilobytes) | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewIPSecProposalRequest
 
-`func NewIPSecProposalRequest(name string, encryptionAlgorithm string, authenticationAlgorithm string, ) *IPSecProposalRequest`
+`func NewIPSecProposalRequest(name string, encryptionAlgorithm IKEProposalEncryptionAlgorithmValue, authenticationAlgorithm IKEProposalAuthenticationAlgorithmValue, ) *IPSecProposalRequest`
 
 NewIPSecProposalRequest instantiates a new IPSecProposalRequest object
 This constructor will assign default values to properties that have it defined,
@@ -80,40 +80,40 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetEncryptionAlgorithm
 
-`func (o *IPSecProposalRequest) GetEncryptionAlgorithm() string`
+`func (o *IPSecProposalRequest) GetEncryptionAlgorithm() IKEProposalEncryptionAlgorithmValue`
 
 GetEncryptionAlgorithm returns the EncryptionAlgorithm field if non-nil, zero value otherwise.
 
 ### GetEncryptionAlgorithmOk
 
-`func (o *IPSecProposalRequest) GetEncryptionAlgorithmOk() (*string, bool)`
+`func (o *IPSecProposalRequest) GetEncryptionAlgorithmOk() (*IKEProposalEncryptionAlgorithmValue, bool)`
 
 GetEncryptionAlgorithmOk returns a tuple with the EncryptionAlgorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEncryptionAlgorithm
 
-`func (o *IPSecProposalRequest) SetEncryptionAlgorithm(v string)`
+`func (o *IPSecProposalRequest) SetEncryptionAlgorithm(v IKEProposalEncryptionAlgorithmValue)`
 
 SetEncryptionAlgorithm sets EncryptionAlgorithm field to given value.
 
 
 ### GetAuthenticationAlgorithm
 
-`func (o *IPSecProposalRequest) GetAuthenticationAlgorithm() string`
+`func (o *IPSecProposalRequest) GetAuthenticationAlgorithm() IKEProposalAuthenticationAlgorithmValue`
 
 GetAuthenticationAlgorithm returns the AuthenticationAlgorithm field if non-nil, zero value otherwise.
 
 ### GetAuthenticationAlgorithmOk
 
-`func (o *IPSecProposalRequest) GetAuthenticationAlgorithmOk() (*string, bool)`
+`func (o *IPSecProposalRequest) GetAuthenticationAlgorithmOk() (*IKEProposalAuthenticationAlgorithmValue, bool)`
 
 GetAuthenticationAlgorithmOk returns a tuple with the AuthenticationAlgorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthenticationAlgorithm
 
-`func (o *IPSecProposalRequest) SetAuthenticationAlgorithm(v string)`
+`func (o *IPSecProposalRequest) SetAuthenticationAlgorithm(v IKEProposalAuthenticationAlgorithmValue)`
 
 SetAuthenticationAlgorithm sets AuthenticationAlgorithm field to given value.
 

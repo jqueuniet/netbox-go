@@ -19,9 +19,8 @@ var _ MappedNullable = &DeviceStatus{}
 
 // DeviceStatus struct for DeviceStatus
 type DeviceStatus struct {
-	// * `offline` - Offline * `active` - Active * `planned` - Planned * `staged` - Staged * `failed` - Failed * `inventory` - Inventory * `decommissioning` - Decommissioning
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *DeviceStatusValue `json:"value,omitempty"`
+	Label                *DeviceStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewDeviceStatusWithDefaults() *DeviceStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *DeviceStatus) GetValue() string {
+func (o *DeviceStatus) GetValue() DeviceStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret DeviceStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *DeviceStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceStatus) GetValueOk() (*string, bool) {
+func (o *DeviceStatus) GetValueOk() (*DeviceStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *DeviceStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *DeviceStatus) SetValue(v string) {
+// SetValue gets a reference to the given DeviceStatusValue and assigns it to the Value field.
+func (o *DeviceStatus) SetValue(v DeviceStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *DeviceStatus) GetLabel() string {
+func (o *DeviceStatus) GetLabel() DeviceStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DeviceStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *DeviceStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceStatus) GetLabelOk() (*string, bool) {
+func (o *DeviceStatus) GetLabelOk() (*DeviceStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *DeviceStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *DeviceStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given DeviceStatusLabel and assigns it to the Label field.
+func (o *DeviceStatus) SetLabel(v DeviceStatusLabel) {
 	o.Label = &v
 }
 

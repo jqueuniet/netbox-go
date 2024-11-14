@@ -24,13 +24,12 @@ type IPRangeRequest struct {
 	EndAddress   string                      `json:"end_address"`
 	Vrf          NullableNestedVRFRequest    `json:"vrf,omitempty"`
 	Tenant       NullableNestedTenantRequest `json:"tenant,omitempty"`
-	// * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
-	Status       *string                   `json:"status,omitempty"`
-	Role         NullableNestedRoleRequest `json:"role,omitempty"`
-	Description  *string                   `json:"description,omitempty"`
-	Comments     *string                   `json:"comments,omitempty"`
-	Tags         []NestedTagRequest        `json:"tags,omitempty"`
-	CustomFields map[string]interface{}    `json:"custom_fields,omitempty"`
+	Status       *IPRangeStatusValue         `json:"status,omitempty"`
+	Role         NullableNestedRoleRequest   `json:"role,omitempty"`
+	Description  *string                     `json:"description,omitempty"`
+	Comments     *string                     `json:"comments,omitempty"`
+	Tags         []NestedTagRequest          `json:"tags,omitempty"`
+	CustomFields map[string]interface{}      `json:"custom_fields,omitempty"`
 	// Treat as 100% utilized
 	MarkUtilized         *bool `json:"mark_utilized,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -192,9 +191,9 @@ func (o *IPRangeRequest) UnsetTenant() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *IPRangeRequest) GetStatus() string {
+func (o *IPRangeRequest) GetStatus() IPRangeStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret IPRangeStatusValue
 		return ret
 	}
 	return *o.Status
@@ -202,7 +201,7 @@ func (o *IPRangeRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPRangeRequest) GetStatusOk() (*string, bool) {
+func (o *IPRangeRequest) GetStatusOk() (*IPRangeStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -218,8 +217,8 @@ func (o *IPRangeRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *IPRangeRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given IPRangeStatusValue and assigns it to the Status field.
+func (o *IPRangeRequest) SetStatus(v IPRangeStatusValue) {
 	o.Status = &v
 }
 

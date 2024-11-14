@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;aggressive&#x60; - Aggressive * &#x60;main&#x60; - Main | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**IKEPolicyModeValue**](IKEPolicyModeValue.md) |  | [optional] 
+**Label** | Pointer to [**IKEPolicyModeLabel**](IKEPolicyModeLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *IKEPolicyMode) GetValue() string`
+`func (o *IKEPolicyMode) GetValue() IKEPolicyModeValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *IKEPolicyMode) GetValueOk() (*string, bool)`
+`func (o *IKEPolicyMode) GetValueOk() (*IKEPolicyModeValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *IKEPolicyMode) SetValue(v string)`
+`func (o *IKEPolicyMode) SetValue(v IKEPolicyModeValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *IKEPolicyMode) GetLabel() string`
+`func (o *IKEPolicyMode) GetLabel() IKEPolicyModeLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *IKEPolicyMode) GetLabelOk() (*string, bool)`
+`func (o *IKEPolicyMode) GetLabelOk() (*IKEPolicyModeLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *IKEPolicyMode) SetLabel(v string)`
+`func (o *IKEPolicyMode) SetLabel(v IKEPolicyModeLabel)`
 
 SetLabel sets Label field to given value.
 

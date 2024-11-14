@@ -20,19 +20,15 @@ var _ MappedNullable = &WritablePowerFeedRequest{}
 
 // WritablePowerFeedRequest Adds support for custom fields and tags.
 type WritablePowerFeedRequest struct {
-	PowerPanel BriefPowerPanelRequest   `json:"power_panel"`
-	Rack       NullableBriefRackRequest `json:"rack,omitempty"`
-	Name       string                   `json:"name"`
-	// * `offline` - Offline * `active` - Active * `planned` - Planned * `failed` - Failed
-	Status *string `json:"status,omitempty"`
-	// * `primary` - Primary * `redundant` - Redundant
-	Type *string `json:"type,omitempty"`
-	// * `ac` - AC * `dc` - DC
-	Supply *string `json:"supply,omitempty"`
-	// * `single-phase` - Single phase * `three-phase` - Three-phase
-	Phase    *string `json:"phase,omitempty"`
-	Voltage  *int32  `json:"voltage,omitempty"`
-	Amperage *int32  `json:"amperage,omitempty"`
+	PowerPanel BriefPowerPanelRequest                 `json:"power_panel"`
+	Rack       NullableBriefRackRequest               `json:"rack,omitempty"`
+	Name       string                                 `json:"name"`
+	Status     *PatchedWritablePowerFeedRequestStatus `json:"status,omitempty"`
+	Type       *PatchedWritablePowerFeedRequestType   `json:"type,omitempty"`
+	Supply     *PatchedWritablePowerFeedRequestSupply `json:"supply,omitempty"`
+	Phase      *PatchedWritablePowerFeedRequestPhase  `json:"phase,omitempty"`
+	Voltage    *int32                                 `json:"voltage,omitempty"`
+	Amperage   *int32                                 `json:"amperage,omitempty"`
 	// Maximum permissible draw (percentage)
 	MaxUtilization *int32 `json:"max_utilization,omitempty"`
 	// Treat as if a cable is connected
@@ -158,9 +154,9 @@ func (o *WritablePowerFeedRequest) SetName(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritablePowerFeedRequest) GetStatus() string {
+func (o *WritablePowerFeedRequest) GetStatus() PatchedWritablePowerFeedRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritablePowerFeedRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -168,7 +164,7 @@ func (o *WritablePowerFeedRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritablePowerFeedRequest) GetStatusOk() (*string, bool) {
+func (o *WritablePowerFeedRequest) GetStatusOk() (*PatchedWritablePowerFeedRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -184,15 +180,15 @@ func (o *WritablePowerFeedRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritablePowerFeedRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritablePowerFeedRequestStatus and assigns it to the Status field.
+func (o *WritablePowerFeedRequest) SetStatus(v PatchedWritablePowerFeedRequestStatus) {
 	o.Status = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *WritablePowerFeedRequest) GetType() string {
+func (o *WritablePowerFeedRequest) GetType() PatchedWritablePowerFeedRequestType {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret PatchedWritablePowerFeedRequestType
 		return ret
 	}
 	return *o.Type
@@ -200,7 +196,7 @@ func (o *WritablePowerFeedRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritablePowerFeedRequest) GetTypeOk() (*string, bool) {
+func (o *WritablePowerFeedRequest) GetTypeOk() (*PatchedWritablePowerFeedRequestType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -216,15 +212,15 @@ func (o *WritablePowerFeedRequest) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *WritablePowerFeedRequest) SetType(v string) {
+// SetType gets a reference to the given PatchedWritablePowerFeedRequestType and assigns it to the Type field.
+func (o *WritablePowerFeedRequest) SetType(v PatchedWritablePowerFeedRequestType) {
 	o.Type = &v
 }
 
 // GetSupply returns the Supply field value if set, zero value otherwise.
-func (o *WritablePowerFeedRequest) GetSupply() string {
+func (o *WritablePowerFeedRequest) GetSupply() PatchedWritablePowerFeedRequestSupply {
 	if o == nil || IsNil(o.Supply) {
-		var ret string
+		var ret PatchedWritablePowerFeedRequestSupply
 		return ret
 	}
 	return *o.Supply
@@ -232,7 +228,7 @@ func (o *WritablePowerFeedRequest) GetSupply() string {
 
 // GetSupplyOk returns a tuple with the Supply field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritablePowerFeedRequest) GetSupplyOk() (*string, bool) {
+func (o *WritablePowerFeedRequest) GetSupplyOk() (*PatchedWritablePowerFeedRequestSupply, bool) {
 	if o == nil || IsNil(o.Supply) {
 		return nil, false
 	}
@@ -248,15 +244,15 @@ func (o *WritablePowerFeedRequest) HasSupply() bool {
 	return false
 }
 
-// SetSupply gets a reference to the given string and assigns it to the Supply field.
-func (o *WritablePowerFeedRequest) SetSupply(v string) {
+// SetSupply gets a reference to the given PatchedWritablePowerFeedRequestSupply and assigns it to the Supply field.
+func (o *WritablePowerFeedRequest) SetSupply(v PatchedWritablePowerFeedRequestSupply) {
 	o.Supply = &v
 }
 
 // GetPhase returns the Phase field value if set, zero value otherwise.
-func (o *WritablePowerFeedRequest) GetPhase() string {
+func (o *WritablePowerFeedRequest) GetPhase() PatchedWritablePowerFeedRequestPhase {
 	if o == nil || IsNil(o.Phase) {
-		var ret string
+		var ret PatchedWritablePowerFeedRequestPhase
 		return ret
 	}
 	return *o.Phase
@@ -264,7 +260,7 @@ func (o *WritablePowerFeedRequest) GetPhase() string {
 
 // GetPhaseOk returns a tuple with the Phase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritablePowerFeedRequest) GetPhaseOk() (*string, bool) {
+func (o *WritablePowerFeedRequest) GetPhaseOk() (*PatchedWritablePowerFeedRequestPhase, bool) {
 	if o == nil || IsNil(o.Phase) {
 		return nil, false
 	}
@@ -280,8 +276,8 @@ func (o *WritablePowerFeedRequest) HasPhase() bool {
 	return false
 }
 
-// SetPhase gets a reference to the given string and assigns it to the Phase field.
-func (o *WritablePowerFeedRequest) SetPhase(v string) {
+// SetPhase gets a reference to the given PatchedWritablePowerFeedRequestPhase and assigns it to the Phase field.
+func (o *WritablePowerFeedRequest) SetPhase(v PatchedWritablePowerFeedRequestPhase) {
 	o.Phase = &v
 }
 

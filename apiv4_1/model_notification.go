@@ -21,17 +21,16 @@ var _ MappedNullable = &Notification{}
 
 // Notification Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type Notification struct {
-	Id         int32        `json:"id"`
-	Url        string       `json:"url"`
-	Display    string       `json:"display"`
-	ObjectType string       `json:"object_type"`
-	ObjectId   int64        `json:"object_id"`
-	Object     interface{}  `json:"object"`
-	User       BriefUser    `json:"user"`
-	Created    time.Time    `json:"created"`
-	Read       NullableTime `json:"read,omitempty"`
-	// * `object_created` - Object created * `object_updated` - Object updated * `object_deleted` - Object deleted * `job_started` - Job started * `job_completed` - Job completed * `job_failed` - Job failed * `job_errored` - Job errored
-	EventType            string `json:"event_type"`
+	Id                   int32        `json:"id"`
+	Url                  string       `json:"url"`
+	Display              string       `json:"display"`
+	ObjectType           string       `json:"object_type"`
+	ObjectId             int64        `json:"object_id"`
+	Object               interface{}  `json:"object"`
+	User                 BriefUser    `json:"user"`
+	Created              time.Time    `json:"created"`
+	Read                 NullableTime `json:"read,omitempty"`
+	EventType            Event        `json:"event_type"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -41,7 +40,7 @@ type _Notification Notification
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNotification(id int32, url string, display string, objectType string, objectId int64, object interface{}, user BriefUser, created time.Time, eventType string) *Notification {
+func NewNotification(id int32, url string, display string, objectType string, objectId int64, object interface{}, user BriefUser, created time.Time, eventType Event) *Notification {
 	this := Notification{}
 	this.Id = id
 	this.Url = url
@@ -301,9 +300,9 @@ func (o *Notification) UnsetRead() {
 }
 
 // GetEventType returns the EventType field value
-func (o *Notification) GetEventType() string {
+func (o *Notification) GetEventType() Event {
 	if o == nil {
-		var ret string
+		var ret Event
 		return ret
 	}
 
@@ -312,7 +311,7 @@ func (o *Notification) GetEventType() string {
 
 // GetEventTypeOk returns a tuple with the EventType field value
 // and a boolean to check if the value has been set.
-func (o *Notification) GetEventTypeOk() (*string, bool) {
+func (o *Notification) GetEventTypeOk() (*Event, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -320,7 +319,7 @@ func (o *Notification) GetEventTypeOk() (*string, bool) {
 }
 
 // SetEventType sets field value
-func (o *Notification) SetEventType(v string) {
+func (o *Notification) SetEventType(v Event) {
 	o.EventType = v
 }
 

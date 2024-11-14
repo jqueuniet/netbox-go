@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**EncryptionAlgorithm** | Pointer to **string** | * &#x60;aes-128-cbc&#x60; - 128-bit AES (CBC) * &#x60;aes-128-gcm&#x60; - 128-bit AES (GCM) * &#x60;aes-192-cbc&#x60; - 192-bit AES (CBC) * &#x60;aes-192-gcm&#x60; - 192-bit AES (GCM) * &#x60;aes-256-cbc&#x60; - 256-bit AES (CBC) * &#x60;aes-256-gcm&#x60; - 256-bit AES (GCM) * &#x60;3des-cbc&#x60; - 3DES * &#x60;des-cbc&#x60; - DES | [optional] 
-**AuthenticationAlgorithm** | Pointer to **string** | * &#x60;hmac-sha1&#x60; - SHA-1 HMAC * &#x60;hmac-sha256&#x60; - SHA-256 HMAC * &#x60;hmac-sha384&#x60; - SHA-384 HMAC * &#x60;hmac-sha512&#x60; - SHA-512 HMAC * &#x60;hmac-md5&#x60; - MD5 HMAC | [optional] 
+**EncryptionAlgorithm** | Pointer to [**Encryption**](Encryption.md) |  | [optional] 
+**AuthenticationAlgorithm** | Pointer to [**Authentication**](Authentication.md) |  | [optional] 
 **SaLifetimeSeconds** | Pointer to **NullableInt32** | Security association lifetime (seconds) | [optional] 
 **SaLifetimeData** | Pointer to **NullableInt32** | Security association lifetime (in kilobytes) | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -80,20 +80,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetEncryptionAlgorithm
 
-`func (o *WritableIPSecProposalRequest) GetEncryptionAlgorithm() string`
+`func (o *WritableIPSecProposalRequest) GetEncryptionAlgorithm() Encryption`
 
 GetEncryptionAlgorithm returns the EncryptionAlgorithm field if non-nil, zero value otherwise.
 
 ### GetEncryptionAlgorithmOk
 
-`func (o *WritableIPSecProposalRequest) GetEncryptionAlgorithmOk() (*string, bool)`
+`func (o *WritableIPSecProposalRequest) GetEncryptionAlgorithmOk() (*Encryption, bool)`
 
 GetEncryptionAlgorithmOk returns a tuple with the EncryptionAlgorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEncryptionAlgorithm
 
-`func (o *WritableIPSecProposalRequest) SetEncryptionAlgorithm(v string)`
+`func (o *WritableIPSecProposalRequest) SetEncryptionAlgorithm(v Encryption)`
 
 SetEncryptionAlgorithm sets EncryptionAlgorithm field to given value.
 
@@ -105,20 +105,20 @@ HasEncryptionAlgorithm returns a boolean if a field has been set.
 
 ### GetAuthenticationAlgorithm
 
-`func (o *WritableIPSecProposalRequest) GetAuthenticationAlgorithm() string`
+`func (o *WritableIPSecProposalRequest) GetAuthenticationAlgorithm() Authentication`
 
 GetAuthenticationAlgorithm returns the AuthenticationAlgorithm field if non-nil, zero value otherwise.
 
 ### GetAuthenticationAlgorithmOk
 
-`func (o *WritableIPSecProposalRequest) GetAuthenticationAlgorithmOk() (*string, bool)`
+`func (o *WritableIPSecProposalRequest) GetAuthenticationAlgorithmOk() (*Authentication, bool)`
 
 GetAuthenticationAlgorithmOk returns a tuple with the AuthenticationAlgorithm field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthenticationAlgorithm
 
-`func (o *WritableIPSecProposalRequest) SetAuthenticationAlgorithm(v string)`
+`func (o *WritableIPSecProposalRequest) SetAuthenticationAlgorithm(v Authentication)`
 
 SetAuthenticationAlgorithm sets AuthenticationAlgorithm field to given value.
 

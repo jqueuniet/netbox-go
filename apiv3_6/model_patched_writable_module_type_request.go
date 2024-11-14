@@ -22,14 +22,13 @@ type PatchedWritableModuleTypeRequest struct {
 	Manufacturer *int32  `json:"manufacturer,omitempty"`
 	Model        *string `json:"model,omitempty"`
 	// Discrete part number (optional)
-	PartNumber *string         `json:"part_number,omitempty"`
-	Weight     NullableFloat64 `json:"weight,omitempty"`
-	// * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces
-	WeightUnit           *string                `json:"weight_unit,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	PartNumber           *string                                     `json:"part_number,omitempty"`
+	Weight               NullableFloat64                             `json:"weight,omitempty"`
+	WeightUnit           *PatchedWritableDeviceTypeRequestWeightUnit `json:"weight_unit,omitempty"`
+	Description          *string                                     `json:"description,omitempty"`
+	Comments             *string                                     `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                          `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                      `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -192,9 +191,9 @@ func (o *PatchedWritableModuleTypeRequest) UnsetWeight() {
 }
 
 // GetWeightUnit returns the WeightUnit field value if set, zero value otherwise.
-func (o *PatchedWritableModuleTypeRequest) GetWeightUnit() string {
+func (o *PatchedWritableModuleTypeRequest) GetWeightUnit() PatchedWritableDeviceTypeRequestWeightUnit {
 	if o == nil || IsNil(o.WeightUnit) {
-		var ret string
+		var ret PatchedWritableDeviceTypeRequestWeightUnit
 		return ret
 	}
 	return *o.WeightUnit
@@ -202,7 +201,7 @@ func (o *PatchedWritableModuleTypeRequest) GetWeightUnit() string {
 
 // GetWeightUnitOk returns a tuple with the WeightUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableModuleTypeRequest) GetWeightUnitOk() (*string, bool) {
+func (o *PatchedWritableModuleTypeRequest) GetWeightUnitOk() (*PatchedWritableDeviceTypeRequestWeightUnit, bool) {
 	if o == nil || IsNil(o.WeightUnit) {
 		return nil, false
 	}
@@ -218,8 +217,8 @@ func (o *PatchedWritableModuleTypeRequest) HasWeightUnit() bool {
 	return false
 }
 
-// SetWeightUnit gets a reference to the given string and assigns it to the WeightUnit field.
-func (o *PatchedWritableModuleTypeRequest) SetWeightUnit(v string) {
+// SetWeightUnit gets a reference to the given PatchedWritableDeviceTypeRequestWeightUnit and assigns it to the WeightUnit field.
+func (o *PatchedWritableModuleTypeRequest) SetWeightUnit(v PatchedWritableDeviceTypeRequestWeightUnit) {
 	o.WeightUnit = &v
 }
 

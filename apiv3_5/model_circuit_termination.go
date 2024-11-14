@@ -21,12 +21,11 @@ var _ MappedNullable = &CircuitTermination{}
 
 // CircuitTermination Adds support for custom fields and tags.
 type CircuitTermination struct {
-	Id      int32         `json:"id"`
-	Url     string        `json:"url"`
-	Display string        `json:"display"`
-	Circuit NestedCircuit `json:"circuit"`
-	// * `A` - A * `Z` - Z
-	TermSide        string                        `json:"term_side"`
+	Id              int32                         `json:"id"`
+	Url             string                        `json:"url"`
+	Display         string                        `json:"display"`
+	Circuit         NestedCircuit                 `json:"circuit"`
+	TermSide        Termination                   `json:"term_side"`
 	Site            NullableNestedSite            `json:"site,omitempty"`
 	ProviderNetwork NullableNestedProviderNetwork `json:"provider_network,omitempty"`
 	// Physical circuit speed
@@ -59,7 +58,7 @@ type _CircuitTermination CircuitTermination
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCircuitTermination(id int32, url string, display string, circuit NestedCircuit, termSide string, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool) *CircuitTermination {
+func NewCircuitTermination(id int32, url string, display string, circuit NestedCircuit, termSide Termination, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool) *CircuitTermination {
 	this := CircuitTermination{}
 	this.Id = id
 	this.Url = url
@@ -181,9 +180,9 @@ func (o *CircuitTermination) SetCircuit(v NestedCircuit) {
 }
 
 // GetTermSide returns the TermSide field value
-func (o *CircuitTermination) GetTermSide() string {
+func (o *CircuitTermination) GetTermSide() Termination {
 	if o == nil {
-		var ret string
+		var ret Termination
 		return ret
 	}
 
@@ -192,7 +191,7 @@ func (o *CircuitTermination) GetTermSide() string {
 
 // GetTermSideOk returns a tuple with the TermSide field value
 // and a boolean to check if the value has been set.
-func (o *CircuitTermination) GetTermSideOk() (*string, bool) {
+func (o *CircuitTermination) GetTermSideOk() (*Termination, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -200,7 +199,7 @@ func (o *CircuitTermination) GetTermSideOk() (*string, bool) {
 }
 
 // SetTermSide sets field value
-func (o *CircuitTermination) SetTermSide(v string) {
+func (o *CircuitTermination) SetTermSide(v Termination) {
 	o.TermSide = v
 }
 

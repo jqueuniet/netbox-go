@@ -20,11 +20,10 @@ var _ MappedNullable = &WritableL2VPNRequest{}
 
 // WritableL2VPNRequest Adds support for custom fields and tags.
 type WritableL2VPNRequest struct {
-	Identifier NullableInt64 `json:"identifier,omitempty"`
-	Name       string        `json:"name"`
-	Slug       string        `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	// * `vpws` - VPWS * `vpls` - VPLS * `vxlan` - VXLAN * `vxlan-evpn` - VXLAN-EVPN * `mpls-evpn` - MPLS EVPN * `pbb-evpn` - PBB EVPN * `epl` - EPL * `evpl` - EVPL * `ep-lan` - Ethernet Private LAN * `evp-lan` - Ethernet Virtual Private LAN * `ep-tree` - Ethernet Private Tree * `evp-tree` - Ethernet Virtual Private Tree
-	Type                 string                     `json:"type"`
+	Identifier           NullableInt64              `json:"identifier,omitempty"`
+	Name                 string                     `json:"name"`
+	Slug                 string                     `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Type                 BriefL2VPNTypeValue        `json:"type"`
 	ImportTargets        []int32                    `json:"import_targets,omitempty"`
 	ExportTargets        []int32                    `json:"export_targets,omitempty"`
 	Description          *string                    `json:"description,omitempty"`
@@ -41,7 +40,7 @@ type _WritableL2VPNRequest WritableL2VPNRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableL2VPNRequest(name string, slug string, type_ string) *WritableL2VPNRequest {
+func NewWritableL2VPNRequest(name string, slug string, type_ BriefL2VPNTypeValue) *WritableL2VPNRequest {
 	this := WritableL2VPNRequest{}
 	this.Name = name
 	this.Slug = slug
@@ -149,9 +148,9 @@ func (o *WritableL2VPNRequest) SetSlug(v string) {
 }
 
 // GetType returns the Type field value
-func (o *WritableL2VPNRequest) GetType() string {
+func (o *WritableL2VPNRequest) GetType() BriefL2VPNTypeValue {
 	if o == nil {
-		var ret string
+		var ret BriefL2VPNTypeValue
 		return ret
 	}
 
@@ -160,7 +159,7 @@ func (o *WritableL2VPNRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *WritableL2VPNRequest) GetTypeOk() (*string, bool) {
+func (o *WritableL2VPNRequest) GetTypeOk() (*BriefL2VPNTypeValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -168,7 +167,7 @@ func (o *WritableL2VPNRequest) GetTypeOk() (*string, bool) {
 }
 
 // SetType sets field value
-func (o *WritableL2VPNRequest) SetType(v string) {
+func (o *WritableL2VPNRequest) SetType(v BriefL2VPNTypeValue) {
 	o.Type = v
 }
 

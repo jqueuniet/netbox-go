@@ -19,9 +19,8 @@ var _ MappedNullable = &IPAddressStatus{}
 
 // IPAddressStatus struct for IPAddressStatus
 type IPAddressStatus struct {
-	// * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated * `dhcp` - DHCP * `slaac` - SLAAC
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *IPAddressStatusValue `json:"value,omitempty"`
+	Label                *IPAddressStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewIPAddressStatusWithDefaults() *IPAddressStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *IPAddressStatus) GetValue() string {
+func (o *IPAddressStatus) GetValue() IPAddressStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret IPAddressStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *IPAddressStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPAddressStatus) GetValueOk() (*string, bool) {
+func (o *IPAddressStatus) GetValueOk() (*IPAddressStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *IPAddressStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *IPAddressStatus) SetValue(v string) {
+// SetValue gets a reference to the given IPAddressStatusValue and assigns it to the Value field.
+func (o *IPAddressStatus) SetValue(v IPAddressStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *IPAddressStatus) GetLabel() string {
+func (o *IPAddressStatus) GetLabel() IPAddressStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret IPAddressStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *IPAddressStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IPAddressStatus) GetLabelOk() (*string, bool) {
+func (o *IPAddressStatus) GetLabelOk() (*IPAddressStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *IPAddressStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *IPAddressStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given IPAddressStatusLabel and assigns it to the Label field.
+func (o *IPAddressStatus) SetLabel(v IPAddressStatusLabel) {
 	o.Label = &v
 }
 

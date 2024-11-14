@@ -20,9 +20,8 @@ var _ MappedNullable = &NestedFHRPGroupRequest{}
 
 // NestedFHRPGroupRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedFHRPGroupRequest struct {
-	// * `vrrp2` - VRRPv2 * `vrrp3` - VRRPv3 * `carp` - CARP * `clusterxl` - ClusterXL * `hsrp` - HSRP * `glbp` - GLBP * `other` - Other
-	Protocol             string `json:"protocol"`
-	GroupId              int32  `json:"group_id"`
+	Protocol             FHRPGroupProtocol `json:"protocol"`
+	GroupId              int32             `json:"group_id"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -32,7 +31,7 @@ type _NestedFHRPGroupRequest NestedFHRPGroupRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedFHRPGroupRequest(protocol string, groupId int32) *NestedFHRPGroupRequest {
+func NewNestedFHRPGroupRequest(protocol FHRPGroupProtocol, groupId int32) *NestedFHRPGroupRequest {
 	this := NestedFHRPGroupRequest{}
 	this.Protocol = protocol
 	this.GroupId = groupId
@@ -48,9 +47,9 @@ func NewNestedFHRPGroupRequestWithDefaults() *NestedFHRPGroupRequest {
 }
 
 // GetProtocol returns the Protocol field value
-func (o *NestedFHRPGroupRequest) GetProtocol() string {
+func (o *NestedFHRPGroupRequest) GetProtocol() FHRPGroupProtocol {
 	if o == nil {
-		var ret string
+		var ret FHRPGroupProtocol
 		return ret
 	}
 
@@ -59,7 +58,7 @@ func (o *NestedFHRPGroupRequest) GetProtocol() string {
 
 // GetProtocolOk returns a tuple with the Protocol field value
 // and a boolean to check if the value has been set.
-func (o *NestedFHRPGroupRequest) GetProtocolOk() (*string, bool) {
+func (o *NestedFHRPGroupRequest) GetProtocolOk() (*FHRPGroupProtocol, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -67,7 +66,7 @@ func (o *NestedFHRPGroupRequest) GetProtocolOk() (*string, bool) {
 }
 
 // SetProtocol sets field value
-func (o *NestedFHRPGroupRequest) SetProtocol(v string) {
+func (o *NestedFHRPGroupRequest) SetProtocol(v FHRPGroupProtocol) {
 	o.Protocol = v
 }
 

@@ -19,9 +19,8 @@ var _ MappedNullable = &BriefJobStatus{}
 
 // BriefJobStatus struct for BriefJobStatus
 type BriefJobStatus struct {
-	// * `pending` - Pending * `scheduled` - Scheduled * `running` - Running * `completed` - Completed * `errored` - Errored * `failed` - Failed
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *BriefJobStatusValue `json:"value,omitempty"`
+	Label                *BriefJobStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewBriefJobStatusWithDefaults() *BriefJobStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *BriefJobStatus) GetValue() string {
+func (o *BriefJobStatus) GetValue() BriefJobStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret BriefJobStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *BriefJobStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BriefJobStatus) GetValueOk() (*string, bool) {
+func (o *BriefJobStatus) GetValueOk() (*BriefJobStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *BriefJobStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *BriefJobStatus) SetValue(v string) {
+// SetValue gets a reference to the given BriefJobStatusValue and assigns it to the Value field.
+func (o *BriefJobStatus) SetValue(v BriefJobStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *BriefJobStatus) GetLabel() string {
+func (o *BriefJobStatus) GetLabel() BriefJobStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret BriefJobStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *BriefJobStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BriefJobStatus) GetLabelOk() (*string, bool) {
+func (o *BriefJobStatus) GetLabelOk() (*BriefJobStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *BriefJobStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *BriefJobStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given BriefJobStatusLabel and assigns it to the Label field.
+func (o *BriefJobStatus) SetLabel(v BriefJobStatusLabel) {
 	o.Label = &v
 }
 

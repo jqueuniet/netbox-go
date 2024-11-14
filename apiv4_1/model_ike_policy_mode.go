@@ -19,9 +19,8 @@ var _ MappedNullable = &IKEPolicyMode{}
 
 // IKEPolicyMode struct for IKEPolicyMode
 type IKEPolicyMode struct {
-	// * `aggressive` - Aggressive * `main` - Main
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *IKEPolicyModeValue `json:"value,omitempty"`
+	Label                *IKEPolicyModeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewIKEPolicyModeWithDefaults() *IKEPolicyMode {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *IKEPolicyMode) GetValue() string {
+func (o *IKEPolicyMode) GetValue() IKEPolicyModeValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret IKEPolicyModeValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *IKEPolicyMode) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEPolicyMode) GetValueOk() (*string, bool) {
+func (o *IKEPolicyMode) GetValueOk() (*IKEPolicyModeValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *IKEPolicyMode) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *IKEPolicyMode) SetValue(v string) {
+// SetValue gets a reference to the given IKEPolicyModeValue and assigns it to the Value field.
+func (o *IKEPolicyMode) SetValue(v IKEPolicyModeValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *IKEPolicyMode) GetLabel() string {
+func (o *IKEPolicyMode) GetLabel() IKEPolicyModeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret IKEPolicyModeLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *IKEPolicyMode) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEPolicyMode) GetLabelOk() (*string, bool) {
+func (o *IKEPolicyMode) GetLabelOk() (*IKEPolicyModeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *IKEPolicyMode) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *IKEPolicyMode) SetLabel(v string) {
+// SetLabel gets a reference to the given IKEPolicyModeLabel and assigns it to the Label field.
+func (o *IKEPolicyMode) SetLabel(v IKEPolicyModeLabel) {
 	o.Label = &v
 }
 

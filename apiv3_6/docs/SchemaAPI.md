@@ -29,7 +29,7 @@ import (
 )
 
 func main() {
-	format := "format_example" // string |  (optional)
+	format := openapiclient.schema_retrieve_format_parameter("json") // SchemaRetrieveFormatParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiSchemaRetrieveRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **string** |  | 
+ **format** | [**SchemaRetrieveFormatParameter**](SchemaRetrieveFormatParameter.md) |  | 
 
 ### Return type
 

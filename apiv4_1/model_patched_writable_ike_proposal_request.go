@@ -19,16 +19,12 @@ var _ MappedNullable = &PatchedWritableIKEProposalRequest{}
 
 // PatchedWritableIKEProposalRequest Adds support for custom fields and tags.
 type PatchedWritableIKEProposalRequest struct {
-	Name        *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	// * `preshared-keys` - Pre-shared keys * `certificates` - Certificates * `rsa-signatures` - RSA signatures * `dsa-signatures` - DSA signatures
-	AuthenticationMethod *string `json:"authentication_method,omitempty"`
-	// * `aes-128-cbc` - 128-bit AES (CBC) * `aes-128-gcm` - 128-bit AES (GCM) * `aes-192-cbc` - 192-bit AES (CBC) * `aes-192-gcm` - 192-bit AES (GCM) * `aes-256-cbc` - 256-bit AES (CBC) * `aes-256-gcm` - 256-bit AES (GCM) * `3des-cbc` - 3DES * `des-cbc` - DES
-	EncryptionAlgorithm *string `json:"encryption_algorithm,omitempty"`
-	// * `hmac-sha1` - SHA-1 HMAC * `hmac-sha256` - SHA-256 HMAC * `hmac-sha384` - SHA-384 HMAC * `hmac-sha512` - SHA-512 HMAC * `hmac-md5` - MD5 HMAC
-	AuthenticationAlgorithm *string `json:"authentication_algorithm,omitempty"`
-	// Diffie-Hellman group ID  * `1` - Group 1 * `2` - Group 2 * `5` - Group 5 * `14` - Group 14 * `15` - Group 15 * `16` - Group 16 * `17` - Group 17 * `18` - Group 18 * `19` - Group 19 * `20` - Group 20 * `21` - Group 21 * `22` - Group 22 * `23` - Group 23 * `24` - Group 24 * `25` - Group 25 * `26` - Group 26 * `27` - Group 27 * `28` - Group 28 * `29` - Group 29 * `30` - Group 30 * `31` - Group 31 * `32` - Group 32 * `33` - Group 33 * `34` - Group 34
-	Group *int32 `json:"group,omitempty"`
+	Name                    *string                                                   `json:"name,omitempty"`
+	Description             *string                                                   `json:"description,omitempty"`
+	AuthenticationMethod    *IKEProposalAuthenticationMethodValue                     `json:"authentication_method,omitempty"`
+	EncryptionAlgorithm     *IKEProposalEncryptionAlgorithmValue                      `json:"encryption_algorithm,omitempty"`
+	AuthenticationAlgorithm *PatchedWritableIKEProposalRequestAuthenticationAlgorithm `json:"authentication_algorithm,omitempty"`
+	Group                   *PatchedWritableIKEProposalRequestGroup                   `json:"group,omitempty"`
 	// Security association lifetime (in seconds)
 	SaLifetime           NullableInt32          `json:"sa_lifetime,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
@@ -121,9 +117,9 @@ func (o *PatchedWritableIKEProposalRequest) SetDescription(v string) {
 }
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value if set, zero value otherwise.
-func (o *PatchedWritableIKEProposalRequest) GetAuthenticationMethod() string {
+func (o *PatchedWritableIKEProposalRequest) GetAuthenticationMethod() IKEProposalAuthenticationMethodValue {
 	if o == nil || IsNil(o.AuthenticationMethod) {
-		var ret string
+		var ret IKEProposalAuthenticationMethodValue
 		return ret
 	}
 	return *o.AuthenticationMethod
@@ -131,7 +127,7 @@ func (o *PatchedWritableIKEProposalRequest) GetAuthenticationMethod() string {
 
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableIKEProposalRequest) GetAuthenticationMethodOk() (*string, bool) {
+func (o *PatchedWritableIKEProposalRequest) GetAuthenticationMethodOk() (*IKEProposalAuthenticationMethodValue, bool) {
 	if o == nil || IsNil(o.AuthenticationMethod) {
 		return nil, false
 	}
@@ -147,15 +143,15 @@ func (o *PatchedWritableIKEProposalRequest) HasAuthenticationMethod() bool {
 	return false
 }
 
-// SetAuthenticationMethod gets a reference to the given string and assigns it to the AuthenticationMethod field.
-func (o *PatchedWritableIKEProposalRequest) SetAuthenticationMethod(v string) {
+// SetAuthenticationMethod gets a reference to the given IKEProposalAuthenticationMethodValue and assigns it to the AuthenticationMethod field.
+func (o *PatchedWritableIKEProposalRequest) SetAuthenticationMethod(v IKEProposalAuthenticationMethodValue) {
 	o.AuthenticationMethod = &v
 }
 
 // GetEncryptionAlgorithm returns the EncryptionAlgorithm field value if set, zero value otherwise.
-func (o *PatchedWritableIKEProposalRequest) GetEncryptionAlgorithm() string {
+func (o *PatchedWritableIKEProposalRequest) GetEncryptionAlgorithm() IKEProposalEncryptionAlgorithmValue {
 	if o == nil || IsNil(o.EncryptionAlgorithm) {
-		var ret string
+		var ret IKEProposalEncryptionAlgorithmValue
 		return ret
 	}
 	return *o.EncryptionAlgorithm
@@ -163,7 +159,7 @@ func (o *PatchedWritableIKEProposalRequest) GetEncryptionAlgorithm() string {
 
 // GetEncryptionAlgorithmOk returns a tuple with the EncryptionAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableIKEProposalRequest) GetEncryptionAlgorithmOk() (*string, bool) {
+func (o *PatchedWritableIKEProposalRequest) GetEncryptionAlgorithmOk() (*IKEProposalEncryptionAlgorithmValue, bool) {
 	if o == nil || IsNil(o.EncryptionAlgorithm) {
 		return nil, false
 	}
@@ -179,15 +175,15 @@ func (o *PatchedWritableIKEProposalRequest) HasEncryptionAlgorithm() bool {
 	return false
 }
 
-// SetEncryptionAlgorithm gets a reference to the given string and assigns it to the EncryptionAlgorithm field.
-func (o *PatchedWritableIKEProposalRequest) SetEncryptionAlgorithm(v string) {
+// SetEncryptionAlgorithm gets a reference to the given IKEProposalEncryptionAlgorithmValue and assigns it to the EncryptionAlgorithm field.
+func (o *PatchedWritableIKEProposalRequest) SetEncryptionAlgorithm(v IKEProposalEncryptionAlgorithmValue) {
 	o.EncryptionAlgorithm = &v
 }
 
 // GetAuthenticationAlgorithm returns the AuthenticationAlgorithm field value if set, zero value otherwise.
-func (o *PatchedWritableIKEProposalRequest) GetAuthenticationAlgorithm() string {
+func (o *PatchedWritableIKEProposalRequest) GetAuthenticationAlgorithm() PatchedWritableIKEProposalRequestAuthenticationAlgorithm {
 	if o == nil || IsNil(o.AuthenticationAlgorithm) {
-		var ret string
+		var ret PatchedWritableIKEProposalRequestAuthenticationAlgorithm
 		return ret
 	}
 	return *o.AuthenticationAlgorithm
@@ -195,7 +191,7 @@ func (o *PatchedWritableIKEProposalRequest) GetAuthenticationAlgorithm() string 
 
 // GetAuthenticationAlgorithmOk returns a tuple with the AuthenticationAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableIKEProposalRequest) GetAuthenticationAlgorithmOk() (*string, bool) {
+func (o *PatchedWritableIKEProposalRequest) GetAuthenticationAlgorithmOk() (*PatchedWritableIKEProposalRequestAuthenticationAlgorithm, bool) {
 	if o == nil || IsNil(o.AuthenticationAlgorithm) {
 		return nil, false
 	}
@@ -211,15 +207,15 @@ func (o *PatchedWritableIKEProposalRequest) HasAuthenticationAlgorithm() bool {
 	return false
 }
 
-// SetAuthenticationAlgorithm gets a reference to the given string and assigns it to the AuthenticationAlgorithm field.
-func (o *PatchedWritableIKEProposalRequest) SetAuthenticationAlgorithm(v string) {
+// SetAuthenticationAlgorithm gets a reference to the given PatchedWritableIKEProposalRequestAuthenticationAlgorithm and assigns it to the AuthenticationAlgorithm field.
+func (o *PatchedWritableIKEProposalRequest) SetAuthenticationAlgorithm(v PatchedWritableIKEProposalRequestAuthenticationAlgorithm) {
 	o.AuthenticationAlgorithm = &v
 }
 
 // GetGroup returns the Group field value if set, zero value otherwise.
-func (o *PatchedWritableIKEProposalRequest) GetGroup() int32 {
+func (o *PatchedWritableIKEProposalRequest) GetGroup() PatchedWritableIKEProposalRequestGroup {
 	if o == nil || IsNil(o.Group) {
-		var ret int32
+		var ret PatchedWritableIKEProposalRequestGroup
 		return ret
 	}
 	return *o.Group
@@ -227,7 +223,7 @@ func (o *PatchedWritableIKEProposalRequest) GetGroup() int32 {
 
 // GetGroupOk returns a tuple with the Group field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableIKEProposalRequest) GetGroupOk() (*int32, bool) {
+func (o *PatchedWritableIKEProposalRequest) GetGroupOk() (*PatchedWritableIKEProposalRequestGroup, bool) {
 	if o == nil || IsNil(o.Group) {
 		return nil, false
 	}
@@ -243,8 +239,8 @@ func (o *PatchedWritableIKEProposalRequest) HasGroup() bool {
 	return false
 }
 
-// SetGroup gets a reference to the given int32 and assigns it to the Group field.
-func (o *PatchedWritableIKEProposalRequest) SetGroup(v int32) {
+// SetGroup gets a reference to the given PatchedWritableIKEProposalRequestGroup and assigns it to the Group field.
+func (o *PatchedWritableIKEProposalRequest) SetGroup(v PatchedWritableIKEProposalRequestGroup) {
 	o.Group = &v
 }
 

@@ -19,9 +19,8 @@ var _ MappedNullable = &IKEProposalGroup{}
 
 // IKEProposalGroup struct for IKEProposalGroup
 type IKEProposalGroup struct {
-	// * `1` - Group 1 * `2` - Group 2 * `5` - Group 5 * `14` - Group 14 * `15` - Group 15 * `16` - Group 16 * `17` - Group 17 * `18` - Group 18 * `19` - Group 19 * `20` - Group 20 * `21` - Group 21 * `22` - Group 22 * `23` - Group 23 * `24` - Group 24 * `25` - Group 25 * `26` - Group 26 * `27` - Group 27 * `28` - Group 28 * `29` - Group 29 * `30` - Group 30 * `31` - Group 31 * `32` - Group 32 * `33` - Group 33 * `34` - Group 34
-	Value                *int32  `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *IKEProposalGroupValue `json:"value,omitempty"`
+	Label                *IKEProposalGroupLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewIKEProposalGroupWithDefaults() *IKEProposalGroup {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *IKEProposalGroup) GetValue() int32 {
+func (o *IKEProposalGroup) GetValue() IKEProposalGroupValue {
 	if o == nil || IsNil(o.Value) {
-		var ret int32
+		var ret IKEProposalGroupValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *IKEProposalGroup) GetValue() int32 {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEProposalGroup) GetValueOk() (*int32, bool) {
+func (o *IKEProposalGroup) GetValueOk() (*IKEProposalGroupValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *IKEProposalGroup) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given int32 and assigns it to the Value field.
-func (o *IKEProposalGroup) SetValue(v int32) {
+// SetValue gets a reference to the given IKEProposalGroupValue and assigns it to the Value field.
+func (o *IKEProposalGroup) SetValue(v IKEProposalGroupValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *IKEProposalGroup) GetLabel() string {
+func (o *IKEProposalGroup) GetLabel() IKEProposalGroupLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret IKEProposalGroupLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *IKEProposalGroup) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEProposalGroup) GetLabelOk() (*string, bool) {
+func (o *IKEProposalGroup) GetLabelOk() (*IKEProposalGroupLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *IKEProposalGroup) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *IKEProposalGroup) SetLabel(v string) {
+// SetLabel gets a reference to the given IKEProposalGroupLabel and assigns it to the Label field.
+func (o *IKEProposalGroup) SetLabel(v IKEProposalGroupLabel) {
 	o.Label = &v
 }
 

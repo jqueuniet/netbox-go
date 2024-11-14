@@ -20,19 +20,17 @@ var _ MappedNullable = &WritableTunnelRequest{}
 
 // WritableTunnelRequest Adds support for custom fields and tags.
 type WritableTunnelRequest struct {
-	Name string `json:"name"`
-	// * `planned` - Planned * `active` - Active * `disabled` - Disabled
-	Status *string       `json:"status,omitempty"`
-	Group  NullableInt32 `json:"group,omitempty"`
-	// * `ipsec-transport` - IPsec - Transport * `ipsec-tunnel` - IPsec - Tunnel * `ip-ip` - IP-in-IP * `gre` - GRE
-	Encapsulation        string                 `json:"encapsulation"`
-	IpsecProfile         NullableInt32          `json:"ipsec_profile,omitempty"`
-	Tenant               NullableInt32          `json:"tenant,omitempty"`
-	TunnelId             NullableInt64          `json:"tunnel_id,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                                    `json:"name"`
+	Status               *PatchedWritableTunnelRequestStatus       `json:"status,omitempty"`
+	Group                NullableInt32                             `json:"group,omitempty"`
+	Encapsulation        PatchedWritableTunnelRequestEncapsulation `json:"encapsulation"`
+	IpsecProfile         NullableInt32                             `json:"ipsec_profile,omitempty"`
+	Tenant               NullableInt32                             `json:"tenant,omitempty"`
+	TunnelId             NullableInt64                             `json:"tunnel_id,omitempty"`
+	Description          *string                                   `json:"description,omitempty"`
+	Comments             *string                                   `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                        `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                    `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -42,7 +40,7 @@ type _WritableTunnelRequest WritableTunnelRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableTunnelRequest(name string, encapsulation string) *WritableTunnelRequest {
+func NewWritableTunnelRequest(name string, encapsulation PatchedWritableTunnelRequestEncapsulation) *WritableTunnelRequest {
 	this := WritableTunnelRequest{}
 	this.Name = name
 	this.Encapsulation = encapsulation
@@ -82,9 +80,9 @@ func (o *WritableTunnelRequest) SetName(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableTunnelRequest) GetStatus() string {
+func (o *WritableTunnelRequest) GetStatus() PatchedWritableTunnelRequestStatus {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret PatchedWritableTunnelRequestStatus
 		return ret
 	}
 	return *o.Status
@@ -92,7 +90,7 @@ func (o *WritableTunnelRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableTunnelRequest) GetStatusOk() (*string, bool) {
+func (o *WritableTunnelRequest) GetStatusOk() (*PatchedWritableTunnelRequestStatus, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -108,8 +106,8 @@ func (o *WritableTunnelRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableTunnelRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given PatchedWritableTunnelRequestStatus and assigns it to the Status field.
+func (o *WritableTunnelRequest) SetStatus(v PatchedWritableTunnelRequestStatus) {
 	o.Status = &v
 }
 
@@ -157,9 +155,9 @@ func (o *WritableTunnelRequest) UnsetGroup() {
 }
 
 // GetEncapsulation returns the Encapsulation field value
-func (o *WritableTunnelRequest) GetEncapsulation() string {
+func (o *WritableTunnelRequest) GetEncapsulation() PatchedWritableTunnelRequestEncapsulation {
 	if o == nil {
-		var ret string
+		var ret PatchedWritableTunnelRequestEncapsulation
 		return ret
 	}
 
@@ -168,7 +166,7 @@ func (o *WritableTunnelRequest) GetEncapsulation() string {
 
 // GetEncapsulationOk returns a tuple with the Encapsulation field value
 // and a boolean to check if the value has been set.
-func (o *WritableTunnelRequest) GetEncapsulationOk() (*string, bool) {
+func (o *WritableTunnelRequest) GetEncapsulationOk() (*PatchedWritableTunnelRequestEncapsulation, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -176,7 +174,7 @@ func (o *WritableTunnelRequest) GetEncapsulationOk() (*string, bool) {
 }
 
 // SetEncapsulation sets field value
-func (o *WritableTunnelRequest) SetEncapsulation(v string) {
+func (o *WritableTunnelRequest) SetEncapsulation(v PatchedWritableTunnelRequestEncapsulation) {
 	o.Encapsulation = v
 }
 

@@ -4633,7 +4633,7 @@ import (
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this virtual machine.
 	writableVirtualMachineWithConfigContextRequest := *openapiclient.NewWritableVirtualMachineWithConfigContextRequest("Name_example") // WritableVirtualMachineWithConfigContextRequest | 
-	format := "format_example" // string |  (optional)
+	format := openapiclient.dcim_devices_render_config_create_format_parameter("json") // DcimDevicesRenderConfigCreateFormatParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4664,7 +4664,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **writableVirtualMachineWithConfigContextRequest** | [**WritableVirtualMachineWithConfigContextRequest**](WritableVirtualMachineWithConfigContextRequest.md) |  | 
- **format** | **string** |  | 
+ **format** | [**DcimDevicesRenderConfigCreateFormatParameter**](DcimDevicesRenderConfigCreateFormatParameter.md) |  | 
 
 ### Return type
 

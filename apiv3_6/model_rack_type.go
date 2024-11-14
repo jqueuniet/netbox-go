@@ -19,9 +19,8 @@ var _ MappedNullable = &RackType{}
 
 // RackType struct for RackType
 type RackType struct {
-	// * `2-post-frame` - 2-post frame * `4-post-frame` - 4-post frame * `4-post-cabinet` - 4-post cabinet * `wall-frame` - Wall-mounted frame * `wall-frame-vertical` - Wall-mounted frame (vertical) * `wall-cabinet` - Wall-mounted cabinet * `wall-cabinet-vertical` - Wall-mounted cabinet (vertical)
-	Value                NullableString `json:"value,omitempty"`
-	Label                *string        `json:"label,omitempty"`
+	Value                *RackTypeValue `json:"value,omitempty"`
+	Label                *RackTypeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -44,53 +43,42 @@ func NewRackTypeWithDefaults() *RackType {
 	return &this
 }
 
-// GetValue returns the Value field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RackType) GetValue() string {
-	if o == nil || IsNil(o.Value.Get()) {
-		var ret string
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *RackType) GetValue() RackTypeValue {
+	if o == nil || IsNil(o.Value) {
+		var ret RackTypeValue
 		return ret
 	}
-	return *o.Value.Get()
+	return *o.Value
 }
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RackType) GetValueOk() (*string, bool) {
-	if o == nil {
+func (o *RackType) GetValueOk() (*RackTypeValue, bool) {
+	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
-	return o.Value.Get(), o.Value.IsSet()
+	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *RackType) HasValue() bool {
-	if o != nil && o.Value.IsSet() {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
 	return false
 }
 
-// SetValue gets a reference to the given NullableString and assigns it to the Value field.
-func (o *RackType) SetValue(v string) {
-	o.Value.Set(&v)
-}
-
-// SetValueNil sets the value for Value to be an explicit nil
-func (o *RackType) SetValueNil() {
-	o.Value.Set(nil)
-}
-
-// UnsetValue ensures that no value is present for Value, not even an explicit nil
-func (o *RackType) UnsetValue() {
-	o.Value.Unset()
+// SetValue gets a reference to the given RackTypeValue and assigns it to the Value field.
+func (o *RackType) SetValue(v RackTypeValue) {
+	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *RackType) GetLabel() string {
+func (o *RackType) GetLabel() RackTypeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret RackTypeLabel
 		return ret
 	}
 	return *o.Label
@@ -98,7 +86,7 @@ func (o *RackType) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackType) GetLabelOk() (*string, bool) {
+func (o *RackType) GetLabelOk() (*RackTypeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -114,8 +102,8 @@ func (o *RackType) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *RackType) SetLabel(v string) {
+// SetLabel gets a reference to the given RackTypeLabel and assigns it to the Label field.
+func (o *RackType) SetLabel(v RackTypeLabel) {
 	o.Label = &v
 }
 
@@ -129,8 +117,8 @@ func (o RackType) MarshalJSON() ([]byte, error) {
 
 func (o RackType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Value.IsSet() {
-		toSerialize["value"] = o.Value.Get()
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label

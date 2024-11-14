@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**EventTypes** | **[]string** | The types of event which will trigger this rule. | 
+**EventTypes** | [**[]EventRuleEventTypesInner**](EventRuleEventTypesInner.md) | The types of event which will trigger this rule. | 
 **Conditions** | Pointer to **interface{}** | A set of conditions which determine whether the event will be generated. | [optional] 
-**ActionType** | **string** | * &#x60;webhook&#x60; - Webhook * &#x60;script&#x60; - Script * &#x60;notification&#x60; - Notification | 
+**ActionType** | [**EventRuleActionTypeValue**](EventRuleActionTypeValue.md) |  | 
 **ActionObjectType** | **string** |  | 
 **ActionObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewEventRuleRequest
 
-`func NewEventRuleRequest(objectTypes []string, name string, eventTypes []string, actionType string, actionObjectType string, ) *EventRuleRequest`
+`func NewEventRuleRequest(objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionType EventRuleActionTypeValue, actionObjectType string, ) *EventRuleRequest`
 
 NewEventRuleRequest instantiates a new EventRuleRequest object
 This constructor will assign default values to properties that have it defined,
@@ -102,20 +102,20 @@ HasEnabled returns a boolean if a field has been set.
 
 ### GetEventTypes
 
-`func (o *EventRuleRequest) GetEventTypes() []string`
+`func (o *EventRuleRequest) GetEventTypes() []EventRuleEventTypesInner`
 
 GetEventTypes returns the EventTypes field if non-nil, zero value otherwise.
 
 ### GetEventTypesOk
 
-`func (o *EventRuleRequest) GetEventTypesOk() (*[]string, bool)`
+`func (o *EventRuleRequest) GetEventTypesOk() (*[]EventRuleEventTypesInner, bool)`
 
 GetEventTypesOk returns a tuple with the EventTypes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEventTypes
 
-`func (o *EventRuleRequest) SetEventTypes(v []string)`
+`func (o *EventRuleRequest) SetEventTypes(v []EventRuleEventTypesInner)`
 
 SetEventTypes sets EventTypes field to given value.
 
@@ -157,20 +157,20 @@ HasConditions returns a boolean if a field has been set.
 UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
 ### GetActionType
 
-`func (o *EventRuleRequest) GetActionType() string`
+`func (o *EventRuleRequest) GetActionType() EventRuleActionTypeValue`
 
 GetActionType returns the ActionType field if non-nil, zero value otherwise.
 
 ### GetActionTypeOk
 
-`func (o *EventRuleRequest) GetActionTypeOk() (*string, bool)`
+`func (o *EventRuleRequest) GetActionTypeOk() (*EventRuleActionTypeValue, bool)`
 
 GetActionTypeOk returns a tuple with the ActionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActionType
 
-`func (o *EventRuleRequest) SetActionType(v string)`
+`func (o *EventRuleRequest) SetActionType(v EventRuleActionTypeValue)`
 
 SetActionType sets ActionType field to given value.
 

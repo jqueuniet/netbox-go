@@ -22,9 +22,8 @@ type PatchedWritableModuleRequest struct {
 	Device     *BriefDeviceRequest     `json:"device,omitempty"`
 	ModuleBay  *int32                  `json:"module_bay,omitempty"`
 	ModuleType *BriefModuleTypeRequest `json:"module_type,omitempty"`
-	// * `offline` - Offline * `active` - Active * `planned` - Planned * `staged` - Staged * `failed` - Failed * `decommissioning` - Decommissioning
-	Status *string `json:"status,omitempty"`
-	Serial *string `json:"serial,omitempty"`
+	Status     *ModuleStatusValue      `json:"status,omitempty"`
+	Serial     *string                 `json:"serial,omitempty"`
 	// A unique tag used to identify this device
 	AssetTag             NullableString         `json:"asset_tag,omitempty"`
 	Description          *string                `json:"description,omitempty"`
@@ -150,9 +149,9 @@ func (o *PatchedWritableModuleRequest) SetModuleType(v BriefModuleTypeRequest) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableModuleRequest) GetStatus() string {
+func (o *PatchedWritableModuleRequest) GetStatus() ModuleStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret ModuleStatusValue
 		return ret
 	}
 	return *o.Status
@@ -160,7 +159,7 @@ func (o *PatchedWritableModuleRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableModuleRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableModuleRequest) GetStatusOk() (*ModuleStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -176,8 +175,8 @@ func (o *PatchedWritableModuleRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableModuleRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given ModuleStatusValue and assigns it to the Status field.
+func (o *PatchedWritableModuleRequest) SetStatus(v ModuleStatusValue) {
 	o.Status = &v
 }
 

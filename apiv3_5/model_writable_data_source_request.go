@@ -20,9 +20,8 @@ var _ MappedNullable = &WritableDataSourceRequest{}
 
 // WritableDataSourceRequest Adds support for custom fields and tags.
 type WritableDataSourceRequest struct {
-	Name string `json:"name"`
-	// * `local` - Local * `git` - Git * `amazon-s3` - Amazon S3
-	Type        *string                `json:"type,omitempty"`
+	Name        string                 `json:"name"`
+	Type        *DataSourceTypeValue   `json:"type,omitempty"`
 	SourceUrl   string                 `json:"source_url"`
 	Enabled     *bool                  `json:"enabled,omitempty"`
 	Description *string                `json:"description,omitempty"`
@@ -79,9 +78,9 @@ func (o *WritableDataSourceRequest) SetName(v string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *WritableDataSourceRequest) GetType() string {
+func (o *WritableDataSourceRequest) GetType() DataSourceTypeValue {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret DataSourceTypeValue
 		return ret
 	}
 	return *o.Type
@@ -89,7 +88,7 @@ func (o *WritableDataSourceRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableDataSourceRequest) GetTypeOk() (*string, bool) {
+func (o *WritableDataSourceRequest) GetTypeOk() (*DataSourceTypeValue, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -105,8 +104,8 @@ func (o *WritableDataSourceRequest) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *WritableDataSourceRequest) SetType(v string) {
+// SetType gets a reference to the given DataSourceTypeValue and assigns it to the Type field.
+func (o *WritableDataSourceRequest) SetType(v DataSourceTypeValue) {
 	o.Type = &v
 }
 

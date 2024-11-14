@@ -20,17 +20,15 @@ var _ MappedNullable = &WritableIKEPolicyRequest{}
 
 // WritableIKEPolicyRequest Adds support for custom fields and tags.
 type WritableIKEPolicyRequest struct {
-	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
-	// * `1` - IKEv1 * `2` - IKEv2
-	Version *int32 `json:"version,omitempty"`
-	// * `aggressive` - Aggressive * `main` - Main
-	Mode                 *string                `json:"mode,omitempty"`
-	Proposals            []int32                `json:"proposals"`
-	PresharedKey         *string                `json:"preshared_key,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Name                 string                                  `json:"name"`
+	Description          *string                                 `json:"description,omitempty"`
+	Version              *PatchedWritableIKEPolicyRequestVersion `json:"version,omitempty"`
+	Mode                 *PatchedWritableIKEPolicyRequestMode    `json:"mode,omitempty"`
+	Proposals            []int32                                 `json:"proposals"`
+	PresharedKey         *string                                 `json:"preshared_key,omitempty"`
+	Comments             *string                                 `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                      `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}                  `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -112,9 +110,9 @@ func (o *WritableIKEPolicyRequest) SetDescription(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *WritableIKEPolicyRequest) GetVersion() int32 {
+func (o *WritableIKEPolicyRequest) GetVersion() PatchedWritableIKEPolicyRequestVersion {
 	if o == nil || IsNil(o.Version) {
-		var ret int32
+		var ret PatchedWritableIKEPolicyRequestVersion
 		return ret
 	}
 	return *o.Version
@@ -122,7 +120,7 @@ func (o *WritableIKEPolicyRequest) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableIKEPolicyRequest) GetVersionOk() (*int32, bool) {
+func (o *WritableIKEPolicyRequest) GetVersionOk() (*PatchedWritableIKEPolicyRequestVersion, bool) {
 	if o == nil || IsNil(o.Version) {
 		return nil, false
 	}
@@ -138,15 +136,15 @@ func (o *WritableIKEPolicyRequest) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *WritableIKEPolicyRequest) SetVersion(v int32) {
+// SetVersion gets a reference to the given PatchedWritableIKEPolicyRequestVersion and assigns it to the Version field.
+func (o *WritableIKEPolicyRequest) SetVersion(v PatchedWritableIKEPolicyRequestVersion) {
 	o.Version = &v
 }
 
 // GetMode returns the Mode field value if set, zero value otherwise.
-func (o *WritableIKEPolicyRequest) GetMode() string {
+func (o *WritableIKEPolicyRequest) GetMode() PatchedWritableIKEPolicyRequestMode {
 	if o == nil || IsNil(o.Mode) {
-		var ret string
+		var ret PatchedWritableIKEPolicyRequestMode
 		return ret
 	}
 	return *o.Mode
@@ -154,7 +152,7 @@ func (o *WritableIKEPolicyRequest) GetMode() string {
 
 // GetModeOk returns a tuple with the Mode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableIKEPolicyRequest) GetModeOk() (*string, bool) {
+func (o *WritableIKEPolicyRequest) GetModeOk() (*PatchedWritableIKEPolicyRequestMode, bool) {
 	if o == nil || IsNil(o.Mode) {
 		return nil, false
 	}
@@ -170,8 +168,8 @@ func (o *WritableIKEPolicyRequest) HasMode() bool {
 	return false
 }
 
-// SetMode gets a reference to the given string and assigns it to the Mode field.
-func (o *WritableIKEPolicyRequest) SetMode(v string) {
+// SetMode gets a reference to the given PatchedWritableIKEPolicyRequestMode and assigns it to the Mode field.
+func (o *WritableIKEPolicyRequest) SetMode(v PatchedWritableIKEPolicyRequestMode) {
 	o.Mode = &v
 }
 

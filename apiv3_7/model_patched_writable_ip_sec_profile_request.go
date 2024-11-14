@@ -19,10 +19,9 @@ var _ MappedNullable = &PatchedWritableIPSecProfileRequest{}
 
 // PatchedWritableIPSecProfileRequest Adds support for custom fields and tags.
 type PatchedWritableIPSecProfileRequest struct {
-	Name        *string `json:"name,omitempty"`
-	Description *string `json:"description,omitempty"`
-	// * `esp` - ESP * `ah` - AH
-	Mode                 *string                `json:"mode,omitempty"`
+	Name                 *string                `json:"name,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Mode                 *IPSecProfileModeValue `json:"mode,omitempty"`
 	IkePolicy            *int32                 `json:"ike_policy,omitempty"`
 	IpsecPolicy          *int32                 `json:"ipsec_policy,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
@@ -115,9 +114,9 @@ func (o *PatchedWritableIPSecProfileRequest) SetDescription(v string) {
 }
 
 // GetMode returns the Mode field value if set, zero value otherwise.
-func (o *PatchedWritableIPSecProfileRequest) GetMode() string {
+func (o *PatchedWritableIPSecProfileRequest) GetMode() IPSecProfileModeValue {
 	if o == nil || IsNil(o.Mode) {
-		var ret string
+		var ret IPSecProfileModeValue
 		return ret
 	}
 	return *o.Mode
@@ -125,7 +124,7 @@ func (o *PatchedWritableIPSecProfileRequest) GetMode() string {
 
 // GetModeOk returns a tuple with the Mode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableIPSecProfileRequest) GetModeOk() (*string, bool) {
+func (o *PatchedWritableIPSecProfileRequest) GetModeOk() (*IPSecProfileModeValue, bool) {
 	if o == nil || IsNil(o.Mode) {
 		return nil, false
 	}
@@ -141,8 +140,8 @@ func (o *PatchedWritableIPSecProfileRequest) HasMode() bool {
 	return false
 }
 
-// SetMode gets a reference to the given string and assigns it to the Mode field.
-func (o *PatchedWritableIPSecProfileRequest) SetMode(v string) {
+// SetMode gets a reference to the given IPSecProfileModeValue and assigns it to the Mode field.
+func (o *PatchedWritableIPSecProfileRequest) SetMode(v IPSecProfileModeValue) {
 	o.Mode = &v
 }
 

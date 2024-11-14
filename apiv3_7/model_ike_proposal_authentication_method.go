@@ -19,9 +19,8 @@ var _ MappedNullable = &IKEProposalAuthenticationMethod{}
 
 // IKEProposalAuthenticationMethod struct for IKEProposalAuthenticationMethod
 type IKEProposalAuthenticationMethod struct {
-	// * `preshared-keys` - Pre-shared keys * `certificates` - Certificates * `rsa-signatures` - RSA signatures * `dsa-signatures` - DSA signatures
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *IKEProposalAuthenticationMethodValue `json:"value,omitempty"`
+	Label                *IKEProposalAuthenticationMethodLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewIKEProposalAuthenticationMethodWithDefaults() *IKEProposalAuthentication
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *IKEProposalAuthenticationMethod) GetValue() string {
+func (o *IKEProposalAuthenticationMethod) GetValue() IKEProposalAuthenticationMethodValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret IKEProposalAuthenticationMethodValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *IKEProposalAuthenticationMethod) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEProposalAuthenticationMethod) GetValueOk() (*string, bool) {
+func (o *IKEProposalAuthenticationMethod) GetValueOk() (*IKEProposalAuthenticationMethodValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *IKEProposalAuthenticationMethod) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *IKEProposalAuthenticationMethod) SetValue(v string) {
+// SetValue gets a reference to the given IKEProposalAuthenticationMethodValue and assigns it to the Value field.
+func (o *IKEProposalAuthenticationMethod) SetValue(v IKEProposalAuthenticationMethodValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *IKEProposalAuthenticationMethod) GetLabel() string {
+func (o *IKEProposalAuthenticationMethod) GetLabel() IKEProposalAuthenticationMethodLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret IKEProposalAuthenticationMethodLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *IKEProposalAuthenticationMethod) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEProposalAuthenticationMethod) GetLabelOk() (*string, bool) {
+func (o *IKEProposalAuthenticationMethod) GetLabelOk() (*IKEProposalAuthenticationMethodLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *IKEProposalAuthenticationMethod) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *IKEProposalAuthenticationMethod) SetLabel(v string) {
+// SetLabel gets a reference to the given IKEProposalAuthenticationMethodLabel and assigns it to the Label field.
+func (o *IKEProposalAuthenticationMethod) SetLabel(v IKEProposalAuthenticationMethodLabel) {
 	o.Label = &v
 }
 

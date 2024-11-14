@@ -24,11 +24,10 @@ type PatchedWritableCircuitRequest struct {
 	Provider        *BriefProviderRequest               `json:"provider,omitempty"`
 	ProviderAccount NullableBriefProviderAccountRequest `json:"provider_account,omitempty"`
 	Type            *BriefCircuitTypeRequest            `json:"type,omitempty"`
-	// * `planned` - Planned * `provisioning` - Provisioning * `active` - Active * `offline` - Offline * `deprovisioning` - Deprovisioning * `decommissioned` - Decommissioned
-	Status          *string                    `json:"status,omitempty"`
-	Tenant          NullableBriefTenantRequest `json:"tenant,omitempty"`
-	InstallDate     NullableString             `json:"install_date,omitempty"`
-	TerminationDate NullableString             `json:"termination_date,omitempty"`
+	Status          *CircuitStatusValue                 `json:"status,omitempty"`
+	Tenant          NullableBriefTenantRequest          `json:"tenant,omitempty"`
+	InstallDate     NullableString                      `json:"install_date,omitempty"`
+	TerminationDate NullableString                      `json:"termination_date,omitempty"`
 	// Committed rate
 	CommitRate           NullableInt32          `json:"commit_rate,omitempty"`
 	Description          *string                `json:"description,omitempty"`
@@ -197,9 +196,9 @@ func (o *PatchedWritableCircuitRequest) SetType(v BriefCircuitTypeRequest) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableCircuitRequest) GetStatus() string {
+func (o *PatchedWritableCircuitRequest) GetStatus() CircuitStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret CircuitStatusValue
 		return ret
 	}
 	return *o.Status
@@ -207,7 +206,7 @@ func (o *PatchedWritableCircuitRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableCircuitRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableCircuitRequest) GetStatusOk() (*CircuitStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -223,8 +222,8 @@ func (o *PatchedWritableCircuitRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableCircuitRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given CircuitStatusValue and assigns it to the Status field.
+func (o *PatchedWritableCircuitRequest) SetStatus(v CircuitStatusValue) {
 	o.Status = &v
 }
 

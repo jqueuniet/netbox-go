@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Device** | Pointer to [**NullableBriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
 **VirtualMachine** | Pointer to [**NullableBriefVirtualMachineRequest**](BriefVirtualMachineRequest.md) |  | [optional] 
 **Name** | **string** |  | 
-**Protocol** | **string** | * &#x60;tcp&#x60; - TCP * &#x60;udp&#x60; - UDP * &#x60;sctp&#x60; - SCTP | 
+**Protocol** | [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | 
 **Ports** | **[]int32** |  | 
 **Ipaddresses** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewWritableServiceRequest
 
-`func NewWritableServiceRequest(name string, protocol string, ports []int32, ) *WritableServiceRequest`
+`func NewWritableServiceRequest(name string, protocol PatchedWritableServiceRequestProtocol, ports []int32, ) *WritableServiceRequest`
 
 NewWritableServiceRequest instantiates a new WritableServiceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -126,20 +126,20 @@ SetName sets Name field to given value.
 
 ### GetProtocol
 
-`func (o *WritableServiceRequest) GetProtocol() string`
+`func (o *WritableServiceRequest) GetProtocol() PatchedWritableServiceRequestProtocol`
 
 GetProtocol returns the Protocol field if non-nil, zero value otherwise.
 
 ### GetProtocolOk
 
-`func (o *WritableServiceRequest) GetProtocolOk() (*string, bool)`
+`func (o *WritableServiceRequest) GetProtocolOk() (*PatchedWritableServiceRequestProtocol, bool)`
 
 GetProtocolOk returns a tuple with the Protocol field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProtocol
 
-`func (o *WritableServiceRequest) SetProtocol(v string)`
+`func (o *WritableServiceRequest) SetProtocol(v PatchedWritableServiceRequestProtocol)`
 
 SetProtocol sets Protocol field to given value.
 

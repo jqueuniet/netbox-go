@@ -20,12 +20,11 @@ var _ MappedNullable = &PatchedNotificationRequest{}
 
 // PatchedNotificationRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type PatchedNotificationRequest struct {
-	ObjectType *string           `json:"object_type,omitempty"`
-	ObjectId   *int64            `json:"object_id,omitempty"`
-	User       *BriefUserRequest `json:"user,omitempty"`
-	Read       NullableTime      `json:"read,omitempty"`
-	// * `object_created` - Object created * `object_updated` - Object updated * `object_deleted` - Object deleted * `job_started` - Job started * `job_completed` - Job completed * `job_failed` - Job failed * `job_errored` - Job errored
-	EventType            *string `json:"event_type,omitempty"`
+	ObjectType           *string           `json:"object_type,omitempty"`
+	ObjectId             *int64            `json:"object_id,omitempty"`
+	User                 *BriefUserRequest `json:"user,omitempty"`
+	Read                 NullableTime      `json:"read,omitempty"`
+	EventType            *Event            `json:"event_type,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -188,9 +187,9 @@ func (o *PatchedNotificationRequest) UnsetRead() {
 }
 
 // GetEventType returns the EventType field value if set, zero value otherwise.
-func (o *PatchedNotificationRequest) GetEventType() string {
+func (o *PatchedNotificationRequest) GetEventType() Event {
 	if o == nil || IsNil(o.EventType) {
-		var ret string
+		var ret Event
 		return ret
 	}
 	return *o.EventType
@@ -198,7 +197,7 @@ func (o *PatchedNotificationRequest) GetEventType() string {
 
 // GetEventTypeOk returns a tuple with the EventType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedNotificationRequest) GetEventTypeOk() (*string, bool) {
+func (o *PatchedNotificationRequest) GetEventTypeOk() (*Event, bool) {
 	if o == nil || IsNil(o.EventType) {
 		return nil, false
 	}
@@ -214,8 +213,8 @@ func (o *PatchedNotificationRequest) HasEventType() bool {
 	return false
 }
 
-// SetEventType gets a reference to the given string and assigns it to the EventType field.
-func (o *PatchedNotificationRequest) SetEventType(v string) {
+// SetEventType gets a reference to the given Event and assigns it to the EventType field.
+func (o *PatchedNotificationRequest) SetEventType(v Event) {
 	o.EventType = &v
 }
 

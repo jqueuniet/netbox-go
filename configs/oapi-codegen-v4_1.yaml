@@ -15,6 +15,9 @@ globalProperty:
   apiTests: false
   modelTests: false
 
+inlineSchemaOptions:
+  RESOLVE_INLINE_ENUMS: "true"
+
 additionalProperties:
   generateInterfaces: true
   isGoSubmodule: true

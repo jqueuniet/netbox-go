@@ -19,12 +19,11 @@ var _ MappedNullable = &PatchedWritableLocationRequest{}
 
 // PatchedWritableLocationRequest Extends PrimaryModelSerializer to include MPTT support.
 type PatchedWritableLocationRequest struct {
-	Name   *string           `json:"name,omitempty"`
-	Slug   *string           `json:"slug,omitempty" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	Site   *BriefSiteRequest `json:"site,omitempty"`
-	Parent NullableInt32     `json:"parent,omitempty"`
-	// * `planned` - Planned * `staging` - Staging * `active` - Active * `decommissioning` - Decommissioning * `retired` - Retired
-	Status *string                    `json:"status,omitempty"`
+	Name   *string                    `json:"name,omitempty"`
+	Slug   *string                    `json:"slug,omitempty" validate:"regexp=^[-a-zA-Z0-9_]+$"`
+	Site   *BriefSiteRequest          `json:"site,omitempty"`
+	Parent NullableInt32              `json:"parent,omitempty"`
+	Status *LocationStatusValue       `json:"status,omitempty"`
 	Tenant NullableBriefTenantRequest `json:"tenant,omitempty"`
 	// Local facility ID or description
 	Facility             *string                `json:"facility,omitempty"`
@@ -193,9 +192,9 @@ func (o *PatchedWritableLocationRequest) UnsetParent() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *PatchedWritableLocationRequest) GetStatus() string {
+func (o *PatchedWritableLocationRequest) GetStatus() LocationStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret LocationStatusValue
 		return ret
 	}
 	return *o.Status
@@ -203,7 +202,7 @@ func (o *PatchedWritableLocationRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableLocationRequest) GetStatusOk() (*string, bool) {
+func (o *PatchedWritableLocationRequest) GetStatusOk() (*LocationStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -219,8 +218,8 @@ func (o *PatchedWritableLocationRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *PatchedWritableLocationRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given LocationStatusValue and assigns it to the Status field.
+func (o *PatchedWritableLocationRequest) SetStatus(v LocationStatusValue) {
 	o.Status = &v
 }
 

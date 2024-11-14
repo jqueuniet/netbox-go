@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **string** | * &#x60;esp&#x60; - ESP * &#x60;ah&#x60; - AH | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**IPSecProfileModeValue**](IPSecProfileModeValue.md) |  | [optional] 
+**Label** | Pointer to [**IPSecProfileModeLabel**](IPSecProfileModeLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *IPSecProfileMode) GetValue() string`
+`func (o *IPSecProfileMode) GetValue() IPSecProfileModeValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *IPSecProfileMode) GetValueOk() (*string, bool)`
+`func (o *IPSecProfileMode) GetValueOk() (*IPSecProfileModeValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *IPSecProfileMode) SetValue(v string)`
+`func (o *IPSecProfileMode) SetValue(v IPSecProfileModeValue)`
 
 SetValue sets Value field to given value.
 
@@ -53,20 +53,20 @@ HasValue returns a boolean if a field has been set.
 
 ### GetLabel
 
-`func (o *IPSecProfileMode) GetLabel() string`
+`func (o *IPSecProfileMode) GetLabel() IPSecProfileModeLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *IPSecProfileMode) GetLabelOk() (*string, bool)`
+`func (o *IPSecProfileMode) GetLabelOk() (*IPSecProfileModeLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *IPSecProfileMode) SetLabel(v string)`
+`func (o *IPSecProfileMode) SetLabel(v IPSecProfileModeLabel)`
 
 SetLabel sets Label field to given value.
 

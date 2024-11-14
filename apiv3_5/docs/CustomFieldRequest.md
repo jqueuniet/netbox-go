@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ContentTypes** | **[]string** |  | 
-**Type** | **string** | * &#x60;text&#x60; - Text * &#x60;longtext&#x60; - Text (long) * &#x60;integer&#x60; - Integer * &#x60;decimal&#x60; - Decimal * &#x60;boolean&#x60; - Boolean (true/false) * &#x60;date&#x60; - Date * &#x60;datetime&#x60; - Date &amp; time * &#x60;url&#x60; - URL * &#x60;json&#x60; - JSON * &#x60;select&#x60; - Selection * &#x60;multiselect&#x60; - Multiple selection * &#x60;object&#x60; - Object * &#x60;multiobject&#x60; - Multiple objects | 
+**Type** | [**CustomFieldTypeValue**](CustomFieldTypeValue.md) |  | 
 **ObjectType** | Pointer to **string** |  | [optional] 
 **Name** | **string** | Internal field name | 
 **Label** | Pointer to **string** | Name of the field as displayed to users (if not provided, the field&#39;s name will be used) | [optional] 
@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Required** | Pointer to **bool** | If true, this field is required when creating new objects or editing an existing object. | [optional] 
 **SearchWeight** | Pointer to **int32** | Weighting for search. Lower values are considered more important. Fields with a search weight of zero will be ignored. | [optional] 
-**FilterLogic** | Pointer to **string** | * &#x60;disabled&#x60; - Disabled * &#x60;loose&#x60; - Loose * &#x60;exact&#x60; - Exact | [optional] 
-**UiVisibility** | Pointer to **string** | * &#x60;read-write&#x60; - Read/Write * &#x60;read-only&#x60; - Read-only * &#x60;hidden&#x60; - Hidden * &#x60;hidden-ifunset&#x60; - Hidden (if unset) | [optional] 
+**FilterLogic** | Pointer to [**CustomFieldFilterLogicValue**](CustomFieldFilterLogicValue.md) |  | [optional] 
+**UiVisibility** | Pointer to [**CustomFieldUiVisibilityValue**](CustomFieldUiVisibilityValue.md) |  | [optional] 
 **IsCloneable** | Pointer to **bool** | Replicate this value when cloning objects | [optional] 
 **Default** | Pointer to **map[string]interface{}** | Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. \&quot;Foo\&quot;). | [optional] 
 **Weight** | Pointer to **int32** | Fields with higher weights appear lower in a form. | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewCustomFieldRequest
 
-`func NewCustomFieldRequest(contentTypes []string, type_ string, name string, ) *CustomFieldRequest`
+`func NewCustomFieldRequest(contentTypes []string, type_ CustomFieldTypeValue, name string, ) *CustomFieldRequest`
 
 NewCustomFieldRequest instantiates a new CustomFieldRequest object
 This constructor will assign default values to properties that have it defined,
@@ -64,20 +64,20 @@ SetContentTypes sets ContentTypes field to given value.
 
 ### GetType
 
-`func (o *CustomFieldRequest) GetType() string`
+`func (o *CustomFieldRequest) GetType() CustomFieldTypeValue`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CustomFieldRequest) GetTypeOk() (*string, bool)`
+`func (o *CustomFieldRequest) GetTypeOk() (*CustomFieldTypeValue, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CustomFieldRequest) SetType(v string)`
+`func (o *CustomFieldRequest) SetType(v CustomFieldTypeValue)`
 
 SetType sets Type field to given value.
 
@@ -254,20 +254,20 @@ HasSearchWeight returns a boolean if a field has been set.
 
 ### GetFilterLogic
 
-`func (o *CustomFieldRequest) GetFilterLogic() string`
+`func (o *CustomFieldRequest) GetFilterLogic() CustomFieldFilterLogicValue`
 
 GetFilterLogic returns the FilterLogic field if non-nil, zero value otherwise.
 
 ### GetFilterLogicOk
 
-`func (o *CustomFieldRequest) GetFilterLogicOk() (*string, bool)`
+`func (o *CustomFieldRequest) GetFilterLogicOk() (*CustomFieldFilterLogicValue, bool)`
 
 GetFilterLogicOk returns a tuple with the FilterLogic field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFilterLogic
 
-`func (o *CustomFieldRequest) SetFilterLogic(v string)`
+`func (o *CustomFieldRequest) SetFilterLogic(v CustomFieldFilterLogicValue)`
 
 SetFilterLogic sets FilterLogic field to given value.
 
@@ -279,20 +279,20 @@ HasFilterLogic returns a boolean if a field has been set.
 
 ### GetUiVisibility
 
-`func (o *CustomFieldRequest) GetUiVisibility() string`
+`func (o *CustomFieldRequest) GetUiVisibility() CustomFieldUiVisibilityValue`
 
 GetUiVisibility returns the UiVisibility field if non-nil, zero value otherwise.
 
 ### GetUiVisibilityOk
 
-`func (o *CustomFieldRequest) GetUiVisibilityOk() (*string, bool)`
+`func (o *CustomFieldRequest) GetUiVisibilityOk() (*CustomFieldUiVisibilityValue, bool)`
 
 GetUiVisibilityOk returns a tuple with the UiVisibility field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUiVisibility
 
-`func (o *CustomFieldRequest) SetUiVisibility(v string)`
+`func (o *CustomFieldRequest) SetUiVisibility(v CustomFieldUiVisibilityValue)`
 
 SetUiVisibility sets UiVisibility field to given value.
 

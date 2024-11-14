@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **InterfaceA** | [**BriefInterfaceRequest**](BriefInterfaceRequest.md) |  | 
 **InterfaceB** | [**BriefInterfaceRequest**](BriefInterfaceRequest.md) |  | 
 **Ssid** | Pointer to **string** |  | [optional] 
-**Status** | Pointer to **string** | * &#x60;connected&#x60; - Connected * &#x60;planned&#x60; - Planned * &#x60;decommissioning&#x60; - Decommissioning | [optional] 
+**Status** | Pointer to [**CableStatusValue**](CableStatusValue.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
-**AuthType** | Pointer to **string** | * &#x60;open&#x60; - Open * &#x60;wep&#x60; - WEP * &#x60;wpa-personal&#x60; - WPA Personal (PSK) * &#x60;wpa-enterprise&#x60; - WPA Enterprise | [optional] 
-**AuthCipher** | Pointer to **string** | * &#x60;auto&#x60; - Auto * &#x60;tkip&#x60; - TKIP * &#x60;aes&#x60; - AES | [optional] 
+**AuthType** | Pointer to [**AuthenticationType1**](AuthenticationType1.md) |  | [optional] 
+**AuthCipher** | Pointer to [**AuthenticationCipher**](AuthenticationCipher.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
 **Distance** | Pointer to **NullableFloat64** |  | [optional] 
-**DistanceUnit** | Pointer to **string** | * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet | [optional] 
+**DistanceUnit** | Pointer to [**PatchedWritableWirelessLinkRequestDistanceUnit**](PatchedWritableWirelessLinkRequestDistanceUnit.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -105,20 +105,20 @@ HasSsid returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *WritableWirelessLinkRequest) GetStatus() string`
+`func (o *WritableWirelessLinkRequest) GetStatus() CableStatusValue`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableWirelessLinkRequest) GetStatusOk() (*string, bool)`
+`func (o *WritableWirelessLinkRequest) GetStatusOk() (*CableStatusValue, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableWirelessLinkRequest) SetStatus(v string)`
+`func (o *WritableWirelessLinkRequest) SetStatus(v CableStatusValue)`
 
 SetStatus sets Status field to given value.
 
@@ -165,20 +165,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetAuthType
 
-`func (o *WritableWirelessLinkRequest) GetAuthType() string`
+`func (o *WritableWirelessLinkRequest) GetAuthType() AuthenticationType1`
 
 GetAuthType returns the AuthType field if non-nil, zero value otherwise.
 
 ### GetAuthTypeOk
 
-`func (o *WritableWirelessLinkRequest) GetAuthTypeOk() (*string, bool)`
+`func (o *WritableWirelessLinkRequest) GetAuthTypeOk() (*AuthenticationType1, bool)`
 
 GetAuthTypeOk returns a tuple with the AuthType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthType
 
-`func (o *WritableWirelessLinkRequest) SetAuthType(v string)`
+`func (o *WritableWirelessLinkRequest) SetAuthType(v AuthenticationType1)`
 
 SetAuthType sets AuthType field to given value.
 
@@ -190,20 +190,20 @@ HasAuthType returns a boolean if a field has been set.
 
 ### GetAuthCipher
 
-`func (o *WritableWirelessLinkRequest) GetAuthCipher() string`
+`func (o *WritableWirelessLinkRequest) GetAuthCipher() AuthenticationCipher`
 
 GetAuthCipher returns the AuthCipher field if non-nil, zero value otherwise.
 
 ### GetAuthCipherOk
 
-`func (o *WritableWirelessLinkRequest) GetAuthCipherOk() (*string, bool)`
+`func (o *WritableWirelessLinkRequest) GetAuthCipherOk() (*AuthenticationCipher, bool)`
 
 GetAuthCipherOk returns a tuple with the AuthCipher field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAuthCipher
 
-`func (o *WritableWirelessLinkRequest) SetAuthCipher(v string)`
+`func (o *WritableWirelessLinkRequest) SetAuthCipher(v AuthenticationCipher)`
 
 SetAuthCipher sets AuthCipher field to given value.
 
@@ -275,20 +275,20 @@ HasDistance returns a boolean if a field has been set.
 UnsetDistance ensures that no value is present for Distance, not even an explicit nil
 ### GetDistanceUnit
 
-`func (o *WritableWirelessLinkRequest) GetDistanceUnit() string`
+`func (o *WritableWirelessLinkRequest) GetDistanceUnit() PatchedWritableWirelessLinkRequestDistanceUnit`
 
 GetDistanceUnit returns the DistanceUnit field if non-nil, zero value otherwise.
 
 ### GetDistanceUnitOk
 
-`func (o *WritableWirelessLinkRequest) GetDistanceUnitOk() (*string, bool)`
+`func (o *WritableWirelessLinkRequest) GetDistanceUnitOk() (*PatchedWritableWirelessLinkRequestDistanceUnit, bool)`
 
 GetDistanceUnitOk returns a tuple with the DistanceUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDistanceUnit
 
-`func (o *WritableWirelessLinkRequest) SetDistanceUnit(v string)`
+`func (o *WritableWirelessLinkRequest) SetDistanceUnit(v PatchedWritableWirelessLinkRequestDistanceUnit)`
 
 SetDistanceUnit sets DistanceUnit field to given value.
 

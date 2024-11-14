@@ -19,9 +19,8 @@ var _ MappedNullable = &CustomFieldFilterLogic{}
 
 // CustomFieldFilterLogic struct for CustomFieldFilterLogic
 type CustomFieldFilterLogic struct {
-	// * `disabled` - Disabled * `loose` - Loose * `exact` - Exact
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *CustomFieldFilterLogicValue `json:"value,omitempty"`
+	Label                *CustomFieldFilterLogicLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewCustomFieldFilterLogicWithDefaults() *CustomFieldFilterLogic {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *CustomFieldFilterLogic) GetValue() string {
+func (o *CustomFieldFilterLogic) GetValue() CustomFieldFilterLogicValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret CustomFieldFilterLogicValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *CustomFieldFilterLogic) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldFilterLogic) GetValueOk() (*string, bool) {
+func (o *CustomFieldFilterLogic) GetValueOk() (*CustomFieldFilterLogicValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *CustomFieldFilterLogic) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *CustomFieldFilterLogic) SetValue(v string) {
+// SetValue gets a reference to the given CustomFieldFilterLogicValue and assigns it to the Value field.
+func (o *CustomFieldFilterLogic) SetValue(v CustomFieldFilterLogicValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *CustomFieldFilterLogic) GetLabel() string {
+func (o *CustomFieldFilterLogic) GetLabel() CustomFieldFilterLogicLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret CustomFieldFilterLogicLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *CustomFieldFilterLogic) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomFieldFilterLogic) GetLabelOk() (*string, bool) {
+func (o *CustomFieldFilterLogic) GetLabelOk() (*CustomFieldFilterLogicLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *CustomFieldFilterLogic) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *CustomFieldFilterLogic) SetLabel(v string) {
+// SetLabel gets a reference to the given CustomFieldFilterLogicLabel and assigns it to the Label field.
+func (o *CustomFieldFilterLogic) SetLabel(v CustomFieldFilterLogicLabel) {
 	o.Label = &v
 }
 

@@ -19,9 +19,8 @@ var _ MappedNullable = &InterfaceRfRole{}
 
 // InterfaceRfRole struct for InterfaceRfRole
 type InterfaceRfRole struct {
-	// * `ap` - Access point * `station` - Station
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *InterfaceRfRoleValue `json:"value,omitempty"`
+	Label                *InterfaceRfRoleLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewInterfaceRfRoleWithDefaults() *InterfaceRfRole {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *InterfaceRfRole) GetValue() string {
+func (o *InterfaceRfRole) GetValue() InterfaceRfRoleValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret InterfaceRfRoleValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *InterfaceRfRole) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfaceRfRole) GetValueOk() (*string, bool) {
+func (o *InterfaceRfRole) GetValueOk() (*InterfaceRfRoleValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *InterfaceRfRole) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *InterfaceRfRole) SetValue(v string) {
+// SetValue gets a reference to the given InterfaceRfRoleValue and assigns it to the Value field.
+func (o *InterfaceRfRole) SetValue(v InterfaceRfRoleValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *InterfaceRfRole) GetLabel() string {
+func (o *InterfaceRfRole) GetLabel() InterfaceRfRoleLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret InterfaceRfRoleLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *InterfaceRfRole) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfaceRfRole) GetLabelOk() (*string, bool) {
+func (o *InterfaceRfRole) GetLabelOk() (*InterfaceRfRoleLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *InterfaceRfRole) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *InterfaceRfRole) SetLabel(v string) {
+// SetLabel gets a reference to the given InterfaceRfRoleLabel and assigns it to the Label field.
+func (o *InterfaceRfRole) SetLabel(v InterfaceRfRoleLabel) {
 	o.Label = &v
 }
 

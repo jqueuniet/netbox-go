@@ -19,9 +19,8 @@ var _ MappedNullable = &DeviceAirflow{}
 
 // DeviceAirflow struct for DeviceAirflow
 type DeviceAirflow struct {
-	// * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `rear-to-side` - Rear to side * `bottom-to-top` - Bottom to top * `top-to-bottom` - Top to bottom * `passive` - Passive * `mixed` - Mixed
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *DeviceAirflowValue `json:"value,omitempty"`
+	Label                *DeviceAirflowLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewDeviceAirflowWithDefaults() *DeviceAirflow {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *DeviceAirflow) GetValue() string {
+func (o *DeviceAirflow) GetValue() DeviceAirflowValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret DeviceAirflowValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *DeviceAirflow) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceAirflow) GetValueOk() (*string, bool) {
+func (o *DeviceAirflow) GetValueOk() (*DeviceAirflowValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *DeviceAirflow) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *DeviceAirflow) SetValue(v string) {
+// SetValue gets a reference to the given DeviceAirflowValue and assigns it to the Value field.
+func (o *DeviceAirflow) SetValue(v DeviceAirflowValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *DeviceAirflow) GetLabel() string {
+func (o *DeviceAirflow) GetLabel() DeviceAirflowLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret DeviceAirflowLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *DeviceAirflow) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeviceAirflow) GetLabelOk() (*string, bool) {
+func (o *DeviceAirflow) GetLabelOk() (*DeviceAirflowLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *DeviceAirflow) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *DeviceAirflow) SetLabel(v string) {
+// SetLabel gets a reference to the given DeviceAirflowLabel and assigns it to the Label field.
+func (o *DeviceAirflow) SetLabel(v DeviceAirflowLabel) {
 	o.Label = &v
 }
 

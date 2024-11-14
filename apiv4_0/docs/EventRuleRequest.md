@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **TypeJobEnd** | Pointer to **bool** | Triggers when a job for a matching object terminates. | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Conditions** | Pointer to **interface{}** | A set of conditions which determine whether the event will be generated. | [optional] 
-**ActionType** | **string** | * &#x60;webhook&#x60; - Webhook * &#x60;script&#x60; - Script | 
+**ActionType** | [**EventRuleActionTypeValue**](EventRuleActionTypeValue.md) |  | 
 **ActionObjectType** | **string** |  | 
 **ActionObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewEventRuleRequest
 
-`func NewEventRuleRequest(objectTypes []string, name string, actionType string, actionObjectType string, ) *EventRuleRequest`
+`func NewEventRuleRequest(objectTypes []string, name string, actionType EventRuleActionTypeValue, actionObjectType string, ) *EventRuleRequest`
 
 NewEventRuleRequest instantiates a new EventRuleRequest object
 This constructor will assign default values to properties that have it defined,
@@ -266,20 +266,20 @@ HasConditions returns a boolean if a field has been set.
 UnsetConditions ensures that no value is present for Conditions, not even an explicit nil
 ### GetActionType
 
-`func (o *EventRuleRequest) GetActionType() string`
+`func (o *EventRuleRequest) GetActionType() EventRuleActionTypeValue`
 
 GetActionType returns the ActionType field if non-nil, zero value otherwise.
 
 ### GetActionTypeOk
 
-`func (o *EventRuleRequest) GetActionTypeOk() (*string, bool)`
+`func (o *EventRuleRequest) GetActionTypeOk() (*EventRuleActionTypeValue, bool)`
 
 GetActionTypeOk returns a tuple with the ActionType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetActionType
 
-`func (o *EventRuleRequest) SetActionType(v string)`
+`func (o *EventRuleRequest) SetActionType(v EventRuleActionTypeValue)`
 
 SetActionType sets ActionType field to given value.
 

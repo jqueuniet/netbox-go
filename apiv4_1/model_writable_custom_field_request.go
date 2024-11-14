@@ -20,10 +20,9 @@ var _ MappedNullable = &WritableCustomFieldRequest{}
 
 // WritableCustomFieldRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type WritableCustomFieldRequest struct {
-	ObjectTypes []string `json:"object_types"`
-	// The type of data this custom field holds  * `text` - Text * `longtext` - Text (long) * `integer` - Integer * `decimal` - Decimal * `boolean` - Boolean (true/false) * `date` - Date * `datetime` - Date & time * `url` - URL * `json` - JSON * `select` - Selection * `multiselect` - Multiple selection * `object` - Object * `multiobject` - Multiple objects
-	Type              *string        `json:"type,omitempty"`
-	RelatedObjectType NullableString `json:"related_object_type,omitempty"`
+	ObjectTypes       []string                               `json:"object_types"`
+	Type              *PatchedWritableCustomFieldRequestType `json:"type,omitempty"`
+	RelatedObjectType NullableString                         `json:"related_object_type,omitempty"`
 	// Internal field name
 	Name string `json:"name" validate:"regexp=^[a-z0-9_]+$"`
 	// Name of the field as displayed to users (if not provided, 'the field's name will be used)
@@ -36,13 +35,10 @@ type WritableCustomFieldRequest struct {
 	// The value of this field must be unique for the assigned object
 	Unique *bool `json:"unique,omitempty"`
 	// Weighting for search. Lower values are considered more important. Fields with a search weight of zero will be ignored.
-	SearchWeight *int32 `json:"search_weight,omitempty"`
-	// Loose matches any instance of a given string; exact matches the entire field.  * `disabled` - Disabled * `loose` - Loose * `exact` - Exact
-	FilterLogic *string `json:"filter_logic,omitempty"`
-	// Specifies whether the custom field is displayed in the UI  * `always` - Always * `if-set` - If set * `hidden` - Hidden
-	UiVisible *string `json:"ui_visible,omitempty"`
-	// Specifies whether the custom field value can be edited in the UI  * `yes` - Yes * `no` - No * `hidden` - Hidden
-	UiEditable *string `json:"ui_editable,omitempty"`
+	SearchWeight *int32                                        `json:"search_weight,omitempty"`
+	FilterLogic  *PatchedWritableCustomFieldRequestFilterLogic `json:"filter_logic,omitempty"`
+	UiVisible    *PatchedWritableCustomFieldRequestUiVisible   `json:"ui_visible,omitempty"`
+	UiEditable   *PatchedWritableCustomFieldRequestUiEditable  `json:"ui_editable,omitempty"`
 	// Replicate this value when cloning objects
 	IsCloneable *bool `json:"is_cloneable,omitempty"`
 	// Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. \"Foo\").
@@ -108,9 +104,9 @@ func (o *WritableCustomFieldRequest) SetObjectTypes(v []string) {
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *WritableCustomFieldRequest) GetType() string {
+func (o *WritableCustomFieldRequest) GetType() PatchedWritableCustomFieldRequestType {
 	if o == nil || IsNil(o.Type) {
-		var ret string
+		var ret PatchedWritableCustomFieldRequestType
 		return ret
 	}
 	return *o.Type
@@ -118,7 +114,7 @@ func (o *WritableCustomFieldRequest) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableCustomFieldRequest) GetTypeOk() (*string, bool) {
+func (o *WritableCustomFieldRequest) GetTypeOk() (*PatchedWritableCustomFieldRequestType, bool) {
 	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
@@ -134,8 +130,8 @@ func (o *WritableCustomFieldRequest) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *WritableCustomFieldRequest) SetType(v string) {
+// SetType gets a reference to the given PatchedWritableCustomFieldRequestType and assigns it to the Type field.
+func (o *WritableCustomFieldRequest) SetType(v PatchedWritableCustomFieldRequestType) {
 	o.Type = &v
 }
 
@@ -399,9 +395,9 @@ func (o *WritableCustomFieldRequest) SetSearchWeight(v int32) {
 }
 
 // GetFilterLogic returns the FilterLogic field value if set, zero value otherwise.
-func (o *WritableCustomFieldRequest) GetFilterLogic() string {
+func (o *WritableCustomFieldRequest) GetFilterLogic() PatchedWritableCustomFieldRequestFilterLogic {
 	if o == nil || IsNil(o.FilterLogic) {
-		var ret string
+		var ret PatchedWritableCustomFieldRequestFilterLogic
 		return ret
 	}
 	return *o.FilterLogic
@@ -409,7 +405,7 @@ func (o *WritableCustomFieldRequest) GetFilterLogic() string {
 
 // GetFilterLogicOk returns a tuple with the FilterLogic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableCustomFieldRequest) GetFilterLogicOk() (*string, bool) {
+func (o *WritableCustomFieldRequest) GetFilterLogicOk() (*PatchedWritableCustomFieldRequestFilterLogic, bool) {
 	if o == nil || IsNil(o.FilterLogic) {
 		return nil, false
 	}
@@ -425,15 +421,15 @@ func (o *WritableCustomFieldRequest) HasFilterLogic() bool {
 	return false
 }
 
-// SetFilterLogic gets a reference to the given string and assigns it to the FilterLogic field.
-func (o *WritableCustomFieldRequest) SetFilterLogic(v string) {
+// SetFilterLogic gets a reference to the given PatchedWritableCustomFieldRequestFilterLogic and assigns it to the FilterLogic field.
+func (o *WritableCustomFieldRequest) SetFilterLogic(v PatchedWritableCustomFieldRequestFilterLogic) {
 	o.FilterLogic = &v
 }
 
 // GetUiVisible returns the UiVisible field value if set, zero value otherwise.
-func (o *WritableCustomFieldRequest) GetUiVisible() string {
+func (o *WritableCustomFieldRequest) GetUiVisible() PatchedWritableCustomFieldRequestUiVisible {
 	if o == nil || IsNil(o.UiVisible) {
-		var ret string
+		var ret PatchedWritableCustomFieldRequestUiVisible
 		return ret
 	}
 	return *o.UiVisible
@@ -441,7 +437,7 @@ func (o *WritableCustomFieldRequest) GetUiVisible() string {
 
 // GetUiVisibleOk returns a tuple with the UiVisible field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableCustomFieldRequest) GetUiVisibleOk() (*string, bool) {
+func (o *WritableCustomFieldRequest) GetUiVisibleOk() (*PatchedWritableCustomFieldRequestUiVisible, bool) {
 	if o == nil || IsNil(o.UiVisible) {
 		return nil, false
 	}
@@ -457,15 +453,15 @@ func (o *WritableCustomFieldRequest) HasUiVisible() bool {
 	return false
 }
 
-// SetUiVisible gets a reference to the given string and assigns it to the UiVisible field.
-func (o *WritableCustomFieldRequest) SetUiVisible(v string) {
+// SetUiVisible gets a reference to the given PatchedWritableCustomFieldRequestUiVisible and assigns it to the UiVisible field.
+func (o *WritableCustomFieldRequest) SetUiVisible(v PatchedWritableCustomFieldRequestUiVisible) {
 	o.UiVisible = &v
 }
 
 // GetUiEditable returns the UiEditable field value if set, zero value otherwise.
-func (o *WritableCustomFieldRequest) GetUiEditable() string {
+func (o *WritableCustomFieldRequest) GetUiEditable() PatchedWritableCustomFieldRequestUiEditable {
 	if o == nil || IsNil(o.UiEditable) {
-		var ret string
+		var ret PatchedWritableCustomFieldRequestUiEditable
 		return ret
 	}
 	return *o.UiEditable
@@ -473,7 +469,7 @@ func (o *WritableCustomFieldRequest) GetUiEditable() string {
 
 // GetUiEditableOk returns a tuple with the UiEditable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableCustomFieldRequest) GetUiEditableOk() (*string, bool) {
+func (o *WritableCustomFieldRequest) GetUiEditableOk() (*PatchedWritableCustomFieldRequestUiEditable, bool) {
 	if o == nil || IsNil(o.UiEditable) {
 		return nil, false
 	}
@@ -489,8 +485,8 @@ func (o *WritableCustomFieldRequest) HasUiEditable() bool {
 	return false
 }
 
-// SetUiEditable gets a reference to the given string and assigns it to the UiEditable field.
-func (o *WritableCustomFieldRequest) SetUiEditable(v string) {
+// SetUiEditable gets a reference to the given PatchedWritableCustomFieldRequestUiEditable and assigns it to the UiEditable field.
+func (o *WritableCustomFieldRequest) SetUiEditable(v PatchedWritableCustomFieldRequestUiEditable) {
 	o.UiEditable = &v
 }
 

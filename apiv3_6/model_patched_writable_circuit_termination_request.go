@@ -19,9 +19,8 @@ var _ MappedNullable = &PatchedWritableCircuitTerminationRequest{}
 
 // PatchedWritableCircuitTerminationRequest Adds support for custom fields and tags.
 type PatchedWritableCircuitTerminationRequest struct {
-	Circuit *int32 `json:"circuit,omitempty"`
-	// * `A` - A * `Z` - Z
-	TermSide        *string       `json:"term_side,omitempty"`
+	Circuit         *int32        `json:"circuit,omitempty"`
+	TermSide        *Termination  `json:"term_side,omitempty"`
 	Site            NullableInt32 `json:"site,omitempty"`
 	ProviderNetwork NullableInt32 `json:"provider_network,omitempty"`
 	// Physical circuit speed
@@ -92,9 +91,9 @@ func (o *PatchedWritableCircuitTerminationRequest) SetCircuit(v int32) {
 }
 
 // GetTermSide returns the TermSide field value if set, zero value otherwise.
-func (o *PatchedWritableCircuitTerminationRequest) GetTermSide() string {
+func (o *PatchedWritableCircuitTerminationRequest) GetTermSide() Termination {
 	if o == nil || IsNil(o.TermSide) {
-		var ret string
+		var ret Termination
 		return ret
 	}
 	return *o.TermSide
@@ -102,7 +101,7 @@ func (o *PatchedWritableCircuitTerminationRequest) GetTermSide() string {
 
 // GetTermSideOk returns a tuple with the TermSide field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableCircuitTerminationRequest) GetTermSideOk() (*string, bool) {
+func (o *PatchedWritableCircuitTerminationRequest) GetTermSideOk() (*Termination, bool) {
 	if o == nil || IsNil(o.TermSide) {
 		return nil, false
 	}
@@ -118,8 +117,8 @@ func (o *PatchedWritableCircuitTerminationRequest) HasTermSide() bool {
 	return false
 }
 
-// SetTermSide gets a reference to the given string and assigns it to the TermSide field.
-func (o *PatchedWritableCircuitTerminationRequest) SetTermSide(v string) {
+// SetTermSide gets a reference to the given Termination and assigns it to the TermSide field.
+func (o *PatchedWritableCircuitTerminationRequest) SetTermSide(v Termination) {
 	o.TermSide = &v
 }
 

@@ -19,9 +19,8 @@ var _ MappedNullable = &InterfacePoeType{}
 
 // InterfacePoeType struct for InterfacePoeType
 type InterfacePoeType struct {
-	// * `type1-ieee802.3af` - 802.3af (Type 1) * `type2-ieee802.3at` - 802.3at (Type 2) * `type3-ieee802.3bt` - 802.3bt (Type 3) * `type4-ieee802.3bt` - 802.3bt (Type 4) * `passive-24v-2pair` - Passive 24V (2-pair) * `passive-24v-4pair` - Passive 24V (4-pair) * `passive-48v-2pair` - Passive 48V (2-pair) * `passive-48v-4pair` - Passive 48V (4-pair)
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *InterfacePoeTypeValue `json:"value,omitempty"`
+	Label                *InterfacePoeTypeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewInterfacePoeTypeWithDefaults() *InterfacePoeType {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *InterfacePoeType) GetValue() string {
+func (o *InterfacePoeType) GetValue() InterfacePoeTypeValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret InterfacePoeTypeValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *InterfacePoeType) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfacePoeType) GetValueOk() (*string, bool) {
+func (o *InterfacePoeType) GetValueOk() (*InterfacePoeTypeValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *InterfacePoeType) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *InterfacePoeType) SetValue(v string) {
+// SetValue gets a reference to the given InterfacePoeTypeValue and assigns it to the Value field.
+func (o *InterfacePoeType) SetValue(v InterfacePoeTypeValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *InterfacePoeType) GetLabel() string {
+func (o *InterfacePoeType) GetLabel() InterfacePoeTypeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret InterfacePoeTypeLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *InterfacePoeType) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InterfacePoeType) GetLabelOk() (*string, bool) {
+func (o *InterfacePoeType) GetLabelOk() (*InterfacePoeTypeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *InterfacePoeType) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *InterfacePoeType) SetLabel(v string) {
+// SetLabel gets a reference to the given InterfacePoeTypeLabel and assigns it to the Label field.
+func (o *InterfacePoeType) SetLabel(v InterfacePoeTypeLabel) {
 	o.Label = &v
 }
 

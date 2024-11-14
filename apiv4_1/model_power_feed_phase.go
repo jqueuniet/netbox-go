@@ -19,9 +19,8 @@ var _ MappedNullable = &PowerFeedPhase{}
 
 // PowerFeedPhase struct for PowerFeedPhase
 type PowerFeedPhase struct {
-	// * `single-phase` - Single phase * `three-phase` - Three-phase
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *PatchedWritablePowerFeedRequestPhase `json:"value,omitempty"`
+	Label                *PowerFeedPhaseLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewPowerFeedPhaseWithDefaults() *PowerFeedPhase {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *PowerFeedPhase) GetValue() string {
+func (o *PowerFeedPhase) GetValue() PatchedWritablePowerFeedRequestPhase {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret PatchedWritablePowerFeedRequestPhase
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *PowerFeedPhase) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PowerFeedPhase) GetValueOk() (*string, bool) {
+func (o *PowerFeedPhase) GetValueOk() (*PatchedWritablePowerFeedRequestPhase, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *PowerFeedPhase) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *PowerFeedPhase) SetValue(v string) {
+// SetValue gets a reference to the given PatchedWritablePowerFeedRequestPhase and assigns it to the Value field.
+func (o *PowerFeedPhase) SetValue(v PatchedWritablePowerFeedRequestPhase) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *PowerFeedPhase) GetLabel() string {
+func (o *PowerFeedPhase) GetLabel() PowerFeedPhaseLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret PowerFeedPhaseLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *PowerFeedPhase) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PowerFeedPhase) GetLabelOk() (*string, bool) {
+func (o *PowerFeedPhase) GetLabelOk() (*PowerFeedPhaseLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *PowerFeedPhase) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *PowerFeedPhase) SetLabel(v string) {
+// SetLabel gets a reference to the given PowerFeedPhaseLabel and assigns it to the Label field.
+func (o *PowerFeedPhase) SetLabel(v PowerFeedPhaseLabel) {
 	o.Label = &v
 }
 

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Version** | Pointer to **int32** | * &#x60;1&#x60; - IKEv1 * &#x60;2&#x60; - IKEv2 | [optional] 
-**Mode** | Pointer to **string** | * &#x60;aggressive&#x60; - Aggressive * &#x60;main&#x60; - Main | [optional] 
+**Version** | Pointer to [**PatchedWritableIKEPolicyRequestVersion**](PatchedWritableIKEPolicyRequestVersion.md) |  | [optional] 
+**Mode** | Pointer to [**PatchedWritableIKEPolicyRequestMode**](PatchedWritableIKEPolicyRequestMode.md) |  | [optional] 
 **Proposals** | Pointer to **[]int32** |  | [optional] 
 **PresharedKey** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -85,20 +85,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *PatchedWritableIKEPolicyRequest) GetVersion() int32`
+`func (o *PatchedWritableIKEPolicyRequest) GetVersion() PatchedWritableIKEPolicyRequestVersion`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *PatchedWritableIKEPolicyRequest) GetVersionOk() (*int32, bool)`
+`func (o *PatchedWritableIKEPolicyRequest) GetVersionOk() (*PatchedWritableIKEPolicyRequestVersion, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *PatchedWritableIKEPolicyRequest) SetVersion(v int32)`
+`func (o *PatchedWritableIKEPolicyRequest) SetVersion(v PatchedWritableIKEPolicyRequestVersion)`
 
 SetVersion sets Version field to given value.
 
@@ -110,20 +110,20 @@ HasVersion returns a boolean if a field has been set.
 
 ### GetMode
 
-`func (o *PatchedWritableIKEPolicyRequest) GetMode() string`
+`func (o *PatchedWritableIKEPolicyRequest) GetMode() PatchedWritableIKEPolicyRequestMode`
 
 GetMode returns the Mode field if non-nil, zero value otherwise.
 
 ### GetModeOk
 
-`func (o *PatchedWritableIKEPolicyRequest) GetModeOk() (*string, bool)`
+`func (o *PatchedWritableIKEPolicyRequest) GetModeOk() (*PatchedWritableIKEPolicyRequestMode, bool)`
 
 GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMode
 
-`func (o *PatchedWritableIKEPolicyRequest) SetMode(v string)`
+`func (o *PatchedWritableIKEPolicyRequest) SetMode(v PatchedWritableIKEPolicyRequestMode)`
 
 SetMode sets Mode field to given value.
 

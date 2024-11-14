@@ -1570,7 +1570,7 @@ import (
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this config template.
 	writableConfigTemplateRequest := *openapiclient.NewWritableConfigTemplateRequest("Name_example", "TemplateCode_example") // WritableConfigTemplateRequest | 
-	format := "format_example" // string |  (optional)
+	format := openapiclient.dcim_devices_render_config_create_format_parameter("json") // DcimDevicesRenderConfigCreateFormatParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1601,7 +1601,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **writableConfigTemplateRequest** | [**WritableConfigTemplateRequest**](WritableConfigTemplateRequest.md) |  | 
- **format** | **string** |  | 
+ **format** | [**DcimDevicesRenderConfigCreateFormatParameter**](DcimDevicesRenderConfigCreateFormatParameter.md) |  | 
 
 ### Return type
 
@@ -2004,7 +2004,7 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ContentTypes_example"}, "Type_example", "Name_example")} // []CustomFieldRequest | 
+	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ContentTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2068,7 +2068,7 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ContentTypes_example"}, "Type_example", "Name_example")} // []CustomFieldRequest | 
+	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ContentTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2134,7 +2134,7 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ContentTypes_example"}, "Type_example", "Name_example")} // []CustomFieldRequest | 
+	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ContentTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

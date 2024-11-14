@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Value** | Pointer to **NullableString** | * &#x60;km&#x60; - Kilometers * &#x60;m&#x60; - Meters * &#x60;mi&#x60; - Miles * &#x60;ft&#x60; - Feet | [optional] 
-**Label** | Pointer to **string** |  | [optional] 
+**Value** | Pointer to [**WirelessLinkDistanceUnitValue**](WirelessLinkDistanceUnitValue.md) |  | [optional] 
+**Label** | Pointer to [**WirelessLinkDistanceUnitLabel**](WirelessLinkDistanceUnitLabel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetValue
 
-`func (o *WirelessLinkDistanceUnit) GetValue() string`
+`func (o *WirelessLinkDistanceUnit) GetValue() WirelessLinkDistanceUnitValue`
 
 GetValue returns the Value field if non-nil, zero value otherwise.
 
 ### GetValueOk
 
-`func (o *WirelessLinkDistanceUnit) GetValueOk() (*string, bool)`
+`func (o *WirelessLinkDistanceUnit) GetValueOk() (*WirelessLinkDistanceUnitValue, bool)`
 
 GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValue
 
-`func (o *WirelessLinkDistanceUnit) SetValue(v string)`
+`func (o *WirelessLinkDistanceUnit) SetValue(v WirelessLinkDistanceUnitValue)`
 
 SetValue sets Value field to given value.
 
@@ -51,32 +51,22 @@ SetValue sets Value field to given value.
 
 HasValue returns a boolean if a field has been set.
 
-### SetValueNil
-
-`func (o *WirelessLinkDistanceUnit) SetValueNil(b bool)`
-
- SetValueNil sets the value for Value to be an explicit nil
-
-### UnsetValue
-`func (o *WirelessLinkDistanceUnit) UnsetValue()`
-
-UnsetValue ensures that no value is present for Value, not even an explicit nil
 ### GetLabel
 
-`func (o *WirelessLinkDistanceUnit) GetLabel() string`
+`func (o *WirelessLinkDistanceUnit) GetLabel() WirelessLinkDistanceUnitLabel`
 
 GetLabel returns the Label field if non-nil, zero value otherwise.
 
 ### GetLabelOk
 
-`func (o *WirelessLinkDistanceUnit) GetLabelOk() (*string, bool)`
+`func (o *WirelessLinkDistanceUnit) GetLabelOk() (*WirelessLinkDistanceUnitLabel, bool)`
 
 GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLabel
 
-`func (o *WirelessLinkDistanceUnit) SetLabel(v string)`
+`func (o *WirelessLinkDistanceUnit) SetLabel(v WirelessLinkDistanceUnitLabel)`
 
 SetLabel sets Label field to given value.
 

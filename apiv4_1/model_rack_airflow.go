@@ -19,9 +19,8 @@ var _ MappedNullable = &RackAirflow{}
 
 // RackAirflow struct for RackAirflow
 type RackAirflow struct {
-	// * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *PatchedWritableRackRequestAirflow `json:"value,omitempty"`
+	Label                *RackAirflowLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewRackAirflowWithDefaults() *RackAirflow {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *RackAirflow) GetValue() string {
+func (o *RackAirflow) GetValue() PatchedWritableRackRequestAirflow {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret PatchedWritableRackRequestAirflow
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *RackAirflow) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackAirflow) GetValueOk() (*string, bool) {
+func (o *RackAirflow) GetValueOk() (*PatchedWritableRackRequestAirflow, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *RackAirflow) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *RackAirflow) SetValue(v string) {
+// SetValue gets a reference to the given PatchedWritableRackRequestAirflow and assigns it to the Value field.
+func (o *RackAirflow) SetValue(v PatchedWritableRackRequestAirflow) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *RackAirflow) GetLabel() string {
+func (o *RackAirflow) GetLabel() RackAirflowLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret RackAirflowLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *RackAirflow) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackAirflow) GetLabelOk() (*string, bool) {
+func (o *RackAirflow) GetLabelOk() (*RackAirflowLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *RackAirflow) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *RackAirflow) SetLabel(v string) {
+// SetLabel gets a reference to the given RackAirflowLabel and assigns it to the Label field.
+func (o *RackAirflow) SetLabel(v RackAirflowLabel) {
 	o.Label = &v
 }
 

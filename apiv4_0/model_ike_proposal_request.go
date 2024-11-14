@@ -20,16 +20,12 @@ var _ MappedNullable = &IKEProposalRequest{}
 
 // IKEProposalRequest Adds support for custom fields and tags.
 type IKEProposalRequest struct {
-	Name        string  `json:"name"`
-	Description *string `json:"description,omitempty"`
-	// * `preshared-keys` - Pre-shared keys * `certificates` - Certificates * `rsa-signatures` - RSA signatures * `dsa-signatures` - DSA signatures
-	AuthenticationMethod string `json:"authentication_method"`
-	// * `aes-128-cbc` - 128-bit AES (CBC) * `aes-128-gcm` - 128-bit AES (GCM) * `aes-192-cbc` - 192-bit AES (CBC) * `aes-192-gcm` - 192-bit AES (GCM) * `aes-256-cbc` - 256-bit AES (CBC) * `aes-256-gcm` - 256-bit AES (GCM) * `3des-cbc` - 3DES * `des-cbc` - DES
-	EncryptionAlgorithm string `json:"encryption_algorithm"`
-	// * `hmac-sha1` - SHA-1 HMAC * `hmac-sha256` - SHA-256 HMAC * `hmac-sha384` - SHA-384 HMAC * `hmac-sha512` - SHA-512 HMAC * `hmac-md5` - MD5 HMAC
-	AuthenticationAlgorithm *string `json:"authentication_algorithm,omitempty"`
-	// * `1` - Group 1 * `2` - Group 2 * `5` - Group 5 * `14` - Group 14 * `15` - Group 15 * `16` - Group 16 * `17` - Group 17 * `18` - Group 18 * `19` - Group 19 * `20` - Group 20 * `21` - Group 21 * `22` - Group 22 * `23` - Group 23 * `24` - Group 24 * `25` - Group 25 * `26` - Group 26 * `27` - Group 27 * `28` - Group 28 * `29` - Group 29 * `30` - Group 30 * `31` - Group 31 * `32` - Group 32 * `33` - Group 33 * `34` - Group 34
-	Group int32 `json:"group"`
+	Name                    string                                   `json:"name"`
+	Description             *string                                  `json:"description,omitempty"`
+	AuthenticationMethod    IKEProposalAuthenticationMethodValue     `json:"authentication_method"`
+	EncryptionAlgorithm     IKEProposalEncryptionAlgorithmValue      `json:"encryption_algorithm"`
+	AuthenticationAlgorithm *IKEProposalAuthenticationAlgorithmValue `json:"authentication_algorithm,omitempty"`
+	Group                   IKEProposalGroupValue                    `json:"group"`
 	// Security association lifetime (in seconds)
 	SaLifetime           NullableInt32          `json:"sa_lifetime,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
@@ -44,7 +40,7 @@ type _IKEProposalRequest IKEProposalRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIKEProposalRequest(name string, authenticationMethod string, encryptionAlgorithm string, group int32) *IKEProposalRequest {
+func NewIKEProposalRequest(name string, authenticationMethod IKEProposalAuthenticationMethodValue, encryptionAlgorithm IKEProposalEncryptionAlgorithmValue, group IKEProposalGroupValue) *IKEProposalRequest {
 	this := IKEProposalRequest{}
 	this.Name = name
 	this.AuthenticationMethod = authenticationMethod
@@ -118,9 +114,9 @@ func (o *IKEProposalRequest) SetDescription(v string) {
 }
 
 // GetAuthenticationMethod returns the AuthenticationMethod field value
-func (o *IKEProposalRequest) GetAuthenticationMethod() string {
+func (o *IKEProposalRequest) GetAuthenticationMethod() IKEProposalAuthenticationMethodValue {
 	if o == nil {
-		var ret string
+		var ret IKEProposalAuthenticationMethodValue
 		return ret
 	}
 
@@ -129,7 +125,7 @@ func (o *IKEProposalRequest) GetAuthenticationMethod() string {
 
 // GetAuthenticationMethodOk returns a tuple with the AuthenticationMethod field value
 // and a boolean to check if the value has been set.
-func (o *IKEProposalRequest) GetAuthenticationMethodOk() (*string, bool) {
+func (o *IKEProposalRequest) GetAuthenticationMethodOk() (*IKEProposalAuthenticationMethodValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -137,14 +133,14 @@ func (o *IKEProposalRequest) GetAuthenticationMethodOk() (*string, bool) {
 }
 
 // SetAuthenticationMethod sets field value
-func (o *IKEProposalRequest) SetAuthenticationMethod(v string) {
+func (o *IKEProposalRequest) SetAuthenticationMethod(v IKEProposalAuthenticationMethodValue) {
 	o.AuthenticationMethod = v
 }
 
 // GetEncryptionAlgorithm returns the EncryptionAlgorithm field value
-func (o *IKEProposalRequest) GetEncryptionAlgorithm() string {
+func (o *IKEProposalRequest) GetEncryptionAlgorithm() IKEProposalEncryptionAlgorithmValue {
 	if o == nil {
-		var ret string
+		var ret IKEProposalEncryptionAlgorithmValue
 		return ret
 	}
 
@@ -153,7 +149,7 @@ func (o *IKEProposalRequest) GetEncryptionAlgorithm() string {
 
 // GetEncryptionAlgorithmOk returns a tuple with the EncryptionAlgorithm field value
 // and a boolean to check if the value has been set.
-func (o *IKEProposalRequest) GetEncryptionAlgorithmOk() (*string, bool) {
+func (o *IKEProposalRequest) GetEncryptionAlgorithmOk() (*IKEProposalEncryptionAlgorithmValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -161,14 +157,14 @@ func (o *IKEProposalRequest) GetEncryptionAlgorithmOk() (*string, bool) {
 }
 
 // SetEncryptionAlgorithm sets field value
-func (o *IKEProposalRequest) SetEncryptionAlgorithm(v string) {
+func (o *IKEProposalRequest) SetEncryptionAlgorithm(v IKEProposalEncryptionAlgorithmValue) {
 	o.EncryptionAlgorithm = v
 }
 
 // GetAuthenticationAlgorithm returns the AuthenticationAlgorithm field value if set, zero value otherwise.
-func (o *IKEProposalRequest) GetAuthenticationAlgorithm() string {
+func (o *IKEProposalRequest) GetAuthenticationAlgorithm() IKEProposalAuthenticationAlgorithmValue {
 	if o == nil || IsNil(o.AuthenticationAlgorithm) {
-		var ret string
+		var ret IKEProposalAuthenticationAlgorithmValue
 		return ret
 	}
 	return *o.AuthenticationAlgorithm
@@ -176,7 +172,7 @@ func (o *IKEProposalRequest) GetAuthenticationAlgorithm() string {
 
 // GetAuthenticationAlgorithmOk returns a tuple with the AuthenticationAlgorithm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IKEProposalRequest) GetAuthenticationAlgorithmOk() (*string, bool) {
+func (o *IKEProposalRequest) GetAuthenticationAlgorithmOk() (*IKEProposalAuthenticationAlgorithmValue, bool) {
 	if o == nil || IsNil(o.AuthenticationAlgorithm) {
 		return nil, false
 	}
@@ -192,15 +188,15 @@ func (o *IKEProposalRequest) HasAuthenticationAlgorithm() bool {
 	return false
 }
 
-// SetAuthenticationAlgorithm gets a reference to the given string and assigns it to the AuthenticationAlgorithm field.
-func (o *IKEProposalRequest) SetAuthenticationAlgorithm(v string) {
+// SetAuthenticationAlgorithm gets a reference to the given IKEProposalAuthenticationAlgorithmValue and assigns it to the AuthenticationAlgorithm field.
+func (o *IKEProposalRequest) SetAuthenticationAlgorithm(v IKEProposalAuthenticationAlgorithmValue) {
 	o.AuthenticationAlgorithm = &v
 }
 
 // GetGroup returns the Group field value
-func (o *IKEProposalRequest) GetGroup() int32 {
+func (o *IKEProposalRequest) GetGroup() IKEProposalGroupValue {
 	if o == nil {
-		var ret int32
+		var ret IKEProposalGroupValue
 		return ret
 	}
 
@@ -209,7 +205,7 @@ func (o *IKEProposalRequest) GetGroup() int32 {
 
 // GetGroupOk returns a tuple with the Group field value
 // and a boolean to check if the value has been set.
-func (o *IKEProposalRequest) GetGroupOk() (*int32, bool) {
+func (o *IKEProposalRequest) GetGroupOk() (*IKEProposalGroupValue, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -217,7 +213,7 @@ func (o *IKEProposalRequest) GetGroupOk() (*int32, bool) {
 }
 
 // SetGroup sets field value
-func (o *IKEProposalRequest) SetGroup(v int32) {
+func (o *IKEProposalRequest) SetGroup(v IKEProposalGroupValue) {
 	o.Group = v
 }
 

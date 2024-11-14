@@ -19,9 +19,8 @@ var _ MappedNullable = &ClusterStatus{}
 
 // ClusterStatus struct for ClusterStatus
 type ClusterStatus struct {
-	// * `planned` - Planned * `staging` - Staging * `active` - Active * `decommissioning` - Decommissioning * `offline` - Offline
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *ClusterStatusValue `json:"value,omitempty"`
+	Label                *ClusterStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewClusterStatusWithDefaults() *ClusterStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *ClusterStatus) GetValue() string {
+func (o *ClusterStatus) GetValue() ClusterStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret ClusterStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *ClusterStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterStatus) GetValueOk() (*string, bool) {
+func (o *ClusterStatus) GetValueOk() (*ClusterStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *ClusterStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *ClusterStatus) SetValue(v string) {
+// SetValue gets a reference to the given ClusterStatusValue and assigns it to the Value field.
+func (o *ClusterStatus) SetValue(v ClusterStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *ClusterStatus) GetLabel() string {
+func (o *ClusterStatus) GetLabel() ClusterStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret ClusterStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *ClusterStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClusterStatus) GetLabelOk() (*string, bool) {
+func (o *ClusterStatus) GetLabelOk() (*ClusterStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *ClusterStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *ClusterStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given ClusterStatusLabel and assigns it to the Label field.
+func (o *ClusterStatus) SetLabel(v ClusterStatusLabel) {
 	o.Label = &v
 }
 

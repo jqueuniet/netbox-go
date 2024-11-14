@@ -19,9 +19,8 @@ var _ MappedNullable = &PrefixStatus{}
 
 // PrefixStatus struct for PrefixStatus
 type PrefixStatus struct {
-	// * `container` - Container * `active` - Active * `reserved` - Reserved * `deprecated` - Deprecated
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *PrefixStatusValue `json:"value,omitempty"`
+	Label                *PrefixStatusLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewPrefixStatusWithDefaults() *PrefixStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *PrefixStatus) GetValue() string {
+func (o *PrefixStatus) GetValue() PrefixStatusValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret PrefixStatusValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *PrefixStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PrefixStatus) GetValueOk() (*string, bool) {
+func (o *PrefixStatus) GetValueOk() (*PrefixStatusValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *PrefixStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *PrefixStatus) SetValue(v string) {
+// SetValue gets a reference to the given PrefixStatusValue and assigns it to the Value field.
+func (o *PrefixStatus) SetValue(v PrefixStatusValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *PrefixStatus) GetLabel() string {
+func (o *PrefixStatus) GetLabel() PrefixStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret PrefixStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *PrefixStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PrefixStatus) GetLabelOk() (*string, bool) {
+func (o *PrefixStatus) GetLabelOk() (*PrefixStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *PrefixStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *PrefixStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given PrefixStatusLabel and assigns it to the Label field.
+func (o *PrefixStatus) SetLabel(v PrefixStatusLabel) {
 	o.Label = &v
 }
 

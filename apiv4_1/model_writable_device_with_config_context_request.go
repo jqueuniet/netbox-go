@@ -33,16 +33,13 @@ type WritableDeviceWithConfigContextRequest struct {
 	Location NullableBriefLocationRequest `json:"location,omitempty"`
 	Rack     NullableBriefRackRequest     `json:"rack,omitempty"`
 	Position NullableFloat64              `json:"position,omitempty"`
-	// * `front` - Front * `rear` - Rear
-	Face string `json:"face"`
+	Face     RackFace1                    `json:"face"`
 	// GPS coordinate in decimal format (xx.yyyyyy)
 	Latitude NullableFloat64 `json:"latitude,omitempty"`
 	// GPS coordinate in decimal format (xx.yyyyyy)
-	Longitude NullableFloat64 `json:"longitude,omitempty"`
-	// * `offline` - Offline * `active` - Active * `planned` - Planned * `staged` - Staged * `failed` - Failed * `inventory` - Inventory * `decommissioning` - Decommissioning
-	Status *string `json:"status,omitempty"`
-	// * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `rear-to-side` - Rear to side * `bottom-to-top` - Bottom to top * `top-to-bottom` - Top to bottom * `passive` - Passive * `mixed` - Mixed
-	Airflow        *string                            `json:"airflow,omitempty"`
+	Longitude      NullableFloat64                    `json:"longitude,omitempty"`
+	Status         *DeviceStatusValue                 `json:"status,omitempty"`
+	Airflow        *DeviceAirflowValue                `json:"airflow,omitempty"`
 	PrimaryIp4     NullableBriefIPAddressRequest      `json:"primary_ip4,omitempty"`
 	PrimaryIp6     NullableBriefIPAddressRequest      `json:"primary_ip6,omitempty"`
 	OobIp          NullableBriefIPAddressRequest      `json:"oob_ip,omitempty"`
@@ -67,7 +64,7 @@ type _WritableDeviceWithConfigContextRequest WritableDeviceWithConfigContextRequ
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableDeviceWithConfigContextRequest(deviceType BriefDeviceTypeRequest, role BriefDeviceRoleRequest, site BriefSiteRequest, face string) *WritableDeviceWithConfigContextRequest {
+func NewWritableDeviceWithConfigContextRequest(deviceType BriefDeviceTypeRequest, role BriefDeviceRoleRequest, site BriefSiteRequest, face RackFace1) *WritableDeviceWithConfigContextRequest {
 	this := WritableDeviceWithConfigContextRequest{}
 	this.DeviceType = deviceType
 	this.Role = role
@@ -490,9 +487,9 @@ func (o *WritableDeviceWithConfigContextRequest) UnsetPosition() {
 }
 
 // GetFace returns the Face field value
-func (o *WritableDeviceWithConfigContextRequest) GetFace() string {
+func (o *WritableDeviceWithConfigContextRequest) GetFace() RackFace1 {
 	if o == nil {
-		var ret string
+		var ret RackFace1
 		return ret
 	}
 
@@ -501,7 +498,7 @@ func (o *WritableDeviceWithConfigContextRequest) GetFace() string {
 
 // GetFaceOk returns a tuple with the Face field value
 // and a boolean to check if the value has been set.
-func (o *WritableDeviceWithConfigContextRequest) GetFaceOk() (*string, bool) {
+func (o *WritableDeviceWithConfigContextRequest) GetFaceOk() (*RackFace1, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -509,7 +506,7 @@ func (o *WritableDeviceWithConfigContextRequest) GetFaceOk() (*string, bool) {
 }
 
 // SetFace sets field value
-func (o *WritableDeviceWithConfigContextRequest) SetFace(v string) {
+func (o *WritableDeviceWithConfigContextRequest) SetFace(v RackFace1) {
 	o.Face = v
 }
 
@@ -600,9 +597,9 @@ func (o *WritableDeviceWithConfigContextRequest) UnsetLongitude() {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *WritableDeviceWithConfigContextRequest) GetStatus() string {
+func (o *WritableDeviceWithConfigContextRequest) GetStatus() DeviceStatusValue {
 	if o == nil || IsNil(o.Status) {
-		var ret string
+		var ret DeviceStatusValue
 		return ret
 	}
 	return *o.Status
@@ -610,7 +607,7 @@ func (o *WritableDeviceWithConfigContextRequest) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableDeviceWithConfigContextRequest) GetStatusOk() (*string, bool) {
+func (o *WritableDeviceWithConfigContextRequest) GetStatusOk() (*DeviceStatusValue, bool) {
 	if o == nil || IsNil(o.Status) {
 		return nil, false
 	}
@@ -626,15 +623,15 @@ func (o *WritableDeviceWithConfigContextRequest) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *WritableDeviceWithConfigContextRequest) SetStatus(v string) {
+// SetStatus gets a reference to the given DeviceStatusValue and assigns it to the Status field.
+func (o *WritableDeviceWithConfigContextRequest) SetStatus(v DeviceStatusValue) {
 	o.Status = &v
 }
 
 // GetAirflow returns the Airflow field value if set, zero value otherwise.
-func (o *WritableDeviceWithConfigContextRequest) GetAirflow() string {
+func (o *WritableDeviceWithConfigContextRequest) GetAirflow() DeviceAirflowValue {
 	if o == nil || IsNil(o.Airflow) {
-		var ret string
+		var ret DeviceAirflowValue
 		return ret
 	}
 	return *o.Airflow
@@ -642,7 +639,7 @@ func (o *WritableDeviceWithConfigContextRequest) GetAirflow() string {
 
 // GetAirflowOk returns a tuple with the Airflow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableDeviceWithConfigContextRequest) GetAirflowOk() (*string, bool) {
+func (o *WritableDeviceWithConfigContextRequest) GetAirflowOk() (*DeviceAirflowValue, bool) {
 	if o == nil || IsNil(o.Airflow) {
 		return nil, false
 	}
@@ -658,8 +655,8 @@ func (o *WritableDeviceWithConfigContextRequest) HasAirflow() bool {
 	return false
 }
 
-// SetAirflow gets a reference to the given string and assigns it to the Airflow field.
-func (o *WritableDeviceWithConfigContextRequest) SetAirflow(v string) {
+// SetAirflow gets a reference to the given DeviceAirflowValue and assigns it to the Airflow field.
+func (o *WritableDeviceWithConfigContextRequest) SetAirflow(v DeviceAirflowValue) {
 	o.Airflow = &v
 }
 

@@ -19,9 +19,8 @@ var _ MappedNullable = &RackStatus{}
 
 // RackStatus struct for RackStatus
 type RackStatus struct {
-	// * `reserved` - Reserved * `available` - Available * `planned` - Planned * `active` - Active * `deprecated` - Deprecated
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *PatchedWritableRackRequestStatus `json:"value,omitempty"`
+	Label                *RackStatusLabel                  `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewRackStatusWithDefaults() *RackStatus {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *RackStatus) GetValue() string {
+func (o *RackStatus) GetValue() PatchedWritableRackRequestStatus {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret PatchedWritableRackRequestStatus
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *RackStatus) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackStatus) GetValueOk() (*string, bool) {
+func (o *RackStatus) GetValueOk() (*PatchedWritableRackRequestStatus, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *RackStatus) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *RackStatus) SetValue(v string) {
+// SetValue gets a reference to the given PatchedWritableRackRequestStatus and assigns it to the Value field.
+func (o *RackStatus) SetValue(v PatchedWritableRackRequestStatus) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *RackStatus) GetLabel() string {
+func (o *RackStatus) GetLabel() RackStatusLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret RackStatusLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *RackStatus) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RackStatus) GetLabelOk() (*string, bool) {
+func (o *RackStatus) GetLabelOk() (*RackStatusLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *RackStatus) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *RackStatus) SetLabel(v string) {
+// SetLabel gets a reference to the given RackStatusLabel and assigns it to the Label field.
+func (o *RackStatus) SetLabel(v RackStatusLabel) {
 	o.Label = &v
 }
 

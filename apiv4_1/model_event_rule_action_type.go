@@ -19,9 +19,8 @@ var _ MappedNullable = &EventRuleActionType{}
 
 // EventRuleActionType struct for EventRuleActionType
 type EventRuleActionType struct {
-	// * `webhook` - Webhook * `script` - Script * `notification` - Notification
-	Value                *string `json:"value,omitempty"`
-	Label                *string `json:"label,omitempty"`
+	Value                *EventRuleActionTypeValue `json:"value,omitempty"`
+	Label                *EventRuleActionTypeLabel `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,9 +44,9 @@ func NewEventRuleActionTypeWithDefaults() *EventRuleActionType {
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
-func (o *EventRuleActionType) GetValue() string {
+func (o *EventRuleActionType) GetValue() EventRuleActionTypeValue {
 	if o == nil || IsNil(o.Value) {
-		var ret string
+		var ret EventRuleActionTypeValue
 		return ret
 	}
 	return *o.Value
@@ -55,7 +54,7 @@ func (o *EventRuleActionType) GetValue() string {
 
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventRuleActionType) GetValueOk() (*string, bool) {
+func (o *EventRuleActionType) GetValueOk() (*EventRuleActionTypeValue, bool) {
 	if o == nil || IsNil(o.Value) {
 		return nil, false
 	}
@@ -71,15 +70,15 @@ func (o *EventRuleActionType) HasValue() bool {
 	return false
 }
 
-// SetValue gets a reference to the given string and assigns it to the Value field.
-func (o *EventRuleActionType) SetValue(v string) {
+// SetValue gets a reference to the given EventRuleActionTypeValue and assigns it to the Value field.
+func (o *EventRuleActionType) SetValue(v EventRuleActionTypeValue) {
 	o.Value = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *EventRuleActionType) GetLabel() string {
+func (o *EventRuleActionType) GetLabel() EventRuleActionTypeLabel {
 	if o == nil || IsNil(o.Label) {
-		var ret string
+		var ret EventRuleActionTypeLabel
 		return ret
 	}
 	return *o.Label
@@ -87,7 +86,7 @@ func (o *EventRuleActionType) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventRuleActionType) GetLabelOk() (*string, bool) {
+func (o *EventRuleActionType) GetLabelOk() (*EventRuleActionTypeLabel, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -103,8 +102,8 @@ func (o *EventRuleActionType) HasLabel() bool {
 	return false
 }
 
-// SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *EventRuleActionType) SetLabel(v string) {
+// SetLabel gets a reference to the given EventRuleActionTypeLabel and assigns it to the Label field.
+func (o *EventRuleActionType) SetLabel(v EventRuleActionTypeLabel) {
 	o.Label = &v
 }
 

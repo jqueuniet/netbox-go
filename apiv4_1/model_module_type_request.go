@@ -23,16 +23,14 @@ type ModuleTypeRequest struct {
 	Manufacturer BriefManufacturerRequest `json:"manufacturer"`
 	Model        string                   `json:"model"`
 	// Discrete part number (optional)
-	PartNumber *string `json:"part_number,omitempty"`
-	// * `front-to-rear` - Front to rear * `rear-to-front` - Rear to front * `left-to-right` - Left to right * `right-to-left` - Right to left * `side-to-rear` - Side to rear * `passive` - Passive
-	Airflow NullableString  `json:"airflow,omitempty"`
-	Weight  NullableFloat64 `json:"weight,omitempty"`
-	// * `kg` - Kilograms * `g` - Grams * `lb` - Pounds * `oz` - Ounces
-	WeightUnit           NullableString         `json:"weight_unit,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	PartNumber           *string                             `json:"part_number,omitempty"`
+	Airflow              NullableModuleTypeRequestAirflow    `json:"airflow,omitempty"`
+	Weight               NullableFloat64                     `json:"weight,omitempty"`
+	WeightUnit           NullableDeviceTypeRequestWeightUnit `json:"weight_unit,omitempty"`
+	Description          *string                             `json:"description,omitempty"`
+	Comments             *string                             `json:"comments,omitempty"`
+	Tags                 []NestedTagRequest                  `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}              `json:"custom_fields,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -138,9 +136,9 @@ func (o *ModuleTypeRequest) SetPartNumber(v string) {
 }
 
 // GetAirflow returns the Airflow field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ModuleTypeRequest) GetAirflow() string {
+func (o *ModuleTypeRequest) GetAirflow() ModuleTypeRequestAirflow {
 	if o == nil || IsNil(o.Airflow.Get()) {
-		var ret string
+		var ret ModuleTypeRequestAirflow
 		return ret
 	}
 	return *o.Airflow.Get()
@@ -149,7 +147,7 @@ func (o *ModuleTypeRequest) GetAirflow() string {
 // GetAirflowOk returns a tuple with the Airflow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ModuleTypeRequest) GetAirflowOk() (*string, bool) {
+func (o *ModuleTypeRequest) GetAirflowOk() (*ModuleTypeRequestAirflow, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -165,8 +163,8 @@ func (o *ModuleTypeRequest) HasAirflow() bool {
 	return false
 }
 
-// SetAirflow gets a reference to the given NullableString and assigns it to the Airflow field.
-func (o *ModuleTypeRequest) SetAirflow(v string) {
+// SetAirflow gets a reference to the given NullableModuleTypeRequestAirflow and assigns it to the Airflow field.
+func (o *ModuleTypeRequest) SetAirflow(v ModuleTypeRequestAirflow) {
 	o.Airflow.Set(&v)
 }
 
@@ -224,9 +222,9 @@ func (o *ModuleTypeRequest) UnsetWeight() {
 }
 
 // GetWeightUnit returns the WeightUnit field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ModuleTypeRequest) GetWeightUnit() string {
+func (o *ModuleTypeRequest) GetWeightUnit() DeviceTypeRequestWeightUnit {
 	if o == nil || IsNil(o.WeightUnit.Get()) {
-		var ret string
+		var ret DeviceTypeRequestWeightUnit
 		return ret
 	}
 	return *o.WeightUnit.Get()
@@ -235,7 +233,7 @@ func (o *ModuleTypeRequest) GetWeightUnit() string {
 // GetWeightUnitOk returns a tuple with the WeightUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ModuleTypeRequest) GetWeightUnitOk() (*string, bool) {
+func (o *ModuleTypeRequest) GetWeightUnitOk() (*DeviceTypeRequestWeightUnit, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -251,8 +249,8 @@ func (o *ModuleTypeRequest) HasWeightUnit() bool {
 	return false
 }
 
-// SetWeightUnit gets a reference to the given NullableString and assigns it to the WeightUnit field.
-func (o *ModuleTypeRequest) SetWeightUnit(v string) {
+// SetWeightUnit gets a reference to the given NullableDeviceTypeRequestWeightUnit and assigns it to the WeightUnit field.
+func (o *ModuleTypeRequest) SetWeightUnit(v DeviceTypeRequestWeightUnit) {
 	o.WeightUnit.Set(&v)
 }
 

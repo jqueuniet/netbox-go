@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **PayloadUrl** | Pointer to **string** | This URL will be called using the HTTP method defined when the webhook is called. Jinja2 template processing is supported with the same context as the request body. | [optional] 
-**HttpMethod** | Pointer to **string** | * &#x60;GET&#x60; - GET * &#x60;POST&#x60; - POST * &#x60;PUT&#x60; - PUT * &#x60;PATCH&#x60; - PATCH * &#x60;DELETE&#x60; - DELETE | [optional] 
+**HttpMethod** | Pointer to [**PatchedWebhookRequestHttpMethod**](PatchedWebhookRequestHttpMethod.md) |  | [optional] 
 **HttpContentType** | Pointer to **string** | The complete list of official content types is available &lt;a href&#x3D;\&quot;https://www.iana.org/assignments/media-types/media-types.xhtml\&quot;&gt;here&lt;/a&gt;. | [optional] 
 **AdditionalHeaders** | Pointer to **string** | User-supplied HTTP headers to be sent with the request in addition to the HTTP content type. Headers should be defined in the format &lt;code&gt;Name: Value&lt;/code&gt;. Jinja2 template processing is supported with the same context as the request body (below). | [optional] 
 **BodyTemplate** | Pointer to **string** | Jinja2 template for a custom request body. If blank, a JSON object representing the change will be included. Available context data includes: &lt;code&gt;event&lt;/code&gt;, &lt;code&gt;model&lt;/code&gt;, &lt;code&gt;timestamp&lt;/code&gt;, &lt;code&gt;username&lt;/code&gt;, &lt;code&gt;request_id&lt;/code&gt;, and &lt;code&gt;data&lt;/code&gt;. | [optional] 
@@ -113,20 +113,20 @@ HasPayloadUrl returns a boolean if a field has been set.
 
 ### GetHttpMethod
 
-`func (o *PatchedWebhookRequest) GetHttpMethod() string`
+`func (o *PatchedWebhookRequest) GetHttpMethod() PatchedWebhookRequestHttpMethod`
 
 GetHttpMethod returns the HttpMethod field if non-nil, zero value otherwise.
 
 ### GetHttpMethodOk
 
-`func (o *PatchedWebhookRequest) GetHttpMethodOk() (*string, bool)`
+`func (o *PatchedWebhookRequest) GetHttpMethodOk() (*PatchedWebhookRequestHttpMethod, bool)`
 
 GetHttpMethodOk returns a tuple with the HttpMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpMethod
 
-`func (o *PatchedWebhookRequest) SetHttpMethod(v string)`
+`func (o *PatchedWebhookRequest) SetHttpMethod(v PatchedWebhookRequestHttpMethod)`
 
 SetHttpMethod sets HttpMethod field to given value.
 
