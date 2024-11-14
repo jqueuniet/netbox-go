@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **TypeCreate** | Pointer to **bool** | Triggers when a matching object is created. | [optional] 
@@ -23,14 +23,14 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewEventRule
 
-`func NewEventRule(id int32, url string, display string, objectTypes []string, name string, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *EventRule`
+`func NewEventRule(id int32, url string, objectTypes []string, name string, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, lastUpdated NullableTime, ) *EventRule`
 
 NewEventRule instantiates a new EventRule object
 This constructor will assign default values to properties that have it defined,
@@ -104,6 +104,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *EventRule) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetObjectTypes
 
@@ -519,6 +524,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *EventRule) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

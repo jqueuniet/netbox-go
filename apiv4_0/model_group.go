@@ -22,7 +22,7 @@ var _ MappedNullable = &Group{}
 type Group struct {
 	Id                   int32              `json:"id"`
 	Url                  string             `json:"url"`
-	Display              string             `json:"display"`
+	Display              *string            `json:"display,omitempty"`
 	Name                 string             `json:"name"`
 	Description          *string            `json:"description,omitempty"`
 	Permissions          []ObjectPermission `json:"permissions,omitempty"`
@@ -36,11 +36,10 @@ type _Group Group
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGroup(id int32, url string, display string, name string, userCount int32) *Group {
+func NewGroup(id int32, url string, name string, userCount int32) *Group {
 	this := Group{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.UserCount = userCount
 	return &this
@@ -102,28 +101,36 @@ func (o *Group) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *Group) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Group) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *Group) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *Group) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -250,7 +257,9 @@ func (o Group) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -274,7 +283,6 @@ func (o *Group) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"user_count",
 	}

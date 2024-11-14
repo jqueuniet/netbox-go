@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -18,14 +18,14 @@ Name | Type | Description | Notes
 **DataPath** | **string** | Path to remote file (relative to data source root) | [readonly] 
 **DataFile** | [**BriefDataFile**](BriefDataFile.md) |  | [readonly] 
 **DataSynced** | **NullableTime** |  | [readonly] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewExportTemplate
 
-`func NewExportTemplate(id int32, url string, display string, objectTypes []string, name string, templateCode string, dataPath string, dataFile BriefDataFile, dataSynced NullableTime, created NullableTime, lastUpdated NullableTime, ) *ExportTemplate`
+`func NewExportTemplate(id int32, url string, objectTypes []string, name string, templateCode string, dataPath string, dataFile BriefDataFile, dataSynced NullableTime, lastUpdated NullableTime, ) *ExportTemplate`
 
 NewExportTemplate instantiates a new ExportTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -99,6 +99,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *ExportTemplate) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetObjectTypes
 
@@ -374,6 +379,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ExportTemplate) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

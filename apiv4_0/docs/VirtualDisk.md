@@ -13,14 +13,14 @@ Name | Type | Description | Notes
 **Size** | **int32** |  | 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewVirtualDisk
 
-`func NewVirtualDisk(id int32, url string, virtualMachine BriefVirtualMachine, name string, size int32, created NullableTime, lastUpdated NullableTime, ) *VirtualDisk`
+`func NewVirtualDisk(id int32, url string, virtualMachine BriefVirtualMachine, name string, size int32, lastUpdated NullableTime, ) *VirtualDisk`
 
 NewVirtualDisk instantiates a new VirtualDisk object
 This constructor will assign default values to properties that have it defined,
@@ -254,6 +254,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *VirtualDisk) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

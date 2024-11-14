@@ -23,7 +23,7 @@ var _ MappedNullable = &Rack{}
 type Rack struct {
 	Id         int32                 `json:"id"`
 	Url        string                `json:"url"`
-	Display    string                `json:"display"`
+	Display    *string               `json:"display,omitempty"`
 	Name       string                `json:"name"`
 	FacilityId NullableString        `json:"facility_id,omitempty"`
 	Site       BriefSite             `json:"site"`
@@ -57,9 +57,9 @@ type Rack struct {
 	Comments             *string                `json:"comments,omitempty"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
+	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	DeviceCount          int64                  `json:"device_count"`
+	DeviceCount          *int64                 `json:"device_count,omitempty"`
 	PowerfeedCount       int64                  `json:"powerfeed_count"`
 	AdditionalProperties map[string]interface{}
 }
@@ -70,16 +70,13 @@ type _Rack Rack
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRack(id int32, url string, display string, name string, site BriefSite, created NullableTime, lastUpdated NullableTime, deviceCount int64, powerfeedCount int64) *Rack {
+func NewRack(id int32, url string, name string, site BriefSite, lastUpdated NullableTime, powerfeedCount int64) *Rack {
 	this := Rack{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.Site = site
-	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.DeviceCount = deviceCount
 	this.PowerfeedCount = powerfeedCount
 	return &this
 }
@@ -140,28 +137,36 @@ func (o *Rack) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *Rack) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Rack) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *Rack) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *Rack) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -1091,18 +1096,16 @@ func (o *Rack) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Rack) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Rack) GetCreatedOk() (*time.Time, bool) {
@@ -1112,9 +1115,28 @@ func (o *Rack) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *Rack) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *Rack) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *Rack) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *Rack) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -1143,28 +1165,36 @@ func (o *Rack) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetDeviceCount returns the DeviceCount field value
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *Rack) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount
 }
 
-// GetDeviceCountOk returns a tuple with the DeviceCount field value
+// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Rack) GetDeviceCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount, true
 }
 
-// SetDeviceCount sets field value
+// HasDeviceCount returns a boolean if a field has been set.
+func (o *Rack) HasDeviceCount() bool {
+	if o != nil && !IsNil(o.DeviceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCount gets a reference to the given int64 and assigns it to the DeviceCount field.
 func (o *Rack) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount = &v
 }
 
 // GetPowerfeedCount returns the PowerfeedCount field value
@@ -1203,7 +1233,9 @@ func (o Rack) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	if o.FacilityId.IsSet() {
 		toSerialize["facility_id"] = o.FacilityId.Get()
@@ -1275,9 +1307,13 @@ func (o Rack) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["device_count"] = o.DeviceCount
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
+	}
 	toSerialize["powerfeed_count"] = o.PowerfeedCount
 
 	for key, value := range o.AdditionalProperties {
@@ -1294,12 +1330,9 @@ func (o *Rack) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"site",
-		"created",
 		"last_updated",
-		"device_count",
 		"powerfeed_count",
 	}
 

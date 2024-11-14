@@ -22,7 +22,7 @@ var _ MappedNullable = &BriefModuleType{}
 type BriefModuleType struct {
 	Id                   int32             `json:"id"`
 	Url                  string            `json:"url"`
-	Display              string            `json:"display"`
+	Display              *string           `json:"display,omitempty"`
 	Manufacturer         BriefManufacturer `json:"manufacturer"`
 	Model                string            `json:"model"`
 	Description          *string           `json:"description,omitempty"`
@@ -35,11 +35,10 @@ type _BriefModuleType BriefModuleType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefModuleType(id int32, url string, display string, manufacturer BriefManufacturer, model string) *BriefModuleType {
+func NewBriefModuleType(id int32, url string, manufacturer BriefManufacturer, model string) *BriefModuleType {
 	this := BriefModuleType{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Manufacturer = manufacturer
 	this.Model = model
 	return &this
@@ -101,28 +100,36 @@ func (o *BriefModuleType) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefModuleType) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefModuleType) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefModuleType) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefModuleType) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetManufacturer returns the Manufacturer field value
@@ -217,7 +224,9 @@ func (o BriefModuleType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["manufacturer"] = o.Manufacturer
 	toSerialize["model"] = o.Model
 	if !IsNil(o.Description) {
@@ -238,7 +247,6 @@ func (o *BriefModuleType) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"manufacturer",
 		"model",
 	}

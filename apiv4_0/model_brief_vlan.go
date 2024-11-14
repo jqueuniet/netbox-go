@@ -20,9 +20,9 @@ var _ MappedNullable = &BriefVLAN{}
 
 // BriefVLAN Adds support for custom fields and tags.
 type BriefVLAN struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
+	Id      int32   `json:"id"`
+	Url     string  `json:"url"`
+	Display *string `json:"display,omitempty"`
 	// Numeric VLAN ID (1-4094)
 	Vid                  int32   `json:"vid"`
 	Name                 string  `json:"name"`
@@ -36,11 +36,10 @@ type _BriefVLAN BriefVLAN
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefVLAN(id int32, url string, display string, vid int32, name string) *BriefVLAN {
+func NewBriefVLAN(id int32, url string, vid int32, name string) *BriefVLAN {
 	this := BriefVLAN{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Vid = vid
 	this.Name = name
 	return &this
@@ -102,28 +101,36 @@ func (o *BriefVLAN) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefVLAN) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefVLAN) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefVLAN) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefVLAN) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetVid returns the Vid field value
@@ -218,7 +225,9 @@ func (o BriefVLAN) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["vid"] = o.Vid
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Description) {
@@ -239,7 +248,6 @@ func (o *BriefVLAN) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"vid",
 		"name",
 	}

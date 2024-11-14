@@ -23,7 +23,7 @@ var _ MappedNullable = &Tunnel{}
 type Tunnel struct {
 	Id                   int32                     `json:"id"`
 	Url                  string                    `json:"url"`
-	Display              string                    `json:"display"`
+	Display              *string                   `json:"display,omitempty"`
 	Name                 string                    `json:"name"`
 	Status               TunnelStatus              `json:"status"`
 	Group                NullableBriefTunnelGroup  `json:"group,omitempty"`
@@ -35,7 +35,7 @@ type Tunnel struct {
 	Comments             *string                   `json:"comments,omitempty"`
 	Tags                 []NestedTag               `json:"tags,omitempty"`
 	CustomFields         map[string]interface{}    `json:"custom_fields,omitempty"`
-	Created              NullableTime              `json:"created"`
+	Created              NullableTime              `json:"created,omitempty"`
 	LastUpdated          NullableTime              `json:"last_updated"`
 	TerminationsCount    int64                     `json:"terminations_count"`
 	AdditionalProperties map[string]interface{}
@@ -47,15 +47,13 @@ type _Tunnel Tunnel
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTunnel(id int32, url string, display string, name string, status TunnelStatus, encapsulation TunnelEncapsulation, created NullableTime, lastUpdated NullableTime, terminationsCount int64) *Tunnel {
+func NewTunnel(id int32, url string, name string, status TunnelStatus, encapsulation TunnelEncapsulation, lastUpdated NullableTime, terminationsCount int64) *Tunnel {
 	this := Tunnel{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.Status = status
 	this.Encapsulation = encapsulation
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	this.TerminationsCount = terminationsCount
 	return &this
@@ -117,28 +115,36 @@ func (o *Tunnel) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *Tunnel) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tunnel) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *Tunnel) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *Tunnel) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -513,18 +519,16 @@ func (o *Tunnel) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Tunnel) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Tunnel) GetCreatedOk() (*time.Time, bool) {
@@ -534,9 +538,28 @@ func (o *Tunnel) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *Tunnel) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *Tunnel) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *Tunnel) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *Tunnel) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -601,7 +624,9 @@ func (o Tunnel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	toSerialize["status"] = o.Status
 	if o.Group.IsSet() {
@@ -629,7 +654,9 @@ func (o Tunnel) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 	toSerialize["terminations_count"] = o.TerminationsCount
 
@@ -647,11 +674,9 @@ func (o *Tunnel) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"status",
 		"encapsulation",
-		"created",
 		"last_updated",
 		"terminations_count",
 	}

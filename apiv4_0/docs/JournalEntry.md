@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **AssignedObjectType** | **string** |  | 
 **AssignedObjectId** | **int64** |  | 
 **AssignedObject** | **interface{}** |  | [readonly] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **CreatedBy** | Pointer to **NullableInt32** |  | [optional] 
 **Kind** | Pointer to [**JournalEntryKind**](JournalEntryKind.md) |  | [optional] 
 **Comments** | **string** |  | 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewJournalEntry
 
-`func NewJournalEntry(id int32, url string, display string, assignedObjectType string, assignedObjectId int64, assignedObject interface{}, created NullableTime, comments string, lastUpdated NullableTime, ) *JournalEntry`
+`func NewJournalEntry(id int32, url string, assignedObjectType string, assignedObjectId int64, assignedObject interface{}, comments string, lastUpdated NullableTime, ) *JournalEntry`
 
 NewJournalEntry instantiates a new JournalEntry object
 This constructor will assign default values to properties that have it defined,
@@ -96,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *JournalEntry) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetAssignedObjectType
 
@@ -186,6 +191,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *JournalEntry) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

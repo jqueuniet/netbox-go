@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Site** | [**NullableBriefSite**](BriefSite.md) |  | 
 **ProviderNetwork** | [**NullableBriefProviderNetwork**](BriefProviderNetwork.md) |  | 
 **PortSpeed** | Pointer to **NullableInt32** | Physical circuit speed | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitCircuitTermination
 
-`func NewCircuitCircuitTermination(id int32, url string, display string, site NullableBriefSite, providerNetwork NullableBriefProviderNetwork, ) *CircuitCircuitTermination`
+`func NewCircuitCircuitTermination(id int32, url string, site NullableBriefSite, providerNetwork NullableBriefProviderNetwork, ) *CircuitCircuitTermination`
 
 NewCircuitCircuitTermination instantiates a new CircuitCircuitTermination object
 This constructor will assign default values to properties that have it defined,
@@ -92,6 +92,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *CircuitCircuitTermination) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetSite
 

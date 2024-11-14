@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **PowerfeedCount** | **int64** |  | [readonly] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewBriefPowerPanel
 
-`func NewBriefPowerPanel(id int32, url string, display string, name string, powerfeedCount int64, ) *BriefPowerPanel`
+`func NewBriefPowerPanel(id int32, url string, name string, powerfeedCount int64, ) *BriefPowerPanel`
 
 NewBriefPowerPanel instantiates a new BriefPowerPanel object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefPowerPanel) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 

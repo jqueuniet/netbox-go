@@ -23,7 +23,7 @@ var _ MappedNullable = &IPSecProfile{}
 type IPSecProfile struct {
 	Id                   int32                  `json:"id"`
 	Url                  string                 `json:"url"`
-	Display              string                 `json:"display"`
+	Display              *string                `json:"display,omitempty"`
 	Name                 string                 `json:"name"`
 	Description          *string                `json:"description,omitempty"`
 	Mode                 IPSecProfileMode       `json:"mode"`
@@ -32,7 +32,7 @@ type IPSecProfile struct {
 	Comments             *string                `json:"comments,omitempty"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
+	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
@@ -43,16 +43,14 @@ type _IPSecProfile IPSecProfile
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIPSecProfile(id int32, url string, display string, name string, mode IPSecProfileMode, ikePolicy BriefIKEPolicy, ipsecPolicy BriefIPSecPolicy, created NullableTime, lastUpdated NullableTime) *IPSecProfile {
+func NewIPSecProfile(id int32, url string, name string, mode IPSecProfileMode, ikePolicy BriefIKEPolicy, ipsecPolicy BriefIPSecPolicy, lastUpdated NullableTime) *IPSecProfile {
 	this := IPSecProfile{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.Mode = mode
 	this.IkePolicy = ikePolicy
 	this.IpsecPolicy = ipsecPolicy
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -113,28 +111,36 @@ func (o *IPSecProfile) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *IPSecProfile) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IPSecProfile) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *IPSecProfile) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *IPSecProfile) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -361,18 +367,16 @@ func (o *IPSecProfile) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IPSecProfile) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IPSecProfile) GetCreatedOk() (*time.Time, bool) {
@@ -382,9 +386,28 @@ func (o *IPSecProfile) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *IPSecProfile) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *IPSecProfile) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *IPSecProfile) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *IPSecProfile) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -425,7 +448,9 @@ func (o IPSecProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -442,7 +467,9 @@ func (o IPSecProfile) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 
 	for key, value := range o.AdditionalProperties {
@@ -459,12 +486,10 @@ func (o *IPSecProfile) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"mode",
 		"ike_policy",
 		"ipsec_policy",
-		"created",
 		"last_updated",
 	}
 

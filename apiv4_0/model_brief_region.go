@@ -22,11 +22,11 @@ var _ MappedNullable = &BriefRegion{}
 type BriefRegion struct {
 	Id                   int32   `json:"id"`
 	Url                  string  `json:"url"`
-	Display              string  `json:"display"`
+	Display              *string `json:"display,omitempty"`
 	Name                 string  `json:"name"`
 	Slug                 string  `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Description          *string `json:"description,omitempty"`
-	SiteCount            int32   `json:"site_count"`
+	SiteCount            *int32  `json:"site_count,omitempty"`
 	Depth                int32   `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -37,14 +37,12 @@ type _BriefRegion BriefRegion
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefRegion(id int32, url string, display string, name string, slug string, siteCount int32, depth int32) *BriefRegion {
+func NewBriefRegion(id int32, url string, name string, slug string, depth int32) *BriefRegion {
 	this := BriefRegion{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.SiteCount = siteCount
 	this.Depth = depth
 	return &this
 }
@@ -105,28 +103,36 @@ func (o *BriefRegion) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefRegion) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefRegion) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefRegion) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefRegion) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -209,28 +215,36 @@ func (o *BriefRegion) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetSiteCount returns the SiteCount field value
+// GetSiteCount returns the SiteCount field value if set, zero value otherwise.
 func (o *BriefRegion) GetSiteCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.SiteCount
+	return *o.SiteCount
 }
 
-// GetSiteCountOk returns a tuple with the SiteCount field value
+// GetSiteCountOk returns a tuple with the SiteCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefRegion) GetSiteCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		return nil, false
 	}
-	return &o.SiteCount, true
+	return o.SiteCount, true
 }
 
-// SetSiteCount sets field value
+// HasSiteCount returns a boolean if a field has been set.
+func (o *BriefRegion) HasSiteCount() bool {
+	if o != nil && !IsNil(o.SiteCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetSiteCount gets a reference to the given int32 and assigns it to the SiteCount field.
 func (o *BriefRegion) SetSiteCount(v int32) {
-	o.SiteCount = v
+	o.SiteCount = &v
 }
 
 // GetDepth returns the Depth field value
@@ -269,13 +283,17 @@ func (o BriefRegion) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["site_count"] = o.SiteCount
+	if !IsNil(o.SiteCount) {
+		toSerialize["site_count"] = o.SiteCount
+	}
 	toSerialize["_depth"] = o.Depth
 
 	for key, value := range o.AdditionalProperties {
@@ -292,10 +310,8 @@ func (o *BriefRegion) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"slug",
-		"site_count",
 		"_depth",
 	}
 

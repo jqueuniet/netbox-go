@@ -7,18 +7,10 @@ import os
 import sys
 
 
-MISSING_TAG_FIELDS = ("tagged_items",)
-MISSING_MANUFACTURER_FIELDS = (
-    "devicetype_count",
-    "inventoryitem_count",
-    "platform_count",
-)
-MISSING_DEVICE_ROLE_FIELDS = ("device_count", "virtualmachine_count")
-MISSING_DEVICE_TYPE_FIELDS = (
+MISSING_REQUIRED_FIELDS = (
     "console_port_template_count",
     "console_server_port_template_count",
     "device_bay_template_count",
-    "device_count",
     "front_port_template_count",
     "interface_template_count",
     "inventory_item_template_count",
@@ -26,17 +18,24 @@ MISSING_DEVICE_TYPE_FIELDS = (
     "power_outlet_template_count",
     "power_port_template_count",
     "rear_port_template_count",
-)
-MISSING_SITE_FIELDS = (
-    "circuit_count",
+    "devicetype_count",
     "device_count",
-    "prefix_count",
-    "rack_count",
+    "inventoryitem_count",
     "virtualmachine_count",
+    "prefix_count",
+    "platform_count",
+    "tagged_items",
     "vlan_count",
+    "rack_count",
+    "vrf_count",
+    "circuit_count",
+    "display_url",
+    "cluster_count",
+    "site_count",
+    "created",  # for sites
+    "provider_count",  # ASNs
+    "display",  # Virtual disks
 )
-
-MISSING_VDISK_FIELDS = ("display",)
 
 
 def build_upstream_path(version: str) -> str:
@@ -107,39 +106,12 @@ def patch_spec(data):
                         ):
                             schema["properties"][ntype].pop("nullable")
 
-    data["components"]["schemas"]["Tag"]["required"] = [
-        e
-        for e in data["components"]["schemas"]["Tag"]["required"]
-        if e not in MISSING_TAG_FIELDS
-    ]
-    data["components"]["schemas"]["Manufacturer"]["required"] = [
-        e
-        for e in data["components"]["schemas"]["Manufacturer"]["required"]
-        if e not in MISSING_MANUFACTURER_FIELDS
-    ]
-    data["components"]["schemas"]["DeviceRole"]["required"] = [
-        e
-        for e in data["components"]["schemas"]["DeviceRole"]["required"]
-        if e not in MISSING_DEVICE_ROLE_FIELDS
-    ]
-    data["components"]["schemas"]["DeviceType"]["required"] = [
-        e
-        for e in data["components"]["schemas"]["DeviceType"]["required"]
-        if e not in MISSING_DEVICE_TYPE_FIELDS
-    ]
-    data["components"]["schemas"]["Site"]["required"] = [
-        e
-        for e in data["components"]["schemas"]["Site"]["required"]
-        if e not in MISSING_SITE_FIELDS
-    ]
-
-    # Fix broken vdisk queries
-    if "VirtualDisk" in data["components"]["schemas"]:
-        data["components"]["schemas"]["VirtualDisk"]["required"] = [
-            e
-            for e in data["components"]["schemas"]["VirtualDisk"]["required"]
-            if e not in MISSING_VDISK_FIELDS
-        ]
+            if "required" in schema:
+                schema["required"] = [
+                    prop
+                    for prop in schema["required"]
+                    if prop not in MISSING_REQUIRED_FIELDS
+                ]
 
     return data
 

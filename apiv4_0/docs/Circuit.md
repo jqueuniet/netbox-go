@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Cid** | **string** | Unique circuit ID | 
 **Provider** | [**BriefProvider**](BriefProvider.md) |  | 
 **ProviderAccount** | Pointer to [**NullableBriefProviderAccount**](BriefProviderAccount.md) |  | [optional] 
@@ -22,14 +22,14 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewCircuit
 
-`func NewCircuit(id int32, url string, display string, cid string, provider BriefProvider, type_ BriefCircuitType, terminationA NullableCircuitCircuitTermination, terminationZ NullableCircuitCircuitTermination, created NullableTime, lastUpdated NullableTime, ) *Circuit`
+`func NewCircuit(id int32, url string, cid string, provider BriefProvider, type_ BriefCircuitType, terminationA NullableCircuitCircuitTermination, terminationZ NullableCircuitCircuitTermination, lastUpdated NullableTime, ) *Circuit`
 
 NewCircuit instantiates a new Circuit object
 This constructor will assign default values to properties that have it defined,
@@ -103,6 +103,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Circuit) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetCid
 
@@ -543,6 +548,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Circuit) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

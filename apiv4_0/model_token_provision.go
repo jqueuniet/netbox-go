@@ -23,9 +23,9 @@ var _ MappedNullable = &TokenProvision{}
 type TokenProvision struct {
 	Id       int32        `json:"id"`
 	Url      string       `json:"url"`
-	Display  string       `json:"display"`
+	Display  *string      `json:"display,omitempty"`
 	User     BriefUser    `json:"user"`
-	Created  time.Time    `json:"created"`
+	Created  *time.Time   `json:"created,omitempty"`
 	Expires  NullableTime `json:"expires,omitempty"`
 	LastUsed time.Time    `json:"last_used"`
 	Key      string       `json:"key"`
@@ -41,13 +41,11 @@ type _TokenProvision TokenProvision
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTokenProvision(id int32, url string, display string, user BriefUser, created time.Time, lastUsed time.Time, key string) *TokenProvision {
+func NewTokenProvision(id int32, url string, user BriefUser, lastUsed time.Time, key string) *TokenProvision {
 	this := TokenProvision{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.User = user
-	this.Created = created
 	this.LastUsed = lastUsed
 	this.Key = key
 	return &this
@@ -109,28 +107,36 @@ func (o *TokenProvision) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *TokenProvision) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TokenProvision) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *TokenProvision) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *TokenProvision) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetUser returns the User field value
@@ -157,28 +163,36 @@ func (o *TokenProvision) SetUser(v BriefUser) {
 	o.User = v
 }
 
-// GetCreated returns the Created field value
+// GetCreated returns the Created field value if set, zero value otherwise.
 func (o *TokenProvision) GetCreated() time.Time {
-	if o == nil {
+	if o == nil || IsNil(o.Created) {
 		var ret time.Time
 		return ret
 	}
-
-	return o.Created
+	return *o.Created
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TokenProvision) GetCreatedOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Created) {
 		return nil, false
 	}
-	return &o.Created, true
+	return o.Created, true
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *TokenProvision) HasCreated() bool {
+	if o != nil && !IsNil(o.Created) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given time.Time and assigns it to the Created field.
 func (o *TokenProvision) SetCreated(v time.Time) {
-	o.Created = v
+	o.Created = &v
 }
 
 // GetExpires returns the Expires field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -348,9 +362,13 @@ func (o TokenProvision) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["user"] = o.User
-	toSerialize["created"] = o.Created
+	if !IsNil(o.Created) {
+		toSerialize["created"] = o.Created
+	}
 	if o.Expires.IsSet() {
 		toSerialize["expires"] = o.Expires.Get()
 	}
@@ -377,9 +395,7 @@ func (o *TokenProvision) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"user",
-		"created",
 		"last_used",
 		"key",
 	}

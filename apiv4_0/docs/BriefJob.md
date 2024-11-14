@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Url** | **string** |  | [readonly] 
 **Status** | [**BriefJobStatus**](BriefJobStatus.md) |  | 
-**Created** | **time.Time** |  | [readonly] 
+**Created** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Completed** | Pointer to **NullableTime** |  | [optional] 
 **User** | [**BriefUser**](BriefUser.md) |  | [readonly] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewBriefJob
 
-`func NewBriefJob(url string, status BriefJobStatus, created time.Time, user BriefUser, ) *BriefJob`
+`func NewBriefJob(url string, status BriefJobStatus, user BriefUser, ) *BriefJob`
 
 NewBriefJob instantiates a new BriefJob object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *BriefJob) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### GetCompleted
 

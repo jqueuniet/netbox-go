@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Label** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewBriefCable
 
-`func NewBriefCable(id int32, url string, display string, ) *BriefCable`
+`func NewBriefCable(id int32, url string, ) *BriefCable`
 
 NewBriefCable instantiates a new BriefCable object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefCable) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetLabel
 

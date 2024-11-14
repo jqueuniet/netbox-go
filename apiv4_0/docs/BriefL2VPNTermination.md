@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **L2vpn** | [**BriefL2VPN**](BriefL2VPN.md) |  | 
 
 ## Methods
 
 ### NewBriefL2VPNTermination
 
-`func NewBriefL2VPNTermination(id int32, url string, display string, l2vpn BriefL2VPN, ) *BriefL2VPNTermination`
+`func NewBriefL2VPNTermination(id int32, url string, l2vpn BriefL2VPN, ) *BriefL2VPNTermination`
 
 NewBriefL2VPNTermination instantiates a new BriefL2VPNTermination object
 This constructor will assign default values to properties that have it defined,
@@ -87,6 +87,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefL2VPNTermination) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetL2vpn
 

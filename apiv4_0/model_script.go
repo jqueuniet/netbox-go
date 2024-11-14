@@ -27,7 +27,7 @@ type Script struct {
 	Description          NullableString `json:"description"`
 	Vars                 interface{}    `json:"vars"`
 	Result               BriefJob       `json:"result"`
-	Display              string         `json:"display"`
+	Display              *string        `json:"display,omitempty"`
 	IsExecutable         bool           `json:"is_executable"`
 	AdditionalProperties map[string]interface{}
 }
@@ -38,7 +38,7 @@ type _Script Script
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewScript(id int32, url string, module int32, name string, description NullableString, vars interface{}, result BriefJob, display string, isExecutable bool) *Script {
+func NewScript(id int32, url string, module int32, name string, description NullableString, vars interface{}, result BriefJob, isExecutable bool) *Script {
 	this := Script{}
 	this.Id = id
 	this.Url = url
@@ -47,7 +47,6 @@ func NewScript(id int32, url string, module int32, name string, description Null
 	this.Description = description
 	this.Vars = vars
 	this.Result = result
-	this.Display = display
 	this.IsExecutable = isExecutable
 	return &this
 }
@@ -232,28 +231,36 @@ func (o *Script) SetResult(v BriefJob) {
 	o.Result = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *Script) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Script) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *Script) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *Script) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetIsExecutable returns the IsExecutable field value
@@ -299,7 +306,9 @@ func (o Script) ToMap() (map[string]interface{}, error) {
 		toSerialize["vars"] = o.Vars
 	}
 	toSerialize["result"] = o.Result
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["is_executable"] = o.IsExecutable
 
 	for key, value := range o.AdditionalProperties {
@@ -321,7 +330,6 @@ func (o *Script) UnmarshalJSON(data []byte) (err error) {
 		"description",
 		"vars",
 		"result",
-		"display",
 		"is_executable",
 	}
 

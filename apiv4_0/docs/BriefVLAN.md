@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Vid** | **int32** | Numeric VLAN ID (1-4094) | 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewBriefVLAN
 
-`func NewBriefVLAN(id int32, url string, display string, vid int32, name string, ) *BriefVLAN`
+`func NewBriefVLAN(id int32, url string, vid int32, name string, ) *BriefVLAN`
 
 NewBriefVLAN instantiates a new BriefVLAN object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefVLAN) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetVid
 

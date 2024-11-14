@@ -9,13 +9,13 @@ Name | Type | Description | Notes
 **Face** | [**RackUnitFace**](RackUnitFace.md) |  | 
 **Device** | [**BriefDevice**](BriefDevice.md) |  | [readonly] 
 **Occupied** | **bool** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewRackUnit
 
-`func NewRackUnit(id float64, name string, face RackUnitFace, device BriefDevice, occupied bool, display string, ) *RackUnit`
+`func NewRackUnit(id float64, name string, face RackUnitFace, device BriefDevice, occupied bool, ) *RackUnit`
 
 NewRackUnit instantiates a new RackUnit object
 This constructor will assign default values to properties that have it defined,
@@ -149,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *RackUnit) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

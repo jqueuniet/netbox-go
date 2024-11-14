@@ -23,7 +23,7 @@ var _ MappedNullable = &EventRule{}
 type EventRule struct {
 	Id          int32    `json:"id"`
 	Url         string   `json:"url"`
-	Display     string   `json:"display"`
+	Display     *string  `json:"display,omitempty"`
 	ObjectTypes []string `json:"object_types"`
 	Name        string   `json:"name"`
 	// Triggers when a matching object is created.
@@ -46,7 +46,7 @@ type EventRule struct {
 	Description          *string                `json:"description,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
-	Created              NullableTime           `json:"created"`
+	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
@@ -57,17 +57,15 @@ type _EventRule EventRule
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEventRule(id int32, url string, display string, objectTypes []string, name string, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, created NullableTime, lastUpdated NullableTime) *EventRule {
+func NewEventRule(id int32, url string, objectTypes []string, name string, actionType EventRuleActionType, actionObjectType string, actionObject map[string]interface{}, lastUpdated NullableTime) *EventRule {
 	this := EventRule{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.ObjectTypes = objectTypes
 	this.Name = name
 	this.ActionType = actionType
 	this.ActionObjectType = actionObjectType
 	this.ActionObject = actionObject
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -128,28 +126,36 @@ func (o *EventRule) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *EventRule) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventRule) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *EventRule) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *EventRule) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetObjectTypes returns the ObjectTypes field value
@@ -636,18 +642,16 @@ func (o *EventRule) SetTags(v []NestedTag) {
 	o.Tags = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EventRule) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EventRule) GetCreatedOk() (*time.Time, bool) {
@@ -657,9 +661,28 @@ func (o *EventRule) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *EventRule) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *EventRule) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *EventRule) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *EventRule) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -700,7 +723,9 @@ func (o EventRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["object_types"] = o.ObjectTypes
 	toSerialize["name"] = o.Name
 	if !IsNil(o.TypeCreate) {
@@ -739,7 +764,9 @@ func (o EventRule) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Tags) {
 		toSerialize["tags"] = o.Tags
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 
 	for key, value := range o.AdditionalProperties {
@@ -756,13 +783,11 @@ func (o *EventRule) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"object_types",
 		"name",
 		"action_type",
 		"action_object_type",
 		"action_object",
-		"created",
 		"last_updated",
 	}
 

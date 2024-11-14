@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Master** | Pointer to [**NullableNestedDevice**](NestedDevice.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewBriefVirtualChassis
 
-`func NewBriefVirtualChassis(id int32, url string, display string, name string, memberCount int32, ) *BriefVirtualChassis`
+`func NewBriefVirtualChassis(id int32, url string, name string, memberCount int32, ) *BriefVirtualChassis`
 
 NewBriefVirtualChassis instantiates a new BriefVirtualChassis object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +90,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefVirtualChassis) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 

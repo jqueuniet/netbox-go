@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Manufacturer** | [**BriefManufacturer**](BriefManufacturer.md) |  | 
 **Model** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewBriefModuleType
 
-`func NewBriefModuleType(id int32, url string, display string, manufacturer BriefManufacturer, model string, ) *BriefModuleType`
+`func NewBriefModuleType(id int32, url string, manufacturer BriefManufacturer, model string, ) *BriefModuleType`
 
 NewBriefModuleType instantiates a new BriefModuleType object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefModuleType) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetManufacturer
 

@@ -22,7 +22,7 @@ var _ MappedNullable = &BriefCustomFieldChoiceSet{}
 type BriefCustomFieldChoiceSet struct {
 	Id                   int32   `json:"id"`
 	Url                  string  `json:"url"`
-	Display              string  `json:"display"`
+	Display              *string `json:"display,omitempty"`
 	Name                 string  `json:"name"`
 	Description          *string `json:"description,omitempty"`
 	ChoicesCount         string  `json:"choices_count"`
@@ -35,11 +35,10 @@ type _BriefCustomFieldChoiceSet BriefCustomFieldChoiceSet
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefCustomFieldChoiceSet(id int32, url string, display string, name string, choicesCount string) *BriefCustomFieldChoiceSet {
+func NewBriefCustomFieldChoiceSet(id int32, url string, name string, choicesCount string) *BriefCustomFieldChoiceSet {
 	this := BriefCustomFieldChoiceSet{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.ChoicesCount = choicesCount
 	return &this
@@ -101,28 +100,36 @@ func (o *BriefCustomFieldChoiceSet) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefCustomFieldChoiceSet) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefCustomFieldChoiceSet) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefCustomFieldChoiceSet) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefCustomFieldChoiceSet) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -217,7 +224,9 @@ func (o BriefCustomFieldChoiceSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -238,7 +247,6 @@ func (o *BriefCustomFieldChoiceSet) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"choices_count",
 	}

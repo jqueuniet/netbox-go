@@ -11,14 +11,14 @@ Name | Type | Description | Notes
 **Description** | **NullableString** |  | [readonly] 
 **Vars** | **interface{}** |  | [readonly] 
 **Result** | [**BriefJob**](BriefJob.md) |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **IsExecutable** | **bool** |  | [readonly] 
 
 ## Methods
 
 ### NewScript
 
-`func NewScript(id int32, url string, module int32, name string, description NullableString, vars interface{}, result BriefJob, display string, isExecutable bool, ) *Script`
+`func NewScript(id int32, url string, module int32, name string, description NullableString, vars interface{}, result BriefJob, isExecutable bool, ) *Script`
 
 NewScript instantiates a new Script object
 This constructor will assign default values to properties that have it defined,
@@ -212,6 +212,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Script) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetIsExecutable
 

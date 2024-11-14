@@ -6,21 +6,21 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**ClusterCount** | **int64** |  | [readonly] 
+**ClusterCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewClusterType
 
-`func NewClusterType(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, clusterCount int64, ) *ClusterType`
+`func NewClusterType(id int32, url string, name string, slug string, lastUpdated NullableTime, ) *ClusterType`
 
 NewClusterType instantiates a new ClusterType object
 This constructor will assign default values to properties that have it defined,
@@ -94,6 +94,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *ClusterType) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -229,6 +234,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ClusterType) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -289,6 +299,11 @@ and a boolean to check if the value has been set.
 
 SetClusterCount sets ClusterCount field to given value.
 
+### HasClusterCount
+
+`func (o *ClusterType) HasClusterCount() bool`
+
+HasClusterCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

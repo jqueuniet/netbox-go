@@ -21,9 +21,9 @@ var _ MappedNullable = &ASN{}
 
 // ASN Adds support for custom fields and tags.
 type ASN struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
+	Id      int32   `json:"id"`
+	Url     string  `json:"url"`
+	Display *string `json:"display,omitempty"`
 	// 16- or 32-bit autonomous system number
 	Asn                  int64                  `json:"asn"`
 	Rir                  NullableBriefRIR       `json:"rir,omitempty"`
@@ -32,10 +32,10 @@ type ASN struct {
 	Comments             *string                `json:"comments,omitempty"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
+	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	SiteCount            int64                  `json:"site_count"`
-	ProviderCount        int64                  `json:"provider_count"`
+	SiteCount            *int64                 `json:"site_count,omitempty"`
+	ProviderCount        *int64                 `json:"provider_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,16 +45,12 @@ type _ASN ASN
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewASN(id int32, url string, display string, asn int64, created NullableTime, lastUpdated NullableTime, siteCount int64, providerCount int64) *ASN {
+func NewASN(id int32, url string, asn int64, lastUpdated NullableTime) *ASN {
 	this := ASN{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Asn = asn
-	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.SiteCount = siteCount
-	this.ProviderCount = providerCount
 	return &this
 }
 
@@ -114,28 +110,36 @@ func (o *ASN) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *ASN) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASN) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *ASN) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *ASN) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetAsn returns the Asn field value
@@ -376,18 +380,16 @@ func (o *ASN) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ASN) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ASN) GetCreatedOk() (*time.Time, bool) {
@@ -397,9 +399,28 @@ func (o *ASN) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *ASN) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *ASN) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *ASN) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *ASN) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -428,52 +449,68 @@ func (o *ASN) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetSiteCount returns the SiteCount field value
+// GetSiteCount returns the SiteCount field value if set, zero value otherwise.
 func (o *ASN) GetSiteCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.SiteCount
+	return *o.SiteCount
 }
 
-// GetSiteCountOk returns a tuple with the SiteCount field value
+// GetSiteCountOk returns a tuple with the SiteCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASN) GetSiteCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		return nil, false
 	}
-	return &o.SiteCount, true
+	return o.SiteCount, true
 }
 
-// SetSiteCount sets field value
+// HasSiteCount returns a boolean if a field has been set.
+func (o *ASN) HasSiteCount() bool {
+	if o != nil && !IsNil(o.SiteCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetSiteCount gets a reference to the given int64 and assigns it to the SiteCount field.
 func (o *ASN) SetSiteCount(v int64) {
-	o.SiteCount = v
+	o.SiteCount = &v
 }
 
-// GetProviderCount returns the ProviderCount field value
+// GetProviderCount returns the ProviderCount field value if set, zero value otherwise.
 func (o *ASN) GetProviderCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.ProviderCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.ProviderCount
+	return *o.ProviderCount
 }
 
-// GetProviderCountOk returns a tuple with the ProviderCount field value
+// GetProviderCountOk returns a tuple with the ProviderCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASN) GetProviderCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ProviderCount) {
 		return nil, false
 	}
-	return &o.ProviderCount, true
+	return o.ProviderCount, true
 }
 
-// SetProviderCount sets field value
+// HasProviderCount returns a boolean if a field has been set.
+func (o *ASN) HasProviderCount() bool {
+	if o != nil && !IsNil(o.ProviderCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetProviderCount gets a reference to the given int64 and assigns it to the ProviderCount field.
 func (o *ASN) SetProviderCount(v int64) {
-	o.ProviderCount = v
+	o.ProviderCount = &v
 }
 
 func (o ASN) MarshalJSON() ([]byte, error) {
@@ -488,7 +525,9 @@ func (o ASN) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["asn"] = o.Asn
 	if o.Rir.IsSet() {
 		toSerialize["rir"] = o.Rir.Get()
@@ -508,10 +547,16 @@ func (o ASN) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["site_count"] = o.SiteCount
-	toSerialize["provider_count"] = o.ProviderCount
+	if !IsNil(o.SiteCount) {
+		toSerialize["site_count"] = o.SiteCount
+	}
+	if !IsNil(o.ProviderCount) {
+		toSerialize["provider_count"] = o.ProviderCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -527,12 +572,8 @@ func (o *ASN) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"asn",
-		"created",
 		"last_updated",
-		"site_count",
-		"provider_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

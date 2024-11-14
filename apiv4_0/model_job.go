@@ -23,12 +23,12 @@ var _ MappedNullable = &Job{}
 type Job struct {
 	Id         int32          `json:"id"`
 	Url        string         `json:"url"`
-	Display    string         `json:"display"`
+	Display    *string        `json:"display,omitempty"`
 	ObjectType string         `json:"object_type"`
 	ObjectId   NullableInt64  `json:"object_id,omitempty"`
 	Name       string         `json:"name"`
 	Status     BriefJobStatus `json:"status"`
-	Created    time.Time      `json:"created"`
+	Created    *time.Time     `json:"created,omitempty"`
 	Scheduled  NullableTime   `json:"scheduled,omitempty"`
 	// Recurrence interval (in minutes)
 	Interval             NullableInt32 `json:"interval,omitempty"`
@@ -47,15 +47,13 @@ type _Job Job
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewJob(id int32, url string, display string, objectType string, name string, status BriefJobStatus, created time.Time, user BriefUser, error_ string, jobId string) *Job {
+func NewJob(id int32, url string, objectType string, name string, status BriefJobStatus, user BriefUser, error_ string, jobId string) *Job {
 	this := Job{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.ObjectType = objectType
 	this.Name = name
 	this.Status = status
-	this.Created = created
 	this.User = user
 	this.Error = error_
 	this.JobId = jobId
@@ -118,28 +116,36 @@ func (o *Job) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *Job) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Job) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *Job) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *Job) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetObjectType returns the ObjectType field value
@@ -257,28 +263,36 @@ func (o *Job) SetStatus(v BriefJobStatus) {
 	o.Status = v
 }
 
-// GetCreated returns the Created field value
+// GetCreated returns the Created field value if set, zero value otherwise.
 func (o *Job) GetCreated() time.Time {
-	if o == nil {
+	if o == nil || IsNil(o.Created) {
 		var ret time.Time
 		return ret
 	}
-
-	return o.Created
+	return *o.Created
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Job) GetCreatedOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Created) {
 		return nil, false
 	}
-	return &o.Created, true
+	return o.Created, true
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *Job) HasCreated() bool {
+	if o != nil && !IsNil(o.Created) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given time.Time and assigns it to the Created field.
 func (o *Job) SetCreated(v time.Time) {
-	o.Created = v
+	o.Created = &v
 }
 
 // GetScheduled returns the Scheduled field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -570,14 +584,18 @@ func (o Job) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["object_type"] = o.ObjectType
 	if o.ObjectId.IsSet() {
 		toSerialize["object_id"] = o.ObjectId.Get()
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["status"] = o.Status
-	toSerialize["created"] = o.Created
+	if !IsNil(o.Created) {
+		toSerialize["created"] = o.Created
+	}
 	if o.Scheduled.IsSet() {
 		toSerialize["scheduled"] = o.Scheduled.Get()
 	}
@@ -611,11 +629,9 @@ func (o *Job) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"object_type",
 		"name",
 		"status",
-		"created",
 		"user",
 		"error",
 		"job_id",

@@ -22,11 +22,11 @@ var _ MappedNullable = &BriefCircuitType{}
 type BriefCircuitType struct {
 	Id                   int32   `json:"id"`
 	Url                  string  `json:"url"`
-	Display              string  `json:"display"`
+	Display              *string `json:"display,omitempty"`
 	Name                 string  `json:"name"`
 	Slug                 string  `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Description          *string `json:"description,omitempty"`
-	CircuitCount         int64   `json:"circuit_count"`
+	CircuitCount         *int64  `json:"circuit_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,14 +36,12 @@ type _BriefCircuitType BriefCircuitType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefCircuitType(id int32, url string, display string, name string, slug string, circuitCount int64) *BriefCircuitType {
+func NewBriefCircuitType(id int32, url string, name string, slug string) *BriefCircuitType {
 	this := BriefCircuitType{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.CircuitCount = circuitCount
 	return &this
 }
 
@@ -103,28 +101,36 @@ func (o *BriefCircuitType) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefCircuitType) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefCircuitType) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefCircuitType) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefCircuitType) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -207,28 +213,36 @@ func (o *BriefCircuitType) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetCircuitCount returns the CircuitCount field value
+// GetCircuitCount returns the CircuitCount field value if set, zero value otherwise.
 func (o *BriefCircuitType) GetCircuitCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.CircuitCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.CircuitCount
+	return *o.CircuitCount
 }
 
-// GetCircuitCountOk returns a tuple with the CircuitCount field value
+// GetCircuitCountOk returns a tuple with the CircuitCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefCircuitType) GetCircuitCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CircuitCount) {
 		return nil, false
 	}
-	return &o.CircuitCount, true
+	return o.CircuitCount, true
 }
 
-// SetCircuitCount sets field value
+// HasCircuitCount returns a boolean if a field has been set.
+func (o *BriefCircuitType) HasCircuitCount() bool {
+	if o != nil && !IsNil(o.CircuitCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitCount gets a reference to the given int64 and assigns it to the CircuitCount field.
 func (o *BriefCircuitType) SetCircuitCount(v int64) {
-	o.CircuitCount = v
+	o.CircuitCount = &v
 }
 
 func (o BriefCircuitType) MarshalJSON() ([]byte, error) {
@@ -243,13 +257,17 @@ func (o BriefCircuitType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["circuit_count"] = o.CircuitCount
+	if !IsNil(o.CircuitCount) {
+		toSerialize["circuit_count"] = o.CircuitCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -265,10 +283,8 @@ func (o *BriefCircuitType) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"slug",
-		"circuit_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

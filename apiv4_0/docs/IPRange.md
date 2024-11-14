@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Family** | [**AggregateFamily**](AggregateFamily.md) |  | 
 **StartAddress** | **string** |  | 
 **EndAddress** | **string** |  | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **MarkUtilized** | Pointer to **bool** | Treat as fully utilized | [optional] 
 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewIPRange
 
-`func NewIPRange(id int32, url string, display string, family AggregateFamily, startAddress string, endAddress string, size int32, created NullableTime, lastUpdated NullableTime, ) *IPRange`
+`func NewIPRange(id int32, url string, family AggregateFamily, startAddress string, endAddress string, size int32, lastUpdated NullableTime, ) *IPRange`
 
 NewIPRange instantiates a new IPRange object
 This constructor will assign default values to properties that have it defined,
@@ -101,6 +101,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *IPRange) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetFamily
 
@@ -431,6 +436,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *IPRange) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Username** | **string** | Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. | 
 
 ## Methods
 
 ### NewNestedUser
 
-`func NewNestedUser(id int32, url string, display string, username string, ) *NestedUser`
+`func NewNestedUser(id int32, url string, username string, ) *NestedUser`
 
 NewNestedUser instantiates a new NestedUser object
 This constructor will assign default values to properties that have it defined,
@@ -87,6 +87,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedUser) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetUsername
 
