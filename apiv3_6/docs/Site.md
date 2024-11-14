@@ -26,18 +26,18 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**CircuitCount** | **int32** |  | [readonly] 
-**DeviceCount** | **int32** |  | [readonly] 
-**PrefixCount** | **int32** |  | [readonly] 
-**RackCount** | **int32** |  | [readonly] 
-**VirtualmachineCount** | **int32** |  | [readonly] 
-**VlanCount** | **int32** |  | [readonly] 
+**CircuitCount** | Pointer to **int32** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **int32** |  | [optional] [readonly] 
+**PrefixCount** | Pointer to **int32** |  | [optional] [readonly] 
+**RackCount** | Pointer to **int32** |  | [optional] [readonly] 
+**VirtualmachineCount** | Pointer to **int32** |  | [optional] [readonly] 
+**VlanCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewSite
 
-`func NewSite(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int32, deviceCount int32, prefixCount int32, rackCount int32, virtualmachineCount int32, vlanCount int32, ) *Site`
+`func NewSite(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, ) *Site`
 
 NewSite instantiates a new Site object
 This constructor will assign default values to properties that have it defined,
@@ -666,6 +666,11 @@ and a boolean to check if the value has been set.
 
 SetCircuitCount sets CircuitCount field to given value.
 
+### HasCircuitCount
+
+`func (o *Site) HasCircuitCount() bool`
+
+HasCircuitCount returns a boolean if a field has been set.
 
 ### GetDeviceCount
 
@@ -686,6 +691,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
+
+`func (o *Site) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
 
 ### GetPrefixCount
 
@@ -706,6 +716,11 @@ and a boolean to check if the value has been set.
 
 SetPrefixCount sets PrefixCount field to given value.
 
+### HasPrefixCount
+
+`func (o *Site) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 ### GetRackCount
 
@@ -726,6 +741,11 @@ and a boolean to check if the value has been set.
 
 SetRackCount sets RackCount field to given value.
 
+### HasRackCount
+
+`func (o *Site) HasRackCount() bool`
+
+HasRackCount returns a boolean if a field has been set.
 
 ### GetVirtualmachineCount
 
@@ -746,6 +766,11 @@ and a boolean to check if the value has been set.
 
 SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
+### HasVirtualmachineCount
+
+`func (o *Site) HasVirtualmachineCount() bool`
+
+HasVirtualmachineCount returns a boolean if a field has been set.
 
 ### GetVlanCount
 
@@ -766,6 +791,11 @@ and a boolean to check if the value has been set.
 
 SetVlanCount sets VlanCount field to given value.
 
+### HasVlanCount
+
+`func (o *Site) HasVlanCount() bool`
+
+HasVlanCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

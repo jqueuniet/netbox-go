@@ -28,7 +28,7 @@ type Tag struct {
 	Slug                 string       `json:"slug" validate:"regexp=^[-\\\\w]+$"`
 	Color                *string      `json:"color,omitempty" validate:"regexp=^[0-9a-f]{6}$"`
 	Description          *string      `json:"description,omitempty"`
-	TaggedItems          int32        `json:"tagged_items"`
+	TaggedItems          *int32       `json:"tagged_items,omitempty"`
 	Created              NullableTime `json:"created"`
 	LastUpdated          NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
@@ -40,14 +40,13 @@ type _Tag Tag
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTag(id int32, url string, display string, name string, slug string, taggedItems int32, created NullableTime, lastUpdated NullableTime) *Tag {
+func NewTag(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime) *Tag {
 	this := Tag{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.TaggedItems = taggedItems
 	this.Created = created
 	this.LastUpdated = lastUpdated
 	return &this
@@ -245,28 +244,36 @@ func (o *Tag) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetTaggedItems returns the TaggedItems field value
+// GetTaggedItems returns the TaggedItems field value if set, zero value otherwise.
 func (o *Tag) GetTaggedItems() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.TaggedItems) {
 		var ret int32
 		return ret
 	}
-
-	return o.TaggedItems
+	return *o.TaggedItems
 }
 
-// GetTaggedItemsOk returns a tuple with the TaggedItems field value
+// GetTaggedItemsOk returns a tuple with the TaggedItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tag) GetTaggedItemsOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TaggedItems) {
 		return nil, false
 	}
-	return &o.TaggedItems, true
+	return o.TaggedItems, true
 }
 
-// SetTaggedItems sets field value
+// HasTaggedItems returns a boolean if a field has been set.
+func (o *Tag) HasTaggedItems() bool {
+	if o != nil && !IsNil(o.TaggedItems) {
+		return true
+	}
+
+	return false
+}
+
+// SetTaggedItems gets a reference to the given int32 and assigns it to the TaggedItems field.
 func (o *Tag) SetTaggedItems(v int32) {
-	o.TaggedItems = v
+	o.TaggedItems = &v
 }
 
 // GetCreated returns the Created field value
@@ -342,7 +349,9 @@ func (o Tag) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["tagged_items"] = o.TaggedItems
+	if !IsNil(o.TaggedItems) {
+		toSerialize["tagged_items"] = o.TaggedItems
+	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 
@@ -363,7 +372,6 @@ func (o *Tag) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"tagged_items",
 		"created",
 		"last_updated",
 	}

@@ -49,12 +49,12 @@ type Site struct {
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	CircuitCount         int32                  `json:"circuit_count"`
-	DeviceCount          int32                  `json:"device_count"`
-	PrefixCount          int32                  `json:"prefix_count"`
-	RackCount            int32                  `json:"rack_count"`
-	VirtualmachineCount  int32                  `json:"virtualmachine_count"`
-	VlanCount            int32                  `json:"vlan_count"`
+	CircuitCount         *int32                 `json:"circuit_count,omitempty"`
+	DeviceCount          *int32                 `json:"device_count,omitempty"`
+	PrefixCount          *int32                 `json:"prefix_count,omitempty"`
+	RackCount            *int32                 `json:"rack_count,omitempty"`
+	VirtualmachineCount  *int32                 `json:"virtualmachine_count,omitempty"`
+	VlanCount            *int32                 `json:"vlan_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ type _Site Site
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSite(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int32, deviceCount int32, prefixCount int32, rackCount int32, virtualmachineCount int32, vlanCount int32) *Site {
+func NewSite(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime) *Site {
 	this := Site{}
 	this.Id = id
 	this.Url = url
@@ -73,12 +73,6 @@ func NewSite(id int32, url string, display string, name string, slug string, cre
 	this.Slug = slug
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.CircuitCount = circuitCount
-	this.DeviceCount = deviceCount
-	this.PrefixCount = prefixCount
-	this.RackCount = rackCount
-	this.VirtualmachineCount = virtualmachineCount
-	this.VlanCount = vlanCount
 	return &this
 }
 
@@ -808,148 +802,196 @@ func (o *Site) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetCircuitCount returns the CircuitCount field value
+// GetCircuitCount returns the CircuitCount field value if set, zero value otherwise.
 func (o *Site) GetCircuitCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.CircuitCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.CircuitCount
+	return *o.CircuitCount
 }
 
-// GetCircuitCountOk returns a tuple with the CircuitCount field value
+// GetCircuitCountOk returns a tuple with the CircuitCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Site) GetCircuitCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CircuitCount) {
 		return nil, false
 	}
-	return &o.CircuitCount, true
+	return o.CircuitCount, true
 }
 
-// SetCircuitCount sets field value
+// HasCircuitCount returns a boolean if a field has been set.
+func (o *Site) HasCircuitCount() bool {
+	if o != nil && !IsNil(o.CircuitCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetCircuitCount gets a reference to the given int32 and assigns it to the CircuitCount field.
 func (o *Site) SetCircuitCount(v int32) {
-	o.CircuitCount = v
+	o.CircuitCount = &v
 }
 
-// GetDeviceCount returns the DeviceCount field value
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *Site) GetDeviceCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount
 }
 
-// GetDeviceCountOk returns a tuple with the DeviceCount field value
+// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Site) GetDeviceCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount, true
 }
 
-// SetDeviceCount sets field value
+// HasDeviceCount returns a boolean if a field has been set.
+func (o *Site) HasDeviceCount() bool {
+	if o != nil && !IsNil(o.DeviceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCount gets a reference to the given int32 and assigns it to the DeviceCount field.
 func (o *Site) SetDeviceCount(v int32) {
-	o.DeviceCount = v
+	o.DeviceCount = &v
 }
 
-// GetPrefixCount returns the PrefixCount field value
+// GetPrefixCount returns the PrefixCount field value if set, zero value otherwise.
 func (o *Site) GetPrefixCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.PrefixCount
+	return *o.PrefixCount
 }
 
-// GetPrefixCountOk returns a tuple with the PrefixCount field value
+// GetPrefixCountOk returns a tuple with the PrefixCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Site) GetPrefixCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		return nil, false
 	}
-	return &o.PrefixCount, true
+	return o.PrefixCount, true
 }
 
-// SetPrefixCount sets field value
+// HasPrefixCount returns a boolean if a field has been set.
+func (o *Site) HasPrefixCount() bool {
+	if o != nil && !IsNil(o.PrefixCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrefixCount gets a reference to the given int32 and assigns it to the PrefixCount field.
 func (o *Site) SetPrefixCount(v int32) {
-	o.PrefixCount = v
+	o.PrefixCount = &v
 }
 
-// GetRackCount returns the RackCount field value
+// GetRackCount returns the RackCount field value if set, zero value otherwise.
 func (o *Site) GetRackCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.RackCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.RackCount
+	return *o.RackCount
 }
 
-// GetRackCountOk returns a tuple with the RackCount field value
+// GetRackCountOk returns a tuple with the RackCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Site) GetRackCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.RackCount) {
 		return nil, false
 	}
-	return &o.RackCount, true
+	return o.RackCount, true
 }
 
-// SetRackCount sets field value
+// HasRackCount returns a boolean if a field has been set.
+func (o *Site) HasRackCount() bool {
+	if o != nil && !IsNil(o.RackCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetRackCount gets a reference to the given int32 and assigns it to the RackCount field.
 func (o *Site) SetRackCount(v int32) {
-	o.RackCount = v
+	o.RackCount = &v
 }
 
-// GetVirtualmachineCount returns the VirtualmachineCount field value
+// GetVirtualmachineCount returns the VirtualmachineCount field value if set, zero value otherwise.
 func (o *Site) GetVirtualmachineCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.VirtualmachineCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.VirtualmachineCount
+	return *o.VirtualmachineCount
 }
 
-// GetVirtualmachineCountOk returns a tuple with the VirtualmachineCount field value
+// GetVirtualmachineCountOk returns a tuple with the VirtualmachineCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Site) GetVirtualmachineCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VirtualmachineCount) {
 		return nil, false
 	}
-	return &o.VirtualmachineCount, true
+	return o.VirtualmachineCount, true
 }
 
-// SetVirtualmachineCount sets field value
+// HasVirtualmachineCount returns a boolean if a field has been set.
+func (o *Site) HasVirtualmachineCount() bool {
+	if o != nil && !IsNil(o.VirtualmachineCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetVirtualmachineCount gets a reference to the given int32 and assigns it to the VirtualmachineCount field.
 func (o *Site) SetVirtualmachineCount(v int32) {
-	o.VirtualmachineCount = v
+	o.VirtualmachineCount = &v
 }
 
-// GetVlanCount returns the VlanCount field value
+// GetVlanCount returns the VlanCount field value if set, zero value otherwise.
 func (o *Site) GetVlanCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.VlanCount
+	return *o.VlanCount
 }
 
-// GetVlanCountOk returns a tuple with the VlanCount field value
+// GetVlanCountOk returns a tuple with the VlanCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Site) GetVlanCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		return nil, false
 	}
-	return &o.VlanCount, true
+	return o.VlanCount, true
 }
 
-// SetVlanCount sets field value
+// HasVlanCount returns a boolean if a field has been set.
+func (o *Site) HasVlanCount() bool {
+	if o != nil && !IsNil(o.VlanCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanCount gets a reference to the given int32 and assigns it to the VlanCount field.
 func (o *Site) SetVlanCount(v int32) {
-	o.VlanCount = v
+	o.VlanCount = &v
 }
 
 func (o Site) MarshalJSON() ([]byte, error) {
@@ -1014,12 +1056,24 @@ func (o Site) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["circuit_count"] = o.CircuitCount
-	toSerialize["device_count"] = o.DeviceCount
-	toSerialize["prefix_count"] = o.PrefixCount
-	toSerialize["rack_count"] = o.RackCount
-	toSerialize["virtualmachine_count"] = o.VirtualmachineCount
-	toSerialize["vlan_count"] = o.VlanCount
+	if !IsNil(o.CircuitCount) {
+		toSerialize["circuit_count"] = o.CircuitCount
+	}
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
+	}
+	if !IsNil(o.PrefixCount) {
+		toSerialize["prefix_count"] = o.PrefixCount
+	}
+	if !IsNil(o.RackCount) {
+		toSerialize["rack_count"] = o.RackCount
+	}
+	if !IsNil(o.VirtualmachineCount) {
+		toSerialize["virtualmachine_count"] = o.VirtualmachineCount
+	}
+	if !IsNil(o.VlanCount) {
+		toSerialize["vlan_count"] = o.VlanCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -1040,12 +1094,6 @@ func (o *Site) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"circuit_count",
-		"device_count",
-		"prefix_count",
-		"rack_count",
-		"virtualmachine_count",
-		"vlan_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

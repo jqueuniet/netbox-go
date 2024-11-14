@@ -24,7 +24,7 @@ type VirtualDisk struct {
 	Id                   int32                  `json:"id"`
 	Url                  string                 `json:"url"`
 	DisplayUrl           string                 `json:"display_url"`
-	Display              string                 `json:"display"`
+	Display              *string                `json:"display,omitempty"`
 	VirtualMachine       BriefVirtualMachine    `json:"virtual_machine"`
 	Name                 string                 `json:"name"`
 	Description          *string                `json:"description,omitempty"`
@@ -42,12 +42,11 @@ type _VirtualDisk VirtualDisk
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualDisk(id int32, url string, displayUrl string, display string, virtualMachine BriefVirtualMachine, name string, size int32, created NullableTime, lastUpdated NullableTime) *VirtualDisk {
+func NewVirtualDisk(id int32, url string, displayUrl string, virtualMachine BriefVirtualMachine, name string, size int32, created NullableTime, lastUpdated NullableTime) *VirtualDisk {
 	this := VirtualDisk{}
 	this.Id = id
 	this.Url = url
 	this.DisplayUrl = displayUrl
-	this.Display = display
 	this.VirtualMachine = virtualMachine
 	this.Name = name
 	this.Size = size
@@ -136,28 +135,36 @@ func (o *VirtualDisk) SetDisplayUrl(v string) {
 	o.DisplayUrl = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *VirtualDisk) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualDisk) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *VirtualDisk) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *VirtualDisk) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetVirtualMachine returns the VirtualMachine field value
@@ -393,7 +400,9 @@ func (o VirtualDisk) ToMap() (map[string]interface{}, error) {
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
 	toSerialize["display_url"] = o.DisplayUrl
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["virtual_machine"] = o.VirtualMachine
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Description) {
@@ -424,7 +433,6 @@ func (o *VirtualDisk) UnmarshalJSON(data []byte) (err error) {
 		"id",
 		"url",
 		"display_url",
-		"display",
 		"virtual_machine",
 		"name",
 		"size",

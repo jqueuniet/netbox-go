@@ -122868,14 +122868,12 @@ components:
           type: integer
       required:
       - created
-      - device_count
       - display
       - id
       - last_updated
       - name
       - slug
       - url
-      - virtualmachine_count
       type: object
     DeviceRoleRequest:
       description: Adds support for custom fields and tags.
@@ -123115,23 +123113,12 @@ components:
           readOnly: true
           type: integer
       required:
-      - console_port_template_count
-      - console_server_port_template_count
       - created
-      - device_bay_template_count
-      - device_count
       - display
-      - front_port_template_count
       - id
-      - interface_template_count
-      - inventory_item_template_count
       - last_updated
       - manufacturer
       - model
-      - module_bay_template_count
-      - power_outlet_template_count
-      - power_port_template_count
-      - rear_port_template_count
       - slug
       - url
       type: object
@@ -128563,13 +128550,10 @@ components:
           type: integer
       required:
       - created
-      - devicetype_count
       - display
       - id
-      - inventoryitem_count
       - last_updated
       - name
-      - platform_count
       - slug
       - url
       type: object
@@ -154696,19 +154680,13 @@ components:
           readOnly: true
           type: integer
       required:
-      - circuit_count
       - created
-      - device_count
       - display
       - id
       - last_updated
       - name
-      - prefix_count
-      - rack_count
       - slug
       - url
-      - virtualmachine_count
-      - vlan_count
       type: object
     SiteGroup:
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -155020,7 +154998,6 @@ components:
       - last_updated
       - name
       - slug
-      - tagged_items
       - url
       type: object
     TagRequest:
@@ -157670,7 +157647,6 @@ components:
           type: string
       required:
       - created
-      - display
       - id
       - last_updated
       - name

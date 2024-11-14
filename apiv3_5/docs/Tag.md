@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | 
 **Color** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**TaggedItems** | **int32** |  | [readonly] 
+**TaggedItems** | Pointer to **int32** |  | [optional] [readonly] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewTag
 
-`func NewTag(id int32, url string, display string, name string, slug string, taggedItems int32, created NullableTime, lastUpdated NullableTime, ) *Tag`
+`func NewTag(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, ) *Tag`
 
 NewTag instantiates a new Tag object
 This constructor will assign default values to properties that have it defined,
@@ -203,6 +203,11 @@ and a boolean to check if the value has been set.
 
 SetTaggedItems sets TaggedItems field to given value.
 
+### HasTaggedItems
+
+`func (o *Tag) HasTaggedItems() bool`
+
+HasTaggedItems returns a boolean if a field has been set.
 
 ### GetCreated
 

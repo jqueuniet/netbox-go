@@ -26,13 +26,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**DeviceCount** | **int32** |  | [readonly] 
+**DeviceCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewDeviceType
 
-`func NewDeviceType(id int32, url string, display string, manufacturer NestedManufacturer, model string, slug string, created NullableTime, lastUpdated NullableTime, deviceCount int32, ) *DeviceType`
+`func NewDeviceType(id int32, url string, display string, manufacturer NestedManufacturer, model string, slug string, created NullableTime, lastUpdated NullableTime, ) *DeviceType`
 
 NewDeviceType instantiates a new DeviceType object
 This constructor will assign default values to properties that have it defined,
@@ -646,6 +646,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
+
+`func (o *DeviceType) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

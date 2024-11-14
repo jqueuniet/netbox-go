@@ -45,7 +45,7 @@ type DeviceType struct {
 	CustomFields         map[string]interface{}          `json:"custom_fields,omitempty"`
 	Created              NullableTime                    `json:"created"`
 	LastUpdated          NullableTime                    `json:"last_updated"`
-	DeviceCount          int32                           `json:"device_count"`
+	DeviceCount          *int32                          `json:"device_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +55,7 @@ type _DeviceType DeviceType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceType(id int32, url string, display string, manufacturer NestedManufacturer, model string, slug string, created NullableTime, lastUpdated NullableTime, deviceCount int32) *DeviceType {
+func NewDeviceType(id int32, url string, display string, manufacturer NestedManufacturer, model string, slug string, created NullableTime, lastUpdated NullableTime) *DeviceType {
 	this := DeviceType{}
 	this.Id = id
 	this.Url = url
@@ -67,7 +67,6 @@ func NewDeviceType(id int32, url string, display string, manufacturer NestedManu
 	this.UHeight = &uHeight
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.DeviceCount = deviceCount
 	return &this
 }
 
@@ -780,28 +779,36 @@ func (o *DeviceType) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetDeviceCount returns the DeviceCount field value
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *DeviceType) GetDeviceCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount
 }
 
-// GetDeviceCountOk returns a tuple with the DeviceCount field value
+// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceType) GetDeviceCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount, true
 }
 
-// SetDeviceCount sets field value
+// HasDeviceCount returns a boolean if a field has been set.
+func (o *DeviceType) HasDeviceCount() bool {
+	if o != nil && !IsNil(o.DeviceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCount gets a reference to the given int32 and assigns it to the DeviceCount field.
 func (o *DeviceType) SetDeviceCount(v int32) {
-	o.DeviceCount = v
+	o.DeviceCount = &v
 }
 
 func (o DeviceType) MarshalJSON() ([]byte, error) {
@@ -864,7 +871,9 @@ func (o DeviceType) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["created"] = o.Created.Get()
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["device_count"] = o.DeviceCount
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -886,7 +895,6 @@ func (o *DeviceType) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"device_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

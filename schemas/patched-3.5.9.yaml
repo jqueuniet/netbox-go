@@ -86116,14 +86116,12 @@ components:
           readOnly: true
       required:
       - created
-      - device_count
       - display
       - id
       - last_updated
       - name
       - slug
       - url
-      - virtualmachine_count
     DeviceRoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -86330,7 +86328,6 @@ components:
           readOnly: true
       required:
       - created
-      - device_count
       - display
       - id
       - last_updated
@@ -93566,13 +93563,10 @@ components:
           readOnly: true
       required:
       - created
-      - devicetype_count
       - display
       - id
-      - inventoryitem_count
       - last_updated
       - name
-      - platform_count
       - slug
       - url
     ManufacturerRequest:
@@ -113688,19 +113682,13 @@ components:
           type: integer
           readOnly: true
       required:
-      - circuit_count
       - created
-      - device_count
       - display
       - id
       - last_updated
       - name
-      - prefix_count
-      - rack_count
       - slug
       - url
-      - virtualmachine_count
-      - vlan_count
     SiteGroup:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -113939,7 +113927,6 @@ components:
       - last_updated
       - name
       - slug
-      - tagged_items
       - url
     TagRequest:
       type: object

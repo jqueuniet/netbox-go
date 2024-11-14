@@ -28,23 +28,23 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | **NullableTime** |  | [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**DeviceCount** | **int64** |  | [readonly] 
-**ConsolePortTemplateCount** | **int32** |  | [readonly] 
-**ConsoleServerPortTemplateCount** | **int32** |  | [readonly] 
-**PowerPortTemplateCount** | **int32** |  | [readonly] 
-**PowerOutletTemplateCount** | **int32** |  | [readonly] 
-**InterfaceTemplateCount** | **int32** |  | [readonly] 
-**FrontPortTemplateCount** | **int32** |  | [readonly] 
-**RearPortTemplateCount** | **int32** |  | [readonly] 
-**DeviceBayTemplateCount** | **int32** |  | [readonly] 
-**ModuleBayTemplateCount** | **int32** |  | [readonly] 
-**InventoryItemTemplateCount** | **int32** |  | [readonly] 
+**DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
+**ConsolePortTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
+**ConsoleServerPortTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
+**PowerPortTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
+**PowerOutletTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
+**InterfaceTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
+**FrontPortTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
+**RearPortTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
+**DeviceBayTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
+**ModuleBayTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
+**InventoryItemTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewDeviceType
 
-`func NewDeviceType(id int32, url string, displayUrl string, display string, manufacturer BriefManufacturer, model string, slug string, created NullableTime, lastUpdated NullableTime, deviceCount int64, consolePortTemplateCount int32, consoleServerPortTemplateCount int32, powerPortTemplateCount int32, powerOutletTemplateCount int32, interfaceTemplateCount int32, frontPortTemplateCount int32, rearPortTemplateCount int32, deviceBayTemplateCount int32, moduleBayTemplateCount int32, inventoryItemTemplateCount int32, ) *DeviceType`
+`func NewDeviceType(id int32, url string, displayUrl string, display string, manufacturer BriefManufacturer, model string, slug string, created NullableTime, lastUpdated NullableTime, ) *DeviceType`
 
 NewDeviceType instantiates a new DeviceType object
 This constructor will assign default values to properties that have it defined,
@@ -723,6 +723,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
+
+`func (o *DeviceType) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
 
 ### GetConsolePortTemplateCount
 
@@ -743,6 +748,11 @@ and a boolean to check if the value has been set.
 
 SetConsolePortTemplateCount sets ConsolePortTemplateCount field to given value.
 
+### HasConsolePortTemplateCount
+
+`func (o *DeviceType) HasConsolePortTemplateCount() bool`
+
+HasConsolePortTemplateCount returns a boolean if a field has been set.
 
 ### GetConsoleServerPortTemplateCount
 
@@ -763,6 +773,11 @@ and a boolean to check if the value has been set.
 
 SetConsoleServerPortTemplateCount sets ConsoleServerPortTemplateCount field to given value.
 
+### HasConsoleServerPortTemplateCount
+
+`func (o *DeviceType) HasConsoleServerPortTemplateCount() bool`
+
+HasConsoleServerPortTemplateCount returns a boolean if a field has been set.
 
 ### GetPowerPortTemplateCount
 
@@ -783,6 +798,11 @@ and a boolean to check if the value has been set.
 
 SetPowerPortTemplateCount sets PowerPortTemplateCount field to given value.
 
+### HasPowerPortTemplateCount
+
+`func (o *DeviceType) HasPowerPortTemplateCount() bool`
+
+HasPowerPortTemplateCount returns a boolean if a field has been set.
 
 ### GetPowerOutletTemplateCount
 
@@ -803,6 +823,11 @@ and a boolean to check if the value has been set.
 
 SetPowerOutletTemplateCount sets PowerOutletTemplateCount field to given value.
 
+### HasPowerOutletTemplateCount
+
+`func (o *DeviceType) HasPowerOutletTemplateCount() bool`
+
+HasPowerOutletTemplateCount returns a boolean if a field has been set.
 
 ### GetInterfaceTemplateCount
 
@@ -823,6 +848,11 @@ and a boolean to check if the value has been set.
 
 SetInterfaceTemplateCount sets InterfaceTemplateCount field to given value.
 
+### HasInterfaceTemplateCount
+
+`func (o *DeviceType) HasInterfaceTemplateCount() bool`
+
+HasInterfaceTemplateCount returns a boolean if a field has been set.
 
 ### GetFrontPortTemplateCount
 
@@ -843,6 +873,11 @@ and a boolean to check if the value has been set.
 
 SetFrontPortTemplateCount sets FrontPortTemplateCount field to given value.
 
+### HasFrontPortTemplateCount
+
+`func (o *DeviceType) HasFrontPortTemplateCount() bool`
+
+HasFrontPortTemplateCount returns a boolean if a field has been set.
 
 ### GetRearPortTemplateCount
 
@@ -863,6 +898,11 @@ and a boolean to check if the value has been set.
 
 SetRearPortTemplateCount sets RearPortTemplateCount field to given value.
 
+### HasRearPortTemplateCount
+
+`func (o *DeviceType) HasRearPortTemplateCount() bool`
+
+HasRearPortTemplateCount returns a boolean if a field has been set.
 
 ### GetDeviceBayTemplateCount
 
@@ -883,6 +923,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceBayTemplateCount sets DeviceBayTemplateCount field to given value.
 
+### HasDeviceBayTemplateCount
+
+`func (o *DeviceType) HasDeviceBayTemplateCount() bool`
+
+HasDeviceBayTemplateCount returns a boolean if a field has been set.
 
 ### GetModuleBayTemplateCount
 
@@ -903,6 +948,11 @@ and a boolean to check if the value has been set.
 
 SetModuleBayTemplateCount sets ModuleBayTemplateCount field to given value.
 
+### HasModuleBayTemplateCount
+
+`func (o *DeviceType) HasModuleBayTemplateCount() bool`
+
+HasModuleBayTemplateCount returns a boolean if a field has been set.
 
 ### GetInventoryItemTemplateCount
 
@@ -923,6 +973,11 @@ and a boolean to check if the value has been set.
 
 SetInventoryItemTemplateCount sets InventoryItemTemplateCount field to given value.
 
+### HasInventoryItemTemplateCount
+
+`func (o *DeviceType) HasInventoryItemTemplateCount() bool`
+
+HasInventoryItemTemplateCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
