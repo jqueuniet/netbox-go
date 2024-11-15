@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Cid** | **string** | Unique circuit ID | 
 
 ## Methods
 
 ### NewNestedCircuit
 
-`func NewNestedCircuit(id int32, url string, display string, cid string, ) *NestedCircuit`
+`func NewNestedCircuit(id int32, url string, cid string, ) *NestedCircuit`
 
 NewNestedCircuit instantiates a new NestedCircuit object
 This constructor will assign default values to properties that have it defined,
@@ -87,6 +87,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedCircuit) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetCid
 

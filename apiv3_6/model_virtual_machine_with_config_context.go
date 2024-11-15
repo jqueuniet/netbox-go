@@ -23,7 +23,7 @@ var _ MappedNullable = &VirtualMachineWithConfigContext{}
 type VirtualMachineWithConfigContext struct {
 	Id          int32                    `json:"id"`
 	Url         string                   `json:"url"`
-	Display     string                   `json:"display"`
+	Display     *string                  `json:"display,omitempty"`
 	Name        string                   `json:"name"`
 	Status      *ModuleStatus            `json:"status,omitempty"`
 	Site        NullableNestedSite       `json:"site,omitempty"`
@@ -45,9 +45,9 @@ type VirtualMachineWithConfigContext struct {
 	Tags                 []NestedTag            `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	ConfigContext        interface{}            `json:"config_context"`
-	Created              NullableTime           `json:"created"`
+	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	InterfaceCount       int32                  `json:"interface_count"`
+	InterfaceCount       *int32                 `json:"interface_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -57,17 +57,14 @@ type _VirtualMachineWithConfigContext VirtualMachineWithConfigContext
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32) *VirtualMachineWithConfigContext {
+func NewVirtualMachineWithConfigContext(id int32, url string, name string, primaryIp NestedIPAddress, configContext interface{}, lastUpdated NullableTime) *VirtualMachineWithConfigContext {
 	this := VirtualMachineWithConfigContext{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.PrimaryIp = primaryIp
 	this.ConfigContext = configContext
-	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.InterfaceCount = interfaceCount
 	return &this
 }
 
@@ -127,28 +124,36 @@ func (o *VirtualMachineWithConfigContext) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *VirtualMachineWithConfigContext) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualMachineWithConfigContext) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *VirtualMachineWithConfigContext) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *VirtualMachineWithConfigContext) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -891,18 +896,16 @@ func (o *VirtualMachineWithConfigContext) SetConfigContext(v interface{}) {
 	o.ConfigContext = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualMachineWithConfigContext) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualMachineWithConfigContext) GetCreatedOk() (*time.Time, bool) {
@@ -912,9 +915,28 @@ func (o *VirtualMachineWithConfigContext) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *VirtualMachineWithConfigContext) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *VirtualMachineWithConfigContext) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *VirtualMachineWithConfigContext) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *VirtualMachineWithConfigContext) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -943,28 +965,36 @@ func (o *VirtualMachineWithConfigContext) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetInterfaceCount returns the InterfaceCount field value
+// GetInterfaceCount returns the InterfaceCount field value if set, zero value otherwise.
 func (o *VirtualMachineWithConfigContext) GetInterfaceCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.InterfaceCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.InterfaceCount
+	return *o.InterfaceCount
 }
 
-// GetInterfaceCountOk returns a tuple with the InterfaceCount field value
+// GetInterfaceCountOk returns a tuple with the InterfaceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualMachineWithConfigContext) GetInterfaceCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InterfaceCount) {
 		return nil, false
 	}
-	return &o.InterfaceCount, true
+	return o.InterfaceCount, true
 }
 
-// SetInterfaceCount sets field value
+// HasInterfaceCount returns a boolean if a field has been set.
+func (o *VirtualMachineWithConfigContext) HasInterfaceCount() bool {
+	if o != nil && !IsNil(o.InterfaceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetInterfaceCount gets a reference to the given int32 and assigns it to the InterfaceCount field.
 func (o *VirtualMachineWithConfigContext) SetInterfaceCount(v int32) {
-	o.InterfaceCount = v
+	o.InterfaceCount = &v
 }
 
 func (o VirtualMachineWithConfigContext) MarshalJSON() ([]byte, error) {
@@ -979,7 +1009,9 @@ func (o VirtualMachineWithConfigContext) ToMap() (map[string]interface{}, error)
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
@@ -1036,9 +1068,13 @@ func (o VirtualMachineWithConfigContext) ToMap() (map[string]interface{}, error)
 	if o.ConfigContext != nil {
 		toSerialize["config_context"] = o.ConfigContext
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["interface_count"] = o.InterfaceCount
+	if !IsNil(o.InterfaceCount) {
+		toSerialize["interface_count"] = o.InterfaceCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -1054,13 +1090,10 @@ func (o *VirtualMachineWithConfigContext) UnmarshalJSON(data []byte) (err error)
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"primary_ip",
 		"config_context",
-		"created",
 		"last_updated",
-		"interface_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

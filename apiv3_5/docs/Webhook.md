@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **ContentTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **TypeCreate** | Pointer to **bool** | Triggers when a matching object is created. | [optional] 
@@ -24,14 +24,14 @@ Name | Type | Description | Notes
 **Conditions** | Pointer to **map[string]interface{}** | A set of conditions which determine whether the webhook will be generated. | [optional] 
 **SslVerification** | Pointer to **bool** | Enable SSL certificate verification. Disable with caution! | [optional] 
 **CaFilePath** | Pointer to **NullableString** | The specific CA certificate file to use for SSL verification. Leave blank to use the system defaults. | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewWebhook
 
-`func NewWebhook(id int32, url string, display string, contentTypes []string, name string, payloadUrl string, created NullableTime, lastUpdated NullableTime, ) *Webhook`
+`func NewWebhook(id int32, url string, contentTypes []string, name string, payloadUrl string, lastUpdated NullableTime, ) *Webhook`
 
 NewWebhook instantiates a new Webhook object
 This constructor will assign default values to properties that have it defined,
@@ -105,6 +105,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Webhook) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetContentTypes
 
@@ -555,6 +560,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Webhook) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

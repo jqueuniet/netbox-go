@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Tunnel** | [**BriefTunnel**](BriefTunnel.md) |  | 
 **Role** | [**TunnelTerminationRole**](TunnelTerminationRole.md) |  | 
 **TerminationType** | **string** |  | 
@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **OutsideIp** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewTunnelTermination
 
-`func NewTunnelTermination(id int32, url string, displayUrl string, display string, tunnel BriefTunnel, role TunnelTerminationRole, terminationType string, terminationId NullableInt64, termination interface{}, created NullableTime, lastUpdated NullableTime, ) *TunnelTermination`
+`func NewTunnelTermination(id int32, url string, tunnel BriefTunnel, role TunnelTerminationRole, terminationType string, terminationId NullableInt64, termination interface{}, lastUpdated NullableTime, ) *TunnelTermination`
 
 NewTunnelTermination instantiates a new TunnelTermination object
 This constructor will assign default values to properties that have it defined,
@@ -97,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *TunnelTermination) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -117,6 +122,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *TunnelTermination) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetTunnel
 
@@ -342,6 +352,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *TunnelTermination) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

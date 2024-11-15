@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Manufacturer** | [**BriefManufacturer**](BriefManufacturer.md) |  | 
 **Model** | **string** |  | 
 **Slug** | **string** |  | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewBriefRackType
 
-`func NewBriefRackType(id int32, url string, display string, manufacturer BriefManufacturer, model string, slug string, ) *BriefRackType`
+`func NewBriefRackType(id int32, url string, manufacturer BriefManufacturer, model string, slug string, ) *BriefRackType`
 
 NewBriefRackType instantiates a new BriefRackType object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +90,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefRackType) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetManufacturer
 

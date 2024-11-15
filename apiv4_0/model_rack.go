@@ -60,7 +60,7 @@ type Rack struct {
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	DeviceCount          *int64                 `json:"device_count,omitempty"`
-	PowerfeedCount       int64                  `json:"powerfeed_count"`
+	PowerfeedCount       *int64                 `json:"powerfeed_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -70,14 +70,13 @@ type _Rack Rack
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRack(id int32, url string, name string, site BriefSite, lastUpdated NullableTime, powerfeedCount int64) *Rack {
+func NewRack(id int32, url string, name string, site BriefSite, lastUpdated NullableTime) *Rack {
 	this := Rack{}
 	this.Id = id
 	this.Url = url
 	this.Name = name
 	this.Site = site
 	this.LastUpdated = lastUpdated
-	this.PowerfeedCount = powerfeedCount
 	return &this
 }
 
@@ -1197,28 +1196,36 @@ func (o *Rack) SetDeviceCount(v int64) {
 	o.DeviceCount = &v
 }
 
-// GetPowerfeedCount returns the PowerfeedCount field value
+// GetPowerfeedCount returns the PowerfeedCount field value if set, zero value otherwise.
 func (o *Rack) GetPowerfeedCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.PowerfeedCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.PowerfeedCount
+	return *o.PowerfeedCount
 }
 
-// GetPowerfeedCountOk returns a tuple with the PowerfeedCount field value
+// GetPowerfeedCountOk returns a tuple with the PowerfeedCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Rack) GetPowerfeedCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PowerfeedCount) {
 		return nil, false
 	}
-	return &o.PowerfeedCount, true
+	return o.PowerfeedCount, true
 }
 
-// SetPowerfeedCount sets field value
+// HasPowerfeedCount returns a boolean if a field has been set.
+func (o *Rack) HasPowerfeedCount() bool {
+	if o != nil && !IsNil(o.PowerfeedCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPowerfeedCount gets a reference to the given int64 and assigns it to the PowerfeedCount field.
 func (o *Rack) SetPowerfeedCount(v int64) {
-	o.PowerfeedCount = v
+	o.PowerfeedCount = &v
 }
 
 func (o Rack) MarshalJSON() ([]byte, error) {
@@ -1314,7 +1321,9 @@ func (o Rack) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DeviceCount) {
 		toSerialize["device_count"] = o.DeviceCount
 	}
-	toSerialize["powerfeed_count"] = o.PowerfeedCount
+	if !IsNil(o.PowerfeedCount) {
+		toSerialize["powerfeed_count"] = o.PowerfeedCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -1333,7 +1342,6 @@ func (o *Rack) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"site",
 		"last_updated",
-		"powerfeed_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

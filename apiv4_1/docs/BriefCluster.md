@@ -6,16 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**VirtualmachineCount** | **int64** |  | [readonly] 
+**VirtualmachineCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBriefCluster
 
-`func NewBriefCluster(id int32, url string, display string, name string, virtualmachineCount int64, ) *BriefCluster`
+`func NewBriefCluster(id int32, url string, name string, ) *BriefCluster`
 
 NewBriefCluster instantiates a new BriefCluster object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefCluster) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -154,6 +159,11 @@ and a boolean to check if the value has been set.
 
 SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
+### HasVirtualmachineCount
+
+`func (o *BriefCluster) HasVirtualmachineCount() bool`
+
+HasVirtualmachineCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

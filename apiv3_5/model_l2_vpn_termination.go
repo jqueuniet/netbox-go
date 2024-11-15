@@ -23,14 +23,14 @@ var _ MappedNullable = &L2VPNTermination{}
 type L2VPNTermination struct {
 	Id                   int32                  `json:"id"`
 	Url                  string                 `json:"url"`
-	Display              string                 `json:"display"`
+	Display              *string                `json:"display,omitempty"`
 	L2vpn                NestedL2VPN            `json:"l2vpn"`
 	AssignedObjectType   string                 `json:"assigned_object_type"`
 	AssignedObjectId     int64                  `json:"assigned_object_id"`
 	AssignedObject       map[string]interface{} `json:"assigned_object"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
+	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
@@ -41,16 +41,14 @@ type _L2VPNTermination L2VPNTermination
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewL2VPNTermination(id int32, url string, display string, l2vpn NestedL2VPN, assignedObjectType string, assignedObjectId int64, assignedObject map[string]interface{}, created NullableTime, lastUpdated NullableTime) *L2VPNTermination {
+func NewL2VPNTermination(id int32, url string, l2vpn NestedL2VPN, assignedObjectType string, assignedObjectId int64, assignedObject map[string]interface{}, lastUpdated NullableTime) *L2VPNTermination {
 	this := L2VPNTermination{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.L2vpn = l2vpn
 	this.AssignedObjectType = assignedObjectType
 	this.AssignedObjectId = assignedObjectId
 	this.AssignedObject = assignedObject
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -111,28 +109,36 @@ func (o *L2VPNTermination) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *L2VPNTermination) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *L2VPNTermination) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *L2VPNTermination) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *L2VPNTermination) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetL2vpn returns the L2vpn field value
@@ -297,18 +303,16 @@ func (o *L2VPNTermination) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *L2VPNTermination) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *L2VPNTermination) GetCreatedOk() (*time.Time, bool) {
@@ -318,9 +322,28 @@ func (o *L2VPNTermination) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *L2VPNTermination) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *L2VPNTermination) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *L2VPNTermination) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *L2VPNTermination) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -361,7 +384,9 @@ func (o L2VPNTermination) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["l2vpn"] = o.L2vpn
 	toSerialize["assigned_object_type"] = o.AssignedObjectType
 	toSerialize["assigned_object_id"] = o.AssignedObjectId
@@ -374,7 +399,9 @@ func (o L2VPNTermination) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 
 	for key, value := range o.AdditionalProperties {
@@ -391,12 +418,10 @@ func (o *L2VPNTermination) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"l2vpn",
 		"assigned_object_type",
 		"assigned_object_id",
 		"assigned_object",
-		"created",
 		"last_updated",
 	}
 

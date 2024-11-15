@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **User** | [**BriefUser**](BriefUser.md) |  | [readonly] 
-**Created** | **time.Time** |  | [readonly] 
+**Created** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Expires** | Pointer to **NullableTime** |  | [optional] 
 **LastUsed** | **time.Time** |  | [readonly] 
 **Key** | **string** |  | [readonly] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewTokenProvision
 
-`func NewTokenProvision(id int32, url string, displayUrl string, display string, user BriefUser, created time.Time, lastUsed time.Time, key string, ) *TokenProvision`
+`func NewTokenProvision(id int32, url string, user BriefUser, lastUsed time.Time, key string, ) *TokenProvision`
 
 NewTokenProvision instantiates a new TokenProvision object
 This constructor will assign default values to properties that have it defined,
@@ -94,6 +94,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *TokenProvision) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -114,6 +119,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *TokenProvision) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -154,6 +164,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *TokenProvision) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### GetExpires
 

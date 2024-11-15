@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
@@ -17,14 +17,14 @@ Name | Type | Description | Notes
 **GroupName** | Pointer to **string** | Links with the same group will appear as a dropdown menu | [optional] 
 **ButtonClass** | Pointer to [**CustomLinkButtonClass**](CustomLinkButtonClass.md) |  | [optional] 
 **NewWindow** | Pointer to **bool** | Force link to open in a new window | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewCustomLink
 
-`func NewCustomLink(id int32, url string, displayUrl string, display string, objectTypes []string, name string, linkText string, linkUrl string, created NullableTime, lastUpdated NullableTime, ) *CustomLink`
+`func NewCustomLink(id int32, url string, objectTypes []string, name string, linkText string, linkUrl string, lastUpdated NullableTime, ) *CustomLink`
 
 NewCustomLink instantiates a new CustomLink object
 This constructor will assign default values to properties that have it defined,
@@ -98,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *CustomLink) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -118,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *CustomLink) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetObjectTypes
 
@@ -343,6 +353,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *CustomLink) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Family** | [**AggregateFamily**](AggregateFamily.md) |  | 
 **Address** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewBriefIPAddress
 
-`func NewBriefIPAddress(id int32, url string, display string, family AggregateFamily, address string, ) *BriefIPAddress`
+`func NewBriefIPAddress(id int32, url string, family AggregateFamily, address string, ) *BriefIPAddress`
 
 NewBriefIPAddress instantiates a new BriefIPAddress object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefIPAddress) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetFamily
 

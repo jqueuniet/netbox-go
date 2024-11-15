@@ -22,7 +22,7 @@ var _ MappedNullable = &NestedCable{}
 type NestedCable struct {
 	Id                   int32   `json:"id"`
 	Url                  string  `json:"url"`
-	Display              string  `json:"display"`
+	Display              *string `json:"display,omitempty"`
 	Label                *string `json:"label,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -33,11 +33,10 @@ type _NestedCable NestedCable
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedCable(id int32, url string, display string) *NestedCable {
+func NewNestedCable(id int32, url string) *NestedCable {
 	this := NestedCable{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	return &this
 }
 
@@ -97,28 +96,36 @@ func (o *NestedCable) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *NestedCable) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedCable) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *NestedCable) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *NestedCable) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
@@ -165,7 +172,9 @@ func (o NestedCable) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
@@ -184,7 +193,6 @@ func (o *NestedCable) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

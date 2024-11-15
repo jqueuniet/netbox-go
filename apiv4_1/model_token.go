@@ -23,10 +23,10 @@ var _ MappedNullable = &Token{}
 type Token struct {
 	Id         int32        `json:"id"`
 	Url        string       `json:"url"`
-	DisplayUrl string       `json:"display_url"`
-	Display    string       `json:"display"`
+	DisplayUrl *string      `json:"display_url,omitempty"`
+	Display    *string      `json:"display,omitempty"`
 	User       BriefUser    `json:"user"`
-	Created    time.Time    `json:"created"`
+	Created    *time.Time   `json:"created,omitempty"`
 	Expires    NullableTime `json:"expires,omitempty"`
 	LastUsed   NullableTime `json:"last_used,omitempty"`
 	Key        *string      `json:"key,omitempty"`
@@ -42,14 +42,11 @@ type _Token Token
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewToken(id int32, url string, displayUrl string, display string, user BriefUser, created time.Time) *Token {
+func NewToken(id int32, url string, user BriefUser) *Token {
 	this := Token{}
 	this.Id = id
 	this.Url = url
-	this.DisplayUrl = displayUrl
-	this.Display = display
 	this.User = user
-	this.Created = created
 	return &this
 }
 
@@ -109,52 +106,68 @@ func (o *Token) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplayUrl returns the DisplayUrl field value
+// GetDisplayUrl returns the DisplayUrl field value if set, zero value otherwise.
 func (o *Token) GetDisplayUrl() string {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		var ret string
 		return ret
 	}
-
-	return o.DisplayUrl
+	return *o.DisplayUrl
 }
 
-// GetDisplayUrlOk returns a tuple with the DisplayUrl field value
+// GetDisplayUrlOk returns a tuple with the DisplayUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Token) GetDisplayUrlOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		return nil, false
 	}
-	return &o.DisplayUrl, true
+	return o.DisplayUrl, true
 }
 
-// SetDisplayUrl sets field value
+// HasDisplayUrl returns a boolean if a field has been set.
+func (o *Token) HasDisplayUrl() bool {
+	if o != nil && !IsNil(o.DisplayUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayUrl gets a reference to the given string and assigns it to the DisplayUrl field.
 func (o *Token) SetDisplayUrl(v string) {
-	o.DisplayUrl = v
+	o.DisplayUrl = &v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *Token) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Token) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *Token) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *Token) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetUser returns the User field value
@@ -181,28 +194,36 @@ func (o *Token) SetUser(v BriefUser) {
 	o.User = v
 }
 
-// GetCreated returns the Created field value
+// GetCreated returns the Created field value if set, zero value otherwise.
 func (o *Token) GetCreated() time.Time {
-	if o == nil {
+	if o == nil || IsNil(o.Created) {
 		var ret time.Time
 		return ret
 	}
-
-	return o.Created
+	return *o.Created
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Token) GetCreatedOk() (*time.Time, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Created) {
 		return nil, false
 	}
-	return &o.Created, true
+	return o.Created, true
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *Token) HasCreated() bool {
+	if o != nil && !IsNil(o.Created) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given time.Time and assigns it to the Created field.
 func (o *Token) SetCreated(v time.Time) {
-	o.Created = v
+	o.Created = &v
 }
 
 // GetExpires returns the Expires field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -399,10 +420,16 @@ func (o Token) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display_url"] = o.DisplayUrl
-	toSerialize["display"] = o.Display
+	if !IsNil(o.DisplayUrl) {
+		toSerialize["display_url"] = o.DisplayUrl
+	}
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["user"] = o.User
-	toSerialize["created"] = o.Created
+	if !IsNil(o.Created) {
+		toSerialize["created"] = o.Created
+	}
 	if o.Expires.IsSet() {
 		toSerialize["expires"] = o.Expires.Get()
 	}
@@ -433,10 +460,7 @@ func (o *Token) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display_url",
-		"display",
 		"user",
-		"created",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

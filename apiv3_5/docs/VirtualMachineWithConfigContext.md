@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Status** | Pointer to [**ModuleStatus**](ModuleStatus.md) |  | [optional] 
 **Site** | Pointer to [**NullableNestedSite**](NestedSite.md) |  | [optional] 
@@ -27,14 +27,14 @@ Name | Type | Description | Notes
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **ConfigContext** | **map[string]interface{}** |  | [readonly] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewVirtualMachineWithConfigContext
 
-`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NestedIPAddress, configContext map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *VirtualMachineWithConfigContext`
+`func NewVirtualMachineWithConfigContext(id int32, url string, name string, primaryIp NestedIPAddress, configContext map[string]interface{}, lastUpdated NullableTime, ) *VirtualMachineWithConfigContext`
 
 NewVirtualMachineWithConfigContext instantiates a new VirtualMachineWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -108,6 +108,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *VirtualMachineWithConfigContext) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -743,6 +748,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *VirtualMachineWithConfigContext) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

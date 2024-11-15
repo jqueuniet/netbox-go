@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**TenantCount** | **int32** |  | [readonly] [default to 0]
+**TenantCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewBriefTenantGroup
 
-`func NewBriefTenantGroup(id int32, url string, display string, name string, slug string, tenantCount int32, depth int32, ) *BriefTenantGroup`
+`func NewBriefTenantGroup(id int32, url string, name string, slug string, depth int32, ) *BriefTenantGroup`
 
 NewBriefTenantGroup instantiates a new BriefTenantGroup object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefTenantGroup) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -176,6 +181,11 @@ and a boolean to check if the value has been set.
 
 SetTenantCount sets TenantCount field to given value.
 
+### HasTenantCount
+
+`func (o *BriefTenantGroup) HasTenantCount() bool`
+
+HasTenantCount returns a boolean if a field has been set.
 
 ### GetDepth
 

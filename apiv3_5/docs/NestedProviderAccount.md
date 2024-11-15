@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **Account** | **string** |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewNestedProviderAccount
 
-`func NewNestedProviderAccount(id int32, url string, display string, account string, ) *NestedProviderAccount`
+`func NewNestedProviderAccount(id int32, url string, account string, ) *NestedProviderAccount`
 
 NewNestedProviderAccount instantiates a new NestedProviderAccount object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedProviderAccount) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 

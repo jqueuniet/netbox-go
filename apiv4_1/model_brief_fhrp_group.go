@@ -22,7 +22,7 @@ var _ MappedNullable = &BriefFHRPGroup{}
 type BriefFHRPGroup struct {
 	Id                   int32                  `json:"id"`
 	Url                  string                 `json:"url"`
-	Display              string                 `json:"display"`
+	Display              *string                `json:"display,omitempty"`
 	Protocol             BriefFHRPGroupProtocol `json:"protocol"`
 	GroupId              int32                  `json:"group_id"`
 	Description          *string                `json:"description,omitempty"`
@@ -35,11 +35,10 @@ type _BriefFHRPGroup BriefFHRPGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefFHRPGroup(id int32, url string, display string, protocol BriefFHRPGroupProtocol, groupId int32) *BriefFHRPGroup {
+func NewBriefFHRPGroup(id int32, url string, protocol BriefFHRPGroupProtocol, groupId int32) *BriefFHRPGroup {
 	this := BriefFHRPGroup{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Protocol = protocol
 	this.GroupId = groupId
 	return &this
@@ -101,28 +100,36 @@ func (o *BriefFHRPGroup) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefFHRPGroup) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefFHRPGroup) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefFHRPGroup) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefFHRPGroup) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetProtocol returns the Protocol field value
@@ -217,7 +224,9 @@ func (o BriefFHRPGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["protocol"] = o.Protocol
 	toSerialize["group_id"] = o.GroupId
 	if !IsNil(o.Description) {
@@ -238,7 +247,6 @@ func (o *BriefFHRPGroup) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"protocol",
 		"group_id",
 	}

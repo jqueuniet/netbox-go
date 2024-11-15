@@ -6,20 +6,20 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Group** | [**NestedFHRPGroup**](NestedFHRPGroup.md) |  | 
 **InterfaceType** | **string** |  | 
 **InterfaceId** | **int64** |  | 
 **Interface** | **interface{}** |  | [readonly] 
 **Priority** | **int32** |  | 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewFHRPGroupAssignment
 
-`func NewFHRPGroupAssignment(id int32, url string, display string, group NestedFHRPGroup, interfaceType string, interfaceId int64, interface_ interface{}, priority int32, created NullableTime, lastUpdated NullableTime, ) *FHRPGroupAssignment`
+`func NewFHRPGroupAssignment(id int32, url string, group NestedFHRPGroup, interfaceType string, interfaceId int64, interface_ interface{}, priority int32, lastUpdated NullableTime, ) *FHRPGroupAssignment`
 
 NewFHRPGroupAssignment instantiates a new FHRPGroupAssignment object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *FHRPGroupAssignment) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetGroup
 
@@ -223,6 +228,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *FHRPGroupAssignment) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

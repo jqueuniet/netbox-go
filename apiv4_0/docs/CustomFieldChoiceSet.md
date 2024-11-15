@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **BaseChoices** | Pointer to [**CustomFieldChoiceSetBaseChoices**](CustomFieldChoiceSetBaseChoices.md) |  | [optional] 
 **ExtraChoices** | **[][]interface{}** |  | 
 **OrderAlphabetically** | Pointer to **bool** | Choices are automatically ordered alphabetically | [optional] 
-**ChoicesCount** | **string** |  | [readonly] 
+**ChoicesCount** | Pointer to **string** |  | [optional] [readonly] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewCustomFieldChoiceSet
 
-`func NewCustomFieldChoiceSet(id int32, url string, name string, extraChoices [][]interface{}, choicesCount string, lastUpdated NullableTime, ) *CustomFieldChoiceSet`
+`func NewCustomFieldChoiceSet(id int32, url string, name string, extraChoices [][]interface{}, lastUpdated NullableTime, ) *CustomFieldChoiceSet`
 
 NewCustomFieldChoiceSet instantiates a new CustomFieldChoiceSet object
 This constructor will assign default values to properties that have it defined,
@@ -234,6 +234,11 @@ and a boolean to check if the value has been set.
 
 SetChoicesCount sets ChoicesCount field to given value.
 
+### HasChoicesCount
+
+`func (o *CustomFieldChoiceSet) HasChoicesCount() bool`
+
+HasChoicesCount returns a boolean if a field has been set.
 
 ### GetCreated
 

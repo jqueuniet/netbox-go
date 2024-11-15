@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **ContentType** | **string** |  | 
 **ObjectId** | **int64** |  | 
 **Object** | **map[string]interface{}** |  | [readonly] 
@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **Priority** | Pointer to [**ContactAssignmentPriority**](ContactAssignmentPriority.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewContactAssignment
 
-`func NewContactAssignment(id int32, url string, display string, contentType string, objectId int64, object map[string]interface{}, contact NestedContact, created NullableTime, lastUpdated NullableTime, ) *ContactAssignment`
+`func NewContactAssignment(id int32, url string, contentType string, objectId int64, object map[string]interface{}, contact NestedContact, lastUpdated NullableTime, ) *ContactAssignment`
 
 NewContactAssignment instantiates a new ContactAssignment object
 This constructor will assign default values to properties that have it defined,
@@ -96,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *ContactAssignment) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetContentType
 
@@ -306,6 +311,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ContactAssignment) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

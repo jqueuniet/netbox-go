@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**MemberCount** | **int32** |  | [readonly] 
+**MemberCount** | Pointer to **int32** |  | [optional] [readonly] 
 **Members** | [**[]NestedDevice**](NestedDevice.md) |  | [readonly] 
 
 ## Methods
 
 ### NewVirtualChassis
 
-`func NewVirtualChassis(id int32, url string, name string, lastUpdated NullableTime, memberCount int32, members []NestedDevice, ) *VirtualChassis`
+`func NewVirtualChassis(id int32, url string, name string, lastUpdated NullableTime, members []NestedDevice, ) *VirtualChassis`
 
 NewVirtualChassis instantiates a new VirtualChassis object
 This constructor will assign default values to properties that have it defined,
@@ -367,6 +367,11 @@ and a boolean to check if the value has been set.
 
 SetMemberCount sets MemberCount field to given value.
 
+### HasMemberCount
+
+`func (o *VirtualChassis) HasMemberCount() bool`
+
+HasMemberCount returns a boolean if a field has been set.
 
 ### GetMembers
 

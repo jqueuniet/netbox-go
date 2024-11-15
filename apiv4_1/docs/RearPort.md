@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Device** | [**BriefDevice**](BriefDevice.md) |  | 
 **Module** | Pointer to [**NullableBriefModule**](BriefModule.md) |  | [optional] 
 **Name** | **string** |  | 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **LinkPeersType** | **NullableString** | Return the type of the peer link terminations, or None. | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **Occupied** | **bool** |  | [readonly] 
 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewRearPort
 
-`func NewRearPort(id int32, url string, displayUrl string, display string, device BriefDevice, name string, type_ FrontPortType, cable NullableBriefCable, cableEnd string, linkPeers []interface{}, linkPeersType NullableString, created NullableTime, lastUpdated NullableTime, occupied bool, ) *RearPort`
+`func NewRearPort(id int32, url string, device BriefDevice, name string, type_ FrontPortType, cable NullableBriefCable, cableEnd string, linkPeers []interface{}, linkPeersType NullableString, lastUpdated NullableTime, occupied bool, ) *RearPort`
 
 NewRearPort instantiates a new RearPort object
 This constructor will assign default values to properties that have it defined,
@@ -105,6 +105,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *RearPort) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -125,6 +130,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *RearPort) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDevice
 
@@ -515,6 +525,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *RearPort) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

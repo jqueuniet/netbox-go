@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Circuit** | [**NestedCircuit**](NestedCircuit.md) |  | 
 **TermSide** | [**Termination**](Termination.md) |  | 
 **Site** | Pointer to [**NullableNestedSite**](NestedSite.md) |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **Occupied** | **bool** |  | [readonly] 
 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitTermination
 
-`func NewCircuitTermination(id int32, url string, display string, circuit NestedCircuit, termSide Termination, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool, ) *CircuitTermination`
+`func NewCircuitTermination(id int32, url string, circuit NestedCircuit, termSide Termination, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, lastUpdated NullableTime, occupied bool, ) *CircuitTermination`
 
 NewCircuitTermination instantiates a new CircuitTermination object
 This constructor will assign default values to properties that have it defined,
@@ -105,6 +105,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *CircuitTermination) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetCircuit
 
@@ -545,6 +550,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *CircuitTermination) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

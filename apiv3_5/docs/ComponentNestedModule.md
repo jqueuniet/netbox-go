@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Device** | **int32** |  | 
 **ModuleBay** | [**ModuleNestedModuleBay**](ModuleNestedModuleBay.md) |  | [readonly] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewComponentNestedModule
 
-`func NewComponentNestedModule(id int32, url string, display string, device int32, moduleBay ModuleNestedModuleBay, ) *ComponentNestedModule`
+`func NewComponentNestedModule(id int32, url string, device int32, moduleBay ModuleNestedModuleBay, ) *ComponentNestedModule`
 
 NewComponentNestedModule instantiates a new ComponentNestedModule object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *ComponentNestedModule) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDevice
 

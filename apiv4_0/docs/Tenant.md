@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **CircuitCount** | Pointer to **int64** |  | [optional] [readonly] 
 **DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
-**IpaddressCount** | **int64** |  | [readonly] 
+**IpaddressCount** | Pointer to **int64** |  | [optional] [readonly] 
 **PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 **RackCount** | Pointer to **int64** |  | [optional] [readonly] 
 **SiteCount** | Pointer to **int64** |  | [optional] [readonly] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewTenant
 
-`func NewTenant(id int32, url string, name string, slug string, lastUpdated NullableTime, ipaddressCount int64, ) *Tenant`
+`func NewTenant(id int32, url string, name string, slug string, lastUpdated NullableTime, ) *Tenant`
 
 NewTenant instantiates a new Tenant object
 This constructor will assign default values to properties that have it defined,
@@ -420,6 +420,11 @@ and a boolean to check if the value has been set.
 
 SetIpaddressCount sets IpaddressCount field to given value.
 
+### HasIpaddressCount
+
+`func (o *Tenant) HasIpaddressCount() bool`
+
+HasIpaddressCount returns a boolean if a field has been set.
 
 ### GetPrefixCount
 

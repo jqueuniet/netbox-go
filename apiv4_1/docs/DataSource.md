@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Type** | [**DataSourceType**](DataSourceType.md) |  | 
 **SourceUrl** | **string** |  | 
@@ -18,16 +18,16 @@ Name | Type | Description | Notes
 **IgnoreRules** | Pointer to **string** | Patterns (one per line) matching files to ignore when syncing | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **LastSynced** | **NullableTime** |  | [readonly] 
-**FileCount** | **int64** |  | [readonly] 
+**FileCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewDataSource
 
-`func NewDataSource(id int32, url string, displayUrl string, display string, name string, type_ DataSourceType, sourceUrl string, status DataSourceStatus, created NullableTime, lastUpdated NullableTime, lastSynced NullableTime, fileCount int64, ) *DataSource`
+`func NewDataSource(id int32, url string, name string, type_ DataSourceType, sourceUrl string, status DataSourceStatus, lastUpdated NullableTime, lastSynced NullableTime, ) *DataSource`
 
 NewDataSource instantiates a new DataSource object
 This constructor will assign default values to properties that have it defined,
@@ -101,6 +101,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *DataSource) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -121,6 +126,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *DataSource) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -381,6 +391,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *DataSource) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -471,6 +486,11 @@ and a boolean to check if the value has been set.
 
 SetFileCount sets FileCount field to given value.
 
+### HasFileCount
+
+`func (o *DataSource) HasFileCount() bool`
+
+HasFileCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

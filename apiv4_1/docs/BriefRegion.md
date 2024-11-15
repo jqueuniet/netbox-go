@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**SiteCount** | **int32** |  | [readonly] [default to 0]
+**SiteCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewBriefRegion
 
-`func NewBriefRegion(id int32, url string, display string, name string, slug string, siteCount int32, depth int32, ) *BriefRegion`
+`func NewBriefRegion(id int32, url string, name string, slug string, depth int32, ) *BriefRegion`
 
 NewBriefRegion instantiates a new BriefRegion object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefRegion) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -176,6 +181,11 @@ and a boolean to check if the value has been set.
 
 SetSiteCount sets SiteCount field to given value.
 
+### HasSiteCount
+
+`func (o *BriefRegion) HasSiteCount() bool`
+
+HasSiteCount returns a boolean if a field has been set.
 
 ### GetDepth
 

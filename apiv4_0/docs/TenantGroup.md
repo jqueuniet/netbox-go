@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**TenantCount** | **int32** |  | [readonly] [default to 0]
+**TenantCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewTenantGroup
 
-`func NewTenantGroup(id int32, url string, name string, slug string, lastUpdated NullableTime, tenantCount int32, depth int32, ) *TenantGroup`
+`func NewTenantGroup(id int32, url string, name string, slug string, lastUpdated NullableTime, depth int32, ) *TenantGroup`
 
 NewTenantGroup instantiates a new TenantGroup object
 This constructor will assign default values to properties that have it defined,
@@ -336,6 +336,11 @@ and a boolean to check if the value has been set.
 
 SetTenantCount sets TenantCount field to given value.
 
+### HasTenantCount
+
+`func (o *TenantGroup) HasTenantCount() bool`
+
+HasTenantCount returns a boolean if a field has been set.
 
 ### GetDepth
 

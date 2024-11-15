@@ -20,9 +20,9 @@ var _ MappedNullable = &NestedInterfaceTemplate{}
 
 // NestedInterfaceTemplate Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedInterfaceTemplate struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
+	Id      int32   `json:"id"`
+	Url     string  `json:"url"`
+	Display *string `json:"display,omitempty"`
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
 	Name                 string `json:"name"`
 	AdditionalProperties map[string]interface{}
@@ -34,11 +34,10 @@ type _NestedInterfaceTemplate NestedInterfaceTemplate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedInterfaceTemplate(id int32, url string, display string, name string) *NestedInterfaceTemplate {
+func NewNestedInterfaceTemplate(id int32, url string, name string) *NestedInterfaceTemplate {
 	this := NestedInterfaceTemplate{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	return &this
 }
@@ -99,28 +98,36 @@ func (o *NestedInterfaceTemplate) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *NestedInterfaceTemplate) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedInterfaceTemplate) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *NestedInterfaceTemplate) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *NestedInterfaceTemplate) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -159,7 +166,9 @@ func (o NestedInterfaceTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 
 	for key, value := range o.AdditionalProperties {
@@ -176,7 +185,6 @@ func (o *NestedInterfaceTemplate) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 	}
 

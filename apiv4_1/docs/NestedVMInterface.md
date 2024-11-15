@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **VirtualMachine** | [**NestedVirtualMachine**](NestedVirtualMachine.md) |  | [readonly] 
 **Name** | **string** |  | 
 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewNestedVMInterface
 
-`func NewNestedVMInterface(id int32, url string, displayUrl string, display string, virtualMachine NestedVirtualMachine, name string, ) *NestedVMInterface`
+`func NewNestedVMInterface(id int32, url string, virtualMachine NestedVirtualMachine, name string, ) *NestedVMInterface`
 
 NewNestedVMInterface instantiates a new NestedVMInterface object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *NestedVMInterface) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -109,6 +114,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedVMInterface) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetVirtualMachine
 

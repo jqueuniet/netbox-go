@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **DeviceType** | [**NestedDeviceType**](NestedDeviceType.md) |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **ComponentType** | Pointer to **NullableString** |  | [optional] 
 **ComponentId** | Pointer to **NullableInt64** |  | [optional] 
 **Component** | **interface{}** |  | [readonly] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **Depth** | **int32** |  | [readonly] 
 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryItemTemplate
 
-`func NewInventoryItemTemplate(id int32, url string, display string, deviceType NestedDeviceType, name string, component interface{}, created NullableTime, lastUpdated NullableTime, depth int32, ) *InventoryItemTemplate`
+`func NewInventoryItemTemplate(id int32, url string, deviceType NestedDeviceType, name string, component interface{}, lastUpdated NullableTime, depth int32, ) *InventoryItemTemplate`
 
 NewInventoryItemTemplate instantiates a new InventoryItemTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -100,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *InventoryItemTemplate) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDeviceType
 
@@ -440,6 +445,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *InventoryItemTemplate) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

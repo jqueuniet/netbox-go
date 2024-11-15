@@ -31,7 +31,7 @@ type TunnelGroup struct {
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	TunnelCount          int64                  `json:"tunnel_count"`
+	TunnelCount          *int64                 `json:"tunnel_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -41,14 +41,13 @@ type _TunnelGroup TunnelGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTunnelGroup(id int32, url string, name string, slug string, lastUpdated NullableTime, tunnelCount int64) *TunnelGroup {
+func NewTunnelGroup(id int32, url string, name string, slug string, lastUpdated NullableTime) *TunnelGroup {
 	this := TunnelGroup{}
 	this.Id = id
 	this.Url = url
 	this.Name = name
 	this.Slug = slug
 	this.LastUpdated = lastUpdated
-	this.TunnelCount = tunnelCount
 	return &this
 }
 
@@ -353,28 +352,36 @@ func (o *TunnelGroup) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetTunnelCount returns the TunnelCount field value
+// GetTunnelCount returns the TunnelCount field value if set, zero value otherwise.
 func (o *TunnelGroup) GetTunnelCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.TunnelCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.TunnelCount
+	return *o.TunnelCount
 }
 
-// GetTunnelCountOk returns a tuple with the TunnelCount field value
+// GetTunnelCountOk returns a tuple with the TunnelCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TunnelGroup) GetTunnelCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.TunnelCount) {
 		return nil, false
 	}
-	return &o.TunnelCount, true
+	return o.TunnelCount, true
 }
 
-// SetTunnelCount sets field value
+// HasTunnelCount returns a boolean if a field has been set.
+func (o *TunnelGroup) HasTunnelCount() bool {
+	if o != nil && !IsNil(o.TunnelCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetTunnelCount gets a reference to the given int64 and assigns it to the TunnelCount field.
 func (o *TunnelGroup) SetTunnelCount(v int64) {
-	o.TunnelCount = v
+	o.TunnelCount = &v
 }
 
 func (o TunnelGroup) MarshalJSON() ([]byte, error) {
@@ -407,7 +414,9 @@ func (o TunnelGroup) ToMap() (map[string]interface{}, error) {
 		toSerialize["created"] = o.Created.Get()
 	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["tunnel_count"] = o.TunnelCount
+	if !IsNil(o.TunnelCount) {
+		toSerialize["tunnel_count"] = o.TunnelCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -426,7 +435,6 @@ func (o *TunnelGroup) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"slug",
 		"last_updated",
-		"tunnel_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

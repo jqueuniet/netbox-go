@@ -23,17 +23,17 @@ var _ MappedNullable = &Role{}
 type Role struct {
 	Id                   int32                  `json:"id"`
 	Url                  string                 `json:"url"`
-	Display              string                 `json:"display"`
+	Display              *string                `json:"display,omitempty"`
 	Name                 string                 `json:"name"`
 	Slug                 string                 `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Weight               *int32                 `json:"weight,omitempty"`
 	Description          *string                `json:"description,omitempty"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
+	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	PrefixCount          int32                  `json:"prefix_count"`
-	VlanCount            int32                  `json:"vlan_count"`
+	PrefixCount          *int32                 `json:"prefix_count,omitempty"`
+	VlanCount            *int32                 `json:"vlan_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -43,17 +43,13 @@ type _Role Role
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, prefixCount int32, vlanCount int32) *Role {
+func NewRole(id int32, url string, name string, slug string, lastUpdated NullableTime) *Role {
 	this := Role{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.PrefixCount = prefixCount
-	this.VlanCount = vlanCount
 	return &this
 }
 
@@ -113,28 +109,36 @@ func (o *Role) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *Role) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Role) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *Role) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *Role) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -313,18 +317,16 @@ func (o *Role) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Role) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Role) GetCreatedOk() (*time.Time, bool) {
@@ -334,9 +336,28 @@ func (o *Role) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *Role) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *Role) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *Role) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *Role) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -365,52 +386,68 @@ func (o *Role) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetPrefixCount returns the PrefixCount field value
+// GetPrefixCount returns the PrefixCount field value if set, zero value otherwise.
 func (o *Role) GetPrefixCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.PrefixCount
+	return *o.PrefixCount
 }
 
-// GetPrefixCountOk returns a tuple with the PrefixCount field value
+// GetPrefixCountOk returns a tuple with the PrefixCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Role) GetPrefixCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		return nil, false
 	}
-	return &o.PrefixCount, true
+	return o.PrefixCount, true
 }
 
-// SetPrefixCount sets field value
+// HasPrefixCount returns a boolean if a field has been set.
+func (o *Role) HasPrefixCount() bool {
+	if o != nil && !IsNil(o.PrefixCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrefixCount gets a reference to the given int32 and assigns it to the PrefixCount field.
 func (o *Role) SetPrefixCount(v int32) {
-	o.PrefixCount = v
+	o.PrefixCount = &v
 }
 
-// GetVlanCount returns the VlanCount field value
+// GetVlanCount returns the VlanCount field value if set, zero value otherwise.
 func (o *Role) GetVlanCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.VlanCount
+	return *o.VlanCount
 }
 
-// GetVlanCountOk returns a tuple with the VlanCount field value
+// GetVlanCountOk returns a tuple with the VlanCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Role) GetVlanCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		return nil, false
 	}
-	return &o.VlanCount, true
+	return o.VlanCount, true
 }
 
-// SetVlanCount sets field value
+// HasVlanCount returns a boolean if a field has been set.
+func (o *Role) HasVlanCount() bool {
+	if o != nil && !IsNil(o.VlanCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanCount gets a reference to the given int32 and assigns it to the VlanCount field.
 func (o *Role) SetVlanCount(v int32) {
-	o.VlanCount = v
+	o.VlanCount = &v
 }
 
 func (o Role) MarshalJSON() ([]byte, error) {
@@ -425,7 +462,9 @@ func (o Role) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Weight) {
@@ -440,10 +479,16 @@ func (o Role) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["prefix_count"] = o.PrefixCount
-	toSerialize["vlan_count"] = o.VlanCount
+	if !IsNil(o.PrefixCount) {
+		toSerialize["prefix_count"] = o.PrefixCount
+	}
+	if !IsNil(o.VlanCount) {
+		toSerialize["vlan_count"] = o.VlanCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -459,13 +504,9 @@ func (o *Role) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"slug",
-		"created",
 		"last_updated",
-		"prefix_count",
-		"vlan_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

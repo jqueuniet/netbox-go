@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Identifier** | Pointer to **NullableInt64** |  | [optional] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewNestedL2VPN
 
-`func NewNestedL2VPN(id int32, url string, display string, name string, slug string, type_ L2VPNTypeValue, ) *NestedL2VPN`
+`func NewNestedL2VPN(id int32, url string, name string, slug string, type_ L2VPNTypeValue, ) *NestedL2VPN`
 
 NewNestedL2VPN instantiates a new NestedL2VPN object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +90,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedL2VPN) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetIdentifier
 

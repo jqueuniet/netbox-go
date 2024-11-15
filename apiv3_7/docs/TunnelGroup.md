@@ -6,21 +6,21 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**TunnelCount** | **int32** |  | [readonly] 
+**TunnelCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewTunnelGroup
 
-`func NewTunnelGroup(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, tunnelCount int32, ) *TunnelGroup`
+`func NewTunnelGroup(id int32, url string, name string, slug string, lastUpdated NullableTime, ) *TunnelGroup`
 
 NewTunnelGroup instantiates a new TunnelGroup object
 This constructor will assign default values to properties that have it defined,
@@ -94,6 +94,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *TunnelGroup) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -229,6 +234,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *TunnelGroup) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -289,6 +299,11 @@ and a boolean to check if the value has been set.
 
 SetTunnelCount sets TunnelCount field to given value.
 
+### HasTunnelCount
+
+`func (o *TunnelGroup) HasTunnelCount() bool`
+
+HasTunnelCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

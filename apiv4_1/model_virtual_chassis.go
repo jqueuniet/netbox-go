@@ -23,8 +23,8 @@ var _ MappedNullable = &VirtualChassis{}
 type VirtualChassis struct {
 	Id                   int32                  `json:"id"`
 	Url                  string                 `json:"url"`
-	DisplayUrl           string                 `json:"display_url"`
-	Display              string                 `json:"display"`
+	DisplayUrl           *string                `json:"display_url,omitempty"`
+	Display              *string                `json:"display,omitempty"`
 	Name                 string                 `json:"name"`
 	Domain               *string                `json:"domain,omitempty"`
 	Master               NullableNestedDevice   `json:"master,omitempty"`
@@ -32,9 +32,9 @@ type VirtualChassis struct {
 	Comments             *string                `json:"comments,omitempty"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
+	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	MemberCount          int32                  `json:"member_count"`
+	MemberCount          *int32                 `json:"member_count,omitempty"`
 	Members              []NestedDevice         `json:"members"`
 	AdditionalProperties map[string]interface{}
 }
@@ -45,16 +45,12 @@ type _VirtualChassis VirtualChassis
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualChassis(id int32, url string, displayUrl string, display string, name string, created NullableTime, lastUpdated NullableTime, memberCount int32, members []NestedDevice) *VirtualChassis {
+func NewVirtualChassis(id int32, url string, name string, lastUpdated NullableTime, members []NestedDevice) *VirtualChassis {
 	this := VirtualChassis{}
 	this.Id = id
 	this.Url = url
-	this.DisplayUrl = displayUrl
-	this.Display = display
 	this.Name = name
-	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.MemberCount = memberCount
 	this.Members = members
 	return &this
 }
@@ -115,52 +111,68 @@ func (o *VirtualChassis) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplayUrl returns the DisplayUrl field value
+// GetDisplayUrl returns the DisplayUrl field value if set, zero value otherwise.
 func (o *VirtualChassis) GetDisplayUrl() string {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		var ret string
 		return ret
 	}
-
-	return o.DisplayUrl
+	return *o.DisplayUrl
 }
 
-// GetDisplayUrlOk returns a tuple with the DisplayUrl field value
+// GetDisplayUrlOk returns a tuple with the DisplayUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualChassis) GetDisplayUrlOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		return nil, false
 	}
-	return &o.DisplayUrl, true
+	return o.DisplayUrl, true
 }
 
-// SetDisplayUrl sets field value
+// HasDisplayUrl returns a boolean if a field has been set.
+func (o *VirtualChassis) HasDisplayUrl() bool {
+	if o != nil && !IsNil(o.DisplayUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayUrl gets a reference to the given string and assigns it to the DisplayUrl field.
 func (o *VirtualChassis) SetDisplayUrl(v string) {
-	o.DisplayUrl = v
+	o.DisplayUrl = &v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *VirtualChassis) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualChassis) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *VirtualChassis) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *VirtualChassis) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -390,18 +402,16 @@ func (o *VirtualChassis) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualChassis) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualChassis) GetCreatedOk() (*time.Time, bool) {
@@ -411,9 +421,28 @@ func (o *VirtualChassis) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *VirtualChassis) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *VirtualChassis) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *VirtualChassis) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *VirtualChassis) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -442,28 +471,36 @@ func (o *VirtualChassis) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetMemberCount returns the MemberCount field value
+// GetMemberCount returns the MemberCount field value if set, zero value otherwise.
 func (o *VirtualChassis) GetMemberCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.MemberCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.MemberCount
+	return *o.MemberCount
 }
 
-// GetMemberCountOk returns a tuple with the MemberCount field value
+// GetMemberCountOk returns a tuple with the MemberCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualChassis) GetMemberCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.MemberCount) {
 		return nil, false
 	}
-	return &o.MemberCount, true
+	return o.MemberCount, true
 }
 
-// SetMemberCount sets field value
+// HasMemberCount returns a boolean if a field has been set.
+func (o *VirtualChassis) HasMemberCount() bool {
+	if o != nil && !IsNil(o.MemberCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetMemberCount gets a reference to the given int32 and assigns it to the MemberCount field.
 func (o *VirtualChassis) SetMemberCount(v int32) {
-	o.MemberCount = v
+	o.MemberCount = &v
 }
 
 // GetMembers returns the Members field value
@@ -502,8 +539,12 @@ func (o VirtualChassis) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display_url"] = o.DisplayUrl
-	toSerialize["display"] = o.Display
+	if !IsNil(o.DisplayUrl) {
+		toSerialize["display_url"] = o.DisplayUrl
+	}
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Domain) {
 		toSerialize["domain"] = o.Domain
@@ -523,9 +564,13 @@ func (o VirtualChassis) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["member_count"] = o.MemberCount
+	if !IsNil(o.MemberCount) {
+		toSerialize["member_count"] = o.MemberCount
+	}
 	toSerialize["members"] = o.Members
 
 	for key, value := range o.AdditionalProperties {
@@ -542,12 +587,8 @@ func (o *VirtualChassis) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display_url",
-		"display",
 		"name",
-		"created",
 		"last_updated",
-		"member_count",
 		"members",
 	}
 

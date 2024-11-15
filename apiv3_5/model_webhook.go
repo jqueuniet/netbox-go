@@ -23,7 +23,7 @@ var _ MappedNullable = &Webhook{}
 type Webhook struct {
 	Id           int32    `json:"id"`
 	Url          string   `json:"url"`
-	Display      string   `json:"display"`
+	Display      *string  `json:"display,omitempty"`
 	ContentTypes []string `json:"content_types"`
 	Name         string   `json:"name"`
 	// Triggers when a matching object is created.
@@ -54,7 +54,7 @@ type Webhook struct {
 	SslVerification *bool `json:"ssl_verification,omitempty"`
 	// The specific CA certificate file to use for SSL verification. Leave blank to use the system defaults.
 	CaFilePath           NullableString `json:"ca_file_path,omitempty"`
-	Created              NullableTime   `json:"created"`
+	Created              NullableTime   `json:"created,omitempty"`
 	LastUpdated          NullableTime   `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
@@ -65,15 +65,13 @@ type _Webhook Webhook
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhook(id int32, url string, display string, contentTypes []string, name string, payloadUrl string, created NullableTime, lastUpdated NullableTime) *Webhook {
+func NewWebhook(id int32, url string, contentTypes []string, name string, payloadUrl string, lastUpdated NullableTime) *Webhook {
 	this := Webhook{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.ContentTypes = contentTypes
 	this.Name = name
 	this.PayloadUrl = payloadUrl
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -134,28 +132,36 @@ func (o *Webhook) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *Webhook) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Webhook) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *Webhook) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *Webhook) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetContentTypes returns the ContentTypes field value
@@ -690,18 +696,16 @@ func (o *Webhook) UnsetCaFilePath() {
 	o.CaFilePath.Unset()
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Webhook) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Webhook) GetCreatedOk() (*time.Time, bool) {
@@ -711,9 +715,28 @@ func (o *Webhook) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *Webhook) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *Webhook) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *Webhook) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *Webhook) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -754,7 +777,9 @@ func (o Webhook) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["content_types"] = o.ContentTypes
 	toSerialize["name"] = o.Name
 	if !IsNil(o.TypeCreate) {
@@ -800,7 +825,9 @@ func (o Webhook) ToMap() (map[string]interface{}, error) {
 	if o.CaFilePath.IsSet() {
 		toSerialize["ca_file_path"] = o.CaFilePath.Get()
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 
 	for key, value := range o.AdditionalProperties {
@@ -817,11 +844,9 @@ func (o *Webhook) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"content_types",
 		"name",
 		"payload_url",
-		"created",
 		"last_updated",
 	}
 

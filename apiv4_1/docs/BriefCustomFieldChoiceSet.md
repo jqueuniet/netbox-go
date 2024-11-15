@@ -6,16 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**ChoicesCount** | **string** |  | [readonly] 
+**ChoicesCount** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBriefCustomFieldChoiceSet
 
-`func NewBriefCustomFieldChoiceSet(id int32, url string, display string, name string, choicesCount string, ) *BriefCustomFieldChoiceSet`
+`func NewBriefCustomFieldChoiceSet(id int32, url string, name string, ) *BriefCustomFieldChoiceSet`
 
 NewBriefCustomFieldChoiceSet instantiates a new BriefCustomFieldChoiceSet object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefCustomFieldChoiceSet) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -154,6 +159,11 @@ and a boolean to check if the value has been set.
 
 SetChoicesCount sets ChoicesCount field to given value.
 
+### HasChoicesCount
+
+`func (o *BriefCustomFieldChoiceSet) HasChoicesCount() bool`
+
+HasChoicesCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

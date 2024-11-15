@@ -22,11 +22,11 @@ var _ MappedNullable = &BriefContactGroup{}
 type BriefContactGroup struct {
 	Id                   int32   `json:"id"`
 	Url                  string  `json:"url"`
-	Display              string  `json:"display"`
+	Display              *string `json:"display,omitempty"`
 	Name                 string  `json:"name"`
 	Slug                 string  `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Description          *string `json:"description,omitempty"`
-	ContactCount         int32   `json:"contact_count"`
+	ContactCount         *int32  `json:"contact_count,omitempty"`
 	Depth                int32   `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -37,14 +37,12 @@ type _BriefContactGroup BriefContactGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefContactGroup(id int32, url string, display string, name string, slug string, contactCount int32, depth int32) *BriefContactGroup {
+func NewBriefContactGroup(id int32, url string, name string, slug string, depth int32) *BriefContactGroup {
 	this := BriefContactGroup{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.ContactCount = contactCount
 	this.Depth = depth
 	return &this
 }
@@ -105,28 +103,36 @@ func (o *BriefContactGroup) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefContactGroup) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefContactGroup) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefContactGroup) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefContactGroup) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -209,28 +215,36 @@ func (o *BriefContactGroup) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetContactCount returns the ContactCount field value
+// GetContactCount returns the ContactCount field value if set, zero value otherwise.
 func (o *BriefContactGroup) GetContactCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.ContactCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.ContactCount
+	return *o.ContactCount
 }
 
-// GetContactCountOk returns a tuple with the ContactCount field value
+// GetContactCountOk returns a tuple with the ContactCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefContactGroup) GetContactCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ContactCount) {
 		return nil, false
 	}
-	return &o.ContactCount, true
+	return o.ContactCount, true
 }
 
-// SetContactCount sets field value
+// HasContactCount returns a boolean if a field has been set.
+func (o *BriefContactGroup) HasContactCount() bool {
+	if o != nil && !IsNil(o.ContactCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetContactCount gets a reference to the given int32 and assigns it to the ContactCount field.
 func (o *BriefContactGroup) SetContactCount(v int32) {
-	o.ContactCount = v
+	o.ContactCount = &v
 }
 
 // GetDepth returns the Depth field value
@@ -269,13 +283,17 @@ func (o BriefContactGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["contact_count"] = o.ContactCount
+	if !IsNil(o.ContactCount) {
+		toSerialize["contact_count"] = o.ContactCount
+	}
 	toSerialize["_depth"] = o.Depth
 
 	for key, value := range o.AdditionalProperties {
@@ -292,10 +310,8 @@ func (o *BriefContactGroup) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"slug",
-		"contact_count",
 		"_depth",
 	}
 

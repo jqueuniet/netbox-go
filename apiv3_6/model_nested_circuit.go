@@ -20,9 +20,9 @@ var _ MappedNullable = &NestedCircuit{}
 
 // NestedCircuit Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedCircuit struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
+	Id      int32   `json:"id"`
+	Url     string  `json:"url"`
+	Display *string `json:"display,omitempty"`
 	// Unique circuit ID
 	Cid                  string `json:"cid"`
 	AdditionalProperties map[string]interface{}
@@ -34,11 +34,10 @@ type _NestedCircuit NestedCircuit
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedCircuit(id int32, url string, display string, cid string) *NestedCircuit {
+func NewNestedCircuit(id int32, url string, cid string) *NestedCircuit {
 	this := NestedCircuit{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Cid = cid
 	return &this
 }
@@ -99,28 +98,36 @@ func (o *NestedCircuit) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *NestedCircuit) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedCircuit) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *NestedCircuit) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *NestedCircuit) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetCid returns the Cid field value
@@ -159,7 +166,9 @@ func (o NestedCircuit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["cid"] = o.Cid
 
 	for key, value := range o.AdditionalProperties {
@@ -176,7 +185,6 @@ func (o *NestedCircuit) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"cid",
 	}
 

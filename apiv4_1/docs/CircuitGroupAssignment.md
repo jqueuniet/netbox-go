@@ -6,20 +6,20 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Group** | [**BriefCircuitGroup**](BriefCircuitGroup.md) |  | 
 **Circuit** | [**BriefCircuit**](BriefCircuit.md) |  | 
 **Priority** | Pointer to [**BriefCircuitGroupAssignmentSerializerPriority**](BriefCircuitGroupAssignmentSerializerPriority.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewCircuitGroupAssignment
 
-`func NewCircuitGroupAssignment(id int32, url string, displayUrl string, display string, group BriefCircuitGroup, circuit BriefCircuit, created NullableTime, lastUpdated NullableTime, ) *CircuitGroupAssignment`
+`func NewCircuitGroupAssignment(id int32, url string, group BriefCircuitGroup, circuit BriefCircuit, lastUpdated NullableTime, ) *CircuitGroupAssignment`
 
 NewCircuitGroupAssignment instantiates a new CircuitGroupAssignment object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *CircuitGroupAssignment) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -113,6 +118,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *CircuitGroupAssignment) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetGroup
 
@@ -223,6 +233,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *CircuitGroupAssignment) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

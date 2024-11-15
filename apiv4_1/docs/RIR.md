@@ -6,23 +6,23 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **IsPrivate** | Pointer to **bool** | IP space managed by this RIR is considered private | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**AggregateCount** | **int64** |  | [readonly] 
+**AggregateCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewRIR
 
-`func NewRIR(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, aggregateCount int64, ) *RIR`
+`func NewRIR(id int32, url string, name string, slug string, lastUpdated NullableTime, ) *RIR`
 
 NewRIR instantiates a new RIR object
 This constructor will assign default values to properties that have it defined,
@@ -96,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *RIR) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -116,6 +121,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *RIR) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -276,6 +286,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *RIR) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -336,6 +351,11 @@ and a boolean to check if the value has been set.
 
 SetAggregateCount sets AggregateCount field to given value.
 
+### HasAggregateCount
+
+`func (o *RIR) HasAggregateCount() bool`
+
+HasAggregateCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

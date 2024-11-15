@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **ObjectType** | **string** |  | [readonly] 
 **ObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **Name** | **string** |  | 
 **Status** | [**JobStatus**](JobStatus.md) |  | 
-**Created** | **time.Time** |  | [readonly] 
+**Created** | Pointer to **time.Time** |  | [optional] [readonly] 
 **Scheduled** | Pointer to **NullableTime** |  | [optional] 
 **Interval** | Pointer to **NullableInt32** | Recurrence interval (in minutes) | [optional] 
 **Started** | Pointer to **NullableTime** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewJob
 
-`func NewJob(id int32, url string, display string, objectType string, name string, status JobStatus, created time.Time, user NestedUser, jobId string, ) *Job`
+`func NewJob(id int32, url string, objectType string, name string, status JobStatus, user NestedUser, jobId string, ) *Job`
 
 NewJob instantiates a new Job object
 This constructor will assign default values to properties that have it defined,
@@ -98,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Job) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetObjectType
 
@@ -213,6 +218,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Job) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### GetScheduled
 

@@ -22,8 +22,8 @@ var _ MappedNullable = &NestedProviderAccount{}
 type NestedProviderAccount struct {
 	Id                   int32   `json:"id"`
 	Url                  string  `json:"url"`
-	DisplayUrl           string  `json:"display_url"`
-	Display              string  `json:"display"`
+	DisplayUrl           *string `json:"display_url,omitempty"`
+	Display              *string `json:"display,omitempty"`
 	Name                 *string `json:"name,omitempty"`
 	Account              string  `json:"account"`
 	AdditionalProperties map[string]interface{}
@@ -35,12 +35,10 @@ type _NestedProviderAccount NestedProviderAccount
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedProviderAccount(id int32, url string, displayUrl string, display string, account string) *NestedProviderAccount {
+func NewNestedProviderAccount(id int32, url string, account string) *NestedProviderAccount {
 	this := NestedProviderAccount{}
 	this.Id = id
 	this.Url = url
-	this.DisplayUrl = displayUrl
-	this.Display = display
 	this.Account = account
 	return &this
 }
@@ -101,52 +99,68 @@ func (o *NestedProviderAccount) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplayUrl returns the DisplayUrl field value
+// GetDisplayUrl returns the DisplayUrl field value if set, zero value otherwise.
 func (o *NestedProviderAccount) GetDisplayUrl() string {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		var ret string
 		return ret
 	}
-
-	return o.DisplayUrl
+	return *o.DisplayUrl
 }
 
-// GetDisplayUrlOk returns a tuple with the DisplayUrl field value
+// GetDisplayUrlOk returns a tuple with the DisplayUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedProviderAccount) GetDisplayUrlOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		return nil, false
 	}
-	return &o.DisplayUrl, true
+	return o.DisplayUrl, true
 }
 
-// SetDisplayUrl sets field value
+// HasDisplayUrl returns a boolean if a field has been set.
+func (o *NestedProviderAccount) HasDisplayUrl() bool {
+	if o != nil && !IsNil(o.DisplayUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayUrl gets a reference to the given string and assigns it to the DisplayUrl field.
 func (o *NestedProviderAccount) SetDisplayUrl(v string) {
-	o.DisplayUrl = v
+	o.DisplayUrl = &v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *NestedProviderAccount) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedProviderAccount) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *NestedProviderAccount) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *NestedProviderAccount) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -217,8 +231,12 @@ func (o NestedProviderAccount) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display_url"] = o.DisplayUrl
-	toSerialize["display"] = o.Display
+	if !IsNil(o.DisplayUrl) {
+		toSerialize["display_url"] = o.DisplayUrl
+	}
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
@@ -238,8 +256,6 @@ func (o *NestedProviderAccount) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display_url",
-		"display",
 		"account",
 	}
 

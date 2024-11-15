@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Depth** | **int32** |  | [readonly] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewNestedSiteGroup
 
-`func NewNestedSiteGroup(id int32, url string, displayUrl string, display string, name string, slug string, depth int32, ) *NestedSiteGroup`
+`func NewNestedSiteGroup(id int32, url string, name string, slug string, depth int32, ) *NestedSiteGroup`
 
 NewNestedSiteGroup instantiates a new NestedSiteGroup object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +90,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *NestedSiteGroup) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -110,6 +115,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedSiteGroup) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 

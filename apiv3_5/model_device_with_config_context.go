@@ -23,7 +23,7 @@ var _ MappedNullable = &DeviceWithConfigContext{}
 type DeviceWithConfigContext struct {
 	Id         int32                  `json:"id"`
 	Url        string                 `json:"url"`
-	Display    string                 `json:"display"`
+	Display    *string                `json:"display,omitempty"`
 	Name       NullableString         `json:"name,omitempty"`
 	DeviceType NestedDeviceType       `json:"device_type"`
 	DeviceRole NestedDeviceRole       `json:"device_role"`
@@ -57,7 +57,7 @@ type DeviceWithConfigContext struct {
 	CustomFields         map[string]interface{}       `json:"custom_fields,omitempty"`
 	ConfigContext        map[string]interface{}       `json:"config_context"`
 	ConfigTemplate       NullableNestedConfigTemplate `json:"config_template,omitempty"`
-	Created              NullableTime                 `json:"created"`
+	Created              NullableTime                 `json:"created,omitempty"`
 	LastUpdated          NullableTime                 `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
@@ -68,18 +68,16 @@ type _DeviceWithConfigContext DeviceWithConfigContext
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, deviceRole NestedDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext map[string]interface{}, created NullableTime, lastUpdated NullableTime) *DeviceWithConfigContext {
+func NewDeviceWithConfigContext(id int32, url string, deviceType NestedDeviceType, deviceRole NestedDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext map[string]interface{}, lastUpdated NullableTime) *DeviceWithConfigContext {
 	this := DeviceWithConfigContext{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.DeviceType = deviceType
 	this.DeviceRole = deviceRole
 	this.Site = site
 	this.ParentDevice = parentDevice
 	this.PrimaryIp = primaryIp
 	this.ConfigContext = configContext
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -140,28 +138,36 @@ func (o *DeviceWithConfigContext) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *DeviceWithConfigContext) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1201,18 +1207,16 @@ func (o *DeviceWithConfigContext) UnsetConfigTemplate() {
 	o.ConfigTemplate.Unset()
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DeviceWithConfigContext) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceWithConfigContext) GetCreatedOk() (*time.Time, bool) {
@@ -1222,9 +1226,28 @@ func (o *DeviceWithConfigContext) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *DeviceWithConfigContext) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *DeviceWithConfigContext) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *DeviceWithConfigContext) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -1265,7 +1288,9 @@ func (o DeviceWithConfigContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
@@ -1343,7 +1368,9 @@ func (o DeviceWithConfigContext) ToMap() (map[string]interface{}, error) {
 	if o.ConfigTemplate.IsSet() {
 		toSerialize["config_template"] = o.ConfigTemplate.Get()
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 
 	for key, value := range o.AdditionalProperties {
@@ -1360,14 +1387,12 @@ func (o *DeviceWithConfigContext) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"device_type",
 		"device_role",
 		"site",
 		"parent_device",
 		"primary_ip",
 		"config_context",
-		"created",
 		"last_updated",
 	}
 

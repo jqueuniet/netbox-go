@@ -22,7 +22,7 @@ var _ MappedNullable = &NestedDeviceType{}
 type NestedDeviceType struct {
 	Id                   int32              `json:"id"`
 	Url                  string             `json:"url"`
-	Display              string             `json:"display"`
+	Display              *string            `json:"display,omitempty"`
 	Manufacturer         NestedManufacturer `json:"manufacturer"`
 	Model                string             `json:"model"`
 	Slug                 string             `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
@@ -35,11 +35,10 @@ type _NestedDeviceType NestedDeviceType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedDeviceType(id int32, url string, display string, manufacturer NestedManufacturer, model string, slug string) *NestedDeviceType {
+func NewNestedDeviceType(id int32, url string, manufacturer NestedManufacturer, model string, slug string) *NestedDeviceType {
 	this := NestedDeviceType{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Manufacturer = manufacturer
 	this.Model = model
 	this.Slug = slug
@@ -102,28 +101,36 @@ func (o *NestedDeviceType) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *NestedDeviceType) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedDeviceType) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *NestedDeviceType) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *NestedDeviceType) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetManufacturer returns the Manufacturer field value
@@ -210,7 +217,9 @@ func (o NestedDeviceType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["manufacturer"] = o.Manufacturer
 	toSerialize["model"] = o.Model
 	toSerialize["slug"] = o.Slug
@@ -229,7 +238,6 @@ func (o *NestedDeviceType) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"manufacturer",
 		"model",
 		"slug",

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Vid** | **int32** | Numeric VLAN ID (1-4094) | 
 **Name** | **string** |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewNestedVLAN
 
-`func NewNestedVLAN(id int32, url string, display string, vid int32, name string, ) *NestedVLAN`
+`func NewNestedVLAN(id int32, url string, vid int32, name string, ) *NestedVLAN`
 
 NewNestedVLAN instantiates a new NestedVLAN object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedVLAN) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetVid
 

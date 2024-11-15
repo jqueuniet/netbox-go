@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Cid** | **string** | Unique circuit ID | 
 **Provider** | [**BriefProvider**](BriefProvider.md) |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewBriefCircuit
 
-`func NewBriefCircuit(id int32, url string, display string, cid string, provider BriefProvider, ) *BriefCircuit`
+`func NewBriefCircuit(id int32, url string, cid string, provider BriefProvider, ) *BriefCircuit`
 
 NewBriefCircuit instantiates a new BriefCircuit object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefCircuit) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetCid
 

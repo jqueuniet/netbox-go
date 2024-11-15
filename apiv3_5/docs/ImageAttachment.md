@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **ContentType** | **string** |  | 
 **ObjectId** | **int64** |  | 
 **Parent** | **map[string]interface{}** |  | [readonly] 
@@ -14,14 +14,14 @@ Name | Type | Description | Notes
 **Image** | **string** |  | 
 **ImageHeight** | **int32** |  | 
 **ImageWidth** | **int32** |  | 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewImageAttachment
 
-`func NewImageAttachment(id int32, url string, display string, contentType string, objectId int64, parent map[string]interface{}, image string, imageHeight int32, imageWidth int32, created NullableTime, lastUpdated NullableTime, ) *ImageAttachment`
+`func NewImageAttachment(id int32, url string, contentType string, objectId int64, parent map[string]interface{}, image string, imageHeight int32, imageWidth int32, lastUpdated NullableTime, ) *ImageAttachment`
 
 NewImageAttachment instantiates a new ImageAttachment object
 This constructor will assign default values to properties that have it defined,
@@ -95,6 +95,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *ImageAttachment) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetContentType
 
@@ -270,6 +275,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ImageAttachment) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

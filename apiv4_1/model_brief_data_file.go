@@ -20,9 +20,9 @@ var _ MappedNullable = &BriefDataFile{}
 
 // BriefDataFile Adds support for custom fields and tags.
 type BriefDataFile struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
+	Id      int32   `json:"id"`
+	Url     string  `json:"url"`
+	Display *string `json:"display,omitempty"`
 	// File path relative to the data source's root
 	Path                 string `json:"path"`
 	AdditionalProperties map[string]interface{}
@@ -34,11 +34,10 @@ type _BriefDataFile BriefDataFile
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefDataFile(id int32, url string, display string, path string) *BriefDataFile {
+func NewBriefDataFile(id int32, url string, path string) *BriefDataFile {
 	this := BriefDataFile{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Path = path
 	return &this
 }
@@ -99,28 +98,36 @@ func (o *BriefDataFile) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefDataFile) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefDataFile) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefDataFile) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefDataFile) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetPath returns the Path field value
@@ -159,7 +166,9 @@ func (o BriefDataFile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["path"] = o.Path
 
 	for key, value := range o.AdditionalProperties {
@@ -176,7 +185,6 @@ func (o *BriefDataFile) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"path",
 	}
 

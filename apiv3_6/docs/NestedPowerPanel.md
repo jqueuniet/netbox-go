@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 
 ## Methods
 
 ### NewNestedPowerPanel
 
-`func NewNestedPowerPanel(id int32, url string, display string, name string, ) *NestedPowerPanel`
+`func NewNestedPowerPanel(id int32, url string, name string, ) *NestedPowerPanel`
 
 NewNestedPowerPanel instantiates a new NestedPowerPanel object
 This constructor will assign default values to properties that have it defined,
@@ -87,6 +87,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedPowerPanel) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 

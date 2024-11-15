@@ -20,11 +20,11 @@ var _ MappedNullable = &NestedCustomFieldChoiceSet{}
 
 // NestedCustomFieldChoiceSet Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedCustomFieldChoiceSet struct {
-	Id                   int32  `json:"id"`
-	Url                  string `json:"url"`
-	Display              string `json:"display"`
-	Name                 string `json:"name"`
-	ChoicesCount         string `json:"choices_count"`
+	Id                   int32   `json:"id"`
+	Url                  string  `json:"url"`
+	Display              *string `json:"display,omitempty"`
+	Name                 string  `json:"name"`
+	ChoicesCount         *string `json:"choices_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,13 +34,11 @@ type _NestedCustomFieldChoiceSet NestedCustomFieldChoiceSet
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedCustomFieldChoiceSet(id int32, url string, display string, name string, choicesCount string) *NestedCustomFieldChoiceSet {
+func NewNestedCustomFieldChoiceSet(id int32, url string, name string) *NestedCustomFieldChoiceSet {
 	this := NestedCustomFieldChoiceSet{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
-	this.ChoicesCount = choicesCount
 	return &this
 }
 
@@ -100,28 +98,36 @@ func (o *NestedCustomFieldChoiceSet) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *NestedCustomFieldChoiceSet) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedCustomFieldChoiceSet) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *NestedCustomFieldChoiceSet) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *NestedCustomFieldChoiceSet) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -148,28 +154,36 @@ func (o *NestedCustomFieldChoiceSet) SetName(v string) {
 	o.Name = v
 }
 
-// GetChoicesCount returns the ChoicesCount field value
+// GetChoicesCount returns the ChoicesCount field value if set, zero value otherwise.
 func (o *NestedCustomFieldChoiceSet) GetChoicesCount() string {
-	if o == nil {
+	if o == nil || IsNil(o.ChoicesCount) {
 		var ret string
 		return ret
 	}
-
-	return o.ChoicesCount
+	return *o.ChoicesCount
 }
 
-// GetChoicesCountOk returns a tuple with the ChoicesCount field value
+// GetChoicesCountOk returns a tuple with the ChoicesCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedCustomFieldChoiceSet) GetChoicesCountOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ChoicesCount) {
 		return nil, false
 	}
-	return &o.ChoicesCount, true
+	return o.ChoicesCount, true
 }
 
-// SetChoicesCount sets field value
+// HasChoicesCount returns a boolean if a field has been set.
+func (o *NestedCustomFieldChoiceSet) HasChoicesCount() bool {
+	if o != nil && !IsNil(o.ChoicesCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetChoicesCount gets a reference to the given string and assigns it to the ChoicesCount field.
 func (o *NestedCustomFieldChoiceSet) SetChoicesCount(v string) {
-	o.ChoicesCount = v
+	o.ChoicesCount = &v
 }
 
 func (o NestedCustomFieldChoiceSet) MarshalJSON() ([]byte, error) {
@@ -184,9 +198,13 @@ func (o NestedCustomFieldChoiceSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
-	toSerialize["choices_count"] = o.ChoicesCount
+	if !IsNil(o.ChoicesCount) {
+		toSerialize["choices_count"] = o.ChoicesCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -202,9 +220,7 @@ func (o *NestedCustomFieldChoiceSet) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
-		"choices_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

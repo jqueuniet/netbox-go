@@ -23,8 +23,8 @@ var _ MappedNullable = &Cable{}
 type Cable struct {
 	Id                   int32                   `json:"id"`
 	Url                  string                  `json:"url"`
-	DisplayUrl           string                  `json:"display_url"`
-	Display              string                  `json:"display"`
+	DisplayUrl           *string                 `json:"display_url,omitempty"`
+	Display              *string                 `json:"display,omitempty"`
 	Type                 *CableType              `json:"type,omitempty"`
 	ATerminations        []GenericObject         `json:"a_terminations,omitempty"`
 	BTerminations        []GenericObject         `json:"b_terminations,omitempty"`
@@ -38,7 +38,7 @@ type Cable struct {
 	Comments             *string                 `json:"comments,omitempty"`
 	Tags                 []NestedTag             `json:"tags,omitempty"`
 	CustomFields         map[string]interface{}  `json:"custom_fields,omitempty"`
-	Created              NullableTime            `json:"created"`
+	Created              NullableTime            `json:"created,omitempty"`
 	LastUpdated          NullableTime            `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
@@ -49,13 +49,10 @@ type _Cable Cable
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCable(id int32, url string, displayUrl string, display string, created NullableTime, lastUpdated NullableTime) *Cable {
+func NewCable(id int32, url string, lastUpdated NullableTime) *Cable {
 	this := Cable{}
 	this.Id = id
 	this.Url = url
-	this.DisplayUrl = displayUrl
-	this.Display = display
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -116,52 +113,68 @@ func (o *Cable) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplayUrl returns the DisplayUrl field value
+// GetDisplayUrl returns the DisplayUrl field value if set, zero value otherwise.
 func (o *Cable) GetDisplayUrl() string {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		var ret string
 		return ret
 	}
-
-	return o.DisplayUrl
+	return *o.DisplayUrl
 }
 
-// GetDisplayUrlOk returns a tuple with the DisplayUrl field value
+// GetDisplayUrlOk returns a tuple with the DisplayUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Cable) GetDisplayUrlOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		return nil, false
 	}
-	return &o.DisplayUrl, true
+	return o.DisplayUrl, true
 }
 
-// SetDisplayUrl sets field value
+// HasDisplayUrl returns a boolean if a field has been set.
+func (o *Cable) HasDisplayUrl() bool {
+	if o != nil && !IsNil(o.DisplayUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayUrl gets a reference to the given string and assigns it to the DisplayUrl field.
 func (o *Cable) SetDisplayUrl(v string) {
-	o.DisplayUrl = v
+	o.DisplayUrl = &v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *Cable) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Cable) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *Cable) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *Cable) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -613,18 +626,16 @@ func (o *Cable) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Cable) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Cable) GetCreatedOk() (*time.Time, bool) {
@@ -634,9 +645,28 @@ func (o *Cable) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *Cable) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *Cable) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *Cable) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *Cable) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -677,8 +707,12 @@ func (o Cable) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display_url"] = o.DisplayUrl
-	toSerialize["display"] = o.Display
+	if !IsNil(o.DisplayUrl) {
+		toSerialize["display_url"] = o.DisplayUrl
+	}
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
@@ -718,7 +752,9 @@ func (o Cable) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 
 	for key, value := range o.AdditionalProperties {
@@ -735,9 +771,6 @@ func (o *Cable) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display_url",
-		"display",
-		"created",
 		"last_updated",
 	}
 

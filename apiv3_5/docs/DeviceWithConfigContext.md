@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | Pointer to **NullableString** |  | [optional] 
 **DeviceType** | [**NestedDeviceType**](NestedDeviceType.md) |  | 
 **DeviceRole** | [**NestedDeviceRole**](NestedDeviceRole.md) |  | 
@@ -36,14 +36,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **ConfigContext** | **map[string]interface{}** |  | [readonly] 
 **ConfigTemplate** | Pointer to [**NullableNestedConfigTemplate**](NestedConfigTemplate.md) |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewDeviceWithConfigContext
 
-`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, deviceRole NestedDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext map[string]interface{}, created NullableTime, lastUpdated NullableTime, ) *DeviceWithConfigContext`
+`func NewDeviceWithConfigContext(id int32, url string, deviceType NestedDeviceType, deviceRole NestedDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext map[string]interface{}, lastUpdated NullableTime, ) *DeviceWithConfigContext`
 
 NewDeviceWithConfigContext instantiates a new DeviceWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -117,6 +117,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *DeviceWithConfigContext) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -992,6 +997,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *DeviceWithConfigContext) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

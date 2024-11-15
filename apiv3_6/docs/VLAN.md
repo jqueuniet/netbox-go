@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Site** | Pointer to [**NullableNestedSite**](NestedSite.md) |  | [optional] 
 **Group** | Pointer to [**NullableNestedVLANGroup**](NestedVLANGroup.md) |  | [optional] 
 **Vid** | **int32** | Numeric VLAN ID (1-4094) | 
@@ -19,15 +19,15 @@ Name | Type | Description | Notes
 **L2vpnTermination** | [**NullableNestedL2VPNTermination**](NestedL2VPNTermination.md) |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**PrefixCount** | **int32** |  | [readonly] 
+**PrefixCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewVLAN
 
-`func NewVLAN(id int32, url string, display string, vid int32, name string, l2vpnTermination NullableNestedL2VPNTermination, created NullableTime, lastUpdated NullableTime, prefixCount int32, ) *VLAN`
+`func NewVLAN(id int32, url string, vid int32, name string, l2vpnTermination NullableNestedL2VPNTermination, lastUpdated NullableTime, ) *VLAN`
 
 NewVLAN instantiates a new VLAN object
 This constructor will assign default values to properties that have it defined,
@@ -101,6 +101,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *VLAN) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetSite
 
@@ -456,6 +461,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *VLAN) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -516,6 +526,11 @@ and a boolean to check if the value has been set.
 
 SetPrefixCount sets PrefixCount field to given value.
 
+### HasPrefixCount
+
+`func (o *VLAN) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

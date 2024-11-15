@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Type** | Pointer to [**CableType**](CableType.md) |  | [optional] 
 **ATerminations** | Pointer to [**[]GenericObject**](GenericObject.md) |  | [optional] 
 **BTerminations** | Pointer to [**[]GenericObject**](GenericObject.md) |  | [optional] 
@@ -21,14 +21,14 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewCable
 
-`func NewCable(id int32, url string, displayUrl string, display string, created NullableTime, lastUpdated NullableTime, ) *Cable`
+`func NewCable(id int32, url string, lastUpdated NullableTime, ) *Cable`
 
 NewCable instantiates a new Cable object
 This constructor will assign default values to properties that have it defined,
@@ -102,6 +102,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *Cable) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -122,6 +127,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Cable) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetType
 
@@ -497,6 +507,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Cable) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

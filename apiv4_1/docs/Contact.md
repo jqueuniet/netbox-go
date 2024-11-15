@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Group** | Pointer to [**NullableBriefContactGroup**](BriefContactGroup.md) |  | [optional] 
 **Name** | **string** |  | 
 **Title** | Pointer to **string** |  | [optional] 
@@ -19,14 +19,14 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewContact
 
-`func NewContact(id int32, url string, displayUrl string, display string, name string, created NullableTime, lastUpdated NullableTime, ) *Contact`
+`func NewContact(id int32, url string, name string, lastUpdated NullableTime, ) *Contact`
 
 NewContact instantiates a new Contact object
 This constructor will assign default values to properties that have it defined,
@@ -100,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *Contact) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -120,6 +125,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Contact) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetGroup
 
@@ -420,6 +430,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Contact) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

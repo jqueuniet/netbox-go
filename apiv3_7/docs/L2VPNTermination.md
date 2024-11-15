@@ -6,21 +6,21 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **L2vpn** | [**NestedL2VPN**](NestedL2VPN.md) |  | 
 **AssignedObjectType** | **string** |  | 
 **AssignedObjectId** | **int64** |  | 
 **AssignedObject** | **interface{}** |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewL2VPNTermination
 
-`func NewL2VPNTermination(id int32, url string, display string, l2vpn NestedL2VPN, assignedObjectType string, assignedObjectId int64, assignedObject interface{}, created NullableTime, lastUpdated NullableTime, ) *L2VPNTermination`
+`func NewL2VPNTermination(id int32, url string, l2vpn NestedL2VPN, assignedObjectType string, assignedObjectId int64, assignedObject interface{}, lastUpdated NullableTime, ) *L2VPNTermination`
 
 NewL2VPNTermination instantiates a new L2VPNTermination object
 This constructor will assign default values to properties that have it defined,
@@ -94,6 +94,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *L2VPNTermination) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetL2vpn
 
@@ -254,6 +259,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *L2VPNTermination) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Domain** | Pointer to **string** |  | [optional] 
 **Master** | Pointer to [**NullableNestedDevice**](NestedDevice.md) |  | [optional] 
@@ -14,15 +14,15 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**MemberCount** | **int32** |  | [readonly] 
+**MemberCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewVirtualChassis
 
-`func NewVirtualChassis(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, memberCount int32, ) *VirtualChassis`
+`func NewVirtualChassis(id int32, url string, name string, lastUpdated NullableTime, ) *VirtualChassis`
 
 NewVirtualChassis instantiates a new VirtualChassis object
 This constructor will assign default values to properties that have it defined,
@@ -96,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *VirtualChassis) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -296,6 +301,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *VirtualChassis) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -356,6 +366,11 @@ and a boolean to check if the value has been set.
 
 SetMemberCount sets MemberCount field to given value.
 
+### HasMemberCount
+
+`func (o *VirtualChassis) HasMemberCount() bool`
+
+HasMemberCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Device** | [**NestedDevice**](NestedDevice.md) |  | 
 **ModuleBay** | [**NestedModuleBay**](NestedModuleBay.md) |  | 
 **ModuleType** | [**NestedModuleType**](NestedModuleType.md) |  | 
@@ -17,14 +17,14 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewModule
 
-`func NewModule(id int32, url string, display string, device NestedDevice, moduleBay NestedModuleBay, moduleType NestedModuleType, created NullableTime, lastUpdated NullableTime, ) *Module`
+`func NewModule(id int32, url string, device NestedDevice, moduleBay NestedModuleBay, moduleType NestedModuleType, lastUpdated NullableTime, ) *Module`
 
 NewModule instantiates a new Module object
 This constructor will assign default values to properties that have it defined,
@@ -98,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Module) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDevice
 
@@ -363,6 +368,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Module) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Device** | [**NestedDevice**](NestedDevice.md) |  | 
 **Module** | Pointer to [**NullableComponentNestedModule**](ComponentNestedModule.md) |  | [optional] 
 **Name** | **string** |  | 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **LinkPeersType** | **string** | Return the type of the peer link terminations, or None. | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **Occupied** | **bool** |  | [readonly] 
 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewFrontPort
 
-`func NewFrontPort(id int32, url string, display string, device NestedDevice, name string, type_ FrontPortType, rearPort FrontPortRearPort, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, created NullableTime, lastUpdated NullableTime, occupied bool, ) *FrontPort`
+`func NewFrontPort(id int32, url string, device NestedDevice, name string, type_ FrontPortType, rearPort FrontPortRearPort, cable NullableNestedCable, cableEnd string, linkPeers []interface{}, linkPeersType string, lastUpdated NullableTime, occupied bool, ) *FrontPort`
 
 NewFrontPort instantiates a new FrontPort object
 This constructor will assign default values to properties that have it defined,
@@ -105,6 +105,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *FrontPort) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDevice
 
@@ -505,6 +510,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *FrontPort) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

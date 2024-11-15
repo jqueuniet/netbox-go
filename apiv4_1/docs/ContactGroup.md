@@ -6,24 +6,24 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Parent** | Pointer to [**NullableNestedContactGroup**](NestedContactGroup.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**ContactCount** | **int32** |  | [readonly] [default to 0]
+**ContactCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewContactGroup
 
-`func NewContactGroup(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, contactCount int32, depth int32, ) *ContactGroup`
+`func NewContactGroup(id int32, url string, name string, slug string, lastUpdated NullableTime, depth int32, ) *ContactGroup`
 
 NewContactGroup instantiates a new ContactGroup object
 This constructor will assign default values to properties that have it defined,
@@ -97,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *ContactGroup) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -117,6 +122,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *ContactGroup) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -287,6 +297,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ContactGroup) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -347,6 +362,11 @@ and a boolean to check if the value has been set.
 
 SetContactCount sets ContactCount field to given value.
 
+### HasContactCount
+
+`func (o *ContactGroup) HasContactCount() bool`
+
+HasContactCount returns a boolean if a field has been set.
 
 ### GetDepth
 

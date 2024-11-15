@@ -30,7 +30,7 @@ type CustomFieldChoiceSet struct {
 	ExtraChoices [][]interface{}                  `json:"extra_choices"`
 	// Choices are automatically ordered alphabetically
 	OrderAlphabetically  *bool        `json:"order_alphabetically,omitempty"`
-	ChoicesCount         string       `json:"choices_count"`
+	ChoicesCount         *string      `json:"choices_count,omitempty"`
 	Created              NullableTime `json:"created,omitempty"`
 	LastUpdated          NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
@@ -42,13 +42,12 @@ type _CustomFieldChoiceSet CustomFieldChoiceSet
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomFieldChoiceSet(id int32, url string, name string, extraChoices [][]interface{}, choicesCount string, lastUpdated NullableTime) *CustomFieldChoiceSet {
+func NewCustomFieldChoiceSet(id int32, url string, name string, extraChoices [][]interface{}, lastUpdated NullableTime) *CustomFieldChoiceSet {
 	this := CustomFieldChoiceSet{}
 	this.Id = id
 	this.Url = url
 	this.Name = name
 	this.ExtraChoices = extraChoices
-	this.ChoicesCount = choicesCount
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -285,28 +284,36 @@ func (o *CustomFieldChoiceSet) SetOrderAlphabetically(v bool) {
 	o.OrderAlphabetically = &v
 }
 
-// GetChoicesCount returns the ChoicesCount field value
+// GetChoicesCount returns the ChoicesCount field value if set, zero value otherwise.
 func (o *CustomFieldChoiceSet) GetChoicesCount() string {
-	if o == nil {
+	if o == nil || IsNil(o.ChoicesCount) {
 		var ret string
 		return ret
 	}
-
-	return o.ChoicesCount
+	return *o.ChoicesCount
 }
 
-// GetChoicesCountOk returns a tuple with the ChoicesCount field value
+// GetChoicesCountOk returns a tuple with the ChoicesCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomFieldChoiceSet) GetChoicesCountOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ChoicesCount) {
 		return nil, false
 	}
-	return &o.ChoicesCount, true
+	return o.ChoicesCount, true
 }
 
-// SetChoicesCount sets field value
+// HasChoicesCount returns a boolean if a field has been set.
+func (o *CustomFieldChoiceSet) HasChoicesCount() bool {
+	if o != nil && !IsNil(o.ChoicesCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetChoicesCount gets a reference to the given string and assigns it to the ChoicesCount field.
 func (o *CustomFieldChoiceSet) SetChoicesCount(v string) {
-	o.ChoicesCount = v
+	o.ChoicesCount = &v
 }
 
 // GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -404,7 +411,9 @@ func (o CustomFieldChoiceSet) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OrderAlphabetically) {
 		toSerialize["order_alphabetically"] = o.OrderAlphabetically
 	}
-	toSerialize["choices_count"] = o.ChoicesCount
+	if !IsNil(o.ChoicesCount) {
+		toSerialize["choices_count"] = o.ChoicesCount
+	}
 	if o.Created.IsSet() {
 		toSerialize["created"] = o.Created.Get()
 	}
@@ -426,7 +435,6 @@ func (o *CustomFieldChoiceSet) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"name",
 		"extra_choices",
-		"choices_count",
 		"last_updated",
 	}
 

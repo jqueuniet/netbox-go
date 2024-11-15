@@ -101611,7 +101611,6 @@ components:
           type: integer
           readOnly: true
       required:
-      - asn_count
       - end
       - id
       - last_updated
@@ -102300,7 +102299,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - contact_count
       - id
       - name
       - slug
@@ -102412,7 +102410,6 @@ components:
           type: string
           readOnly: true
       required:
-      - choices_count
       - id
       - name
       - url
@@ -103516,7 +103513,6 @@ components:
       required:
       - id
       - name
-      - powerfeed_count
       - url
     BriefPowerPanelRequest:
       type: object
@@ -103799,7 +103795,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - aggregate_count
       - id
       - name
       - slug
@@ -104249,7 +104244,6 @@ components:
       - id
       - name
       - slug
-      - tenant_count
       - url
     BriefTenantGroupRequest:
       type: object
@@ -104345,7 +104339,6 @@ components:
       - id
       - name
       - slug
-      - tunnel_count
       - url
     BriefTunnelGroupRequest:
       type: object
@@ -104607,7 +104600,6 @@ components:
           readOnly: true
       required:
       - id
-      - member_count
       - name
       - url
     BriefVirtualChassisRequest:
@@ -104702,7 +104694,6 @@ components:
       - name
       - slug
       - url
-      - wirelesslan_count
     BriefWirelessLANGroupRequest:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -107604,7 +107595,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - contact_count
       - id
       - last_updated
       - name
@@ -108061,7 +108051,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - choices_count
       - extra_choices
       - id
       - last_updated
@@ -108633,7 +108622,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - file_count
       - id
       - last_updated
       - name
@@ -108958,21 +108946,11 @@ components:
           type: integer
           readOnly: true
       required:
-      - console_port_count
-      - console_server_port_count
-      - device_bay_count
       - device_type
-      - front_port_count
       - id
-      - interface_count
-      - inventory_item_count
       - last_updated
-      - module_bay_count
       - parent_device
-      - power_outlet_count
-      - power_port_count
       - primary_ip
-      - rear_port_count
       - role
       - site
       - url
@@ -109847,21 +109825,11 @@ components:
           readOnly: true
       required:
       - config_context
-      - console_port_count
-      - console_server_port_count
-      - device_bay_count
       - device_type
-      - front_port_count
       - id
-      - interface_count
-      - inventory_item_count
       - last_updated
-      - module_bay_count
       - parent_device
-      - power_outlet_count
-      - power_port_count
       - primary_ip
-      - rear_port_count
       - role
       - site
       - url
@@ -111611,7 +111579,6 @@ components:
       - id
       - name
       - url
-      - user_count
     GroupRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -133475,7 +133442,6 @@ components:
       - id
       - last_updated
       - name
-      - powerfeed_count
       - site
       - url
     PowerPanelRequest:
@@ -135741,7 +135707,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - aggregate_count
       - id
       - last_updated
       - name
@@ -136045,7 +136010,6 @@ components:
       - id
       - last_updated
       - name
-      - powerfeed_count
       - site
       - url
     RackRequest:
@@ -138554,7 +138518,6 @@ components:
           readOnly: true
       required:
       - id
-      - ipaddress_count
       - last_updated
       - name
       - slug
@@ -138618,7 +138581,6 @@ components:
       - last_updated
       - name
       - slug
-      - tenant_count
       - url
     TenantGroupRequest:
       type: object
@@ -138945,7 +138907,6 @@ components:
       - last_updated
       - name
       - status
-      - terminations_count
       - url
     TunnelGroup:
       type: object
@@ -138997,7 +138958,6 @@ components:
       - last_updated
       - name
       - slug
-      - tunnel_count
       - url
     TunnelGroupRequest:
       type: object
@@ -139858,7 +139818,6 @@ components:
           readOnly: true
       required:
       - id
-      - ipaddress_count
       - last_updated
       - name
       - url
@@ -139963,7 +139922,6 @@ components:
       required:
       - id
       - last_updated
-      - member_count
       - members
       - name
       - url
@@ -140087,7 +140045,6 @@ components:
       required:
       - device
       - id
-      - interface_count
       - last_updated
       - name
       - primary_ip
@@ -140376,12 +140333,10 @@ components:
       required:
       - config_context
       - id
-      - interface_count
       - last_updated
       - name
       - primary_ip
       - url
-      - virtual_disk_count
     VirtualMachineWithConfigContextRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -140858,7 +140813,6 @@ components:
       - name
       - slug
       - url
-      - wirelesslan_count
     WirelessLANGroupRequest:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.

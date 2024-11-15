@@ -23,16 +23,16 @@ var _ MappedNullable = &CustomFieldChoiceSet{}
 type CustomFieldChoiceSet struct {
 	Id           int32                            `json:"id"`
 	Url          string                           `json:"url"`
-	DisplayUrl   string                           `json:"display_url"`
-	Display      string                           `json:"display"`
+	DisplayUrl   *string                          `json:"display_url,omitempty"`
+	Display      *string                          `json:"display,omitempty"`
 	Name         string                           `json:"name"`
 	Description  *string                          `json:"description,omitempty"`
 	BaseChoices  *CustomFieldChoiceSetBaseChoices `json:"base_choices,omitempty"`
 	ExtraChoices [][]interface{}                  `json:"extra_choices"`
 	// Choices are automatically ordered alphabetically
 	OrderAlphabetically  *bool        `json:"order_alphabetically,omitempty"`
-	ChoicesCount         string       `json:"choices_count"`
-	Created              NullableTime `json:"created"`
+	ChoicesCount         *string      `json:"choices_count,omitempty"`
+	Created              NullableTime `json:"created,omitempty"`
 	LastUpdated          NullableTime `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
@@ -43,16 +43,12 @@ type _CustomFieldChoiceSet CustomFieldChoiceSet
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomFieldChoiceSet(id int32, url string, displayUrl string, display string, name string, extraChoices [][]interface{}, choicesCount string, created NullableTime, lastUpdated NullableTime) *CustomFieldChoiceSet {
+func NewCustomFieldChoiceSet(id int32, url string, name string, extraChoices [][]interface{}, lastUpdated NullableTime) *CustomFieldChoiceSet {
 	this := CustomFieldChoiceSet{}
 	this.Id = id
 	this.Url = url
-	this.DisplayUrl = displayUrl
-	this.Display = display
 	this.Name = name
 	this.ExtraChoices = extraChoices
-	this.ChoicesCount = choicesCount
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -113,52 +109,68 @@ func (o *CustomFieldChoiceSet) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplayUrl returns the DisplayUrl field value
+// GetDisplayUrl returns the DisplayUrl field value if set, zero value otherwise.
 func (o *CustomFieldChoiceSet) GetDisplayUrl() string {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		var ret string
 		return ret
 	}
-
-	return o.DisplayUrl
+	return *o.DisplayUrl
 }
 
-// GetDisplayUrlOk returns a tuple with the DisplayUrl field value
+// GetDisplayUrlOk returns a tuple with the DisplayUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomFieldChoiceSet) GetDisplayUrlOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		return nil, false
 	}
-	return &o.DisplayUrl, true
+	return o.DisplayUrl, true
 }
 
-// SetDisplayUrl sets field value
+// HasDisplayUrl returns a boolean if a field has been set.
+func (o *CustomFieldChoiceSet) HasDisplayUrl() bool {
+	if o != nil && !IsNil(o.DisplayUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayUrl gets a reference to the given string and assigns it to the DisplayUrl field.
 func (o *CustomFieldChoiceSet) SetDisplayUrl(v string) {
-	o.DisplayUrl = v
+	o.DisplayUrl = &v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *CustomFieldChoiceSet) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomFieldChoiceSet) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *CustomFieldChoiceSet) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *CustomFieldChoiceSet) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -305,42 +317,48 @@ func (o *CustomFieldChoiceSet) SetOrderAlphabetically(v bool) {
 	o.OrderAlphabetically = &v
 }
 
-// GetChoicesCount returns the ChoicesCount field value
+// GetChoicesCount returns the ChoicesCount field value if set, zero value otherwise.
 func (o *CustomFieldChoiceSet) GetChoicesCount() string {
-	if o == nil {
+	if o == nil || IsNil(o.ChoicesCount) {
 		var ret string
 		return ret
 	}
-
-	return o.ChoicesCount
+	return *o.ChoicesCount
 }
 
-// GetChoicesCountOk returns a tuple with the ChoicesCount field value
+// GetChoicesCountOk returns a tuple with the ChoicesCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomFieldChoiceSet) GetChoicesCountOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ChoicesCount) {
 		return nil, false
 	}
-	return &o.ChoicesCount, true
+	return o.ChoicesCount, true
 }
 
-// SetChoicesCount sets field value
+// HasChoicesCount returns a boolean if a field has been set.
+func (o *CustomFieldChoiceSet) HasChoicesCount() bool {
+	if o != nil && !IsNil(o.ChoicesCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetChoicesCount gets a reference to the given string and assigns it to the ChoicesCount field.
 func (o *CustomFieldChoiceSet) SetChoicesCount(v string) {
-	o.ChoicesCount = v
+	o.ChoicesCount = &v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CustomFieldChoiceSet) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomFieldChoiceSet) GetCreatedOk() (*time.Time, bool) {
@@ -350,9 +368,28 @@ func (o *CustomFieldChoiceSet) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *CustomFieldChoiceSet) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *CustomFieldChoiceSet) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *CustomFieldChoiceSet) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *CustomFieldChoiceSet) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -393,8 +430,12 @@ func (o CustomFieldChoiceSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display_url"] = o.DisplayUrl
-	toSerialize["display"] = o.Display
+	if !IsNil(o.DisplayUrl) {
+		toSerialize["display_url"] = o.DisplayUrl
+	}
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
@@ -406,8 +447,12 @@ func (o CustomFieldChoiceSet) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.OrderAlphabetically) {
 		toSerialize["order_alphabetically"] = o.OrderAlphabetically
 	}
-	toSerialize["choices_count"] = o.ChoicesCount
-	toSerialize["created"] = o.Created.Get()
+	if !IsNil(o.ChoicesCount) {
+		toSerialize["choices_count"] = o.ChoicesCount
+	}
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 
 	for key, value := range o.AdditionalProperties {
@@ -424,12 +469,8 @@ func (o *CustomFieldChoiceSet) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display_url",
-		"display",
 		"name",
 		"extra_choices",
-		"choices_count",
-		"created",
 		"last_updated",
 	}
 

@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Protocol** | [**BriefFHRPGroupProtocol**](BriefFHRPGroupProtocol.md) |  | 
 **GroupId** | **int32** |  | 
 **AuthType** | Pointer to [**AuthenticationType**](AuthenticationType.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **IpAddresses** | [**[]BriefIPAddress**](BriefIPAddress.md) |  | [readonly] 
 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewFHRPGroup
 
-`func NewFHRPGroup(id int32, url string, displayUrl string, display string, protocol BriefFHRPGroupProtocol, groupId int32, created NullableTime, lastUpdated NullableTime, ipAddresses []BriefIPAddress, ) *FHRPGroup`
+`func NewFHRPGroup(id int32, url string, protocol BriefFHRPGroupProtocol, groupId int32, lastUpdated NullableTime, ipAddresses []BriefIPAddress, ) *FHRPGroup`
 
 NewFHRPGroup instantiates a new FHRPGroup object
 This constructor will assign default values to properties that have it defined,
@@ -124,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *FHRPGroup) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -144,6 +149,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *FHRPGroup) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetProtocol
 
@@ -354,6 +364,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *FHRPGroup) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

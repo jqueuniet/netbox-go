@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Label** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewNestedCable
 
-`func NewNestedCable(id int32, url string, display string, ) *NestedCable`
+`func NewNestedCable(id int32, url string, ) *NestedCable`
 
 NewNestedCable instantiates a new NestedCable object
 This constructor will assign default values to properties that have it defined,
@@ -87,6 +87,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedCable) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetLabel
 

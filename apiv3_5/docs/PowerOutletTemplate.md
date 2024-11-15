@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **DeviceType** | Pointer to [**NullableNestedDeviceType**](NestedDeviceType.md) |  | [optional] 
 **ModuleType** | Pointer to [**NullableNestedModuleType**](NestedModuleType.md) |  | [optional] 
 **Name** | **string** |          {module} is accepted as a substitution for the module bay position when attached to a module type.          | 
@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **PowerPort** | Pointer to [**NullableNestedPowerPortTemplate**](NestedPowerPortTemplate.md) |  | [optional] 
 **FeedLeg** | Pointer to [**NullablePowerOutletFeedLeg**](PowerOutletFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewPowerOutletTemplate
 
-`func NewPowerOutletTemplate(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, ) *PowerOutletTemplate`
+`func NewPowerOutletTemplate(id int32, url string, name string, lastUpdated NullableTime, ) *PowerOutletTemplate`
 
 NewPowerOutletTemplate instantiates a new PowerOutletTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -96,6 +96,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *PowerOutletTemplate) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDeviceType
 
@@ -361,6 +366,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *PowerOutletTemplate) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

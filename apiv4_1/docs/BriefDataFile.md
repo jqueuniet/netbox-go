@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Path** | **string** | File path relative to the data source&#39;s root | [readonly] 
 
 ## Methods
 
 ### NewBriefDataFile
 
-`func NewBriefDataFile(id int32, url string, display string, path string, ) *BriefDataFile`
+`func NewBriefDataFile(id int32, url string, path string, ) *BriefDataFile`
 
 NewBriefDataFile instantiates a new BriefDataFile object
 This constructor will assign default values to properties that have it defined,
@@ -87,6 +87,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefDataFile) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetPath
 

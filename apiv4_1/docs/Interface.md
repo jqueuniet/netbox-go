@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Device** | [**BriefDevice**](BriefDevice.md) |  | 
 **Vdcs** | Pointer to [**[]VirtualDeviceContext**](VirtualDeviceContext.md) |  | [optional] 
 **Module** | Pointer to [**NullableBriefModule**](BriefModule.md) |  | [optional] 
@@ -49,7 +49,7 @@ Name | Type | Description | Notes
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **CountIpaddresses** | **int32** |  | [readonly] 
 **CountFhrpGroups** | **int32** |  | [readonly] 
@@ -59,7 +59,7 @@ Name | Type | Description | Notes
 
 ### NewInterface
 
-`func NewInterface(id int32, url string, displayUrl string, display string, device BriefDevice, name string, type_ InterfaceType, cable NullableBriefCable, cableEnd string, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
+`func NewInterface(id int32, url string, device BriefDevice, name string, type_ InterfaceType, cable NullableBriefCable, cableEnd string, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
 
 NewInterface instantiates a new Interface object
 This constructor will assign default values to properties that have it defined,
@@ -133,6 +133,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *Interface) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -153,6 +158,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Interface) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDevice
 
@@ -1338,6 +1348,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Interface) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

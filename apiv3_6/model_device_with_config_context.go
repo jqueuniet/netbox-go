@@ -23,7 +23,7 @@ var _ MappedNullable = &DeviceWithConfigContext{}
 type DeviceWithConfigContext struct {
 	Id         int32            `json:"id"`
 	Url        string           `json:"url"`
-	Display    string           `json:"display"`
+	Display    *string          `json:"display,omitempty"`
 	Name       NullableString   `json:"name,omitempty"`
 	DeviceType NestedDeviceType `json:"device_type"`
 	Role       NestedDeviceRole `json:"role"`
@@ -64,18 +64,18 @@ type DeviceWithConfigContext struct {
 	LocalContextData       interface{}            `json:"local_context_data,omitempty"`
 	Tags                   []NestedTag            `json:"tags,omitempty"`
 	CustomFields           map[string]interface{} `json:"custom_fields,omitempty"`
-	Created                NullableTime           `json:"created"`
+	Created                NullableTime           `json:"created,omitempty"`
 	LastUpdated            NullableTime           `json:"last_updated"`
-	ConsolePortCount       int32                  `json:"console_port_count"`
-	ConsoleServerPortCount int32                  `json:"console_server_port_count"`
-	PowerPortCount         int32                  `json:"power_port_count"`
-	PowerOutletCount       int32                  `json:"power_outlet_count"`
-	InterfaceCount         int32                  `json:"interface_count"`
-	FrontPortCount         int32                  `json:"front_port_count"`
-	RearPortCount          int32                  `json:"rear_port_count"`
-	DeviceBayCount         int32                  `json:"device_bay_count"`
-	ModuleBayCount         int32                  `json:"module_bay_count"`
-	InventoryItemCount     int32                  `json:"inventory_item_count"`
+	ConsolePortCount       *int32                 `json:"console_port_count,omitempty"`
+	ConsoleServerPortCount *int32                 `json:"console_server_port_count,omitempty"`
+	PowerPortCount         *int32                 `json:"power_port_count,omitempty"`
+	PowerOutletCount       *int32                 `json:"power_outlet_count,omitempty"`
+	InterfaceCount         *int32                 `json:"interface_count,omitempty"`
+	FrontPortCount         *int32                 `json:"front_port_count,omitempty"`
+	RearPortCount          *int32                 `json:"rear_port_count,omitempty"`
+	DeviceBayCount         *int32                 `json:"device_bay_count,omitempty"`
+	ModuleBayCount         *int32                 `json:"module_bay_count,omitempty"`
+	InventoryItemCount     *int32                 `json:"inventory_item_count,omitempty"`
 	AdditionalProperties   map[string]interface{}
 }
 
@@ -85,11 +85,10 @@ type _DeviceWithConfigContext DeviceWithConfigContext
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceWithConfigContext(id int32, url string, display string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole NestedDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32) *DeviceWithConfigContext {
+func NewDeviceWithConfigContext(id int32, url string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole NestedDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext interface{}, lastUpdated NullableTime) *DeviceWithConfigContext {
 	this := DeviceWithConfigContext{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.DeviceType = deviceType
 	this.Role = role
 	this.DeviceRole = deviceRole
@@ -97,18 +96,7 @@ func NewDeviceWithConfigContext(id int32, url string, display string, deviceType
 	this.ParentDevice = parentDevice
 	this.PrimaryIp = primaryIp
 	this.ConfigContext = configContext
-	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.ConsolePortCount = consolePortCount
-	this.ConsoleServerPortCount = consoleServerPortCount
-	this.PowerPortCount = powerPortCount
-	this.PowerOutletCount = powerOutletCount
-	this.InterfaceCount = interfaceCount
-	this.FrontPortCount = frontPortCount
-	this.RearPortCount = rearPortCount
-	this.DeviceBayCount = deviceBayCount
-	this.ModuleBayCount = moduleBayCount
-	this.InventoryItemCount = inventoryItemCount
 	return &this
 }
 
@@ -168,28 +156,36 @@ func (o *DeviceWithConfigContext) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *DeviceWithConfigContext) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1382,18 +1378,16 @@ func (o *DeviceWithConfigContext) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DeviceWithConfigContext) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceWithConfigContext) GetCreatedOk() (*time.Time, bool) {
@@ -1403,9 +1397,28 @@ func (o *DeviceWithConfigContext) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *DeviceWithConfigContext) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *DeviceWithConfigContext) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *DeviceWithConfigContext) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -1434,244 +1447,324 @@ func (o *DeviceWithConfigContext) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetConsolePortCount returns the ConsolePortCount field value
+// GetConsolePortCount returns the ConsolePortCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetConsolePortCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.ConsolePortCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.ConsolePortCount
+	return *o.ConsolePortCount
 }
 
-// GetConsolePortCountOk returns a tuple with the ConsolePortCount field value
+// GetConsolePortCountOk returns a tuple with the ConsolePortCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetConsolePortCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConsolePortCount) {
 		return nil, false
 	}
-	return &o.ConsolePortCount, true
+	return o.ConsolePortCount, true
 }
 
-// SetConsolePortCount sets field value
+// HasConsolePortCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasConsolePortCount() bool {
+	if o != nil && !IsNil(o.ConsolePortCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetConsolePortCount gets a reference to the given int32 and assigns it to the ConsolePortCount field.
 func (o *DeviceWithConfigContext) SetConsolePortCount(v int32) {
-	o.ConsolePortCount = v
+	o.ConsolePortCount = &v
 }
 
-// GetConsoleServerPortCount returns the ConsoleServerPortCount field value
+// GetConsoleServerPortCount returns the ConsoleServerPortCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetConsoleServerPortCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.ConsoleServerPortCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.ConsoleServerPortCount
+	return *o.ConsoleServerPortCount
 }
 
-// GetConsoleServerPortCountOk returns a tuple with the ConsoleServerPortCount field value
+// GetConsoleServerPortCountOk returns a tuple with the ConsoleServerPortCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetConsoleServerPortCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ConsoleServerPortCount) {
 		return nil, false
 	}
-	return &o.ConsoleServerPortCount, true
+	return o.ConsoleServerPortCount, true
 }
 
-// SetConsoleServerPortCount sets field value
+// HasConsoleServerPortCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasConsoleServerPortCount() bool {
+	if o != nil && !IsNil(o.ConsoleServerPortCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetConsoleServerPortCount gets a reference to the given int32 and assigns it to the ConsoleServerPortCount field.
 func (o *DeviceWithConfigContext) SetConsoleServerPortCount(v int32) {
-	o.ConsoleServerPortCount = v
+	o.ConsoleServerPortCount = &v
 }
 
-// GetPowerPortCount returns the PowerPortCount field value
+// GetPowerPortCount returns the PowerPortCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetPowerPortCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.PowerPortCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.PowerPortCount
+	return *o.PowerPortCount
 }
 
-// GetPowerPortCountOk returns a tuple with the PowerPortCount field value
+// GetPowerPortCountOk returns a tuple with the PowerPortCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetPowerPortCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PowerPortCount) {
 		return nil, false
 	}
-	return &o.PowerPortCount, true
+	return o.PowerPortCount, true
 }
 
-// SetPowerPortCount sets field value
+// HasPowerPortCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasPowerPortCount() bool {
+	if o != nil && !IsNil(o.PowerPortCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPowerPortCount gets a reference to the given int32 and assigns it to the PowerPortCount field.
 func (o *DeviceWithConfigContext) SetPowerPortCount(v int32) {
-	o.PowerPortCount = v
+	o.PowerPortCount = &v
 }
 
-// GetPowerOutletCount returns the PowerOutletCount field value
+// GetPowerOutletCount returns the PowerOutletCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetPowerOutletCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.PowerOutletCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.PowerOutletCount
+	return *o.PowerOutletCount
 }
 
-// GetPowerOutletCountOk returns a tuple with the PowerOutletCount field value
+// GetPowerOutletCountOk returns a tuple with the PowerOutletCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetPowerOutletCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PowerOutletCount) {
 		return nil, false
 	}
-	return &o.PowerOutletCount, true
+	return o.PowerOutletCount, true
 }
 
-// SetPowerOutletCount sets field value
+// HasPowerOutletCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasPowerOutletCount() bool {
+	if o != nil && !IsNil(o.PowerOutletCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPowerOutletCount gets a reference to the given int32 and assigns it to the PowerOutletCount field.
 func (o *DeviceWithConfigContext) SetPowerOutletCount(v int32) {
-	o.PowerOutletCount = v
+	o.PowerOutletCount = &v
 }
 
-// GetInterfaceCount returns the InterfaceCount field value
+// GetInterfaceCount returns the InterfaceCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetInterfaceCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.InterfaceCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.InterfaceCount
+	return *o.InterfaceCount
 }
 
-// GetInterfaceCountOk returns a tuple with the InterfaceCount field value
+// GetInterfaceCountOk returns a tuple with the InterfaceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetInterfaceCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InterfaceCount) {
 		return nil, false
 	}
-	return &o.InterfaceCount, true
+	return o.InterfaceCount, true
 }
 
-// SetInterfaceCount sets field value
+// HasInterfaceCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasInterfaceCount() bool {
+	if o != nil && !IsNil(o.InterfaceCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetInterfaceCount gets a reference to the given int32 and assigns it to the InterfaceCount field.
 func (o *DeviceWithConfigContext) SetInterfaceCount(v int32) {
-	o.InterfaceCount = v
+	o.InterfaceCount = &v
 }
 
-// GetFrontPortCount returns the FrontPortCount field value
+// GetFrontPortCount returns the FrontPortCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetFrontPortCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.FrontPortCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.FrontPortCount
+	return *o.FrontPortCount
 }
 
-// GetFrontPortCountOk returns a tuple with the FrontPortCount field value
+// GetFrontPortCountOk returns a tuple with the FrontPortCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetFrontPortCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.FrontPortCount) {
 		return nil, false
 	}
-	return &o.FrontPortCount, true
+	return o.FrontPortCount, true
 }
 
-// SetFrontPortCount sets field value
+// HasFrontPortCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasFrontPortCount() bool {
+	if o != nil && !IsNil(o.FrontPortCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetFrontPortCount gets a reference to the given int32 and assigns it to the FrontPortCount field.
 func (o *DeviceWithConfigContext) SetFrontPortCount(v int32) {
-	o.FrontPortCount = v
+	o.FrontPortCount = &v
 }
 
-// GetRearPortCount returns the RearPortCount field value
+// GetRearPortCount returns the RearPortCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetRearPortCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.RearPortCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.RearPortCount
+	return *o.RearPortCount
 }
 
-// GetRearPortCountOk returns a tuple with the RearPortCount field value
+// GetRearPortCountOk returns a tuple with the RearPortCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetRearPortCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.RearPortCount) {
 		return nil, false
 	}
-	return &o.RearPortCount, true
+	return o.RearPortCount, true
 }
 
-// SetRearPortCount sets field value
+// HasRearPortCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasRearPortCount() bool {
+	if o != nil && !IsNil(o.RearPortCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetRearPortCount gets a reference to the given int32 and assigns it to the RearPortCount field.
 func (o *DeviceWithConfigContext) SetRearPortCount(v int32) {
-	o.RearPortCount = v
+	o.RearPortCount = &v
 }
 
-// GetDeviceBayCount returns the DeviceBayCount field value
+// GetDeviceBayCount returns the DeviceBayCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetDeviceBayCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceBayCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.DeviceBayCount
+	return *o.DeviceBayCount
 }
 
-// GetDeviceBayCountOk returns a tuple with the DeviceBayCount field value
+// GetDeviceBayCountOk returns a tuple with the DeviceBayCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetDeviceBayCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceBayCount) {
 		return nil, false
 	}
-	return &o.DeviceBayCount, true
+	return o.DeviceBayCount, true
 }
 
-// SetDeviceBayCount sets field value
+// HasDeviceBayCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasDeviceBayCount() bool {
+	if o != nil && !IsNil(o.DeviceBayCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceBayCount gets a reference to the given int32 and assigns it to the DeviceBayCount field.
 func (o *DeviceWithConfigContext) SetDeviceBayCount(v int32) {
-	o.DeviceBayCount = v
+	o.DeviceBayCount = &v
 }
 
-// GetModuleBayCount returns the ModuleBayCount field value
+// GetModuleBayCount returns the ModuleBayCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetModuleBayCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.ModuleBayCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.ModuleBayCount
+	return *o.ModuleBayCount
 }
 
-// GetModuleBayCountOk returns a tuple with the ModuleBayCount field value
+// GetModuleBayCountOk returns a tuple with the ModuleBayCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetModuleBayCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ModuleBayCount) {
 		return nil, false
 	}
-	return &o.ModuleBayCount, true
+	return o.ModuleBayCount, true
 }
 
-// SetModuleBayCount sets field value
+// HasModuleBayCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasModuleBayCount() bool {
+	if o != nil && !IsNil(o.ModuleBayCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetModuleBayCount gets a reference to the given int32 and assigns it to the ModuleBayCount field.
 func (o *DeviceWithConfigContext) SetModuleBayCount(v int32) {
-	o.ModuleBayCount = v
+	o.ModuleBayCount = &v
 }
 
-// GetInventoryItemCount returns the InventoryItemCount field value
+// GetInventoryItemCount returns the InventoryItemCount field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetInventoryItemCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.InventoryItemCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.InventoryItemCount
+	return *o.InventoryItemCount
 }
 
-// GetInventoryItemCountOk returns a tuple with the InventoryItemCount field value
+// GetInventoryItemCountOk returns a tuple with the InventoryItemCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetInventoryItemCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.InventoryItemCount) {
 		return nil, false
 	}
-	return &o.InventoryItemCount, true
+	return o.InventoryItemCount, true
 }
 
-// SetInventoryItemCount sets field value
+// HasInventoryItemCount returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasInventoryItemCount() bool {
+	if o != nil && !IsNil(o.InventoryItemCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetInventoryItemCount gets a reference to the given int32 and assigns it to the InventoryItemCount field.
 func (o *DeviceWithConfigContext) SetInventoryItemCount(v int32) {
-	o.InventoryItemCount = v
+	o.InventoryItemCount = &v
 }
 
 func (o DeviceWithConfigContext) MarshalJSON() ([]byte, error) {
@@ -1686,7 +1779,9 @@ func (o DeviceWithConfigContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
@@ -1774,18 +1869,40 @@ func (o DeviceWithConfigContext) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["console_port_count"] = o.ConsolePortCount
-	toSerialize["console_server_port_count"] = o.ConsoleServerPortCount
-	toSerialize["power_port_count"] = o.PowerPortCount
-	toSerialize["power_outlet_count"] = o.PowerOutletCount
-	toSerialize["interface_count"] = o.InterfaceCount
-	toSerialize["front_port_count"] = o.FrontPortCount
-	toSerialize["rear_port_count"] = o.RearPortCount
-	toSerialize["device_bay_count"] = o.DeviceBayCount
-	toSerialize["module_bay_count"] = o.ModuleBayCount
-	toSerialize["inventory_item_count"] = o.InventoryItemCount
+	if !IsNil(o.ConsolePortCount) {
+		toSerialize["console_port_count"] = o.ConsolePortCount
+	}
+	if !IsNil(o.ConsoleServerPortCount) {
+		toSerialize["console_server_port_count"] = o.ConsoleServerPortCount
+	}
+	if !IsNil(o.PowerPortCount) {
+		toSerialize["power_port_count"] = o.PowerPortCount
+	}
+	if !IsNil(o.PowerOutletCount) {
+		toSerialize["power_outlet_count"] = o.PowerOutletCount
+	}
+	if !IsNil(o.InterfaceCount) {
+		toSerialize["interface_count"] = o.InterfaceCount
+	}
+	if !IsNil(o.FrontPortCount) {
+		toSerialize["front_port_count"] = o.FrontPortCount
+	}
+	if !IsNil(o.RearPortCount) {
+		toSerialize["rear_port_count"] = o.RearPortCount
+	}
+	if !IsNil(o.DeviceBayCount) {
+		toSerialize["device_bay_count"] = o.DeviceBayCount
+	}
+	if !IsNil(o.ModuleBayCount) {
+		toSerialize["module_bay_count"] = o.ModuleBayCount
+	}
+	if !IsNil(o.InventoryItemCount) {
+		toSerialize["inventory_item_count"] = o.InventoryItemCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -1801,7 +1918,6 @@ func (o *DeviceWithConfigContext) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"device_type",
 		"role",
 		"device_role",
@@ -1809,18 +1925,7 @@ func (o *DeviceWithConfigContext) UnmarshalJSON(data []byte) (err error) {
 		"parent_device",
 		"primary_ip",
 		"config_context",
-		"created",
 		"last_updated",
-		"console_port_count",
-		"console_server_port_count",
-		"power_port_count",
-		"power_outlet_count",
-		"interface_count",
-		"front_port_count",
-		"rear_port_count",
-		"device_bay_count",
-		"module_bay_count",
-		"inventory_item_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

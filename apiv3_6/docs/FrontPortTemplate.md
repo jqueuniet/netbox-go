@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **DeviceType** | Pointer to [**NullableNestedDeviceType**](NestedDeviceType.md) |  | [optional] 
 **ModuleType** | Pointer to [**NullableNestedModuleType**](NestedModuleType.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **RearPort** | [**NestedRearPortTemplate**](NestedRearPortTemplate.md) |  | 
 **RearPortPosition** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewFrontPortTemplate
 
-`func NewFrontPortTemplate(id int32, url string, display string, name string, type_ FrontPortType, rearPort NestedRearPortTemplate, created NullableTime, lastUpdated NullableTime, ) *FrontPortTemplate`
+`func NewFrontPortTemplate(id int32, url string, name string, type_ FrontPortType, rearPort NestedRearPortTemplate, lastUpdated NullableTime, ) *FrontPortTemplate`
 
 NewFrontPortTemplate instantiates a new FrontPortTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -97,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *FrontPortTemplate) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDeviceType
 
@@ -347,6 +352,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *FrontPortTemplate) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

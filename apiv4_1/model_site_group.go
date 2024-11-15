@@ -23,17 +23,17 @@ var _ MappedNullable = &SiteGroup{}
 type SiteGroup struct {
 	Id                   int32                   `json:"id"`
 	Url                  string                  `json:"url"`
-	DisplayUrl           string                  `json:"display_url"`
-	Display              string                  `json:"display"`
+	DisplayUrl           *string                 `json:"display_url,omitempty"`
+	Display              *string                 `json:"display,omitempty"`
 	Name                 string                  `json:"name"`
 	Slug                 string                  `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Parent               NullableNestedSiteGroup `json:"parent,omitempty"`
 	Description          *string                 `json:"description,omitempty"`
 	Tags                 []NestedTag             `json:"tags,omitempty"`
 	CustomFields         map[string]interface{}  `json:"custom_fields,omitempty"`
-	Created              NullableTime            `json:"created"`
+	Created              NullableTime            `json:"created,omitempty"`
 	LastUpdated          NullableTime            `json:"last_updated"`
-	SiteCount            int32                   `json:"site_count"`
+	SiteCount            *int32                  `json:"site_count,omitempty"`
 	Depth                int32                   `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -44,17 +44,13 @@ type _SiteGroup SiteGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSiteGroup(id int32, url string, displayUrl string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, siteCount int32, depth int32) *SiteGroup {
+func NewSiteGroup(id int32, url string, name string, slug string, lastUpdated NullableTime, depth int32) *SiteGroup {
 	this := SiteGroup{}
 	this.Id = id
 	this.Url = url
-	this.DisplayUrl = displayUrl
-	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.SiteCount = siteCount
 	this.Depth = depth
 	return &this
 }
@@ -115,52 +111,68 @@ func (o *SiteGroup) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplayUrl returns the DisplayUrl field value
+// GetDisplayUrl returns the DisplayUrl field value if set, zero value otherwise.
 func (o *SiteGroup) GetDisplayUrl() string {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		var ret string
 		return ret
 	}
-
-	return o.DisplayUrl
+	return *o.DisplayUrl
 }
 
-// GetDisplayUrlOk returns a tuple with the DisplayUrl field value
+// GetDisplayUrlOk returns a tuple with the DisplayUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SiteGroup) GetDisplayUrlOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DisplayUrl) {
 		return nil, false
 	}
-	return &o.DisplayUrl, true
+	return o.DisplayUrl, true
 }
 
-// SetDisplayUrl sets field value
+// HasDisplayUrl returns a boolean if a field has been set.
+func (o *SiteGroup) HasDisplayUrl() bool {
+	if o != nil && !IsNil(o.DisplayUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayUrl gets a reference to the given string and assigns it to the DisplayUrl field.
 func (o *SiteGroup) SetDisplayUrl(v string) {
-	o.DisplayUrl = v
+	o.DisplayUrl = &v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *SiteGroup) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SiteGroup) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *SiteGroup) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *SiteGroup) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -350,18 +362,16 @@ func (o *SiteGroup) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SiteGroup) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SiteGroup) GetCreatedOk() (*time.Time, bool) {
@@ -371,9 +381,28 @@ func (o *SiteGroup) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *SiteGroup) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *SiteGroup) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *SiteGroup) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *SiteGroup) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -402,28 +431,36 @@ func (o *SiteGroup) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetSiteCount returns the SiteCount field value
+// GetSiteCount returns the SiteCount field value if set, zero value otherwise.
 func (o *SiteGroup) GetSiteCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		var ret int32
 		return ret
 	}
-
-	return o.SiteCount
+	return *o.SiteCount
 }
 
-// GetSiteCountOk returns a tuple with the SiteCount field value
+// GetSiteCountOk returns a tuple with the SiteCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SiteGroup) GetSiteCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.SiteCount) {
 		return nil, false
 	}
-	return &o.SiteCount, true
+	return o.SiteCount, true
 }
 
-// SetSiteCount sets field value
+// HasSiteCount returns a boolean if a field has been set.
+func (o *SiteGroup) HasSiteCount() bool {
+	if o != nil && !IsNil(o.SiteCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetSiteCount gets a reference to the given int32 and assigns it to the SiteCount field.
 func (o *SiteGroup) SetSiteCount(v int32) {
-	o.SiteCount = v
+	o.SiteCount = &v
 }
 
 // GetDepth returns the Depth field value
@@ -462,8 +499,12 @@ func (o SiteGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display_url"] = o.DisplayUrl
-	toSerialize["display"] = o.Display
+	if !IsNil(o.DisplayUrl) {
+		toSerialize["display_url"] = o.DisplayUrl
+	}
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if o.Parent.IsSet() {
@@ -478,9 +519,13 @@ func (o SiteGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["site_count"] = o.SiteCount
+	if !IsNil(o.SiteCount) {
+		toSerialize["site_count"] = o.SiteCount
+	}
 	toSerialize["_depth"] = o.Depth
 
 	for key, value := range o.AdditionalProperties {
@@ -497,13 +542,9 @@ func (o *SiteGroup) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display_url",
-		"display",
 		"name",
 		"slug",
-		"created",
 		"last_updated",
-		"site_count",
 		"_depth",
 	}
 

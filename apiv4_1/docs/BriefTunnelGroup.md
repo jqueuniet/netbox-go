@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**TunnelCount** | **int64** |  | [readonly] 
+**TunnelCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBriefTunnelGroup
 
-`func NewBriefTunnelGroup(id int32, url string, display string, name string, slug string, tunnelCount int64, ) *BriefTunnelGroup`
+`func NewBriefTunnelGroup(id int32, url string, name string, slug string, ) *BriefTunnelGroup`
 
 NewBriefTunnelGroup instantiates a new BriefTunnelGroup object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +90,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefTunnelGroup) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -175,6 +180,11 @@ and a boolean to check if the value has been set.
 
 SetTunnelCount sets TunnelCount field to given value.
 
+### HasTunnelCount
+
+`func (o *BriefTunnelGroup) HasTunnelCount() bool`
+
+HasTunnelCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

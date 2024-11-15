@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Group** | Pointer to [**NullableNestedTenantGroup**](NestedTenantGroup.md) |  | [optional] 
@@ -14,24 +14,24 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**CircuitCount** | **int32** |  | [readonly] 
-**DeviceCount** | **int32** |  | [readonly] 
-**IpaddressCount** | **int32** |  | [readonly] 
-**PrefixCount** | **int32** |  | [readonly] 
-**RackCount** | **int32** |  | [readonly] 
-**SiteCount** | **int32** |  | [readonly] 
-**VirtualmachineCount** | **int32** |  | [readonly] 
-**VlanCount** | **int32** |  | [readonly] 
-**VrfCount** | **int32** |  | [readonly] 
-**ClusterCount** | **int32** |  | [readonly] 
+**CircuitCount** | Pointer to **int32** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **int32** |  | [optional] [readonly] 
+**IpaddressCount** | Pointer to **int32** |  | [optional] [readonly] 
+**PrefixCount** | Pointer to **int32** |  | [optional] [readonly] 
+**RackCount** | Pointer to **int32** |  | [optional] [readonly] 
+**SiteCount** | Pointer to **int32** |  | [optional] [readonly] 
+**VirtualmachineCount** | Pointer to **int32** |  | [optional] [readonly] 
+**VlanCount** | Pointer to **int32** |  | [optional] [readonly] 
+**VrfCount** | Pointer to **int32** |  | [optional] [readonly] 
+**ClusterCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewTenant
 
-`func NewTenant(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int32, deviceCount int32, ipaddressCount int32, prefixCount int32, rackCount int32, siteCount int32, virtualmachineCount int32, vlanCount int32, vrfCount int32, clusterCount int32, ) *Tenant`
+`func NewTenant(id int32, url string, name string, slug string, lastUpdated NullableTime, ) *Tenant`
 
 NewTenant instantiates a new Tenant object
 This constructor will assign default values to properties that have it defined,
@@ -105,6 +105,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Tenant) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -300,6 +305,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Tenant) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -360,6 +370,11 @@ and a boolean to check if the value has been set.
 
 SetCircuitCount sets CircuitCount field to given value.
 
+### HasCircuitCount
+
+`func (o *Tenant) HasCircuitCount() bool`
+
+HasCircuitCount returns a boolean if a field has been set.
 
 ### GetDeviceCount
 
@@ -380,6 +395,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
+
+`func (o *Tenant) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
 
 ### GetIpaddressCount
 
@@ -400,6 +420,11 @@ and a boolean to check if the value has been set.
 
 SetIpaddressCount sets IpaddressCount field to given value.
 
+### HasIpaddressCount
+
+`func (o *Tenant) HasIpaddressCount() bool`
+
+HasIpaddressCount returns a boolean if a field has been set.
 
 ### GetPrefixCount
 
@@ -420,6 +445,11 @@ and a boolean to check if the value has been set.
 
 SetPrefixCount sets PrefixCount field to given value.
 
+### HasPrefixCount
+
+`func (o *Tenant) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 ### GetRackCount
 
@@ -440,6 +470,11 @@ and a boolean to check if the value has been set.
 
 SetRackCount sets RackCount field to given value.
 
+### HasRackCount
+
+`func (o *Tenant) HasRackCount() bool`
+
+HasRackCount returns a boolean if a field has been set.
 
 ### GetSiteCount
 
@@ -460,6 +495,11 @@ and a boolean to check if the value has been set.
 
 SetSiteCount sets SiteCount field to given value.
 
+### HasSiteCount
+
+`func (o *Tenant) HasSiteCount() bool`
+
+HasSiteCount returns a boolean if a field has been set.
 
 ### GetVirtualmachineCount
 
@@ -480,6 +520,11 @@ and a boolean to check if the value has been set.
 
 SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
+### HasVirtualmachineCount
+
+`func (o *Tenant) HasVirtualmachineCount() bool`
+
+HasVirtualmachineCount returns a boolean if a field has been set.
 
 ### GetVlanCount
 
@@ -500,6 +545,11 @@ and a boolean to check if the value has been set.
 
 SetVlanCount sets VlanCount field to given value.
 
+### HasVlanCount
+
+`func (o *Tenant) HasVlanCount() bool`
+
+HasVlanCount returns a boolean if a field has been set.
 
 ### GetVrfCount
 
@@ -520,6 +570,11 @@ and a boolean to check if the value has been set.
 
 SetVrfCount sets VrfCount field to given value.
 
+### HasVrfCount
+
+`func (o *Tenant) HasVrfCount() bool`
+
+HasVrfCount returns a boolean if a field has been set.
 
 ### GetClusterCount
 
@@ -540,6 +595,11 @@ and a boolean to check if the value has been set.
 
 SetClusterCount sets ClusterCount field to given value.
 
+### HasClusterCount
+
+`func (o *Tenant) HasClusterCount() bool`
+
+HasClusterCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

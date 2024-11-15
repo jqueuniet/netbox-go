@@ -22,11 +22,11 @@ var _ MappedNullable = &BriefRIR{}
 type BriefRIR struct {
 	Id                   int32   `json:"id"`
 	Url                  string  `json:"url"`
-	Display              string  `json:"display"`
+	Display              *string `json:"display,omitempty"`
 	Name                 string  `json:"name"`
 	Slug                 string  `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Description          *string `json:"description,omitempty"`
-	AggregateCount       int64   `json:"aggregate_count"`
+	AggregateCount       *int64  `json:"aggregate_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,14 +36,12 @@ type _BriefRIR BriefRIR
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefRIR(id int32, url string, display string, name string, slug string, aggregateCount int64) *BriefRIR {
+func NewBriefRIR(id int32, url string, name string, slug string) *BriefRIR {
 	this := BriefRIR{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.AggregateCount = aggregateCount
 	return &this
 }
 
@@ -103,28 +101,36 @@ func (o *BriefRIR) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefRIR) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefRIR) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefRIR) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefRIR) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetName returns the Name field value
@@ -207,28 +213,36 @@ func (o *BriefRIR) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetAggregateCount returns the AggregateCount field value
+// GetAggregateCount returns the AggregateCount field value if set, zero value otherwise.
 func (o *BriefRIR) GetAggregateCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.AggregateCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.AggregateCount
+	return *o.AggregateCount
 }
 
-// GetAggregateCountOk returns a tuple with the AggregateCount field value
+// GetAggregateCountOk returns a tuple with the AggregateCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefRIR) GetAggregateCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.AggregateCount) {
 		return nil, false
 	}
-	return &o.AggregateCount, true
+	return o.AggregateCount, true
 }
 
-// SetAggregateCount sets field value
+// HasAggregateCount returns a boolean if a field has been set.
+func (o *BriefRIR) HasAggregateCount() bool {
+	if o != nil && !IsNil(o.AggregateCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetAggregateCount gets a reference to the given int64 and assigns it to the AggregateCount field.
 func (o *BriefRIR) SetAggregateCount(v int64) {
-	o.AggregateCount = v
+	o.AggregateCount = &v
 }
 
 func (o BriefRIR) MarshalJSON() ([]byte, error) {
@@ -243,13 +257,17 @@ func (o BriefRIR) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["aggregate_count"] = o.AggregateCount
+	if !IsNil(o.AggregateCount) {
+		toSerialize["aggregate_count"] = o.AggregateCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -265,10 +283,8 @@ func (o *BriefRIR) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"slug",
-		"aggregate_count",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

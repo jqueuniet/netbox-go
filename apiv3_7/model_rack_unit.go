@@ -25,7 +25,7 @@ type RackUnit struct {
 	Face                 RackUnitFace `json:"face"`
 	Device               NestedDevice `json:"device"`
 	Occupied             bool         `json:"occupied"`
-	Display              string       `json:"display"`
+	Display              *string      `json:"display,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,14 +35,13 @@ type _RackUnit RackUnit
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRackUnit(id float64, name string, face RackUnitFace, device NestedDevice, occupied bool, display string) *RackUnit {
+func NewRackUnit(id float64, name string, face RackUnitFace, device NestedDevice, occupied bool) *RackUnit {
 	this := RackUnit{}
 	this.Id = id
 	this.Name = name
 	this.Face = face
 	this.Device = device
 	this.Occupied = occupied
-	this.Display = display
 	return &this
 }
 
@@ -174,28 +173,36 @@ func (o *RackUnit) SetOccupied(v bool) {
 	o.Occupied = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *RackUnit) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RackUnit) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *RackUnit) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *RackUnit) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 func (o RackUnit) MarshalJSON() ([]byte, error) {
@@ -213,7 +220,9 @@ func (o RackUnit) ToMap() (map[string]interface{}, error) {
 	toSerialize["face"] = o.Face
 	toSerialize["device"] = o.Device
 	toSerialize["occupied"] = o.Occupied
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -232,7 +241,6 @@ func (o *RackUnit) UnmarshalJSON(data []byte) (err error) {
 		"face",
 		"device",
 		"occupied",
-		"display",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

@@ -6,20 +6,20 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Module** | **int32** |  | [readonly] 
 **Name** | **string** |  | [readonly] 
 **Description** | **NullableString** |  | [readonly] 
 **Vars** | **interface{}** |  | [readonly] 
 **Result** | [**BriefJob**](BriefJob.md) |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **IsExecutable** | **bool** |  | [readonly] 
 
 ## Methods
 
 ### NewScript
 
-`func NewScript(id int32, url string, displayUrl string, module int32, name string, description NullableString, vars interface{}, result BriefJob, display string, isExecutable bool, ) *Script`
+`func NewScript(id int32, url string, module int32, name string, description NullableString, vars interface{}, result BriefJob, isExecutable bool, ) *Script`
 
 NewScript instantiates a new Script object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *Script) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetModule
 
@@ -233,6 +238,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Script) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetIsExecutable
 

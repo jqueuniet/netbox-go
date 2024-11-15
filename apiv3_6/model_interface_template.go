@@ -23,7 +23,7 @@ var _ MappedNullable = &InterfaceTemplate{}
 type InterfaceTemplate struct {
 	Id         int32                    `json:"id"`
 	Url        string                   `json:"url"`
-	Display    string                   `json:"display"`
+	Display    *string                  `json:"display,omitempty"`
 	DeviceType NullableNestedDeviceType `json:"device_type,omitempty"`
 	ModuleType NullableNestedModuleType `json:"module_type,omitempty"`
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
@@ -38,7 +38,7 @@ type InterfaceTemplate struct {
 	PoeMode              NullableInterfaceTemplatePoeMode `json:"poe_mode,omitempty"`
 	PoeType              NullableInterfaceTemplatePoeType `json:"poe_type,omitempty"`
 	RfRole               NullableInterfaceTemplateRfRole  `json:"rf_role,omitempty"`
-	Created              NullableTime                     `json:"created"`
+	Created              NullableTime                     `json:"created,omitempty"`
 	LastUpdated          NullableTime                     `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
@@ -49,14 +49,12 @@ type _InterfaceTemplate InterfaceTemplate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInterfaceTemplate(id int32, url string, display string, name string, type_ InterfaceType, created NullableTime, lastUpdated NullableTime) *InterfaceTemplate {
+func NewInterfaceTemplate(id int32, url string, name string, type_ InterfaceType, lastUpdated NullableTime) *InterfaceTemplate {
 	this := InterfaceTemplate{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Name = name
 	this.Type = type_
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -117,28 +115,36 @@ func (o *InterfaceTemplate) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *InterfaceTemplate) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterfaceTemplate) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *InterfaceTemplate) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *InterfaceTemplate) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetDeviceType returns the DeviceType field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -575,18 +581,16 @@ func (o *InterfaceTemplate) UnsetRfRole() {
 	o.RfRole.Unset()
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InterfaceTemplate) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InterfaceTemplate) GetCreatedOk() (*time.Time, bool) {
@@ -596,9 +600,28 @@ func (o *InterfaceTemplate) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *InterfaceTemplate) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *InterfaceTemplate) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *InterfaceTemplate) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *InterfaceTemplate) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -639,7 +662,9 @@ func (o InterfaceTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	if o.DeviceType.IsSet() {
 		toSerialize["device_type"] = o.DeviceType.Get()
 	}
@@ -672,7 +697,9 @@ func (o InterfaceTemplate) ToMap() (map[string]interface{}, error) {
 	if o.RfRole.IsSet() {
 		toSerialize["rf_role"] = o.RfRole.Get()
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 
 	for key, value := range o.AdditionalProperties {
@@ -689,10 +716,8 @@ func (o *InterfaceTemplate) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"name",
 		"type",
-		"created",
 		"last_updated",
 	}
 

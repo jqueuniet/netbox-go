@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **DeviceType** | Pointer to [**NullableBriefDeviceType**](BriefDeviceType.md) |  | [optional] 
 **ModuleType** | Pointer to [**NullableBriefModuleType**](BriefModuleType.md) |  | [optional] 
 **Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
@@ -19,14 +19,14 @@ Name | Type | Description | Notes
 **PoeMode** | Pointer to [**NullableInterfaceTemplatePoeMode**](InterfaceTemplatePoeMode.md) |  | [optional] 
 **PoeType** | Pointer to [**NullableInterfaceTemplatePoeType**](InterfaceTemplatePoeType.md) |  | [optional] 
 **RfRole** | Pointer to [**NullableInterfaceTemplateRfRole**](InterfaceTemplateRfRole.md) |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewInterfaceTemplate
 
-`func NewInterfaceTemplate(id int32, url string, display string, name string, type_ InterfaceType, created NullableTime, lastUpdated NullableTime, ) *InterfaceTemplate`
+`func NewInterfaceTemplate(id int32, url string, name string, type_ InterfaceType, lastUpdated NullableTime, ) *InterfaceTemplate`
 
 NewInterfaceTemplate instantiates a new InterfaceTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -100,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *InterfaceTemplate) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDeviceType
 
@@ -470,6 +475,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *InterfaceTemplate) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

@@ -6,20 +6,20 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **DeviceType** | [**NestedDeviceType**](NestedDeviceType.md) |  | 
 **Name** | **string** |          {module} is accepted as a substitution for the module bay position when attached to a module type.          | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Position** | Pointer to **string** | Identifier to reference when renaming installed components | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewModuleBayTemplate
 
-`func NewModuleBayTemplate(id int32, url string, display string, deviceType NestedDeviceType, name string, created NullableTime, lastUpdated NullableTime, ) *ModuleBayTemplate`
+`func NewModuleBayTemplate(id int32, url string, deviceType NestedDeviceType, name string, lastUpdated NullableTime, ) *ModuleBayTemplate`
 
 NewModuleBayTemplate instantiates a new ModuleBayTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -93,6 +93,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *ModuleBayTemplate) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDeviceType
 
@@ -228,6 +233,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ModuleBayTemplate) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

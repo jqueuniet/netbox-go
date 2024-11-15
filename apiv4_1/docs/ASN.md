@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Asn** | **int64** | 16- or 32-bit autonomous system number | 
 **Rir** | Pointer to [**NullableBriefRIR**](BriefRIR.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
@@ -15,16 +15,16 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**SiteCount** | **int64** |  | [readonly] 
-**ProviderCount** | **int64** |  | [readonly] 
+**SiteCount** | Pointer to **int64** |  | [optional] [readonly] 
+**ProviderCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewASN
 
-`func NewASN(id int32, url string, displayUrl string, display string, asn int64, created NullableTime, lastUpdated NullableTime, siteCount int64, providerCount int64, ) *ASN`
+`func NewASN(id int32, url string, asn int64, lastUpdated NullableTime, ) *ASN`
 
 NewASN instantiates a new ASN object
 This constructor will assign default values to properties that have it defined,
@@ -98,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *ASN) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -118,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *ASN) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetAsn
 
@@ -328,6 +338,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ASN) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -388,6 +403,11 @@ and a boolean to check if the value has been set.
 
 SetSiteCount sets SiteCount field to given value.
 
+### HasSiteCount
+
+`func (o *ASN) HasSiteCount() bool`
+
+HasSiteCount returns a boolean if a field has been set.
 
 ### GetProviderCount
 
@@ -408,6 +428,11 @@ and a boolean to check if the value has been set.
 
 SetProviderCount sets ProviderCount field to given value.
 
+### HasProviderCount
+
+`func (o *ASN) HasProviderCount() bool`
+
+HasProviderCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

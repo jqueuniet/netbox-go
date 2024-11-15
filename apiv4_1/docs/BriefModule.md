@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Device** | [**BriefDevice**](BriefDevice.md) |  | 
 **ModuleBay** | [**NestedModuleBay**](NestedModuleBay.md) |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewBriefModule
 
-`func NewBriefModule(id int32, url string, display string, device BriefDevice, moduleBay NestedModuleBay, ) *BriefModule`
+`func NewBriefModule(id int32, url string, device BriefDevice, moduleBay NestedModuleBay, ) *BriefModule`
 
 NewBriefModule instantiates a new BriefModule object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *BriefModule) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDevice
 

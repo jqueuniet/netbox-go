@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **FacilityId** | Pointer to **NullableString** |  | [optional] 
 **Site** | [**NestedSite**](NestedSite.md) |  | 
@@ -32,16 +32,16 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**DeviceCount** | **int32** |  | [readonly] 
-**PowerfeedCount** | **int32** |  | [readonly] 
+**DeviceCount** | Pointer to **int32** |  | [optional] [readonly] 
+**PowerfeedCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewRack
 
-`func NewRack(id int32, url string, display string, name string, site NestedSite, created NullableTime, lastUpdated NullableTime, deviceCount int32, powerfeedCount int32, ) *Rack`
+`func NewRack(id int32, url string, name string, site NestedSite, lastUpdated NullableTime, ) *Rack`
 
 NewRack instantiates a new Rack object
 This constructor will assign default values to properties that have it defined,
@@ -115,6 +115,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Rack) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -880,6 +885,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Rack) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -940,6 +950,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
+
+`func (o *Rack) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
 
 ### GetPowerfeedCount
 
@@ -960,6 +975,11 @@ and a boolean to check if the value has been set.
 
 SetPowerfeedCount sets PowerfeedCount field to given value.
 
+### HasPowerfeedCount
+
+`func (o *Rack) HasPowerfeedCount() bool`
+
+HasPowerfeedCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

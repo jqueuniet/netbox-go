@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Weight** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -30,14 +30,14 @@ Name | Type | Description | Notes
 **DataFile** | [**BriefDataFile**](BriefDataFile.md) |  | [readonly] 
 **DataSynced** | **NullableTime** |  | [readonly] 
 **Data** | **interface{}** |  | 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewConfigContext
 
-`func NewConfigContext(id int32, url string, displayUrl string, display string, name string, dataPath string, dataFile BriefDataFile, dataSynced NullableTime, data interface{}, created NullableTime, lastUpdated NullableTime, ) *ConfigContext`
+`func NewConfigContext(id int32, url string, name string, dataPath string, dataFile BriefDataFile, dataSynced NullableTime, data interface{}, lastUpdated NullableTime, ) *ConfigContext`
 
 NewConfigContext instantiates a new ConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -111,6 +111,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *ConfigContext) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -131,6 +136,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *ConfigContext) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -696,6 +706,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ConfigContext) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

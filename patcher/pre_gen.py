@@ -8,32 +8,9 @@ import sys
 
 
 MISSING_REQUIRED_FIELDS = (
-    "console_port_template_count",
-    "console_server_port_template_count",
-    "device_bay_template_count",
-    "front_port_template_count",
-    "interface_template_count",
-    "inventory_item_template_count",
-    "module_bay_template_count",
-    "power_outlet_template_count",
-    "power_port_template_count",
-    "rear_port_template_count",
-    "devicetype_count",
-    "device_count",
-    "inventoryitem_count",
-    "virtualmachine_count",
-    "prefix_count",
-    "platform_count",
     "tagged_items",
-    "vlan_count",
-    "rack_count",
-    "vrf_count",
-    "circuit_count",
     "display_url",
-    "cluster_count",
-    "site_count",
     "created",  # for sites
-    "provider_count",  # ASNs
     "display",  # Virtual disks
 )
 
@@ -111,6 +88,7 @@ def patch_spec(data):
                     prop
                     for prop in schema["required"]
                     if prop not in MISSING_REQUIRED_FIELDS
+                    and not prop.endswith("_count")
                 ]
 
     return data

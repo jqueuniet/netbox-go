@@ -22,7 +22,7 @@ var _ MappedNullable = &BriefCircuitGroupAssignmentSerializer{}
 type BriefCircuitGroupAssignmentSerializer struct {
 	Id                   int32                                          `json:"id"`
 	Url                  string                                         `json:"url"`
-	Display              string                                         `json:"display"`
+	Display              *string                                        `json:"display,omitempty"`
 	Group                BriefCircuitGroup                              `json:"group"`
 	Priority             *BriefCircuitGroupAssignmentSerializerPriority `json:"priority,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -34,11 +34,10 @@ type _BriefCircuitGroupAssignmentSerializer BriefCircuitGroupAssignmentSerialize
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefCircuitGroupAssignmentSerializer(id int32, url string, display string, group BriefCircuitGroup) *BriefCircuitGroupAssignmentSerializer {
+func NewBriefCircuitGroupAssignmentSerializer(id int32, url string, group BriefCircuitGroup) *BriefCircuitGroupAssignmentSerializer {
 	this := BriefCircuitGroupAssignmentSerializer{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Group = group
 	return &this
 }
@@ -99,28 +98,36 @@ func (o *BriefCircuitGroupAssignmentSerializer) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefCircuitGroupAssignmentSerializer) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefCircuitGroupAssignmentSerializer) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefCircuitGroupAssignmentSerializer) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefCircuitGroupAssignmentSerializer) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetGroup returns the Group field value
@@ -191,7 +198,9 @@ func (o BriefCircuitGroupAssignmentSerializer) ToMap() (map[string]interface{}, 
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["group"] = o.Group
 	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
@@ -211,7 +220,6 @@ func (o *BriefCircuitGroupAssignmentSerializer) UnmarshalJSON(data []byte) (err 
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"group",
 	}
 

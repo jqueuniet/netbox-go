@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **int32** |  | [readonly] 
 **Name** | Pointer to **string** |  | [optional] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Protocol** | [**FHRPGroupProtocol**](FHRPGroupProtocol.md) |  | 
 **GroupId** | **int32** |  | 
 **AuthType** | Pointer to [**AuthenticationType**](AuthenticationType.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **IpAddresses** | [**[]NestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewFHRPGroup
 
-`func NewFHRPGroup(id int32, url string, display string, protocol FHRPGroupProtocol, groupId int32, created NullableTime, lastUpdated NullableTime, ipAddresses []NestedIPAddress, ) *FHRPGroup`
+`func NewFHRPGroup(id int32, url string, protocol FHRPGroupProtocol, groupId int32, lastUpdated NullableTime, ipAddresses []NestedIPAddress, ) *FHRPGroup`
 
 NewFHRPGroup instantiates a new FHRPGroup object
 This constructor will assign default values to properties that have it defined,
@@ -123,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *FHRPGroup) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetProtocol
 
@@ -333,6 +338,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *FHRPGroup) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

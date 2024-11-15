@@ -30,7 +30,7 @@ type VirtualDisk struct {
 	Size                 int32                  `json:"size"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
+	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	AdditionalProperties map[string]interface{}
 }
@@ -41,14 +41,13 @@ type _VirtualDisk VirtualDisk
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualDisk(id int32, url string, virtualMachine NestedVirtualMachine, name string, size int32, created NullableTime, lastUpdated NullableTime) *VirtualDisk {
+func NewVirtualDisk(id int32, url string, virtualMachine NestedVirtualMachine, name string, size int32, lastUpdated NullableTime) *VirtualDisk {
 	this := VirtualDisk{}
 	this.Id = id
 	this.Url = url
 	this.VirtualMachine = virtualMachine
 	this.Name = name
 	this.Size = size
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -309,18 +308,16 @@ func (o *VirtualDisk) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VirtualDisk) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VirtualDisk) GetCreatedOk() (*time.Time, bool) {
@@ -330,9 +327,28 @@ func (o *VirtualDisk) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *VirtualDisk) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *VirtualDisk) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *VirtualDisk) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *VirtualDisk) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -388,7 +404,9 @@ func (o VirtualDisk) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 
 	for key, value := range o.AdditionalProperties {
@@ -408,7 +426,6 @@ func (o *VirtualDisk) UnmarshalJSON(data []byte) (err error) {
 		"virtual_machine",
 		"name",
 		"size",
-		"created",
 		"last_updated",
 	}
 

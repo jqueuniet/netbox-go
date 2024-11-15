@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
-**UserCount** | **int32** |  | [readonly] 
+**UserCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewGroup
 
-`func NewGroup(id int32, url string, display string, name string, userCount int32, ) *Group`
+`func NewGroup(id int32, url string, name string, ) *Group`
 
 NewGroup instantiates a new Group object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Group) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -128,6 +133,11 @@ and a boolean to check if the value has been set.
 
 SetUserCount sets UserCount field to given value.
 
+### HasUserCount
+
+`func (o *Group) HasUserCount() bool`
+
+HasUserCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

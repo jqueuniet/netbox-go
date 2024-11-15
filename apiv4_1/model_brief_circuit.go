@@ -20,9 +20,9 @@ var _ MappedNullable = &BriefCircuit{}
 
 // BriefCircuit Adds support for custom fields and tags.
 type BriefCircuit struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
+	Id      int32   `json:"id"`
+	Url     string  `json:"url"`
+	Display *string `json:"display,omitempty"`
 	// Unique circuit ID
 	Cid                  string        `json:"cid"`
 	Provider             BriefProvider `json:"provider"`
@@ -36,11 +36,10 @@ type _BriefCircuit BriefCircuit
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefCircuit(id int32, url string, display string, cid string, provider BriefProvider) *BriefCircuit {
+func NewBriefCircuit(id int32, url string, cid string, provider BriefProvider) *BriefCircuit {
 	this := BriefCircuit{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Cid = cid
 	this.Provider = provider
 	return &this
@@ -102,28 +101,36 @@ func (o *BriefCircuit) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefCircuit) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefCircuit) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefCircuit) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefCircuit) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetCid returns the Cid field value
@@ -218,7 +225,9 @@ func (o BriefCircuit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["cid"] = o.Cid
 	toSerialize["provider"] = o.Provider
 	if !IsNil(o.Description) {
@@ -239,7 +248,6 @@ func (o *BriefCircuit) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"cid",
 		"provider",
 	}

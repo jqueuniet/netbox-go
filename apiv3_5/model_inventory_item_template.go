@@ -23,7 +23,7 @@ var _ MappedNullable = &InventoryItemTemplate{}
 type InventoryItemTemplate struct {
 	Id         int32            `json:"id"`
 	Url        string           `json:"url"`
-	Display    string           `json:"display"`
+	Display    *string          `json:"display,omitempty"`
 	DeviceType NestedDeviceType `json:"device_type"`
 	Parent     NullableInt32    `json:"parent,omitempty"`
 	//          {module} is accepted as a substitution for the module bay position when attached to a module type.
@@ -38,7 +38,7 @@ type InventoryItemTemplate struct {
 	ComponentType        NullableString         `json:"component_type,omitempty"`
 	ComponentId          NullableInt64          `json:"component_id,omitempty"`
 	Component            map[string]interface{} `json:"component"`
-	Created              NullableTime           `json:"created"`
+	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	Depth                int32                  `json:"_depth"`
 	AdditionalProperties map[string]interface{}
@@ -50,15 +50,13 @@ type _InventoryItemTemplate InventoryItemTemplate
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryItemTemplate(id int32, url string, display string, deviceType NestedDeviceType, name string, component map[string]interface{}, created NullableTime, lastUpdated NullableTime, depth int32) *InventoryItemTemplate {
+func NewInventoryItemTemplate(id int32, url string, deviceType NestedDeviceType, name string, component map[string]interface{}, lastUpdated NullableTime, depth int32) *InventoryItemTemplate {
 	this := InventoryItemTemplate{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.DeviceType = deviceType
 	this.Name = name
 	this.Component = component
-	this.Created = created
 	this.LastUpdated = lastUpdated
 	this.Depth = depth
 	return &this
@@ -120,28 +118,36 @@ func (o *InventoryItemTemplate) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *InventoryItemTemplate) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InventoryItemTemplate) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *InventoryItemTemplate) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *InventoryItemTemplate) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetDeviceType returns the DeviceType field value
@@ -529,18 +535,16 @@ func (o *InventoryItemTemplate) SetComponent(v map[string]interface{}) {
 	o.Component = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *InventoryItemTemplate) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *InventoryItemTemplate) GetCreatedOk() (*time.Time, bool) {
@@ -550,9 +554,28 @@ func (o *InventoryItemTemplate) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *InventoryItemTemplate) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *InventoryItemTemplate) SetCreated(v time.Time) {
 	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *InventoryItemTemplate) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *InventoryItemTemplate) UnsetCreated() {
+	o.Created.Unset()
 }
 
 // GetLastUpdated returns the LastUpdated field value
@@ -617,7 +640,9 @@ func (o InventoryItemTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["device_type"] = o.DeviceType
 	if o.Parent.IsSet() {
 		toSerialize["parent"] = o.Parent.Get()
@@ -647,7 +672,9 @@ func (o InventoryItemTemplate) ToMap() (map[string]interface{}, error) {
 	if o.Component != nil {
 		toSerialize["component"] = o.Component
 	}
-	toSerialize["created"] = o.Created.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 	toSerialize["_depth"] = o.Depth
 
@@ -665,11 +692,9 @@ func (o *InventoryItemTemplate) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"device_type",
 		"name",
 		"component",
-		"created",
 		"last_updated",
 		"_depth",
 	}

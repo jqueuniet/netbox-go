@@ -22,7 +22,7 @@ var _ MappedNullable = &NestedModuleType{}
 type NestedModuleType struct {
 	Id                   int32              `json:"id"`
 	Url                  string             `json:"url"`
-	Display              string             `json:"display"`
+	Display              *string            `json:"display,omitempty"`
 	Manufacturer         NestedManufacturer `json:"manufacturer"`
 	Model                string             `json:"model"`
 	AdditionalProperties map[string]interface{}
@@ -34,11 +34,10 @@ type _NestedModuleType NestedModuleType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedModuleType(id int32, url string, display string, manufacturer NestedManufacturer, model string) *NestedModuleType {
+func NewNestedModuleType(id int32, url string, manufacturer NestedManufacturer, model string) *NestedModuleType {
 	this := NestedModuleType{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Manufacturer = manufacturer
 	this.Model = model
 	return &this
@@ -100,28 +99,36 @@ func (o *NestedModuleType) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *NestedModuleType) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedModuleType) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *NestedModuleType) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *NestedModuleType) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetManufacturer returns the Manufacturer field value
@@ -184,7 +191,9 @@ func (o NestedModuleType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["manufacturer"] = o.Manufacturer
 	toSerialize["model"] = o.Model
 
@@ -202,7 +211,6 @@ func (o *NestedModuleType) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"manufacturer",
 		"model",
 	}

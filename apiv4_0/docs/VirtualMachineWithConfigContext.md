@@ -30,14 +30,14 @@ Name | Type | Description | Notes
 **ConfigContext** | **interface{}** |  | [readonly] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**InterfaceCount** | **int32** |  | [readonly] 
-**VirtualDiskCount** | **int32** |  | [readonly] 
+**InterfaceCount** | Pointer to **int32** |  | [optional] [readonly] 
+**VirtualDiskCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewVirtualMachineWithConfigContext
 
-`func NewVirtualMachineWithConfigContext(id int32, url string, name string, primaryIp NullableBriefIPAddress, configContext interface{}, lastUpdated NullableTime, interfaceCount int32, virtualDiskCount int32, ) *VirtualMachineWithConfigContext`
+`func NewVirtualMachineWithConfigContext(id int32, url string, name string, primaryIp NullableBriefIPAddress, configContext interface{}, lastUpdated NullableTime, ) *VirtualMachineWithConfigContext`
 
 NewVirtualMachineWithConfigContext instantiates a new VirtualMachineWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -861,6 +861,11 @@ and a boolean to check if the value has been set.
 
 SetInterfaceCount sets InterfaceCount field to given value.
 
+### HasInterfaceCount
+
+`func (o *VirtualMachineWithConfigContext) HasInterfaceCount() bool`
+
+HasInterfaceCount returns a boolean if a field has been set.
 
 ### GetVirtualDiskCount
 
@@ -881,6 +886,11 @@ and a boolean to check if the value has been set.
 
 SetVirtualDiskCount sets VirtualDiskCount field to given value.
 
+### HasVirtualDiskCount
+
+`func (o *VirtualMachineWithConfigContext) HasVirtualDiskCount() bool`
+
+HasVirtualDiskCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

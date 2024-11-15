@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **Groups** | Pointer to [**[]Group**](Group.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewNotificationGroup
 
-`func NewNotificationGroup(id int32, url string, display string, displayUrl string, name string, ) *NotificationGroup`
+`func NewNotificationGroup(id int32, url string, name string, ) *NotificationGroup`
 
 NewNotificationGroup instantiates a new NotificationGroup object
 This constructor will assign default values to properties that have it defined,
@@ -91,6 +91,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NotificationGroup) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDisplayUrl
 
@@ -111,6 +116,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *NotificationGroup) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetName
 

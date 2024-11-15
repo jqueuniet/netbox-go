@@ -6,15 +6,15 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
-**ChoicesCount** | **string** |  | [readonly] 
+**ChoicesCount** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewNestedCustomFieldChoiceSet
 
-`func NewNestedCustomFieldChoiceSet(id int32, url string, display string, name string, choicesCount string, ) *NestedCustomFieldChoiceSet`
+`func NewNestedCustomFieldChoiceSet(id int32, url string, name string, ) *NestedCustomFieldChoiceSet`
 
 NewNestedCustomFieldChoiceSet instantiates a new NestedCustomFieldChoiceSet object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedCustomFieldChoiceSet) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -128,6 +133,11 @@ and a boolean to check if the value has been set.
 
 SetChoicesCount sets ChoicesCount field to given value.
 
+### HasChoicesCount
+
+`func (o *NestedCustomFieldChoiceSet) HasChoicesCount() bool`
+
+HasChoicesCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

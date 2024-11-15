@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **InstalledModule** | Pointer to [**NullableModuleBayNestedModule**](ModuleBayNestedModule.md) |  | [optional] 
 **Name** | **string** |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewNestedModuleBay
 
-`func NewNestedModuleBay(id int32, url string, display string, name string, ) *NestedModuleBay`
+`func NewNestedModuleBay(id int32, url string, name string, ) *NestedModuleBay`
 
 NewNestedModuleBay instantiates a new NestedModuleBay object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedModuleBay) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetInstalledModule
 

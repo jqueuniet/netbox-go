@@ -20,11 +20,11 @@ var _ MappedNullable = &NestedIPAddress{}
 
 // NestedIPAddress Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedIPAddress struct {
-	Id                   int32  `json:"id"`
-	Url                  string `json:"url"`
-	Display              string `json:"display"`
-	Family               int32  `json:"family"`
-	Address              string `json:"address"`
+	Id                   int32   `json:"id"`
+	Url                  string  `json:"url"`
+	Display              *string `json:"display,omitempty"`
+	Family               int32   `json:"family"`
+	Address              string  `json:"address"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -34,11 +34,10 @@ type _NestedIPAddress NestedIPAddress
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedIPAddress(id int32, url string, display string, family int32, address string) *NestedIPAddress {
+func NewNestedIPAddress(id int32, url string, family int32, address string) *NestedIPAddress {
 	this := NestedIPAddress{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Family = family
 	this.Address = address
 	return &this
@@ -100,28 +99,36 @@ func (o *NestedIPAddress) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *NestedIPAddress) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedIPAddress) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *NestedIPAddress) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *NestedIPAddress) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetFamily returns the Family field value
@@ -184,7 +191,9 @@ func (o NestedIPAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["family"] = o.Family
 	toSerialize["address"] = o.Address
 
@@ -202,7 +211,6 @@ func (o *NestedIPAddress) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"family",
 		"address",
 	}

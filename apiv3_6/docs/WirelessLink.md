@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **InterfaceA** | [**NestedInterface**](NestedInterface.md) |  | 
 **InterfaceB** | [**NestedInterface**](NestedInterface.md) |  | 
 **Ssid** | Pointer to **string** |  | [optional] 
@@ -19,14 +19,14 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewWirelessLink
 
-`func NewWirelessLink(id int32, url string, display string, interfaceA NestedInterface, interfaceB NestedInterface, created NullableTime, lastUpdated NullableTime, ) *WirelessLink`
+`func NewWirelessLink(id int32, url string, interfaceA NestedInterface, interfaceB NestedInterface, lastUpdated NullableTime, ) *WirelessLink`
 
 NewWirelessLink instantiates a new WirelessLink object
 This constructor will assign default values to properties that have it defined,
@@ -100,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *WirelessLink) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetInterfaceA
 
@@ -420,6 +425,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *WirelessLink) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

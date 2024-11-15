@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Rd** | Pointer to **NullableString** | Unique route distinguisher (as defined in RFC 4364) | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
@@ -18,16 +18,16 @@ Name | Type | Description | Notes
 **ExportTargets** | Pointer to [**[]RouteTarget**](RouteTarget.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**IpaddressCount** | **int64** |  | [readonly] 
-**PrefixCount** | **int64** |  | [readonly] 
+**IpaddressCount** | Pointer to **int64** |  | [optional] [readonly] 
+**PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewVRF
 
-`func NewVRF(id int32, url string, displayUrl string, display string, name string, created NullableTime, lastUpdated NullableTime, ipaddressCount int64, prefixCount int64, ) *VRF`
+`func NewVRF(id int32, url string, name string, lastUpdated NullableTime, ) *VRF`
 
 NewVRF instantiates a new VRF object
 This constructor will assign default values to properties that have it defined,
@@ -101,6 +101,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *VRF) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -121,6 +126,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *VRF) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -406,6 +416,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *VRF) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -466,6 +481,11 @@ and a boolean to check if the value has been set.
 
 SetIpaddressCount sets IpaddressCount field to given value.
 
+### HasIpaddressCount
+
+`func (o *VRF) HasIpaddressCount() bool`
+
+HasIpaddressCount returns a boolean if a field has been set.
 
 ### GetPrefixCount
 
@@ -486,6 +506,11 @@ and a boolean to check if the value has been set.
 
 SetPrefixCount sets PrefixCount field to given value.
 
+### HasPrefixCount
+
+`func (o *VRF) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

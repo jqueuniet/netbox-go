@@ -20,9 +20,9 @@ var _ MappedNullable = &NestedUser{}
 
 // NestedUser Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedUser struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
+	Id      int32   `json:"id"`
+	Url     string  `json:"url"`
+	Display *string `json:"display,omitempty"`
 	// Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
 	Username             string `json:"username" validate:"regexp=^[\\\\w.@+-]+$"`
 	AdditionalProperties map[string]interface{}
@@ -34,11 +34,10 @@ type _NestedUser NestedUser
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedUser(id int32, url string, display string, username string) *NestedUser {
+func NewNestedUser(id int32, url string, username string) *NestedUser {
 	this := NestedUser{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.Username = username
 	return &this
 }
@@ -99,28 +98,36 @@ func (o *NestedUser) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *NestedUser) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedUser) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *NestedUser) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *NestedUser) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetUsername returns the Username field value
@@ -159,7 +166,9 @@ func (o NestedUser) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["username"] = o.Username
 
 	for key, value := range o.AdditionalProperties {
@@ -176,7 +185,6 @@ func (o *NestedUser) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"username",
 	}
 

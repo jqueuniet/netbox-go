@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Manufacturer** | [**NestedManufacturer**](NestedManufacturer.md) |  | 
 **DefaultPlatform** | Pointer to [**NullableNestedPlatform**](NestedPlatform.md) |  | [optional] 
 **Model** | **string** |  | 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **DeviceCount** | Pointer to **int32** |  | [optional] [readonly] 
 **ConsolePortTemplateCount** | Pointer to **int32** |  | [optional] [readonly] 
@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceType
 
-`func NewDeviceType(id int32, url string, display string, manufacturer NestedManufacturer, model string, slug string, created NullableTime, lastUpdated NullableTime, ) *DeviceType`
+`func NewDeviceType(id int32, url string, manufacturer NestedManufacturer, model string, slug string, lastUpdated NullableTime, ) *DeviceType`
 
 NewDeviceType instantiates a new DeviceType object
 This constructor will assign default values to properties that have it defined,
@@ -116,6 +116,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *DeviceType) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetManufacturer
 
@@ -596,6 +601,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *DeviceType) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

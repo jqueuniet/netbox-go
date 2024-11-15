@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Family** | [**AggregateFamily**](AggregateFamily.md) |  | 
 **Prefix** | **string** |  | 
 **Site** | Pointer to [**NullableNestedSite**](NestedSite.md) |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **Children** | **int32** |  | [readonly] 
 **Depth** | **int32** |  | [readonly] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewPrefix
 
-`func NewPrefix(id int32, url string, display string, family AggregateFamily, prefix string, created NullableTime, lastUpdated NullableTime, children int32, depth int32, ) *Prefix`
+`func NewPrefix(id int32, url string, family AggregateFamily, prefix string, lastUpdated NullableTime, children int32, depth int32, ) *Prefix`
 
 NewPrefix instantiates a new Prefix object
 This constructor will assign default values to properties that have it defined,
@@ -104,6 +104,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Prefix) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetFamily
 
@@ -514,6 +519,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Prefix) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

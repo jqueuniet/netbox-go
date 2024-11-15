@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Device** | [**NestedDevice**](NestedDevice.md) |  | [readonly] 
 **Name** | **string** |  | 
 **Cable** | Pointer to **NullableInt32** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewNestedPowerPort
 
-`func NewNestedPowerPort(id int32, url string, display string, device NestedDevice, name string, occupied bool, ) *NestedPowerPort`
+`func NewNestedPowerPort(id int32, url string, device NestedDevice, name string, occupied bool, ) *NestedPowerPort`
 
 NewNestedPowerPort instantiates a new NestedPowerPort object
 This constructor will assign default values to properties that have it defined,
@@ -90,6 +90,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedPowerPort) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetDevice
 

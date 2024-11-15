@@ -41,22 +41,22 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**ConsolePortCount** | **int32** |  | [readonly] 
-**ConsoleServerPortCount** | **int32** |  | [readonly] 
-**PowerPortCount** | **int32** |  | [readonly] 
-**PowerOutletCount** | **int32** |  | [readonly] 
-**InterfaceCount** | **int32** |  | [readonly] 
-**FrontPortCount** | **int32** |  | [readonly] 
-**RearPortCount** | **int32** |  | [readonly] 
-**DeviceBayCount** | **int32** |  | [readonly] 
-**ModuleBayCount** | **int32** |  | [readonly] 
-**InventoryItemCount** | **int32** |  | [readonly] 
+**ConsolePortCount** | Pointer to **int32** |  | [optional] [readonly] 
+**ConsoleServerPortCount** | Pointer to **int32** |  | [optional] [readonly] 
+**PowerPortCount** | Pointer to **int32** |  | [optional] [readonly] 
+**PowerOutletCount** | Pointer to **int32** |  | [optional] [readonly] 
+**InterfaceCount** | Pointer to **int32** |  | [optional] [readonly] 
+**FrontPortCount** | Pointer to **int32** |  | [optional] [readonly] 
+**RearPortCount** | Pointer to **int32** |  | [optional] [readonly] 
+**DeviceBayCount** | Pointer to **int32** |  | [optional] [readonly] 
+**ModuleBayCount** | Pointer to **int32** |  | [optional] [readonly] 
+**InventoryItemCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewDeviceWithConfigContext
 
-`func NewDeviceWithConfigContext(id int32, url string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, parentDevice NullableNestedDevice, primaryIp NullableBriefIPAddress, configContext interface{}, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *DeviceWithConfigContext`
+`func NewDeviceWithConfigContext(id int32, url string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, parentDevice NullableNestedDevice, primaryIp NullableBriefIPAddress, configContext interface{}, lastUpdated NullableTime, ) *DeviceWithConfigContext`
 
 NewDeviceWithConfigContext instantiates a new DeviceWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -1200,6 +1200,11 @@ and a boolean to check if the value has been set.
 
 SetConsolePortCount sets ConsolePortCount field to given value.
 
+### HasConsolePortCount
+
+`func (o *DeviceWithConfigContext) HasConsolePortCount() bool`
+
+HasConsolePortCount returns a boolean if a field has been set.
 
 ### GetConsoleServerPortCount
 
@@ -1220,6 +1225,11 @@ and a boolean to check if the value has been set.
 
 SetConsoleServerPortCount sets ConsoleServerPortCount field to given value.
 
+### HasConsoleServerPortCount
+
+`func (o *DeviceWithConfigContext) HasConsoleServerPortCount() bool`
+
+HasConsoleServerPortCount returns a boolean if a field has been set.
 
 ### GetPowerPortCount
 
@@ -1240,6 +1250,11 @@ and a boolean to check if the value has been set.
 
 SetPowerPortCount sets PowerPortCount field to given value.
 
+### HasPowerPortCount
+
+`func (o *DeviceWithConfigContext) HasPowerPortCount() bool`
+
+HasPowerPortCount returns a boolean if a field has been set.
 
 ### GetPowerOutletCount
 
@@ -1260,6 +1275,11 @@ and a boolean to check if the value has been set.
 
 SetPowerOutletCount sets PowerOutletCount field to given value.
 
+### HasPowerOutletCount
+
+`func (o *DeviceWithConfigContext) HasPowerOutletCount() bool`
+
+HasPowerOutletCount returns a boolean if a field has been set.
 
 ### GetInterfaceCount
 
@@ -1280,6 +1300,11 @@ and a boolean to check if the value has been set.
 
 SetInterfaceCount sets InterfaceCount field to given value.
 
+### HasInterfaceCount
+
+`func (o *DeviceWithConfigContext) HasInterfaceCount() bool`
+
+HasInterfaceCount returns a boolean if a field has been set.
 
 ### GetFrontPortCount
 
@@ -1300,6 +1325,11 @@ and a boolean to check if the value has been set.
 
 SetFrontPortCount sets FrontPortCount field to given value.
 
+### HasFrontPortCount
+
+`func (o *DeviceWithConfigContext) HasFrontPortCount() bool`
+
+HasFrontPortCount returns a boolean if a field has been set.
 
 ### GetRearPortCount
 
@@ -1320,6 +1350,11 @@ and a boolean to check if the value has been set.
 
 SetRearPortCount sets RearPortCount field to given value.
 
+### HasRearPortCount
+
+`func (o *DeviceWithConfigContext) HasRearPortCount() bool`
+
+HasRearPortCount returns a boolean if a field has been set.
 
 ### GetDeviceBayCount
 
@@ -1340,6 +1375,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceBayCount sets DeviceBayCount field to given value.
 
+### HasDeviceBayCount
+
+`func (o *DeviceWithConfigContext) HasDeviceBayCount() bool`
+
+HasDeviceBayCount returns a boolean if a field has been set.
 
 ### GetModuleBayCount
 
@@ -1360,6 +1400,11 @@ and a boolean to check if the value has been set.
 
 SetModuleBayCount sets ModuleBayCount field to given value.
 
+### HasModuleBayCount
+
+`func (o *DeviceWithConfigContext) HasModuleBayCount() bool`
+
+HasModuleBayCount returns a boolean if a field has been set.
 
 ### GetInventoryItemCount
 
@@ -1380,6 +1425,11 @@ and a boolean to check if the value has been set.
 
 SetInventoryItemCount sets InventoryItemCount field to given value.
 
+### HasInventoryItemCount
+
+`func (o *DeviceWithConfigContext) HasInventoryItemCount() bool`
+
+HasInventoryItemCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

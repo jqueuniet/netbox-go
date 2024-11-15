@@ -110233,13 +110233,8 @@ components:
           readOnly: true
       required:
       - asn
-      - created
-      - display
-      - display_url
       - id
       - last_updated
-      - provider_count
-      - site_count
       - url
     ASNRange:
       type: object
@@ -110306,10 +110301,6 @@ components:
           type: integer
           readOnly: true
       required:
-      - asn_count
-      - created
-      - display
-      - display_url
       - end
       - id
       - last_updated
@@ -110466,9 +110457,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - family
       - id
       - last_updated
@@ -110607,8 +110595,6 @@ components:
           format: date-time
           readOnly: true
       required:
-      - created
-      - display
       - id
       - object
       - object_id
@@ -110656,7 +110642,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - url
     BriefCableRequest:
@@ -110695,7 +110680,6 @@ components:
           maxLength: 200
       required:
       - cid
-      - display
       - id
       - provider
       - url
@@ -110717,7 +110701,6 @@ components:
           type: string
           maxLength: 100
       required:
-      - display
       - id
       - name
       - url
@@ -110764,7 +110747,6 @@ components:
               - Tertiary
               - Inactive
       required:
-      - display
       - group
       - id
       - url
@@ -110849,8 +110831,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
-      - display
       - id
       - name
       - slug
@@ -110899,11 +110879,9 @@ components:
           format: int64
           readOnly: true
       required:
-      - display
       - id
       - name
       - url
-      - virtualmachine_count
     BriefClusterGroup:
       type: object
       description: Adds support for custom fields and tags.
@@ -110933,8 +110911,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
-      - display
       - id
       - name
       - slug
@@ -111000,8 +110976,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
-      - display
       - id
       - name
       - slug
@@ -111049,7 +111023,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -111090,7 +111063,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -111128,8 +111100,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - contact_count
-      - display
       - id
       - name
       - slug
@@ -111191,7 +111161,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - slug
@@ -111242,8 +111211,6 @@ components:
           type: string
           readOnly: true
       required:
-      - choices_count
-      - display
       - id
       - name
       - url
@@ -111282,7 +111249,6 @@ components:
           readOnly: true
           description: File path relative to the data source's root
       required:
-      - display
       - id
       - path
       - url
@@ -111307,7 +111273,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -111346,7 +111311,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - url
     BriefDeviceRequest:
@@ -111393,13 +111357,10 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
-      - display
       - id
       - name
       - slug
       - url
-      - virtualmachine_count
     BriefDeviceRoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -111450,8 +111411,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
-      - display
       - id
       - manufacturer
       - model
@@ -111525,7 +111484,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - group_id
       - id
       - protocol
@@ -111589,7 +111547,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -111645,7 +111602,6 @@ components:
           maxLength: 200
       required:
       - address
-      - display
       - family
       - id
       - url
@@ -111682,7 +111638,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -111720,7 +111675,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -111772,7 +111726,6 @@ components:
       - _occupied
       - cable
       - device
-      - display
       - id
       - name
       - url
@@ -111821,9 +111774,7 @@ components:
           format: int64
           readOnly: true
       required:
-      - display
       - id
-      - inventoryitem_count
       - name
       - slug
       - url
@@ -111900,7 +111851,6 @@ components:
           - $ref: '#/components/schemas/BriefUser'
           readOnly: true
       required:
-      - created
       - status
       - url
       - user
@@ -112003,7 +111953,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - slug
@@ -112092,7 +112041,6 @@ components:
         l2vpn:
           $ref: '#/components/schemas/BriefL2VPN'
       required:
-      - display
       - id
       - l2vpn
       - url
@@ -112138,10 +112086,8 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
       - id
       - name
-      - rack_count
       - slug
       - url
     BriefLocationRequest:
@@ -112192,8 +112138,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - devicetype_count
-      - display
       - id
       - name
       - slug
@@ -112237,7 +112181,6 @@ components:
           $ref: '#/components/schemas/NestedModuleBay'
       required:
       - device
-      - display
       - id
       - module_bay
       - url
@@ -112275,7 +112218,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - manufacturer
       - model
@@ -112329,13 +112271,10 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
-      - display
       - id
       - name
       - slug
       - url
-      - virtualmachine_count
     BriefPlatformRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -112380,10 +112319,8 @@ components:
           format: int64
           readOnly: true
       required:
-      - display
       - id
       - name
-      - powerfeed_count
       - url
     BriefPowerPanelRequest:
       type: object
@@ -112433,7 +112370,6 @@ components:
       - _occupied
       - cable
       - device
-      - display
       - id
       - name
       - url
@@ -112479,7 +112415,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -112531,8 +112466,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
-      - display
       - id
       - name
       - slug
@@ -112564,7 +112497,6 @@ components:
           maxLength: 200
       required:
       - account
-      - display
       - id
       - url
     BriefProviderAccountRequest:
@@ -112606,7 +112538,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -112672,8 +112603,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - aggregate_count
-      - display
       - id
       - name
       - slug
@@ -112722,8 +112651,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - device_count
-      - display
       - id
       - name
       - url
@@ -112769,10 +112696,8 @@ components:
           format: int64
           readOnly: true
       required:
-      - display
       - id
       - name
-      - rack_count
       - slug
       - url
     BriefRackRoleRequest:
@@ -112821,7 +112746,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - manufacturer
       - model
@@ -112875,7 +112799,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -112931,10 +112854,8 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
       - id
       - name
-      - site_count
       - slug
       - url
     BriefRegionRequest:
@@ -112989,13 +112910,10 @@ components:
           format: int64
           readOnly: true
       required:
-      - display
       - id
       - name
-      - prefix_count
       - slug
       - url
-      - vlan_count
     BriefRoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -113041,7 +112959,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - slug
@@ -113080,10 +112997,8 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
       - id
       - name
-      - site_count
       - slug
       - url
     BriefSiteGroupRequest:
@@ -113150,7 +113065,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - slug
@@ -113189,11 +113103,9 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
       - id
       - name
       - slug
-      - tenant_count
       - url
     BriefTenantGroupRequest:
       type: object
@@ -113254,7 +113166,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -113287,11 +113198,9 @@ components:
           format: int64
           readOnly: true
       required:
-      - display
       - id
       - name
       - slug
-      - tunnel_count
       - url
     BriefTunnelGroupRequest:
       type: object
@@ -113349,7 +113258,6 @@ components:
           pattern: ^[\w.@+-]+$
           maxLength: 150
       required:
-      - display
       - id
       - url
       - username
@@ -113396,7 +113304,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -113430,12 +113337,10 @@ components:
           format: int64
           readOnly: true
       required:
-      - display
       - id
       - name
       - slug
       - url
-      - vlan_count
     BriefVLANGroupRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -113506,10 +113411,8 @@ components:
           format: int64
           readOnly: true
       required:
-      - display
       - id
       - name
-      - prefix_count
       - url
     BriefVRFRequest:
       type: object
@@ -113558,9 +113461,7 @@ components:
           type: integer
           readOnly: true
       required:
-      - display
       - id
-      - member_count
       - name
       - url
     BriefVirtualChassisRequest:
@@ -113601,7 +113502,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
       - id
       - name
       - url
@@ -113652,12 +113552,10 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
       - id
       - name
       - slug
       - url
-      - wirelesslan_count
     BriefWirelessLANGroupRequest:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -113878,9 +113776,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - url
@@ -114088,8 +113983,6 @@ components:
       required:
       - cable
       - cable_end
-      - created
-      - display
       - id
       - last_updated
       - termination
@@ -114247,9 +114140,6 @@ components:
             $ref: '#/components/schemas/BriefCircuitGroupAssignmentSerializer_'
       required:
       - cid
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - provider
@@ -114312,8 +114202,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
-      - display_url
       - id
       - provider_network
       - site
@@ -114415,10 +114303,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -114488,9 +114372,6 @@ components:
           nullable: true
       required:
       - circuit
-      - created
-      - display
-      - display_url
       - group
       - id
       - last_updated
@@ -114747,9 +114628,6 @@ components:
       - cable
       - cable_end
       - circuit
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - link_peers
@@ -114874,10 +114752,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -115008,16 +114882,11 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - device_count
-      - display
-      - display_url
       - id
       - last_updated
       - name
       - type
       - url
-      - virtualmachine_count
     ClusterGroup:
       type: object
       description: Adds support for custom fields and tags.
@@ -115068,10 +114937,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -115208,10 +115073,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -115356,13 +115217,10 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - data
       - data_file
       - data_path
       - data_synced
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -115510,11 +115368,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - data_path
       - data_synced
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -115759,10 +115614,7 @@ components:
       - connected_endpoints
       - connected_endpoints_reachable
       - connected_endpoints_type
-      - created
       - device
-      - display
-      - display_url
       - id
       - last_updated
       - link_peers
@@ -115999,8 +115851,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
       - id
       - last_updated
       - name
@@ -116291,10 +116141,7 @@ components:
       - connected_endpoints
       - connected_endpoints_reachable
       - connected_endpoints_type
-      - created
       - device
-      - display
-      - display_url
       - id
       - last_updated
       - link_peers
@@ -116531,8 +116378,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
       - id
       - last_updated
       - name
@@ -116681,9 +116526,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -116764,8 +116606,6 @@ components:
           nullable: true
       required:
       - contact
-      - created
-      - display
       - id
       - last_updated
       - object
@@ -116875,10 +116715,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - contact_count
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -117003,9 +116839,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -117279,10 +117112,7 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - data_type
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -117361,10 +117191,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - choices_count
-      - created
-      - display
-      - display_url
       - extra_choices
       - id
       - last_updated
@@ -117692,9 +117518,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - link_text
@@ -117843,8 +117666,6 @@ components:
           readOnly: true
           description: SHA256 hash of the file data
       required:
-      - display
-      - display_url
       - hash
       - id
       - last_updated
@@ -117966,10 +117787,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
-      - file_count
       - id
       - last_synced
       - last_updated
@@ -118311,24 +118128,11 @@ components:
           type: integer
           readOnly: true
       required:
-      - console_port_count
-      - console_server_port_count
-      - created
-      - device_bay_count
       - device_type
-      - display
-      - display_url
-      - front_port_count
       - id
-      - interface_count
-      - inventory_item_count
       - last_updated
-      - module_bay_count
       - parent_device
-      - power_outlet_count
-      - power_port_count
       - primary_ip
-      - rear_port_count
       - role
       - site
       - url
@@ -118384,10 +118188,7 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - device
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -118465,9 +118266,7 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - device_type
-      - display
       - id
       - last_updated
       - name
@@ -118562,9 +118361,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -118830,9 +118626,6 @@ components:
           type: integer
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - manufacturer
@@ -119263,24 +119056,11 @@ components:
           readOnly: true
       required:
       - config_context
-      - console_port_count
-      - console_server_port_count
-      - created
-      - device_bay_count
       - device_type
-      - display
-      - display_url
-      - front_port_count
       - id
-      - interface_count
-      - inventory_item_count
       - last_updated
-      - module_bay_count
       - parent_device
-      - power_outlet_count
-      - power_port_count
       - primary_ip
-      - rear_port_count
       - role
       - site
       - url
@@ -119588,9 +119368,6 @@ components:
       - action_object
       - action_object_type
       - action_type
-      - created
-      - display
-      - display_url
       - event_types
       - id
       - last_updated
@@ -119751,12 +119528,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - data_file
       - data_path
       - data_synced
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -119895,9 +119669,6 @@ components:
             $ref: '#/components/schemas/BriefIPAddress'
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - group_id
       - id
       - ip_addresses
@@ -119945,8 +119716,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
       - group
       - id
       - interface
@@ -120362,10 +120131,7 @@ components:
       - _occupied
       - cable
       - cable_end
-      - created
       - device
-      - display
-      - display_url
       - id
       - last_updated
       - link_peers
@@ -120404,8 +120170,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - display
-      - display_url
       - id
       - name
       - url
@@ -120931,8 +120695,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
       - id
       - last_updated
       - name
@@ -121213,12 +120975,9 @@ components:
           type: integer
           readOnly: true
       required:
-      - display
-      - display_url
       - id
       - name
       - url
-      - user_count
     GroupRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -121324,9 +121083,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -121631,9 +121387,6 @@ components:
           nullable: true
       required:
       - authentication_method
-      - created
-      - display
-      - display_url
       - encryption_algorithm
       - group
       - id
@@ -121974,9 +121727,6 @@ components:
       required:
       - address
       - assigned_object
-      - created
-      - display
-      - display_url
       - family
       - id
       - last_updated
@@ -122177,9 +121927,6 @@ components:
           type: boolean
           description: Treat as fully utilized
       required:
-      - created
-      - display
-      - display_url
       - end_address
       - family
       - id
@@ -122392,9 +122139,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -122565,9 +122309,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - ike_policy
       - ipsec_policy
@@ -122742,9 +122483,6 @@ components:
           nullable: true
       required:
       - authentication_algorithm
-      - created
-      - display
-      - display_url
       - encryption_algorithm
       - id
       - last_updated
@@ -122883,8 +122621,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
       - id
       - image
       - image_height
@@ -124558,10 +124294,7 @@ components:
       - connected_endpoints_type
       - count_fhrp_groups
       - count_ipaddresses
-      - created
       - device
-      - display
-      - display_url
       - id
       - l2vpn_termination
       - last_updated
@@ -126414,8 +126147,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
       - id
       - last_updated
       - name
@@ -126998,10 +126729,7 @@ components:
       required:
       - _depth
       - component
-      - created
       - device
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -127123,11 +126851,7 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
-      - inventoryitem_count
       - last_updated
       - name
       - slug
@@ -127238,9 +126962,7 @@ components:
       required:
       - _depth
       - component
-      - created
       - device_type
-      - display
       - id
       - last_updated
       - name
@@ -127392,9 +127114,6 @@ components:
           type: string
           format: uuid
       required:
-      - created
-      - display
-      - display_url
       - error
       - id
       - job_id
@@ -127483,9 +127202,6 @@ components:
       - assigned_object_id
       - assigned_object_type
       - comments
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - url
@@ -127659,9 +127375,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -127806,9 +127519,6 @@ components:
       - assigned_object
       - assigned_object_id
       - assigned_object_type
-      - created
-      - display
-      - display_url
       - id
       - l2vpn
       - last_updated
@@ -127939,14 +127649,9 @@ components:
           title: ' depth'
       required:
       - _depth
-      - created
-      - device_count
-      - display
-      - display_url
       - id
       - last_updated
       - name
-      - rack_count
       - site
       - slug
       - url
@@ -128067,9 +127772,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -128190,10 +127892,7 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - device
-      - display
-      - display_url
       - id
       - last_updated
       - module_bay
@@ -128259,10 +127958,7 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - device
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -128358,8 +128054,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
       - id
       - last_updated
       - name
@@ -128576,9 +128270,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - manufacturer
@@ -128700,8 +128391,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
-      - display_url
       - id
       - name
       - slug
@@ -128757,8 +128446,6 @@ components:
           nullable: true
           maxLength: 64
       required:
-      - display
-      - display_url
       - id
       - url
     NestedDeviceRequest:
@@ -128803,8 +128490,6 @@ components:
           type: string
           maxLength: 150
       required:
-      - display
-      - display_url
       - id
       - name
       - url
@@ -128839,8 +128524,6 @@ components:
           type: string
       required:
       - address
-      - display
-      - display_url
       - family
       - id
       - url
@@ -128900,8 +128583,6 @@ components:
       required:
       - _occupied
       - device
-      - display
-      - display_url
       - id
       - name
       - url
@@ -128950,7 +128631,6 @@ components:
             position when attached to a module type.'
           maxLength: 64
       required:
-      - display
       - id
       - name
       - url
@@ -129009,8 +128689,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
-      - display_url
       - id
       - name
       - slug
@@ -129065,8 +128743,6 @@ components:
           type: string
           maxLength: 64
       required:
-      - display
-      - display_url
       - id
       - name
       - url
@@ -129119,8 +128795,6 @@ components:
           maxLength: 100
       required:
       - account
-      - display
-      - display_url
       - id
       - url
     NestedRegion:
@@ -129160,8 +128834,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
-      - display_url
       - id
       - name
       - slug
@@ -129225,8 +128897,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
-      - display_url
       - id
       - name
       - slug
@@ -129289,8 +128959,6 @@ components:
           pattern: ^[0-9a-f]{6}$
           maxLength: 6
       required:
-      - display
-      - display_url
       - id
       - name
       - slug
@@ -129359,8 +129027,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
-      - display_url
       - id
       - name
       - slug
@@ -129418,8 +129084,6 @@ components:
           pattern: ^[\w.@+-]+$
           maxLength: 150
       required:
-      - display
-      - display_url
       - id
       - url
       - username
@@ -129455,8 +129119,6 @@ components:
           type: string
           maxLength: 64
       required:
-      - display
-      - display_url
       - id
       - name
       - url
@@ -129505,8 +129167,6 @@ components:
           type: string
           maxLength: 64
       required:
-      - display
-      - display_url
       - id
       - name
       - url
@@ -129563,8 +129223,6 @@ components:
           title: ' depth'
       required:
       - _depth
-      - display
-      - display_url
       - id
       - name
       - slug
@@ -129619,8 +129277,6 @@ components:
           type: string
           maxLength: 32
       required:
-      - display
-      - display_url
       - id
       - url
     NestedWirelessLinkRequest:
@@ -129699,8 +129355,6 @@ components:
           x-spec-enum-id: 80d172232f4af424
           title: Event
       required:
-      - created
-      - display
       - event_type
       - id
       - object
@@ -129744,8 +129398,6 @@ components:
           items:
             $ref: '#/components/schemas/User'
       required:
-      - display
-      - display_url
       - id
       - name
       - url
@@ -129899,8 +129551,6 @@ components:
       - changed_object
       - changed_object_id
       - changed_object_type
-      - display
-      - display_url
       - id
       - postchange_data
       - prechange_data
@@ -129962,8 +129612,6 @@ components:
             $ref: '#/components/schemas/NestedUser'
       required:
       - actions
-      - display
-      - display_url
       - id
       - name
       - object_types
@@ -130033,7 +129681,6 @@ components:
           maxLength: 100
       required:
       - app_label
-      - display
       - id
       - model
       - url
@@ -142207,16 +141854,11 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - device_count
-      - display
-      - display_url
       - id
       - last_updated
       - name
       - slug
       - url
-      - virtualmachine_count
     PlatformRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -142436,9 +142078,6 @@ components:
       - connected_endpoints
       - connected_endpoints_reachable
       - connected_endpoints_type
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - link_peers
@@ -143063,10 +142702,7 @@ components:
       - connected_endpoints
       - connected_endpoints_reachable
       - connected_endpoints_type
-      - created
       - device
-      - display
-      - display_url
       - id
       - last_updated
       - link_peers
@@ -143906,8 +143542,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
       - id
       - last_updated
       - name
@@ -144315,13 +143949,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
-      - powerfeed_count
       - site
       - url
     PowerPanelRequest:
@@ -144887,10 +144517,7 @@ components:
       - connected_endpoints
       - connected_endpoints_reachable
       - connected_endpoints_type
-      - created
       - device
-      - display
-      - display_url
       - id
       - last_updated
       - link_peers
@@ -145749,8 +145376,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
       - id
       - last_updated
       - name
@@ -146237,9 +145862,6 @@ components:
       required:
       - _depth
       - children
-      - created
-      - display
-      - display_url
       - family
       - id
       - last_updated
@@ -146369,10 +145991,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -146430,9 +146048,6 @@ components:
           nullable: true
       required:
       - account
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - provider
@@ -146516,9 +146131,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -146643,10 +146255,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - aggregate_count
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -146973,14 +146581,9 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - device_count
-      - display
-      - display_url
       - id
       - last_updated
       - name
-      - powerfeed_count
       - site
       - url
     RackRequest:
@@ -147240,10 +146843,7 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - created
       - description
-      - display
-      - display_url
       - id
       - last_updated
       - rack
@@ -147340,13 +146940,9 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
-      - rack_count
       - slug
       - url
     RackRoleRequest:
@@ -147591,9 +147187,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - manufacturer
@@ -147797,7 +147390,6 @@ components:
           readOnly: true
       required:
       - device
-      - display
       - face
       - id
       - name
@@ -148119,10 +147711,7 @@ components:
       - _occupied
       - cable
       - cable_end
-      - created
       - device
-      - display
-      - display_url
       - id
       - last_updated
       - link_peers
@@ -148627,8 +148216,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
       - id
       - last_updated
       - name
@@ -148900,13 +148487,9 @@ components:
           title: ' depth'
       required:
       - _depth
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
-      - site_count
       - slug
       - url
     RegionRequest:
@@ -148997,16 +148580,11 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
-      - prefix_count
       - slug
       - url
-      - vlan_count
     RoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -149086,9 +148664,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -149178,9 +148753,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -149271,8 +148843,6 @@ components:
           readOnly: true
       required:
       - description
-      - display
-      - display_url
       - id
       - is_executable
       - module
@@ -149380,9 +148950,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -149514,9 +149081,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -149715,9 +149279,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -149782,13 +149343,9 @@ components:
           title: ' depth'
       required:
       - _depth
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
-      - site_count
       - slug
       - url
     SiteGroupRequest:
@@ -149952,8 +149509,6 @@ components:
           format: date-time
           readOnly: true
       required:
-      - created
-      - display
       - id
       - object
       - object_id
@@ -150034,9 +149589,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -150165,24 +149717,11 @@ components:
           format: int64
           readOnly: true
       required:
-      - circuit_count
-      - cluster_count
-      - created
-      - device_count
-      - display
-      - display_url
       - id
-      - ipaddress_count
       - last_updated
       - name
-      - prefix_count
-      - rack_count
-      - site_count
       - slug
       - url
-      - virtualmachine_count
-      - vlan_count
-      - vrf_count
     TenantGroup:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -150242,14 +149781,10 @@ components:
           title: ' depth'
       required:
       - _depth
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
       - slug
-      - tenant_count
       - url
     TenantGroupRequest:
       type: object
@@ -150359,9 +149894,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - created
-      - display
-      - display_url
       - id
       - url
       - user
@@ -150412,9 +149944,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - created
-      - display
-      - display_url
       - id
       - key
       - last_used
@@ -150589,15 +150118,11 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - encapsulation
       - id
       - last_updated
       - name
       - status
-      - terminations_count
       - url
     TunnelGroup:
       type: object
@@ -150649,14 +150174,10 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
       - slug
-      - tunnel_count
       - url
     TunnelGroupRequest:
       type: object
@@ -150827,9 +150348,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - role
@@ -150943,8 +150461,6 @@ components:
           items:
             $ref: '#/components/schemas/ObjectPermission'
       required:
-      - display
-      - display_url
       - id
       - url
       - username
@@ -151101,14 +150617,10 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - l2vpn_termination
       - last_updated
       - name
-      - prefix_count
       - url
       - vid
     VLANGroup:
@@ -151173,9 +150685,6 @@ components:
           type: string
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -151183,7 +150692,6 @@ components:
       - slug
       - url
       - utilization
-      - vlan_count
     VLANGroupRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -151382,9 +150890,6 @@ components:
       required:
       - count_fhrp_groups
       - count_ipaddresses
-      - created
-      - display
-      - display_url
       - id
       - l2vpn_termination
       - last_updated
@@ -151532,14 +151037,9 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
-      - ipaddress_count
       - last_updated
       - name
-      - prefix_count
       - url
     VRFRequest:
       type: object
@@ -151644,12 +151144,8 @@ components:
             $ref: '#/components/schemas/NestedDevice'
           readOnly: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
-      - member_count
       - members
       - name
       - url
@@ -151775,12 +151271,8 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
       - device
-      - display
-      - display_url
       - id
-      - interface_count
       - last_updated
       - name
       - primary_ip
@@ -151890,8 +151382,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display_url
       - id
       - last_updated
       - name
@@ -152082,16 +151572,11 @@ components:
           readOnly: true
       required:
       - config_context
-      - created
-      - display
-      - display_url
       - id
-      - interface_count
       - last_updated
       - name
       - primary_ip
       - url
-      - virtual_disk_count
     VirtualMachineWithConfigContextRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -152297,9 +151782,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
@@ -152519,9 +152001,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - ssid
@@ -152585,15 +152064,11 @@ components:
           title: ' depth'
       required:
       - _depth
-      - created
-      - display
-      - display_url
       - id
       - last_updated
       - name
       - slug
       - url
-      - wirelesslan_count
     WirelessLANGroupRequest:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -152868,9 +152343,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
-      - display
-      - display_url
       - id
       - interface_a
       - interface_b

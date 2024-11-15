@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Site** | [**NestedSite**](NestedSite.md) |  | 
@@ -16,17 +16,17 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**RackCount** | **int32** |  | [readonly] 
-**DeviceCount** | **int32** |  | [readonly] 
+**RackCount** | Pointer to **int32** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **int32** |  | [optional] [readonly] 
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewLocation
 
-`func NewLocation(id int32, url string, display string, name string, slug string, site NestedSite, created NullableTime, lastUpdated NullableTime, rackCount int32, deviceCount int32, depth int32, ) *Location`
+`func NewLocation(id int32, url string, name string, slug string, site NestedSite, lastUpdated NullableTime, depth int32, ) *Location`
 
 NewLocation instantiates a new Location object
 This constructor will assign default values to properties that have it defined,
@@ -100,6 +100,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *Location) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 
@@ -350,6 +355,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Location) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -410,6 +420,11 @@ and a boolean to check if the value has been set.
 
 SetRackCount sets RackCount field to given value.
 
+### HasRackCount
+
+`func (o *Location) HasRackCount() bool`
+
+HasRackCount returns a boolean if a field has been set.
 
 ### GetDeviceCount
 
@@ -430,6 +445,11 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
+
+`func (o *Location) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
 
 ### GetDepth
 

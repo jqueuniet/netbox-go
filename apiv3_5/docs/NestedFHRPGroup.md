@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Protocol** | [**FHRPGroupProtocol**](FHRPGroupProtocol.md) |  | 
 **GroupId** | **int32** |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewNestedFHRPGroup
 
-`func NewNestedFHRPGroup(id int32, url string, display string, protocol FHRPGroupProtocol, groupId int32, ) *NestedFHRPGroup`
+`func NewNestedFHRPGroup(id int32, url string, protocol FHRPGroupProtocol, groupId int32, ) *NestedFHRPGroup`
 
 NewNestedFHRPGroup instantiates a new NestedFHRPGroup object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedFHRPGroup) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetProtocol
 

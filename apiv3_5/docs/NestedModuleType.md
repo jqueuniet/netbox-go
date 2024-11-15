@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Manufacturer** | [**NestedManufacturer**](NestedManufacturer.md) |  | [readonly] 
 **Model** | **string** |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewNestedModuleType
 
-`func NewNestedModuleType(id int32, url string, display string, manufacturer NestedManufacturer, model string, ) *NestedModuleType`
+`func NewNestedModuleType(id int32, url string, manufacturer NestedManufacturer, model string, ) *NestedModuleType`
 
 NewNestedModuleType instantiates a new NestedModuleType object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedModuleType) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetManufacturer
 

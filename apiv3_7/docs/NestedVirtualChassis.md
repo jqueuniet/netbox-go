@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Master** | [**NestedDevice**](NestedDevice.md) |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewNestedVirtualChassis
 
-`func NewNestedVirtualChassis(id int32, url string, display string, name string, master NestedDevice, ) *NestedVirtualChassis`
+`func NewNestedVirtualChassis(id int32, url string, name string, master NestedDevice, ) *NestedVirtualChassis`
 
 NewNestedVirtualChassis instantiates a new NestedVirtualChassis object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedVirtualChassis) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetName
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **AppLabel** | **string** |  | 
 **Model** | **string** |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewContentType
 
-`func NewContentType(id int32, url string, display string, appLabel string, model string, ) *ContentType`
+`func NewContentType(id int32, url string, appLabel string, model string, ) *ContentType`
 
 NewContentType instantiates a new ContentType object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *ContentType) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetAppLabel
 

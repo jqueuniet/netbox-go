@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**WirelesslanCount** | **int32** |  | [readonly] [default to 0]
+**WirelesslanCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewWirelessLANGroup
 
-`func NewWirelessLANGroup(id int32, url string, name string, slug string, lastUpdated NullableTime, wirelesslanCount int32, depth int32, ) *WirelessLANGroup`
+`func NewWirelessLANGroup(id int32, url string, name string, slug string, lastUpdated NullableTime, depth int32, ) *WirelessLANGroup`
 
 NewWirelessLANGroup instantiates a new WirelessLANGroup object
 This constructor will assign default values to properties that have it defined,
@@ -336,6 +336,11 @@ and a boolean to check if the value has been set.
 
 SetWirelesslanCount sets WirelesslanCount field to given value.
 
+### HasWirelesslanCount
+
+`func (o *WirelessLANGroup) HasWirelesslanCount() bool`
+
+HasWirelesslanCount returns a boolean if a field has been set.
 
 ### GetDepth
 

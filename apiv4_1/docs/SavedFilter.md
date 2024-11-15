@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **ObjectTypes** | **[]string** |  | 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
@@ -17,14 +17,14 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Shared** | Pointer to **bool** |  | [optional] 
 **Parameters** | **interface{}** |  | 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewSavedFilter
 
-`func NewSavedFilter(id int32, url string, displayUrl string, display string, objectTypes []string, name string, slug string, parameters interface{}, created NullableTime, lastUpdated NullableTime, ) *SavedFilter`
+`func NewSavedFilter(id int32, url string, objectTypes []string, name string, slug string, parameters interface{}, lastUpdated NullableTime, ) *SavedFilter`
 
 NewSavedFilter instantiates a new SavedFilter object
 This constructor will assign default values to properties that have it defined,
@@ -98,6 +98,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *SavedFilter) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -118,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *SavedFilter) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetObjectTypes
 
@@ -363,6 +373,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *SavedFilter) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

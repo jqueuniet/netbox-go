@@ -22,7 +22,7 @@ var _ MappedNullable = &BriefL2VPNTermination{}
 type BriefL2VPNTermination struct {
 	Id                   int32      `json:"id"`
 	Url                  string     `json:"url"`
-	Display              string     `json:"display"`
+	Display              *string    `json:"display,omitempty"`
 	L2vpn                BriefL2VPN `json:"l2vpn"`
 	AdditionalProperties map[string]interface{}
 }
@@ -33,11 +33,10 @@ type _BriefL2VPNTermination BriefL2VPNTermination
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefL2VPNTermination(id int32, url string, display string, l2vpn BriefL2VPN) *BriefL2VPNTermination {
+func NewBriefL2VPNTermination(id int32, url string, l2vpn BriefL2VPN) *BriefL2VPNTermination {
 	this := BriefL2VPNTermination{}
 	this.Id = id
 	this.Url = url
-	this.Display = display
 	this.L2vpn = l2vpn
 	return &this
 }
@@ -98,28 +97,36 @@ func (o *BriefL2VPNTermination) SetUrl(v string) {
 	o.Url = v
 }
 
-// GetDisplay returns the Display field value
+// GetDisplay returns the Display field value if set, zero value otherwise.
 func (o *BriefL2VPNTermination) GetDisplay() string {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		var ret string
 		return ret
 	}
-
-	return o.Display
+	return *o.Display
 }
 
-// GetDisplayOk returns a tuple with the Display field value
+// GetDisplayOk returns a tuple with the Display field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefL2VPNTermination) GetDisplayOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Display) {
 		return nil, false
 	}
-	return &o.Display, true
+	return o.Display, true
 }
 
-// SetDisplay sets field value
+// HasDisplay returns a boolean if a field has been set.
+func (o *BriefL2VPNTermination) HasDisplay() bool {
+	if o != nil && !IsNil(o.Display) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplay gets a reference to the given string and assigns it to the Display field.
 func (o *BriefL2VPNTermination) SetDisplay(v string) {
-	o.Display = v
+	o.Display = &v
 }
 
 // GetL2vpn returns the L2vpn field value
@@ -158,7 +165,9 @@ func (o BriefL2VPNTermination) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
-	toSerialize["display"] = o.Display
+	if !IsNil(o.Display) {
+		toSerialize["display"] = o.Display
+	}
 	toSerialize["l2vpn"] = o.L2vpn
 
 	for key, value := range o.AdditionalProperties {
@@ -175,7 +184,6 @@ func (o *BriefL2VPNTermination) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"id",
 		"url",
-		"display",
 		"l2vpn",
 	}
 

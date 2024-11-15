@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**DisplayUrl** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**DisplayUrl** | Pointer to **string** |  | [optional] [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Circuit** | [**BriefCircuit**](BriefCircuit.md) |  | 
 **TermSide** | [**Termination1**](Termination1.md) |  | 
 **Site** | Pointer to [**NullableBriefSite**](BriefSite.md) |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **LinkPeersType** | **NullableString** | Return the type of the peer link terminations, or None. | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 **Occupied** | **bool** |  | [readonly] 
 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitTermination
 
-`func NewCircuitTermination(id int32, url string, displayUrl string, display string, circuit BriefCircuit, termSide Termination1, cable NullableBriefCable, cableEnd string, linkPeers []interface{}, linkPeersType NullableString, created NullableTime, lastUpdated NullableTime, occupied bool, ) *CircuitTermination`
+`func NewCircuitTermination(id int32, url string, circuit BriefCircuit, termSide Termination1, cable NullableBriefCable, cableEnd string, linkPeers []interface{}, linkPeersType NullableString, lastUpdated NullableTime, occupied bool, ) *CircuitTermination`
 
 NewCircuitTermination instantiates a new CircuitTermination object
 This constructor will assign default values to properties that have it defined,
@@ -106,6 +106,11 @@ and a boolean to check if the value has been set.
 
 SetDisplayUrl sets DisplayUrl field to given value.
 
+### HasDisplayUrl
+
+`func (o *CircuitTermination) HasDisplayUrl() bool`
+
+HasDisplayUrl returns a boolean if a field has been set.
 
 ### GetDisplay
 
@@ -126,6 +131,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *CircuitTermination) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetCircuit
 
@@ -576,6 +586,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *CircuitTermination) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **Family** | **int32** |  | [readonly] 
 **Address** | **string** |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewNestedIPAddress
 
-`func NewNestedIPAddress(id int32, url string, display string, family int32, address string, ) *NestedIPAddress`
+`func NewNestedIPAddress(id int32, url string, family int32, address string, ) *NestedIPAddress`
 
 NewNestedIPAddress instantiates a new NestedIPAddress object
 This constructor will assign default values to properties that have it defined,
@@ -88,6 +88,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *NestedIPAddress) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetFamily
 

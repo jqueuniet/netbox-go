@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **int32** |  | [readonly] 
 **Url** | **string** |  | [readonly] 
-**Display** | **string** |  | [readonly] 
+**Display** | Pointer to **string** |  | [optional] [readonly] 
 **ContentTypes** | **[]string** |  | 
 **Type** | [**CustomFieldType**](CustomFieldType.md) |  | 
 **ObjectType** | Pointer to **NullableString** |  | [optional] 
@@ -27,14 +27,14 @@ Name | Type | Description | Notes
 **ValidationMaximum** | Pointer to **NullableInt64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
 **ChoiceSet** | Pointer to [**NullableNestedCustomFieldChoiceSet**](NestedCustomFieldChoiceSet.md) |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
 
 ## Methods
 
 ### NewCustomField
 
-`func NewCustomField(id int32, url string, display string, contentTypes []string, type_ CustomFieldType, dataType string, name string, created NullableTime, lastUpdated NullableTime, ) *CustomField`
+`func NewCustomField(id int32, url string, contentTypes []string, type_ CustomFieldType, dataType string, name string, lastUpdated NullableTime, ) *CustomField`
 
 NewCustomField instantiates a new CustomField object
 This constructor will assign default values to properties that have it defined,
@@ -108,6 +108,11 @@ and a boolean to check if the value has been set.
 
 SetDisplay sets Display field to given value.
 
+### HasDisplay
+
+`func (o *CustomField) HasDisplay() bool`
+
+HasDisplay returns a boolean if a field has been set.
 
 ### GetContentTypes
 
@@ -658,6 +663,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *CustomField) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
