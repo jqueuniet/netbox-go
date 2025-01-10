@@ -58,7 +58,7 @@ type Interface struct {
 	// Treat as if a cable is connected
 	MarkConnected *bool                      `json:"mark_connected,omitempty"`
 	Cable         NullableBriefCable         `json:"cable"`
-	CableEnd      string                     `json:"cable_end"`
+	CableEnd      *string                    `json:"cable_end,omitempty"`
 	WirelessLink  NullableNestedWirelessLink `json:"wireless_link"`
 	LinkPeers     []interface{}              `json:"link_peers"`
 	// Return the type of the peer link terminations, or None.
@@ -85,7 +85,7 @@ type _Interface Interface
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInterface(id int32, url string, device BriefDevice, name string, type_ InterfaceType, cable NullableBriefCable, cableEnd string, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool) *Interface {
+func NewInterface(id int32, url string, device BriefDevice, name string, type_ InterfaceType, cable NullableBriefCable, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool) *Interface {
 	this := Interface{}
 	this.Id = id
 	this.Url = url
@@ -93,7 +93,6 @@ func NewInterface(id int32, url string, device BriefDevice, name string, type_ I
 	this.Name = name
 	this.Type = type_
 	this.Cable = cable
-	this.CableEnd = cableEnd
 	this.WirelessLink = wirelessLink
 	this.LinkPeers = linkPeers
 	this.LinkPeersType = linkPeersType
@@ -1237,28 +1236,36 @@ func (o *Interface) SetCable(v BriefCable) {
 	o.Cable.Set(&v)
 }
 
-// GetCableEnd returns the CableEnd field value
+// GetCableEnd returns the CableEnd field value if set, zero value otherwise.
 func (o *Interface) GetCableEnd() string {
-	if o == nil {
+	if o == nil || IsNil(o.CableEnd) {
 		var ret string
 		return ret
 	}
-
-	return o.CableEnd
+	return *o.CableEnd
 }
 
-// GetCableEndOk returns a tuple with the CableEnd field value
+// GetCableEndOk returns a tuple with the CableEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Interface) GetCableEndOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.CableEnd) {
 		return nil, false
 	}
-	return &o.CableEnd, true
+	return o.CableEnd, true
 }
 
-// SetCableEnd sets field value
+// HasCableEnd returns a boolean if a field has been set.
+func (o *Interface) HasCableEnd() bool {
+	if o != nil && !IsNil(o.CableEnd) {
+		return true
+	}
+
+	return false
+}
+
+// SetCableEnd gets a reference to the given string and assigns it to the CableEnd field.
 func (o *Interface) SetCableEnd(v string) {
-	o.CableEnd = v
+	o.CableEnd = &v
 }
 
 // GetWirelessLink returns the WirelessLink field value
@@ -1813,7 +1820,9 @@ func (o Interface) ToMap() (map[string]interface{}, error) {
 		toSerialize["mark_connected"] = o.MarkConnected
 	}
 	toSerialize["cable"] = o.Cable.Get()
-	toSerialize["cable_end"] = o.CableEnd
+	if !IsNil(o.CableEnd) {
+		toSerialize["cable_end"] = o.CableEnd
+	}
 	toSerialize["wireless_link"] = o.WirelessLink.Get()
 	toSerialize["link_peers"] = o.LinkPeers
 	toSerialize["link_peers_type"] = o.LinkPeersType.Get()
@@ -1861,7 +1870,6 @@ func (o *Interface) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"type",
 		"cable",
-		"cable_end",
 		"wireless_link",
 		"link_peers",
 		"link_peers_type",

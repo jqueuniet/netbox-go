@@ -95193,7 +95193,6 @@ components:
       required:
       - _occupied
       - cable
-      - cable_end
       - connected_endpoints
       - connected_endpoints_reachable
       - connected_endpoints_type

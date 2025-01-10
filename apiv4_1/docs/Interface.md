@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **TaggedVlans** | Pointer to [**[]VLAN**](VLAN.md) |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Cable** | [**NullableBriefCable**](BriefCable.md) |  | [readonly] 
-**CableEnd** | **string** |  | [readonly] 
+**CableEnd** | Pointer to **string** |  | [optional] [readonly] 
 **WirelessLink** | [**NullableNestedWirelessLink**](NestedWirelessLink.md) |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
 **LinkPeersType** | **NullableString** | Return the type of the peer link terminations, or None. | [readonly] 
@@ -59,7 +59,7 @@ Name | Type | Description | Notes
 
 ### NewInterface
 
-`func NewInterface(id int32, url string, device BriefDevice, name string, type_ InterfaceType, cable NullableBriefCable, cableEnd string, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
+`func NewInterface(id int32, url string, device BriefDevice, name string, type_ InterfaceType, cable NullableBriefCable, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
 
 NewInterface instantiates a new Interface object
 This constructor will assign default values to properties that have it defined,
@@ -1028,6 +1028,11 @@ and a boolean to check if the value has been set.
 
 SetCableEnd sets CableEnd field to given value.
 
+### HasCableEnd
+
+`func (o *Interface) HasCableEnd() bool`
+
+HasCableEnd returns a boolean if a field has been set.
 
 ### GetWirelessLink
 

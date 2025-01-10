@@ -89,6 +89,8 @@ def patch_spec(data):
                     for prop in schema["required"]
                     if prop not in MISSING_REQUIRED_FIELDS
                     and not prop.endswith("_count")
+                    # Netbox 3.x/4.x compatibility
+                    and not (prop == "cable_end" and name == "Interface")
                 ]
 
     return data
