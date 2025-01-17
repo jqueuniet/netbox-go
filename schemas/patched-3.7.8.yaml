@@ -98686,7 +98686,6 @@ components:
       - device_type
       - id
       - last_updated
-      - parent_device
       - primary_ip
       - role
       - site
@@ -99567,7 +99566,6 @@ components:
       - device_type
       - id
       - last_updated
-      - parent_device
       - primary_ip
       - role
       - site

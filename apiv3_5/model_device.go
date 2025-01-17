@@ -38,7 +38,7 @@ type Device struct {
 	Rack           NullableNestedRack           `json:"rack,omitempty"`
 	Position       NullableFloat64              `json:"position,omitempty"`
 	Face           *DeviceFace                  `json:"face,omitempty"`
-	ParentDevice   NestedDevice                 `json:"parent_device"`
+	ParentDevice   *NestedDevice                `json:"parent_device,omitempty"`
 	Status         *DeviceStatus                `json:"status,omitempty"`
 	Airflow        *DeviceAirflow               `json:"airflow,omitempty"`
 	PrimaryIp      NestedIPAddress              `json:"primary_ip"`
@@ -67,14 +67,13 @@ type _Device Device
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDevice(id int32, url string, deviceType NestedDeviceType, deviceRole NestedDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, lastUpdated NullableTime) *Device {
+func NewDevice(id int32, url string, deviceType NestedDeviceType, deviceRole NestedDeviceRole, site NestedSite, primaryIp NestedIPAddress, lastUpdated NullableTime) *Device {
 	this := Device{}
 	this.Id = id
 	this.Url = url
 	this.DeviceType = deviceType
 	this.DeviceRole = deviceRole
 	this.Site = site
-	this.ParentDevice = parentDevice
 	this.PrimaryIp = primaryIp
 	this.LastUpdated = lastUpdated
 	return &this
@@ -605,28 +604,36 @@ func (o *Device) SetFace(v DeviceFace) {
 	o.Face = &v
 }
 
-// GetParentDevice returns the ParentDevice field value
+// GetParentDevice returns the ParentDevice field value if set, zero value otherwise.
 func (o *Device) GetParentDevice() NestedDevice {
-	if o == nil {
+	if o == nil || IsNil(o.ParentDevice) {
 		var ret NestedDevice
 		return ret
 	}
-
-	return o.ParentDevice
+	return *o.ParentDevice
 }
 
-// GetParentDeviceOk returns a tuple with the ParentDevice field value
+// GetParentDeviceOk returns a tuple with the ParentDevice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Device) GetParentDeviceOk() (*NestedDevice, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ParentDevice) {
 		return nil, false
 	}
-	return &o.ParentDevice, true
+	return o.ParentDevice, true
 }
 
-// SetParentDevice sets field value
+// HasParentDevice returns a boolean if a field has been set.
+func (o *Device) HasParentDevice() bool {
+	if o != nil && !IsNil(o.ParentDevice) {
+		return true
+	}
+
+	return false
+}
+
+// SetParentDevice gets a reference to the given NestedDevice and assigns it to the ParentDevice field.
 func (o *Device) SetParentDevice(v NestedDevice) {
-	o.ParentDevice = v
+	o.ParentDevice = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -1293,7 +1300,9 @@ func (o Device) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Face) {
 		toSerialize["face"] = o.Face
 	}
-	toSerialize["parent_device"] = o.ParentDevice
+	if !IsNil(o.ParentDevice) {
+		toSerialize["parent_device"] = o.ParentDevice
+	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
@@ -1359,7 +1368,6 @@ func (o *Device) UnmarshalJSON(data []byte) (err error) {
 		"device_type",
 		"device_role",
 		"site",
-		"parent_device",
 		"primary_ip",
 		"last_updated",
 	}

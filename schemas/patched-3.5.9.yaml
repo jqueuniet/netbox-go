@@ -85828,7 +85828,6 @@ components:
       - device_type
       - id
       - last_updated
-      - parent_device
       - primary_ip
       - site
       - url
@@ -86607,7 +86606,6 @@ components:
       - device_type
       - id
       - last_updated
-      - parent_device
       - primary_ip
       - site
       - url

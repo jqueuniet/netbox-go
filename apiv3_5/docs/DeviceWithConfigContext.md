@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Rack** | Pointer to [**NullableNestedRack**](NestedRack.md) |  | [optional] 
 **Position** | Pointer to **NullableFloat64** |  | [optional] 
 **Face** | Pointer to [**DeviceFace**](DeviceFace.md) |  | [optional] 
-**ParentDevice** | [**NestedDevice**](NestedDevice.md) |  | [readonly] 
+**ParentDevice** | Pointer to [**NestedDevice**](NestedDevice.md) |  | [optional] [readonly] 
 **Status** | Pointer to [**DeviceStatus**](DeviceStatus.md) |  | [optional] 
 **Airflow** | Pointer to [**DeviceAirflow**](DeviceAirflow.md) |  | [optional] 
 **PrimaryIp** | [**NestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceWithConfigContext
 
-`func NewDeviceWithConfigContext(id int32, url string, deviceType NestedDeviceType, deviceRole NestedDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext map[string]interface{}, lastUpdated NullableTime, ) *DeviceWithConfigContext`
+`func NewDeviceWithConfigContext(id int32, url string, deviceType NestedDeviceType, deviceRole NestedDeviceRole, site NestedSite, primaryIp NestedIPAddress, configContext map[string]interface{}, lastUpdated NullableTime, ) *DeviceWithConfigContext`
 
 NewDeviceWithConfigContext instantiates a new DeviceWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -497,6 +497,11 @@ and a boolean to check if the value has been set.
 
 SetParentDevice sets ParentDevice field to given value.
 
+### HasParentDevice
+
+`func (o *DeviceWithConfigContext) HasParentDevice() bool`
+
+HasParentDevice returns a boolean if a field has been set.
 
 ### GetStatus
 

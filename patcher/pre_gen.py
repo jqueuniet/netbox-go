@@ -10,6 +10,7 @@ import sys
 MISSING_REQUIRED_FIELDS = (
     "tagged_items",
     "display_url",
+    "parent_device", # for devices
     "created",  # for sites
     "display",  # Virtual disks
 )

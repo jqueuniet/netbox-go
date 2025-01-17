@@ -44,7 +44,7 @@ type DeviceWithConfigContext struct {
 	Latitude NullableFloat64 `json:"latitude,omitempty"`
 	// GPS coordinate in decimal format (xx.yyyyyy)
 	Longitude      NullableFloat64              `json:"longitude,omitempty"`
-	ParentDevice   NestedDevice                 `json:"parent_device"`
+	ParentDevice   *NestedDevice                `json:"parent_device,omitempty"`
 	Status         *DeviceStatus                `json:"status,omitempty"`
 	Airflow        *DeviceAirflow               `json:"airflow,omitempty"`
 	PrimaryIp      NestedIPAddress              `json:"primary_ip"`
@@ -85,7 +85,7 @@ type _DeviceWithConfigContext DeviceWithConfigContext
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceWithConfigContext(id int32, url string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole NestedDeviceRole, site NestedSite, parentDevice NestedDevice, primaryIp NestedIPAddress, configContext interface{}, lastUpdated NullableTime) *DeviceWithConfigContext {
+func NewDeviceWithConfigContext(id int32, url string, deviceType NestedDeviceType, role NestedDeviceRole, deviceRole NestedDeviceRole, site NestedSite, primaryIp NestedIPAddress, configContext interface{}, lastUpdated NullableTime) *DeviceWithConfigContext {
 	this := DeviceWithConfigContext{}
 	this.Id = id
 	this.Url = url
@@ -93,7 +93,6 @@ func NewDeviceWithConfigContext(id int32, url string, deviceType NestedDeviceTyp
 	this.Role = role
 	this.DeviceRole = deviceRole
 	this.Site = site
-	this.ParentDevice = parentDevice
 	this.PrimaryIp = primaryIp
 	this.ConfigContext = configContext
 	this.LastUpdated = lastUpdated
@@ -735,28 +734,36 @@ func (o *DeviceWithConfigContext) UnsetLongitude() {
 	o.Longitude.Unset()
 }
 
-// GetParentDevice returns the ParentDevice field value
+// GetParentDevice returns the ParentDevice field value if set, zero value otherwise.
 func (o *DeviceWithConfigContext) GetParentDevice() NestedDevice {
-	if o == nil {
+	if o == nil || IsNil(o.ParentDevice) {
 		var ret NestedDevice
 		return ret
 	}
-
-	return o.ParentDevice
+	return *o.ParentDevice
 }
 
-// GetParentDeviceOk returns a tuple with the ParentDevice field value
+// GetParentDeviceOk returns a tuple with the ParentDevice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceWithConfigContext) GetParentDeviceOk() (*NestedDevice, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ParentDevice) {
 		return nil, false
 	}
-	return &o.ParentDevice, true
+	return o.ParentDevice, true
 }
 
-// SetParentDevice sets field value
+// HasParentDevice returns a boolean if a field has been set.
+func (o *DeviceWithConfigContext) HasParentDevice() bool {
+	if o != nil && !IsNil(o.ParentDevice) {
+		return true
+	}
+
+	return false
+}
+
+// SetParentDevice gets a reference to the given NestedDevice and assigns it to the ParentDevice field.
 func (o *DeviceWithConfigContext) SetParentDevice(v NestedDevice) {
-	o.ParentDevice = v
+	o.ParentDevice = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -1819,7 +1826,9 @@ func (o DeviceWithConfigContext) ToMap() (map[string]interface{}, error) {
 	if o.Longitude.IsSet() {
 		toSerialize["longitude"] = o.Longitude.Get()
 	}
-	toSerialize["parent_device"] = o.ParentDevice
+	if !IsNil(o.ParentDevice) {
+		toSerialize["parent_device"] = o.ParentDevice
+	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
@@ -1922,7 +1931,6 @@ func (o *DeviceWithConfigContext) UnmarshalJSON(data []byte) (err error) {
 		"role",
 		"device_role",
 		"site",
-		"parent_device",
 		"primary_ip",
 		"config_context",
 		"last_updated",

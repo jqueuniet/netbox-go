@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Face** | Pointer to [**DeviceFace**](DeviceFace.md) |  | [optional] 
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
-**ParentDevice** | [**NullableNestedDevice**](NestedDevice.md) |  | [readonly] 
+**ParentDevice** | Pointer to [**NullableNestedDevice**](NestedDevice.md) |  | [optional] [readonly] 
 **Status** | Pointer to [**DeviceStatus**](DeviceStatus.md) |  | [optional] 
 **Airflow** | Pointer to [**DeviceAirflow**](DeviceAirflow.md) |  | [optional] 
 **PrimaryIp** | [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [readonly] 
@@ -55,7 +55,7 @@ Name | Type | Description | Notes
 
 ### NewDevice
 
-`func NewDevice(id int32, url string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, parentDevice NullableNestedDevice, primaryIp NullableBriefIPAddress, lastUpdated NullableTime, ) *Device`
+`func NewDevice(id int32, url string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, primaryIp NullableBriefIPAddress, lastUpdated NullableTime, ) *Device`
 
 NewDevice instantiates a new Device object
 This constructor will assign default values to properties that have it defined,
@@ -579,6 +579,11 @@ and a boolean to check if the value has been set.
 
 SetParentDevice sets ParentDevice field to given value.
 
+### HasParentDevice
+
+`func (o *Device) HasParentDevice() bool`
+
+HasParentDevice returns a boolean if a field has been set.
 
 ### SetParentDeviceNil
 

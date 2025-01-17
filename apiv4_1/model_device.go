@@ -43,7 +43,7 @@ type Device struct {
 	Latitude NullableFloat64 `json:"latitude,omitempty"`
 	// GPS coordinate in decimal format (xx.yyyyyy)
 	Longitude      NullableFloat64             `json:"longitude,omitempty"`
-	ParentDevice   NullableNestedDevice        `json:"parent_device"`
+	ParentDevice   NullableNestedDevice        `json:"parent_device,omitempty"`
 	Status         *DeviceStatus               `json:"status,omitempty"`
 	Airflow        *DeviceAirflow              `json:"airflow,omitempty"`
 	PrimaryIp      NullableBriefIPAddress      `json:"primary_ip"`
@@ -83,14 +83,13 @@ type _Device Device
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDevice(id int32, url string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, parentDevice NullableNestedDevice, primaryIp NullableBriefIPAddress, lastUpdated NullableTime) *Device {
+func NewDevice(id int32, url string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, primaryIp NullableBriefIPAddress, lastUpdated NullableTime) *Device {
 	this := Device{}
 	this.Id = id
 	this.Url = url
 	this.DeviceType = deviceType
 	this.Role = role
 	this.Site = site
-	this.ParentDevice = parentDevice
 	this.PrimaryIp = primaryIp
 	this.LastUpdated = lastUpdated
 	return &this
@@ -739,18 +738,16 @@ func (o *Device) UnsetLongitude() {
 	o.Longitude.Unset()
 }
 
-// GetParentDevice returns the ParentDevice field value
-// If the value is explicit nil, the zero value for NestedDevice will be returned
+// GetParentDevice returns the ParentDevice field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Device) GetParentDevice() NestedDevice {
-	if o == nil || o.ParentDevice.Get() == nil {
+	if o == nil || IsNil(o.ParentDevice.Get()) {
 		var ret NestedDevice
 		return ret
 	}
-
 	return *o.ParentDevice.Get()
 }
 
-// GetParentDeviceOk returns a tuple with the ParentDevice field value
+// GetParentDeviceOk returns a tuple with the ParentDevice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Device) GetParentDeviceOk() (*NestedDevice, bool) {
@@ -760,9 +757,28 @@ func (o *Device) GetParentDeviceOk() (*NestedDevice, bool) {
 	return o.ParentDevice.Get(), o.ParentDevice.IsSet()
 }
 
-// SetParentDevice sets field value
+// HasParentDevice returns a boolean if a field has been set.
+func (o *Device) HasParentDevice() bool {
+	if o != nil && o.ParentDevice.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetParentDevice gets a reference to the given NullableNestedDevice and assigns it to the ParentDevice field.
 func (o *Device) SetParentDevice(v NestedDevice) {
 	o.ParentDevice.Set(&v)
+}
+
+// SetParentDeviceNil sets the value for ParentDevice to be an explicit nil
+func (o *Device) SetParentDeviceNil() {
+	o.ParentDevice.Set(nil)
+}
+
+// UnsetParentDevice ensures that no value is present for ParentDevice, not even an explicit nil
+func (o *Device) UnsetParentDevice() {
+	o.ParentDevice.Unset()
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -1803,7 +1819,9 @@ func (o Device) ToMap() (map[string]interface{}, error) {
 	if o.Longitude.IsSet() {
 		toSerialize["longitude"] = o.Longitude.Get()
 	}
-	toSerialize["parent_device"] = o.ParentDevice.Get()
+	if o.ParentDevice.IsSet() {
+		toSerialize["parent_device"] = o.ParentDevice.Get()
+	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
@@ -1902,7 +1920,6 @@ func (o *Device) UnmarshalJSON(data []byte) (err error) {
 		"device_type",
 		"role",
 		"site",
-		"parent_device",
 		"primary_ip",
 		"last_updated",
 	}
