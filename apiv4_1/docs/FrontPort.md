@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Type** | [**FrontPortType**](FrontPortType.md) |  | 
 **Color** | Pointer to **string** |  | [optional] 
 **RearPort** | [**FrontPortRearPort**](FrontPortRearPort.md) |  | 
-**RearPortPosition** | Pointer to **int32** | Mapped position on corresponding rear port | [optional] [default to 1]
+**RearPortPosition** | Pointer to **int32** | Mapped position on corresponding rear port | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Cable** | [**NullableBriefCable**](BriefCable.md) |  | [readonly] 

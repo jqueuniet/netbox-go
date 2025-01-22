@@ -251,7 +251,7 @@ import (
 )
 
 func main() {
-	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableWirelessLANGroupRequest | 
+	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example") // WritableWirelessLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -735,7 +735,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this wireless LAN group.
-	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableWirelessLANGroupRequest | 
+	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example") // WritableWirelessLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

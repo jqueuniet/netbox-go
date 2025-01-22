@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Tunnel** | [**BriefTunnel**](BriefTunnel.md) |  | 
 **Role** | [**TunnelTerminationRole**](TunnelTerminationRole.md) |  | 
 **TerminationType** | **string** |  | 
-**TerminationId** | **NullableInt64** |  | 
+**TerminationId** | Pointer to **NullableInt64** |  | [optional] 
 **Termination** | **interface{}** |  | [readonly] 
 **OutsideIp** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewTunnelTermination
 
-`func NewTunnelTermination(id int32, url string, tunnel BriefTunnel, role TunnelTerminationRole, terminationType string, terminationId NullableInt64, termination interface{}, lastUpdated NullableTime, ) *TunnelTermination`
+`func NewTunnelTermination(id int32, url string, tunnel BriefTunnel, role TunnelTerminationRole, terminationType string, termination interface{}, lastUpdated NullableTime, ) *TunnelTermination`
 
 NewTunnelTermination instantiates a new TunnelTermination object
 This constructor will assign default values to properties that have it defined,
@@ -207,6 +207,11 @@ and a boolean to check if the value has been set.
 
 SetTerminationId sets TerminationId field to given value.
 
+### HasTerminationId
+
+`func (o *TunnelTermination) HasTerminationId() bool`
+
+HasTerminationId returns a boolean if a field has been set.
 
 ### SetTerminationIdNil
 

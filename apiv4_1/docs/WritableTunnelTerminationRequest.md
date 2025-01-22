@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Tunnel** | [**BriefTunnelRequest**](BriefTunnelRequest.md) |  | 
 **Role** | Pointer to [**PatchedWritableTunnelTerminationRequestRole**](PatchedWritableTunnelTerminationRequestRole.md) |  | [optional] 
 **TerminationType** | **string** |  | 
-**TerminationId** | **NullableInt64** |  | 
+**TerminationId** | Pointer to **NullableInt64** |  | [optional] 
 **OutsideIp** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewWritableTunnelTerminationRequest
 
-`func NewWritableTunnelTerminationRequest(tunnel BriefTunnelRequest, terminationType string, terminationId NullableInt64, ) *WritableTunnelTerminationRequest`
+`func NewWritableTunnelTerminationRequest(tunnel BriefTunnelRequest, terminationType string, ) *WritableTunnelTerminationRequest`
 
 NewWritableTunnelTerminationRequest instantiates a new WritableTunnelTerminationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -115,6 +115,11 @@ and a boolean to check if the value has been set.
 
 SetTerminationId sets TerminationId field to given value.
 
+### HasTerminationId
+
+`func (o *WritableTunnelTerminationRequest) HasTerminationId() bool`
+
+HasTerminationId returns a boolean if a field has been set.
 
 ### SetTerminationIdNil
 

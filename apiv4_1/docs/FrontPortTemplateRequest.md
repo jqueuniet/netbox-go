@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Type** | [**FrontPortTypeValue**](FrontPortTypeValue.md) |  | 
 **Color** | Pointer to **string** |  | [optional] 
 **RearPort** | [**BriefRearPortTemplateRequest**](BriefRearPortTemplateRequest.md) |  | 
-**RearPortPosition** | Pointer to **int32** |  | [optional] [default to 1]
+**RearPortPosition** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods

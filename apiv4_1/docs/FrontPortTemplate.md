@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Type** | [**FrontPortType**](FrontPortType.md) |  | 
 **Color** | Pointer to **string** |  | [optional] 
 **RearPort** | [**BriefRearPortTemplate**](BriefRearPortTemplate.md) |  | 
-**RearPortPosition** | Pointer to **int32** |  | [optional] [default to 1]
+**RearPortPosition** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 

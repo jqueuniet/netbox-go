@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Location** | Pointer to [**NullableBriefLocationRequest**](BriefLocationRequest.md) |  | [optional] 
 **Rack** | Pointer to [**NullableBriefRackRequest**](BriefRackRequest.md) |  | [optional] 
 **Position** | Pointer to **NullableFloat64** |  | [optional] 
-**Face** | [**RackFace1**](RackFace1.md) |  | 
+**Face** | Pointer to [**RackFace1**](RackFace1.md) |  | [optional] 
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Status** | Pointer to [**DeviceStatusValue**](DeviceStatusValue.md) |  | [optional] 
@@ -38,7 +38,7 @@ Name | Type | Description | Notes
 
 ### NewWritableDeviceWithConfigContextRequest
 
-`func NewWritableDeviceWithConfigContextRequest(deviceType BriefDeviceTypeRequest, role BriefDeviceRoleRequest, site BriefSiteRequest, face RackFace1, ) *WritableDeviceWithConfigContextRequest`
+`func NewWritableDeviceWithConfigContextRequest(deviceType BriefDeviceTypeRequest, role BriefDeviceRoleRequest, site BriefSiteRequest, ) *WritableDeviceWithConfigContextRequest`
 
 NewWritableDeviceWithConfigContextRequest instantiates a new WritableDeviceWithConfigContextRequest object
 This constructor will assign default values to properties that have it defined,
@@ -402,6 +402,11 @@ and a boolean to check if the value has been set.
 
 SetFace sets Face field to given value.
 
+### HasFace
+
+`func (o *WritableDeviceWithConfigContextRequest) HasFace() bool`
+
+HasFace returns a boolean if a field has been set.
 
 ### GetLatitude
 

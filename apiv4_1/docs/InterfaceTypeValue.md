@@ -19,6 +19,8 @@
 
 * `_1000BASE_T` (value: `"1000base-t"`)
 
+* `_1000BASE_LX` (value: `"1000base-lx"`)
+
 * `_1000BASE_TX` (value: `"1000base-tx"`)
 
 * `_2_5GBASE_T` (value: `"2.5gbase-t"`)

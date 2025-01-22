@@ -991,7 +991,7 @@ import (
 )
 
 func main() {
-	writableContactGroupRequest := *openapiclient.NewWritableContactGroupRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableContactGroupRequest | 
+	writableContactGroupRequest := *openapiclient.NewWritableContactGroupRequest("Name_example", "Slug_example") // WritableContactGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1475,7 +1475,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this contact group.
-	writableContactGroupRequest := *openapiclient.NewWritableContactGroupRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableContactGroupRequest | 
+	writableContactGroupRequest := *openapiclient.NewWritableContactGroupRequest("Name_example", "Slug_example") // WritableContactGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

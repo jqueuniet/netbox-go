@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Site** | [**BriefSiteRequest**](BriefSiteRequest.md) |  | 
-**Parent** | **NullableInt32** |  | 
+**Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Facility** | Pointer to **string** | Local facility ID or description | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewWritableLocationRequest
 
-`func NewWritableLocationRequest(name string, slug string, site BriefSiteRequest, parent NullableInt32, ) *WritableLocationRequest`
+`func NewWritableLocationRequest(name string, slug string, site BriefSiteRequest, ) *WritableLocationRequest`
 
 NewWritableLocationRequest instantiates a new WritableLocationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -113,6 +113,11 @@ and a boolean to check if the value has been set.
 
 SetParent sets Parent field to given value.
 
+### HasParent
+
+`func (o *WritableLocationRequest) HasParent() bool`
+
+HasParent returns a boolean if a field has been set.
 
 ### SetParentNil
 

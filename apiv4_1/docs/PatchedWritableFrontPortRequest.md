@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to [**FrontPortTypeValue**](FrontPortTypeValue.md) |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
 **RearPort** | Pointer to **int32** |  | [optional] 
-**RearPortPosition** | Pointer to **int32** | Mapped position on corresponding rear port | [optional] [default to 1]
+**RearPortPosition** | Pointer to **int32** | Mapped position on corresponding rear port | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 

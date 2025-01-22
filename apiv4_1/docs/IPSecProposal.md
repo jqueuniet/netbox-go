@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**EncryptionAlgorithm** | [**IKEProposalEncryptionAlgorithm**](IKEProposalEncryptionAlgorithm.md) |  | 
-**AuthenticationAlgorithm** | [**IKEProposalAuthenticationAlgorithm**](IKEProposalAuthenticationAlgorithm.md) |  | 
+**EncryptionAlgorithm** | Pointer to [**IKEProposalEncryptionAlgorithm**](IKEProposalEncryptionAlgorithm.md) |  | [optional] 
+**AuthenticationAlgorithm** | Pointer to [**IKEProposalAuthenticationAlgorithm**](IKEProposalAuthenticationAlgorithm.md) |  | [optional] 
 **SaLifetimeSeconds** | Pointer to **NullableInt32** | Security association lifetime (seconds) | [optional] 
 **SaLifetimeData** | Pointer to **NullableInt32** | Security association lifetime (in kilobytes) | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewIPSecProposal
 
-`func NewIPSecProposal(id int32, url string, name string, encryptionAlgorithm IKEProposalEncryptionAlgorithm, authenticationAlgorithm IKEProposalAuthenticationAlgorithm, lastUpdated NullableTime, ) *IPSecProposal`
+`func NewIPSecProposal(id int32, url string, name string, lastUpdated NullableTime, ) *IPSecProposal`
 
 NewIPSecProposal instantiates a new IPSecProposal object
 This constructor will assign default values to properties that have it defined,
@@ -193,6 +193,11 @@ and a boolean to check if the value has been set.
 
 SetEncryptionAlgorithm sets EncryptionAlgorithm field to given value.
 
+### HasEncryptionAlgorithm
+
+`func (o *IPSecProposal) HasEncryptionAlgorithm() bool`
+
+HasEncryptionAlgorithm returns a boolean if a field has been set.
 
 ### GetAuthenticationAlgorithm
 
@@ -213,6 +218,11 @@ and a boolean to check if the value has been set.
 
 SetAuthenticationAlgorithm sets AuthenticationAlgorithm field to given value.
 
+### HasAuthenticationAlgorithm
+
+`func (o *IPSecProposal) HasAuthenticationAlgorithm() bool`
+
+HasAuthenticationAlgorithm returns a boolean if a field has been set.
 
 ### GetSaLifetimeSeconds
 
