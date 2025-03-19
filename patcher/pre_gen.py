@@ -13,6 +13,7 @@ MISSING_REQUIRED_FIELDS = (
     "parent_device", # for devices
     "created",  # for sites
     "display",  # Virtual disks
+    "scope",
 )
 
 

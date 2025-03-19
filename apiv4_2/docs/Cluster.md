@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **ScopeType** | Pointer to **NullableString** |  | [optional] 
 **ScopeId** | Pointer to **NullableInt32** |  | [optional] 
-**Scope** | **interface{}** |  | [readonly] 
+**Scope** | Pointer to **interface{}** |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 
 ### NewCluster
 
-`func NewCluster(id int32, url string, name string, type_ BriefClusterType, scope interface{}, lastUpdated NullableTime, allocatedVcpus float64, allocatedMemory int32, allocatedDisk int32, ) *Cluster`
+`func NewCluster(id int32, url string, name string, type_ BriefClusterType, lastUpdated NullableTime, allocatedVcpus float64, allocatedMemory int32, allocatedDisk int32, ) *Cluster`
 
 NewCluster instantiates a new Cluster object
 This constructor will assign default values to properties that have it defined,
@@ -361,6 +361,11 @@ and a boolean to check if the value has been set.
 
 SetScope sets Scope field to given value.
 
+### HasScope
+
+`func (o *Cluster) HasScope() bool`
+
+HasScope returns a boolean if a field has been set.
 
 ### SetScopeNil
 

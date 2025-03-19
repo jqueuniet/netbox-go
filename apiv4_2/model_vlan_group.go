@@ -29,7 +29,7 @@ type VLANGroup struct {
 	Slug                 string                 `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	ScopeType            NullableString         `json:"scope_type,omitempty"`
 	ScopeId              NullableInt32          `json:"scope_id,omitempty"`
-	Scope                interface{}            `json:"scope"`
+	Scope                interface{}            `json:"scope,omitempty"`
 	VidRanges            [][][]int32            `json:"vid_ranges,omitempty"`
 	Description          *string                `json:"description,omitempty"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
@@ -47,13 +47,12 @@ type _VLANGroup VLANGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVLANGroup(id int32, url string, name string, slug string, scope interface{}, lastUpdated NullableTime, utilization string) *VLANGroup {
+func NewVLANGroup(id int32, url string, name string, slug string, lastUpdated NullableTime, utilization string) *VLANGroup {
 	this := VLANGroup{}
 	this.Id = id
 	this.Url = url
 	this.Name = name
 	this.Slug = slug
-	this.Scope = scope
 	this.LastUpdated = lastUpdated
 	this.Utilization = utilization
 	return &this
@@ -313,18 +312,16 @@ func (o *VLANGroup) UnsetScopeId() {
 	o.ScopeId.Unset()
 }
 
-// GetScope returns the Scope field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetScope returns the Scope field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VLANGroup) GetScope() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.Scope
 }
 
-// GetScopeOk returns a tuple with the Scope field value
+// GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VLANGroup) GetScopeOk() (*interface{}, bool) {
@@ -334,7 +331,16 @@ func (o *VLANGroup) GetScopeOk() (*interface{}, bool) {
 	return &o.Scope, true
 }
 
-// SetScope sets field value
+// HasScope returns a boolean if a field has been set.
+func (o *VLANGroup) HasScope() bool {
+	if o != nil && !IsNil(o.Scope) {
+		return true
+	}
+
+	return false
+}
+
+// SetScope gets a reference to the given interface{} and assigns it to the Scope field.
 func (o *VLANGroup) SetScope(v interface{}) {
 	o.Scope = v
 }
@@ -658,7 +664,6 @@ func (o *VLANGroup) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"name",
 		"slug",
-		"scope",
 		"last_updated",
 		"utilization",
 	}

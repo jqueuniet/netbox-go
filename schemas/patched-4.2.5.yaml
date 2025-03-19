@@ -121597,7 +121597,6 @@ components:
       - id
       - last_updated
       - name
-      - scope
       - type
       - url
     ClusterGroup:
@@ -159105,7 +159104,6 @@ components:
       - id
       - last_updated
       - name
-      - scope
       - slug
       - url
       - utilization
@@ -161027,7 +161025,6 @@ components:
       required:
       - id
       - last_updated
-      - scope
       - ssid
       - url
     WirelessLANGroup:

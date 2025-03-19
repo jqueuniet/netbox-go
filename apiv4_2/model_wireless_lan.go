@@ -32,7 +32,7 @@ type WirelessLAN struct {
 	Vlan                 NullableBriefVLAN             `json:"vlan,omitempty"`
 	ScopeType            NullableString                `json:"scope_type,omitempty"`
 	ScopeId              NullableInt32                 `json:"scope_id,omitempty"`
-	Scope                interface{}                   `json:"scope"`
+	Scope                interface{}                   `json:"scope,omitempty"`
 	Tenant               NullableBriefTenant           `json:"tenant,omitempty"`
 	AuthType             *WirelessLANAuthType          `json:"auth_type,omitempty"`
 	AuthCipher           *WirelessLANAuthCipher        `json:"auth_cipher,omitempty"`
@@ -51,12 +51,11 @@ type _WirelessLAN WirelessLAN
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWirelessLAN(id int32, url string, ssid string, scope interface{}, lastUpdated NullableTime) *WirelessLAN {
+func NewWirelessLAN(id int32, url string, ssid string, lastUpdated NullableTime) *WirelessLAN {
 	this := WirelessLAN{}
 	this.Id = id
 	this.Url = url
 	this.Ssid = ssid
-	this.Scope = scope
 	this.LastUpdated = lastUpdated
 	return &this
 }
@@ -441,18 +440,16 @@ func (o *WirelessLAN) UnsetScopeId() {
 	o.ScopeId.Unset()
 }
 
-// GetScope returns the Scope field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetScope returns the Scope field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *WirelessLAN) GetScope() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.Scope
 }
 
-// GetScopeOk returns a tuple with the Scope field value
+// GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WirelessLAN) GetScopeOk() (*interface{}, bool) {
@@ -462,7 +459,16 @@ func (o *WirelessLAN) GetScopeOk() (*interface{}, bool) {
 	return &o.Scope, true
 }
 
-// SetScope sets field value
+// HasScope returns a boolean if a field has been set.
+func (o *WirelessLAN) HasScope() bool {
+	if o != nil && !IsNil(o.Scope) {
+		return true
+	}
+
+	return false
+}
+
+// SetScope gets a reference to the given interface{} and assigns it to the Scope field.
 func (o *WirelessLAN) SetScope(v interface{}) {
 	o.Scope = v
 }
@@ -852,7 +858,6 @@ func (o *WirelessLAN) UnmarshalJSON(data []byte) (err error) {
 		"id",
 		"url",
 		"ssid",
-		"scope",
 		"last_updated",
 	}
 

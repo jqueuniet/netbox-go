@@ -32,7 +32,7 @@ type Cluster struct {
 	Tenant               NullableBriefTenant       `json:"tenant,omitempty"`
 	ScopeType            NullableString            `json:"scope_type,omitempty"`
 	ScopeId              NullableInt32             `json:"scope_id,omitempty"`
-	Scope                interface{}               `json:"scope"`
+	Scope                interface{}               `json:"scope,omitempty"`
 	Description          *string                   `json:"description,omitempty"`
 	Comments             *string                   `json:"comments,omitempty"`
 	Tags                 []NestedTag               `json:"tags,omitempty"`
@@ -53,13 +53,12 @@ type _Cluster Cluster
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCluster(id int32, url string, name string, type_ BriefClusterType, scope interface{}, lastUpdated NullableTime, allocatedVcpus float64, allocatedMemory int32, allocatedDisk int32) *Cluster {
+func NewCluster(id int32, url string, name string, type_ BriefClusterType, lastUpdated NullableTime, allocatedVcpus float64, allocatedMemory int32, allocatedDisk int32) *Cluster {
 	this := Cluster{}
 	this.Id = id
 	this.Url = url
 	this.Name = name
 	this.Type = type_
-	this.Scope = scope
 	this.LastUpdated = lastUpdated
 	this.AllocatedVcpus = allocatedVcpus
 	this.AllocatedMemory = allocatedMemory
@@ -439,18 +438,16 @@ func (o *Cluster) UnsetScopeId() {
 	o.ScopeId.Unset()
 }
 
-// GetScope returns the Scope field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetScope returns the Scope field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Cluster) GetScope() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.Scope
 }
 
-// GetScopeOk returns a tuple with the Scope field value
+// GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Cluster) GetScopeOk() (*interface{}, bool) {
@@ -460,7 +457,16 @@ func (o *Cluster) GetScopeOk() (*interface{}, bool) {
 	return &o.Scope, true
 }
 
-// SetScope sets field value
+// HasScope returns a boolean if a field has been set.
+func (o *Cluster) HasScope() bool {
+	if o != nil && !IsNil(o.Scope) {
+		return true
+	}
+
+	return false
+}
+
+// SetScope gets a reference to the given interface{} and assigns it to the Scope field.
 func (o *Cluster) SetScope(v interface{}) {
 	o.Scope = v
 }
@@ -878,7 +884,6 @@ func (o *Cluster) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"name",
 		"type",
-		"scope",
 		"last_updated",
 		"allocated_vcpus",
 		"allocated_memory",
