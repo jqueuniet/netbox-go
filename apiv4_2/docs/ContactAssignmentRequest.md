@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**Contact** | [**BriefContactRequest**](BriefContactRequest.md) |  | 
-**Role** | Pointer to [**NullableBriefContactRoleRequest**](BriefContactRoleRequest.md) |  | [optional] 
+**Contact** | [**ContactAssignmentRequestContact**](ContactAssignmentRequestContact.md) |  | 
+**Role** | Pointer to [**NullableContactAssignmentRequestRole**](ContactAssignmentRequestRole.md) |  | [optional] 
 **Priority** | Pointer to [**BriefCircuitGroupAssignmentSerializerPriorityValue**](BriefCircuitGroupAssignmentSerializerPriorityValue.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewContactAssignmentRequest
 
-`func NewContactAssignmentRequest(objectType string, objectId int64, contact BriefContactRequest, ) *ContactAssignmentRequest`
+`func NewContactAssignmentRequest(objectType string, objectId int64, contact ContactAssignmentRequestContact, ) *ContactAssignmentRequest`
 
 NewContactAssignmentRequest instantiates a new ContactAssignmentRequest object
 This constructor will assign default values to properties that have it defined,
@@ -73,40 +73,40 @@ SetObjectId sets ObjectId field to given value.
 
 ### GetContact
 
-`func (o *ContactAssignmentRequest) GetContact() BriefContactRequest`
+`func (o *ContactAssignmentRequest) GetContact() ContactAssignmentRequestContact`
 
 GetContact returns the Contact field if non-nil, zero value otherwise.
 
 ### GetContactOk
 
-`func (o *ContactAssignmentRequest) GetContactOk() (*BriefContactRequest, bool)`
+`func (o *ContactAssignmentRequest) GetContactOk() (*ContactAssignmentRequestContact, bool)`
 
 GetContactOk returns a tuple with the Contact field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContact
 
-`func (o *ContactAssignmentRequest) SetContact(v BriefContactRequest)`
+`func (o *ContactAssignmentRequest) SetContact(v ContactAssignmentRequestContact)`
 
 SetContact sets Contact field to given value.
 
 
 ### GetRole
 
-`func (o *ContactAssignmentRequest) GetRole() BriefContactRoleRequest`
+`func (o *ContactAssignmentRequest) GetRole() ContactAssignmentRequestRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *ContactAssignmentRequest) GetRoleOk() (*BriefContactRoleRequest, bool)`
+`func (o *ContactAssignmentRequest) GetRoleOk() (*ContactAssignmentRequestRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *ContactAssignmentRequest) SetRole(v BriefContactRoleRequest)`
+`func (o *ContactAssignmentRequest) SetRole(v ContactAssignmentRequestRole)`
 
 SetRole sets Role field to given value.
 

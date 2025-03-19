@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | Pointer to [**IPSecProfileModeValue**](IPSecProfileModeValue.md) |  | [optional] 
-**IkePolicy** | Pointer to [**BriefIKEPolicyRequest**](BriefIKEPolicyRequest.md) |  | [optional] 
-**IpsecPolicy** | Pointer to [**BriefIPSecPolicyRequest**](BriefIPSecPolicyRequest.md) |  | [optional] 
+**IkePolicy** | Pointer to [**IPSecProfileRequestIkePolicy**](IPSecProfileRequestIkePolicy.md) |  | [optional] 
+**IpsecPolicy** | Pointer to [**IPSecProfileRequestIpsecPolicy**](IPSecProfileRequestIpsecPolicy.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -109,20 +109,20 @@ HasMode returns a boolean if a field has been set.
 
 ### GetIkePolicy
 
-`func (o *PatchedWritableIPSecProfileRequest) GetIkePolicy() BriefIKEPolicyRequest`
+`func (o *PatchedWritableIPSecProfileRequest) GetIkePolicy() IPSecProfileRequestIkePolicy`
 
 GetIkePolicy returns the IkePolicy field if non-nil, zero value otherwise.
 
 ### GetIkePolicyOk
 
-`func (o *PatchedWritableIPSecProfileRequest) GetIkePolicyOk() (*BriefIKEPolicyRequest, bool)`
+`func (o *PatchedWritableIPSecProfileRequest) GetIkePolicyOk() (*IPSecProfileRequestIkePolicy, bool)`
 
 GetIkePolicyOk returns a tuple with the IkePolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIkePolicy
 
-`func (o *PatchedWritableIPSecProfileRequest) SetIkePolicy(v BriefIKEPolicyRequest)`
+`func (o *PatchedWritableIPSecProfileRequest) SetIkePolicy(v IPSecProfileRequestIkePolicy)`
 
 SetIkePolicy sets IkePolicy field to given value.
 
@@ -134,20 +134,20 @@ HasIkePolicy returns a boolean if a field has been set.
 
 ### GetIpsecPolicy
 
-`func (o *PatchedWritableIPSecProfileRequest) GetIpsecPolicy() BriefIPSecPolicyRequest`
+`func (o *PatchedWritableIPSecProfileRequest) GetIpsecPolicy() IPSecProfileRequestIpsecPolicy`
 
 GetIpsecPolicy returns the IpsecPolicy field if non-nil, zero value otherwise.
 
 ### GetIpsecPolicyOk
 
-`func (o *PatchedWritableIPSecProfileRequest) GetIpsecPolicyOk() (*BriefIPSecPolicyRequest, bool)`
+`func (o *PatchedWritableIPSecProfileRequest) GetIpsecPolicyOk() (*IPSecProfileRequestIpsecPolicy, bool)`
 
 GetIpsecPolicyOk returns a tuple with the IpsecPolicy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpsecPolicy
 
-`func (o *PatchedWritableIPSecProfileRequest) SetIpsecPolicy(v BriefIPSecPolicyRequest)`
+`func (o *PatchedWritableIPSecProfileRequest) SetIpsecPolicy(v IPSecProfileRequestIpsecPolicy)`
 
 SetIpsecPolicy sets IpsecPolicy field to given value.
 

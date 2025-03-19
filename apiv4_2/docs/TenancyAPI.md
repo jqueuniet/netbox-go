@@ -82,7 +82,7 @@ import (
 )
 
 func main() {
-	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest("Name_example"))} // []ContactAssignmentRequest | 
+	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), openapiclient.ContactAssignmentRequest_contact{BriefContactRequest: openapiclient.NewBriefContactRequest("Name_example")})} // []ContactAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -146,7 +146,7 @@ import (
 )
 
 func main() {
-	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest("Name_example"))} // []ContactAssignmentRequest | 
+	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), openapiclient.ContactAssignmentRequest_contact{BriefContactRequest: openapiclient.NewBriefContactRequest("Name_example")})} // []ContactAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -212,7 +212,7 @@ import (
 )
 
 func main() {
-	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest("Name_example"))} // []ContactAssignmentRequest | 
+	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), openapiclient.ContactAssignmentRequest_contact{BriefContactRequest: openapiclient.NewBriefContactRequest("Name_example")})} // []ContactAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -278,7 +278,7 @@ import (
 )
 
 func main() {
-	writableContactAssignmentRequest := *openapiclient.NewWritableContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest("Name_example")) // WritableContactAssignmentRequest | 
+	writableContactAssignmentRequest := *openapiclient.NewWritableContactAssignmentRequest("ObjectType_example", int64(123), openapiclient.ContactAssignmentRequest_contact{BriefContactRequest: openapiclient.NewBriefContactRequest("Name_example")}) // WritableContactAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -724,7 +724,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this contact assignment.
-	writableContactAssignmentRequest := *openapiclient.NewWritableContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest("Name_example")) // WritableContactAssignmentRequest | 
+	writableContactAssignmentRequest := *openapiclient.NewWritableContactAssignmentRequest("ObjectType_example", int64(123), openapiclient.ContactAssignmentRequest_contact{BriefContactRequest: openapiclient.NewBriefContactRequest("Name_example")}) // WritableContactAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

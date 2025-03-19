@@ -2463,7 +2463,7 @@ import (
 )
 
 func main() {
-	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), openapiclient.IPSecProfileRequest_ike_policy{BriefIKEPolicyRequest: openapiclient.NewBriefIKEPolicyRequest("Name_example")}, openapiclient.IPSecProfileRequest_ipsec_policy{BriefIPSecPolicyRequest: openapiclient.NewBriefIPSecPolicyRequest("Name_example")})} // []IPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2527,7 +2527,7 @@ import (
 )
 
 func main() {
-	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), openapiclient.IPSecProfileRequest_ike_policy{BriefIKEPolicyRequest: openapiclient.NewBriefIKEPolicyRequest("Name_example")}, openapiclient.IPSecProfileRequest_ipsec_policy{BriefIPSecPolicyRequest: openapiclient.NewBriefIPSecPolicyRequest("Name_example")})} // []IPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2593,7 +2593,7 @@ import (
 )
 
 func main() {
-	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), openapiclient.IPSecProfileRequest_ike_policy{BriefIKEPolicyRequest: openapiclient.NewBriefIKEPolicyRequest("Name_example")}, openapiclient.IPSecProfileRequest_ipsec_policy{BriefIPSecPolicyRequest: openapiclient.NewBriefIPSecPolicyRequest("Name_example")})} // []IPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2659,7 +2659,7 @@ import (
 )
 
 func main() {
-	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example")) // WritableIPSecProfileRequest | 
+	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), openapiclient.IPSecProfileRequest_ike_policy{BriefIKEPolicyRequest: openapiclient.NewBriefIKEPolicyRequest("Name_example")}, openapiclient.IPSecProfileRequest_ipsec_policy{BriefIPSecPolicyRequest: openapiclient.NewBriefIPSecPolicyRequest("Name_example")}) // WritableIPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3143,7 +3143,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this IPSec profile.
-	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example")) // WritableIPSecProfileRequest | 
+	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), openapiclient.IPSecProfileRequest_ike_policy{BriefIKEPolicyRequest: openapiclient.NewBriefIKEPolicyRequest("Name_example")}, openapiclient.IPSecProfileRequest_ipsec_policy{BriefIPSecPolicyRequest: openapiclient.NewBriefIPSecPolicyRequest("Name_example")}) // WritableIPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4007,7 +4007,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(openapiclient.BriefL2VPNTerminationRequest_l2vpn{BriefL2VPNRequest: openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example")}, "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4071,7 +4071,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(openapiclient.BriefL2VPNTerminationRequest_l2vpn{BriefL2VPNRequest: openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example")}, "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4137,7 +4137,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(openapiclient.BriefL2VPNTerminationRequest_l2vpn{BriefL2VPNRequest: openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example")}, "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4203,7 +4203,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(openapiclient.BriefL2VPNTerminationRequest_l2vpn{BriefL2VPNRequest: openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example")}, "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4693,7 +4693,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this L2VPN termination.
-	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(openapiclient.BriefL2VPNTerminationRequest_l2vpn{BriefL2VPNRequest: openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example")}, "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6302,7 +6302,7 @@ import (
 )
 
 func main() {
-	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(openapiclient.PatchedWritableTunnelTerminationRequest_tunnel{BriefTunnelRequest: openapiclient.NewBriefTunnelRequest("Name_example")}, openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6366,7 +6366,7 @@ import (
 )
 
 func main() {
-	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(openapiclient.PatchedWritableTunnelTerminationRequest_tunnel{BriefTunnelRequest: openapiclient.NewBriefTunnelRequest("Name_example")}, openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6432,7 +6432,7 @@ import (
 )
 
 func main() {
-	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(openapiclient.PatchedWritableTunnelTerminationRequest_tunnel{BriefTunnelRequest: openapiclient.NewBriefTunnelRequest("Name_example")}, openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6498,7 +6498,7 @@ import (
 )
 
 func main() {
-	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), "TerminationType_example") // WritableTunnelTerminationRequest | 
+	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(openapiclient.PatchedWritableTunnelTerminationRequest_tunnel{BriefTunnelRequest: openapiclient.NewBriefTunnelRequest("Name_example")}, "TerminationType_example") // WritableTunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6968,7 +6968,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this tunnel termination.
-	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), "TerminationType_example") // WritableTunnelTerminationRequest | 
+	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(openapiclient.PatchedWritableTunnelTerminationRequest_tunnel{BriefTunnelRequest: openapiclient.NewBriefTunnelRequest("Name_example")}, "TerminationType_example") // WritableTunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

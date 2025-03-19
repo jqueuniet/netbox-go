@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**User** | [**BriefUserRequest**](BriefUserRequest.md) |  | 
+**User** | [**BookmarkRequestUser**](BookmarkRequestUser.md) |  | 
 **Read** | Pointer to **NullableTime** |  | [optional] 
 **EventType** | [**Event**](Event.md) |  | 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewNotificationRequest
 
-`func NewNotificationRequest(objectType string, objectId int64, user BriefUserRequest, eventType Event, ) *NotificationRequest`
+`func NewNotificationRequest(objectType string, objectId int64, user BookmarkRequestUser, eventType Event, ) *NotificationRequest`
 
 NewNotificationRequest instantiates a new NotificationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,20 +71,20 @@ SetObjectId sets ObjectId field to given value.
 
 ### GetUser
 
-`func (o *NotificationRequest) GetUser() BriefUserRequest`
+`func (o *NotificationRequest) GetUser() BookmarkRequestUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *NotificationRequest) GetUserOk() (*BriefUserRequest, bool)`
+`func (o *NotificationRequest) GetUserOk() (*BookmarkRequestUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *NotificationRequest) SetUser(v BriefUserRequest)`
+`func (o *NotificationRequest) SetUser(v BookmarkRequestUser)`
 
 SetUser sets User field to given value.
 

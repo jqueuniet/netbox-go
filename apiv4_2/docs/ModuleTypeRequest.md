@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Manufacturer** | [**BriefManufacturerRequest**](BriefManufacturerRequest.md) |  | 
+**Manufacturer** | [**BriefDeviceTypeRequestManufacturer**](BriefDeviceTypeRequestManufacturer.md) |  | 
 **Model** | **string** |  | 
 **PartNumber** | Pointer to **string** | Discrete part number (optional) | [optional] 
 **Airflow** | Pointer to [**NullableModuleTypeRequestAirflow**](ModuleTypeRequestAirflow.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewModuleTypeRequest
 
-`func NewModuleTypeRequest(manufacturer BriefManufacturerRequest, model string, ) *ModuleTypeRequest`
+`func NewModuleTypeRequest(manufacturer BriefDeviceTypeRequestManufacturer, model string, ) *ModuleTypeRequest`
 
 NewModuleTypeRequest instantiates a new ModuleTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetManufacturer
 
-`func (o *ModuleTypeRequest) GetManufacturer() BriefManufacturerRequest`
+`func (o *ModuleTypeRequest) GetManufacturer() BriefDeviceTypeRequestManufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *ModuleTypeRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+`func (o *ModuleTypeRequest) GetManufacturerOk() (*BriefDeviceTypeRequestManufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *ModuleTypeRequest) SetManufacturer(v BriefManufacturerRequest)`
+`func (o *ModuleTypeRequest) SetManufacturer(v BriefDeviceTypeRequestManufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 

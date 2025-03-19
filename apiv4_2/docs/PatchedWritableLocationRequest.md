@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
-**Site** | Pointer to [**BriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
+**Site** | Pointer to [**DeviceWithConfigContextRequestSite**](DeviceWithConfigContextRequestSite.md) |  | [optional] 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Facility** | Pointer to **string** | Local facility ID or description | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -86,20 +86,20 @@ HasSlug returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *PatchedWritableLocationRequest) GetSite() BriefSiteRequest`
+`func (o *PatchedWritableLocationRequest) GetSite() DeviceWithConfigContextRequestSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *PatchedWritableLocationRequest) GetSiteOk() (*BriefSiteRequest, bool)`
+`func (o *PatchedWritableLocationRequest) GetSiteOk() (*DeviceWithConfigContextRequestSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *PatchedWritableLocationRequest) SetSite(v BriefSiteRequest)`
+`func (o *PatchedWritableLocationRequest) SetSite(v DeviceWithConfigContextRequestSite)`
 
 SetSite sets Site field to given value.
 
@@ -171,20 +171,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PatchedWritableLocationRequest) GetTenant() BriefTenantRequest`
+`func (o *PatchedWritableLocationRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableLocationRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *PatchedWritableLocationRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableLocationRequest) SetTenant(v BriefTenantRequest)`
+`func (o *PatchedWritableLocationRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Site** | Pointer to [**BriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
-**Location** | Pointer to [**NullableBriefLocationRequest**](BriefLocationRequest.md) |  | [optional] 
+**Site** | Pointer to [**DeviceWithConfigContextRequestSite**](DeviceWithConfigContextRequestSite.md) |  | [optional] 
+**Location** | Pointer to [**NullableDeviceWithConfigContextRequestLocation**](DeviceWithConfigContextRequestLocation.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSite
 
-`func (o *PatchedPowerPanelRequest) GetSite() BriefSiteRequest`
+`func (o *PatchedPowerPanelRequest) GetSite() DeviceWithConfigContextRequestSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *PatchedPowerPanelRequest) GetSiteOk() (*BriefSiteRequest, bool)`
+`func (o *PatchedPowerPanelRequest) GetSiteOk() (*DeviceWithConfigContextRequestSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *PatchedPowerPanelRequest) SetSite(v BriefSiteRequest)`
+`func (o *PatchedPowerPanelRequest) SetSite(v DeviceWithConfigContextRequestSite)`
 
 SetSite sets Site field to given value.
 
@@ -58,20 +58,20 @@ HasSite returns a boolean if a field has been set.
 
 ### GetLocation
 
-`func (o *PatchedPowerPanelRequest) GetLocation() BriefLocationRequest`
+`func (o *PatchedPowerPanelRequest) GetLocation() DeviceWithConfigContextRequestLocation`
 
 GetLocation returns the Location field if non-nil, zero value otherwise.
 
 ### GetLocationOk
 
-`func (o *PatchedPowerPanelRequest) GetLocationOk() (*BriefLocationRequest, bool)`
+`func (o *PatchedPowerPanelRequest) GetLocationOk() (*DeviceWithConfigContextRequestLocation, bool)`
 
 GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocation
 
-`func (o *PatchedPowerPanelRequest) SetLocation(v BriefLocationRequest)`
+`func (o *PatchedPowerPanelRequest) SetLocation(v DeviceWithConfigContextRequestLocation)`
 
 SetLocation sets Location field to given value.
 

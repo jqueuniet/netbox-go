@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Circuit** | Pointer to [**BriefCircuitRequest**](BriefCircuitRequest.md) |  | [optional] 
+**Circuit** | Pointer to [**CircuitTerminationRequestCircuit**](CircuitTerminationRequestCircuit.md) |  | [optional] 
 **TermSide** | Pointer to [**TerminationSide1**](TerminationSide1.md) |  | [optional] 
 **TerminationType** | Pointer to **NullableString** |  | [optional] 
 **TerminationId** | Pointer to **NullableInt32** |  | [optional] 
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCircuit
 
-`func (o *PatchedCircuitTerminationRequest) GetCircuit() BriefCircuitRequest`
+`func (o *PatchedCircuitTerminationRequest) GetCircuit() CircuitTerminationRequestCircuit`
 
 GetCircuit returns the Circuit field if non-nil, zero value otherwise.
 
 ### GetCircuitOk
 
-`func (o *PatchedCircuitTerminationRequest) GetCircuitOk() (*BriefCircuitRequest, bool)`
+`func (o *PatchedCircuitTerminationRequest) GetCircuitOk() (*CircuitTerminationRequestCircuit, bool)`
 
 GetCircuitOk returns a tuple with the Circuit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCircuit
 
-`func (o *PatchedCircuitTerminationRequest) SetCircuit(v BriefCircuitRequest)`
+`func (o *PatchedCircuitTerminationRequest) SetCircuit(v CircuitTerminationRequestCircuit)`
 
 SetCircuit sets Circuit field to given value.
 

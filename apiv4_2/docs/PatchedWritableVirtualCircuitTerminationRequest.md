@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VirtualCircuit** | Pointer to [**BriefVirtualCircuitRequest**](BriefVirtualCircuitRequest.md) |  | [optional] 
+**VirtualCircuit** | Pointer to [**PatchedWritableVirtualCircuitTerminationRequestVirtualCircuit**](PatchedWritableVirtualCircuitTerminationRequestVirtualCircuit.md) |  | [optional] 
 **Role** | Pointer to [**PatchedWritableTunnelTerminationRequestRole**](PatchedWritableTunnelTerminationRequestRole.md) |  | [optional] 
-**Interface** | Pointer to [**BriefInterfaceRequest**](BriefInterfaceRequest.md) |  | [optional] 
+**Interface** | Pointer to [**PatchedWritableVirtualCircuitTerminationRequestInterface**](PatchedWritableVirtualCircuitTerminationRequestInterface.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetVirtualCircuit
 
-`func (o *PatchedWritableVirtualCircuitTerminationRequest) GetVirtualCircuit() BriefVirtualCircuitRequest`
+`func (o *PatchedWritableVirtualCircuitTerminationRequest) GetVirtualCircuit() PatchedWritableVirtualCircuitTerminationRequestVirtualCircuit`
 
 GetVirtualCircuit returns the VirtualCircuit field if non-nil, zero value otherwise.
 
 ### GetVirtualCircuitOk
 
-`func (o *PatchedWritableVirtualCircuitTerminationRequest) GetVirtualCircuitOk() (*BriefVirtualCircuitRequest, bool)`
+`func (o *PatchedWritableVirtualCircuitTerminationRequest) GetVirtualCircuitOk() (*PatchedWritableVirtualCircuitTerminationRequestVirtualCircuit, bool)`
 
 GetVirtualCircuitOk returns a tuple with the VirtualCircuit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVirtualCircuit
 
-`func (o *PatchedWritableVirtualCircuitTerminationRequest) SetVirtualCircuit(v BriefVirtualCircuitRequest)`
+`func (o *PatchedWritableVirtualCircuitTerminationRequest) SetVirtualCircuit(v PatchedWritableVirtualCircuitTerminationRequestVirtualCircuit)`
 
 SetVirtualCircuit sets VirtualCircuit field to given value.
 
@@ -82,20 +82,20 @@ HasRole returns a boolean if a field has been set.
 
 ### GetInterface
 
-`func (o *PatchedWritableVirtualCircuitTerminationRequest) GetInterface() BriefInterfaceRequest`
+`func (o *PatchedWritableVirtualCircuitTerminationRequest) GetInterface() PatchedWritableVirtualCircuitTerminationRequestInterface`
 
 GetInterface returns the Interface field if non-nil, zero value otherwise.
 
 ### GetInterfaceOk
 
-`func (o *PatchedWritableVirtualCircuitTerminationRequest) GetInterfaceOk() (*BriefInterfaceRequest, bool)`
+`func (o *PatchedWritableVirtualCircuitTerminationRequest) GetInterfaceOk() (*PatchedWritableVirtualCircuitTerminationRequestInterface, bool)`
 
 GetInterfaceOk returns a tuple with the Interface field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterface
 
-`func (o *PatchedWritableVirtualCircuitTerminationRequest) SetInterface(v BriefInterfaceRequest)`
+`func (o *PatchedWritableVirtualCircuitTerminationRequest) SetInterface(v PatchedWritableVirtualCircuitTerminationRequestInterface)`
 
 SetInterface sets Interface field to given value.
 

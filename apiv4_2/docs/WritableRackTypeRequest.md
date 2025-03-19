@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Manufacturer** | [**BriefManufacturerRequest**](BriefManufacturerRequest.md) |  | 
+**Manufacturer** | [**BriefDeviceTypeRequestManufacturer**](BriefDeviceTypeRequestManufacturer.md) |  | 
 **Model** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewWritableRackTypeRequest
 
-`func NewWritableRackTypeRequest(manufacturer BriefManufacturerRequest, model string, slug string, formFactor PatchedWritableRackTypeRequestFormFactor, ) *WritableRackTypeRequest`
+`func NewWritableRackTypeRequest(manufacturer BriefDeviceTypeRequestManufacturer, model string, slug string, formFactor PatchedWritableRackTypeRequestFormFactor, ) *WritableRackTypeRequest`
 
 NewWritableRackTypeRequest instantiates a new WritableRackTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -45,20 +45,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetManufacturer
 
-`func (o *WritableRackTypeRequest) GetManufacturer() BriefManufacturerRequest`
+`func (o *WritableRackTypeRequest) GetManufacturer() BriefDeviceTypeRequestManufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *WritableRackTypeRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+`func (o *WritableRackTypeRequest) GetManufacturerOk() (*BriefDeviceTypeRequestManufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *WritableRackTypeRequest) SetManufacturer(v BriefManufacturerRequest)`
+`func (o *WritableRackTypeRequest) SetManufacturer(v BriefDeviceTypeRequestManufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 

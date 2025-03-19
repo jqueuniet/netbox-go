@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | **string** |  | 
-**Vrf** | Pointer to [**NullableBriefVRFRequest**](BriefVRFRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableIPAddressRequestVrf**](IPAddressRequestVrf.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Status** | Pointer to [**IPAddressStatusValue**](IPAddressStatusValue.md) |  | [optional] 
 **Role** | Pointer to [**IPAddressRoleValue**](IPAddressRoleValue.md) |  | [optional] 
 **AssignedObjectType** | Pointer to **NullableString** |  | [optional] 
@@ -59,20 +59,20 @@ SetAddress sets Address field to given value.
 
 ### GetVrf
 
-`func (o *IPAddressRequest) GetVrf() BriefVRFRequest`
+`func (o *IPAddressRequest) GetVrf() IPAddressRequestVrf`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *IPAddressRequest) GetVrfOk() (*BriefVRFRequest, bool)`
+`func (o *IPAddressRequest) GetVrfOk() (*IPAddressRequestVrf, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *IPAddressRequest) SetVrf(v BriefVRFRequest)`
+`func (o *IPAddressRequest) SetVrf(v IPAddressRequestVrf)`
 
 SetVrf sets Vrf field to given value.
 
@@ -94,20 +94,20 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetTenant
 
-`func (o *IPAddressRequest) GetTenant() BriefTenantRequest`
+`func (o *IPAddressRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *IPAddressRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *IPAddressRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *IPAddressRequest) SetTenant(v BriefTenantRequest)`
+`func (o *IPAddressRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

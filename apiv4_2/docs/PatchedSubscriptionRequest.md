@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectType** | Pointer to **string** |  | [optional] 
 **ObjectId** | Pointer to **int64** |  | [optional] 
-**User** | Pointer to [**BriefUserRequest**](BriefUserRequest.md) |  | [optional] 
+**User** | Pointer to [**BookmarkRequestUser**](BookmarkRequestUser.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasObjectId returns a boolean if a field has been set.
 
 ### GetUser
 
-`func (o *PatchedSubscriptionRequest) GetUser() BriefUserRequest`
+`func (o *PatchedSubscriptionRequest) GetUser() BookmarkRequestUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *PatchedSubscriptionRequest) GetUserOk() (*BriefUserRequest, bool)`
+`func (o *PatchedSubscriptionRequest) GetUserOk() (*BookmarkRequestUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *PatchedSubscriptionRequest) SetUser(v BriefUserRequest)`
+`func (o *PatchedSubscriptionRequest) SetUser(v BookmarkRequestUser)`
 
 SetUser sets User field to given value.
 

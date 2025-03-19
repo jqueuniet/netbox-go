@@ -129,7 +129,7 @@ import (
 )
 
 func main() {
-	circuitGroupAssignmentRequest := []openapiclient.CircuitGroupAssignmentRequest{*openapiclient.NewCircuitGroupAssignmentRequest(*openapiclient.NewBriefCircuitGroupRequest("Name_example"), "MemberType_example", int64(123))} // []CircuitGroupAssignmentRequest | 
+	circuitGroupAssignmentRequest := []openapiclient.CircuitGroupAssignmentRequest{*openapiclient.NewCircuitGroupAssignmentRequest(openapiclient.BriefCircuitGroupAssignmentSerializer_Request_group{BriefCircuitGroupRequest: openapiclient.NewBriefCircuitGroupRequest("Name_example")}, "MemberType_example", int64(123))} // []CircuitGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -193,7 +193,7 @@ import (
 )
 
 func main() {
-	circuitGroupAssignmentRequest := []openapiclient.CircuitGroupAssignmentRequest{*openapiclient.NewCircuitGroupAssignmentRequest(*openapiclient.NewBriefCircuitGroupRequest("Name_example"), "MemberType_example", int64(123))} // []CircuitGroupAssignmentRequest | 
+	circuitGroupAssignmentRequest := []openapiclient.CircuitGroupAssignmentRequest{*openapiclient.NewCircuitGroupAssignmentRequest(openapiclient.BriefCircuitGroupAssignmentSerializer_Request_group{BriefCircuitGroupRequest: openapiclient.NewBriefCircuitGroupRequest("Name_example")}, "MemberType_example", int64(123))} // []CircuitGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -259,7 +259,7 @@ import (
 )
 
 func main() {
-	circuitGroupAssignmentRequest := []openapiclient.CircuitGroupAssignmentRequest{*openapiclient.NewCircuitGroupAssignmentRequest(*openapiclient.NewBriefCircuitGroupRequest("Name_example"), "MemberType_example", int64(123))} // []CircuitGroupAssignmentRequest | 
+	circuitGroupAssignmentRequest := []openapiclient.CircuitGroupAssignmentRequest{*openapiclient.NewCircuitGroupAssignmentRequest(openapiclient.BriefCircuitGroupAssignmentSerializer_Request_group{BriefCircuitGroupRequest: openapiclient.NewBriefCircuitGroupRequest("Name_example")}, "MemberType_example", int64(123))} // []CircuitGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -325,7 +325,7 @@ import (
 )
 
 func main() {
-	writableCircuitGroupAssignmentRequest := *openapiclient.NewWritableCircuitGroupAssignmentRequest(*openapiclient.NewBriefCircuitGroupRequest("Name_example"), "MemberType_example", int64(123)) // WritableCircuitGroupAssignmentRequest | 
+	writableCircuitGroupAssignmentRequest := *openapiclient.NewWritableCircuitGroupAssignmentRequest(openapiclient.BriefCircuitGroupAssignmentSerializer_Request_group{BriefCircuitGroupRequest: openapiclient.NewBriefCircuitGroupRequest("Name_example")}, "MemberType_example", int64(123)) // WritableCircuitGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -767,7 +767,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this Circuit group assignment.
-	writableCircuitGroupAssignmentRequest := *openapiclient.NewWritableCircuitGroupAssignmentRequest(*openapiclient.NewBriefCircuitGroupRequest("Name_example"), "MemberType_example", int64(123)) // WritableCircuitGroupAssignmentRequest | 
+	writableCircuitGroupAssignmentRequest := *openapiclient.NewWritableCircuitGroupAssignmentRequest(openapiclient.BriefCircuitGroupAssignmentSerializer_Request_group{BriefCircuitGroupRequest: openapiclient.NewBriefCircuitGroupRequest("Name_example")}, "MemberType_example", int64(123)) // WritableCircuitGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1589,7 +1589,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), openapiclient.Termination_side_1("A"))} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(openapiclient.CircuitTerminationRequest_circuit{BriefCircuitRequest: openapiclient.NewBriefCircuitRequest("Cid_example", openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")})}, openapiclient.Termination_side_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1653,7 +1653,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), openapiclient.Termination_side_1("A"))} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(openapiclient.CircuitTerminationRequest_circuit{BriefCircuitRequest: openapiclient.NewBriefCircuitRequest("Cid_example", openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")})}, openapiclient.Termination_side_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1719,7 +1719,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), openapiclient.Termination_side_1("A"))} // []CircuitTerminationRequest | 
+	circuitTerminationRequest := []openapiclient.CircuitTerminationRequest{*openapiclient.NewCircuitTerminationRequest(openapiclient.CircuitTerminationRequest_circuit{BriefCircuitRequest: openapiclient.NewBriefCircuitRequest("Cid_example", openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")})}, openapiclient.Termination_side_1("A"))} // []CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1785,7 +1785,7 @@ import (
 )
 
 func main() {
-	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), openapiclient.Termination_side_1("A")) // CircuitTerminationRequest | 
+	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(openapiclient.CircuitTerminationRequest_circuit{BriefCircuitRequest: openapiclient.NewBriefCircuitRequest("Cid_example", openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")})}, openapiclient.Termination_side_1("A")) // CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2431,7 +2431,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit termination.
-	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(*openapiclient.NewBriefCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")), openapiclient.Termination_side_1("A")) // CircuitTerminationRequest | 
+	circuitTerminationRequest := *openapiclient.NewCircuitTerminationRequest(openapiclient.CircuitTerminationRequest_circuit{BriefCircuitRequest: openapiclient.NewBriefCircuitRequest("Cid_example", openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")})}, openapiclient.Termination_side_1("A")) // CircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3259,7 +3259,7 @@ import (
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, openapiclient.CircuitRequest_type{BriefCircuitTypeRequest: openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")})} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3323,7 +3323,7 @@ import (
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, openapiclient.CircuitRequest_type{BriefCircuitTypeRequest: openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")})} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3389,7 +3389,7 @@ import (
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, openapiclient.CircuitRequest_type{BriefCircuitTypeRequest: openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")})} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3455,7 +3455,7 @@ import (
 )
 
 func main() {
-	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")) // WritableCircuitRequest | 
+	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, openapiclient.CircuitRequest_type{BriefCircuitTypeRequest: openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")}) // WritableCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3570,7 +3570,7 @@ Name | Type | Description  | Notes
 
 ## CircuitsCircuitsList
 
-> PaginatedCircuitList CircuitsCircuitsList(ctx).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateEmpty(commitRateEmpty).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Distance(distance).DistanceEmpty(distanceEmpty).DistanceGt(distanceGt).DistanceGte(distanceGte).DistanceLt(distanceLt).DistanceLte(distanceLte).DistanceN(distanceN).DistanceUnit(distanceUnit).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateEmpty(installDateEmpty).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccount(providerAccount).ProviderAccountN(providerAccountN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationAId(terminationAId).TerminationAIdN(terminationAIdN).TerminationDate(terminationDate).TerminationDateEmpty(terminationDateEmpty).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).TerminationZId(terminationZId).TerminationZIdN(terminationZIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedCircuitList CircuitsCircuitsList(ctx).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateEmpty(commitRateEmpty).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Distance(distance).DistanceEmpty(distanceEmpty).DistanceGt(distanceGt).DistanceGte(distanceGte).DistanceLt(distanceLt).DistanceLte(distanceLte).DistanceN(distanceN).DistanceUnit(distanceUnit).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateEmpty(installDateEmpty).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccount(providerAccount).ProviderAccountN(providerAccountN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationAId(terminationAId).TerminationAIdN(terminationAIdN).TerminationDate(terminationDate).TerminationDateEmpty(terminationDateEmpty).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).TerminationZId(terminationZId).TerminationZIdN(terminationZIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -3663,6 +3663,8 @@ func main() {
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	locationId := []int32{int32(123)} // []int32 | Location (ID) (optional)
+	locationIdN := []int32{int32(123)} // []int32 | Location (ID) (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
@@ -3729,7 +3731,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsList(context.Background()).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateEmpty(commitRateEmpty).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Distance(distance).DistanceEmpty(distanceEmpty).DistanceGt(distanceGt).DistanceGte(distanceGte).DistanceLt(distanceLt).DistanceLte(distanceLte).DistanceN(distanceN).DistanceUnit(distanceUnit).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateEmpty(installDateEmpty).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccount(providerAccount).ProviderAccountN(providerAccountN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationAId(terminationAId).TerminationAIdN(terminationAIdN).TerminationDate(terminationDate).TerminationDateEmpty(terminationDateEmpty).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).TerminationZId(terminationZId).TerminationZIdN(terminationZIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.CircuitsAPI.CircuitsCircuitsList(context.Background()).Cid(cid).CidEmpty(cidEmpty).CidIc(cidIc).CidIe(cidIe).CidIew(cidIew).CidIsw(cidIsw).CidN(cidN).CidNic(cidNic).CidNie(cidNie).CidNiew(cidNiew).CidNisw(cidNisw).CommitRate(commitRate).CommitRateEmpty(commitRateEmpty).CommitRateGt(commitRateGt).CommitRateGte(commitRateGte).CommitRateLt(commitRateLt).CommitRateLte(commitRateLte).CommitRateN(commitRateN).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).Distance(distance).DistanceEmpty(distanceEmpty).DistanceGt(distanceGt).DistanceGte(distanceGte).DistanceLt(distanceLt).DistanceLte(distanceLte).DistanceN(distanceN).DistanceUnit(distanceUnit).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).InstallDate(installDate).InstallDateEmpty(installDateEmpty).InstallDateGt(installDateGt).InstallDateGte(installDateGte).InstallDateLt(installDateLt).InstallDateLte(installDateLte).InstallDateN(installDateN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).LocationId(locationId).LocationIdN(locationIdN).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Provider(provider).ProviderN(providerN).ProviderAccount(providerAccount).ProviderAccountN(providerAccountN).ProviderAccountId(providerAccountId).ProviderAccountIdN(providerAccountIdN).ProviderId(providerId).ProviderIdN(providerIdN).ProviderNetworkId(providerNetworkId).ProviderNetworkIdN(providerNetworkIdN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).Tag(tag).TagN(tagN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).TerminationAId(terminationAId).TerminationAIdN(terminationAIdN).TerminationDate(terminationDate).TerminationDateEmpty(terminationDateEmpty).TerminationDateGt(terminationDateGt).TerminationDateGte(terminationDateGte).TerminationDateLt(terminationDateLt).TerminationDateLte(terminationDateLte).TerminationDateN(terminationDateN).TerminationZId(terminationZId).TerminationZIdN(terminationZIdN).Type_(type_).TypeN(typeN).TypeId(typeId).TypeIdN(typeIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CircuitsAPI.CircuitsCircuitsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3823,6 +3825,8 @@ Name | Type | Description  | Notes
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **locationId** | **[]int32** | Location (ID) | 
+ **locationIdN** | **[]int32** | Location (ID) | 
  **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
@@ -4069,7 +4073,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit.
-	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")) // WritableCircuitRequest | 
+	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, openapiclient.CircuitRequest_type{BriefCircuitTypeRequest: openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")}) // WritableCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4140,7 +4144,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, "Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4204,7 +4208,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, "Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4270,7 +4274,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, "Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4336,7 +4340,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := *openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example") // ProviderAccountRequest | 
+	providerAccountRequest := *openapiclient.NewProviderAccountRequest(openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, "Account_example") // ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4812,7 +4816,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider account.
-	providerAccountRequest := *openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example") // ProviderAccountRequest | 
+	providerAccountRequest := *openapiclient.NewProviderAccountRequest(openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, "Account_example") // ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4883,7 +4887,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, "Name_example")} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4947,7 +4951,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, "Name_example")} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5013,7 +5017,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, "Name_example")} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5079,7 +5083,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example") // ProviderNetworkRequest | 
+	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest(openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, "Name_example") // ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5555,7 +5559,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider network.
-	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example") // ProviderNetworkRequest | 
+	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest(openapiclient.BriefCircuitRequest_provider{BriefProviderRequest: openapiclient.NewBriefProviderRequest("Name_example", "Slug_example")}, "Name_example") // ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6405,7 +6409,7 @@ import (
 )
 
 func main() {
-	virtualCircuitTerminationRequest := []openapiclient.VirtualCircuitTerminationRequest{*openapiclient.NewVirtualCircuitTerminationRequest(*openapiclient.NewBriefVirtualCircuitRequest("Cid_example", *openapiclient.NewBriefProviderNetworkRequest("Name_example")), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"))} // []VirtualCircuitTerminationRequest | 
+	virtualCircuitTerminationRequest := []openapiclient.VirtualCircuitTerminationRequest{*openapiclient.NewVirtualCircuitTerminationRequest(openapiclient.PatchedWritableVirtualCircuitTerminationRequest_virtual_circuit{BriefVirtualCircuitRequest: openapiclient.NewBriefVirtualCircuitRequest("Cid_example", openapiclient.BriefVirtualCircuitRequest_provider_network{BriefProviderNetworkRequest: openapiclient.NewBriefProviderNetworkRequest("Name_example")})}, openapiclient.PatchedWritableVirtualCircuitTerminationRequest_interface{BriefInterfaceRequest: openapiclient.NewBriefInterfaceRequest(openapiclient.BriefInterfaceRequest_device{BriefDeviceRequest: openapiclient.NewBriefDeviceRequest()}, "Name_example")})} // []VirtualCircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6469,7 +6473,7 @@ import (
 )
 
 func main() {
-	virtualCircuitTerminationRequest := []openapiclient.VirtualCircuitTerminationRequest{*openapiclient.NewVirtualCircuitTerminationRequest(*openapiclient.NewBriefVirtualCircuitRequest("Cid_example", *openapiclient.NewBriefProviderNetworkRequest("Name_example")), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"))} // []VirtualCircuitTerminationRequest | 
+	virtualCircuitTerminationRequest := []openapiclient.VirtualCircuitTerminationRequest{*openapiclient.NewVirtualCircuitTerminationRequest(openapiclient.PatchedWritableVirtualCircuitTerminationRequest_virtual_circuit{BriefVirtualCircuitRequest: openapiclient.NewBriefVirtualCircuitRequest("Cid_example", openapiclient.BriefVirtualCircuitRequest_provider_network{BriefProviderNetworkRequest: openapiclient.NewBriefProviderNetworkRequest("Name_example")})}, openapiclient.PatchedWritableVirtualCircuitTerminationRequest_interface{BriefInterfaceRequest: openapiclient.NewBriefInterfaceRequest(openapiclient.BriefInterfaceRequest_device{BriefDeviceRequest: openapiclient.NewBriefDeviceRequest()}, "Name_example")})} // []VirtualCircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6535,7 +6539,7 @@ import (
 )
 
 func main() {
-	virtualCircuitTerminationRequest := []openapiclient.VirtualCircuitTerminationRequest{*openapiclient.NewVirtualCircuitTerminationRequest(*openapiclient.NewBriefVirtualCircuitRequest("Cid_example", *openapiclient.NewBriefProviderNetworkRequest("Name_example")), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"))} // []VirtualCircuitTerminationRequest | 
+	virtualCircuitTerminationRequest := []openapiclient.VirtualCircuitTerminationRequest{*openapiclient.NewVirtualCircuitTerminationRequest(openapiclient.PatchedWritableVirtualCircuitTerminationRequest_virtual_circuit{BriefVirtualCircuitRequest: openapiclient.NewBriefVirtualCircuitRequest("Cid_example", openapiclient.BriefVirtualCircuitRequest_provider_network{BriefProviderNetworkRequest: openapiclient.NewBriefProviderNetworkRequest("Name_example")})}, openapiclient.PatchedWritableVirtualCircuitTerminationRequest_interface{BriefInterfaceRequest: openapiclient.NewBriefInterfaceRequest(openapiclient.BriefInterfaceRequest_device{BriefDeviceRequest: openapiclient.NewBriefDeviceRequest()}, "Name_example")})} // []VirtualCircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6601,7 +6605,7 @@ import (
 )
 
 func main() {
-	writableVirtualCircuitTerminationRequest := *openapiclient.NewWritableVirtualCircuitTerminationRequest(*openapiclient.NewBriefVirtualCircuitRequest("Cid_example", *openapiclient.NewBriefProviderNetworkRequest("Name_example")), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")) // WritableVirtualCircuitTerminationRequest | 
+	writableVirtualCircuitTerminationRequest := *openapiclient.NewWritableVirtualCircuitTerminationRequest(openapiclient.PatchedWritableVirtualCircuitTerminationRequest_virtual_circuit{BriefVirtualCircuitRequest: openapiclient.NewBriefVirtualCircuitRequest("Cid_example", openapiclient.BriefVirtualCircuitRequest_provider_network{BriefProviderNetworkRequest: openapiclient.NewBriefProviderNetworkRequest("Name_example")})}, openapiclient.PatchedWritableVirtualCircuitTerminationRequest_interface{BriefInterfaceRequest: openapiclient.NewBriefInterfaceRequest(openapiclient.BriefInterfaceRequest_device{BriefDeviceRequest: openapiclient.NewBriefDeviceRequest()}, "Name_example")}) // WritableVirtualCircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7145,7 +7149,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this virtual circuit termination.
-	writableVirtualCircuitTerminationRequest := *openapiclient.NewWritableVirtualCircuitTerminationRequest(*openapiclient.NewBriefVirtualCircuitRequest("Cid_example", *openapiclient.NewBriefProviderNetworkRequest("Name_example")), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")) // WritableVirtualCircuitTerminationRequest | 
+	writableVirtualCircuitTerminationRequest := *openapiclient.NewWritableVirtualCircuitTerminationRequest(openapiclient.PatchedWritableVirtualCircuitTerminationRequest_virtual_circuit{BriefVirtualCircuitRequest: openapiclient.NewBriefVirtualCircuitRequest("Cid_example", openapiclient.BriefVirtualCircuitRequest_provider_network{BriefProviderNetworkRequest: openapiclient.NewBriefProviderNetworkRequest("Name_example")})}, openapiclient.PatchedWritableVirtualCircuitTerminationRequest_interface{BriefInterfaceRequest: openapiclient.NewBriefInterfaceRequest(openapiclient.BriefInterfaceRequest_device{BriefDeviceRequest: openapiclient.NewBriefDeviceRequest()}, "Name_example")}) // WritableVirtualCircuitTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7973,7 +7977,7 @@ import (
 )
 
 func main() {
-	virtualCircuitRequest := []openapiclient.VirtualCircuitRequest{*openapiclient.NewVirtualCircuitRequest("Cid_example", *openapiclient.NewBriefProviderNetworkRequest("Name_example"), *openapiclient.NewBriefVirtualCircuitTypeRequest("Name_example", "Slug_example"))} // []VirtualCircuitRequest | 
+	virtualCircuitRequest := []openapiclient.VirtualCircuitRequest{*openapiclient.NewVirtualCircuitRequest("Cid_example", openapiclient.BriefVirtualCircuitRequest_provider_network{BriefProviderNetworkRequest: openapiclient.NewBriefProviderNetworkRequest("Name_example")}, openapiclient.PatchedWritableVirtualCircuitRequest_type{BriefVirtualCircuitTypeRequest: openapiclient.NewBriefVirtualCircuitTypeRequest("Name_example", "Slug_example")})} // []VirtualCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8037,7 +8041,7 @@ import (
 )
 
 func main() {
-	virtualCircuitRequest := []openapiclient.VirtualCircuitRequest{*openapiclient.NewVirtualCircuitRequest("Cid_example", *openapiclient.NewBriefProviderNetworkRequest("Name_example"), *openapiclient.NewBriefVirtualCircuitTypeRequest("Name_example", "Slug_example"))} // []VirtualCircuitRequest | 
+	virtualCircuitRequest := []openapiclient.VirtualCircuitRequest{*openapiclient.NewVirtualCircuitRequest("Cid_example", openapiclient.BriefVirtualCircuitRequest_provider_network{BriefProviderNetworkRequest: openapiclient.NewBriefProviderNetworkRequest("Name_example")}, openapiclient.PatchedWritableVirtualCircuitRequest_type{BriefVirtualCircuitTypeRequest: openapiclient.NewBriefVirtualCircuitTypeRequest("Name_example", "Slug_example")})} // []VirtualCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8103,7 +8107,7 @@ import (
 )
 
 func main() {
-	virtualCircuitRequest := []openapiclient.VirtualCircuitRequest{*openapiclient.NewVirtualCircuitRequest("Cid_example", *openapiclient.NewBriefProviderNetworkRequest("Name_example"), *openapiclient.NewBriefVirtualCircuitTypeRequest("Name_example", "Slug_example"))} // []VirtualCircuitRequest | 
+	virtualCircuitRequest := []openapiclient.VirtualCircuitRequest{*openapiclient.NewVirtualCircuitRequest("Cid_example", openapiclient.BriefVirtualCircuitRequest_provider_network{BriefProviderNetworkRequest: openapiclient.NewBriefProviderNetworkRequest("Name_example")}, openapiclient.PatchedWritableVirtualCircuitRequest_type{BriefVirtualCircuitTypeRequest: openapiclient.NewBriefVirtualCircuitTypeRequest("Name_example", "Slug_example")})} // []VirtualCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8169,7 +8173,7 @@ import (
 )
 
 func main() {
-	writableVirtualCircuitRequest := *openapiclient.NewWritableVirtualCircuitRequest("Cid_example", *openapiclient.NewBriefProviderNetworkRequest("Name_example"), *openapiclient.NewBriefVirtualCircuitTypeRequest("Name_example", "Slug_example")) // WritableVirtualCircuitRequest | 
+	writableVirtualCircuitRequest := *openapiclient.NewWritableVirtualCircuitRequest("Cid_example", openapiclient.BriefVirtualCircuitRequest_provider_network{BriefProviderNetworkRequest: openapiclient.NewBriefProviderNetworkRequest("Name_example")}, openapiclient.PatchedWritableVirtualCircuitRequest_type{BriefVirtualCircuitTypeRequest: openapiclient.NewBriefVirtualCircuitTypeRequest("Name_example", "Slug_example")}) // WritableVirtualCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8681,7 +8685,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this virtual circuit.
-	writableVirtualCircuitRequest := *openapiclient.NewWritableVirtualCircuitRequest("Cid_example", *openapiclient.NewBriefProviderNetworkRequest("Name_example"), *openapiclient.NewBriefVirtualCircuitTypeRequest("Name_example", "Slug_example")) // WritableVirtualCircuitRequest | 
+	writableVirtualCircuitRequest := *openapiclient.NewWritableVirtualCircuitRequest("Cid_example", openapiclient.BriefVirtualCircuitRequest_provider_network{BriefProviderNetworkRequest: openapiclient.NewBriefProviderNetworkRequest("Name_example")}, openapiclient.PatchedWritableVirtualCircuitRequest_type{BriefVirtualCircuitTypeRequest: openapiclient.NewBriefVirtualCircuitTypeRequest("Name_example", "Slug_example")}) // WritableVirtualCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

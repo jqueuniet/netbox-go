@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
-**Group** | Pointer to [**NullableBriefVLANGroupRequest**](BriefVLANGroupRequest.md) |  | [optional] 
+**Site** | Pointer to [**NullablePatchedWritableVLANRequestSite**](PatchedWritableVLANRequestSite.md) |  | [optional] 
+**Group** | Pointer to [**NullablePatchedWritableVLANRequestGroup**](PatchedWritableVLANRequestGroup.md) |  | [optional] 
 **Vid** | **int32** | Numeric VLAN ID (1-4094) | 
 **Name** | **string** |  | 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Status** | Pointer to [**PatchedWritableVLANRequestStatus**](PatchedWritableVLANRequestStatus.md) |  | [optional] 
-**Role** | Pointer to [**NullableBriefRoleRequest**](BriefRoleRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullableIPRangeRequestRole**](IPRangeRequestRole.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **QinqRole** | Pointer to [**NullableQInQRole**](QInQRole.md) |  | [optional] 
 **QinqSvlan** | Pointer to **NullableInt32** |  | [optional] 
@@ -39,20 +39,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSite
 
-`func (o *WritableVLANRequest) GetSite() BriefSiteRequest`
+`func (o *WritableVLANRequest) GetSite() PatchedWritableVLANRequestSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *WritableVLANRequest) GetSiteOk() (*BriefSiteRequest, bool)`
+`func (o *WritableVLANRequest) GetSiteOk() (*PatchedWritableVLANRequestSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *WritableVLANRequest) SetSite(v BriefSiteRequest)`
+`func (o *WritableVLANRequest) SetSite(v PatchedWritableVLANRequestSite)`
 
 SetSite sets Site field to given value.
 
@@ -74,20 +74,20 @@ HasSite returns a boolean if a field has been set.
 UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetGroup
 
-`func (o *WritableVLANRequest) GetGroup() BriefVLANGroupRequest`
+`func (o *WritableVLANRequest) GetGroup() PatchedWritableVLANRequestGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *WritableVLANRequest) GetGroupOk() (*BriefVLANGroupRequest, bool)`
+`func (o *WritableVLANRequest) GetGroupOk() (*PatchedWritableVLANRequestGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *WritableVLANRequest) SetGroup(v BriefVLANGroupRequest)`
+`func (o *WritableVLANRequest) SetGroup(v PatchedWritableVLANRequestGroup)`
 
 SetGroup sets Group field to given value.
 
@@ -149,20 +149,20 @@ SetName sets Name field to given value.
 
 ### GetTenant
 
-`func (o *WritableVLANRequest) GetTenant() BriefTenantRequest`
+`func (o *WritableVLANRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableVLANRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *WritableVLANRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableVLANRequest) SetTenant(v BriefTenantRequest)`
+`func (o *WritableVLANRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -209,20 +209,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *WritableVLANRequest) GetRole() BriefRoleRequest`
+`func (o *WritableVLANRequest) GetRole() IPRangeRequestRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *WritableVLANRequest) GetRoleOk() (*BriefRoleRequest, bool)`
+`func (o *WritableVLANRequest) GetRoleOk() (*IPRangeRequestRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *WritableVLANRequest) SetRole(v BriefRoleRequest)`
+`func (o *WritableVLANRequest) SetRole(v IPRangeRequestRole)`
 
 SetRole sets Role field to given value.
 

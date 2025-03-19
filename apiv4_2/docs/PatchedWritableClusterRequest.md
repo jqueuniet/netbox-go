@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to [**BriefClusterTypeRequest**](BriefClusterTypeRequest.md) |  | [optional] 
-**Group** | Pointer to [**NullableBriefClusterGroupRequest**](BriefClusterGroupRequest.md) |  | [optional] 
+**Type** | Pointer to [**ClusterRequestType**](ClusterRequestType.md) |  | [optional] 
+**Group** | Pointer to [**NullableClusterRequestGroup**](ClusterRequestGroup.md) |  | [optional] 
 **Status** | Pointer to [**ClusterStatusValue**](ClusterStatusValue.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **ScopeType** | Pointer to **NullableString** |  | [optional] 
 **ScopeId** | Pointer to **NullableInt32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -62,20 +62,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *PatchedWritableClusterRequest) GetType() BriefClusterTypeRequest`
+`func (o *PatchedWritableClusterRequest) GetType() ClusterRequestType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PatchedWritableClusterRequest) GetTypeOk() (*BriefClusterTypeRequest, bool)`
+`func (o *PatchedWritableClusterRequest) GetTypeOk() (*ClusterRequestType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PatchedWritableClusterRequest) SetType(v BriefClusterTypeRequest)`
+`func (o *PatchedWritableClusterRequest) SetType(v ClusterRequestType)`
 
 SetType sets Type field to given value.
 
@@ -87,20 +87,20 @@ HasType returns a boolean if a field has been set.
 
 ### GetGroup
 
-`func (o *PatchedWritableClusterRequest) GetGroup() BriefClusterGroupRequest`
+`func (o *PatchedWritableClusterRequest) GetGroup() ClusterRequestGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *PatchedWritableClusterRequest) GetGroupOk() (*BriefClusterGroupRequest, bool)`
+`func (o *PatchedWritableClusterRequest) GetGroupOk() (*ClusterRequestGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *PatchedWritableClusterRequest) SetGroup(v BriefClusterGroupRequest)`
+`func (o *PatchedWritableClusterRequest) SetGroup(v ClusterRequestGroup)`
 
 SetGroup sets Group field to given value.
 
@@ -147,20 +147,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PatchedWritableClusterRequest) GetTenant() BriefTenantRequest`
+`func (o *PatchedWritableClusterRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableClusterRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *PatchedWritableClusterRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableClusterRequest) SetTenant(v BriefTenantRequest)`
+`func (o *PatchedWritableClusterRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

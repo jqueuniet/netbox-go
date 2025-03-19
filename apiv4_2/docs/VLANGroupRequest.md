@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | 
 **ScopeType** | Pointer to **NullableString** |  | [optional] 
 **ScopeId** | Pointer to **NullableInt32** |  | [optional] 
+**VidRanges** | Pointer to [**[][][]int32**]([][]int32.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -141,6 +142,31 @@ HasScopeId returns a boolean if a field has been set.
 `func (o *VLANGroupRequest) UnsetScopeId()`
 
 UnsetScopeId ensures that no value is present for ScopeId, not even an explicit nil
+### GetVidRanges
+
+`func (o *VLANGroupRequest) GetVidRanges() [][][]int32`
+
+GetVidRanges returns the VidRanges field if non-nil, zero value otherwise.
+
+### GetVidRangesOk
+
+`func (o *VLANGroupRequest) GetVidRangesOk() (*[][][]int32, bool)`
+
+GetVidRangesOk returns a tuple with the VidRanges field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVidRanges
+
+`func (o *VLANGroupRequest) SetVidRanges(v [][][]int32)`
+
+SetVidRanges sets VidRanges field to given value.
+
+### HasVidRanges
+
+`func (o *VLANGroupRequest) HasVidRanges() bool`
+
+HasVidRanges returns a boolean if a field has been set.
+
 ### GetDescription
 
 `func (o *VLANGroupRequest) GetDescription() string`

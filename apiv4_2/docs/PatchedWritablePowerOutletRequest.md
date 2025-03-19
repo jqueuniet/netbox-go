@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
-**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
+**Device** | Pointer to [**BriefInterfaceRequestDevice**](BriefInterfaceRequestDevice.md) |  | [optional] 
+**Module** | Pointer to [**NullableConsolePortRequestModule**](ConsolePortRequestModule.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**NullablePatchedWritablePowerOutletRequestType**](PatchedWritablePowerOutletRequestType.md) |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
-**PowerPort** | Pointer to [**NullableBriefPowerPortRequest**](BriefPowerPortRequest.md) |  | [optional] 
+**PowerPort** | Pointer to [**NullablePatchedWritablePowerOutletRequestPowerPort**](PatchedWritablePowerOutletRequestPowerPort.md) |  | [optional] 
 **FeedLeg** | Pointer to [**NullablePatchedWritablePowerOutletRequestFeedLeg**](PatchedWritablePowerOutletRequestFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PatchedWritablePowerOutletRequest) GetDevice() BriefDeviceRequest`
+`func (o *PatchedWritablePowerOutletRequest) GetDevice() BriefInterfaceRequestDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PatchedWritablePowerOutletRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *PatchedWritablePowerOutletRequest) GetDeviceOk() (*BriefInterfaceRequestDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PatchedWritablePowerOutletRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *PatchedWritablePowerOutletRequest) SetDevice(v BriefInterfaceRequestDevice)`
 
 SetDevice sets Device field to given value.
 
@@ -63,20 +63,20 @@ HasDevice returns a boolean if a field has been set.
 
 ### GetModule
 
-`func (o *PatchedWritablePowerOutletRequest) GetModule() BriefModuleRequest`
+`func (o *PatchedWritablePowerOutletRequest) GetModule() ConsolePortRequestModule`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *PatchedWritablePowerOutletRequest) GetModuleOk() (*BriefModuleRequest, bool)`
+`func (o *PatchedWritablePowerOutletRequest) GetModuleOk() (*ConsolePortRequestModule, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *PatchedWritablePowerOutletRequest) SetModule(v BriefModuleRequest)`
+`func (o *PatchedWritablePowerOutletRequest) SetModule(v ConsolePortRequestModule)`
 
 SetModule sets Module field to given value.
 
@@ -208,20 +208,20 @@ HasColor returns a boolean if a field has been set.
 
 ### GetPowerPort
 
-`func (o *PatchedWritablePowerOutletRequest) GetPowerPort() BriefPowerPortRequest`
+`func (o *PatchedWritablePowerOutletRequest) GetPowerPort() PatchedWritablePowerOutletRequestPowerPort`
 
 GetPowerPort returns the PowerPort field if non-nil, zero value otherwise.
 
 ### GetPowerPortOk
 
-`func (o *PatchedWritablePowerOutletRequest) GetPowerPortOk() (*BriefPowerPortRequest, bool)`
+`func (o *PatchedWritablePowerOutletRequest) GetPowerPortOk() (*PatchedWritablePowerOutletRequestPowerPort, bool)`
 
 GetPowerPortOk returns a tuple with the PowerPort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPowerPort
 
-`func (o *PatchedWritablePowerOutletRequest) SetPowerPort(v BriefPowerPortRequest)`
+`func (o *PatchedWritablePowerOutletRequest) SetPowerPort(v PatchedWritablePowerOutletRequestPowerPort)`
 
 SetPowerPort sets PowerPort field to given value.
 

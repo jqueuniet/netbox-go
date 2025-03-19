@@ -1541,7 +1541,7 @@ import (
 )
 
 func main() {
-	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewBriefUserRequest("Username_example"))} // []TokenRequest | 
+	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")})} // []TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1605,7 +1605,7 @@ import (
 )
 
 func main() {
-	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewBriefUserRequest("Username_example"))} // []TokenRequest | 
+	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")})} // []TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1671,7 +1671,7 @@ import (
 )
 
 func main() {
-	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(*openapiclient.NewBriefUserRequest("Username_example"))} // []TokenRequest | 
+	tokenRequest := []openapiclient.TokenRequest{*openapiclient.NewTokenRequest(openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")})} // []TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1737,7 +1737,7 @@ import (
 )
 
 func main() {
-	tokenRequest := *openapiclient.NewTokenRequest(*openapiclient.NewBriefUserRequest("Username_example")) // TokenRequest | 
+	tokenRequest := *openapiclient.NewTokenRequest(openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}) // TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2247,7 +2247,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this token.
-	tokenRequest := *openapiclient.NewTokenRequest(*openapiclient.NewBriefUserRequest("Username_example")) // TokenRequest | 
+	tokenRequest := *openapiclient.NewTokenRequest(openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}) // TokenRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

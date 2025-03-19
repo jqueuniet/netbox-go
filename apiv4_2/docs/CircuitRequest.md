@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cid** | **string** | Unique circuit ID | 
-**Provider** | [**BriefProviderRequest**](BriefProviderRequest.md) |  | 
-**ProviderAccount** | Pointer to [**NullableBriefProviderAccountRequest**](BriefProviderAccountRequest.md) |  | [optional] 
-**Type** | [**BriefCircuitTypeRequest**](BriefCircuitTypeRequest.md) |  | 
+**Provider** | [**BriefCircuitRequestProvider**](BriefCircuitRequestProvider.md) |  | 
+**ProviderAccount** | Pointer to [**NullableCircuitRequestProviderAccount**](CircuitRequestProviderAccount.md) |  | [optional] 
+**Type** | [**CircuitRequestType**](CircuitRequestType.md) |  | 
 **Status** | Pointer to [**CircuitStatusValue**](CircuitStatusValue.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **InstallDate** | Pointer to **NullableString** |  | [optional] 
 **TerminationDate** | Pointer to **NullableString** |  | [optional] 
 **CommitRate** | Pointer to **NullableInt32** | Committed rate | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitRequest
 
-`func NewCircuitRequest(cid string, provider BriefProviderRequest, type_ BriefCircuitTypeRequest, ) *CircuitRequest`
+`func NewCircuitRequest(cid string, provider BriefCircuitRequestProvider, type_ CircuitRequestType, ) *CircuitRequest`
 
 NewCircuitRequest instantiates a new CircuitRequest object
 This constructor will assign default values to properties that have it defined,
@@ -62,40 +62,40 @@ SetCid sets Cid field to given value.
 
 ### GetProvider
 
-`func (o *CircuitRequest) GetProvider() BriefProviderRequest`
+`func (o *CircuitRequest) GetProvider() BriefCircuitRequestProvider`
 
 GetProvider returns the Provider field if non-nil, zero value otherwise.
 
 ### GetProviderOk
 
-`func (o *CircuitRequest) GetProviderOk() (*BriefProviderRequest, bool)`
+`func (o *CircuitRequest) GetProviderOk() (*BriefCircuitRequestProvider, bool)`
 
 GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvider
 
-`func (o *CircuitRequest) SetProvider(v BriefProviderRequest)`
+`func (o *CircuitRequest) SetProvider(v BriefCircuitRequestProvider)`
 
 SetProvider sets Provider field to given value.
 
 
 ### GetProviderAccount
 
-`func (o *CircuitRequest) GetProviderAccount() BriefProviderAccountRequest`
+`func (o *CircuitRequest) GetProviderAccount() CircuitRequestProviderAccount`
 
 GetProviderAccount returns the ProviderAccount field if non-nil, zero value otherwise.
 
 ### GetProviderAccountOk
 
-`func (o *CircuitRequest) GetProviderAccountOk() (*BriefProviderAccountRequest, bool)`
+`func (o *CircuitRequest) GetProviderAccountOk() (*CircuitRequestProviderAccount, bool)`
 
 GetProviderAccountOk returns a tuple with the ProviderAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderAccount
 
-`func (o *CircuitRequest) SetProviderAccount(v BriefProviderAccountRequest)`
+`func (o *CircuitRequest) SetProviderAccount(v CircuitRequestProviderAccount)`
 
 SetProviderAccount sets ProviderAccount field to given value.
 
@@ -117,20 +117,20 @@ HasProviderAccount returns a boolean if a field has been set.
 UnsetProviderAccount ensures that no value is present for ProviderAccount, not even an explicit nil
 ### GetType
 
-`func (o *CircuitRequest) GetType() BriefCircuitTypeRequest`
+`func (o *CircuitRequest) GetType() CircuitRequestType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CircuitRequest) GetTypeOk() (*BriefCircuitTypeRequest, bool)`
+`func (o *CircuitRequest) GetTypeOk() (*CircuitRequestType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CircuitRequest) SetType(v BriefCircuitTypeRequest)`
+`func (o *CircuitRequest) SetType(v CircuitRequestType)`
 
 SetType sets Type field to given value.
 
@@ -162,20 +162,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *CircuitRequest) GetTenant() BriefTenantRequest`
+`func (o *CircuitRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *CircuitRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *CircuitRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *CircuitRequest) SetTenant(v BriefTenantRequest)`
+`func (o *CircuitRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

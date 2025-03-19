@@ -5,22 +5,22 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
-**Status** | Pointer to [**InventoryItemStatusValue**](InventoryItemStatusValue.md) |  | [optional] 
-**Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
-**Cluster** | Pointer to [**NullableBriefClusterRequest**](BriefClusterRequest.md) |  | [optional] 
-**Device** | Pointer to [**NullableBriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
+**Status** | Pointer to [**PatchedWritableVirtualMachineWithConfigContextRequestStatus**](PatchedWritableVirtualMachineWithConfigContextRequestStatus.md) |  | [optional] 
+**Site** | Pointer to [**NullablePatchedWritableVLANRequestSite**](PatchedWritableVLANRequestSite.md) |  | [optional] 
+**Cluster** | Pointer to [**NullableDeviceWithConfigContextRequestCluster**](DeviceWithConfigContextRequestCluster.md) |  | [optional] 
+**Device** | Pointer to [**NullableDeviceBayRequestInstalledDevice**](DeviceBayRequestInstalledDevice.md) |  | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
-**Role** | Pointer to [**NullableBriefDeviceRoleRequest**](BriefDeviceRoleRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
-**Platform** | Pointer to [**NullableBriefPlatformRequest**](BriefPlatformRequest.md) |  | [optional] 
-**PrimaryIp4** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
-**PrimaryIp6** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullablePatchedWritableVirtualMachineWithConfigContextRequestRole**](PatchedWritableVirtualMachineWithConfigContextRequestRole.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
+**Platform** | Pointer to [**NullableDeviceTypeRequestDefaultPlatform**](DeviceTypeRequestDefaultPlatform.md) |  | [optional] 
+**PrimaryIp4** | Pointer to [**NullableDeviceWithConfigContextRequestPrimaryIp4**](DeviceWithConfigContextRequestPrimaryIp4.md) |  | [optional] 
+**PrimaryIp6** | Pointer to [**NullableDeviceWithConfigContextRequestPrimaryIp4**](DeviceWithConfigContextRequestPrimaryIp4.md) |  | [optional] 
 **Vcpus** | Pointer to **NullableFloat64** |  | [optional] 
 **Memory** | Pointer to **NullableInt32** |  | [optional] 
 **Disk** | Pointer to **NullableInt32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**ConfigTemplate** | Pointer to [**NullableBriefConfigTemplateRequest**](BriefConfigTemplateRequest.md) |  | [optional] 
+**ConfigTemplate** | Pointer to [**NullableDeviceRoleRequestConfigTemplate**](DeviceRoleRequestConfigTemplate.md) |  | [optional] 
 **LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -66,20 +66,20 @@ SetName sets Name field to given value.
 
 ### GetStatus
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetStatus() InventoryItemStatusValue`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetStatus() PatchedWritableVirtualMachineWithConfigContextRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetStatusOk() (*InventoryItemStatusValue, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetStatusOk() (*PatchedWritableVirtualMachineWithConfigContextRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetStatus(v InventoryItemStatusValue)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetStatus(v PatchedWritableVirtualMachineWithConfigContextRequestStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -91,20 +91,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetSite
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetSite() BriefSiteRequest`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetSite() PatchedWritableVLANRequestSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetSiteOk() (*BriefSiteRequest, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetSiteOk() (*PatchedWritableVLANRequestSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetSite(v BriefSiteRequest)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetSite(v PatchedWritableVLANRequestSite)`
 
 SetSite sets Site field to given value.
 
@@ -126,20 +126,20 @@ HasSite returns a boolean if a field has been set.
 UnsetSite ensures that no value is present for Site, not even an explicit nil
 ### GetCluster
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetCluster() BriefClusterRequest`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetCluster() DeviceWithConfigContextRequestCluster`
 
 GetCluster returns the Cluster field if non-nil, zero value otherwise.
 
 ### GetClusterOk
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetClusterOk() (*BriefClusterRequest, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetClusterOk() (*DeviceWithConfigContextRequestCluster, bool)`
 
 GetClusterOk returns a tuple with the Cluster field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCluster
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetCluster(v BriefClusterRequest)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetCluster(v DeviceWithConfigContextRequestCluster)`
 
 SetCluster sets Cluster field to given value.
 
@@ -161,20 +161,20 @@ HasCluster returns a boolean if a field has been set.
 UnsetCluster ensures that no value is present for Cluster, not even an explicit nil
 ### GetDevice
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetDevice() BriefDeviceRequest`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetDevice() DeviceBayRequestInstalledDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetDeviceOk() (*DeviceBayRequestInstalledDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetDevice(v DeviceBayRequestInstalledDevice)`
 
 SetDevice sets Device field to given value.
 
@@ -221,20 +221,20 @@ HasSerial returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetRole() BriefDeviceRoleRequest`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetRole() PatchedWritableVirtualMachineWithConfigContextRequestRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetRoleOk() (*BriefDeviceRoleRequest, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetRoleOk() (*PatchedWritableVirtualMachineWithConfigContextRequestRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetRole(v BriefDeviceRoleRequest)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetRole(v PatchedWritableVirtualMachineWithConfigContextRequestRole)`
 
 SetRole sets Role field to given value.
 
@@ -256,20 +256,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetTenant
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetTenant() BriefTenantRequest`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetTenant(v BriefTenantRequest)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -291,20 +291,20 @@ HasTenant returns a boolean if a field has been set.
 UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
 ### GetPlatform
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetPlatform() BriefPlatformRequest`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetPlatform() DeviceTypeRequestDefaultPlatform`
 
 GetPlatform returns the Platform field if non-nil, zero value otherwise.
 
 ### GetPlatformOk
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetPlatformOk() (*BriefPlatformRequest, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetPlatformOk() (*DeviceTypeRequestDefaultPlatform, bool)`
 
 GetPlatformOk returns a tuple with the Platform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlatform
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetPlatform(v BriefPlatformRequest)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetPlatform(v DeviceTypeRequestDefaultPlatform)`
 
 SetPlatform sets Platform field to given value.
 
@@ -326,20 +326,20 @@ HasPlatform returns a boolean if a field has been set.
 UnsetPlatform ensures that no value is present for Platform, not even an explicit nil
 ### GetPrimaryIp4
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetPrimaryIp4() BriefIPAddressRequest`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetPrimaryIp4() DeviceWithConfigContextRequestPrimaryIp4`
 
 GetPrimaryIp4 returns the PrimaryIp4 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp4Ok
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetPrimaryIp4Ok() (*BriefIPAddressRequest, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetPrimaryIp4Ok() (*DeviceWithConfigContextRequestPrimaryIp4, bool)`
 
 GetPrimaryIp4Ok returns a tuple with the PrimaryIp4 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp4
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetPrimaryIp4(v BriefIPAddressRequest)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetPrimaryIp4(v DeviceWithConfigContextRequestPrimaryIp4)`
 
 SetPrimaryIp4 sets PrimaryIp4 field to given value.
 
@@ -361,20 +361,20 @@ HasPrimaryIp4 returns a boolean if a field has been set.
 UnsetPrimaryIp4 ensures that no value is present for PrimaryIp4, not even an explicit nil
 ### GetPrimaryIp6
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetPrimaryIp6() BriefIPAddressRequest`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetPrimaryIp6() DeviceWithConfigContextRequestPrimaryIp4`
 
 GetPrimaryIp6 returns the PrimaryIp6 field if non-nil, zero value otherwise.
 
 ### GetPrimaryIp6Ok
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetPrimaryIp6Ok() (*BriefIPAddressRequest, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetPrimaryIp6Ok() (*DeviceWithConfigContextRequestPrimaryIp4, bool)`
 
 GetPrimaryIp6Ok returns a tuple with the PrimaryIp6 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrimaryIp6
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetPrimaryIp6(v BriefIPAddressRequest)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetPrimaryIp6(v DeviceWithConfigContextRequestPrimaryIp4)`
 
 SetPrimaryIp6 sets PrimaryIp6 field to given value.
 
@@ -551,20 +551,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetConfigTemplate
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetConfigTemplate() BriefConfigTemplateRequest`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetConfigTemplate() DeviceRoleRequestConfigTemplate`
 
 GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
 
 ### GetConfigTemplateOk
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) GetConfigTemplateOk() (*BriefConfigTemplateRequest, bool)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) GetConfigTemplateOk() (*DeviceRoleRequestConfigTemplate, bool)`
 
 GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigTemplate
 
-`func (o *WritableVirtualMachineWithConfigContextRequest) SetConfigTemplate(v BriefConfigTemplateRequest)`
+`func (o *WritableVirtualMachineWithConfigContextRequest) SetConfigTemplate(v DeviceRoleRequestConfigTemplate)`
 
 SetConfigTemplate sets ConfigTemplate field to given value.
 

@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InterfaceA** | Pointer to [**BriefInterfaceRequest**](BriefInterfaceRequest.md) |  | [optional] 
-**InterfaceB** | Pointer to [**BriefInterfaceRequest**](BriefInterfaceRequest.md) |  | [optional] 
+**InterfaceA** | Pointer to [**PatchedWritableVirtualCircuitTerminationRequestInterface**](PatchedWritableVirtualCircuitTerminationRequestInterface.md) |  | [optional] 
+**InterfaceB** | Pointer to [**PatchedWritableVirtualCircuitTerminationRequestInterface**](PatchedWritableVirtualCircuitTerminationRequestInterface.md) |  | [optional] 
 **Ssid** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**CableStatusValue**](CableStatusValue.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **AuthType** | Pointer to [**NullableAuthenticationType1**](AuthenticationType1.md) |  | [optional] 
 **AuthCipher** | Pointer to [**NullableAuthenticationCipher**](AuthenticationCipher.md) |  | [optional] 
 **AuthPsk** | Pointer to **string** |  | [optional] 
@@ -40,20 +40,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetInterfaceA
 
-`func (o *PatchedWritableWirelessLinkRequest) GetInterfaceA() BriefInterfaceRequest`
+`func (o *PatchedWritableWirelessLinkRequest) GetInterfaceA() PatchedWritableVirtualCircuitTerminationRequestInterface`
 
 GetInterfaceA returns the InterfaceA field if non-nil, zero value otherwise.
 
 ### GetInterfaceAOk
 
-`func (o *PatchedWritableWirelessLinkRequest) GetInterfaceAOk() (*BriefInterfaceRequest, bool)`
+`func (o *PatchedWritableWirelessLinkRequest) GetInterfaceAOk() (*PatchedWritableVirtualCircuitTerminationRequestInterface, bool)`
 
 GetInterfaceAOk returns a tuple with the InterfaceA field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceA
 
-`func (o *PatchedWritableWirelessLinkRequest) SetInterfaceA(v BriefInterfaceRequest)`
+`func (o *PatchedWritableWirelessLinkRequest) SetInterfaceA(v PatchedWritableVirtualCircuitTerminationRequestInterface)`
 
 SetInterfaceA sets InterfaceA field to given value.
 
@@ -65,20 +65,20 @@ HasInterfaceA returns a boolean if a field has been set.
 
 ### GetInterfaceB
 
-`func (o *PatchedWritableWirelessLinkRequest) GetInterfaceB() BriefInterfaceRequest`
+`func (o *PatchedWritableWirelessLinkRequest) GetInterfaceB() PatchedWritableVirtualCircuitTerminationRequestInterface`
 
 GetInterfaceB returns the InterfaceB field if non-nil, zero value otherwise.
 
 ### GetInterfaceBOk
 
-`func (o *PatchedWritableWirelessLinkRequest) GetInterfaceBOk() (*BriefInterfaceRequest, bool)`
+`func (o *PatchedWritableWirelessLinkRequest) GetInterfaceBOk() (*PatchedWritableVirtualCircuitTerminationRequestInterface, bool)`
 
 GetInterfaceBOk returns a tuple with the InterfaceB field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInterfaceB
 
-`func (o *PatchedWritableWirelessLinkRequest) SetInterfaceB(v BriefInterfaceRequest)`
+`func (o *PatchedWritableWirelessLinkRequest) SetInterfaceB(v PatchedWritableVirtualCircuitTerminationRequestInterface)`
 
 SetInterfaceB sets InterfaceB field to given value.
 
@@ -140,20 +140,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *PatchedWritableWirelessLinkRequest) GetTenant() BriefTenantRequest`
+`func (o *PatchedWritableWirelessLinkRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableWirelessLinkRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *PatchedWritableWirelessLinkRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableWirelessLinkRequest) SetTenant(v BriefTenantRequest)`
+`func (o *PatchedWritableWirelessLinkRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **Name** | **string** | Full name of the site | 
 **Slug** | **string** |  | 
 **Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
-**Region** | Pointer to [**NullableBriefRegionRequest**](BriefRegionRequest.md) |  | [optional] 
-**Group** | Pointer to [**NullableBriefSiteGroupRequest**](BriefSiteGroupRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Region** | Pointer to [**NullablePatchedWritableSiteRequestRegion**](PatchedWritableSiteRequestRegion.md) |  | [optional] 
+**Group** | Pointer to [**NullablePatchedWritableSiteRequestGroup**](PatchedWritableSiteRequestGroup.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Facility** | Pointer to **string** | Local facility ID or description | [optional] 
 **TimeZone** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -108,20 +108,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRegion
 
-`func (o *WritableSiteRequest) GetRegion() BriefRegionRequest`
+`func (o *WritableSiteRequest) GetRegion() PatchedWritableSiteRequestRegion`
 
 GetRegion returns the Region field if non-nil, zero value otherwise.
 
 ### GetRegionOk
 
-`func (o *WritableSiteRequest) GetRegionOk() (*BriefRegionRequest, bool)`
+`func (o *WritableSiteRequest) GetRegionOk() (*PatchedWritableSiteRequestRegion, bool)`
 
 GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegion
 
-`func (o *WritableSiteRequest) SetRegion(v BriefRegionRequest)`
+`func (o *WritableSiteRequest) SetRegion(v PatchedWritableSiteRequestRegion)`
 
 SetRegion sets Region field to given value.
 
@@ -143,20 +143,20 @@ HasRegion returns a boolean if a field has been set.
 UnsetRegion ensures that no value is present for Region, not even an explicit nil
 ### GetGroup
 
-`func (o *WritableSiteRequest) GetGroup() BriefSiteGroupRequest`
+`func (o *WritableSiteRequest) GetGroup() PatchedWritableSiteRequestGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *WritableSiteRequest) GetGroupOk() (*BriefSiteGroupRequest, bool)`
+`func (o *WritableSiteRequest) GetGroupOk() (*PatchedWritableSiteRequestGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *WritableSiteRequest) SetGroup(v BriefSiteGroupRequest)`
+`func (o *WritableSiteRequest) SetGroup(v PatchedWritableSiteRequestGroup)`
 
 SetGroup sets Group field to given value.
 
@@ -178,20 +178,20 @@ HasGroup returns a boolean if a field has been set.
 UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetTenant
 
-`func (o *WritableSiteRequest) GetTenant() BriefTenantRequest`
+`func (o *WritableSiteRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableSiteRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *WritableSiteRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableSiteRequest) SetTenant(v BriefTenantRequest)`
+`func (o *WritableSiteRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

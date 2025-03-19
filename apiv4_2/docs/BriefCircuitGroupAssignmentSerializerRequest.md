@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Group** | [**BriefCircuitGroupRequest**](BriefCircuitGroupRequest.md) |  | 
+**Group** | [**BriefCircuitGroupAssignmentSerializerRequestGroup**](BriefCircuitGroupAssignmentSerializerRequestGroup.md) |  | 
 **Priority** | Pointer to [**BriefCircuitGroupAssignmentSerializerPriorityValue**](BriefCircuitGroupAssignmentSerializerPriorityValue.md) |  | [optional] 
 
 ## Methods
 
 ### NewBriefCircuitGroupAssignmentSerializerRequest
 
-`func NewBriefCircuitGroupAssignmentSerializerRequest(group BriefCircuitGroupRequest, ) *BriefCircuitGroupAssignmentSerializerRequest`
+`func NewBriefCircuitGroupAssignmentSerializerRequest(group BriefCircuitGroupAssignmentSerializerRequestGroup, ) *BriefCircuitGroupAssignmentSerializerRequest`
 
 NewBriefCircuitGroupAssignmentSerializerRequest instantiates a new BriefCircuitGroupAssignmentSerializerRequest object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGroup
 
-`func (o *BriefCircuitGroupAssignmentSerializerRequest) GetGroup() BriefCircuitGroupRequest`
+`func (o *BriefCircuitGroupAssignmentSerializerRequest) GetGroup() BriefCircuitGroupAssignmentSerializerRequestGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *BriefCircuitGroupAssignmentSerializerRequest) GetGroupOk() (*BriefCircuitGroupRequest, bool)`
+`func (o *BriefCircuitGroupAssignmentSerializerRequest) GetGroupOk() (*BriefCircuitGroupAssignmentSerializerRequestGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *BriefCircuitGroupAssignmentSerializerRequest) SetGroup(v BriefCircuitGroupRequest)`
+`func (o *BriefCircuitGroupAssignmentSerializerRequest) SetGroup(v BriefCircuitGroupAssignmentSerializerRequestGroup)`
 
 SetGroup sets Group field to given value.
 

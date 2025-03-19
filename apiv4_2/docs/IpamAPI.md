@@ -200,7 +200,7 @@ import (
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")})} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -264,7 +264,7 @@ import (
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")})} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -330,7 +330,7 @@ import (
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")})} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -396,7 +396,7 @@ import (
 )
 
 func main() {
-	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
+	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")}) // WritableAggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -862,7 +862,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this aggregate.
-	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
+	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")}) // WritableAggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1075,7 +1075,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")}, int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1139,7 +1139,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")}, int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1205,7 +1205,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")}, int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1271,7 +1271,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
+	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")}, int64(123), int64(123)) // ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1791,7 +1791,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this ASN range.
-	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
+	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", openapiclient.ASNRangeRequest_rir{BriefRIRRequest: openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")}, int64(123), int64(123)) // ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2607,7 +2607,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(openapiclient.FHRPGroupAssignmentRequest_group{BriefFHRPGroupRequest: openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))}, "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2671,7 +2671,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(openapiclient.FHRPGroupAssignmentRequest_group{BriefFHRPGroupRequest: openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))}, "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2737,7 +2737,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := []openapiclient.FHRPGroupAssignmentRequest{*openapiclient.NewFHRPGroupAssignmentRequest(openapiclient.FHRPGroupAssignmentRequest_group{BriefFHRPGroupRequest: openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))}, "InterfaceType_example", int64(123), int32(123))} // []FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2803,7 +2803,7 @@ import (
 )
 
 func main() {
-	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(openapiclient.FHRPGroupAssignmentRequest_group{BriefFHRPGroupRequest: openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))}, "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3243,7 +3243,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this FHRP group assignment.
-	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(*openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123)), "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
+	fHRPGroupAssignmentRequest := *openapiclient.NewFHRPGroupAssignmentRequest(openapiclient.FHRPGroupAssignmentRequest_group{BriefFHRPGroupRequest: openapiclient.NewBriefFHRPGroupRequest(openapiclient.BriefFHRPGroup_protocol("vrrp2"), int32(123))}, "InterfaceType_example", int64(123), int32(123)) // FHRPGroupAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

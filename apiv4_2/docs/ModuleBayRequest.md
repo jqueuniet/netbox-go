@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
+**Device** | [**BriefInterfaceRequestDevice**](BriefInterfaceRequestDevice.md) |  | 
+**Module** | Pointer to [**NullableConsolePortRequestModule**](ConsolePortRequestModule.md) |  | [optional] 
 **Name** | **string** |  | 
-**InstalledModule** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
+**InstalledModule** | Pointer to [**NullableConsolePortRequestModule**](ConsolePortRequestModule.md) |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Position** | Pointer to **string** | Identifier to reference when renaming installed components | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewModuleBayRequest
 
-`func NewModuleBayRequest(device BriefDeviceRequest, name string, ) *ModuleBayRequest`
+`func NewModuleBayRequest(device BriefInterfaceRequestDevice, name string, ) *ModuleBayRequest`
 
 NewModuleBayRequest instantiates a new ModuleBayRequest object
 This constructor will assign default values to properties that have it defined,
@@ -35,40 +35,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *ModuleBayRequest) GetDevice() BriefDeviceRequest`
+`func (o *ModuleBayRequest) GetDevice() BriefInterfaceRequestDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *ModuleBayRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *ModuleBayRequest) GetDeviceOk() (*BriefInterfaceRequestDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *ModuleBayRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *ModuleBayRequest) SetDevice(v BriefInterfaceRequestDevice)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *ModuleBayRequest) GetModule() BriefModuleRequest`
+`func (o *ModuleBayRequest) GetModule() ConsolePortRequestModule`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *ModuleBayRequest) GetModuleOk() (*BriefModuleRequest, bool)`
+`func (o *ModuleBayRequest) GetModuleOk() (*ConsolePortRequestModule, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *ModuleBayRequest) SetModule(v BriefModuleRequest)`
+`func (o *ModuleBayRequest) SetModule(v ConsolePortRequestModule)`
 
 SetModule sets Module field to given value.
 
@@ -110,20 +110,20 @@ SetName sets Name field to given value.
 
 ### GetInstalledModule
 
-`func (o *ModuleBayRequest) GetInstalledModule() BriefModuleRequest`
+`func (o *ModuleBayRequest) GetInstalledModule() ConsolePortRequestModule`
 
 GetInstalledModule returns the InstalledModule field if non-nil, zero value otherwise.
 
 ### GetInstalledModuleOk
 
-`func (o *ModuleBayRequest) GetInstalledModuleOk() (*BriefModuleRequest, bool)`
+`func (o *ModuleBayRequest) GetInstalledModuleOk() (*ConsolePortRequestModule, bool)`
 
 GetInstalledModuleOk returns a tuple with the InstalledModule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstalledModule
 
-`func (o *ModuleBayRequest) SetInstalledModule(v BriefModuleRequest)`
+`func (o *ModuleBayRequest) SetInstalledModule(v ConsolePortRequestModule)`
 
 SetInstalledModule sets InstalledModule field to given value.
 

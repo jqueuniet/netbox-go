@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Circuit** | [**BriefCircuitRequest**](BriefCircuitRequest.md) |  | 
+**Circuit** | [**CircuitTerminationRequestCircuit**](CircuitTerminationRequestCircuit.md) |  | 
 **TermSide** | [**TerminationSide1**](TerminationSide1.md) |  | 
 **TerminationType** | Pointer to **NullableString** |  | [optional] 
 **TerminationId** | Pointer to **NullableInt32** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitTerminationRequest
 
-`func NewCircuitTerminationRequest(circuit BriefCircuitRequest, termSide TerminationSide1, ) *CircuitTerminationRequest`
+`func NewCircuitTerminationRequest(circuit CircuitTerminationRequestCircuit, termSide TerminationSide1, ) *CircuitTerminationRequest`
 
 NewCircuitTerminationRequest instantiates a new CircuitTerminationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCircuit
 
-`func (o *CircuitTerminationRequest) GetCircuit() BriefCircuitRequest`
+`func (o *CircuitTerminationRequest) GetCircuit() CircuitTerminationRequestCircuit`
 
 GetCircuit returns the Circuit field if non-nil, zero value otherwise.
 
 ### GetCircuitOk
 
-`func (o *CircuitTerminationRequest) GetCircuitOk() (*BriefCircuitRequest, bool)`
+`func (o *CircuitTerminationRequest) GetCircuitOk() (*CircuitTerminationRequestCircuit, bool)`
 
 GetCircuitOk returns a tuple with the Circuit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCircuit
 
-`func (o *CircuitTerminationRequest) SetCircuit(v BriefCircuitRequest)`
+`func (o *CircuitTerminationRequest) SetCircuit(v CircuitTerminationRequestCircuit)`
 
 SetCircuit sets Circuit field to given value.
 

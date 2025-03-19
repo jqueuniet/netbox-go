@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Manufacturer** | Pointer to [**NullableBriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
-**ConfigTemplate** | Pointer to [**NullableBriefConfigTemplateRequest**](BriefConfigTemplateRequest.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableInventoryItemRequestManufacturer**](InventoryItemRequestManufacturer.md) |  | [optional] 
+**ConfigTemplate** | Pointer to [**NullableDeviceRoleRequestConfigTemplate**](DeviceRoleRequestConfigTemplate.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -73,20 +73,20 @@ SetSlug sets Slug field to given value.
 
 ### GetManufacturer
 
-`func (o *PlatformRequest) GetManufacturer() BriefManufacturerRequest`
+`func (o *PlatformRequest) GetManufacturer() InventoryItemRequestManufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *PlatformRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+`func (o *PlatformRequest) GetManufacturerOk() (*InventoryItemRequestManufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *PlatformRequest) SetManufacturer(v BriefManufacturerRequest)`
+`func (o *PlatformRequest) SetManufacturer(v InventoryItemRequestManufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 
@@ -108,20 +108,20 @@ HasManufacturer returns a boolean if a field has been set.
 UnsetManufacturer ensures that no value is present for Manufacturer, not even an explicit nil
 ### GetConfigTemplate
 
-`func (o *PlatformRequest) GetConfigTemplate() BriefConfigTemplateRequest`
+`func (o *PlatformRequest) GetConfigTemplate() DeviceRoleRequestConfigTemplate`
 
 GetConfigTemplate returns the ConfigTemplate field if non-nil, zero value otherwise.
 
 ### GetConfigTemplateOk
 
-`func (o *PlatformRequest) GetConfigTemplateOk() (*BriefConfigTemplateRequest, bool)`
+`func (o *PlatformRequest) GetConfigTemplateOk() (*DeviceRoleRequestConfigTemplate, bool)`
 
 GetConfigTemplateOk returns a tuple with the ConfigTemplate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfigTemplate
 
-`func (o *PlatformRequest) SetConfigTemplate(v BriefConfigTemplateRequest)`
+`func (o *PlatformRequest) SetConfigTemplate(v DeviceRoleRequestConfigTemplate)`
 
 SetConfigTemplate sets ConfigTemplate field to given value.
 

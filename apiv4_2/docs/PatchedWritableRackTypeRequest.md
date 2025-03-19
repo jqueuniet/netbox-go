@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Manufacturer** | Pointer to [**BriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
+**Manufacturer** | Pointer to [**BriefDeviceTypeRequestManufacturer**](BriefDeviceTypeRequestManufacturer.md) |  | [optional] 
 **Model** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -45,20 +45,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetManufacturer
 
-`func (o *PatchedWritableRackTypeRequest) GetManufacturer() BriefManufacturerRequest`
+`func (o *PatchedWritableRackTypeRequest) GetManufacturer() BriefDeviceTypeRequestManufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *PatchedWritableRackTypeRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+`func (o *PatchedWritableRackTypeRequest) GetManufacturerOk() (*BriefDeviceTypeRequestManufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *PatchedWritableRackTypeRequest) SetManufacturer(v BriefManufacturerRequest)`
+`func (o *PatchedWritableRackTypeRequest) SetManufacturer(v BriefDeviceTypeRequestManufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 

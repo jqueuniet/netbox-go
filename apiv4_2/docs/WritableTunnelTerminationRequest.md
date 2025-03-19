@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Tunnel** | [**BriefTunnelRequest**](BriefTunnelRequest.md) |  | 
+**Tunnel** | [**PatchedWritableTunnelTerminationRequestTunnel**](PatchedWritableTunnelTerminationRequestTunnel.md) |  | 
 **Role** | Pointer to [**PatchedWritableTunnelTerminationRequestRole**](PatchedWritableTunnelTerminationRequestRole.md) |  | [optional] 
 **TerminationType** | **string** |  | 
 **TerminationId** | Pointer to **NullableInt64** |  | [optional] 
-**OutsideIp** | Pointer to [**NullableBriefIPAddressRequest**](BriefIPAddressRequest.md) |  | [optional] 
+**OutsideIp** | Pointer to [**NullableDeviceWithConfigContextRequestPrimaryIp4**](DeviceWithConfigContextRequestPrimaryIp4.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewWritableTunnelTerminationRequest
 
-`func NewWritableTunnelTerminationRequest(tunnel BriefTunnelRequest, terminationType string, ) *WritableTunnelTerminationRequest`
+`func NewWritableTunnelTerminationRequest(tunnel PatchedWritableTunnelTerminationRequestTunnel, terminationType string, ) *WritableTunnelTerminationRequest`
 
 NewWritableTunnelTerminationRequest instantiates a new WritableTunnelTerminationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTunnel
 
-`func (o *WritableTunnelTerminationRequest) GetTunnel() BriefTunnelRequest`
+`func (o *WritableTunnelTerminationRequest) GetTunnel() PatchedWritableTunnelTerminationRequestTunnel`
 
 GetTunnel returns the Tunnel field if non-nil, zero value otherwise.
 
 ### GetTunnelOk
 
-`func (o *WritableTunnelTerminationRequest) GetTunnelOk() (*BriefTunnelRequest, bool)`
+`func (o *WritableTunnelTerminationRequest) GetTunnelOk() (*PatchedWritableTunnelTerminationRequestTunnel, bool)`
 
 GetTunnelOk returns a tuple with the Tunnel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTunnel
 
-`func (o *WritableTunnelTerminationRequest) SetTunnel(v BriefTunnelRequest)`
+`func (o *WritableTunnelTerminationRequest) SetTunnel(v PatchedWritableTunnelTerminationRequestTunnel)`
 
 SetTunnel sets Tunnel field to given value.
 
@@ -133,20 +133,20 @@ HasTerminationId returns a boolean if a field has been set.
 UnsetTerminationId ensures that no value is present for TerminationId, not even an explicit nil
 ### GetOutsideIp
 
-`func (o *WritableTunnelTerminationRequest) GetOutsideIp() BriefIPAddressRequest`
+`func (o *WritableTunnelTerminationRequest) GetOutsideIp() DeviceWithConfigContextRequestPrimaryIp4`
 
 GetOutsideIp returns the OutsideIp field if non-nil, zero value otherwise.
 
 ### GetOutsideIpOk
 
-`func (o *WritableTunnelTerminationRequest) GetOutsideIpOk() (*BriefIPAddressRequest, bool)`
+`func (o *WritableTunnelTerminationRequest) GetOutsideIpOk() (*DeviceWithConfigContextRequestPrimaryIp4, bool)`
 
 GetOutsideIpOk returns a tuple with the OutsideIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOutsideIp
 
-`func (o *WritableTunnelTerminationRequest) SetOutsideIp(v BriefIPAddressRequest)`
+`func (o *WritableTunnelTerminationRequest) SetOutsideIp(v DeviceWithConfigContextRequestPrimaryIp4)`
 
 SetOutsideIp sets OutsideIp field to given value.
 

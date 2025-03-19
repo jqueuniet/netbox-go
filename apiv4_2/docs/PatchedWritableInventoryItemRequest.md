@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
+**Device** | Pointer to [**BriefInterfaceRequestDevice**](BriefInterfaceRequestDevice.md) |  | [optional] 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Status** | Pointer to [**InventoryItemStatusValue**](InventoryItemStatusValue.md) |  | [optional] 
-**Role** | Pointer to [**NullableBriefInventoryItemRoleRequest**](BriefInventoryItemRoleRequest.md) |  | [optional] 
-**Manufacturer** | Pointer to [**NullableBriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullableInventoryItemRequestRole**](InventoryItemRequestRole.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableInventoryItemRequestManufacturer**](InventoryItemRequestManufacturer.md) |  | [optional] 
 **PartId** | Pointer to **string** | Manufacturer-assigned part identifier | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this item | [optional] 
@@ -42,20 +42,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PatchedWritableInventoryItemRequest) GetDevice() BriefDeviceRequest`
+`func (o *PatchedWritableInventoryItemRequest) GetDevice() BriefInterfaceRequestDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PatchedWritableInventoryItemRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *PatchedWritableInventoryItemRequest) GetDeviceOk() (*BriefInterfaceRequestDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PatchedWritableInventoryItemRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *PatchedWritableInventoryItemRequest) SetDevice(v BriefInterfaceRequestDevice)`
 
 SetDevice sets Device field to given value.
 
@@ -177,20 +177,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *PatchedWritableInventoryItemRequest) GetRole() BriefInventoryItemRoleRequest`
+`func (o *PatchedWritableInventoryItemRequest) GetRole() InventoryItemRequestRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PatchedWritableInventoryItemRequest) GetRoleOk() (*BriefInventoryItemRoleRequest, bool)`
+`func (o *PatchedWritableInventoryItemRequest) GetRoleOk() (*InventoryItemRequestRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PatchedWritableInventoryItemRequest) SetRole(v BriefInventoryItemRoleRequest)`
+`func (o *PatchedWritableInventoryItemRequest) SetRole(v InventoryItemRequestRole)`
 
 SetRole sets Role field to given value.
 
@@ -212,20 +212,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetManufacturer
 
-`func (o *PatchedWritableInventoryItemRequest) GetManufacturer() BriefManufacturerRequest`
+`func (o *PatchedWritableInventoryItemRequest) GetManufacturer() InventoryItemRequestManufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *PatchedWritableInventoryItemRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+`func (o *PatchedWritableInventoryItemRequest) GetManufacturerOk() (*InventoryItemRequestManufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *PatchedWritableInventoryItemRequest) SetManufacturer(v BriefManufacturerRequest)`
+`func (o *PatchedWritableInventoryItemRequest) SetManufacturer(v InventoryItemRequestManufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 

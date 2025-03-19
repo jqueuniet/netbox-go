@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Group** | Pointer to [**NullableBriefContactGroupRequest**](BriefContactGroupRequest.md) |  | [optional] 
+**Group** | Pointer to [**NullableContactRequestGroup**](ContactRequestGroup.md) |  | [optional] 
 **Name** | **string** |  | 
 **Title** | Pointer to **string** |  | [optional] 
 **Phone** | Pointer to **string** |  | [optional] 
@@ -37,20 +37,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGroup
 
-`func (o *ContactRequest) GetGroup() BriefContactGroupRequest`
+`func (o *ContactRequest) GetGroup() ContactRequestGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *ContactRequest) GetGroupOk() (*BriefContactGroupRequest, bool)`
+`func (o *ContactRequest) GetGroupOk() (*ContactRequestGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *ContactRequest) SetGroup(v BriefContactGroupRequest)`
+`func (o *ContactRequest) SetGroup(v ContactRequestGroup)`
 
 SetGroup sets Group field to given value.
 

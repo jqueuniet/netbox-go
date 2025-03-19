@@ -189,7 +189,7 @@ import (
 )
 
 func main() {
-	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"))} // []BookmarkRequest | 
+	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")})} // []BookmarkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -253,7 +253,7 @@ import (
 )
 
 func main() {
-	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"))} // []BookmarkRequest | 
+	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")})} // []BookmarkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -319,7 +319,7 @@ import (
 )
 
 func main() {
-	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"))} // []BookmarkRequest | 
+	bookmarkRequest := []openapiclient.BookmarkRequest{*openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")})} // []BookmarkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -385,7 +385,7 @@ import (
 )
 
 func main() {
-	bookmarkRequest := *openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example")) // BookmarkRequest | 
+	bookmarkRequest := *openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}) // BookmarkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -789,7 +789,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this bookmark.
-	bookmarkRequest := *openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example")) // BookmarkRequest | 
+	bookmarkRequest := *openapiclient.NewBookmarkRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}) // BookmarkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9113,7 +9113,7 @@ import (
 )
 
 func main() {
-	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), openapiclient.Event("object_created"))} // []NotificationRequest | 
+	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}, openapiclient.Event("object_created"))} // []NotificationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9177,7 +9177,7 @@ import (
 )
 
 func main() {
-	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), openapiclient.Event("object_created"))} // []NotificationRequest | 
+	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}, openapiclient.Event("object_created"))} // []NotificationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9243,7 +9243,7 @@ import (
 )
 
 func main() {
-	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), openapiclient.Event("object_created"))} // []NotificationRequest | 
+	notificationRequest := []openapiclient.NotificationRequest{*openapiclient.NewNotificationRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}, openapiclient.Event("object_created"))} // []NotificationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9309,7 +9309,7 @@ import (
 )
 
 func main() {
-	notificationRequest := *openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), openapiclient.Event("object_created")) // NotificationRequest | 
+	notificationRequest := *openapiclient.NewNotificationRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}, openapiclient.Event("object_created")) // NotificationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9656,7 +9656,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this notification.
-	notificationRequest := *openapiclient.NewNotificationRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"), openapiclient.Event("object_created")) // NotificationRequest | 
+	notificationRequest := *openapiclient.NewNotificationRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}, openapiclient.Event("object_created")) // NotificationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11115,7 +11115,7 @@ import (
 )
 
 func main() {
-	subscriptionRequest := []openapiclient.SubscriptionRequest{*openapiclient.NewSubscriptionRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"))} // []SubscriptionRequest | 
+	subscriptionRequest := []openapiclient.SubscriptionRequest{*openapiclient.NewSubscriptionRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")})} // []SubscriptionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11179,7 +11179,7 @@ import (
 )
 
 func main() {
-	subscriptionRequest := []openapiclient.SubscriptionRequest{*openapiclient.NewSubscriptionRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"))} // []SubscriptionRequest | 
+	subscriptionRequest := []openapiclient.SubscriptionRequest{*openapiclient.NewSubscriptionRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")})} // []SubscriptionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11245,7 +11245,7 @@ import (
 )
 
 func main() {
-	subscriptionRequest := []openapiclient.SubscriptionRequest{*openapiclient.NewSubscriptionRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example"))} // []SubscriptionRequest | 
+	subscriptionRequest := []openapiclient.SubscriptionRequest{*openapiclient.NewSubscriptionRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")})} // []SubscriptionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11311,7 +11311,7 @@ import (
 )
 
 func main() {
-	subscriptionRequest := *openapiclient.NewSubscriptionRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example")) // SubscriptionRequest | 
+	subscriptionRequest := *openapiclient.NewSubscriptionRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}) // SubscriptionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11658,7 +11658,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this subscription.
-	subscriptionRequest := *openapiclient.NewSubscriptionRequest("ObjectType_example", int64(123), *openapiclient.NewBriefUserRequest("Username_example")) // SubscriptionRequest | 
+	subscriptionRequest := *openapiclient.NewSubscriptionRequest("ObjectType_example", int64(123), openapiclient.BookmarkRequest_user{BriefUserRequest: openapiclient.NewBriefUserRequest("Username_example")}) // SubscriptionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Site** | [**BriefSiteRequest**](BriefSiteRequest.md) |  | 
+**Site** | [**DeviceWithConfigContextRequestSite**](DeviceWithConfigContextRequestSite.md) |  | 
 **Parent** | Pointer to [**NullableNestedLocationRequest**](NestedLocationRequest.md) |  | [optional] 
 **Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Facility** | Pointer to **string** | Local facility ID or description | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewLocationRequest
 
-`func NewLocationRequest(name string, slug string, site BriefSiteRequest, ) *LocationRequest`
+`func NewLocationRequest(name string, slug string, site DeviceWithConfigContextRequestSite, ) *LocationRequest`
 
 NewLocationRequest instantiates a new LocationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -76,20 +76,20 @@ SetSlug sets Slug field to given value.
 
 ### GetSite
 
-`func (o *LocationRequest) GetSite() BriefSiteRequest`
+`func (o *LocationRequest) GetSite() DeviceWithConfigContextRequestSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *LocationRequest) GetSiteOk() (*BriefSiteRequest, bool)`
+`func (o *LocationRequest) GetSiteOk() (*DeviceWithConfigContextRequestSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *LocationRequest) SetSite(v BriefSiteRequest)`
+`func (o *LocationRequest) SetSite(v DeviceWithConfigContextRequestSite)`
 
 SetSite sets Site field to given value.
 
@@ -156,20 +156,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *LocationRequest) GetTenant() BriefTenantRequest`
+`func (o *LocationRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *LocationRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *LocationRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *LocationRequest) SetTenant(v BriefTenantRequest)`
+`func (o *LocationRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

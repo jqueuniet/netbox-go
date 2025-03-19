@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**User** | [**BriefUserRequest**](BriefUserRequest.md) |  | 
+**User** | [**BookmarkRequestUser**](BookmarkRequestUser.md) |  | 
 
 ## Methods
 
 ### NewSubscriptionRequest
 
-`func NewSubscriptionRequest(objectType string, objectId int64, user BriefUserRequest, ) *SubscriptionRequest`
+`func NewSubscriptionRequest(objectType string, objectId int64, user BookmarkRequestUser, ) *SubscriptionRequest`
 
 NewSubscriptionRequest instantiates a new SubscriptionRequest object
 This constructor will assign default values to properties that have it defined,
@@ -69,20 +69,20 @@ SetObjectId sets ObjectId field to given value.
 
 ### GetUser
 
-`func (o *SubscriptionRequest) GetUser() BriefUserRequest`
+`func (o *SubscriptionRequest) GetUser() BookmarkRequestUser`
 
 GetUser returns the User field if non-nil, zero value otherwise.
 
 ### GetUserOk
 
-`func (o *SubscriptionRequest) GetUserOk() (*BriefUserRequest, bool)`
+`func (o *SubscriptionRequest) GetUserOk() (*BookmarkRequestUser, bool)`
 
 GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUser
 
-`func (o *SubscriptionRequest) SetUser(v BriefUserRequest)`
+`func (o *SubscriptionRequest) SetUser(v BookmarkRequestUser)`
 
 SetUser sets User field to given value.
 

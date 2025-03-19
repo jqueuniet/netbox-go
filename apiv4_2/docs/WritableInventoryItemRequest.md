@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
+**Device** | [**BriefInterfaceRequestDevice**](BriefInterfaceRequestDevice.md) |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Status** | Pointer to [**InventoryItemStatusValue**](InventoryItemStatusValue.md) |  | [optional] 
-**Role** | Pointer to [**NullableBriefInventoryItemRoleRequest**](BriefInventoryItemRoleRequest.md) |  | [optional] 
-**Manufacturer** | Pointer to [**NullableBriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullableInventoryItemRequestRole**](InventoryItemRequestRole.md) |  | [optional] 
+**Manufacturer** | Pointer to [**NullableInventoryItemRequestManufacturer**](InventoryItemRequestManufacturer.md) |  | [optional] 
 **PartId** | Pointer to **string** | Manufacturer-assigned part identifier | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this item | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewWritableInventoryItemRequest
 
-`func NewWritableInventoryItemRequest(device BriefDeviceRequest, name string, ) *WritableInventoryItemRequest`
+`func NewWritableInventoryItemRequest(device BriefInterfaceRequestDevice, name string, ) *WritableInventoryItemRequest`
 
 NewWritableInventoryItemRequest instantiates a new WritableInventoryItemRequest object
 This constructor will assign default values to properties that have it defined,
@@ -42,20 +42,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *WritableInventoryItemRequest) GetDevice() BriefDeviceRequest`
+`func (o *WritableInventoryItemRequest) GetDevice() BriefInterfaceRequestDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *WritableInventoryItemRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *WritableInventoryItemRequest) GetDeviceOk() (*BriefInterfaceRequestDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *WritableInventoryItemRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *WritableInventoryItemRequest) SetDevice(v BriefInterfaceRequestDevice)`
 
 SetDevice sets Device field to given value.
 
@@ -167,20 +167,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *WritableInventoryItemRequest) GetRole() BriefInventoryItemRoleRequest`
+`func (o *WritableInventoryItemRequest) GetRole() InventoryItemRequestRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *WritableInventoryItemRequest) GetRoleOk() (*BriefInventoryItemRoleRequest, bool)`
+`func (o *WritableInventoryItemRequest) GetRoleOk() (*InventoryItemRequestRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *WritableInventoryItemRequest) SetRole(v BriefInventoryItemRoleRequest)`
+`func (o *WritableInventoryItemRequest) SetRole(v InventoryItemRequestRole)`
 
 SetRole sets Role field to given value.
 
@@ -202,20 +202,20 @@ HasRole returns a boolean if a field has been set.
 UnsetRole ensures that no value is present for Role, not even an explicit nil
 ### GetManufacturer
 
-`func (o *WritableInventoryItemRequest) GetManufacturer() BriefManufacturerRequest`
+`func (o *WritableInventoryItemRequest) GetManufacturer() InventoryItemRequestManufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *WritableInventoryItemRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+`func (o *WritableInventoryItemRequest) GetManufacturerOk() (*InventoryItemRequestManufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *WritableInventoryItemRequest) SetManufacturer(v BriefManufacturerRequest)`
+`func (o *WritableInventoryItemRequest) SetManufacturer(v InventoryItemRequestManufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 

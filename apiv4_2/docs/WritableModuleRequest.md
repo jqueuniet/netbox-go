@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
+**Device** | [**BriefInterfaceRequestDevice**](BriefInterfaceRequestDevice.md) |  | 
 **ModuleBay** | **int32** |  | 
-**ModuleType** | [**BriefModuleTypeRequest**](BriefModuleTypeRequest.md) |  | 
+**ModuleType** | [**ModuleRequestModuleType**](ModuleRequestModuleType.md) |  | 
 **Status** | Pointer to [**InventoryItemStatusValue**](InventoryItemStatusValue.md) |  | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this device | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewWritableModuleRequest
 
-`func NewWritableModuleRequest(device BriefDeviceRequest, moduleBay int32, moduleType BriefModuleTypeRequest, ) *WritableModuleRequest`
+`func NewWritableModuleRequest(device BriefInterfaceRequestDevice, moduleBay int32, moduleType ModuleRequestModuleType, ) *WritableModuleRequest`
 
 NewWritableModuleRequest instantiates a new WritableModuleRequest object
 This constructor will assign default values to properties that have it defined,
@@ -36,20 +36,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *WritableModuleRequest) GetDevice() BriefDeviceRequest`
+`func (o *WritableModuleRequest) GetDevice() BriefInterfaceRequestDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *WritableModuleRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *WritableModuleRequest) GetDeviceOk() (*BriefInterfaceRequestDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *WritableModuleRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *WritableModuleRequest) SetDevice(v BriefInterfaceRequestDevice)`
 
 SetDevice sets Device field to given value.
 
@@ -76,20 +76,20 @@ SetModuleBay sets ModuleBay field to given value.
 
 ### GetModuleType
 
-`func (o *WritableModuleRequest) GetModuleType() BriefModuleTypeRequest`
+`func (o *WritableModuleRequest) GetModuleType() ModuleRequestModuleType`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *WritableModuleRequest) GetModuleTypeOk() (*BriefModuleTypeRequest, bool)`
+`func (o *WritableModuleRequest) GetModuleTypeOk() (*ModuleRequestModuleType, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *WritableModuleRequest) SetModuleType(v BriefModuleTypeRequest)`
+`func (o *WritableModuleRequest) SetModuleType(v ModuleRequestModuleType)`
 
 SetModuleType sets ModuleType field to given value.
 

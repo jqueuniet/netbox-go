@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | Pointer to **string** |  | [optional] 
-**Vrf** | Pointer to [**NullableBriefVRFRequest**](BriefVRFRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Vrf** | Pointer to [**NullableIPAddressRequestVrf**](IPAddressRequestVrf.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Status** | Pointer to [**PatchedWritableIPAddressRequestStatus**](PatchedWritableIPAddressRequestStatus.md) |  | [optional] 
 **Role** | Pointer to [**NullablePatchedWritableIPAddressRequestRole**](PatchedWritableIPAddressRequestRole.md) |  | [optional] 
 **AssignedObjectType** | Pointer to **NullableString** |  | [optional] 
@@ -64,20 +64,20 @@ HasAddress returns a boolean if a field has been set.
 
 ### GetVrf
 
-`func (o *PatchedWritableIPAddressRequest) GetVrf() BriefVRFRequest`
+`func (o *PatchedWritableIPAddressRequest) GetVrf() IPAddressRequestVrf`
 
 GetVrf returns the Vrf field if non-nil, zero value otherwise.
 
 ### GetVrfOk
 
-`func (o *PatchedWritableIPAddressRequest) GetVrfOk() (*BriefVRFRequest, bool)`
+`func (o *PatchedWritableIPAddressRequest) GetVrfOk() (*IPAddressRequestVrf, bool)`
 
 GetVrfOk returns a tuple with the Vrf field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVrf
 
-`func (o *PatchedWritableIPAddressRequest) SetVrf(v BriefVRFRequest)`
+`func (o *PatchedWritableIPAddressRequest) SetVrf(v IPAddressRequestVrf)`
 
 SetVrf sets Vrf field to given value.
 
@@ -99,20 +99,20 @@ HasVrf returns a boolean if a field has been set.
 UnsetVrf ensures that no value is present for Vrf, not even an explicit nil
 ### GetTenant
 
-`func (o *PatchedWritableIPAddressRequest) GetTenant() BriefTenantRequest`
+`func (o *PatchedWritableIPAddressRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableIPAddressRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *PatchedWritableIPAddressRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableIPAddressRequest) SetTenant(v BriefTenantRequest)`
+`func (o *PatchedWritableIPAddressRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

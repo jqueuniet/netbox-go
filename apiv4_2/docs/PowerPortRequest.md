@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
-**Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
+**Device** | [**BriefInterfaceRequestDevice**](BriefInterfaceRequestDevice.md) |  | 
+**Module** | Pointer to [**NullableConsolePortRequestModule**](ConsolePortRequestModule.md) |  | [optional] 
 **Name** | **string** |  | 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**NullablePatchedWritablePowerPortTemplateRequestType**](PatchedWritablePowerPortTemplateRequestType.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewPowerPortRequest
 
-`func NewPowerPortRequest(device BriefDeviceRequest, name string, ) *PowerPortRequest`
+`func NewPowerPortRequest(device BriefInterfaceRequestDevice, name string, ) *PowerPortRequest`
 
 NewPowerPortRequest instantiates a new PowerPortRequest object
 This constructor will assign default values to properties that have it defined,
@@ -37,40 +37,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PowerPortRequest) GetDevice() BriefDeviceRequest`
+`func (o *PowerPortRequest) GetDevice() BriefInterfaceRequestDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PowerPortRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *PowerPortRequest) GetDeviceOk() (*BriefInterfaceRequestDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PowerPortRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *PowerPortRequest) SetDevice(v BriefInterfaceRequestDevice)`
 
 SetDevice sets Device field to given value.
 
 
 ### GetModule
 
-`func (o *PowerPortRequest) GetModule() BriefModuleRequest`
+`func (o *PowerPortRequest) GetModule() ConsolePortRequestModule`
 
 GetModule returns the Module field if non-nil, zero value otherwise.
 
 ### GetModuleOk
 
-`func (o *PowerPortRequest) GetModuleOk() (*BriefModuleRequest, bool)`
+`func (o *PowerPortRequest) GetModuleOk() (*ConsolePortRequestModule, bool)`
 
 GetModuleOk returns a tuple with the Module field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModule
 
-`func (o *PowerPortRequest) SetModule(v BriefModuleRequest)`
+`func (o *PowerPortRequest) SetModule(v ConsolePortRequestModule)`
 
 SetModule sets Module field to given value.
 

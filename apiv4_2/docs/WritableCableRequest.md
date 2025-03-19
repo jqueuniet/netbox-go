@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ATerminations** | Pointer to [**[]GenericObjectRequest**](GenericObjectRequest.md) |  | [optional] 
 **BTerminations** | Pointer to [**[]GenericObjectRequest**](GenericObjectRequest.md) |  | [optional] 
 **Status** | Pointer to [**CableStatusValue**](CableStatusValue.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
 **Length** | Pointer to **NullableFloat64** |  | [optional] 
@@ -149,20 +149,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WritableCableRequest) GetTenant() BriefTenantRequest`
+`func (o *WritableCableRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableCableRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *WritableCableRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableCableRequest) SetTenant(v BriefTenantRequest)`
+`func (o *WritableCableRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

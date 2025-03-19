@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Group** | Pointer to [**NullableBriefTenantGroupRequest**](BriefTenantGroupRequest.md) |  | [optional] 
+**Group** | Pointer to [**NullablePatchedTenantRequestGroup**](PatchedTenantRequestGroup.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -73,20 +73,20 @@ SetSlug sets Slug field to given value.
 
 ### GetGroup
 
-`func (o *TenantRequest) GetGroup() BriefTenantGroupRequest`
+`func (o *TenantRequest) GetGroup() PatchedTenantRequestGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *TenantRequest) GetGroupOk() (*BriefTenantGroupRequest, bool)`
+`func (o *TenantRequest) GetGroupOk() (*PatchedTenantRequestGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *TenantRequest) SetGroup(v BriefTenantGroupRequest)`
+`func (o *TenantRequest) SetGroup(v PatchedTenantRequestGroup)`
 
 SetGroup sets Group field to given value.
 

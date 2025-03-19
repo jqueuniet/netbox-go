@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Manufacturer** | Pointer to [**BriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
-**DefaultPlatform** | Pointer to [**NullableBriefPlatformRequest**](BriefPlatformRequest.md) |  | [optional] 
+**Manufacturer** | Pointer to [**BriefDeviceTypeRequestManufacturer**](BriefDeviceTypeRequestManufacturer.md) |  | [optional] 
+**DefaultPlatform** | Pointer to [**NullableDeviceTypeRequestDefaultPlatform**](DeviceTypeRequestDefaultPlatform.md) |  | [optional] 
 **Model** | Pointer to **string** |  | [optional] 
 **Slug** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** | Discrete part number (optional) | [optional] 
@@ -44,20 +44,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetManufacturer
 
-`func (o *PatchedWritableDeviceTypeRequest) GetManufacturer() BriefManufacturerRequest`
+`func (o *PatchedWritableDeviceTypeRequest) GetManufacturer() BriefDeviceTypeRequestManufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *PatchedWritableDeviceTypeRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+`func (o *PatchedWritableDeviceTypeRequest) GetManufacturerOk() (*BriefDeviceTypeRequestManufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *PatchedWritableDeviceTypeRequest) SetManufacturer(v BriefManufacturerRequest)`
+`func (o *PatchedWritableDeviceTypeRequest) SetManufacturer(v BriefDeviceTypeRequestManufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 
@@ -69,20 +69,20 @@ HasManufacturer returns a boolean if a field has been set.
 
 ### GetDefaultPlatform
 
-`func (o *PatchedWritableDeviceTypeRequest) GetDefaultPlatform() BriefPlatformRequest`
+`func (o *PatchedWritableDeviceTypeRequest) GetDefaultPlatform() DeviceTypeRequestDefaultPlatform`
 
 GetDefaultPlatform returns the DefaultPlatform field if non-nil, zero value otherwise.
 
 ### GetDefaultPlatformOk
 
-`func (o *PatchedWritableDeviceTypeRequest) GetDefaultPlatformOk() (*BriefPlatformRequest, bool)`
+`func (o *PatchedWritableDeviceTypeRequest) GetDefaultPlatformOk() (*DeviceTypeRequestDefaultPlatform, bool)`
 
 GetDefaultPlatformOk returns a tuple with the DefaultPlatform field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefaultPlatform
 
-`func (o *PatchedWritableDeviceTypeRequest) SetDefaultPlatform(v BriefPlatformRequest)`
+`func (o *PatchedWritableDeviceTypeRequest) SetDefaultPlatform(v DeviceTypeRequestDefaultPlatform)`
 
 SetDefaultPlatform sets DefaultPlatform field to given value.
 

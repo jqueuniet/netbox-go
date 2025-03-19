@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ExportTargets** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -232,20 +232,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WritableL2VPNRequest) GetTenant() BriefTenantRequest`
+`func (o *WritableL2VPNRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableL2VPNRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *WritableL2VPNRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableL2VPNRequest) SetTenant(v BriefTenantRequest)`
+`func (o *WritableL2VPNRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cid** | **string** | Unique circuit ID | 
-**ProviderNetwork** | [**BriefProviderNetworkRequest**](BriefProviderNetworkRequest.md) |  | 
+**ProviderNetwork** | [**BriefVirtualCircuitRequestProviderNetwork**](BriefVirtualCircuitRequestProviderNetwork.md) |  | 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBriefVirtualCircuitRequest
 
-`func NewBriefVirtualCircuitRequest(cid string, providerNetwork BriefProviderNetworkRequest, ) *BriefVirtualCircuitRequest`
+`func NewBriefVirtualCircuitRequest(cid string, providerNetwork BriefVirtualCircuitRequestProviderNetwork, ) *BriefVirtualCircuitRequest`
 
 NewBriefVirtualCircuitRequest instantiates a new BriefVirtualCircuitRequest object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetCid sets Cid field to given value.
 
 ### GetProviderNetwork
 
-`func (o *BriefVirtualCircuitRequest) GetProviderNetwork() BriefProviderNetworkRequest`
+`func (o *BriefVirtualCircuitRequest) GetProviderNetwork() BriefVirtualCircuitRequestProviderNetwork`
 
 GetProviderNetwork returns the ProviderNetwork field if non-nil, zero value otherwise.
 
 ### GetProviderNetworkOk
 
-`func (o *BriefVirtualCircuitRequest) GetProviderNetworkOk() (*BriefProviderNetworkRequest, bool)`
+`func (o *BriefVirtualCircuitRequest) GetProviderNetworkOk() (*BriefVirtualCircuitRequestProviderNetwork, bool)`
 
 GetProviderNetworkOk returns a tuple with the ProviderNetwork field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderNetwork
 
-`func (o *BriefVirtualCircuitRequest) SetProviderNetwork(v BriefProviderNetworkRequest)`
+`func (o *BriefVirtualCircuitRequest) SetProviderNetwork(v BriefVirtualCircuitRequestProviderNetwork)`
 
 SetProviderNetwork sets ProviderNetwork field to given value.
 

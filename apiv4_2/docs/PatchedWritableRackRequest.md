@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
 **FacilityId** | Pointer to **NullableString** |  | [optional] 
-**Site** | Pointer to [**BriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
-**Location** | Pointer to [**NullableBriefLocationRequest**](BriefLocationRequest.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Site** | Pointer to [**DeviceWithConfigContextRequestSite**](DeviceWithConfigContextRequestSite.md) |  | [optional] 
+**Location** | Pointer to [**NullableDeviceWithConfigContextRequestLocation**](DeviceWithConfigContextRequestLocation.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Status** | Pointer to [**PatchedWritableRackRequestStatus**](PatchedWritableRackRequestStatus.md) |  | [optional] 
-**Role** | Pointer to [**NullableBriefRackRoleRequest**](BriefRackRoleRequest.md) |  | [optional] 
+**Role** | Pointer to [**NullablePatchedWritableRackRequestRole**](PatchedWritableRackRequestRole.md) |  | [optional] 
 **Serial** | Pointer to **string** |  | [optional] 
 **AssetTag** | Pointer to **NullableString** | A unique tag used to identify this rack | [optional] 
-**RackType** | Pointer to [**NullableBriefRackTypeRequest**](BriefRackTypeRequest.md) |  | [optional] 
+**RackType** | Pointer to [**NullablePatchedWritableRackRequestRackType**](PatchedWritableRackRequestRackType.md) |  | [optional] 
 **FormFactor** | Pointer to [**NullablePatchedWritableRackRequestFormFactor**](PatchedWritableRackRequestFormFactor.md) |  | [optional] 
 **Width** | Pointer to [**PatchedWritableRackRequestWidth**](PatchedWritableRackRequestWidth.md) |  | [optional] 
 **UHeight** | Pointer to **int32** | Height in rack units | [optional] 
@@ -113,20 +113,20 @@ HasFacilityId returns a boolean if a field has been set.
 UnsetFacilityId ensures that no value is present for FacilityId, not even an explicit nil
 ### GetSite
 
-`func (o *PatchedWritableRackRequest) GetSite() BriefSiteRequest`
+`func (o *PatchedWritableRackRequest) GetSite() DeviceWithConfigContextRequestSite`
 
 GetSite returns the Site field if non-nil, zero value otherwise.
 
 ### GetSiteOk
 
-`func (o *PatchedWritableRackRequest) GetSiteOk() (*BriefSiteRequest, bool)`
+`func (o *PatchedWritableRackRequest) GetSiteOk() (*DeviceWithConfigContextRequestSite, bool)`
 
 GetSiteOk returns a tuple with the Site field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSite
 
-`func (o *PatchedWritableRackRequest) SetSite(v BriefSiteRequest)`
+`func (o *PatchedWritableRackRequest) SetSite(v DeviceWithConfigContextRequestSite)`
 
 SetSite sets Site field to given value.
 
@@ -138,20 +138,20 @@ HasSite returns a boolean if a field has been set.
 
 ### GetLocation
 
-`func (o *PatchedWritableRackRequest) GetLocation() BriefLocationRequest`
+`func (o *PatchedWritableRackRequest) GetLocation() DeviceWithConfigContextRequestLocation`
 
 GetLocation returns the Location field if non-nil, zero value otherwise.
 
 ### GetLocationOk
 
-`func (o *PatchedWritableRackRequest) GetLocationOk() (*BriefLocationRequest, bool)`
+`func (o *PatchedWritableRackRequest) GetLocationOk() (*DeviceWithConfigContextRequestLocation, bool)`
 
 GetLocationOk returns a tuple with the Location field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLocation
 
-`func (o *PatchedWritableRackRequest) SetLocation(v BriefLocationRequest)`
+`func (o *PatchedWritableRackRequest) SetLocation(v DeviceWithConfigContextRequestLocation)`
 
 SetLocation sets Location field to given value.
 
@@ -173,20 +173,20 @@ HasLocation returns a boolean if a field has been set.
 UnsetLocation ensures that no value is present for Location, not even an explicit nil
 ### GetTenant
 
-`func (o *PatchedWritableRackRequest) GetTenant() BriefTenantRequest`
+`func (o *PatchedWritableRackRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *PatchedWritableRackRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *PatchedWritableRackRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *PatchedWritableRackRequest) SetTenant(v BriefTenantRequest)`
+`func (o *PatchedWritableRackRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -233,20 +233,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRole
 
-`func (o *PatchedWritableRackRequest) GetRole() BriefRackRoleRequest`
+`func (o *PatchedWritableRackRequest) GetRole() PatchedWritableRackRequestRole`
 
 GetRole returns the Role field if non-nil, zero value otherwise.
 
 ### GetRoleOk
 
-`func (o *PatchedWritableRackRequest) GetRoleOk() (*BriefRackRoleRequest, bool)`
+`func (o *PatchedWritableRackRequest) GetRoleOk() (*PatchedWritableRackRequestRole, bool)`
 
 GetRoleOk returns a tuple with the Role field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRole
 
-`func (o *PatchedWritableRackRequest) SetRole(v BriefRackRoleRequest)`
+`func (o *PatchedWritableRackRequest) SetRole(v PatchedWritableRackRequestRole)`
 
 SetRole sets Role field to given value.
 
@@ -328,20 +328,20 @@ HasAssetTag returns a boolean if a field has been set.
 UnsetAssetTag ensures that no value is present for AssetTag, not even an explicit nil
 ### GetRackType
 
-`func (o *PatchedWritableRackRequest) GetRackType() BriefRackTypeRequest`
+`func (o *PatchedWritableRackRequest) GetRackType() PatchedWritableRackRequestRackType`
 
 GetRackType returns the RackType field if non-nil, zero value otherwise.
 
 ### GetRackTypeOk
 
-`func (o *PatchedWritableRackRequest) GetRackTypeOk() (*BriefRackTypeRequest, bool)`
+`func (o *PatchedWritableRackRequest) GetRackTypeOk() (*PatchedWritableRackRequestRackType, bool)`
 
 GetRackTypeOk returns a tuple with the RackType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRackType
 
-`func (o *PatchedWritableRackRequest) SetRackType(v BriefRackTypeRequest)`
+`func (o *PatchedWritableRackRequest) SetRackType(v PatchedWritableRackRequestRackType)`
 
 SetRackType sets RackType field to given value.
 

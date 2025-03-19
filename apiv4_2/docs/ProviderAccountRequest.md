@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Provider** | [**BriefProviderRequest**](BriefProviderRequest.md) |  | 
+**Provider** | [**BriefCircuitRequestProvider**](BriefCircuitRequestProvider.md) |  | 
 **Name** | Pointer to **string** |  | [optional] [default to ""]
 **Account** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewProviderAccountRequest
 
-`func NewProviderAccountRequest(provider BriefProviderRequest, account string, ) *ProviderAccountRequest`
+`func NewProviderAccountRequest(provider BriefCircuitRequestProvider, account string, ) *ProviderAccountRequest`
 
 NewProviderAccountRequest instantiates a new ProviderAccountRequest object
 This constructor will assign default values to properties that have it defined,
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetProvider
 
-`func (o *ProviderAccountRequest) GetProvider() BriefProviderRequest`
+`func (o *ProviderAccountRequest) GetProvider() BriefCircuitRequestProvider`
 
 GetProvider returns the Provider field if non-nil, zero value otherwise.
 
 ### GetProviderOk
 
-`func (o *ProviderAccountRequest) GetProviderOk() (*BriefProviderRequest, bool)`
+`func (o *ProviderAccountRequest) GetProviderOk() (*BriefCircuitRequestProvider, bool)`
 
 GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvider
 
-`func (o *ProviderAccountRequest) SetProvider(v BriefProviderRequest)`
+`func (o *ProviderAccountRequest) SetProvider(v BriefCircuitRequestProvider)`
 
 SetProvider sets Provider field to given value.
 

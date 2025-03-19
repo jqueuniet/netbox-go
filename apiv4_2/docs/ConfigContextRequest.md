@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **TenantGroups** | Pointer to **[]int32** |  | [optional] 
 **Tenants** | Pointer to **[]int32** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
-**DataSource** | Pointer to [**BriefDataSourceRequest**](BriefDataSourceRequest.md) |  | [optional] 
+**DataSource** | Pointer to [**ConfigContextRequestDataSource**](ConfigContextRequestDataSource.md) |  | [optional] 
 **Data** | **interface{}** |  | 
 
 ## Methods
@@ -465,20 +465,20 @@ HasTags returns a boolean if a field has been set.
 
 ### GetDataSource
 
-`func (o *ConfigContextRequest) GetDataSource() BriefDataSourceRequest`
+`func (o *ConfigContextRequest) GetDataSource() ConfigContextRequestDataSource`
 
 GetDataSource returns the DataSource field if non-nil, zero value otherwise.
 
 ### GetDataSourceOk
 
-`func (o *ConfigContextRequest) GetDataSourceOk() (*BriefDataSourceRequest, bool)`
+`func (o *ConfigContextRequest) GetDataSourceOk() (*ConfigContextRequestDataSource, bool)`
 
 GetDataSourceOk returns a tuple with the DataSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataSource
 
-`func (o *ConfigContextRequest) SetDataSource(v BriefDataSourceRequest)`
+`func (o *ConfigContextRequest) SetDataSource(v ConfigContextRequestDataSource)`
 
 SetDataSource sets DataSource field to given value.
 

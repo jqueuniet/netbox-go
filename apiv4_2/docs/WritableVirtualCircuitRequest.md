@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cid** | **string** | Unique circuit ID | 
-**ProviderNetwork** | [**BriefProviderNetworkRequest**](BriefProviderNetworkRequest.md) |  | 
-**ProviderAccount** | Pointer to [**NullableBriefProviderAccountRequest**](BriefProviderAccountRequest.md) |  | [optional] 
-**Type** | [**BriefVirtualCircuitTypeRequest**](BriefVirtualCircuitTypeRequest.md) |  | 
+**ProviderNetwork** | [**BriefVirtualCircuitRequestProviderNetwork**](BriefVirtualCircuitRequestProviderNetwork.md) |  | 
+**ProviderAccount** | Pointer to [**NullableCircuitRequestProviderAccount**](CircuitRequestProviderAccount.md) |  | [optional] 
+**Type** | [**PatchedWritableVirtualCircuitRequestType**](PatchedWritableVirtualCircuitRequestType.md) |  | 
 **Status** | Pointer to [**CircuitStatusValue**](CircuitStatusValue.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
+**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewWritableVirtualCircuitRequest
 
-`func NewWritableVirtualCircuitRequest(cid string, providerNetwork BriefProviderNetworkRequest, type_ BriefVirtualCircuitTypeRequest, ) *WritableVirtualCircuitRequest`
+`func NewWritableVirtualCircuitRequest(cid string, providerNetwork BriefVirtualCircuitRequestProviderNetwork, type_ PatchedWritableVirtualCircuitRequestType, ) *WritableVirtualCircuitRequest`
 
 NewWritableVirtualCircuitRequest instantiates a new WritableVirtualCircuitRequest object
 This constructor will assign default values to properties that have it defined,
@@ -56,40 +56,40 @@ SetCid sets Cid field to given value.
 
 ### GetProviderNetwork
 
-`func (o *WritableVirtualCircuitRequest) GetProviderNetwork() BriefProviderNetworkRequest`
+`func (o *WritableVirtualCircuitRequest) GetProviderNetwork() BriefVirtualCircuitRequestProviderNetwork`
 
 GetProviderNetwork returns the ProviderNetwork field if non-nil, zero value otherwise.
 
 ### GetProviderNetworkOk
 
-`func (o *WritableVirtualCircuitRequest) GetProviderNetworkOk() (*BriefProviderNetworkRequest, bool)`
+`func (o *WritableVirtualCircuitRequest) GetProviderNetworkOk() (*BriefVirtualCircuitRequestProviderNetwork, bool)`
 
 GetProviderNetworkOk returns a tuple with the ProviderNetwork field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderNetwork
 
-`func (o *WritableVirtualCircuitRequest) SetProviderNetwork(v BriefProviderNetworkRequest)`
+`func (o *WritableVirtualCircuitRequest) SetProviderNetwork(v BriefVirtualCircuitRequestProviderNetwork)`
 
 SetProviderNetwork sets ProviderNetwork field to given value.
 
 
 ### GetProviderAccount
 
-`func (o *WritableVirtualCircuitRequest) GetProviderAccount() BriefProviderAccountRequest`
+`func (o *WritableVirtualCircuitRequest) GetProviderAccount() CircuitRequestProviderAccount`
 
 GetProviderAccount returns the ProviderAccount field if non-nil, zero value otherwise.
 
 ### GetProviderAccountOk
 
-`func (o *WritableVirtualCircuitRequest) GetProviderAccountOk() (*BriefProviderAccountRequest, bool)`
+`func (o *WritableVirtualCircuitRequest) GetProviderAccountOk() (*CircuitRequestProviderAccount, bool)`
 
 GetProviderAccountOk returns a tuple with the ProviderAccount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProviderAccount
 
-`func (o *WritableVirtualCircuitRequest) SetProviderAccount(v BriefProviderAccountRequest)`
+`func (o *WritableVirtualCircuitRequest) SetProviderAccount(v CircuitRequestProviderAccount)`
 
 SetProviderAccount sets ProviderAccount field to given value.
 
@@ -111,20 +111,20 @@ HasProviderAccount returns a boolean if a field has been set.
 UnsetProviderAccount ensures that no value is present for ProviderAccount, not even an explicit nil
 ### GetType
 
-`func (o *WritableVirtualCircuitRequest) GetType() BriefVirtualCircuitTypeRequest`
+`func (o *WritableVirtualCircuitRequest) GetType() PatchedWritableVirtualCircuitRequestType`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *WritableVirtualCircuitRequest) GetTypeOk() (*BriefVirtualCircuitTypeRequest, bool)`
+`func (o *WritableVirtualCircuitRequest) GetTypeOk() (*PatchedWritableVirtualCircuitRequestType, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *WritableVirtualCircuitRequest) SetType(v BriefVirtualCircuitTypeRequest)`
+`func (o *WritableVirtualCircuitRequest) SetType(v PatchedWritableVirtualCircuitRequestType)`
 
 SetType sets Type field to given value.
 
@@ -156,20 +156,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetTenant
 
-`func (o *WritableVirtualCircuitRequest) GetTenant() BriefTenantRequest`
+`func (o *WritableVirtualCircuitRequest) GetTenant() ASNRangeRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *WritableVirtualCircuitRequest) GetTenantOk() (*BriefTenantRequest, bool)`
+`func (o *WritableVirtualCircuitRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *WritableVirtualCircuitRequest) SetTenant(v BriefTenantRequest)`
+`func (o *WritableVirtualCircuitRequest) SetTenant(v ASNRangeRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 

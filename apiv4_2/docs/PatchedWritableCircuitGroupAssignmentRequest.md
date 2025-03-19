@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Group** | Pointer to [**BriefCircuitGroupRequest**](BriefCircuitGroupRequest.md) |  | [optional] 
+**Group** | Pointer to [**BriefCircuitGroupAssignmentSerializerRequestGroup**](BriefCircuitGroupAssignmentSerializerRequestGroup.md) |  | [optional] 
 **MemberType** | Pointer to **string** |  | [optional] 
 **MemberId** | Pointer to **int64** |  | [optional] 
 **Priority** | Pointer to [**NullablePatchedWritableCircuitGroupAssignmentRequestPriority**](PatchedWritableCircuitGroupAssignmentRequestPriority.md) |  | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGroup
 
-`func (o *PatchedWritableCircuitGroupAssignmentRequest) GetGroup() BriefCircuitGroupRequest`
+`func (o *PatchedWritableCircuitGroupAssignmentRequest) GetGroup() BriefCircuitGroupAssignmentSerializerRequestGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *PatchedWritableCircuitGroupAssignmentRequest) GetGroupOk() (*BriefCircuitGroupRequest, bool)`
+`func (o *PatchedWritableCircuitGroupAssignmentRequest) GetGroupOk() (*BriefCircuitGroupAssignmentSerializerRequestGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *PatchedWritableCircuitGroupAssignmentRequest) SetGroup(v BriefCircuitGroupRequest)`
+`func (o *PatchedWritableCircuitGroupAssignmentRequest) SetGroup(v BriefCircuitGroupAssignmentSerializerRequestGroup)`
 
 SetGroup sets Group field to given value.
 

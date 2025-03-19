@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Group** | [**BriefCircuitGroupRequest**](BriefCircuitGroupRequest.md) |  | 
+**Group** | [**BriefCircuitGroupAssignmentSerializerRequestGroup**](BriefCircuitGroupAssignmentSerializerRequestGroup.md) |  | 
 **MemberType** | **string** |  | 
 **MemberId** | **int64** |  | 
 **Priority** | Pointer to [**NullablePatchedWritableCircuitGroupAssignmentRequestPriority**](PatchedWritableCircuitGroupAssignmentRequestPriority.md) |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewWritableCircuitGroupAssignmentRequest
 
-`func NewWritableCircuitGroupAssignmentRequest(group BriefCircuitGroupRequest, memberType string, memberId int64, ) *WritableCircuitGroupAssignmentRequest`
+`func NewWritableCircuitGroupAssignmentRequest(group BriefCircuitGroupAssignmentSerializerRequestGroup, memberType string, memberId int64, ) *WritableCircuitGroupAssignmentRequest`
 
 NewWritableCircuitGroupAssignmentRequest instantiates a new WritableCircuitGroupAssignmentRequest object
 This constructor will assign default values to properties that have it defined,
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGroup
 
-`func (o *WritableCircuitGroupAssignmentRequest) GetGroup() BriefCircuitGroupRequest`
+`func (o *WritableCircuitGroupAssignmentRequest) GetGroup() BriefCircuitGroupAssignmentSerializerRequestGroup`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *WritableCircuitGroupAssignmentRequest) GetGroupOk() (*BriefCircuitGroupRequest, bool)`
+`func (o *WritableCircuitGroupAssignmentRequest) GetGroupOk() (*BriefCircuitGroupAssignmentSerializerRequestGroup, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *WritableCircuitGroupAssignmentRequest) SetGroup(v BriefCircuitGroupRequest)`
+`func (o *WritableCircuitGroupAssignmentRequest) SetGroup(v BriefCircuitGroupAssignmentSerializerRequestGroup)`
 
 SetGroup sets Group field to given value.
 

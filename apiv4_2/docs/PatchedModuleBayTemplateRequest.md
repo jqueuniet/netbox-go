@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeviceType** | Pointer to [**NullableBriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | [optional] 
-**ModuleType** | Pointer to [**NullableBriefModuleTypeRequest**](BriefModuleTypeRequest.md) |  | [optional] 
+**DeviceType** | Pointer to [**NullableConsolePortTemplateRequestDeviceType**](ConsolePortTemplateRequestDeviceType.md) |  | [optional] 
+**ModuleType** | Pointer to [**NullableConsolePortTemplateRequestModuleType**](ConsolePortTemplateRequestModuleType.md) |  | [optional] 
 **Name** | Pointer to **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Position** | Pointer to **string** | Identifier to reference when renaming installed components | [optional] 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDeviceType
 
-`func (o *PatchedModuleBayTemplateRequest) GetDeviceType() BriefDeviceTypeRequest`
+`func (o *PatchedModuleBayTemplateRequest) GetDeviceType() ConsolePortTemplateRequestDeviceType`
 
 GetDeviceType returns the DeviceType field if non-nil, zero value otherwise.
 
 ### GetDeviceTypeOk
 
-`func (o *PatchedModuleBayTemplateRequest) GetDeviceTypeOk() (*BriefDeviceTypeRequest, bool)`
+`func (o *PatchedModuleBayTemplateRequest) GetDeviceTypeOk() (*ConsolePortTemplateRequestDeviceType, bool)`
 
 GetDeviceTypeOk returns a tuple with the DeviceType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeviceType
 
-`func (o *PatchedModuleBayTemplateRequest) SetDeviceType(v BriefDeviceTypeRequest)`
+`func (o *PatchedModuleBayTemplateRequest) SetDeviceType(v ConsolePortTemplateRequestDeviceType)`
 
 SetDeviceType sets DeviceType field to given value.
 
@@ -67,20 +67,20 @@ HasDeviceType returns a boolean if a field has been set.
 UnsetDeviceType ensures that no value is present for DeviceType, not even an explicit nil
 ### GetModuleType
 
-`func (o *PatchedModuleBayTemplateRequest) GetModuleType() BriefModuleTypeRequest`
+`func (o *PatchedModuleBayTemplateRequest) GetModuleType() ConsolePortTemplateRequestModuleType`
 
 GetModuleType returns the ModuleType field if non-nil, zero value otherwise.
 
 ### GetModuleTypeOk
 
-`func (o *PatchedModuleBayTemplateRequest) GetModuleTypeOk() (*BriefModuleTypeRequest, bool)`
+`func (o *PatchedModuleBayTemplateRequest) GetModuleTypeOk() (*ConsolePortTemplateRequestModuleType, bool)`
 
 GetModuleTypeOk returns a tuple with the ModuleType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetModuleType
 
-`func (o *PatchedModuleBayTemplateRequest) SetModuleType(v BriefModuleTypeRequest)`
+`func (o *PatchedModuleBayTemplateRequest) SetModuleType(v ConsolePortTemplateRequestModuleType)`
 
 SetModuleType sets ModuleType field to given value.
 

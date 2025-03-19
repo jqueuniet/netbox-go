@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Manufacturer** | [**BriefManufacturerRequest**](BriefManufacturerRequest.md) |  | 
+**Manufacturer** | [**BriefDeviceTypeRequestManufacturer**](BriefDeviceTypeRequestManufacturer.md) |  | 
 **Model** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewBriefRackTypeRequest
 
-`func NewBriefRackTypeRequest(manufacturer BriefManufacturerRequest, model string, slug string, ) *BriefRackTypeRequest`
+`func NewBriefRackTypeRequest(manufacturer BriefDeviceTypeRequestManufacturer, model string, slug string, ) *BriefRackTypeRequest`
 
 NewBriefRackTypeRequest instantiates a new BriefRackTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetManufacturer
 
-`func (o *BriefRackTypeRequest) GetManufacturer() BriefManufacturerRequest`
+`func (o *BriefRackTypeRequest) GetManufacturer() BriefDeviceTypeRequestManufacturer`
 
 GetManufacturer returns the Manufacturer field if non-nil, zero value otherwise.
 
 ### GetManufacturerOk
 
-`func (o *BriefRackTypeRequest) GetManufacturerOk() (*BriefManufacturerRequest, bool)`
+`func (o *BriefRackTypeRequest) GetManufacturerOk() (*BriefDeviceTypeRequestManufacturer, bool)`
 
 GetManufacturerOk returns a tuple with the Manufacturer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManufacturer
 
-`func (o *BriefRackTypeRequest) SetManufacturer(v BriefManufacturerRequest)`
+`func (o *BriefRackTypeRequest) SetManufacturer(v BriefDeviceTypeRequestManufacturer)`
 
 SetManufacturer sets Manufacturer field to given value.
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cid** | **string** | Unique circuit ID | 
-**Provider** | [**BriefProviderRequest**](BriefProviderRequest.md) |  | 
+**Provider** | [**BriefCircuitRequestProvider**](BriefCircuitRequestProvider.md) |  | 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBriefCircuitRequest
 
-`func NewBriefCircuitRequest(cid string, provider BriefProviderRequest, ) *BriefCircuitRequest`
+`func NewBriefCircuitRequest(cid string, provider BriefCircuitRequestProvider, ) *BriefCircuitRequest`
 
 NewBriefCircuitRequest instantiates a new BriefCircuitRequest object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetCid sets Cid field to given value.
 
 ### GetProvider
 
-`func (o *BriefCircuitRequest) GetProvider() BriefProviderRequest`
+`func (o *BriefCircuitRequest) GetProvider() BriefCircuitRequestProvider`
 
 GetProvider returns the Provider field if non-nil, zero value otherwise.
 
 ### GetProviderOk
 
-`func (o *BriefCircuitRequest) GetProviderOk() (*BriefProviderRequest, bool)`
+`func (o *BriefCircuitRequest) GetProviderOk() (*BriefCircuitRequestProvider, bool)`
 
 GetProviderOk returns a tuple with the Provider field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProvider
 
-`func (o *BriefCircuitRequest) SetProvider(v BriefProviderRequest)`
+`func (o *BriefCircuitRequest) SetProvider(v BriefCircuitRequestProvider)`
 
 SetProvider sets Provider field to given value.
 

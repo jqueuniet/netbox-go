@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Device** | Pointer to [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
+**Device** | Pointer to [**BriefInterfaceRequestDevice**](BriefInterfaceRequestDevice.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**InstalledDevice** | Pointer to [**NullableBriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
+**InstalledDevice** | Pointer to [**NullableDeviceBayRequestInstalledDevice**](DeviceBayRequestInstalledDevice.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetDevice
 
-`func (o *PatchedDeviceBayRequest) GetDevice() BriefDeviceRequest`
+`func (o *PatchedDeviceBayRequest) GetDevice() BriefInterfaceRequestDevice`
 
 GetDevice returns the Device field if non-nil, zero value otherwise.
 
 ### GetDeviceOk
 
-`func (o *PatchedDeviceBayRequest) GetDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *PatchedDeviceBayRequest) GetDeviceOk() (*BriefInterfaceRequestDevice, bool)`
 
 GetDeviceOk returns a tuple with the Device field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDevice
 
-`func (o *PatchedDeviceBayRequest) SetDevice(v BriefDeviceRequest)`
+`func (o *PatchedDeviceBayRequest) SetDevice(v BriefInterfaceRequestDevice)`
 
 SetDevice sets Device field to given value.
 
@@ -133,20 +133,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetInstalledDevice
 
-`func (o *PatchedDeviceBayRequest) GetInstalledDevice() BriefDeviceRequest`
+`func (o *PatchedDeviceBayRequest) GetInstalledDevice() DeviceBayRequestInstalledDevice`
 
 GetInstalledDevice returns the InstalledDevice field if non-nil, zero value otherwise.
 
 ### GetInstalledDeviceOk
 
-`func (o *PatchedDeviceBayRequest) GetInstalledDeviceOk() (*BriefDeviceRequest, bool)`
+`func (o *PatchedDeviceBayRequest) GetInstalledDeviceOk() (*DeviceBayRequestInstalledDevice, bool)`
 
 GetInstalledDeviceOk returns a tuple with the InstalledDevice field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInstalledDevice
 
-`func (o *PatchedDeviceBayRequest) SetInstalledDevice(v BriefDeviceRequest)`
+`func (o *PatchedDeviceBayRequest) SetInstalledDevice(v DeviceBayRequestInstalledDevice)`
 
 SetInstalledDevice sets InstalledDevice field to given value.
 
