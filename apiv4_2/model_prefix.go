@@ -30,7 +30,7 @@ type Prefix struct {
 	Vrf        NullableBriefVRF    `json:"vrf,omitempty"`
 	ScopeType  NullableString      `json:"scope_type,omitempty"`
 	ScopeId    NullableInt32       `json:"scope_id,omitempty"`
-	Scope      interface{}         `json:"scope"`
+	Scope      interface{}         `json:"scope,omitempty"`
 	Tenant     NullableBriefTenant `json:"tenant,omitempty"`
 	Vlan       NullableBriefVLAN   `json:"vlan,omitempty"`
 	Status     *PrefixStatus       `json:"status,omitempty"`
@@ -56,13 +56,12 @@ type _Prefix Prefix
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPrefix(id int32, url string, family AggregateFamily, prefix string, scope interface{}, lastUpdated NullableTime, children int32, depth int32) *Prefix {
+func NewPrefix(id int32, url string, family AggregateFamily, prefix string, lastUpdated NullableTime, children int32, depth int32) *Prefix {
 	this := Prefix{}
 	this.Id = id
 	this.Url = url
 	this.Family = family
 	this.Prefix = prefix
-	this.Scope = scope
 	this.LastUpdated = lastUpdated
 	this.Children = children
 	this.Depth = depth
@@ -366,18 +365,16 @@ func (o *Prefix) UnsetScopeId() {
 	o.ScopeId.Unset()
 }
 
-// GetScope returns the Scope field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetScope returns the Scope field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Prefix) GetScope() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.Scope
 }
 
-// GetScopeOk returns a tuple with the Scope field value
+// GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Prefix) GetScopeOk() (*interface{}, bool) {
@@ -387,7 +384,16 @@ func (o *Prefix) GetScopeOk() (*interface{}, bool) {
 	return &o.Scope, true
 }
 
-// SetScope sets field value
+// HasScope returns a boolean if a field has been set.
+func (o *Prefix) HasScope() bool {
+	if o != nil && !IsNil(o.Scope) {
+		return true
+	}
+
+	return false
+}
+
+// SetScope gets a reference to the given interface{} and assigns it to the Scope field.
 func (o *Prefix) SetScope(v interface{}) {
 	o.Scope = v
 }
@@ -947,7 +953,6 @@ func (o *Prefix) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"family",
 		"prefix",
-		"scope",
 		"last_updated",
 		"children",
 		"_depth",

@@ -154133,7 +154133,6 @@ components:
       - id
       - last_updated
       - prefix
-      - scope
       - url
     PrefixRequest:
       type: object

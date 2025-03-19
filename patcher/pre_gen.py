@@ -92,6 +92,8 @@ def patch_spec(data):
                     and not prop.endswith("_count")
                     # Netbox 3.x/4.x compatibility
                     and not (prop == "cable_end" and name == "Interface")
+                    # Netbox 4.2 compatibility
+                    and not (prop == "scope" and name == "Prefix")
                 ]
 
     return data

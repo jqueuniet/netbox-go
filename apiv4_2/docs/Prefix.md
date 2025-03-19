@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Vrf** | Pointer to [**NullableBriefVRF**](BriefVRF.md) |  | [optional] 
 **ScopeType** | Pointer to **NullableString** |  | [optional] 
 **ScopeId** | Pointer to **NullableInt32** |  | [optional] 
-**Scope** | **interface{}** |  | [readonly] 
+**Scope** | Pointer to **interface{}** |  | [optional] [readonly] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **Vlan** | Pointer to [**NullableBriefVLAN**](BriefVLAN.md) |  | [optional] 
 **Status** | Pointer to [**PrefixStatus**](PrefixStatus.md) |  | [optional] 
@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 
 ### NewPrefix
 
-`func NewPrefix(id int32, url string, family AggregateFamily, prefix string, scope interface{}, lastUpdated NullableTime, children int32, depth int32, ) *Prefix`
+`func NewPrefix(id int32, url string, family AggregateFamily, prefix string, lastUpdated NullableTime, children int32, depth int32, ) *Prefix`
 
 NewPrefix instantiates a new Prefix object
 This constructor will assign default values to properties that have it defined,
@@ -302,6 +302,11 @@ and a boolean to check if the value has been set.
 
 SetScope sets Scope field to given value.
 
+### HasScope
+
+`func (o *Prefix) HasScope() bool`
+
+HasScope returns a boolean if a field has been set.
 
 ### SetScopeNil
 
