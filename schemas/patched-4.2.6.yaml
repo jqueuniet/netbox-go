@@ -150017,6 +150017,10 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
+        mac_address:
+          type: string
+          minLength: 1
+          nullable: true
     PatchedWritableVirtualChassisRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -170103,6 +170107,10 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
+        mac_address:
+          type: string
+          minLength: 1
+          nullable: true
       required:
       - name
       - virtual_machine

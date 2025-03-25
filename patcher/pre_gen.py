@@ -96,6 +96,16 @@ def patch_spec(data):
                     # Netbox 4.2 compatibility
                     and not (prop == "scope" and name == "Prefix")
                 ]
+            if data["info"]["version"].startswith("4.2."):
+                # Netbox 4.2 compatibility
+                # Note that this field will be ignored by a 4.2 server
+                # The only use is to keep the same client with earlier Netbox versions
+                if name in ["WritableVMInterfaceRequest", "PatchedWritableVMInterfaceRequest"]:
+                    schema["properties"]["mac_address"] = {
+                        "type": "string",
+                        "minLength": 1,
+                        "nullable": True,
+                    }
 
     return data
 

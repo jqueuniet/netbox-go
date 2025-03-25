@@ -35,6 +35,7 @@ type PatchedWritableVMInterfaceRequest struct {
 	Vrf                   NullableIPAddressRequestVrf                   `json:"vrf,omitempty"`
 	Tags                  []NestedTagRequest                            `json:"tags,omitempty"`
 	CustomFields          map[string]interface{}                        `json:"custom_fields,omitempty"`
+	MacAddress            NullableString                                `json:"mac_address,omitempty"`
 	AdditionalProperties  map[string]interface{}
 }
 
@@ -668,6 +669,49 @@ func (o *PatchedWritableVMInterfaceRequest) SetCustomFields(v map[string]interfa
 	o.CustomFields = v
 }
 
+// GetMacAddress returns the MacAddress field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PatchedWritableVMInterfaceRequest) GetMacAddress() string {
+	if o == nil || IsNil(o.MacAddress.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.MacAddress.Get()
+}
+
+// GetMacAddressOk returns a tuple with the MacAddress field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PatchedWritableVMInterfaceRequest) GetMacAddressOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MacAddress.Get(), o.MacAddress.IsSet()
+}
+
+// HasMacAddress returns a boolean if a field has been set.
+func (o *PatchedWritableVMInterfaceRequest) HasMacAddress() bool {
+	if o != nil && o.MacAddress.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMacAddress gets a reference to the given NullableString and assigns it to the MacAddress field.
+func (o *PatchedWritableVMInterfaceRequest) SetMacAddress(v string) {
+	o.MacAddress.Set(&v)
+}
+
+// SetMacAddressNil sets the value for MacAddress to be an explicit nil
+func (o *PatchedWritableVMInterfaceRequest) SetMacAddressNil() {
+	o.MacAddress.Set(nil)
+}
+
+// UnsetMacAddress ensures that no value is present for MacAddress, not even an explicit nil
+func (o *PatchedWritableVMInterfaceRequest) UnsetMacAddress() {
+	o.MacAddress.Unset()
+}
+
 func (o PatchedWritableVMInterfaceRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -726,6 +770,9 @@ func (o PatchedWritableVMInterfaceRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
+	if o.MacAddress.IsSet() {
+		toSerialize["mac_address"] = o.MacAddress.Get()
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -764,6 +811,7 @@ func (o *PatchedWritableVMInterfaceRequest) UnmarshalJSON(data []byte) (err erro
 		delete(additionalProperties, "vrf")
 		delete(additionalProperties, "tags")
 		delete(additionalProperties, "custom_fields")
+		delete(additionalProperties, "mac_address")
 		o.AdditionalProperties = additionalProperties
 	}
 
