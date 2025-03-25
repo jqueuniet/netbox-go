@@ -1,12 +1,12 @@
 generatorName: go
 packageName: apiv4_2
-packageVersion: 4.2.5
+packageVersion: 4.2.6
 
 gitHost: github.com
 gitUserId: jqueuniet
 gitRepoId: netbox-go
 
-inputSpec: schemas/patched-4.2.5.yaml
+inputSpec: schemas/patched-4.2.6.yaml
 outputDir: apiv4_2
 
 globalProperty:

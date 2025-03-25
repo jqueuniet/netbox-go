@@ -41,6 +41,12 @@
 
 * `FC` (value: `"FC"`)
 
+* `FC_PC` (value: `"FC/PC"`)
+
+* `FC_UPC` (value: `"FC/UPC"`)
+
+* `FC_APC` (value: `"FC/APC"`)
+
 * `LC` (value: `"LC"`)
 
 * `LC_PC` (value: `"LC/PC"`)
