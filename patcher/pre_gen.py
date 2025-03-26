@@ -14,6 +14,7 @@ MISSING_REQUIRED_FIELDS = (
     "created",  # for sites
     "display",  # Virtual disks
     "scope",
+    "mac_addresses"
 )
 
 
@@ -106,6 +107,8 @@ def patch_spec(data):
                         "minLength": 1,
                         "nullable": True,
                     }
+                    if "required" in schema:
+                        schema["required"] = [prop for prop in schema["required"] if prop != "mac_addresses"]
 
     return data
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Mtu** | Pointer to **NullableInt32** |  | [optional] 
 **MacAddress** | **NullableString** |  | [readonly] 
 **PrimaryMacAddress** | Pointer to [**NullableBriefMACAddress**](BriefMACAddress.md) |  | [optional] 
-**MacAddresses** | [**[]BriefMACAddress**](BriefMACAddress.md) |  | [readonly] 
+**MacAddresses** | Pointer to [**[]BriefMACAddress**](BriefMACAddress.md) |  | [optional] [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | Pointer to [**InterfaceMode**](InterfaceMode.md) |  | [optional] 
 **UntaggedVlan** | Pointer to [**NullableBriefVLAN**](BriefVLAN.md) |  | [optional] 
@@ -36,7 +36,7 @@ Name | Type | Description | Notes
 
 ### NewVMInterface
 
-`func NewVMInterface(id int32, url string, virtualMachine BriefVirtualMachine, name string, macAddress NullableString, macAddresses []BriefMACAddress, l2vpnTermination NullableBriefL2VPNTermination, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, ) *VMInterface`
+`func NewVMInterface(id int32, url string, virtualMachine BriefVirtualMachine, name string, macAddress NullableString, l2vpnTermination NullableBriefL2VPNTermination, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, ) *VMInterface`
 
 NewVMInterface instantiates a new VMInterface object
 This constructor will assign default values to properties that have it defined,
@@ -395,6 +395,11 @@ and a boolean to check if the value has been set.
 
 SetMacAddresses sets MacAddresses field to given value.
 
+### HasMacAddresses
+
+`func (o *VMInterface) HasMacAddresses() bool`
+
+HasMacAddresses returns a boolean if a field has been set.
 
 ### SetMacAddressesNil
 

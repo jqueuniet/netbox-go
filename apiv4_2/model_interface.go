@@ -39,7 +39,7 @@ type Interface struct {
 	Mtu               NullableInt32           `json:"mtu,omitempty"`
 	MacAddress        NullableString          `json:"mac_address"`
 	PrimaryMacAddress NullableBriefMACAddress `json:"primary_mac_address,omitempty"`
-	MacAddresses      []BriefMACAddress       `json:"mac_addresses"`
+	MacAddresses      []BriefMACAddress       `json:"mac_addresses,omitempty"`
 	Speed             NullableInt32           `json:"speed,omitempty"`
 	Duplex            NullableInterfaceDuplex `json:"duplex,omitempty"`
 	Wwn               NullableString          `json:"wwn,omitempty"`
@@ -90,7 +90,7 @@ type _Interface Interface
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInterface(id int32, url string, device BriefDevice, name string, type_ InterfaceType, macAddress NullableString, macAddresses []BriefMACAddress, cable NullableBriefCable, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool) *Interface {
+func NewInterface(id int32, url string, device BriefDevice, name string, type_ InterfaceType, macAddress NullableString, cable NullableBriefCable, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool) *Interface {
 	this := Interface{}
 	this.Id = id
 	this.Url = url
@@ -98,7 +98,6 @@ func NewInterface(id int32, url string, device BriefDevice, name string, type_ I
 	this.Name = name
 	this.Type = type_
 	this.MacAddress = macAddress
-	this.MacAddresses = macAddresses
 	this.Cable = cable
 	this.WirelessLink = wirelessLink
 	this.LinkPeers = linkPeers
@@ -686,18 +685,16 @@ func (o *Interface) UnsetPrimaryMacAddress() {
 	o.PrimaryMacAddress.Unset()
 }
 
-// GetMacAddresses returns the MacAddresses field value
-// If the value is explicit nil, the zero value for []BriefMACAddress will be returned
+// GetMacAddresses returns the MacAddresses field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Interface) GetMacAddresses() []BriefMACAddress {
 	if o == nil {
 		var ret []BriefMACAddress
 		return ret
 	}
-
 	return o.MacAddresses
 }
 
-// GetMacAddressesOk returns a tuple with the MacAddresses field value
+// GetMacAddressesOk returns a tuple with the MacAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Interface) GetMacAddressesOk() ([]BriefMACAddress, bool) {
@@ -707,7 +704,16 @@ func (o *Interface) GetMacAddressesOk() ([]BriefMACAddress, bool) {
 	return o.MacAddresses, true
 }
 
-// SetMacAddresses sets field value
+// HasMacAddresses returns a boolean if a field has been set.
+func (o *Interface) HasMacAddresses() bool {
+	if o != nil && !IsNil(o.MacAddresses) {
+		return true
+	}
+
+	return false
+}
+
+// SetMacAddresses gets a reference to the given []BriefMACAddress and assigns it to the MacAddresses field.
 func (o *Interface) SetMacAddresses(v []BriefMACAddress) {
 	o.MacAddresses = v
 }
@@ -2060,7 +2066,6 @@ func (o *Interface) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"type",
 		"mac_address",
-		"mac_addresses",
 		"cable",
 		"wireless_link",
 		"link_peers",

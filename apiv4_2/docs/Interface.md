@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **Mtu** | Pointer to **NullableInt32** |  | [optional] 
 **MacAddress** | **NullableString** |  | [readonly] 
 **PrimaryMacAddress** | Pointer to [**NullableBriefMACAddress**](BriefMACAddress.md) |  | [optional] 
-**MacAddresses** | [**[]BriefMACAddress**](BriefMACAddress.md) |  | [readonly] 
+**MacAddresses** | Pointer to [**[]BriefMACAddress**](BriefMACAddress.md) |  | [optional] [readonly] 
 **Speed** | Pointer to **NullableInt32** |  | [optional] 
 **Duplex** | Pointer to [**NullableInterfaceDuplex**](InterfaceDuplex.md) |  | [optional] 
 **Wwn** | Pointer to **NullableString** |  | [optional] 
@@ -63,7 +63,7 @@ Name | Type | Description | Notes
 
 ### NewInterface
 
-`func NewInterface(id int32, url string, device BriefDevice, name string, type_ InterfaceType, macAddress NullableString, macAddresses []BriefMACAddress, cable NullableBriefCable, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
+`func NewInterface(id int32, url string, device BriefDevice, name string, type_ InterfaceType, macAddress NullableString, cable NullableBriefCable, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
 
 NewInterface instantiates a new Interface object
 This constructor will assign default values to properties that have it defined,
@@ -562,6 +562,11 @@ and a boolean to check if the value has been set.
 
 SetMacAddresses sets MacAddresses field to given value.
 
+### HasMacAddresses
+
+`func (o *Interface) HasMacAddresses() bool`
+
+HasMacAddresses returns a boolean if a field has been set.
 
 ### SetMacAddressesNil
 

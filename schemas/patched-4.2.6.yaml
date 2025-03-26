@@ -131725,7 +131725,6 @@ components:
       - link_peers
       - link_peers_type
       - mac_address
-      - mac_addresses
       - name
       - type
       - url
@@ -160090,7 +160089,6 @@ components:
       - l2vpn_termination
       - last_updated
       - mac_address
-      - mac_addresses
       - name
       - url
       - virtual_machine
