@@ -146080,6 +146080,9 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
+        mac_address:
+          type: string
+          nullable: true
     PatchedWritableInterfaceTemplateRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -166081,6 +166084,9 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
+        mac_address:
+          type: string
+          nullable: true
       required:
       - device
       - name
