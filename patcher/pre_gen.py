@@ -109,6 +109,11 @@ def patch_spec(data):
                     }
                     if "required" in schema:
                         schema["required"] = [prop for prop in schema["required"] if prop != "mac_addresses"]
+                if name in ["WritableInterfaceRequest", "PatchedWritableInterfaceRequest"]:
+                    schema["properties"]["mac_address"] = {
+                        "type": "string",
+                        "nullable": True,
+                    }
 
     return data
 
