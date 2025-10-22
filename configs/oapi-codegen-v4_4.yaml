@@ -1,0 +1,27 @@
+generatorName: go
+packageName: apiv4_2
+packageVersion: 4.4.4
+
+gitHost: github.com
+gitUserId: jqueuniet
+gitRepoId: netbox-go
+
+inputSpec: schemas/patched-4.4.4.yaml
+outputDir: apiv4_4
+
+globalProperty:
+  apiDocs: false
+  modelDocs: false
+  apiTests: false
+  modelTests: false
+
+inlineSchemaOptions:
+  RESOLVE_INLINE_ENUMS: "true"
+
+additionalProperties:
+  generateInterfaces: true
+  isGoSubmodule: true
+  withGoMod: false
+  disallowAdditionalPropertiesIfNotPresent: false
+  useDefaultValuesForRequiredVars: true
+  enumClassPrefix: true
