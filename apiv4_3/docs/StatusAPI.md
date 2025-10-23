@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	openapiclient "github.com/jqueuniet/netbox-go/apiv4_2"
+	openapiclient "github.com/jqueuniet/netbox-go/apiv4_3"
 )
 
 func main() {

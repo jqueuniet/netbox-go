@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Model** | **string** |  | 
 **Slug** | **string** |  | 
 **PartNumber** | Pointer to **string** | Discrete part number (optional) | [optional] 
-**UHeight** | Pointer to **float64** |  | [optional] [default to 1]
+**UHeight** | Pointer to **float64** |  | [optional] [default to 1.0]
 **ExcludeFromUtilization** | Pointer to **bool** | Devices of this type are excluded when calculating rack utilization. | [optional] 
 **IsFullDepth** | Pointer to **bool** | Device consumes both front and rear rack faces. | [optional] 
 **SubdeviceRole** | Pointer to [**NullableDeviceTypeRequestSubdeviceRole**](DeviceTypeRequestSubdeviceRole.md) |  | [optional] 
