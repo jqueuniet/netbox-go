@@ -11,13 +11,13 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **SiteCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
-**Depth** | **int32** |  | [readonly] 
+**Depth** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBriefRegion
 
-`func NewBriefRegion(id int32, url string, name string, slug string, depth int32, ) *BriefRegion`
+`func NewBriefRegion(id int32, url string, name string, slug string, ) *BriefRegion`
 
 NewBriefRegion instantiates a new BriefRegion object
 This constructor will assign default values to properties that have it defined,
@@ -206,6 +206,11 @@ and a boolean to check if the value has been set.
 
 SetDepth sets Depth field to given value.
 
+### HasDepth
+
+`func (o *BriefRegion) HasDepth() bool`
+
+HasDepth returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

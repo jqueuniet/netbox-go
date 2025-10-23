@@ -24,13 +24,13 @@ Name | Type | Description | Notes
 **DeviceCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Depth** | **int32** |  | [readonly] 
+**Depth** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewLocation
 
-`func NewLocation(id int32, url string, name string, slug string, site BriefSite, lastUpdated NullableTime, depth int32, ) *Location`
+`func NewLocation(id int32, url string, name string, slug string, site BriefSite, lastUpdated NullableTime, ) *Location`
 
 NewLocation instantiates a new Location object
 This constructor will assign default values to properties that have it defined,
@@ -574,6 +574,11 @@ and a boolean to check if the value has been set.
 
 SetDepth sets Depth field to given value.
 
+### HasDepth
+
+`func (o *Location) HasDepth() bool`
+
+HasDepth returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

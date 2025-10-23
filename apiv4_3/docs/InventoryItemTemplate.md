@@ -20,13 +20,13 @@ Name | Type | Description | Notes
 **Component** | **interface{}** |  | [readonly] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | **NullableTime** |  | [readonly] 
-**Depth** | **int32** |  | [readonly] 
+**Depth** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewInventoryItemTemplate
 
-`func NewInventoryItemTemplate(id int32, url string, deviceType BriefDeviceType, name string, component interface{}, lastUpdated NullableTime, depth int32, ) *InventoryItemTemplate`
+`func NewInventoryItemTemplate(id int32, url string, deviceType BriefDeviceType, name string, component interface{}, lastUpdated NullableTime, ) *InventoryItemTemplate`
 
 NewInventoryItemTemplate instantiates a new InventoryItemTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -510,6 +510,11 @@ and a boolean to check if the value has been set.
 
 SetDepth sets Depth field to given value.
 
+### HasDepth
+
+`func (o *InventoryItemTemplate) HasDepth() bool`
+
+HasDepth returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
