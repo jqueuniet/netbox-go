@@ -97,7 +97,7 @@ def patch_spec(data):
                     # Netbox 4.2 compatibility
                     and not (prop == "scope" and name == "Prefix")
                 ]
-            if data["info"]["version"].startswith("4.2."):
+            if not data["info"]["version"].startswith("3.") and not data["info"]["version"].startswith("4.0") and not data["info"]["version"].startswith("4.1"):
                 # Netbox 4.2 compatibility
                 # Note that this field will be ignored by a 4.2 server
                 # The only use is to keep the same client with earlier Netbox versions
