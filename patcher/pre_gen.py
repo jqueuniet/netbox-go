@@ -14,7 +14,8 @@ MISSING_REQUIRED_FIELDS = (
     "created",  # for sites
     "display",  # Virtual disks
     "scope",
-    "mac_addresses"
+    "mac_addresses",
+    "_depth"
 )
 
 

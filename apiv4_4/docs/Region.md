@@ -19,13 +19,13 @@ Name | Type | Description | Notes
 **SiteCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Depth** | **int32** |  | [readonly] 
+**Depth** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewRegion
 
-`func NewRegion(id int32, url string, name string, slug string, lastUpdated NullableTime, depth int32, ) *Region`
+`func NewRegion(id int32, url string, name string, slug string, lastUpdated NullableTime, ) *Region`
 
 NewRegion instantiates a new Region object
 This constructor will assign default values to properties that have it defined,
@@ -439,6 +439,11 @@ and a boolean to check if the value has been set.
 
 SetDepth sets Depth field to given value.
 
+### HasDepth
+
+`func (o *Region) HasDepth() bool`
+
+HasDepth returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

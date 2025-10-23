@@ -28,7 +28,7 @@ type BriefPlatform struct {
 	Description          *string `json:"description,omitempty"`
 	DeviceCount          *int32  `json:"device_count,omitempty"`
 	VirtualmachineCount  *int32  `json:"virtualmachine_count,omitempty"`
-	Depth                int32   `json:"_depth"`
+	Depth                *int32  `json:"_depth,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -38,13 +38,12 @@ type _BriefPlatform BriefPlatform
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefPlatform(id int32, url string, name string, slug string, depth int32) *BriefPlatform {
+func NewBriefPlatform(id int32, url string, name string, slug string) *BriefPlatform {
 	this := BriefPlatform{}
 	this.Id = id
 	this.Url = url
 	this.Name = name
 	this.Slug = slug
-	this.Depth = depth
 	return &this
 }
 
@@ -280,28 +279,36 @@ func (o *BriefPlatform) SetVirtualmachineCount(v int32) {
 	o.VirtualmachineCount = &v
 }
 
-// GetDepth returns the Depth field value
+// GetDepth returns the Depth field value if set, zero value otherwise.
 func (o *BriefPlatform) GetDepth() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		var ret int32
 		return ret
 	}
-
-	return o.Depth
+	return *o.Depth
 }
 
-// GetDepthOk returns a tuple with the Depth field value
+// GetDepthOk returns a tuple with the Depth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefPlatform) GetDepthOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		return nil, false
 	}
-	return &o.Depth, true
+	return o.Depth, true
 }
 
-// SetDepth sets field value
+// HasDepth returns a boolean if a field has been set.
+func (o *BriefPlatform) HasDepth() bool {
+	if o != nil && !IsNil(o.Depth) {
+		return true
+	}
+
+	return false
+}
+
+// SetDepth gets a reference to the given int32 and assigns it to the Depth field.
 func (o *BriefPlatform) SetDepth(v int32) {
-	o.Depth = v
+	o.Depth = &v
 }
 
 func (o BriefPlatform) MarshalJSON() ([]byte, error) {
@@ -330,7 +337,9 @@ func (o BriefPlatform) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VirtualmachineCount) {
 		toSerialize["virtualmachine_count"] = o.VirtualmachineCount
 	}
-	toSerialize["_depth"] = o.Depth
+	if !IsNil(o.Depth) {
+		toSerialize["_depth"] = o.Depth
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -348,7 +357,6 @@ func (o *BriefPlatform) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"name",
 		"slug",
-		"_depth",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.
