@@ -11,10 +11,11 @@ package apiv4_2
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/jqueuniet/netbox-go/apiv4_2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/jqueuniet/netbox-go/apiv4_2"
 )
 
 func Test_apiv4_2_StatusAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_apiv4_2_StatusAPIService(t *testing.T) {
 
 	t.Run("Test StatusAPIService StatusRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.StatusAPI.StatusRetrieve(context.Background()).Execute()
 
