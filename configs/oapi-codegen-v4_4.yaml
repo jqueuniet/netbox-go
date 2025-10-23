@@ -1,5 +1,5 @@
 generatorName: go
-packageName: apiv4_2
+packageName: apiv4_4
 packageVersion: 4.4.4
 
 gitHost: github.com

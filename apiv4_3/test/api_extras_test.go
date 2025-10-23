@@ -11,10 +11,11 @@ package apiv4_2
 
 import (
 	"context"
+	"testing"
+
+	openapiclient "github.com/jqueuniet/netbox-go/apiv4_2"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/jqueuniet/netbox-go/apiv4_2"
 )
 
 func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
@@ -24,7 +25,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasBookmarksBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksBulkDestroy(context.Background()).Execute()
 
@@ -35,7 +36,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasBookmarksBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksBulkPartialUpdate(context.Background()).Execute()
 
@@ -47,7 +48,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasBookmarksBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksBulkUpdate(context.Background()).Execute()
 
@@ -59,7 +60,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasBookmarksCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksCreate(context.Background()).Execute()
 
@@ -71,7 +72,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasBookmarksDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -84,7 +85,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasBookmarksList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasBookmarksList(context.Background()).Execute()
 
@@ -96,7 +97,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasBookmarksPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -110,7 +111,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasBookmarksRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -124,7 +125,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasBookmarksUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -138,7 +139,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigContextsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsBulkDestroy(context.Background()).Execute()
 
@@ -149,7 +150,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigContextsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsBulkPartialUpdate(context.Background()).Execute()
 
@@ -161,7 +162,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigContextsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsBulkUpdate(context.Background()).Execute()
 
@@ -173,7 +174,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigContextsCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsCreate(context.Background()).Execute()
 
@@ -185,7 +186,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigContextsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -198,7 +199,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigContextsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigContextsList(context.Background()).Execute()
 
@@ -210,7 +211,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigContextsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -224,7 +225,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigContextsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -238,7 +239,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigContextsSyncCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -252,7 +253,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigContextsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -266,7 +267,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesBulkDestroy(context.Background()).Execute()
 
@@ -277,7 +278,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesBulkPartialUpdate(context.Background()).Execute()
 
@@ -289,7 +290,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesBulkUpdate(context.Background()).Execute()
 
@@ -301,7 +302,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesCreate(context.Background()).Execute()
 
@@ -313,7 +314,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -326,7 +327,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasConfigTemplatesList(context.Background()).Execute()
 
@@ -338,7 +339,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -352,7 +353,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesRenderCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -366,7 +367,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -380,7 +381,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesSyncCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -394,7 +395,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasConfigTemplatesUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -408,7 +409,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsBulkDestroy(context.Background()).Execute()
 
@@ -419,7 +420,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsBulkPartialUpdate(context.Background()).Execute()
 
@@ -431,7 +432,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsBulkUpdate(context.Background()).Execute()
 
@@ -443,7 +444,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsChoicesRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -457,7 +458,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsCreate(context.Background()).Execute()
 
@@ -469,7 +470,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -482,7 +483,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldChoiceSetsList(context.Background()).Execute()
 
@@ -494,7 +495,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -508,7 +509,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -522,7 +523,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldChoiceSetsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -536,7 +537,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkDestroy(context.Background()).Execute()
 
@@ -547,7 +548,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkPartialUpdate(context.Background()).Execute()
 
@@ -559,7 +560,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkUpdate(context.Background()).Execute()
 
@@ -571,7 +572,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldsCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsCreate(context.Background()).Execute()
 
@@ -583,7 +584,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -596,7 +597,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsList(context.Background()).Execute()
 
@@ -608,7 +609,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -622,7 +623,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -636,7 +637,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -650,7 +651,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomLinksBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksBulkDestroy(context.Background()).Execute()
 
@@ -661,7 +662,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomLinksBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksBulkPartialUpdate(context.Background()).Execute()
 
@@ -673,7 +674,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomLinksBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksBulkUpdate(context.Background()).Execute()
 
@@ -685,7 +686,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomLinksCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksCreate(context.Background()).Execute()
 
@@ -697,7 +698,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomLinksDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -710,7 +711,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomLinksList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomLinksList(context.Background()).Execute()
 
@@ -722,7 +723,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomLinksPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -736,7 +737,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomLinksRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -750,7 +751,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasCustomLinksUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -764,7 +765,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasDashboardDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasDashboardDestroy(context.Background()).Execute()
 
@@ -775,7 +776,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasDashboardPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasDashboardPartialUpdate(context.Background()).Execute()
 
@@ -787,7 +788,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasDashboardRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasDashboardRetrieve(context.Background()).Execute()
 
@@ -799,7 +800,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasDashboardUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasDashboardUpdate(context.Background()).Execute()
 
@@ -811,7 +812,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasEventRulesBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasEventRulesBulkDestroy(context.Background()).Execute()
 
@@ -822,7 +823,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasEventRulesBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasEventRulesBulkPartialUpdate(context.Background()).Execute()
 
@@ -834,7 +835,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasEventRulesBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasEventRulesBulkUpdate(context.Background()).Execute()
 
@@ -846,7 +847,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasEventRulesCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasEventRulesCreate(context.Background()).Execute()
 
@@ -858,7 +859,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasEventRulesDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -871,7 +872,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasEventRulesList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasEventRulesList(context.Background()).Execute()
 
@@ -883,7 +884,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasEventRulesPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -897,7 +898,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasEventRulesRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -911,7 +912,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasEventRulesUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -925,7 +926,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasExportTemplatesBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesBulkDestroy(context.Background()).Execute()
 
@@ -936,7 +937,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasExportTemplatesBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesBulkPartialUpdate(context.Background()).Execute()
 
@@ -948,7 +949,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasExportTemplatesBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesBulkUpdate(context.Background()).Execute()
 
@@ -960,7 +961,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasExportTemplatesCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesCreate(context.Background()).Execute()
 
@@ -972,7 +973,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasExportTemplatesDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -985,7 +986,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasExportTemplatesList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasExportTemplatesList(context.Background()).Execute()
 
@@ -997,7 +998,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasExportTemplatesPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1011,7 +1012,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasExportTemplatesRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1025,7 +1026,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasExportTemplatesSyncCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1039,7 +1040,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasExportTemplatesUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1053,7 +1054,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsBulkDestroy(context.Background()).Execute()
 
@@ -1064,7 +1065,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsBulkPartialUpdate(context.Background()).Execute()
 
@@ -1076,7 +1077,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsBulkUpdate(context.Background()).Execute()
 
@@ -1088,7 +1089,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsCreate(context.Background()).Execute()
 
@@ -1100,7 +1101,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1113,7 +1114,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasImageAttachmentsList(context.Background()).Execute()
 
@@ -1125,7 +1126,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1139,7 +1140,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1153,7 +1154,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasImageAttachmentsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1167,7 +1168,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasJournalEntriesBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesBulkDestroy(context.Background()).Execute()
 
@@ -1178,7 +1179,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasJournalEntriesBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesBulkPartialUpdate(context.Background()).Execute()
 
@@ -1190,7 +1191,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasJournalEntriesBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesBulkUpdate(context.Background()).Execute()
 
@@ -1202,7 +1203,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasJournalEntriesCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesCreate(context.Background()).Execute()
 
@@ -1214,7 +1215,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasJournalEntriesDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1227,7 +1228,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasJournalEntriesList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasJournalEntriesList(context.Background()).Execute()
 
@@ -1239,7 +1240,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasJournalEntriesPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1253,7 +1254,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasJournalEntriesRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1267,7 +1268,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasJournalEntriesUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1281,7 +1282,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationGroupsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasNotificationGroupsBulkDestroy(context.Background()).Execute()
 
@@ -1292,7 +1293,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationGroupsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasNotificationGroupsBulkPartialUpdate(context.Background()).Execute()
 
@@ -1304,7 +1305,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationGroupsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasNotificationGroupsBulkUpdate(context.Background()).Execute()
 
@@ -1316,7 +1317,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationGroupsCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasNotificationGroupsCreate(context.Background()).Execute()
 
@@ -1328,7 +1329,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationGroupsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1341,7 +1342,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationGroupsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasNotificationGroupsList(context.Background()).Execute()
 
@@ -1353,7 +1354,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationGroupsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1367,7 +1368,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationGroupsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1381,7 +1382,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationGroupsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1395,7 +1396,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasNotificationsBulkDestroy(context.Background()).Execute()
 
@@ -1406,7 +1407,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasNotificationsBulkPartialUpdate(context.Background()).Execute()
 
@@ -1418,7 +1419,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasNotificationsBulkUpdate(context.Background()).Execute()
 
@@ -1430,7 +1431,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationsCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasNotificationsCreate(context.Background()).Execute()
 
@@ -1442,7 +1443,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1455,7 +1456,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasNotificationsList(context.Background()).Execute()
 
@@ -1467,7 +1468,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1481,7 +1482,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1495,7 +1496,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasNotificationsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1509,7 +1510,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasObjectTypesList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasObjectTypesList(context.Background()).Execute()
 
@@ -1521,7 +1522,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasObjectTypesRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1535,7 +1536,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSavedFiltersBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersBulkDestroy(context.Background()).Execute()
 
@@ -1546,7 +1547,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSavedFiltersBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersBulkPartialUpdate(context.Background()).Execute()
 
@@ -1558,7 +1559,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSavedFiltersBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersBulkUpdate(context.Background()).Execute()
 
@@ -1570,7 +1571,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSavedFiltersCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersCreate(context.Background()).Execute()
 
@@ -1582,7 +1583,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSavedFiltersDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1595,7 +1596,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSavedFiltersList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSavedFiltersList(context.Background()).Execute()
 
@@ -1607,7 +1608,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSavedFiltersPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1621,7 +1622,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSavedFiltersRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1635,7 +1636,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSavedFiltersUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1649,7 +1650,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasScriptsCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasScriptsCreate(context.Background()).Execute()
 
@@ -1661,7 +1662,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasScriptsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -1674,7 +1675,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasScriptsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasScriptsList(context.Background()).Execute()
 
@@ -1686,7 +1687,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasScriptsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -1700,7 +1701,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasScriptsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -1714,7 +1715,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasScriptsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id string
 
@@ -1728,7 +1729,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSubscriptionsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasSubscriptionsBulkDestroy(context.Background()).Execute()
 
@@ -1739,7 +1740,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSubscriptionsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSubscriptionsBulkPartialUpdate(context.Background()).Execute()
 
@@ -1751,7 +1752,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSubscriptionsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSubscriptionsBulkUpdate(context.Background()).Execute()
 
@@ -1763,7 +1764,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSubscriptionsCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSubscriptionsCreate(context.Background()).Execute()
 
@@ -1775,7 +1776,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSubscriptionsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1788,7 +1789,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSubscriptionsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasSubscriptionsList(context.Background()).Execute()
 
@@ -1800,7 +1801,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSubscriptionsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1814,7 +1815,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSubscriptionsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1828,7 +1829,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasSubscriptionsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1842,7 +1843,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTableConfigsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasTableConfigsBulkDestroy(context.Background()).Execute()
 
@@ -1853,7 +1854,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTableConfigsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTableConfigsBulkPartialUpdate(context.Background()).Execute()
 
@@ -1865,7 +1866,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTableConfigsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTableConfigsBulkUpdate(context.Background()).Execute()
 
@@ -1877,7 +1878,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTableConfigsCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTableConfigsCreate(context.Background()).Execute()
 
@@ -1889,7 +1890,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTableConfigsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1902,7 +1903,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTableConfigsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTableConfigsList(context.Background()).Execute()
 
@@ -1914,7 +1915,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTableConfigsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1928,7 +1929,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTableConfigsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1942,7 +1943,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTableConfigsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1956,7 +1957,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTaggedObjectsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTaggedObjectsList(context.Background()).Execute()
 
@@ -1968,7 +1969,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTaggedObjectsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -1982,7 +1983,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTagsBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasTagsBulkDestroy(context.Background()).Execute()
 
@@ -1993,7 +1994,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTagsBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsBulkPartialUpdate(context.Background()).Execute()
 
@@ -2005,7 +2006,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTagsBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsBulkUpdate(context.Background()).Execute()
 
@@ -2017,7 +2018,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTagsCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsCreate(context.Background()).Execute()
 
@@ -2029,7 +2030,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTagsDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -2042,7 +2043,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTagsList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasTagsList(context.Background()).Execute()
 
@@ -2054,7 +2055,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTagsPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -2068,7 +2069,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTagsRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -2082,7 +2083,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasTagsUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -2096,7 +2097,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasWebhooksBulkDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksBulkDestroy(context.Background()).Execute()
 
@@ -2107,7 +2108,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasWebhooksBulkPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksBulkPartialUpdate(context.Background()).Execute()
 
@@ -2119,7 +2120,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasWebhooksBulkUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksBulkUpdate(context.Background()).Execute()
 
@@ -2131,7 +2132,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasWebhooksCreate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksCreate(context.Background()).Execute()
 
@@ -2143,7 +2144,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasWebhooksDestroy", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -2156,7 +2157,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasWebhooksList", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasWebhooksList(context.Background()).Execute()
 
@@ -2168,7 +2169,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasWebhooksPartialUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -2182,7 +2183,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasWebhooksRetrieve", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
@@ -2196,7 +2197,7 @@ func Test_apiv4_2_ExtrasAPIService(t *testing.T) {
 
 	t.Run("Test ExtrasAPIService ExtrasWebhooksUpdate", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var id int32
 
