@@ -46,7 +46,7 @@ type Prefix struct {
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	Children             int32                  `json:"children"`
-	Depth                int32                  `json:"_depth"`
+	Depth                *int32                 `json:"_depth,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -56,7 +56,7 @@ type _Prefix Prefix
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPrefix(id int32, url string, family AggregateFamily, prefix string, lastUpdated NullableTime, children int32, depth int32) *Prefix {
+func NewPrefix(id int32, url string, family AggregateFamily, prefix string, lastUpdated NullableTime, children int32) *Prefix {
 	this := Prefix{}
 	this.Id = id
 	this.Url = url
@@ -64,7 +64,6 @@ func NewPrefix(id int32, url string, family AggregateFamily, prefix string, last
 	this.Prefix = prefix
 	this.LastUpdated = lastUpdated
 	this.Children = children
-	this.Depth = depth
 	return &this
 }
 
@@ -844,28 +843,36 @@ func (o *Prefix) SetChildren(v int32) {
 	o.Children = v
 }
 
-// GetDepth returns the Depth field value
+// GetDepth returns the Depth field value if set, zero value otherwise.
 func (o *Prefix) GetDepth() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		var ret int32
 		return ret
 	}
-
-	return o.Depth
+	return *o.Depth
 }
 
-// GetDepthOk returns a tuple with the Depth field value
+// GetDepthOk returns a tuple with the Depth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Prefix) GetDepthOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		return nil, false
 	}
-	return &o.Depth, true
+	return o.Depth, true
 }
 
-// SetDepth sets field value
+// HasDepth returns a boolean if a field has been set.
+func (o *Prefix) HasDepth() bool {
+	if o != nil && !IsNil(o.Depth) {
+		return true
+	}
+
+	return false
+}
+
+// SetDepth gets a reference to the given int32 and assigns it to the Depth field.
 func (o *Prefix) SetDepth(v int32) {
-	o.Depth = v
+	o.Depth = &v
 }
 
 func (o Prefix) MarshalJSON() ([]byte, error) {
@@ -935,7 +942,9 @@ func (o Prefix) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
 	toSerialize["children"] = o.Children
-	toSerialize["_depth"] = o.Depth
+	if !IsNil(o.Depth) {
+		toSerialize["_depth"] = o.Depth
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -955,7 +964,6 @@ func (o *Prefix) UnmarshalJSON(data []byte) (err error) {
 		"prefix",
 		"last_updated",
 		"children",
-		"_depth",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

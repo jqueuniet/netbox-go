@@ -130100,7 +130100,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -130842,7 +130841,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -131700,7 +131698,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -131843,7 +131840,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -131985,7 +131981,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -132572,7 +132567,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -135927,7 +135921,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -137645,7 +137638,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -146309,7 +146301,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - component
       - device
       - id
@@ -146571,7 +146562,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - component
       - device_type
       - id
@@ -147318,7 +147308,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -148265,7 +148254,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -148610,7 +148598,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -148755,7 +148742,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -148818,7 +148804,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -148948,7 +148933,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -149207,7 +149191,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - name
       - slug
@@ -167304,7 +167287,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - children
       - family
       - id
@@ -170054,7 +170036,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -170927,7 +170908,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -171542,7 +171522,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -174516,7 +174495,6 @@ components:
           readOnly: true
           title: ' depth'
       required:
-      - _depth
       - id
       - last_updated
       - name

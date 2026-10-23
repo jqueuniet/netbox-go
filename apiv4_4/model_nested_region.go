@@ -26,7 +26,7 @@ type NestedRegion struct {
 	Display              *string `json:"display,omitempty"`
 	Name                 string  `json:"name"`
 	Slug                 string  `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
-	Depth                int32   `json:"_depth"`
+	Depth                *int32  `json:"_depth,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,13 +36,12 @@ type _NestedRegion NestedRegion
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedRegion(id int32, url string, name string, slug string, depth int32) *NestedRegion {
+func NewNestedRegion(id int32, url string, name string, slug string) *NestedRegion {
 	this := NestedRegion{}
 	this.Id = id
 	this.Url = url
 	this.Name = name
 	this.Slug = slug
-	this.Depth = depth
 	return &this
 }
 
@@ -214,28 +213,36 @@ func (o *NestedRegion) SetSlug(v string) {
 	o.Slug = v
 }
 
-// GetDepth returns the Depth field value
+// GetDepth returns the Depth field value if set, zero value otherwise.
 func (o *NestedRegion) GetDepth() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		var ret int32
 		return ret
 	}
-
-	return o.Depth
+	return *o.Depth
 }
 
-// GetDepthOk returns a tuple with the Depth field value
+// GetDepthOk returns a tuple with the Depth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedRegion) GetDepthOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		return nil, false
 	}
-	return &o.Depth, true
+	return o.Depth, true
 }
 
-// SetDepth sets field value
+// HasDepth returns a boolean if a field has been set.
+func (o *NestedRegion) HasDepth() bool {
+	if o != nil && !IsNil(o.Depth) {
+		return true
+	}
+
+	return false
+}
+
+// SetDepth gets a reference to the given int32 and assigns it to the Depth field.
 func (o *NestedRegion) SetDepth(v int32) {
-	o.Depth = v
+	o.Depth = &v
 }
 
 func (o NestedRegion) MarshalJSON() ([]byte, error) {
@@ -258,7 +265,9 @@ func (o NestedRegion) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["name"] = o.Name
 	toSerialize["slug"] = o.Slug
-	toSerialize["_depth"] = o.Depth
+	if !IsNil(o.Depth) {
+		toSerialize["_depth"] = o.Depth
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -276,7 +285,6 @@ func (o *NestedRegion) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"name",
 		"slug",
-		"_depth",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

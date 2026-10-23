@@ -146697,7 +146697,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -147304,7 +147303,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -148216,7 +148214,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -148366,7 +148363,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -148507,7 +148503,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -149127,7 +149122,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -153384,7 +153378,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -155024,7 +155017,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -159505,7 +159497,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - component
       - device
       - id
@@ -159835,7 +159826,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - component
       - device_type
       - id
@@ -160676,7 +160666,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -161777,7 +161766,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -162102,7 +162090,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -162247,7 +162234,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -162304,7 +162290,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -162434,7 +162419,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -162672,7 +162656,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - name
       - slug
@@ -189606,7 +189589,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - children
       - family
       - id
@@ -191734,7 +191716,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -193019,7 +193000,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -193793,7 +193773,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - last_updated
       - name
@@ -197635,7 +197614,6 @@ components:
           title: ' depth'
           type: integer
       required:
-      - _depth
       - id
       - last_updated
       - name

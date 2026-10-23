@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 **Display** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
-**Depth** | **int32** |  | [readonly] 
+**Depth** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewNestedWirelessLANGroup
 
-`func NewNestedWirelessLANGroup(id int32, url string, name string, slug string, depth int32, ) *NestedWirelessLANGroup`
+`func NewNestedWirelessLANGroup(id int32, url string, name string, slug string, ) *NestedWirelessLANGroup`
 
 NewNestedWirelessLANGroup instantiates a new NestedWirelessLANGroup object
 This constructor will assign default values to properties that have it defined,
@@ -180,6 +180,11 @@ and a boolean to check if the value has been set.
 
 SetDepth sets Depth field to given value.
 
+### HasDepth
+
+`func (o *NestedWirelessLANGroup) HasDepth() bool`
+
+HasDepth returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

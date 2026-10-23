@@ -48,7 +48,7 @@ type InventoryItem struct {
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	Depth                int32                  `json:"_depth"`
+	Depth                *int32                 `json:"_depth,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -58,7 +58,7 @@ type _InventoryItem InventoryItem
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryItem(id int32, url string, device BriefDevice, name string, component interface{}, lastUpdated NullableTime, depth int32) *InventoryItem {
+func NewInventoryItem(id int32, url string, device BriefDevice, name string, component interface{}, lastUpdated NullableTime) *InventoryItem {
 	this := InventoryItem{}
 	this.Id = id
 	this.Url = url
@@ -66,7 +66,6 @@ func NewInventoryItem(id int32, url string, device BriefDevice, name string, com
 	this.Name = name
 	this.Component = component
 	this.LastUpdated = lastUpdated
-	this.Depth = depth
 	return &this
 }
 
@@ -847,28 +846,36 @@ func (o *InventoryItem) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetDepth returns the Depth field value
+// GetDepth returns the Depth field value if set, zero value otherwise.
 func (o *InventoryItem) GetDepth() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		var ret int32
 		return ret
 	}
-
-	return o.Depth
+	return *o.Depth
 }
 
-// GetDepthOk returns a tuple with the Depth field value
+// GetDepthOk returns a tuple with the Depth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InventoryItem) GetDepthOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		return nil, false
 	}
-	return &o.Depth, true
+	return o.Depth, true
 }
 
-// SetDepth sets field value
+// HasDepth returns a boolean if a field has been set.
+func (o *InventoryItem) HasDepth() bool {
+	if o != nil && !IsNil(o.Depth) {
+		return true
+	}
+
+	return false
+}
+
+// SetDepth gets a reference to the given int32 and assigns it to the Depth field.
 func (o *InventoryItem) SetDepth(v int32) {
-	o.Depth = v
+	o.Depth = &v
 }
 
 func (o InventoryItem) MarshalJSON() ([]byte, error) {
@@ -940,7 +947,9 @@ func (o InventoryItem) ToMap() (map[string]interface{}, error) {
 		toSerialize["created"] = o.Created.Get()
 	}
 	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["_depth"] = o.Depth
+	if !IsNil(o.Depth) {
+		toSerialize["_depth"] = o.Depth
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -960,7 +969,6 @@ func (o *InventoryItem) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"component",
 		"last_updated",
-		"_depth",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

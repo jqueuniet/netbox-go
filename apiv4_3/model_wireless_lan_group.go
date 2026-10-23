@@ -35,7 +35,7 @@ type WirelessLANGroup struct {
 	LastUpdated          NullableTime                   `json:"last_updated"`
 	WirelesslanCount     *int32                         `json:"wirelesslan_count,omitempty"`
 	Comments             *string                        `json:"comments,omitempty"`
-	Depth                int32                          `json:"_depth"`
+	Depth                *int32                         `json:"_depth,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,14 +45,13 @@ type _WirelessLANGroup WirelessLANGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWirelessLANGroup(id int32, url string, name string, slug string, lastUpdated NullableTime, depth int32) *WirelessLANGroup {
+func NewWirelessLANGroup(id int32, url string, name string, slug string, lastUpdated NullableTime) *WirelessLANGroup {
 	this := WirelessLANGroup{}
 	this.Id = id
 	this.Url = url
 	this.Name = name
 	this.Slug = slug
 	this.LastUpdated = lastUpdated
-	this.Depth = depth
 	return &this
 }
 
@@ -496,28 +495,36 @@ func (o *WirelessLANGroup) SetComments(v string) {
 	o.Comments = &v
 }
 
-// GetDepth returns the Depth field value
+// GetDepth returns the Depth field value if set, zero value otherwise.
 func (o *WirelessLANGroup) GetDepth() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		var ret int32
 		return ret
 	}
-
-	return o.Depth
+	return *o.Depth
 }
 
-// GetDepthOk returns a tuple with the Depth field value
+// GetDepthOk returns a tuple with the Depth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelessLANGroup) GetDepthOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		return nil, false
 	}
-	return &o.Depth, true
+	return o.Depth, true
 }
 
-// SetDepth sets field value
+// HasDepth returns a boolean if a field has been set.
+func (o *WirelessLANGroup) HasDepth() bool {
+	if o != nil && !IsNil(o.Depth) {
+		return true
+	}
+
+	return false
+}
+
+// SetDepth gets a reference to the given int32 and assigns it to the Depth field.
 func (o *WirelessLANGroup) SetDepth(v int32) {
-	o.Depth = v
+	o.Depth = &v
 }
 
 func (o WirelessLANGroup) MarshalJSON() ([]byte, error) {
@@ -562,7 +569,9 @@ func (o WirelessLANGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Comments) {
 		toSerialize["comments"] = o.Comments
 	}
-	toSerialize["_depth"] = o.Depth
+	if !IsNil(o.Depth) {
+		toSerialize["_depth"] = o.Depth
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -581,7 +590,6 @@ func (o *WirelessLANGroup) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"slug",
 		"last_updated",
-		"_depth",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

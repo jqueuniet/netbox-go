@@ -42,7 +42,7 @@ type Location struct {
 	DeviceCount          *int32                 `json:"device_count,omitempty"`
 	PrefixCount          *int64                 `json:"prefix_count,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
-	Depth                int32                  `json:"_depth"`
+	Depth                *int32                 `json:"_depth,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -52,7 +52,7 @@ type _Location Location
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLocation(id int32, url string, name string, slug string, site BriefSite, lastUpdated NullableTime, depth int32) *Location {
+func NewLocation(id int32, url string, name string, slug string, site BriefSite, lastUpdated NullableTime) *Location {
 	this := Location{}
 	this.Id = id
 	this.Url = url
@@ -60,7 +60,6 @@ func NewLocation(id int32, url string, name string, slug string, site BriefSite,
 	this.Slug = slug
 	this.Site = site
 	this.LastUpdated = lastUpdated
-	this.Depth = depth
 	return &this
 }
 
@@ -699,28 +698,36 @@ func (o *Location) SetComments(v string) {
 	o.Comments = &v
 }
 
-// GetDepth returns the Depth field value
+// GetDepth returns the Depth field value if set, zero value otherwise.
 func (o *Location) GetDepth() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		var ret int32
 		return ret
 	}
-
-	return o.Depth
+	return *o.Depth
 }
 
-// GetDepthOk returns a tuple with the Depth field value
+// GetDepthOk returns a tuple with the Depth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Location) GetDepthOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		return nil, false
 	}
-	return &o.Depth, true
+	return o.Depth, true
 }
 
-// SetDepth sets field value
+// HasDepth returns a boolean if a field has been set.
+func (o *Location) HasDepth() bool {
+	if o != nil && !IsNil(o.Depth) {
+		return true
+	}
+
+	return false
+}
+
+// SetDepth gets a reference to the given int32 and assigns it to the Depth field.
 func (o *Location) SetDepth(v int32) {
-	o.Depth = v
+	o.Depth = &v
 }
 
 func (o Location) MarshalJSON() ([]byte, error) {
@@ -781,7 +788,9 @@ func (o Location) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Comments) {
 		toSerialize["comments"] = o.Comments
 	}
-	toSerialize["_depth"] = o.Depth
+	if !IsNil(o.Depth) {
+		toSerialize["_depth"] = o.Depth
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -801,7 +810,6 @@ func (o *Location) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"site",
 		"last_updated",
-		"_depth",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

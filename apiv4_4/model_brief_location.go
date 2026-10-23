@@ -27,7 +27,7 @@ type BriefLocation struct {
 	Slug                 string  `json:"slug" validate:"regexp=^[-a-zA-Z0-9_]+$"`
 	Description          *string `json:"description,omitempty"`
 	RackCount            *int32  `json:"rack_count,omitempty"`
-	Depth                int32   `json:"_depth"`
+	Depth                *int32  `json:"_depth,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -37,13 +37,12 @@ type _BriefLocation BriefLocation
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefLocation(id int32, url string, name string, slug string, depth int32) *BriefLocation {
+func NewBriefLocation(id int32, url string, name string, slug string) *BriefLocation {
 	this := BriefLocation{}
 	this.Id = id
 	this.Url = url
 	this.Name = name
 	this.Slug = slug
-	this.Depth = depth
 	return &this
 }
 
@@ -247,28 +246,36 @@ func (o *BriefLocation) SetRackCount(v int32) {
 	o.RackCount = &v
 }
 
-// GetDepth returns the Depth field value
+// GetDepth returns the Depth field value if set, zero value otherwise.
 func (o *BriefLocation) GetDepth() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		var ret int32
 		return ret
 	}
-
-	return o.Depth
+	return *o.Depth
 }
 
-// GetDepthOk returns a tuple with the Depth field value
+// GetDepthOk returns a tuple with the Depth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefLocation) GetDepthOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Depth) {
 		return nil, false
 	}
-	return &o.Depth, true
+	return o.Depth, true
 }
 
-// SetDepth sets field value
+// HasDepth returns a boolean if a field has been set.
+func (o *BriefLocation) HasDepth() bool {
+	if o != nil && !IsNil(o.Depth) {
+		return true
+	}
+
+	return false
+}
+
+// SetDepth gets a reference to the given int32 and assigns it to the Depth field.
 func (o *BriefLocation) SetDepth(v int32) {
-	o.Depth = v
+	o.Depth = &v
 }
 
 func (o BriefLocation) MarshalJSON() ([]byte, error) {
@@ -294,7 +301,9 @@ func (o BriefLocation) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RackCount) {
 		toSerialize["rack_count"] = o.RackCount
 	}
-	toSerialize["_depth"] = o.Depth
+	if !IsNil(o.Depth) {
+		toSerialize["_depth"] = o.Depth
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -312,7 +321,6 @@ func (o *BriefLocation) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"name",
 		"slug",
-		"_depth",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

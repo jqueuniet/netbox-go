@@ -11,13 +11,13 @@ Name | Type | Description | Notes
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
 **WirelesslanCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
-**Depth** | **int32** |  | [readonly] 
+**Depth** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBriefWirelessLANGroup
 
-`func NewBriefWirelessLANGroup(id int32, url string, name string, slug string, depth int32, ) *BriefWirelessLANGroup`
+`func NewBriefWirelessLANGroup(id int32, url string, name string, slug string, ) *BriefWirelessLANGroup`
 
 NewBriefWirelessLANGroup instantiates a new BriefWirelessLANGroup object
 This constructor will assign default values to properties that have it defined,
@@ -206,6 +206,11 @@ and a boolean to check if the value has been set.
 
 SetDepth sets Depth field to given value.
 
+### HasDepth
+
+`func (o *BriefWirelessLANGroup) HasDepth() bool`
+
+HasDepth returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
