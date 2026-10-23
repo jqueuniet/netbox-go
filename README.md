@@ -8,17 +8,17 @@ The Netbox server does not support API versioning and only provides limited API 
 statically typed languages like Go and clients generated using the OpenAPI specification rather than crafted by hand. 
 Experience showed each new minor version should be considered as major for Go development.
 
-As such, this API client tries to provide support for multiple API versions, each living in a submodule called 
-`apiv{MAJOR}_{MINOR}`. The global module version does not mirror the latest Netbox API version supported, and rather 
-aims to reflect the stability of the client module itself. This should ensure developers can upgrade at their own pace, 
-or even provide support for multiple Netbox versions from the same program.
+As such, this API client tries to provide support for multiple API versions, each living in its own Go module called 
+`apiv{MAJOR}_{MINOR}` and versioned independently with `apiv{MAJOR}_{MINOR}/vX.Y.Z` tags. A module version does not 
+mirror the Netbox patch release it was generated from, and rather aims to reflect the stability of the client itself. 
+This should ensure developers can upgrade at their own pace, only download the versions they use, or even provide 
+support for multiple Netbox versions from the same program.
 
 Do note however that as maintainer free time is limited and Netbox does not provide long-term support for older minor 
 versions, only limited support can be provided for those. As Netbox API clients are rather heavy, oldest versions will 
 likely have to be removed at some point. The aim for now is to support all versions of the current major Netbox release,
-plus the latest minor of the previous major, but this may change depending on how long a major version lasts. Any removal
-will lead to a major version increment of this repository, including a module namespace change (ie, 
-`github.com/jqueuniet/netbox-go/v2` to `github.com/jqueuniet/netbox-go/v3`).
+plus the latest minor of the previous major, but this may change depending on how long a major version lasts. Removed 
+versions stop receiving updates, but their published module versions remain available.
 
 As the current tooling does not support OpenAPI 2, no support can be provided for Netbox API versions older than 3.5.
 
@@ -30,13 +30,13 @@ Schemas are patched before generation to work around bugs in either the generato
 
 ## Installation
 
-Import the module in your Go codebase.
+Add the module matching your Netbox version to your Go codebase.
 
 ```sh
-go get github.com/jqueuniet/netbox-go
+go get github.com/jqueuniet/netbox-go/apiv4_0
 ```
 
-Put the package under your project folder and add the following in import:
+Then import it:
 
 ```go
 import netbox "github.com/jqueuniet/netbox-go/apiv4_0"
@@ -73,5 +73,6 @@ new patch release.
 ## Netbox minor/major releases
 
 New minor or major releases require generating a new client. First import the schema like with patch releases, and then 
-copy any generator config file, editing `packageName` and `outputDir` on top of `inputSpec` and `packageVersion`. The 
-rest of the tooling should adapt automatically once the code generation is started.
+copy any generator config file, editing `packageName` and `outputDir` on top of `inputSpec` and `packageVersion`. Then 
+create the `go.mod` file of the new module, named `github.com/jqueuniet/netbox-go/apiv{MAJOR}_{MINOR}`. The rest of the 
+tooling should adapt automatically once the code generation is started.
