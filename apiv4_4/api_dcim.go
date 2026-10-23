@@ -117555,24 +117555,28 @@ func (a *DcimAPIService) DcimRacksElevationRetrieveExecute(r ApiDcimRacksElevati
 		parameterAddToHeaderOrQuery(localVarQueryParams, "expand_devices", r.expandDevices, "form", "")
 	} else {
 		var defaultValue bool = true
+		parameterAddToHeaderOrQuery(localVarQueryParams, "expand_devices", defaultValue, "form", "")
 		r.expandDevices = &defaultValue
 	}
 	if r.face != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "face", r.face, "form", "")
 	} else {
 		var defaultValue DcimRacksElevationRetrieveFaceParameter = "front"
+		parameterAddToHeaderOrQuery(localVarQueryParams, "face", defaultValue, "form", "")
 		r.face = &defaultValue
 	}
 	if r.includeImages != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "include_images", r.includeImages, "form", "")
 	} else {
 		var defaultValue bool = true
+		parameterAddToHeaderOrQuery(localVarQueryParams, "include_images", defaultValue, "form", "")
 		r.includeImages = &defaultValue
 	}
 	if r.legendWidth != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "legend_width", r.legendWidth, "form", "")
 	} else {
 		var defaultValue int32 = 30
+		parameterAddToHeaderOrQuery(localVarQueryParams, "legend_width", defaultValue, "form", "")
 		r.legendWidth = &defaultValue
 	}
 	if r.limit != nil {
@@ -117582,6 +117586,7 @@ func (a *DcimAPIService) DcimRacksElevationRetrieveExecute(r ApiDcimRacksElevati
 		parameterAddToHeaderOrQuery(localVarQueryParams, "margin_width", r.marginWidth, "form", "")
 	} else {
 		var defaultValue int32 = 15
+		parameterAddToHeaderOrQuery(localVarQueryParams, "margin_width", defaultValue, "form", "")
 		r.marginWidth = &defaultValue
 	}
 	if r.offset != nil {
@@ -117594,6 +117599,7 @@ func (a *DcimAPIService) DcimRacksElevationRetrieveExecute(r ApiDcimRacksElevati
 		parameterAddToHeaderOrQuery(localVarQueryParams, "render", r.render, "form", "")
 	} else {
 		var defaultValue DcimRacksElevationRetrieveRenderParameter = "json"
+		parameterAddToHeaderOrQuery(localVarQueryParams, "render", defaultValue, "form", "")
 		r.render = &defaultValue
 	}
 	if r.unitHeight != nil {
