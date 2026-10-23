@@ -68,6 +68,7 @@ def patch_spec_file(version: str):
 
 
 def patch_spec(data):
+    pre_4_2 = data["info"]["version"].startswith(("3.", "4.0", "4.1"))
     if "components" in data and "schemas" in data["components"]:
         for name, schema in data["components"]["schemas"].items():
             if "properties" in schema:
@@ -90,7 +91,11 @@ def patch_spec(data):
                 schema["required"] = [
                     prop
                     for prop in schema["required"]
-                    if prop not in MISSING_REQUIRED_FIELDS
+                    if (
+                        prop not in MISSING_REQUIRED_FIELDS
+                        # Keep pre-4.2 clients API compatible (VLANGroup)
+                        or (prop == "scope" and pre_4_2)
+                    )
                     and not prop.endswith("_count")
                     # Netbox 3.x/4.x compatibility
                     and not (prop == "cable_end" and name == "Interface")
