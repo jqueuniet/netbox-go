@@ -13,7 +13,7 @@ import (
 	"context"
 	"testing"
 
-	openapiclient "github.com/jqueuniet/netbox-go/apiv4_2"
+	openapiclient "github.com/jqueuniet/netbox-go/apiv4_3"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
